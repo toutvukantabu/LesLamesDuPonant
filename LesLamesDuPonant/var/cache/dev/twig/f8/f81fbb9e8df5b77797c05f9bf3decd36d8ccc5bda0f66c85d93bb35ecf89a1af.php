@@ -70,7 +70,7 @@ class __TwigTemplate_a34750d87bd6bb1b33f170df28786b55d2c062a07afa82275d67284a300
 \t<script src=\"https://code.jquery.com/ui/1.12.1/jquery-ui.js\"></script>
 \t<script src=\"";
         // line 22
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/app.js"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/App.js"), "html", null, true);
         echo "\"></script>
 \t<script type=\"text/javascript\" charset=\"utf8\" src=\"https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js\"></script>
 \t
@@ -99,10 +99,16 @@ class __TwigTemplate_a34750d87bd6bb1b33f170df28786b55d2c062a07afa82275d67284a300
         <a class=\"nav-link\" href=\"#\">Home <span class=\"sr-only\">(current)</span></a>
       </li>
       <li class=\"nav-item\">
-        <a class=\"nav-link\" href=\"#\">Features</a>
+        <a class=\"nav-link\" href=\"";
+        // line 45
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
+        echo "\">Vous connecter</a>
       </li>
       <li class=\"nav-item\">
-        <a class=\"nav-link\" href=\"#\">Pricing</a>
+        <a class=\"nav-link\" href=\"";
+        // line 48
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_register");
+        echo "\">vous enregistrer</a>
       </li>
       <li class=\"nav-item\">
         <a class=\"nav-link\" href=\"#\">About</a>
@@ -227,7 +233,7 @@ class __TwigTemplate_a34750d87bd6bb1b33f170df28786b55d2c062a07afa82275d67284a300
 
     public function getDebugInfo()
     {
-        return array (  204 => 65,  202 => 62,  192 => 61,  174 => 60,  156 => 29,  136 => 26,  124 => 71,  121 => 61,  119 => 60,  87 => 30,  85 => 29,  82 => 28,  80 => 26,  73 => 22,  63 => 15,  47 => 1,);
+        return array (  210 => 65,  208 => 62,  198 => 61,  180 => 60,  162 => 29,  142 => 26,  130 => 71,  127 => 61,  125 => 60,  110 => 48,  104 => 45,  87 => 30,  85 => 29,  82 => 28,  80 => 26,  73 => 22,  63 => 15,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -253,7 +259,7 @@ class __TwigTemplate_a34750d87bd6bb1b33f170df28786b55d2c062a07afa82275d67284a300
 \t<script src=\"https://code.jquery.com/ui/1.12.1/jquery-ui.js\"></script>
 \t<script src=\"https://code.jquery.com/jquery-1.12.4.js\"></script>
 \t<script src=\"https://code.jquery.com/ui/1.12.1/jquery-ui.js\"></script>
-\t<script src=\"{{asset(\"js/app.js\")}}\"></script>
+\t<script src=\"{{asset(\"js/App.js\")}}\"></script>
 \t<script type=\"text/javascript\" charset=\"utf8\" src=\"https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js\"></script>
 \t
 \t<title>
@@ -276,10 +282,10 @@ class __TwigTemplate_a34750d87bd6bb1b33f170df28786b55d2c062a07afa82275d67284a300
         <a class=\"nav-link\" href=\"#\">Home <span class=\"sr-only\">(current)</span></a>
       </li>
       <li class=\"nav-item\">
-        <a class=\"nav-link\" href=\"#\">Features</a>
+        <a class=\"nav-link\" href=\"{{path('app_login')}}\">Vous connecter</a>
       </li>
       <li class=\"nav-item\">
-        <a class=\"nav-link\" href=\"#\">Pricing</a>
+        <a class=\"nav-link\" href=\"{{path('app_register')}}\">vous enregistrer</a>
       </li>
       <li class=\"nav-item\">
         <a class=\"nav-link\" href=\"#\">About</a>

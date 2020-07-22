@@ -19,6 +19,7 @@
       <parameter key="DebugBundle">Symfony\Bundle\DebugBundle\DebugBundle</parameter>
       <parameter key="MakerBundle">Symfony\Bundle\MakerBundle\MakerBundle</parameter>
       <parameter key="SymfonyCastsVerifyEmailBundle">SymfonyCasts\Bundle\VerifyEmail\SymfonyCastsVerifyEmailBundle</parameter>
+      <parameter key="SymfonyCastsResetPasswordBundle">SymfonyCasts\Bundle\ResetPassword\SymfonyCastsResetPasswordBundle</parameter>
     </parameter>
     <parameter key="kernel.bundles_metadata" type="collection">
       <parameter key="FrameworkBundle" type="collection">
@@ -68,6 +69,10 @@
       <parameter key="SymfonyCastsVerifyEmailBundle" type="collection">
         <parameter key="path">C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfonycasts\verify-email-bundle\src</parameter>
         <parameter key="namespace">SymfonyCasts\Bundle\VerifyEmail</parameter>
+      </parameter>
+      <parameter key="SymfonyCastsResetPasswordBundle" type="collection">
+        <parameter key="path">C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfonycasts\reset-password-bundle\src</parameter>
+        <parameter key="namespace">SymfonyCasts\Bundle\ResetPassword</parameter>
       </parameter>
     </parameter>
     <parameter key="kernel.charset">UTF-8</parameter>
@@ -324,6 +329,13 @@
     <service id="kernel" class="App\Kernel" public="true" synthetic="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="routing.route_loader"/>
+    </service>
+    <service id="App\Controller\HomeController" class="App\Controller\HomeController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.g9CqTPp.App\Controller\HomeController"/>
+      </call>
     </service>
     <service id="App\Controller\RegistrationController" class="App\Controller\RegistrationController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
@@ -1804,6 +1816,7 @@
           <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\debug-bundle/translations</argument>
           <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\maker-bundle\src/translations</argument>
           <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfonycasts\verify-email-bundle\src/translations</argument>
+          <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfonycasts\reset-password-bundle\src/translations</argument>
         </argument>
         <argument key="cache_vary" type="collection">
           <argument key="scanned_directories" type="collection">
@@ -1823,6 +1836,7 @@
             <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\debug-bundle/translations</argument>
             <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\maker-bundle\src/translations</argument>
             <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfonycasts\verify-email-bundle\src/translations</argument>
+            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfonycasts\reset-password-bundle\src/translations</argument>
           </argument>
         </argument>
       </argument>
@@ -5010,6 +5024,34 @@
       <argument type="service" id="symfonycasts.verify_email.token_generator"/>
       <argument>3600</argument>
     </service>
+    <service id="symfonycasts.reset_password.fake_request_repository" class="SymfonyCasts\Bundle\ResetPassword\Persistence\Fake\FakeResetPasswordInternalRepository" public="false"/>
+    <service id="symfonycasts.reset_password.cleaner" class="SymfonyCasts\Bundle\ResetPassword\Util\ResetPasswordCleaner" public="false">
+      <argument type="service" id="symfonycasts.reset_password.fake_request_repository"/>
+      <argument>true</argument>
+    </service>
+    <service id="SymfonyCasts\Bundle\ResetPassword\Command\ResetPasswordRemoveExpiredCommand" class="SymfonyCasts\Bundle\ResetPassword\Command\ResetPasswordRemoveExpiredCommand">
+      <tag name="console.command" command="reset-password:remove-expired"/>
+      <tag name="container.no_preload"/>
+      <argument type="service" id="symfonycasts.reset_password.cleaner"/>
+      <call method="setName">
+        <argument>reset-password:remove-expired</argument>
+      </call>
+    </service>
+    <service id="symfonycasts.reset_password.random_generator" class="SymfonyCasts\Bundle\ResetPassword\Generator\ResetPasswordRandomGenerator" public="false"/>
+    <service id="symfonycasts.reset_password.token_generator" class="SymfonyCasts\Bundle\ResetPassword\Generator\ResetPasswordTokenGenerator" public="false">
+      <argument>%env(APP_SECRET)%</argument>
+      <argument type="service" id="symfonycasts.reset_password.random_generator"/>
+    </service>
+    <service id="symfonycasts.reset_password.helper" class="SymfonyCasts\Bundle\ResetPassword\ResetPasswordHelper">
+      <argument type="service" id="symfonycasts.reset_password.token_generator"/>
+      <argument type="service" id="symfonycasts.reset_password.cleaner"/>
+      <argument type="service" id="symfonycasts.reset_password.fake_request_repository"/>
+      <argument>3600</argument>
+      <argument>3600</argument>
+    </service>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\HomeController" class="App\Controller\HomeController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\HomeController" class="App\Controller\HomeController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\HomeController" class="App\Controller\HomeController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\RegistrationController" class="App\Controller\RegistrationController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\RegistrationController" class="App\Controller\RegistrationController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\RegistrationController" class="App\Controller\RegistrationController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -5618,6 +5660,12 @@
         <argument key="twig" type="service" id="twig" on-invalid="ignore"/>
       </argument>
     </service>
+    <service id=".service_locator.g9CqTPp.App\Controller\HomeController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\HomeController"/>
+      <argument>App\Controller\HomeController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.g9CqTPp" method="withContext"/>
+    </service>
     <service id=".service_locator.g9CqTPp.App\Controller\RegistrationController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator_context" id="App\Controller\RegistrationController"/>
       <argument>App\Controller\RegistrationController</argument>
@@ -5817,7 +5865,7 @@
     <service id=".errored..service_locator.hEwcf7A.App\Entity\User" class="App\Entity\User"/>
     <service id="console.command_loader" class="Symfony\Component\Console\CommandLoader\ContainerCommandLoader" public="true">
       <tag name="container.no_preload"/>
-      <argument type="service" id=".service_locator.kjL308J"/>
+      <argument type="service" id=".service_locator.cJZh8kP"/>
       <argument type="collection">
         <argument key="about">console.command.about</argument>
         <argument key="assets:install">console.command.assets_install</argument>
@@ -5883,6 +5931,7 @@
         <argument key="security:encode-password">security.command.user_password_encoder</argument>
         <argument key="server:dump">var_dumper.command.server_dump</argument>
         <argument key="server:log">monolog.command.server_log</argument>
+        <argument key="reset-password:remove-expired">SymfonyCasts\Bundle\ResetPassword\Command\ResetPasswordRemoveExpiredCommand</argument>
         <argument key="make:auth">maker.auto_command.make_auth</argument>
         <argument key="make:command">maker.auto_command.make_command</argument>
         <argument key="make:controller">maker.auto_command.make_controller</argument>
@@ -5907,9 +5956,10 @@
         <argument key="make:migration">maker.auto_command.make_migration</argument>
       </argument>
     </service>
-    <service id=".service_locator.kjL308J" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.cJZh8kP" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="SymfonyCasts\Bundle\ResetPassword\Command\ResetPasswordRemoveExpiredCommand" type="service" id="SymfonyCasts\Bundle\ResetPassword\Command\ResetPasswordRemoveExpiredCommand"/>
         <argument key="console.command.about" type="service" id="console.command.about"/>
         <argument key="console.command.assets_install" type="service" id="console.command.assets_install"/>
         <argument key="console.command.cache_clear" type="service" id="console.command.cache_clear"/>
@@ -6199,6 +6249,7 @@
     <service id="logger" alias="monolog.logger"/>
     <service id="Psr\Log\LoggerInterface" alias="monolog.logger" public="false"/>
     <service id="SymfonyCasts\Bundle\VerifyEmail\VerifyEmailHelperInterface" alias="symfonycasts.verify_email.helper"/>
+    <service id="SymfonyCasts\Bundle\ResetPassword\ResetPasswordHelperInterface" alias="symfonycasts.reset_password.helper"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.WaGDpDt" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem" public="false"/>
     <service id="argument_resolver.controller_locator" alias=".service_locator.2JzT.h_"/>
