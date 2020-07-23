@@ -94,6 +94,6 @@ class __TwigTemplate_1d91ab4370bd76b31c23b98df106a3451167615f0f0395e6b7a495ace7e
 <p>
     Cheers!
 </p>
-", "registration/confirmation_email.html.twig", "C:\\wamp64\\www\\leslamesduPonant\\LesLamesDuPonant\\LesLamesDuPonant\\templates\\registration\\confirmation_email.html.twig");
+", "registration/confirmation_email.html.twig", "C:\\wamp64\\www\\LesLamesDuPonant\\LesLamesDuPonant\\templates\\registration\\confirmation_email.html.twig");
     }
 }

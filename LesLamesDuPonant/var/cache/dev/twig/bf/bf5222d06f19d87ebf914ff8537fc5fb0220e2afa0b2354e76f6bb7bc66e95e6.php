@@ -128,13 +128,21 @@ class __TwigTemplate_a17ab5140d79225fa9021d6cd0ba4d065f3c5daeeea015e77570973c009
         echo twig_escape_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken("authenticate"), "html", null, true);
         echo "\"
     >
-
+     <div class=\"checkbox mb-3\">
+            <label>
+                <input type=\"checkbox\" name=\"_remember_me\"> se souvenir de moi
+            </label>
+        </div>
     ";
-        // line 37
+        // line 41
         echo "
     <button class=\"btn btn-lg btn-primary\" type=\"submit\">
         Sign in
     </button>
+    <a href=\"";
+        // line 45
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_forgot_password_request");
+        echo " \"> Mot de passe oublié?</a>
 </form>
 ";
         
@@ -157,7 +165,7 @@ class __TwigTemplate_a17ab5140d79225fa9021d6cd0ba4d065f3c5daeeea015e77570973c009
 
     public function getDebugInfo()
     {
-        return array (  134 => 37,  128 => 24,  120 => 19,  115 => 16,  107 => 13,  104 => 12,  102 => 11,  99 => 10,  93 => 8,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  144 => 45,  138 => 41,  128 => 24,  120 => 19,  115 => 16,  107 => 13,  104 => 12,  102 => 11,  99 => 10,  93 => 8,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -187,7 +195,11 @@ class __TwigTemplate_a17ab5140d79225fa9021d6cd0ba4d065f3c5daeeea015e77570973c009
     <input type=\"hidden\" name=\"_csrf_token\"
            value=\"{{ csrf_token('authenticate') }}\"
     >
-
+     <div class=\"checkbox mb-3\">
+            <label>
+                <input type=\"checkbox\" name=\"_remember_me\"> se souvenir de moi
+            </label>
+        </div>
     {#
         Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
         See https://symfony.com/doc/current/security/remember_me.html
@@ -202,8 +214,9 @@ class __TwigTemplate_a17ab5140d79225fa9021d6cd0ba4d065f3c5daeeea015e77570973c009
     <button class=\"btn btn-lg btn-primary\" type=\"submit\">
         Sign in
     </button>
+    <a href=\"{{path('app_forgot_password_request')}} \"> Mot de passe oublié?</a>
 </form>
 {% endblock %}
-", "security/login.html.twig", "C:\\wamp64\\www\\leslamesduPonant\\LesLamesDuPonant\\LesLamesDuPonant\\templates\\security\\login.html.twig");
+", "security/login.html.twig", "C:\\wamp64\\www\\LesLamesDuPonant\\LesLamesDuPonant\\templates\\security\\login.html.twig");
     }
 }

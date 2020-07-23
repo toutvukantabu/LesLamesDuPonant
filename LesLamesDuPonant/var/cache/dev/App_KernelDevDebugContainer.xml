@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <container xmlns="http://symfony.com/schema/dic/services" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://symfony.com/schema/dic/services https://symfony.com/schema/dic/services/services-1.0.xsd">
   <parameters>
-    <parameter key="kernel.project_dir">C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant</parameter>
+    <parameter key="kernel.project_dir">C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant</parameter>
     <parameter key="kernel.environment">dev</parameter>
     <parameter key="kernel.debug">true</parameter>
-    <parameter key="kernel.cache_dir">C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\var\cache\dev</parameter>
-    <parameter key="kernel.logs_dir">C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\var\log</parameter>
+    <parameter key="kernel.cache_dir">C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\var\cache\dev</parameter>
+    <parameter key="kernel.logs_dir">C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\var\log</parameter>
     <parameter key="kernel.bundles" type="collection">
       <parameter key="FrameworkBundle">Symfony\Bundle\FrameworkBundle\FrameworkBundle</parameter>
       <parameter key="TwigBundle">Symfony\Bundle\TwigBundle\TwigBundle</parameter>
@@ -23,55 +23,55 @@
     </parameter>
     <parameter key="kernel.bundles_metadata" type="collection">
       <parameter key="FrameworkBundle" type="collection">
-        <parameter key="path">C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\framework-bundle</parameter>
+        <parameter key="path">C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\framework-bundle</parameter>
         <parameter key="namespace">Symfony\Bundle\FrameworkBundle</parameter>
       </parameter>
       <parameter key="TwigBundle" type="collection">
-        <parameter key="path">C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\twig-bundle</parameter>
+        <parameter key="path">C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\twig-bundle</parameter>
         <parameter key="namespace">Symfony\Bundle\TwigBundle</parameter>
       </parameter>
       <parameter key="TwigExtraBundle" type="collection">
-        <parameter key="path">C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\twig\extra-bundle\src</parameter>
+        <parameter key="path">C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\twig\extra-bundle\src</parameter>
         <parameter key="namespace">Twig\Extra\TwigExtraBundle</parameter>
       </parameter>
       <parameter key="SensioFrameworkExtraBundle" type="collection">
-        <parameter key="path">C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\sensio\framework-extra-bundle\src</parameter>
+        <parameter key="path">C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\sensio\framework-extra-bundle\src</parameter>
         <parameter key="namespace">Sensio\Bundle\FrameworkExtraBundle</parameter>
       </parameter>
       <parameter key="DoctrineBundle" type="collection">
-        <parameter key="path">C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\doctrine\doctrine-bundle</parameter>
+        <parameter key="path">C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\doctrine\doctrine-bundle</parameter>
         <parameter key="namespace">Doctrine\Bundle\DoctrineBundle</parameter>
       </parameter>
       <parameter key="DoctrineMigrationsBundle" type="collection">
-        <parameter key="path">C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\doctrine\doctrine-migrations-bundle</parameter>
+        <parameter key="path">C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\doctrine\doctrine-migrations-bundle</parameter>
         <parameter key="namespace">Doctrine\Bundle\MigrationsBundle</parameter>
       </parameter>
       <parameter key="SecurityBundle" type="collection">
-        <parameter key="path">C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-bundle</parameter>
+        <parameter key="path">C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-bundle</parameter>
         <parameter key="namespace">Symfony\Bundle\SecurityBundle</parameter>
       </parameter>
       <parameter key="WebProfilerBundle" type="collection">
-        <parameter key="path">C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\web-profiler-bundle</parameter>
+        <parameter key="path">C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\web-profiler-bundle</parameter>
         <parameter key="namespace">Symfony\Bundle\WebProfilerBundle</parameter>
       </parameter>
       <parameter key="MonologBundle" type="collection">
-        <parameter key="path">C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\monolog-bundle</parameter>
+        <parameter key="path">C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\monolog-bundle</parameter>
         <parameter key="namespace">Symfony\Bundle\MonologBundle</parameter>
       </parameter>
       <parameter key="DebugBundle" type="collection">
-        <parameter key="path">C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\debug-bundle</parameter>
+        <parameter key="path">C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\debug-bundle</parameter>
         <parameter key="namespace">Symfony\Bundle\DebugBundle</parameter>
       </parameter>
       <parameter key="MakerBundle" type="collection">
-        <parameter key="path">C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\maker-bundle\src</parameter>
+        <parameter key="path">C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\maker-bundle\src</parameter>
         <parameter key="namespace">Symfony\Bundle\MakerBundle</parameter>
       </parameter>
       <parameter key="SymfonyCastsVerifyEmailBundle" type="collection">
-        <parameter key="path">C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfonycasts\verify-email-bundle\src</parameter>
+        <parameter key="path">C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfonycasts\verify-email-bundle\src</parameter>
         <parameter key="namespace">SymfonyCasts\Bundle\VerifyEmail</parameter>
       </parameter>
       <parameter key="SymfonyCastsResetPasswordBundle" type="collection">
-        <parameter key="path">C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfonycasts\reset-password-bundle\src</parameter>
+        <parameter key="path">C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfonycasts\reset-password-bundle\src</parameter>
         <parameter key="namespace">SymfonyCasts\Bundle\ResetPassword</parameter>
       </parameter>
     </parameter>
@@ -122,32 +122,32 @@
       <parameter key="cookie_samesite">lax</parameter>
       <parameter key="gc_probability">1</parameter>
     </parameter>
-    <parameter key="session.save_path">C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\var\cache\dev/sessions</parameter>
+    <parameter key="session.save_path">C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\var\cache\dev/sessions</parameter>
     <parameter key="session.metadata.update_threshold">0</parameter>
     <parameter key="form.type_extension.csrf.enabled">true</parameter>
     <parameter key="form.type_extension.csrf.field_name">_token</parameter>
     <parameter key="asset.request_context.base_path">null</parameter>
     <parameter key="asset.request_context.secure">null</parameter>
-    <parameter key="validator.mapping.cache.file">C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\var\cache\dev/validation.php</parameter>
+    <parameter key="validator.mapping.cache.file">C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\var\cache\dev/validation.php</parameter>
     <parameter key="validator.translation_domain">validators</parameter>
     <parameter key="translator.logging">false</parameter>
-    <parameter key="translator.default_path">C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant/translations</parameter>
+    <parameter key="translator.default_path">C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant/translations</parameter>
     <parameter key="profiler_listener.only_exceptions">false</parameter>
     <parameter key="profiler_listener.only_master_requests">false</parameter>
-    <parameter key="profiler.storage.dsn">file:C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\var\cache\dev/profiler</parameter>
+    <parameter key="profiler.storage.dsn">file:C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\var\cache\dev/profiler</parameter>
     <parameter key="debug.error_handler.throw_at">-1</parameter>
-    <parameter key="debug.container.dump">C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\var\cache\dev/App_KernelDevDebugContainer.xml</parameter>
+    <parameter key="debug.container.dump">C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\var\cache\dev/App_KernelDevDebugContainer.xml</parameter>
     <parameter key="router.request_context.host">localhost</parameter>
     <parameter key="router.request_context.scheme">http</parameter>
     <parameter key="router.request_context.base_url"></parameter>
     <parameter key="router.resource">kernel::loadRoutes</parameter>
     <parameter key="request_listener.http_port">80</parameter>
     <parameter key="request_listener.https_port">443</parameter>
-    <parameter key="serializer.mapping.cache.file">C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\var\cache\dev/serialization.php</parameter>
+    <parameter key="serializer.mapping.cache.file">C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\var\cache\dev/serialization.php</parameter>
     <parameter key="twig.form.resources" type="collection">
       <parameter>form_div_layout.html.twig</parameter>
     </parameter>
-    <parameter key="twig.default_path">C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant/templates</parameter>
+    <parameter key="twig.default_path">C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant/templates</parameter>
     <parameter key="doctrine.dbal.logger.chain.class">Doctrine\DBAL\Logging\LoggerChain</parameter>
     <parameter key="doctrine.dbal.logger.profiling.class">Doctrine\DBAL\Logging\DebugStack</parameter>
     <parameter key="doctrine.dbal.logger.class">Symfony\Bridge\Doctrine\Logger\DbalLogger</parameter>
@@ -213,7 +213,7 @@
     <parameter key="doctrine.orm.second_level_cache.cache_configuration.class">Doctrine\ORM\Cache\CacheConfiguration</parameter>
     <parameter key="doctrine.orm.second_level_cache.regions_configuration.class">Doctrine\ORM\Cache\RegionsConfiguration</parameter>
     <parameter key="doctrine.orm.auto_generate_proxy_classes">true</parameter>
-    <parameter key="doctrine.orm.proxy_dir">C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\var\cache\dev/doctrine/orm/Proxies</parameter>
+    <parameter key="doctrine.orm.proxy_dir">C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\var\cache\dev/doctrine/orm/Proxies</parameter>
     <parameter key="doctrine.orm.proxy_namespace">Proxies</parameter>
     <parameter key="doctrine.migrations.preferred_em">null</parameter>
     <parameter key="doctrine.migrations.preferred_connection">null</parameter>
@@ -345,6 +345,14 @@
         <argument type="service" id=".service_locator.g9CqTPp.App\Controller\RegistrationController"/>
       </call>
     </service>
+    <service id="App\Controller\ResetPasswordController" class="App\Controller\ResetPasswordController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <argument type="service" id="symfonycasts.reset_password.helper"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.g9CqTPp.App\Controller\ResetPasswordController"/>
+      </call>
+    </service>
     <service id="App\Controller\SecurityController" class="App\Controller\SecurityController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -359,11 +367,21 @@
         <argument type="service" id=".service_locator.g9CqTPp.App\Controller\UserController"/>
       </call>
     </service>
+    <service id="App\Form\ChangePasswordFormType" class="App\Form\ChangePasswordFormType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
     <service id="App\Form\RegistrationFormType" class="App\Form\RegistrationFormType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\ResetPasswordRequestFormType" class="App\Form\ResetPasswordRequestFormType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
     <service id="App\Form\UserType" class="App\Form\UserType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
+    </service>
+    <service id="App\Repository\ResetPasswordRequestRepository" class="App\Repository\ResetPasswordRequestRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
     </service>
     <service id="App\Repository\UserRepository" class="App\Repository\UserRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
@@ -440,7 +458,7 @@
       <tag name="container.no_preload"/>
       <argument type="tagged_iterator" tag="kernel.cache_warmer"/>
       <argument>true</argument>
-      <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\var\cache\dev/App_KernelDevDebugContainerDeprecations.log</argument>
+      <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\var\cache\dev/App_KernelDevDebugContainerDeprecations.log</argument>
     </service>
     <service id="cache_clearer" class="Symfony\Component\HttpKernel\CacheClearer\ChainCacheClearer" public="true">
       <argument type="tagged_iterator" tag="kernel.cache_clearer"/>
@@ -585,21 +603,21 @@
         <argument>/_fragment</argument>
       </call>
     </service>
-    <service id=".2_~Evr53g5" public="false">
+    <service id=".2_~1J431li" public="false">
       <argument type="service" id="request_stack"/>
       <factory class="Symfony\Component\ErrorHandler\ErrorRenderer\HtmlErrorRenderer" method="getAndCleanOutputBuffer"/>
     </service>
-    <service id=".1_~Evr53g5" public="false">
+    <service id=".1_~1J431li" public="false">
       <argument type="service" id="request_stack"/>
       <argument>true</argument>
       <factory class="Symfony\Component\ErrorHandler\ErrorRenderer\HtmlErrorRenderer" method="isDebug"/>
     </service>
     <service id="error_handler.error_renderer.html" class="Symfony\Component\ErrorHandler\ErrorRenderer\HtmlErrorRenderer">
-      <argument type="service" id=".1_~Evr53g5"/>
+      <argument type="service" id=".1_~1J431li"/>
       <argument>UTF-8</argument>
       <argument type="service" id="debug.file_link_formatter" on-invalid="null"/>
-      <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant</argument>
-      <argument type="service" id=".2_~Evr53g5"/>
+      <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant</argument>
+      <argument type="service" id=".2_~1J431li"/>
       <argument type="service" id="monolog.logger" on-invalid="null"/>
     </service>
     <service id="console.error_listener" class="Symfony\Component\Console\EventListener\ErrorListener" public="false">
@@ -623,7 +641,7 @@
       <tag name="console.command" command="assets:install"/>
       <tag name="container.no_preload"/>
       <argument type="service" id="filesystem"/>
-      <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant</argument>
+      <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant</argument>
       <call method="setName">
         <argument>assets:install</argument>
       </call>
@@ -757,16 +775,16 @@
       <argument type="service" id="translator.data_collector"/>
       <argument type="service" id="translation.reader"/>
       <argument type="service" id="translation.extractor"/>
-      <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant/translations</argument>
-      <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant/templates</argument>
+      <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant/translations</argument>
+      <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant/templates</argument>
       <argument type="collection">
-        <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations</argument>
-        <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/translations</argument>
-        <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-core/Resources/translations</argument>
+        <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations</argument>
+        <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/translations</argument>
+        <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-core/Resources/translations</argument>
       </argument>
       <argument type="collection">
-        <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\twig-bridge/Resources/views/Email</argument>
-        <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\twig-bridge/Resources/views/Form</argument>
+        <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\twig-bridge/Resources/views/Email</argument>
+        <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\twig-bridge/Resources/views/Form</argument>
       </argument>
       <call method="setName">
         <argument>debug:translation</argument>
@@ -779,16 +797,16 @@
       <argument type="service" id="translation.reader"/>
       <argument type="service" id="translation.extractor"/>
       <argument>en</argument>
-      <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant/translations</argument>
-      <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant/templates</argument>
+      <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant/translations</argument>
+      <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant/templates</argument>
       <argument type="collection">
-        <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations</argument>
-        <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/translations</argument>
-        <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-core/Resources/translations</argument>
+        <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations</argument>
+        <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/translations</argument>
+        <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-core/Resources/translations</argument>
       </argument>
       <argument type="collection">
-        <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\twig-bridge/Resources/views/Email</argument>
-        <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\twig-bridge/Resources/views/Form</argument>
+        <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\twig-bridge/Resources/views/Email</argument>
+        <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\twig-bridge/Resources/views/Form</argument>
       </argument>
       <call method="setName">
         <argument>translation:update</argument>
@@ -818,7 +836,9 @@
         <argument>Symfony\Bridge\Doctrine\Form\Type</argument>
       </argument>
       <argument type="collection">
+        <argument>App\Form\ChangePasswordFormType</argument>
         <argument>App\Form\RegistrationFormType</argument>
+        <argument>App\Form\ResetPasswordRequestFormType</argument>
         <argument>App\Form\UserType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\FormType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\ChoiceType</argument>
@@ -938,7 +958,7 @@
       <argument></argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\var\cache\dev/pools</argument>
+      <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\var\cache\dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -967,7 +987,7 @@
       <tag name="monolog.logger" channel="cache"/>
       <argument></argument>
       <argument>0</argument>
-      <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\var\cache\dev/pools</argument>
+      <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\var\cache\dev/pools</argument>
       <argument type="service" id="cache.default_marshaller" on-invalid="ignore"/>
       <call method="setLogger">
         <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
@@ -1076,8 +1096,8 @@
       <argument>0</argument>
       <argument>false</argument>
     </service>
-    <service id=".1_NativeFileSessionHandler~qQGHZWS" class="Symfony\Component\HttpFoundation\Session\Storage\Handler\NativeFileSessionHandler" public="false">
-      <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\var\cache\dev/sessions</argument>
+    <service id=".1_NativeFileSessionHandler~xPTMfm2" class="Symfony\Component\HttpFoundation\Session\Storage\Handler\NativeFileSessionHandler" public="false">
+      <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\var\cache\dev/sessions</argument>
     </service>
     <service id="session" class="Symfony\Component\HttpFoundation\Session\Session" public="true">
       <argument type="service" id="session.storage.native"/>
@@ -1111,12 +1131,12 @@
       <deprecated package="symfony/framework-bundle" version="5.1">The "%service_id%" service is deprecated, use "$session-&gt;getAttributeBag()" instead.</deprecated>
     </service>
     <service id="session.storage.mock_file" class="Symfony\Component\HttpFoundation\Session\Storage\MockFileSessionStorage" public="false">
-      <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\var\cache\dev/sessions</argument>
+      <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\var\cache\dev/sessions</argument>
       <argument>MOCKSESSID</argument>
       <argument type="service" id="session.storage.metadata_bag"/>
     </service>
     <service id="session.handler.native_file" class="Symfony\Component\HttpFoundation\Session\Storage\Handler\StrictSessionHandler" public="false">
-      <argument type="service" id=".1_NativeFileSessionHandler~qQGHZWS"/>
+      <argument type="service" id=".1_NativeFileSessionHandler~xPTMfm2"/>
     </service>
     <service id="session.abstract_handler" class="Symfony\Component\HttpFoundation\Session\Storage\Handler\AbstractSessionHandler" public="false">
       <argument></argument>
@@ -1148,7 +1168,7 @@
       <tag name="twig.extension"/>
     </service>
     <service id="form.resolved_type_factory" class="Symfony\Component\Form\Extension\DataCollector\Proxy\ResolvedTypeFactoryDataCollectorProxy" public="false">
-      <argument type="service" id=".1_ResolvedFormTypeFactory~WPz5PDF"/>
+      <argument type="service" id=".1_ResolvedFormTypeFactory~MSeousp"/>
       <argument type="service" id="data_collector.form"/>
     </service>
     <service id="form.registry" class="Symfony\Component\Form\FormRegistry" public="false">
@@ -1161,7 +1181,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension" public="false">
-      <argument type="service" id=".service_locator.p3gs.Ec"/>
+      <argument type="service" id=".service_locator.RTf5g7s"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -1332,6 +1352,12 @@
       <argument type="service" id=".debug.http_client" on-invalid="ignore"/>
       <argument type="service" id="monolog.logger" on-invalid="ignore"/>
     </service>
+    <service id="mailer.transport_factory.gmail" class="Symfony\Component\Mailer\Bridge\Google\Transport\GmailTransportFactory">
+      <tag name="mailer.transport_factory"/>
+      <argument type="service" id="debug.event_dispatcher"/>
+      <argument type="service" id=".debug.http_client" on-invalid="ignore"/>
+      <argument type="service" id="monolog.logger" on-invalid="ignore"/>
+    </service>
     <service id="mailer.transport_factory.null" class="Symfony\Component\Mailer\Transport\NullTransportFactory">
       <tag name="mailer.transport_factory"/>
       <argument type="service" id="debug.event_dispatcher"/>
@@ -1447,7 +1473,7 @@
       </call>
       <call method="addXmlMappings">
         <argument type="collection">
-          <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/config/validation.xml</argument>
+          <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/config/validation.xml</argument>
         </argument>
       </call>
       <call method="enableAnnotationMapping">
@@ -1472,10 +1498,10 @@
     <service id="validator.mapping.cache_warmer" class="Symfony\Bundle\FrameworkBundle\CacheWarmer\ValidatorCacheWarmer" public="false">
       <tag name="kernel.cache_warmer"/>
       <argument type="service" id="validator.builder"/>
-      <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\var\cache\dev/validation.php</argument>
+      <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\var\cache\dev/validation.php</argument>
     </service>
     <service id="validator.mapping.cache.adapter" class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" public="false">
-      <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\var\cache\dev/validation.php</argument>
+      <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\var\cache\dev/validation.php</argument>
       <argument type="service" id="cache.validator"/>
       <factory class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" method="create"/>
     </service>
@@ -1546,297 +1572,297 @@
         </argument>
       </argument>
       <argument type="collection">
-        <argument key="cache_dir">C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\var\cache\dev/translations</argument>
+        <argument key="cache_dir">C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\var\cache\dev/translations</argument>
         <argument key="debug">true</argument>
         <argument key="resource_files" type="collection">
           <argument key="af" type="collection">
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.af.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.af.xlf</argument>
           </argument>
           <argument key="ar" type="collection">
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.ar.xlf</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/translations\validators.ar.xlf</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-core/Resources/translations\security.ar.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.ar.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/translations\validators.ar.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-core/Resources/translations\security.ar.xlf</argument>
           </argument>
           <argument key="az" type="collection">
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.az.xlf</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/translations\validators.az.xlf</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-core/Resources/translations\security.az.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.az.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/translations\validators.az.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-core/Resources/translations\security.az.xlf</argument>
           </argument>
           <argument key="be" type="collection">
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.be.xlf</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/translations\validators.be.xlf</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-core/Resources/translations\security.be.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.be.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/translations\validators.be.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-core/Resources/translations\security.be.xlf</argument>
           </argument>
           <argument key="bg" type="collection">
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.bg.xlf</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/translations\validators.bg.xlf</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-core/Resources/translations\security.bg.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.bg.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/translations\validators.bg.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-core/Resources/translations\security.bg.xlf</argument>
           </argument>
           <argument key="ca" type="collection">
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.ca.xlf</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/translations\validators.ca.xlf</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-core/Resources/translations\security.ca.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.ca.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/translations\validators.ca.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-core/Resources/translations\security.ca.xlf</argument>
           </argument>
           <argument key="cs" type="collection">
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.cs.xlf</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/translations\validators.cs.xlf</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-core/Resources/translations\security.cs.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.cs.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/translations\validators.cs.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-core/Resources/translations\security.cs.xlf</argument>
           </argument>
           <argument key="cy" type="collection">
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.cy.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.cy.xlf</argument>
           </argument>
           <argument key="da" type="collection">
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.da.xlf</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/translations\validators.da.xlf</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-core/Resources/translations\security.da.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.da.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/translations\validators.da.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-core/Resources/translations\security.da.xlf</argument>
           </argument>
           <argument key="de" type="collection">
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.de.xlf</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/translations\validators.de.xlf</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-core/Resources/translations\security.de.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.de.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/translations\validators.de.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-core/Resources/translations\security.de.xlf</argument>
           </argument>
           <argument key="el" type="collection">
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.el.xlf</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/translations\validators.el.xlf</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-core/Resources/translations\security.el.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.el.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/translations\validators.el.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-core/Resources/translations\security.el.xlf</argument>
           </argument>
           <argument key="en" type="collection">
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.en.xlf</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/translations\validators.en.xlf</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-core/Resources/translations\security.en.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.en.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/translations\validators.en.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-core/Resources/translations\security.en.xlf</argument>
           </argument>
           <argument key="es" type="collection">
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.es.xlf</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/translations\validators.es.xlf</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-core/Resources/translations\security.es.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.es.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/translations\validators.es.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-core/Resources/translations\security.es.xlf</argument>
           </argument>
           <argument key="et" type="collection">
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.et.xlf</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/translations\validators.et.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.et.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/translations\validators.et.xlf</argument>
           </argument>
           <argument key="eu" type="collection">
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.eu.xlf</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/translations\validators.eu.xlf</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-core/Resources/translations\security.eu.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.eu.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/translations\validators.eu.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-core/Resources/translations\security.eu.xlf</argument>
           </argument>
           <argument key="fa" type="collection">
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.fa.xlf</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/translations\validators.fa.xlf</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-core/Resources/translations\security.fa.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.fa.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/translations\validators.fa.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-core/Resources/translations\security.fa.xlf</argument>
           </argument>
           <argument key="fi" type="collection">
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.fi.xlf</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/translations\validators.fi.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.fi.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/translations\validators.fi.xlf</argument>
           </argument>
           <argument key="fr" type="collection">
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.fr.xlf</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/translations\validators.fr.xlf</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-core/Resources/translations\security.fr.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.fr.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/translations\validators.fr.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-core/Resources/translations\security.fr.xlf</argument>
           </argument>
           <argument key="gl" type="collection">
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.gl.xlf</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/translations\validators.gl.xlf</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-core/Resources/translations\security.gl.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.gl.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/translations\validators.gl.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-core/Resources/translations\security.gl.xlf</argument>
           </argument>
           <argument key="he" type="collection">
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.he.xlf</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/translations\validators.he.xlf</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-core/Resources/translations\security.he.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.he.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/translations\validators.he.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-core/Resources/translations\security.he.xlf</argument>
           </argument>
           <argument key="hr" type="collection">
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.hr.xlf</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/translations\validators.hr.xlf</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-core/Resources/translations\security.hr.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.hr.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/translations\validators.hr.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-core/Resources/translations\security.hr.xlf</argument>
           </argument>
           <argument key="hu" type="collection">
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.hu.xlf</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/translations\validators.hu.xlf</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-core/Resources/translations\security.hu.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.hu.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/translations\validators.hu.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-core/Resources/translations\security.hu.xlf</argument>
           </argument>
           <argument key="hy" type="collection">
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.hy.xlf</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/translations\validators.hy.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.hy.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/translations\validators.hy.xlf</argument>
           </argument>
           <argument key="id" type="collection">
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.id.xlf</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/translations\validators.id.xlf</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-core/Resources/translations\security.id.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.id.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/translations\validators.id.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-core/Resources/translations\security.id.xlf</argument>
           </argument>
           <argument key="it" type="collection">
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.it.xlf</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/translations\validators.it.xlf</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-core/Resources/translations\security.it.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.it.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/translations\validators.it.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-core/Resources/translations\security.it.xlf</argument>
           </argument>
           <argument key="ja" type="collection">
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.ja.xlf</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/translations\validators.ja.xlf</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-core/Resources/translations\security.ja.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.ja.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/translations\validators.ja.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-core/Resources/translations\security.ja.xlf</argument>
           </argument>
           <argument key="lb" type="collection">
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.lb.xlf</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/translations\validators.lb.xlf</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-core/Resources/translations\security.lb.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.lb.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/translations\validators.lb.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-core/Resources/translations\security.lb.xlf</argument>
           </argument>
           <argument key="lt" type="collection">
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.lt.xlf</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/translations\validators.lt.xlf</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-core/Resources/translations\security.lt.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.lt.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/translations\validators.lt.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-core/Resources/translations\security.lt.xlf</argument>
           </argument>
           <argument key="lv" type="collection">
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.lv.xlf</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/translations\validators.lv.xlf</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-core/Resources/translations\security.lv.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.lv.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/translations\validators.lv.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-core/Resources/translations\security.lv.xlf</argument>
           </argument>
           <argument key="mn" type="collection">
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.mn.xlf</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/translations\validators.mn.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.mn.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/translations\validators.mn.xlf</argument>
           </argument>
           <argument key="nb" type="collection">
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.nb.xlf</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/translations\validators.nb.xlf</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-core/Resources/translations\security.nb.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.nb.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/translations\validators.nb.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-core/Resources/translations\security.nb.xlf</argument>
           </argument>
           <argument key="nl" type="collection">
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.nl.xlf</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/translations\validators.nl.xlf</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-core/Resources/translations\security.nl.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.nl.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/translations\validators.nl.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-core/Resources/translations\security.nl.xlf</argument>
           </argument>
           <argument key="nn" type="collection">
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.nn.xlf</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/translations\validators.nn.xlf</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-core/Resources/translations\security.nn.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.nn.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/translations\validators.nn.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-core/Resources/translations\security.nn.xlf</argument>
           </argument>
           <argument key="no" type="collection">
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.no.xlf</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/translations\validators.no.xlf</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-core/Resources/translations\security.no.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.no.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/translations\validators.no.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-core/Resources/translations\security.no.xlf</argument>
           </argument>
           <argument key="pl" type="collection">
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.pl.xlf</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/translations\validators.pl.xlf</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-core/Resources/translations\security.pl.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.pl.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/translations\validators.pl.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-core/Resources/translations\security.pl.xlf</argument>
           </argument>
           <argument key="pt" type="collection">
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.pt.xlf</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/translations\validators.pt.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.pt.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/translations\validators.pt.xlf</argument>
           </argument>
           <argument key="pt_BR" type="collection">
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.pt_BR.xlf</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/translations\validators.pt_BR.xlf</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-core/Resources/translations\security.pt_BR.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.pt_BR.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/translations\validators.pt_BR.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-core/Resources/translations\security.pt_BR.xlf</argument>
           </argument>
           <argument key="ro" type="collection">
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.ro.xlf</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/translations\validators.ro.xlf</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-core/Resources/translations\security.ro.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.ro.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/translations\validators.ro.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-core/Resources/translations\security.ro.xlf</argument>
           </argument>
           <argument key="ru" type="collection">
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.ru.xlf</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/translations\validators.ru.xlf</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-core/Resources/translations\security.ru.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.ru.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/translations\validators.ru.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-core/Resources/translations\security.ru.xlf</argument>
           </argument>
           <argument key="sk" type="collection">
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.sk.xlf</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/translations\validators.sk.xlf</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-core/Resources/translations\security.sk.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.sk.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/translations\validators.sk.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-core/Resources/translations\security.sk.xlf</argument>
           </argument>
           <argument key="sl" type="collection">
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.sl.xlf</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/translations\validators.sl.xlf</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-core/Resources/translations\security.sl.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.sl.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/translations\validators.sl.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-core/Resources/translations\security.sl.xlf</argument>
           </argument>
           <argument key="sq" type="collection">
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.sq.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.sq.xlf</argument>
           </argument>
           <argument key="sr_Cyrl" type="collection">
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.sr_Cyrl.xlf</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/translations\validators.sr_Cyrl.xlf</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-core/Resources/translations\security.sr_Cyrl.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.sr_Cyrl.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/translations\validators.sr_Cyrl.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-core/Resources/translations\security.sr_Cyrl.xlf</argument>
           </argument>
           <argument key="sr_Latn" type="collection">
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.sr_Latn.xlf</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/translations\validators.sr_Latn.xlf</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-core/Resources/translations\security.sr_Latn.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.sr_Latn.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/translations\validators.sr_Latn.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-core/Resources/translations\security.sr_Latn.xlf</argument>
           </argument>
           <argument key="sv" type="collection">
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.sv.xlf</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/translations\validators.sv.xlf</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-core/Resources/translations\security.sv.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.sv.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/translations\validators.sv.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-core/Resources/translations\security.sv.xlf</argument>
           </argument>
           <argument key="th" type="collection">
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.th.xlf</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-core/Resources/translations\security.th.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.th.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-core/Resources/translations\security.th.xlf</argument>
           </argument>
           <argument key="tl" type="collection">
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.tl.xlf</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/translations\validators.tl.xlf</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-core/Resources/translations\security.tl.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.tl.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/translations\validators.tl.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-core/Resources/translations\security.tl.xlf</argument>
           </argument>
           <argument key="tr" type="collection">
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.tr.xlf</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/translations\validators.tr.xlf</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-core/Resources/translations\security.tr.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.tr.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/translations\validators.tr.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-core/Resources/translations\security.tr.xlf</argument>
           </argument>
           <argument key="uk" type="collection">
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.uk.xlf</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/translations\validators.uk.xlf</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-core/Resources/translations\security.uk.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.uk.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/translations\validators.uk.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-core/Resources/translations\security.uk.xlf</argument>
           </argument>
           <argument key="vi" type="collection">
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.vi.xlf</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/translations\validators.vi.xlf</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-core/Resources/translations\security.vi.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.vi.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/translations\validators.vi.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-core/Resources/translations\security.vi.xlf</argument>
           </argument>
           <argument key="zh_CN" type="collection">
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.zh_CN.xlf</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/translations\validators.zh_CN.xlf</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-core/Resources/translations\security.zh_CN.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.zh_CN.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/translations\validators.zh_CN.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-core/Resources/translations\security.zh_CN.xlf</argument>
           </argument>
           <argument key="zh_TW" type="collection">
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.zh_TW.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations\validators.zh_TW.xlf</argument>
           </argument>
           <argument key="pt_PT" type="collection">
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-core/Resources/translations\security.pt_PT.xlf</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-core/Resources/translations\security.pt_PT.xlf</argument>
           </argument>
         </argument>
         <argument key="scanned_directories" type="collection">
-          <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations</argument>
-          <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/translations</argument>
-          <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-core/Resources/translations</argument>
-          <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant/translations</argument>
-          <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\framework-bundle/translations</argument>
-          <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\twig-bundle/translations</argument>
-          <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\twig\extra-bundle\src/translations</argument>
-          <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\sensio\framework-extra-bundle\src/translations</argument>
-          <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\doctrine\doctrine-bundle/translations</argument>
-          <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\doctrine\doctrine-migrations-bundle/translations</argument>
-          <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-bundle/translations</argument>
-          <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\web-profiler-bundle/translations</argument>
-          <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\monolog-bundle/translations</argument>
-          <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\debug-bundle/translations</argument>
-          <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\maker-bundle\src/translations</argument>
-          <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfonycasts\verify-email-bundle\src/translations</argument>
-          <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfonycasts\reset-password-bundle\src/translations</argument>
+          <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations</argument>
+          <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/translations</argument>
+          <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-core/Resources/translations</argument>
+          <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant/translations</argument>
+          <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\framework-bundle/translations</argument>
+          <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\twig-bundle/translations</argument>
+          <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\twig\extra-bundle\src/translations</argument>
+          <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\sensio\framework-extra-bundle\src/translations</argument>
+          <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\doctrine\doctrine-bundle/translations</argument>
+          <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\doctrine\doctrine-migrations-bundle/translations</argument>
+          <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-bundle/translations</argument>
+          <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\web-profiler-bundle/translations</argument>
+          <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\monolog-bundle/translations</argument>
+          <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\debug-bundle/translations</argument>
+          <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\maker-bundle\src/translations</argument>
+          <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfonycasts\verify-email-bundle\src/translations</argument>
+          <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfonycasts\reset-password-bundle\src/translations</argument>
         </argument>
         <argument key="cache_vary" type="collection">
           <argument key="scanned_directories" type="collection">
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/translations</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-core/Resources/translations</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\validator/Resources/translations</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\form/Resources/translations</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-core/Resources/translations</argument>
             <argument>translations</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\framework-bundle/translations</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\twig-bundle/translations</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\twig\extra-bundle\src/translations</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\sensio\framework-extra-bundle\src/translations</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\doctrine\doctrine-bundle/translations</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\doctrine\doctrine-migrations-bundle/translations</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-bundle/translations</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\web-profiler-bundle/translations</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\monolog-bundle/translations</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\debug-bundle/translations</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\maker-bundle\src/translations</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfonycasts\verify-email-bundle\src/translations</argument>
-            <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfonycasts\reset-password-bundle\src/translations</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\framework-bundle/translations</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\twig-bundle/translations</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\twig\extra-bundle\src/translations</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\sensio\framework-extra-bundle\src/translations</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\doctrine\doctrine-bundle/translations</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\doctrine\doctrine-migrations-bundle/translations</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-bundle/translations</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\web-profiler-bundle/translations</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\monolog-bundle/translations</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\debug-bundle/translations</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\maker-bundle\src/translations</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfonycasts\verify-email-bundle\src/translations</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfonycasts\reset-password-bundle\src/translations</argument>
           </argument>
         </argument>
       </argument>
@@ -2108,7 +2134,7 @@
       </call>
     </service>
     <service id="profiler.storage" class="Symfony\Component\HttpKernel\Profiler\FileProfilerStorage" public="false">
-      <argument>file:C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\var\cache\dev/profiler</argument>
+      <argument>file:C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\var\cache\dev/profiler</argument>
     </service>
     <service id="profiler_listener" class="Symfony\Component\HttpKernel\EventListener\ProfilerListener" public="false">
       <tag name="kernel.event_subscriber"/>
@@ -2146,7 +2172,7 @@
       <tag name="data_collector" template="@WebProfiler/Collector/logger.html.twig" id="logger" priority="300"/>
       <tag name="monolog.logger" channel="profiler"/>
       <argument type="service" id="monolog.logger.profiler" on-invalid="ignore"/>
-      <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\var\cache\dev/App_KernelDevDebugContainer</argument>
+      <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\var\cache\dev/App_KernelDevDebugContainer</argument>
       <argument type="service" id="request_stack" on-invalid="ignore"/>
     </service>
     <service id="data_collector.time" class="Symfony\Component\HttpKernel\DataCollector\TimeDataCollector" public="false">
@@ -2213,7 +2239,7 @@
         <argument>cache.serializer</argument>
       </argument>
     </service>
-    <service id=".1_ResolvedFormTypeFactory~WPz5PDF" class="Symfony\Component\Form\ResolvedFormTypeFactory" public="false"/>
+    <service id=".1_ResolvedFormTypeFactory~MSeousp" class="Symfony\Component\Form\ResolvedFormTypeFactory" public="false"/>
     <service id="form.type_extension.form.data_collector" class="Symfony\Component\Form\Extension\DataCollector\Type\DataCollectorTypeExtension" public="false">
       <tag name="form.type_extension"/>
       <argument type="service" id="data_collector.form"/>
@@ -2265,7 +2291,7 @@
     <service id="debug.file_link_formatter" class="Symfony\Component\HttpKernel\Debug\FileLinkFormatter" public="false">
       <argument>null</argument>
       <argument type="service" id="request_stack" on-invalid="ignore"/>
-      <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant</argument>
+      <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant</argument>
       <argument type="service" id="debug.file_link_formatter.url_format"/>
     </service>
     <service id="debug.stopwatch" class="Symfony\Component\Stopwatch\Stopwatch">
@@ -2725,10 +2751,10 @@
     <service id="debug.log_processor" class="Symfony\Bridge\Monolog\Processor\DebugProcessor" public="false">
       <argument type="service" id="request_stack"/>
     </service>
-    <service id=".2_int~Pe.8F6s" class="int" public="false">
+    <service id=".2_int~PRab30Y" class="int" public="false">
       <factory service="router.request_context" method="getHttpsPort"/>
     </service>
-    <service id=".1_int~Pe.8F6s" class="int" public="false">
+    <service id=".1_int~PRab30Y" class="int" public="false">
       <factory service="router.request_context" method="getHttpPort"/>
     </service>
     <service id="routing.resolver" class="Symfony\Component\Config\Loader\LoaderResolver" public="false">
@@ -2797,7 +2823,7 @@
       <argument type="service" id=".service_locator.lwpeR6U.router.default"/>
       <argument>kernel::loadRoutes</argument>
       <argument type="collection">
-        <argument key="cache_dir">C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\var\cache\dev</argument>
+        <argument key="cache_dir">C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\var\cache\dev</argument>
         <argument key="debug">true</argument>
         <argument key="generator_class">Symfony\Component\Routing\Generator\CompiledUrlGenerator</argument>
         <argument key="generator_dumper_class">Symfony\Component\Routing\Generator\Dumper\CompiledUrlGeneratorDumper</argument>
@@ -2847,13 +2873,13 @@
       <argument type="service" id="request_stack"/>
       <argument type="service" id="router.request_context" on-invalid="ignore"/>
       <argument type="service" id="monolog.logger.request" on-invalid="ignore"/>
-      <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant</argument>
+      <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant</argument>
       <argument>true</argument>
     </service>
     <service id="Symfony\Bundle\FrameworkBundle\Controller\RedirectController" class="Symfony\Bundle\FrameworkBundle\Controller\RedirectController" public="true">
       <argument type="service" id="router.default"/>
-      <argument type="service" id=".1_int~Pe.8F6s"/>
-      <argument type="service" id=".2_int~Pe.8F6s"/>
+      <argument type="service" id=".1_int~PRab30Y"/>
+      <argument type="service" id=".2_int~PRab30Y"/>
     </service>
     <service id="Symfony\Bundle\FrameworkBundle\Controller\TemplateController" class="Symfony\Bundle\FrameworkBundle\Controller\TemplateController" public="true">
       <argument type="service" id="twig" on-invalid="ignore"/>
@@ -2872,12 +2898,12 @@
       <argument type="service" id="file_locator"/>
       <argument type="service" id="routing.loader.annotation"/>
     </service>
-    <service id=".2_PhpArrayAdapter~4kWrSpC" class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" public="false">
-      <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\var\cache\dev/annotations.php</argument>
+    <service id=".2_PhpArrayAdapter~udduF_Q" class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" public="false">
+      <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\var\cache\dev/annotations.php</argument>
       <argument type="service" id="cache.annotations"/>
       <factory class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" method="create"/>
     </service>
-    <service id=".1_ArrayCache~4kWrSpC" class="Doctrine\Common\Cache\ArrayCache" public="false"/>
+    <service id=".1_ArrayCache~udduF_Q" class="Doctrine\Common\Cache\ArrayCache" public="false"/>
     <service id="annotations.reader" class="Doctrine\Common\Annotations\AnnotationReader" public="false">
       <call method="addGlobalIgnoredName">
         <argument>required</argument>
@@ -2892,7 +2918,7 @@
     <service id="annotations.cached_reader" class="Doctrine\Common\Annotations\CachedReader" public="false">
       <tag name="annotations.cached_reader"/>
       <argument type="service" id="annotations.reader"/>
-      <argument type="service" id=".1_ArrayCache~4kWrSpC"/>
+      <argument type="service" id=".1_ArrayCache~udduF_Q"/>
       <argument>true</argument>
       <property name="cacheProviderBackup" type="service" id="annotations.cache"/>
     </service>
@@ -2902,12 +2928,12 @@
     <service id="annotations.cache_warmer" class="Symfony\Bundle\FrameworkBundle\CacheWarmer\AnnotationsCacheWarmer" public="false">
       <tag name="kernel.cache_warmer"/>
       <argument type="service" id="annotations.reader"/>
-      <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\var\cache\dev/annotations.php</argument>
+      <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\var\cache\dev/annotations.php</argument>
       <argument>#^Symfony\\(?:Component\\HttpKernel\\|Bundle\\FrameworkBundle\\Controller\\(?!.*Controller$))#</argument>
       <argument>true</argument>
     </service>
     <service id="annotations.cache" class="Symfony\Component\Cache\DoctrineProvider" public="false">
-      <argument type="service" id=".2_PhpArrayAdapter~4kWrSpC"/>
+      <argument type="service" id=".2_PhpArrayAdapter~udduF_Q"/>
     </service>
     <service id="property_accessor" class="Symfony\Component\PropertyAccess\PropertyAccessor" public="false">
       <argument>false</argument>
@@ -2919,7 +2945,7 @@
     </service>
     <service id="secrets.vault" class="Symfony\Bundle\FrameworkBundle\Secrets\SodiumVault">
       <tag name="container.env_var_loader"/>
-      <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant/config/secrets/dev</argument>
+      <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant/config/secrets/dev</argument>
       <argument type="service" id="secrets.decryption_key" on-invalid="ignore"/>
     </service>
     <service id="secrets.decryption_key" class="Symfony\Component\String\LazyString" public="false">
@@ -2928,14 +2954,14 @@
       <factory class="Symfony\Component\String\LazyString" method="fromCallable"/>
     </service>
     <service id="secrets.local_vault" class="Symfony\Bundle\FrameworkBundle\Secrets\DotenvVault">
-      <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant/.env.dev.local</argument>
+      <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant/.env.dev.local</argument>
     </service>
-    <service id=".2_~8QKEeLX" public="false">
+    <service id=".2_~Iw18vba" public="false">
       <argument type="service" id="request_stack"/>
       <argument>true</argument>
       <factory class="Symfony\Component\ErrorHandler\ErrorRenderer\HtmlErrorRenderer" method="isDebug"/>
     </service>
-    <service id=".1_~8QKEeLX" public="false">
+    <service id=".1_~Iw18vba" public="false">
       <argument type="service" id="request_stack"/>
       <factory class="Symfony\Component\ErrorHandler\ErrorRenderer\SerializerErrorRenderer" method="getPreferredFormat"/>
     </service>
@@ -3022,10 +3048,10 @@
           </service>
         </argument>
       </argument>
-      <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\var\cache\dev/serialization.php</argument>
+      <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\var\cache\dev/serialization.php</argument>
     </service>
     <service id="serializer.mapping.cache.symfony" class="Psr\Cache\CacheItemPoolInterface" public="false">
-      <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\var\cache\dev/serialization.php</argument>
+      <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\var\cache\dev/serialization.php</argument>
       <argument type="service" id="cache.serializer"/>
       <factory class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" method="create"/>
     </service>
@@ -3055,9 +3081,9 @@
     </service>
     <service id="error_handler.error_renderer.serializer" class="Symfony\Component\ErrorHandler\ErrorRenderer\SerializerErrorRenderer" public="false">
       <argument type="service" id="serializer"/>
-      <argument type="service" id=".1_~8QKEeLX"/>
+      <argument type="service" id=".1_~Iw18vba"/>
       <argument type="service" id="twig.error_renderer.html"/>
-      <argument type="service" id=".2_~8QKEeLX"/>
+      <argument type="service" id=".2_~Iw18vba"/>
     </service>
     <service id="property_info" class="Symfony\Component\PropertyInfo\PropertyInfoExtractor" public="false">
       <argument type="iterator">
@@ -3100,7 +3126,7 @@
         <argument type="service" id="mime_types"/>
       </call>
     </service>
-    <service id=".1_~lEkUZac" public="false">
+    <service id=".1_~SWrcev5" public="false">
       <argument type="service" id="request_stack"/>
       <argument>true</argument>
       <factory class="Symfony\Bridge\Twig\ErrorRenderer\TwigErrorRenderer" method="isDebug"/>
@@ -3117,7 +3143,7 @@
       <argument type="service" id="twig.loader.native_filesystem"/>
       <argument type="collection">
         <argument key="autoescape">name</argument>
-        <argument key="cache">C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\var\cache\dev/twig</argument>
+        <argument key="cache">C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\var\cache\dev/twig</argument>
         <argument key="charset">UTF-8</argument>
         <argument key="debug">true</argument>
         <argument key="strict_variables">true</argument>
@@ -3214,10 +3240,10 @@
     <service id="twig.template_iterator" class="Symfony\Bundle\TwigBundle\TemplateIterator" public="false">
       <argument type="service" id="kernel"/>
       <argument type="collection">
-        <argument key="C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\twig-bridge/Resources/views/Email">email</argument>
-        <argument key="C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\twig-bridge/Resources/views/Form">null</argument>
+        <argument key="C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\twig-bridge/Resources/views/Email">email</argument>
+        <argument key="C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\twig-bridge/Resources/views/Form">null</argument>
       </argument>
-      <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant/templates</argument>
+      <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant/templates</argument>
     </service>
     <service id="twig.template_cache_warmer" class="Symfony\Bundle\TwigBundle\CacheWarmer\TemplateCacheWarmer" public="false">
       <tag name="kernel.cache_warmer"/>
@@ -3228,60 +3254,60 @@
     <service id="twig.loader.native_filesystem" class="Twig\Loader\FilesystemLoader" public="false">
       <tag name="twig.loader"/>
       <argument type="collection"/>
-      <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant</argument>
+      <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant</argument>
       <call method="addPath">
-        <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\framework-bundle/Resources/views</argument>
+        <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\framework-bundle/Resources/views</argument>
         <argument>Framework</argument>
       </call>
       <call method="addPath">
-        <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\framework-bundle/Resources/views</argument>
+        <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\framework-bundle/Resources/views</argument>
         <argument>!Framework</argument>
       </call>
       <call method="addPath">
-        <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\doctrine\doctrine-bundle/Resources/views</argument>
+        <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\doctrine\doctrine-bundle/Resources/views</argument>
         <argument>Doctrine</argument>
       </call>
       <call method="addPath">
-        <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\doctrine\doctrine-bundle/Resources/views</argument>
+        <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\doctrine\doctrine-bundle/Resources/views</argument>
         <argument>!Doctrine</argument>
       </call>
       <call method="addPath">
-        <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-bundle/Resources/views</argument>
+        <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-bundle/Resources/views</argument>
         <argument>Security</argument>
       </call>
       <call method="addPath">
-        <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-bundle/Resources/views</argument>
+        <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\security-bundle/Resources/views</argument>
         <argument>!Security</argument>
       </call>
       <call method="addPath">
-        <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\web-profiler-bundle/Resources/views</argument>
+        <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\web-profiler-bundle/Resources/views</argument>
         <argument>WebProfiler</argument>
       </call>
       <call method="addPath">
-        <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\web-profiler-bundle/Resources/views</argument>
+        <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\web-profiler-bundle/Resources/views</argument>
         <argument>!WebProfiler</argument>
       </call>
       <call method="addPath">
-        <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\debug-bundle/Resources/views</argument>
+        <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\debug-bundle/Resources/views</argument>
         <argument>Debug</argument>
       </call>
       <call method="addPath">
-        <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\debug-bundle/Resources/views</argument>
+        <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\debug-bundle/Resources/views</argument>
         <argument>!Debug</argument>
       </call>
       <call method="addPath">
-        <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant/templates</argument>
+        <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant/templates</argument>
       </call>
       <call method="addPath">
-        <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\twig-bridge/Resources/views/Email</argument>
+        <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\twig-bridge/Resources/views/Email</argument>
         <argument>email</argument>
       </call>
       <call method="addPath">
-        <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\twig-bridge/Resources/views/Email</argument>
+        <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\twig-bridge/Resources/views/Email</argument>
         <argument>!email</argument>
       </call>
       <call method="addPath">
-        <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\twig-bridge/Resources/views/Form</argument>
+        <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\twig-bridge/Resources/views/Form</argument>
       </call>
     </service>
     <service id="twig.loader.chain" class="Twig\Loader\ChainLoader" public="false"/>
@@ -3307,7 +3333,7 @@
     <service id="twig.extension.code" class="Symfony\Bridge\Twig\Extension\CodeExtension" public="false">
       <tag name="twig.extension"/>
       <argument type="service" id="debug.file_link_formatter" on-invalid="ignore"/>
-      <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant</argument>
+      <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant</argument>
       <argument>UTF-8</argument>
     </service>
     <service id="twig.extension.routing" class="Symfony\Bridge\Twig\Extension\RoutingExtension" public="false">
@@ -3359,7 +3385,7 @@
     <service id="twig.error_renderer.html" class="Symfony\Bridge\Twig\ErrorRenderer\TwigErrorRenderer" public="false">
       <argument type="service" id="twig"/>
       <argument type="service" id="error_handler.error_renderer.html"/>
-      <argument type="service" id=".1_~lEkUZac"/>
+      <argument type="service" id=".1_~SWrcev5"/>
     </service>
     <service id="twig.extension.form" class="Symfony\Bridge\Twig\Extension\FormExtension" public="false">
       <tag name="twig.extension"/>
@@ -3377,9 +3403,9 @@
       <tag name="console.command" command="debug:twig"/>
       <tag name="container.no_preload"/>
       <argument type="service" id="twig"/>
-      <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant</argument>
+      <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant</argument>
       <argument>%kernel.bundles_metadata%</argument>
-      <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant/templates</argument>
+      <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant/templates</argument>
       <argument type="service" id="debug.file_link_formatter" on-invalid="null"/>
       <call method="setName">
         <argument>debug:twig</argument>
@@ -3590,7 +3616,7 @@
       <argument type="collection"/>
       <factory service="doctrine.dbal.connection_factory" method="createConnection"/>
     </service>
-    <service id=".1_ServiceLocator~z0mWuAj" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".1_ServiceLocator~1FmG9jr" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <argument type="collection"/>
     </service>
     <service id="doctrine.orm.proxy_cache_warmer" class="Symfony\Bridge\Doctrine\CacheWarmer\ProxyCacheWarmer" public="false">
@@ -3611,7 +3637,7 @@
       <factory class="Doctrine\ORM\EntityManager" method="create"/>
     </service>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory" public="false">
-      <argument type="service" id=".service_locator.ptFjzsg"/>
+      <argument type="service" id=".service_locator.zqdhnhD"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -3767,7 +3793,7 @@
         <argument type="service" id="doctrine.orm.default_metadata_driver"/>
       </call>
       <call method="setProxyDir">
-        <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\var\cache\dev/doctrine/orm/Proxies</argument>
+        <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\var\cache\dev/doctrine/orm/Proxies</argument>
       </call>
       <call method="setProxyNamespace">
         <argument>Proxies</argument>
@@ -3797,7 +3823,7 @@
     <service id="doctrine.orm.default_annotation_metadata_driver" class="Doctrine\ORM\Mapping\Driver\AnnotationDriver" public="false">
       <argument type="service" id="annotations.cached_reader"/>
       <argument type="collection">
-        <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\src\Entity</argument>
+        <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\src\Entity</argument>
       </argument>
     </service>
     <service id="doctrine.orm.default_metadata_driver" class="Doctrine\Persistence\Mapping\Driver\MappingDriverChain" public="false">
@@ -3871,7 +3897,7 @@
     <service id="doctrine.migrations.configuration" class="Doctrine\Migrations\Configuration\Configuration" public="false">
       <call method="addMigrationsDirectory">
         <argument>DoctrineMigrations</argument>
-        <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant/migrations</argument>
+        <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant/migrations</argument>
       </call>
       <call method="setAllOrNothing">
         <argument>false</argument>
@@ -4149,10 +4175,10 @@
       <tag name="kernel.reset" method="reset"/>
       <argument type="service" id="cache.security_expression_language.recorder_inner"/>
     </service>
-    <service id=".2_int~GpLv8u1" class="int" public="false">
+    <service id=".2_int~62hx0ly" class="int" public="false">
       <factory service="router.request_context" method="getHttpsPort"/>
     </service>
-    <service id=".1_int~GpLv8u1" class="int" public="false">
+    <service id=".1_int~62hx0ly" class="int" public="false">
       <factory service="router.request_context" method="getHttpPort"/>
     </service>
     <service id="security.authentication.listener.anonymous" class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
@@ -4166,8 +4192,8 @@
       <argument></argument>
     </service>
     <service id="security.authentication.retry_entry_point" class="Symfony\Component\Security\Http\EntryPoint\RetryAuthenticationEntryPoint" public="false">
-      <argument type="service" id=".1_int~GpLv8u1"/>
-      <argument type="service" id=".2_int~GpLv8u1"/>
+      <argument type="service" id=".1_int~62hx0ly"/>
+      <argument type="service" id=".2_int~62hx0ly"/>
     </service>
     <service id="security.authentication.basic_entry_point" class="Symfony\Component\Security\Http\EntryPoint\BasicAuthenticationEntryPoint" public="false"/>
     <service id="security.channel_listener" class="Symfony\Component\Security\Http\Firewall\ChannelListener" public="false">
@@ -4653,7 +4679,7 @@
         <argument>security:encode-password</argument>
       </call>
     </service>
-    <service id=".2_HtmlDumper~npxgr1b" class="Symfony\Component\VarDumper\Dumper\HtmlDumper" public="false">
+    <service id=".2_HtmlDumper~DhkzJ0c" class="Symfony\Component\VarDumper\Dumper\HtmlDumper" public="false">
       <argument>null</argument>
       <argument>UTF-8</argument>
       <argument>1</argument>
@@ -4664,14 +4690,14 @@
         </argument>
       </call>
     </service>
-    <service id=".1_NonceGenerator~npxgr1b" class="Symfony\Bundle\WebProfilerBundle\Csp\NonceGenerator" public="false"/>
+    <service id=".1_NonceGenerator~DhkzJ0c" class="Symfony\Bundle\WebProfilerBundle\Csp\NonceGenerator" public="false"/>
     <service id="web_profiler.controller.profiler" class="Symfony\Bundle\WebProfilerBundle\Controller\ProfilerController" public="true">
       <argument type="service" id="router.default" on-invalid="null"/>
       <argument type="service" id="profiler" on-invalid="null"/>
       <argument type="service" id="twig"/>
       <argument>%data_collector.templates%</argument>
       <argument type="service" id="web_profiler.csp.handler"/>
-      <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant</argument>
+      <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant</argument>
     </service>
     <service id="web_profiler.controller.router" class="Symfony\Bundle\WebProfilerBundle\Controller\RouterController" public="true">
       <argument type="service" id="profiler" on-invalid="null"/>
@@ -4683,11 +4709,11 @@
       <argument type="service" id="profiler" on-invalid="null"/>
     </service>
     <service id="web_profiler.csp.handler" class="Symfony\Bundle\WebProfilerBundle\Csp\ContentSecurityPolicyHandler" public="false">
-      <argument type="service" id=".1_NonceGenerator~npxgr1b"/>
+      <argument type="service" id=".1_NonceGenerator~DhkzJ0c"/>
     </service>
     <service id="twig.extension.webprofiler" class="Symfony\Bundle\WebProfilerBundle\Twig\WebProfilerExtension" public="false">
       <tag name="twig.extension"/>
-      <argument type="service" id=".2_HtmlDumper~npxgr1b"/>
+      <argument type="service" id=".2_HtmlDumper~DhkzJ0c"/>
     </service>
     <service id="debug.file_link_formatter.url_format" class="string" public="false">
       <argument type="service" id="router.default"/>
@@ -4745,7 +4771,7 @@
     <service id="monolog.processor.psr_log_message" class="Monolog\Processor\PsrLogMessageProcessor" public="false"/>
     <service id="monolog.handler.main" class="Monolog\Handler\StreamHandler">
       <tag name="kernel.reset" method="reset"/>
-      <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\var\log/dev.log</argument>
+      <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\var\log/dev.log</argument>
       <argument>100</argument>
       <argument>true</argument>
       <argument>null</argument>
@@ -4763,24 +4789,24 @@
       <argument type="collection"/>
       <argument type="collection"/>
     </service>
-    <service id=".6_HtmlDescriptor~hb59rhW" class="Symfony\Component\VarDumper\Command\Descriptor\HtmlDescriptor" public="false">
+    <service id=".6_HtmlDescriptor~E2Gcs7a" class="Symfony\Component\VarDumper\Command\Descriptor\HtmlDescriptor" public="false">
       <argument type="service" id="var_dumper.html_dumper"/>
     </service>
-    <service id=".5_CliDescriptor~hb59rhW" class="Symfony\Component\VarDumper\Command\Descriptor\CliDescriptor" public="false">
+    <service id=".5_CliDescriptor~E2Gcs7a" class="Symfony\Component\VarDumper\Command\Descriptor\CliDescriptor" public="false">
       <argument type="service" id="var_dumper.contextualized_cli_dumper.inner"/>
     </service>
-    <service id=".4_CliContextProvider~hb59rhW" class="Symfony\Component\VarDumper\Dumper\ContextProvider\CliContextProvider" public="false"/>
-    <service id=".3_RequestContextProvider~hb59rhW" class="Symfony\Component\VarDumper\Dumper\ContextProvider\RequestContextProvider" public="false">
+    <service id=".4_CliContextProvider~E2Gcs7a" class="Symfony\Component\VarDumper\Dumper\ContextProvider\CliContextProvider" public="false"/>
+    <service id=".3_RequestContextProvider~E2Gcs7a" class="Symfony\Component\VarDumper\Dumper\ContextProvider\RequestContextProvider" public="false">
       <argument type="service" id="request_stack"/>
     </service>
-    <service id=".2_SourceContextProvider~hb59rhW" class="Symfony\Component\VarDumper\Dumper\ContextProvider\SourceContextProvider" public="false">
+    <service id=".2_SourceContextProvider~E2Gcs7a" class="Symfony\Component\VarDumper\Dumper\ContextProvider\SourceContextProvider" public="false">
       <argument>UTF-8</argument>
-      <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant</argument>
+      <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant</argument>
       <argument type="service" id="debug.file_link_formatter" on-invalid="null"/>
     </service>
-    <service id=".1_SourceContextProvider~hb59rhW" class="Symfony\Component\VarDumper\Dumper\ContextProvider\SourceContextProvider" public="false">
+    <service id=".1_SourceContextProvider~E2Gcs7a" class="Symfony\Component\VarDumper\Dumper\ContextProvider\SourceContextProvider" public="false">
       <argument>UTF-8</argument>
-      <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant</argument>
+      <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant</argument>
       <argument type="service" id="debug.file_link_formatter" on-invalid="null"/>
     </service>
     <service id="twig.extension.dump" class="Symfony\Bridge\Twig\Extension\DumpExtension" public="false">
@@ -4822,7 +4848,7 @@
     <service id="var_dumper.contextualized_cli_dumper" class="Symfony\Component\VarDumper\Dumper\ContextualizedDumper" public="false">
       <argument type="service" id="var_dumper.contextualized_cli_dumper.inner"/>
       <argument type="collection">
-        <argument key="source" type="service" id=".1_SourceContextProvider~hb59rhW"/>
+        <argument key="source" type="service" id=".1_SourceContextProvider~E2Gcs7a"/>
       </argument>
     </service>
     <service id="var_dumper.html_dumper" class="Symfony\Component\VarDumper\Dumper\HtmlDumper" public="false">
@@ -4838,9 +4864,9 @@
     <service id="var_dumper.server_connection" class="Symfony\Component\VarDumper\Server\Connection" public="false">
       <argument>tcp://%env(VAR_DUMPER_SERVER)%</argument>
       <argument type="collection">
-        <argument key="source" type="service" id=".2_SourceContextProvider~hb59rhW"/>
-        <argument key="request" type="service" id=".3_RequestContextProvider~hb59rhW"/>
-        <argument key="cli" type="service" id=".4_CliContextProvider~hb59rhW"/>
+        <argument key="source" type="service" id=".2_SourceContextProvider~E2Gcs7a"/>
+        <argument key="request" type="service" id=".3_RequestContextProvider~E2Gcs7a"/>
+        <argument key="cli" type="service" id=".4_CliContextProvider~E2Gcs7a"/>
       </argument>
     </service>
     <service id="var_dumper.dump_server" class="Symfony\Component\VarDumper\Server\DumpServer" public="false">
@@ -4853,8 +4879,8 @@
       <tag name="container.no_preload"/>
       <argument type="service" id="var_dumper.dump_server"/>
       <argument type="collection">
-        <argument key="cli" type="service" id=".5_CliDescriptor~hb59rhW"/>
-        <argument key="html" type="service" id=".6_HtmlDescriptor~hb59rhW"/>
+        <argument key="cli" type="service" id=".5_CliDescriptor~E2Gcs7a"/>
+        <argument key="html" type="service" id=".6_HtmlDescriptor~E2Gcs7a"/>
       </argument>
       <call method="setName">
         <argument>server:dump</argument>
@@ -4871,8 +4897,8 @@
       <argument type="service" id="filesystem"/>
       <argument type="service" id="maker.autoloader_util"/>
       <argument type="service" id="maker.file_link_formatter"/>
-      <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant</argument>
-      <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant/templates</argument>
+      <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant</argument>
+      <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant/templates</argument>
     </service>
     <service id="maker.autoloader_finder" class="Symfony\Bundle\MakerBundle\Util\ComposerAutoloaderFinder" public="false">
       <argument>App</argument>
@@ -4942,7 +4968,7 @@
       <tag name="maker.command"/>
       <argument type="service" id="maker.file_manager"/>
       <argument type="service" id="maker.doctrine_helper"/>
-      <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant</argument>
+      <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant</argument>
       <argument type="service" id="maker.generator"/>
       <argument type="service" id="maker.entity_class_generator"/>
     </service>
@@ -5007,7 +5033,7 @@
     </service>
     <service id="maker.maker.make_migration" class="Symfony\Bundle\MakerBundle\Maker\MakeMigration" public="false">
       <tag name="maker.command"/>
-      <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant</argument>
+      <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant</argument>
     </service>
     <service id="symfonycasts.verify_email.token_generator" class="SymfonyCasts\Bundle\VerifyEmail\Generator\VerifyEmailTokenGenerator" public="false">
       <argument>%env(APP_SECRET)%</argument>
@@ -5026,7 +5052,7 @@
     </service>
     <service id="symfonycasts.reset_password.fake_request_repository" class="SymfonyCasts\Bundle\ResetPassword\Persistence\Fake\FakeResetPasswordInternalRepository" public="false"/>
     <service id="symfonycasts.reset_password.cleaner" class="SymfonyCasts\Bundle\ResetPassword\Util\ResetPasswordCleaner" public="false">
-      <argument type="service" id="symfonycasts.reset_password.fake_request_repository"/>
+      <argument type="service" id="App\Repository\ResetPasswordRequestRepository"/>
       <argument>true</argument>
     </service>
     <service id="SymfonyCasts\Bundle\ResetPassword\Command\ResetPasswordRemoveExpiredCommand" class="SymfonyCasts\Bundle\ResetPassword\Command\ResetPasswordRemoveExpiredCommand">
@@ -5045,7 +5071,7 @@
     <service id="symfonycasts.reset_password.helper" class="SymfonyCasts\Bundle\ResetPassword\ResetPasswordHelper">
       <argument type="service" id="symfonycasts.reset_password.token_generator"/>
       <argument type="service" id="symfonycasts.reset_password.cleaner"/>
-      <argument type="service" id="symfonycasts.reset_password.fake_request_repository"/>
+      <argument type="service" id="App\Repository\ResetPasswordRequestRepository"/>
       <argument>3600</argument>
       <argument>3600</argument>
     </service>
@@ -5055,16 +5081,25 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\RegistrationController" class="App\Controller\RegistrationController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\RegistrationController" class="App\Controller\RegistrationController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\RegistrationController" class="App\Controller\RegistrationController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ResetPasswordController" class="App\Controller\ResetPasswordController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ResetPasswordController" class="App\Controller\ResetPasswordController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\ResetPasswordController" class="App\Controller\ResetPasswordController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\SecurityController" class="App\Controller\SecurityController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\SecurityController" class="App\Controller\SecurityController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\SecurityController" class="App\Controller\SecurityController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\UserController" class="App\Controller\UserController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\UserController" class="App\Controller\UserController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\UserController" class="App\Controller\UserController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ChangePasswordFormType" class="App\Form\ChangePasswordFormType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\ChangePasswordFormType" class="App\Form\ChangePasswordFormType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\RegistrationFormType" class="App\Form\RegistrationFormType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\RegistrationFormType" class="App\Form\RegistrationFormType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ResetPasswordRequestFormType" class="App\Form\ResetPasswordRequestFormType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\ResetPasswordRequestFormType" class="App\Form\ResetPasswordRequestFormType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\UserType" class="App\Form\UserType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\UserType" class="App\Form\UserType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ResetPasswordRequestRepository" class="App\Repository\ResetPasswordRequestRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\ResetPasswordRequestRepository" class="App\Repository\ResetPasswordRequestRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\UserRepository" class="App\Repository\UserRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\UserRepository" class="App\Repository\UserRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".service_locator.WaGDpDt" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
@@ -5328,6 +5363,18 @@
         <argument key="passwordEncoder" type="service" id="security.user_password_encoder.generic"/>
       </argument>
     </service>
+    <service id=".service_locator.A0rcl1e" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="mailer" type="service" id="mailer.mailer"/>
+      </argument>
+    </service>
+    <service id=".service_locator.j5_bHjD" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="passwordEncoder" type="service" id="security.user_password_encoder.generic"/>
+      </argument>
+    </service>
     <service id=".service_locator.xA8Fw_." class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -5346,10 +5393,12 @@
         <argument key="user" type="service" id=".errored..service_locator.hEwcf7A.App\Entity\User"/>
       </argument>
     </service>
-    <service id=".service_locator.2JzT.h_" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.TUsn4Fl" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\RegistrationController::register" type="service" id=".service_locator.bifUV3P"/>
+        <argument key="App\Controller\ResetPasswordController::request" type="service" id=".service_locator.A0rcl1e"/>
+        <argument key="App\Controller\ResetPasswordController::reset" type="service" id=".service_locator.j5_bHjD"/>
         <argument key="App\Controller\SecurityController::login" type="service" id=".service_locator.xA8Fw_."/>
         <argument key="App\Controller\UserController::delete" type="service" id=".service_locator.hEwcf7A"/>
         <argument key="App\Controller\UserController::edit" type="service" id=".service_locator.hEwcf7A"/>
@@ -5362,6 +5411,8 @@
         <argument key="kernel::registerContainerConfiguration" type="service" id=".service_locator.C9JCBPC"/>
         <argument key="kernel::terminate" type="service" id=".service_locator.beq5mCo"/>
         <argument key="App\Controller\RegistrationController:register" type="service" id=".service_locator.bifUV3P"/>
+        <argument key="App\Controller\ResetPasswordController:request" type="service" id=".service_locator.A0rcl1e"/>
+        <argument key="App\Controller\ResetPasswordController:reset" type="service" id=".service_locator.j5_bHjD"/>
         <argument key="App\Controller\SecurityController:login" type="service" id=".service_locator.xA8Fw_."/>
         <argument key="App\Controller\UserController:delete" type="service" id=".service_locator.hEwcf7A"/>
         <argument key="App\Controller\UserController:edit" type="service" id=".service_locator.hEwcf7A"/>
@@ -5431,10 +5482,12 @@
       <argument type="service" id="debug.argument_resolver.not_tagged_controller.inner"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.p3gs.Ec" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.RTf5g7s" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="App\Form\ChangePasswordFormType" type="service" id="App\Form\ChangePasswordFormType"/>
         <argument key="App\Form\RegistrationFormType" type="service" id="App\Form\RegistrationFormType"/>
+        <argument key="App\Form\ResetPasswordRequestFormType" type="service" id="App\Form\ResetPasswordRequestFormType"/>
         <argument key="App\Form\UserType" type="service" id="App\Form\UserType"/>
         <argument key="Symfony\Bridge\Doctrine\Form\Type\EntityType" type="service" id="form.type.entity"/>
         <argument key="Symfony\Component\Form\Extension\Core\Type\ChoiceType" type="service" id="form.type.choice"/>
@@ -5454,9 +5507,10 @@
         <argument key="doctrine.orm.default_listeners.attach_entity_listeners" type="service" id="doctrine.orm.default_listeners.attach_entity_listeners"/>
       </argument>
     </service>
-    <service id=".service_locator.ptFjzsg" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.zqdhnhD" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="App\Repository\ResetPasswordRequestRepository" type="service" id="App\Repository\ResetPasswordRequestRepository"/>
         <argument key="App\Repository\UserRepository" type="service" id="App\Repository\UserRepository"/>
       </argument>
     </service>
@@ -5672,6 +5726,12 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.g9CqTPp" method="withContext"/>
     </service>
+    <service id=".service_locator.g9CqTPp.App\Controller\ResetPasswordController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\ResetPasswordController"/>
+      <argument>App\Controller\ResetPasswordController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.g9CqTPp" method="withContext"/>
+    </service>
     <service id=".service_locator.g9CqTPp.App\Controller\SecurityController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator_context" id="App\Controller\SecurityController"/>
       <argument>App\Controller\SecurityController</argument>
@@ -5845,12 +5905,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
-      <argument type="service" id=".service_locator.2JzT.h_"/>
+      <argument type="service" id=".service_locator.TUsn4Fl"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver" public="false"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver" public="false">
-      <argument type="service" id=".service_locator.2JzT.h_"/>
+      <argument type="service" id=".service_locator.TUsn4Fl"/>
     </service>
     <service id=".debug.http_client.inner" class="Symfony\Contracts\HttpClient\HttpClientInterface" public="false">
       <argument type="collection"/>
@@ -6049,51 +6109,51 @@
       </argument>
     </service>
     <service id="cache.app.recorder_inner" class="Symfony\Component\Cache\Adapter\FilesystemAdapter" public="false">
-      <argument>UPy1D4p0Qz</argument>
+      <argument>cPEXbOCvLg</argument>
       <argument>0</argument>
-      <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\var\cache\dev/pools</argument>
+      <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\var\cache\dev/pools</argument>
       <argument type="service" id="cache.default_marshaller" on-invalid="ignore"/>
       <call method="setLogger">
         <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       </call>
     </service>
     <service id="cache.system.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false">
-      <argument>dC2ajeT75T</argument>
+      <argument>AZ+HeyZm-f</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\var\cache\dev/pools</argument>
+      <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\var\cache\dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.validator.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false">
-      <argument>93RGdd6oKf</argument>
+      <argument>xRJE6j8cAf</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\var\cache\dev/pools</argument>
+      <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\var\cache\dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.serializer.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false">
-      <argument>hMCwCeZjkP</argument>
+      <argument>huIvFYq09C</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\var\cache\dev/pools</argument>
+      <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\var\cache\dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.annotations.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false">
-      <argument>fWSMrJrWub</argument>
+      <argument>bmflo-Um2o</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\var\cache\dev/pools</argument>
+      <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\var\cache\dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.property_info.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false">
-      <argument>SH4fiSqOqz</argument>
+      <argument>S93MkwA0aE</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\var\cache\dev/pools</argument>
+      <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\var\cache\dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -6101,10 +6161,10 @@
     <service id="cache.doctrine.orm.default.result.recorder_inner" class="Symfony\Component\Cache\Adapter\ArrayAdapter" public="false"/>
     <service id="cache.doctrine.orm.default.query.recorder_inner" class="Symfony\Component\Cache\Adapter\ArrayAdapter" public="false"/>
     <service id="cache.security_expression_language.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false">
-      <argument>MTB9xSd6DE</argument>
+      <argument>s9XPIeATXg</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\wamp64\www\leslamesduPonant\LesLamesDuPonant\LesLamesDuPonant\var\cache\dev/pools</argument>
+      <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\var\cache\dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -6252,7 +6312,7 @@
     <service id="SymfonyCasts\Bundle\ResetPassword\ResetPasswordHelperInterface" alias="symfonycasts.reset_password.helper"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.WaGDpDt" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem" public="false"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.2JzT.h_"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.TUsn4Fl"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
     <service id="Psr\Log\LoggerInterface $consoleLogger" alias="monolog.logger.console"/>
