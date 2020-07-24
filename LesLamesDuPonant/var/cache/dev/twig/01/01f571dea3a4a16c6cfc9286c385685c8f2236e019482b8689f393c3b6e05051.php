@@ -40,22 +40,22 @@ class __TwigTemplate_1d91ab4370bd76b31c23b98df106a3451167615f0f0395e6b7a495ace7e
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "registration/confirmation_email.html.twig"));
 
         // line 1
-        echo "<h1>Hi! Please confirm your email!</h1>
+        echo "<h1>Bonjour et bienvenue sur le site des Lames du Ponant AMHE de Saint-Nazaire</h1>
 
 <p>
-    Please confirm your email address by clicking the following link: <br><br>
+    S'il vous plait, veuillez confirmer votre email sur le lien ci-dessous <br><br>
     <a href=\"";
         // line 5
         echo (isset($context["signedUrl"]) || array_key_exists("signedUrl", $context) ? $context["signedUrl"] : (function () { throw new RuntimeError('Variable "signedUrl" does not exist.', 5, $this->source); })());
-        echo "\">Confirm my Email</a>.
-    This link will expire in ";
+        echo "\">Confirmer mon email</a>.
+   Ce lien expirera dans ";
         // line 6
         echo twig_escape_filter($this->env, twig_date_format_filter($this->env, (isset($context["expiresAt"]) || array_key_exists("expiresAt", $context) ? $context["expiresAt"] : (function () { throw new RuntimeError('Variable "expiresAt" does not exist.', 6, $this->source); })()), "g"), "html", null, true);
-        echo " hour(s).
+        echo " heures.
 </p>
 
 <p>
-    Cheers!
+    Merci!
 </p>
 ";
         
@@ -83,16 +83,16 @@ class __TwigTemplate_1d91ab4370bd76b31c23b98df106a3451167615f0f0395e6b7a495ace7e
 
     public function getSourceContext()
     {
-        return new Source("<h1>Hi! Please confirm your email!</h1>
+        return new Source("<h1>Bonjour et bienvenue sur le site des Lames du Ponant AMHE de Saint-Nazaire</h1>
 
 <p>
-    Please confirm your email address by clicking the following link: <br><br>
-    <a href=\"{{ signedUrl|raw }}\">Confirm my Email</a>.
-    This link will expire in {{ expiresAt|date('g') }} hour(s).
+    S'il vous plait, veuillez confirmer votre email sur le lien ci-dessous <br><br>
+    <a href=\"{{ signedUrl|raw }}\">Confirmer mon email</a>.
+   Ce lien expirera dans {{ expiresAt|date('g') }} heures.
 </p>
 
 <p>
-    Cheers!
+    Merci!
 </p>
 ", "registration/confirmation_email.html.twig", "C:\\wamp64\\www\\LesLamesDuPonant\\LesLamesDuPonant\\templates\\registration\\confirmation_email.html.twig");
     }
