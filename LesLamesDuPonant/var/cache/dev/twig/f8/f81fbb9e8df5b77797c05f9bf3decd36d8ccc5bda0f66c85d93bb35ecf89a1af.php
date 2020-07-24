@@ -51,214 +51,55 @@ class __TwigTemplate_a34750d87bd6bb1b33f170df28786b55d2c062a07afa82275d67284a300
 <head>
 \t<meta charset=\"UTF-8\" />
 \t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />
-\t";
-        // line 10
-        echo "\t<link href=\"https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap\" rel=\"stylesheet\">
-\t<link rel=\"stylesheet\" href=\"https://use.fontawesome.com/releases/v5.14.0/css/all.css\"
-\t\tintegrity=\"sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc\" crossorigin=\"anonymous\">
-\t<link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootswatch/4.5.0/united/bootstrap.min.css\"
-\t\tintegrity=\"sha384-Uga2yStKRHUWCS7ORqIZhJ9LIAv4i7gZuEdoR1QAmw6H+ffhcf7yCOd0CvSoNwoz\" crossorigin=\"anonymous\">
-\t<link rel=\"stylesheet\" href=\"";
-        // line 15
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("sass/style.css"), "html", null, true);
-        echo "\">
-\t<script src=\"";
-        // line 16
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/App.js"), "html", null, true);
-        echo "\"></script>
 \t<title>
 \t\t";
-        // line 18
+        // line 9
         $this->displayBlock('title', $context, $blocks);
-        // line 20
+        // line 10
         echo "\t</title>
+\t  <!--Import Google Icon Font-->
+\t  <link rel=\"stylesheet\" href=\" ";
+        // line 12
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("fonts/roboto"), "html", null, true);
+        echo "\">
+      <link href=\"https://fonts.googleapis.com/icon?family=Material+Icons\" rel=\"stylesheet\">
+      <!--Import materialize.css-->
+      <link type=\"text/css\" rel=\"stylesheet\" href=\"";
+        // line 15
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("sass/materialize.css"), "html", null, true);
+        echo "\"  media=\"screen,projection\"/>
 \t";
-        // line 21
+        // line 16
         $this->displayBlock('stylesheets', $context, $blocks);
-        // line 22
+        // line 17
         echo "</head>
 
 <body>
-<header>
-\t\t\t<div class=\"container-fluid\">
-\t\t\t\t<div class=\"row\">
-\t\t\t\t\t<div class=\"col-xl-12 text-center imgHeader\">
-\t\t\t\t\t\t<img src=\"images\\Logo LDP 2020.png\" height=\"420px\">
-\t\t\t\t\t</div>
-\t\t\t\t</div>
-\t\t\t</div>
-\t\t\t<nav class=\"navbar navbar-expand-lg navbar-light bg-light \">
-
-\t\t\t\t<button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNavDropdown\" aria-controls=\"navbarNavDropdown\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
-\t\t\t\t\t<span class=\"navbar-toggler-icon\"></span>
-\t\t\t\t</button>
-\t\t\t\t<div class=\"collapse navbar-collapse justify-content-around\" id=\"navbarNavDropdown\">
-\t\t\t\t\t<ul class=\"navbar-nav \">
-
-\t\t\t\t\t\t<li class=\"nav-item dropdown\">
-\t\t\t\t\t\t\t<a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdownMenuLink\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
-\t\t\t\t\t\t\t\tLes AMHE
-\t\t\t\t\t\t\t</a>
-\t\t\t\t\t\t\t<div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdownMenuLink\">
-\t\t\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"#\">La Féderation</a>
-\t\t\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"#\">L'association</a>
-\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t</li>
-\t\t\t\t\t\t<li class=\"nav-item dropdown\">
-\t\t\t\t\t\t\t<a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdownMenuLink\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
-\t\t\t\t\t\t\t\tLes Disciplines
-\t\t\t\t\t\t\t</a>
-\t\t\t\t\t\t\t<div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdownMenuLink\">
-\t\t\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"#\">Viking</a>
-\t\t\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"#\">épée bocle</a>
-\t\t\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"#\">épée longue</a>
-\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t</li>
-\t\t\t\t\t\t<li class=\"nav-item dropdown\">
-\t\t\t\t\t\t\t<a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdownMenuLink\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
-\t\t\t\t\t\t\t\tcontactez nous
-\t\t\t\t\t\t\t</a>
-\t\t\t\t\t\t\t<div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdownMenuLink\">
-\t\t\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"#\">Viking</a>
-\t\t\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"#\">épée bocle</a>
-\t\t\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"#\">épée longue</a>
-\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t</li>
-\t\t\t\t\t</ul>
-\t\t\t\t\t<a class=\"navbar-brand Accueil\" href=\"";
-        // line 71
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
-        echo " \">Accueil</a>
-\t\t\t\t\t<ul class=\"nav \">
-\t\t\t\t\t\t<li class=\"nav-item\">
-        <a class=\"nav-link\" href=\"";
-        // line 74
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
-        echo "\">Vous connecter</a>
-      </li>
-      <li class=\"nav-item\">
-        <a class=\"nav-link\" href=\"";
-        // line 77
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_register");
-        echo "\">vous enregistrer</a>
-      </li>
-\t\t\t\t\t</ul>
-\t\t\t\t</div>
-\t\t\t</nav>
-\t\t\t<div id=\"carouselExampleCaptions\" class=\"carousel slide\" data-ride=\"carousel\">
-\t\t\t\t<ol class=\"carousel-indicators\">
-\t\t\t\t\t<li data-target=\"#carouselExampleCaptions\" data-slide-to=\"0\" class=\"active\"></li>
-\t\t\t\t\t<li data-target=\"#carouselExampleCaptions\" data-slide-to=\"1\"></li>
-\t\t\t\t\t<li data-target=\"#carouselExampleCaptions\" data-slide-to=\"2\"></li>
-\t\t\t\t</ol>
-\t\t\t\t<div class=\"carousel-inner\">
-\t\t\t\t\t<div class=\"carousel-item active\">
-\t\t\t\t\t\t<img src=\"images\\carousel1.jpg\" class=\"d-block w-100\" alt=\"...\">
-\t\t\t\t\t\t<div class=\"carousel-caption d-none d-md-block\">
-\t\t\t\t\t\t\t<h5>First slide label</h5>
-\t\t\t\t\t\t\t<p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-\t\t\t\t\t\t</div>
-\t\t\t\t\t</div>
-\t\t\t\t\t<div class=\"carousel-item\">
-\t\t\t\t\t\t<img src=\"images\\carousel1.jpg\" class=\"d-block w-100\" alt=\"...\">
-\t\t\t\t\t\t<div class=\"carousel-caption d-none d-md-block\">
-\t\t\t\t\t\t\t<h5>Second slide label</h5>
-\t\t\t\t\t\t\t<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-\t\t\t\t\t\t</div>
-\t\t\t\t\t</div>
-\t\t\t\t\t<div class=\"carousel-item\">
-\t\t\t\t\t\t<img src=\"images\\carousel1.jpg\" class=\"d-block w-100\" alt=\"...\">
-\t\t\t\t\t\t<div class=\"carousel-caption d-none d-md-block\">
-\t\t\t\t\t\t\t<h5>Third slide label</h5>
-\t\t\t\t\t\t\t<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-\t\t\t\t\t\t</div>
-\t\t\t\t\t</div>
-\t\t\t\t</div>
-\t\t\t\t<a class=\"carousel-control-prev\" href=\"#carouselExampleCaptions\" role=\"button\" data-slide=\"prev\">
-\t\t\t\t\t<span class=\"carousel-control-prev-icon\" aria-hidden=\"true\"></span>
-\t\t\t\t\t<span class=\"sr-only\">Previous</span>
-\t\t\t\t</a>
-\t\t\t\t<a class=\"carousel-control-next\" href=\"#carouselExampleCaptions\" role=\"button\" data-slide=\"next\">
-\t\t\t\t\t<span class=\"carousel-control-next-icon\" aria-hidden=\"true\"></span>
-\t\t\t\t\t<span class=\"sr-only\">Next</span>
-\t\t\t\t</a>
-\t\t\t</div>
-\t\t</header>
-\t\t<div class=\"container presentation \">
-\t\t\t<div class=\"row \">
-\t\t\t\t<div class=\"col-xl-12 \">
-\t\t\t\t\t<h1 class=\"text-center\">Bienvenue sur le site des lames du Ponant</h1>
-\t\t\t\t\t<div class=\"row homePresentation\">
-\t\t\t\t\t\t<div class=\"col-xl-4\">
-
-\t\t\t\t\t\t\t<img src=\"https://place-hold.it/300x300\" alt=\"\">
-\t\t\t\t\t\t</div>
-\t\t\t\t\t\t<div class=\"col-xl-8\">
-\t\t\t\t\t\t\t<h3>
-\t\t\t\t\t\t\t\tprésentation de l'association</h3>
-\t\t\t\t\t\t\t<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit ipsum minima explicabo quo possimus ab natus ducimus, repellat assumenda quasi repudiandae sit repellendus reprehenderit, similique corporis labore? Animi, quidem rerum.</p>
-\t\t\t\t\t\t\t<a href=\"#\">En savoir plus</a>
-\t\t\t\t\t\t</div>
-\t\t\t\t\t</div>
-\t\t\t\t</div>
-\t\t\t</div>
-\t\t</div>
-
-\t\t<div class=\"container-fluid\">
-\t\t\t<h2 class=\"text-center\">Actualité</h2>
-\t\t\t<div class=\"row text-center\">
-\t\t\t\t<div class=\"col-xl-3 homePresentationActu \">
-\t\t\t\t\t<img src=\"https://place-hold.it/250x250\" alt=\"\">
-\t\t\t\t\t<h3></h3>
-\t\t\t\t\t<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique aspernatur, possimus eaque laudantium ducimus architecto ipsum libero, rerum itaque distinctio quis! Dolor repellendus, maxime dolore laborum non odit doloremque nulla?</p>
-\t\t\t\t\t<a href=\"\">en savoir plus
-\t\t\t\t\t</a>
-\t\t\t\t</div>
-\t\t\t\t<div class=\"col-xl-3 homePresentationActu\">
-\t\t\t\t\t<img src=\"https://place-hold.it/250x250\" alt=\"\">
-\t\t\t\t\t<h3></h3>
-\t\t\t\t\t<p>
-\t\t\t\t\t\tLorem ipsum dolor sit amet consectetur adipisicing elit. Maxime deserunt labore explicabo minima, id consequatur at similique distinctio esse eveniet quisquam, iste quia magni reiciendis eum animi officiis odio repellendus.</p>
-\t\t\t\t\t<a href=\"\">en savoir plus
-\t\t\t\t\t</a>
-\t\t\t\t</div>
-\t\t\t\t<div class=\"col-xl-3 homePresentationActu\">
-\t\t\t\t\t<img src=\"https://place-hold.it/250x250\" alt=\"\">
-\t\t\t\t\t<h3></h3>
-\t\t\t\t\t<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor distinctio, fugiat eaque illum similique voluptas ad itaque! Voluptate enim corporis, facilis sit nostrum quo ab repellat magni dolore pariatur quibusdam!
-\t\t\t\t\t</p>
-\t\t\t\t\t<a href=\"\">en savoir plus
-\t\t\t\t\t</a>
-\t\t\t\t</div>
-\t\t\t\t<div class=\"col-xl-3 homePresentationActu\">
-\t\t\t\t\t<img src=\"https://place-hold.it/250x250\" alt=\"\">
-\t\t\t\t\t<h3></h3>
-\t\t\t\t\t<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti sequi nemo praesentium itaque ducimus, consectetur temporibus molestiae vero dolor odio veritatis esse facilis maxime qui expedita natus numquam, officiis laudantium!</p>
-\t\t\t\t\t<a href=\"\">en savoir plus
-\t\t\t\t\t</a>
-\t\t\t\t</div>
-\t\t\t</div>
-\t\t</div>
-\t\t<div class=\"container-fluid \">
-\t\t\t<h2 class=\"text-center\">Calendrier des entrainements</h2>
-\t\t\t<div class=\"row justify-content-around text-center\">
-\t\t\t\t<div class=\"col-xl-6 \">
-\t\t\t\t\t<img src=\"https://place-hold.it/850x300\" alt=\"\">
-\t\t\t\t</div>
-\t\t\t\t<div class=\"col-xl-6\">
-\t\t\t\t\t<img src=\"https://place-hold.it/850x300\" alt=\"\">
-\t\t\t\t</div>
-\t\t\t</div>
-\t\t</div>
-</div>
-
+  <nav>
+    <div class=\"nav-wrapper\">
+      <a href=\"#!\" class=\"brand-logo\">Logo</a>
+      <a href=\"#\" data-activates=\"mobile-demo\" class=\"button-collapse\"><i class=\"material-icons\">menu</i></a>
+      <ul class=\"right hide-on-med-and-down\">
+        <li><a href=\"sass.html\">Sass</a></li>
+        <li><a href=\"badges.html\">Components</a></li>
+        <li><a href=\"collapsible.html\">Javascript</a></li>
+        <li><a href=\"mobile.html\">Mobile</a></li>
+      </ul>
+      <ul class=\"side-nav\" id=\"mobile-demo\">
+        <li><a href=\"sass.html\">Sass</a></li>
+        <li><a href=\"badges.html\">Components</a></li>
+        <li><a href=\"collapsible.html\">Javascript</a></li>
+        <li><a href=\"mobile.html\">Mobile</a></li>
+      </ul>
+    </div>
+  </nav>
 \t";
-        // line 189
+        // line 38
         $this->displayBlock('body', $context, $blocks);
-        // line 190
+        // line 39
         echo "\t";
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 197
+        // line 43
         echo "\t</body>
 
 </html>";
@@ -270,7 +111,7 @@ class __TwigTemplate_a34750d87bd6bb1b33f170df28786b55d2c062a07afa82275d67284a300
 
     }
 
-    // line 18
+    // line 9
     public function block_title($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -280,8 +121,7 @@ class __TwigTemplate_a34750d87bd6bb1b33f170df28786b55d2c062a07afa82275d67284a300
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Lepticoin des bonnes affaires!
-\t\t";
+        echo "Lame Du Ponant ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -290,7 +130,7 @@ class __TwigTemplate_a34750d87bd6bb1b33f170df28786b55d2c062a07afa82275d67284a300
 
     }
 
-    // line 21
+    // line 16
     public function block_stylesheets($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -308,7 +148,7 @@ class __TwigTemplate_a34750d87bd6bb1b33f170df28786b55d2c062a07afa82275d67284a300
 
     }
 
-    // line 189
+    // line 38
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -326,7 +166,7 @@ class __TwigTemplate_a34750d87bd6bb1b33f170df28786b55d2c062a07afa82275d67284a300
 
     }
 
-    // line 190
+    // line 39
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -336,12 +176,13 @@ class __TwigTemplate_a34750d87bd6bb1b33f170df28786b55d2c062a07afa82275d67284a300
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 191
-        echo "\t";
-        // line 194
-        echo "\t<script src=\"https://code.jquery.com/jquery-3.3.1.slim.min.js\" integrity=\"sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo\" crossorigin=\"anonymous\"></script>
-<script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js\" integrity=\"sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1\" crossorigin=\"anonymous\"></script><script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js\" integrity=\"sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM\" crossorigin=\"anonymous\">
-\t</script>";
+        echo "\t<!--Import jQuery before materialize.js-->
+      <script type=\"text/javascript\" src=\"https://code.jquery.com/jquery-3.2.1.min.js\"></script>
+      <script type=\"text/javascript\" src=\"";
+        // line 41
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/bin/materialize.js"), "html", null, true);
+        echo "\"></script>
+";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -362,7 +203,7 @@ class __TwigTemplate_a34750d87bd6bb1b33f170df28786b55d2c062a07afa82275d67284a300
 
     public function getDebugInfo()
     {
-        return array (  342 => 194,  340 => 191,  330 => 190,  312 => 189,  294 => 21,  274 => 18,  262 => 197,  259 => 190,  257 => 189,  142 => 77,  136 => 74,  130 => 71,  79 => 22,  77 => 21,  74 => 20,  72 => 18,  67 => 16,  63 => 15,  56 => 10,  47 => 1,);
+        return array (  183 => 41,  170 => 39,  152 => 38,  134 => 16,  115 => 9,  103 => 43,  100 => 39,  98 => 38,  75 => 17,  73 => 16,  69 => 15,  63 => 12,  59 => 10,  57 => 9,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -374,197 +215,43 @@ class __TwigTemplate_a34750d87bd6bb1b33f170df28786b55d2c062a07afa82275d67284a300
 <head>
 \t<meta charset=\"UTF-8\" />
 \t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />
-\t{# FONT
-\t==== #}
-\t<link href=\"https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap\" rel=\"stylesheet\">
-\t<link rel=\"stylesheet\" href=\"https://use.fontawesome.com/releases/v5.14.0/css/all.css\"
-\t\tintegrity=\"sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc\" crossorigin=\"anonymous\">
-\t<link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootswatch/4.5.0/united/bootstrap.min.css\"
-\t\tintegrity=\"sha384-Uga2yStKRHUWCS7ORqIZhJ9LIAv4i7gZuEdoR1QAmw6H+ffhcf7yCOd0CvSoNwoz\" crossorigin=\"anonymous\">
-\t<link rel=\"stylesheet\" href=\"{{asset(\"sass/style.css\")}}\">
-\t<script src=\"{{asset(\"js/App.js\")}}\"></script>
 \t<title>
-\t\t{% block title %}Lepticoin des bonnes affaires!
-\t\t{% endblock %}
+\t\t{% block title 'Lame Du Ponant ' %}
 \t</title>
+\t  <!--Import Google Icon Font-->
+\t  <link rel=\"stylesheet\" href=\" {{ asset('fonts/roboto') }}\">
+      <link href=\"https://fonts.googleapis.com/icon?family=Material+Icons\" rel=\"stylesheet\">
+      <!--Import materialize.css-->
+      <link type=\"text/css\" rel=\"stylesheet\" href=\"{{ asset('sass/materialize.css') }}\"  media=\"screen,projection\"/>
 \t{% block stylesheets %}{% endblock %}
 </head>
 
 <body>
-<header>
-\t\t\t<div class=\"container-fluid\">
-\t\t\t\t<div class=\"row\">
-\t\t\t\t\t<div class=\"col-xl-12 text-center imgHeader\">
-\t\t\t\t\t\t<img src=\"images\\Logo LDP 2020.png\" height=\"420px\">
-\t\t\t\t\t</div>
-\t\t\t\t</div>
-\t\t\t</div>
-\t\t\t<nav class=\"navbar navbar-expand-lg navbar-light bg-light \">
-
-\t\t\t\t<button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNavDropdown\" aria-controls=\"navbarNavDropdown\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
-\t\t\t\t\t<span class=\"navbar-toggler-icon\"></span>
-\t\t\t\t</button>
-\t\t\t\t<div class=\"collapse navbar-collapse justify-content-around\" id=\"navbarNavDropdown\">
-\t\t\t\t\t<ul class=\"navbar-nav \">
-
-\t\t\t\t\t\t<li class=\"nav-item dropdown\">
-\t\t\t\t\t\t\t<a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdownMenuLink\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
-\t\t\t\t\t\t\t\tLes AMHE
-\t\t\t\t\t\t\t</a>
-\t\t\t\t\t\t\t<div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdownMenuLink\">
-\t\t\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"#\">La Féderation</a>
-\t\t\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"#\">L'association</a>
-\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t</li>
-\t\t\t\t\t\t<li class=\"nav-item dropdown\">
-\t\t\t\t\t\t\t<a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdownMenuLink\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
-\t\t\t\t\t\t\t\tLes Disciplines
-\t\t\t\t\t\t\t</a>
-\t\t\t\t\t\t\t<div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdownMenuLink\">
-\t\t\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"#\">Viking</a>
-\t\t\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"#\">épée bocle</a>
-\t\t\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"#\">épée longue</a>
-\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t</li>
-\t\t\t\t\t\t<li class=\"nav-item dropdown\">
-\t\t\t\t\t\t\t<a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdownMenuLink\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
-\t\t\t\t\t\t\t\tcontactez nous
-\t\t\t\t\t\t\t</a>
-\t\t\t\t\t\t\t<div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdownMenuLink\">
-\t\t\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"#\">Viking</a>
-\t\t\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"#\">épée bocle</a>
-\t\t\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"#\">épée longue</a>
-\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t</li>
-\t\t\t\t\t</ul>
-\t\t\t\t\t<a class=\"navbar-brand Accueil\" href=\"{{path('home')}} \">Accueil</a>
-\t\t\t\t\t<ul class=\"nav \">
-\t\t\t\t\t\t<li class=\"nav-item\">
-        <a class=\"nav-link\" href=\"{{path('app_login')}}\">Vous connecter</a>
-      </li>
-      <li class=\"nav-item\">
-        <a class=\"nav-link\" href=\"{{path('app_register')}}\">vous enregistrer</a>
-      </li>
-\t\t\t\t\t</ul>
-\t\t\t\t</div>
-\t\t\t</nav>
-\t\t\t<div id=\"carouselExampleCaptions\" class=\"carousel slide\" data-ride=\"carousel\">
-\t\t\t\t<ol class=\"carousel-indicators\">
-\t\t\t\t\t<li data-target=\"#carouselExampleCaptions\" data-slide-to=\"0\" class=\"active\"></li>
-\t\t\t\t\t<li data-target=\"#carouselExampleCaptions\" data-slide-to=\"1\"></li>
-\t\t\t\t\t<li data-target=\"#carouselExampleCaptions\" data-slide-to=\"2\"></li>
-\t\t\t\t</ol>
-\t\t\t\t<div class=\"carousel-inner\">
-\t\t\t\t\t<div class=\"carousel-item active\">
-\t\t\t\t\t\t<img src=\"images\\carousel1.jpg\" class=\"d-block w-100\" alt=\"...\">
-\t\t\t\t\t\t<div class=\"carousel-caption d-none d-md-block\">
-\t\t\t\t\t\t\t<h5>First slide label</h5>
-\t\t\t\t\t\t\t<p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-\t\t\t\t\t\t</div>
-\t\t\t\t\t</div>
-\t\t\t\t\t<div class=\"carousel-item\">
-\t\t\t\t\t\t<img src=\"images\\carousel1.jpg\" class=\"d-block w-100\" alt=\"...\">
-\t\t\t\t\t\t<div class=\"carousel-caption d-none d-md-block\">
-\t\t\t\t\t\t\t<h5>Second slide label</h5>
-\t\t\t\t\t\t\t<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-\t\t\t\t\t\t</div>
-\t\t\t\t\t</div>
-\t\t\t\t\t<div class=\"carousel-item\">
-\t\t\t\t\t\t<img src=\"images\\carousel1.jpg\" class=\"d-block w-100\" alt=\"...\">
-\t\t\t\t\t\t<div class=\"carousel-caption d-none d-md-block\">
-\t\t\t\t\t\t\t<h5>Third slide label</h5>
-\t\t\t\t\t\t\t<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-\t\t\t\t\t\t</div>
-\t\t\t\t\t</div>
-\t\t\t\t</div>
-\t\t\t\t<a class=\"carousel-control-prev\" href=\"#carouselExampleCaptions\" role=\"button\" data-slide=\"prev\">
-\t\t\t\t\t<span class=\"carousel-control-prev-icon\" aria-hidden=\"true\"></span>
-\t\t\t\t\t<span class=\"sr-only\">Previous</span>
-\t\t\t\t</a>
-\t\t\t\t<a class=\"carousel-control-next\" href=\"#carouselExampleCaptions\" role=\"button\" data-slide=\"next\">
-\t\t\t\t\t<span class=\"carousel-control-next-icon\" aria-hidden=\"true\"></span>
-\t\t\t\t\t<span class=\"sr-only\">Next</span>
-\t\t\t\t</a>
-\t\t\t</div>
-\t\t</header>
-\t\t<div class=\"container presentation \">
-\t\t\t<div class=\"row \">
-\t\t\t\t<div class=\"col-xl-12 \">
-\t\t\t\t\t<h1 class=\"text-center\">Bienvenue sur le site des lames du Ponant</h1>
-\t\t\t\t\t<div class=\"row homePresentation\">
-\t\t\t\t\t\t<div class=\"col-xl-4\">
-
-\t\t\t\t\t\t\t<img src=\"https://place-hold.it/300x300\" alt=\"\">
-\t\t\t\t\t\t</div>
-\t\t\t\t\t\t<div class=\"col-xl-8\">
-\t\t\t\t\t\t\t<h3>
-\t\t\t\t\t\t\t\tprésentation de l'association</h3>
-\t\t\t\t\t\t\t<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit ipsum minima explicabo quo possimus ab natus ducimus, repellat assumenda quasi repudiandae sit repellendus reprehenderit, similique corporis labore? Animi, quidem rerum.</p>
-\t\t\t\t\t\t\t<a href=\"#\">En savoir plus</a>
-\t\t\t\t\t\t</div>
-\t\t\t\t\t</div>
-\t\t\t\t</div>
-\t\t\t</div>
-\t\t</div>
-
-\t\t<div class=\"container-fluid\">
-\t\t\t<h2 class=\"text-center\">Actualité</h2>
-\t\t\t<div class=\"row text-center\">
-\t\t\t\t<div class=\"col-xl-3 homePresentationActu \">
-\t\t\t\t\t<img src=\"https://place-hold.it/250x250\" alt=\"\">
-\t\t\t\t\t<h3></h3>
-\t\t\t\t\t<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique aspernatur, possimus eaque laudantium ducimus architecto ipsum libero, rerum itaque distinctio quis! Dolor repellendus, maxime dolore laborum non odit doloremque nulla?</p>
-\t\t\t\t\t<a href=\"\">en savoir plus
-\t\t\t\t\t</a>
-\t\t\t\t</div>
-\t\t\t\t<div class=\"col-xl-3 homePresentationActu\">
-\t\t\t\t\t<img src=\"https://place-hold.it/250x250\" alt=\"\">
-\t\t\t\t\t<h3></h3>
-\t\t\t\t\t<p>
-\t\t\t\t\t\tLorem ipsum dolor sit amet consectetur adipisicing elit. Maxime deserunt labore explicabo minima, id consequatur at similique distinctio esse eveniet quisquam, iste quia magni reiciendis eum animi officiis odio repellendus.</p>
-\t\t\t\t\t<a href=\"\">en savoir plus
-\t\t\t\t\t</a>
-\t\t\t\t</div>
-\t\t\t\t<div class=\"col-xl-3 homePresentationActu\">
-\t\t\t\t\t<img src=\"https://place-hold.it/250x250\" alt=\"\">
-\t\t\t\t\t<h3></h3>
-\t\t\t\t\t<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor distinctio, fugiat eaque illum similique voluptas ad itaque! Voluptate enim corporis, facilis sit nostrum quo ab repellat magni dolore pariatur quibusdam!
-\t\t\t\t\t</p>
-\t\t\t\t\t<a href=\"\">en savoir plus
-\t\t\t\t\t</a>
-\t\t\t\t</div>
-\t\t\t\t<div class=\"col-xl-3 homePresentationActu\">
-\t\t\t\t\t<img src=\"https://place-hold.it/250x250\" alt=\"\">
-\t\t\t\t\t<h3></h3>
-\t\t\t\t\t<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti sequi nemo praesentium itaque ducimus, consectetur temporibus molestiae vero dolor odio veritatis esse facilis maxime qui expedita natus numquam, officiis laudantium!</p>
-\t\t\t\t\t<a href=\"\">en savoir plus
-\t\t\t\t\t</a>
-\t\t\t\t</div>
-\t\t\t</div>
-\t\t</div>
-\t\t<div class=\"container-fluid \">
-\t\t\t<h2 class=\"text-center\">Calendrier des entrainements</h2>
-\t\t\t<div class=\"row justify-content-around text-center\">
-\t\t\t\t<div class=\"col-xl-6 \">
-\t\t\t\t\t<img src=\"https://place-hold.it/850x300\" alt=\"\">
-\t\t\t\t</div>
-\t\t\t\t<div class=\"col-xl-6\">
-\t\t\t\t\t<img src=\"https://place-hold.it/850x300\" alt=\"\">
-\t\t\t\t</div>
-\t\t\t</div>
-\t\t</div>
-</div>
-
+  <nav>
+    <div class=\"nav-wrapper\">
+      <a href=\"#!\" class=\"brand-logo\">Logo</a>
+      <a href=\"#\" data-activates=\"mobile-demo\" class=\"button-collapse\"><i class=\"material-icons\">menu</i></a>
+      <ul class=\"right hide-on-med-and-down\">
+        <li><a href=\"sass.html\">Sass</a></li>
+        <li><a href=\"badges.html\">Components</a></li>
+        <li><a href=\"collapsible.html\">Javascript</a></li>
+        <li><a href=\"mobile.html\">Mobile</a></li>
+      </ul>
+      <ul class=\"side-nav\" id=\"mobile-demo\">
+        <li><a href=\"sass.html\">Sass</a></li>
+        <li><a href=\"badges.html\">Components</a></li>
+        <li><a href=\"collapsible.html\">Javascript</a></li>
+        <li><a href=\"mobile.html\">Mobile</a></li>
+      </ul>
+    </div>
+  </nav>
 \t{% block body %}{% endblock %}
-\t{% block javascripts %}
-\t{# <script src=\"https://code.jquery.com/jquery-3.4.1.slim.min.js\"
-\tintegrity=\"sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n\" crossorigin=\"anonymous\">
-\t</script> #}
-\t<script src=\"https://code.jquery.com/jquery-3.3.1.slim.min.js\" integrity=\"sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo\" crossorigin=\"anonymous\"></script>
-<script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js\" integrity=\"sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1\" crossorigin=\"anonymous\"></script><script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js\" integrity=\"sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM\" crossorigin=\"anonymous\">
-\t</script>{% endblock %}
+\t{% block javascripts %}\t<!--Import jQuery before materialize.js-->
+      <script type=\"text/javascript\" src=\"https://code.jquery.com/jquery-3.2.1.min.js\"></script>
+      <script type=\"text/javascript\" src=\"{{ asset('js/bin/materialize.js') }}\"></script>
+{% endblock %}
 \t</body>
 
-</html>", "base.html.twig", "C:\\wamp64\\www\\LesLamesDuPonant\\LesLamesDuPonant\\templates\\base.html.twig");
+</html>", "base.html.twig", "C:\\wamp64\\www\\leslamesduPonant\\LesLamesDuPonant\\LesLamesDuPonant\\templates\\base.html.twig");
     }
 }
