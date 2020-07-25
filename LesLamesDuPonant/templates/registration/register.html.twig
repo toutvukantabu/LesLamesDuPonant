@@ -8,16 +8,20 @@
 		<div class="alert alert-danger" role="alert">{{ flashError }}</div>
 	{% endfor %}
 
-	{{ form_start(registrationForm) }}
+	{{ form_start(registrationForm,{'attr':{'class':'validate','id':'formValidate'}}) }}
 	<div class="container">
-		<div class="row formRegister">
-			<div class="input-field col s6">
-				{{ form_row(registrationForm.email) }}
+		<div class="row formRegister" >
+			     <h5 > Formulaire d'Enregistrement Les Lames du Ponant</h5>		
+			<div class="input-field col s12 l12 m12 ">
+				{{ form_row(registrationForm.email,{'attr':{'class':'validate','type':'email','id':'email','name':'cEmail'}}) }}
 			</div>
-            <div class="input-field col s6">
-			{{ form_row(registrationForm.plainPassword, {
-            label: 'Mot de passe'
-        }) }}
+            <div class="input-field col s12 l12 m12">
+			{{ form_row(registrationForm.plainPassword.first,{'attr':{'class':'password','type':'password','id':'password','name':'password'}})}}
+			<label data-error="veuillez renseigner le bon mot de passe" data-success="right"></label>
+        </div>
+		  <div class="input-field col s12 l12 m12">
+			{{ form_row(registrationForm.plainPassword.second,{'attr':{'class':'password','type':'password','name':'cPassword'}})}}
+			<label  data-error="veuillez renseigner le bon mot de passe" data-success="right"></label>
         </div>
 			{{ form_row(registrationForm.agreeTerms) }}
 

@@ -10021,5 +10021,26 @@ if (Vel) {
 })(jQuery);
 
 $( document ).ready(function(){
-  $(".button-collapse").sideNav();
+  $("#formValidate").validate({
+             rules: {
+            cEmail: {
+                required: true,
+                email:true
+            },
+            password: {
+				required: true,
+				minlength: 8
+			},
+			cPassword: {
+				required: true,
+				minlength: 8,
+				equalTo: "#password"
+			},
+      
+        
+       }});
+
+
+
+
 })
