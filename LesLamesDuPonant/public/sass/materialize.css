@@ -9361,11 +9361,13 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
   /*shape-rendering: crispEdges;*/
 }
 
-.formRegister {
-  border: 1px solid #c5c5c5;
+.formRegister, .formLogin, .formReset {
+  margin-top: 100px;
   border-radius: 10px;
   padding: 20px;
-  -webkit-box-shadow: -1px 2px 64px -1px rgba(173, 173, 173, 0.86);
-  box-shadow: -1px 2px 64px -1px rgba(173, 173, 173, 0.86);
+}
+
+.loginResetPassword, .smallResetPassword {
+  margin-bottom: 40px;
 }
 /*# sourceMappingURL=materialize.css.map */

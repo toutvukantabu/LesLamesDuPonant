@@ -10020,27 +10020,10 @@ if (Vel) {
   };
 })(jQuery);
 
-$( document ).ready(function(){
-  $("#formValidate").validate({
-             rules: {
-            cEmail: {
-                required: true,
-                email:true
-            },
-            password: {
-				required: true,
-				minlength: 8
-			},
-			cPassword: {
-				required: true,
-				minlength: 8,
-				equalTo: "#password"
-			},
-      
-        
-       }});
+$(document).ready(function(){
+  $('.parallax').parallax();
+  
+    $('.carousel').carousel();
 
-
-
-
-})
+});
+    

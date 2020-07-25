@@ -58,31 +58,38 @@ class __TwigTemplate_a34750d87bd6bb1b33f170df28786b55d2c062a07afa82275d67284a300
         // line 10
         echo "\t</title>
 \t  <!--Import Google Icon Font-->
-\t  <link rel=\"stylesheet\" href=\" ";
-        // line 12
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("fonts/roboto"), "html", null, true);
-        echo "\">
       <link href=\"https://fonts.googleapis.com/icon?family=Material+Icons\" rel=\"stylesheet\">
       <!--Import materialize.css-->
       <link type=\"text/css\" rel=\"stylesheet\" href=\"";
-        // line 15
+        // line 14
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("sass/materialize.css"), "html", null, true);
         echo "\"  media=\"screen,projection\"/>
 \t";
-        // line 16
+        // line 15
         $this->displayBlock('stylesheets', $context, $blocks);
-        // line 17
+        // line 16
         echo "</head>
-
 <body>
   <nav>
     <div class=\"nav-wrapper\">
-      <a href=\"#!\" class=\"brand-logo\">Logo</a>
+      <a href=\"";
+        // line 20
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
+        echo " \" class=\"brand-logo\">Logo</a>
       <a href=\"#\" data-activates=\"mobile-demo\" class=\"button-collapse\"><i class=\"material-icons\">menu</i></a>
       <ul class=\"right hide-on-med-and-down\">
-        <li><a href=\"sass.html\">Sass</a></li>
-        <li><a href=\"badges.html\">Components</a></li>
-        <li><a href=\"collapsible.html\">Javascript</a></li>
+        <li><a href=\"";
+        // line 23
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
+        echo "\">se connecter</a></li>
+        <li><a href=\"";
+        // line 24
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_register");
+        echo "\">s'enregistrer</a></li>
+        <li><a href=\"";
+        // line 25
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
+        echo "\">se deconnecter</a></li>
         <li><a href=\"mobile.html\">Mobile</a></li>
       </ul>
       <ul class=\"side-nav\" id=\"mobile-demo\">
@@ -93,13 +100,60 @@ class __TwigTemplate_a34750d87bd6bb1b33f170df28786b55d2c062a07afa82275d67284a300
       </ul>
     </div>
   </nav>
+  </header>
+<div class=\"carousel carousel-slider center\" data-indicators=\"true\">
+    <div class=\"carousel-fixed-item center\">
+      <a class=\"btn waves-effect white grey-text darken-text-2\">button</a>
+    </div>
+    <div class=\"carousel-item red white-text\" href=\"#one!\">
+    <img src=\"https://lorempixel.com/800/400/food/4\">
+      <h2>First Panel</h2>
+      <p class=\"white-text\">This is your first panel</p>
+    </div>
+    <div class=\"carousel-item amber white-text\" href=\"#two!\">
+    <img src=\"https://lorempixel.com/800/400/food/3\">
+      <h2>Second Panel</h2>
+      <p class=\"white-text\">This is your second panel</p>
+    </div>
+    <div class=\"carousel-item green white-text\" href=\"#three!\">
+    <img src=\"https://lorempixel.com/800/400/food/3\">
+      <h2>Third Panel</h2>
+      <p class=\"white-text\">This is your third panel</p>
+    </div>
+    <div class=\"carousel-item blue white-text\" href=\"#four!\">
+    <img src=\"https://lorempixel.com/800/400/food/3\">
+      <h2>Fourth Panel</h2>
+      <p class=\"white-text\">This is your fourth panel</p>
+    </div>
+  </div>
+        
+  <div class=\"parallax-container\">
+  <div class=\"section white\">
+    <div class=\"row container\">
+      <h2 class=\"header\">Parallax</h2>
+      <p class=\"grey-text text-darken-3 lighten-3\">Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling.</p>
+    </div>
+  </div>
+    <div class=\"parallax\"><img src=\"https://ostdugriffonnoir.com/wp-content/uploads/2017/01/9.jpg\"></div>
+  </div>
+  <div class=\"section white\">
+    <div class=\"row container\">
+      <h2 class=\"header\">Parallax</h2>
+      <p class=\"grey-text text-darken-3 lighten-3\">Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling.</p>
+    </div>
+  </div>
+  <div class=\"parallax-container\">
+    <div class=\"parallax\"><img src=\"https://ostdugriffonnoir.com/wp-content/uploads/2017/01/9.jpg\"></div>
+  </div>
+
+
 \t";
-        // line 38
+        // line 83
         $this->displayBlock('body', $context, $blocks);
-        // line 39
+        // line 84
         echo "\t";
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 43
+        // line 89
         echo "\t</body>
 
 </html>";
@@ -130,7 +184,7 @@ class __TwigTemplate_a34750d87bd6bb1b33f170df28786b55d2c062a07afa82275d67284a300
 
     }
 
-    // line 16
+    // line 15
     public function block_stylesheets($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -148,7 +202,7 @@ class __TwigTemplate_a34750d87bd6bb1b33f170df28786b55d2c062a07afa82275d67284a300
 
     }
 
-    // line 38
+    // line 83
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -166,7 +220,7 @@ class __TwigTemplate_a34750d87bd6bb1b33f170df28786b55d2c062a07afa82275d67284a300
 
     }
 
-    // line 39
+    // line 84
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -178,8 +232,9 @@ class __TwigTemplate_a34750d87bd6bb1b33f170df28786b55d2c062a07afa82275d67284a300
 
         echo "\t<!--Import jQuery before materialize.js-->
       <script type=\"text/javascript\" src=\"https://code.jquery.com/jquery-3.2.1.min.js\"></script>
+      <script src=\"https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js\"></script>
       <script type=\"text/javascript\" src=\"";
-        // line 41
+        // line 87
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/bin/materialize.js"), "html", null, true);
         echo "\"></script>
 ";
@@ -203,7 +258,7 @@ class __TwigTemplate_a34750d87bd6bb1b33f170df28786b55d2c062a07afa82275d67284a300
 
     public function getDebugInfo()
     {
-        return array (  183 => 41,  170 => 39,  152 => 38,  134 => 16,  115 => 9,  103 => 43,  100 => 39,  98 => 38,  75 => 17,  73 => 16,  69 => 15,  63 => 12,  59 => 10,  57 => 9,  47 => 1,);
+        return array (  238 => 87,  224 => 84,  206 => 83,  188 => 15,  169 => 9,  157 => 89,  154 => 84,  152 => 83,  91 => 25,  87 => 24,  83 => 23,  77 => 20,  71 => 16,  69 => 15,  65 => 14,  59 => 10,  57 => 9,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -219,22 +274,20 @@ class __TwigTemplate_a34750d87bd6bb1b33f170df28786b55d2c062a07afa82275d67284a300
 \t\t{% block title 'Lame Du Ponant ' %}
 \t</title>
 \t  <!--Import Google Icon Font-->
-\t  <link rel=\"stylesheet\" href=\" {{ asset('fonts/roboto') }}\">
       <link href=\"https://fonts.googleapis.com/icon?family=Material+Icons\" rel=\"stylesheet\">
       <!--Import materialize.css-->
       <link type=\"text/css\" rel=\"stylesheet\" href=\"{{ asset('sass/materialize.css') }}\"  media=\"screen,projection\"/>
 \t{% block stylesheets %}{% endblock %}
 </head>
-
 <body>
   <nav>
     <div class=\"nav-wrapper\">
-      <a href=\"#!\" class=\"brand-logo\">Logo</a>
+      <a href=\"{{path('home')}} \" class=\"brand-logo\">Logo</a>
       <a href=\"#\" data-activates=\"mobile-demo\" class=\"button-collapse\"><i class=\"material-icons\">menu</i></a>
       <ul class=\"right hide-on-med-and-down\">
-        <li><a href=\"sass.html\">Sass</a></li>
-        <li><a href=\"badges.html\">Components</a></li>
-        <li><a href=\"collapsible.html\">Javascript</a></li>
+        <li><a href=\"{{path('app_login')}}\">se connecter</a></li>
+        <li><a href=\"{{path('app_register')}}\">s'enregistrer</a></li>
+        <li><a href=\"{{path('app_logout')}}\">se deconnecter</a></li>
         <li><a href=\"mobile.html\">Mobile</a></li>
       </ul>
       <ul class=\"side-nav\" id=\"mobile-demo\">
@@ -245,13 +298,61 @@ class __TwigTemplate_a34750d87bd6bb1b33f170df28786b55d2c062a07afa82275d67284a300
       </ul>
     </div>
   </nav>
+  </header>
+<div class=\"carousel carousel-slider center\" data-indicators=\"true\">
+    <div class=\"carousel-fixed-item center\">
+      <a class=\"btn waves-effect white grey-text darken-text-2\">button</a>
+    </div>
+    <div class=\"carousel-item red white-text\" href=\"#one!\">
+    <img src=\"https://lorempixel.com/800/400/food/4\">
+      <h2>First Panel</h2>
+      <p class=\"white-text\">This is your first panel</p>
+    </div>
+    <div class=\"carousel-item amber white-text\" href=\"#two!\">
+    <img src=\"https://lorempixel.com/800/400/food/3\">
+      <h2>Second Panel</h2>
+      <p class=\"white-text\">This is your second panel</p>
+    </div>
+    <div class=\"carousel-item green white-text\" href=\"#three!\">
+    <img src=\"https://lorempixel.com/800/400/food/3\">
+      <h2>Third Panel</h2>
+      <p class=\"white-text\">This is your third panel</p>
+    </div>
+    <div class=\"carousel-item blue white-text\" href=\"#four!\">
+    <img src=\"https://lorempixel.com/800/400/food/3\">
+      <h2>Fourth Panel</h2>
+      <p class=\"white-text\">This is your fourth panel</p>
+    </div>
+  </div>
+        
+  <div class=\"parallax-container\">
+  <div class=\"section white\">
+    <div class=\"row container\">
+      <h2 class=\"header\">Parallax</h2>
+      <p class=\"grey-text text-darken-3 lighten-3\">Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling.</p>
+    </div>
+  </div>
+    <div class=\"parallax\"><img src=\"https://ostdugriffonnoir.com/wp-content/uploads/2017/01/9.jpg\"></div>
+  </div>
+  <div class=\"section white\">
+    <div class=\"row container\">
+      <h2 class=\"header\">Parallax</h2>
+      <p class=\"grey-text text-darken-3 lighten-3\">Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling.</p>
+    </div>
+  </div>
+  <div class=\"parallax-container\">
+    <div class=\"parallax\"><img src=\"https://ostdugriffonnoir.com/wp-content/uploads/2017/01/9.jpg\"></div>
+  </div>
+
+
 \t{% block body %}{% endblock %}
 \t{% block javascripts %}\t<!--Import jQuery before materialize.js-->
       <script type=\"text/javascript\" src=\"https://code.jquery.com/jquery-3.2.1.min.js\"></script>
+      <script src=\"https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js\"></script>
       <script type=\"text/javascript\" src=\"{{ asset('js/bin/materialize.js') }}\"></script>
 {% endblock %}
 \t</body>
 
-</html>", "base.html.twig", "C:\\wamp64\\www\\leslamesduPonant\\LesLamesDuPonant\\LesLamesDuPonant\\templates\\base.html.twig");
+</html>", "base.html.twig", "C:\\wamp64\\www\\LesLamesDuPonant\\LesLamesDuPonant\\templates\\base.html.twig");
     }
 }
