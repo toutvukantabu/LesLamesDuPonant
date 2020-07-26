@@ -145,15 +145,13 @@ class __TwigTemplate_a34750d87bd6bb1b33f170df28786b55d2c062a07afa82275d67284a300
   <div class=\"parallax-container\">
     <div class=\"parallax\"><img src=\"https://ostdugriffonnoir.com/wp-content/uploads/2017/01/9.jpg\"></div>
   </div>
-
-
 \t";
-        // line 83
+        // line 81
         $this->displayBlock('body', $context, $blocks);
-        // line 84
+        // line 82
         echo "\t";
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 89
+        // line 87
         echo "\t</body>
 
 </html>";
@@ -202,7 +200,7 @@ class __TwigTemplate_a34750d87bd6bb1b33f170df28786b55d2c062a07afa82275d67284a300
 
     }
 
-    // line 83
+    // line 81
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -220,7 +218,7 @@ class __TwigTemplate_a34750d87bd6bb1b33f170df28786b55d2c062a07afa82275d67284a300
 
     }
 
-    // line 84
+    // line 82
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -234,7 +232,7 @@ class __TwigTemplate_a34750d87bd6bb1b33f170df28786b55d2c062a07afa82275d67284a300
       <script type=\"text/javascript\" src=\"https://code.jquery.com/jquery-3.2.1.min.js\"></script>
       <script src=\"https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js\"></script>
       <script type=\"text/javascript\" src=\"";
-        // line 87
+        // line 85
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/bin/materialize.js"), "html", null, true);
         echo "\"></script>
 ";
@@ -258,7 +256,7 @@ class __TwigTemplate_a34750d87bd6bb1b33f170df28786b55d2c062a07afa82275d67284a300
 
     public function getDebugInfo()
     {
-        return array (  238 => 87,  224 => 84,  206 => 83,  188 => 15,  169 => 9,  157 => 89,  154 => 84,  152 => 83,  91 => 25,  87 => 24,  83 => 23,  77 => 20,  71 => 16,  69 => 15,  65 => 14,  59 => 10,  57 => 9,  47 => 1,);
+        return array (  236 => 85,  222 => 82,  204 => 81,  186 => 15,  167 => 9,  155 => 87,  152 => 82,  150 => 81,  91 => 25,  87 => 24,  83 => 23,  77 => 20,  71 => 16,  69 => 15,  65 => 14,  59 => 10,  57 => 9,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -343,8 +341,6 @@ class __TwigTemplate_a34750d87bd6bb1b33f170df28786b55d2c062a07afa82275d67284a300
   <div class=\"parallax-container\">
     <div class=\"parallax\"><img src=\"https://ostdugriffonnoir.com/wp-content/uploads/2017/01/9.jpg\"></div>
   </div>
-
-
 \t{% block body %}{% endblock %}
 \t{% block javascripts %}\t<!--Import jQuery before materialize.js-->
       <script type=\"text/javascript\" src=\"https://code.jquery.com/jquery-3.2.1.min.js\"></script>

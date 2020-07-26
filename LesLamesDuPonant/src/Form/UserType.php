@@ -24,7 +24,7 @@ class UserType extends AbstractType
                 'required' => true,
                 ])
                
-            ->add('password')
+            ->add('plainpassword')
             ->add('isVerified')
         ;
     }

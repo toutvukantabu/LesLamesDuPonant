@@ -14,6 +14,7 @@ use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 
+
 class RegistrationFormType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
@@ -21,6 +22,9 @@ class RegistrationFormType extends AbstractType
         $builder
             ->add('email', EmailType::class, [
                 'label' => 'votre email',
+                'attr' => [
+                    'class' => 'validate',
+                ],
             ])
             ->add('agreeTerms', CheckboxType::class, [
 
@@ -33,25 +37,36 @@ class RegistrationFormType extends AbstractType
                 ],
             ])
             ->add('plainPassword', RepeatedType::class, [
-                // instead of being set onto the object directly,
-                // this is read and encoded in the controller
                 'type' => PasswordType::class,
-                'mapped' => false,
-                'constraints' => [
-                    new NotBlank([
-                        'message' => 'Please enter a password',
-                    ]),
-                    new Length([
-                        'min' => 6,
-                        'minMessage' => 'Your password should be at least {{ limit }} characters',
-                        // max length allowed by Symfony for security reasons
-                        'max' => 4096,
-                    ]),
+                'first_options' => [
+                    'attr' => [
+                        'class' => 'validate',
+                    ],
+                    'constraints' => [
+                        new NotBlank([
+                            'message' => 'Please enter a password',
+                        ]),
+                        new Length([
+                            'min' => 6,
+                            'minMessage' => 'votre mot de passe doit faire minimum{{ limit }} caractères',
+                            // max length allowed by Symfony for security reasons
+                            'max' => 4096,
+                        ]),
+                    ],
+                    'label' => 'Mot de passe',
                 ],
-                'first_options' => ['label' => 'mot de passe'],
-                'second_options' => ['label' => 'confirmation mot de passe'],
-                'invalid_message' => ''
-             ]);
+                'second_options' => [
+                    'label' => 'Répeter mot de passe',
+                    'attr' => [
+                        'class' => 'validate',
+                    ],
+                ],
+                'invalid_message' => 'le mot de passe ne correspond pas',
+                // Instead of being set onto the object directly,
+                // this is read and encoded in the controller
+                'mapped' => false,
+            ]);
+             
     }
 
     public function configureOptions(OptionsResolver $resolver)
