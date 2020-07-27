@@ -10018,12 +10018,18 @@ if (Vel) {
 
     $.error('Method ' + methodOrOptions + ' does not exist on jQuery.tap-target');
   };
-})(jQuery);
+})
+
+  $('.carousel.carousel-slider').carousel({
+    fullWidth: true
+  });
+
+(jQuery);
 
 $(document).ready(function(){
-  $('.parallax').parallax();
-  
+  $('.parallax').parallax();  
     $('.carousel').carousel();
+      $(".button-collapse").sideNav();
 
 });
     

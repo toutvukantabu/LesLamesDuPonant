@@ -70,33 +70,52 @@ class __TwigTemplate_a34750d87bd6bb1b33f170df28786b55d2c062a07afa82275d67284a300
         // line 16
         echo "</head>
 <body>
+<header>
   <nav>
-    <div class=\"nav-wrapper\">
+    <div class=\"nav-wrapper \">
       <a href=\"";
-        // line 20
+        // line 21
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
         echo " \" class=\"brand-logo\">Logo</a>
       <a href=\"#\" data-activates=\"mobile-demo\" class=\"button-collapse\"><i class=\"material-icons\">menu</i></a>
       <ul class=\"right hide-on-med-and-down\">
         <li><a href=\"";
-        // line 23
+        // line 24
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
         echo "\">se connecter</a></li>
         <li><a href=\"";
-        // line 24
+        // line 25
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_register");
         echo "\">s'enregistrer</a></li>
         <li><a href=\"";
-        // line 25
+        // line 26
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
         echo "\">se deconnecter</a></li>
-        <li><a href=\"mobile.html\">Mobile</a></li>
+     
       </ul>
       <ul class=\"side-nav\" id=\"mobile-demo\">
-        <li><a href=\"sass.html\">Sass</a></li>
-        <li><a href=\"badges.html\">Components</a></li>
-        <li><a href=\"collapsible.html\">Javascript</a></li>
-        <li><a href=\"mobile.html\">Mobile</a></li>
+<li>
+\t<a href=\"";
+        // line 31
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
+        echo "\">se connecter</a>
+</li>
+<li>
+\t<a href=\"";
+        // line 34
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_register");
+        echo "\">s'enregistrer</a>
+</li>
+<li>
+\t<a href=\"";
+        // line 37
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
+        echo "\">se deconnecter</a>
+</li>
+<li>
+
+</li>
+
       </ul>
     </div>
   </nav>
@@ -105,38 +124,60 @@ class __TwigTemplate_a34750d87bd6bb1b33f170df28786b55d2c062a07afa82275d67284a300
 \t\t<a class=\"btn waves-effect white grey-text darken-text-2\">button</a>
 \t</div>
 \t<div class=\"carousel-item red white-text\" href=\"#one!\">
-\t\t<img src=\"https://lorempixel.com/800/400/food/4\">
 \t\t<h2>First Panel</h2>
 \t\t<p class=\"white-text\">This is your first panel</p>
 \t</div>
 \t<div class=\"carousel-item amber white-text\" href=\"#two!\">
-\t\t<img src=\"https://lorempixel.com/800/400/food/3\">
 \t\t<h2>Second Panel</h2>
 \t\t<p class=\"white-text\">This is your second panel</p>
 \t</div>
 \t<div class=\"carousel-item green white-text\" href=\"#three!\">
-\t\t<img src=\"https://lorempixel.com/800/400/food/3\">
+
 \t\t<h2>Third Panel</h2>
 \t\t<p class=\"white-text\">This is your third panel</p>
 \t</div>
 \t<div class=\"carousel-item blue white-text\" href=\"#four!\">
-\t\t<img src=\"https://lorempixel.com/800/400/food/3\">
 \t\t<h2>Fourth Panel</h2>
 \t\t<p class=\"white-text\">This is your fourth panel</p>
 \t</div>
 </div>
-
-
   </header>
- 
+<main>
+";
+        // line 70
+        $this->displayBlock('body', $context, $blocks);
+        echo "</main>
+
+<footer class=\"page-footer\">
+\t<div class=\"container\">
+\t\t<div class=\"row\">
+\t\t\t<div class=\"col l6 s12\">
+\t\t\t\t<h5 class=\"white-text\">Footer Content</h5>
+\t\t\t\t<p class=\"grey-text text-lighten-4\">You can use rows and columns here to organize your footer content.</p>
+\t\t\t</div>
+\t\t\t<div class=\"col l4 offset-l2 s12\">
+\t\t\t\t<h5 class=\"white-text\">Links</h5>
+\t\t\t\t<ul>
+\t\t\t\t\t<li><a class=\"grey-text text-lighten-3\" href=\"#!\">Link 1</a></li>
+\t\t\t\t\t<li><a class=\"grey-text text-lighten-3\" href=\"#!\">Link 2</a></li>
+\t\t\t\t\t<li><a class=\"grey-text text-lighten-3\" href=\"#!\">Link 3</a></li>
+\t\t\t\t\t<li><a class=\"grey-text text-lighten-3\" href=\"#!\">Link 4</a></li>
+\t\t\t\t</ul>
+\t\t\t</div>
+\t\t</div>
+\t</div>
+\t<div class=\"footer-copyright\">
+\t\t<div class=\"container\">
+\t\t\t© 2014 Copyright Text
+\t\t\t<a class=\"grey-text text-lighten-4 right\" href=\"#!\">More Links</a>
+\t\t</div>
+\t</div>
+</footer>
 
 \t";
-        // line 66
-        $this->displayBlock('body', $context, $blocks);
-        // line 67
-        echo "\t";
+        // line 98
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 72
+        // line 103
         echo "\t</body>
 
 </html>";
@@ -185,7 +226,7 @@ class __TwigTemplate_a34750d87bd6bb1b33f170df28786b55d2c062a07afa82275d67284a300
 
     }
 
-    // line 66
+    // line 70
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -203,7 +244,7 @@ class __TwigTemplate_a34750d87bd6bb1b33f170df28786b55d2c062a07afa82275d67284a300
 
     }
 
-    // line 67
+    // line 98
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -217,7 +258,7 @@ class __TwigTemplate_a34750d87bd6bb1b33f170df28786b55d2c062a07afa82275d67284a300
       <script type=\"text/javascript\" src=\"https://code.jquery.com/jquery-3.2.1.min.js\"></script>
       <script src=\"https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js\"></script>
       <script type=\"text/javascript\" src=\"";
-        // line 70
+        // line 101
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/bin/materialize.js"), "html", null, true);
         echo "\"></script>
 ";
@@ -241,7 +282,7 @@ class __TwigTemplate_a34750d87bd6bb1b33f170df28786b55d2c062a07afa82275d67284a300
 
     public function getDebugInfo()
     {
-        return array (  221 => 70,  207 => 67,  189 => 66,  171 => 15,  152 => 9,  140 => 72,  137 => 67,  135 => 66,  91 => 25,  87 => 24,  83 => 23,  77 => 20,  71 => 16,  69 => 15,  65 => 14,  59 => 10,  57 => 9,  47 => 1,);
+        return array (  262 => 101,  248 => 98,  230 => 70,  212 => 15,  193 => 9,  181 => 103,  179 => 98,  148 => 70,  112 => 37,  106 => 34,  100 => 31,  92 => 26,  88 => 25,  84 => 24,  78 => 21,  71 => 16,  69 => 15,  65 => 14,  59 => 10,  57 => 9,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -263,21 +304,31 @@ class __TwigTemplate_a34750d87bd6bb1b33f170df28786b55d2c062a07afa82275d67284a300
 \t{% block stylesheets %}{% endblock %}
 </head>
 <body>
+<header>
   <nav>
-    <div class=\"nav-wrapper\">
+    <div class=\"nav-wrapper \">
       <a href=\"{{path('home')}} \" class=\"brand-logo\">Logo</a>
       <a href=\"#\" data-activates=\"mobile-demo\" class=\"button-collapse\"><i class=\"material-icons\">menu</i></a>
       <ul class=\"right hide-on-med-and-down\">
         <li><a href=\"{{path('app_login')}}\">se connecter</a></li>
         <li><a href=\"{{path('app_register')}}\">s'enregistrer</a></li>
         <li><a href=\"{{path('app_logout')}}\">se deconnecter</a></li>
-        <li><a href=\"mobile.html\">Mobile</a></li>
+     
       </ul>
       <ul class=\"side-nav\" id=\"mobile-demo\">
-        <li><a href=\"sass.html\">Sass</a></li>
-        <li><a href=\"badges.html\">Components</a></li>
-        <li><a href=\"collapsible.html\">Javascript</a></li>
-        <li><a href=\"mobile.html\">Mobile</a></li>
+<li>
+\t<a href=\"{{path('app_login')}}\">se connecter</a>
+</li>
+<li>
+\t<a href=\"{{path('app_register')}}\">s'enregistrer</a>
+</li>
+<li>
+\t<a href=\"{{path('app_logout')}}\">se deconnecter</a>
+</li>
+<li>
+
+</li>
+
       </ul>
     </div>
   </nav>
@@ -286,32 +337,53 @@ class __TwigTemplate_a34750d87bd6bb1b33f170df28786b55d2c062a07afa82275d67284a300
 \t\t<a class=\"btn waves-effect white grey-text darken-text-2\">button</a>
 \t</div>
 \t<div class=\"carousel-item red white-text\" href=\"#one!\">
-\t\t<img src=\"https://lorempixel.com/800/400/food/4\">
 \t\t<h2>First Panel</h2>
 \t\t<p class=\"white-text\">This is your first panel</p>
 \t</div>
 \t<div class=\"carousel-item amber white-text\" href=\"#two!\">
-\t\t<img src=\"https://lorempixel.com/800/400/food/3\">
 \t\t<h2>Second Panel</h2>
 \t\t<p class=\"white-text\">This is your second panel</p>
 \t</div>
 \t<div class=\"carousel-item green white-text\" href=\"#three!\">
-\t\t<img src=\"https://lorempixel.com/800/400/food/3\">
+
 \t\t<h2>Third Panel</h2>
 \t\t<p class=\"white-text\">This is your third panel</p>
 \t</div>
 \t<div class=\"carousel-item blue white-text\" href=\"#four!\">
-\t\t<img src=\"https://lorempixel.com/800/400/food/3\">
 \t\t<h2>Fourth Panel</h2>
 \t\t<p class=\"white-text\">This is your fourth panel</p>
 \t</div>
 </div>
-
-
   </header>
- 
+<main>
+{% block body %}{% endblock %}</main>
 
-\t{% block body %}{% endblock %}
+<footer class=\"page-footer\">
+\t<div class=\"container\">
+\t\t<div class=\"row\">
+\t\t\t<div class=\"col l6 s12\">
+\t\t\t\t<h5 class=\"white-text\">Footer Content</h5>
+\t\t\t\t<p class=\"grey-text text-lighten-4\">You can use rows and columns here to organize your footer content.</p>
+\t\t\t</div>
+\t\t\t<div class=\"col l4 offset-l2 s12\">
+\t\t\t\t<h5 class=\"white-text\">Links</h5>
+\t\t\t\t<ul>
+\t\t\t\t\t<li><a class=\"grey-text text-lighten-3\" href=\"#!\">Link 1</a></li>
+\t\t\t\t\t<li><a class=\"grey-text text-lighten-3\" href=\"#!\">Link 2</a></li>
+\t\t\t\t\t<li><a class=\"grey-text text-lighten-3\" href=\"#!\">Link 3</a></li>
+\t\t\t\t\t<li><a class=\"grey-text text-lighten-3\" href=\"#!\">Link 4</a></li>
+\t\t\t\t</ul>
+\t\t\t</div>
+\t\t</div>
+\t</div>
+\t<div class=\"footer-copyright\">
+\t\t<div class=\"container\">
+\t\t\t© 2014 Copyright Text
+\t\t\t<a class=\"grey-text text-lighten-4 right\" href=\"#!\">More Links</a>
+\t\t</div>
+\t</div>
+</footer>
+
 \t{% block javascripts %}\t<!--Import jQuery before materialize.js-->
       <script type=\"text/javascript\" src=\"https://code.jquery.com/jquery-3.2.1.min.js\"></script>
       <script src=\"https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js\"></script>

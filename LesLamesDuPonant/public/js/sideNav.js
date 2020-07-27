@@ -411,8 +411,7 @@
       $.error( 'Method ' +  methodOrOptions + ' does not exist on jQuery.sideNav' );
     }
   }; // Plugin end
-}( jQuery ));
+}
 
-$( document ).ready(function(){
-  $(".button-collapse").sideNav();
-   });
+( jQuery ));
+
