@@ -27,6 +27,38 @@
                 <th>IsVerified</th>
                 <td>{{ user.isVerified ? 'Yes' : 'No' }}</td>
             </tr>
+            <tr>
+                <th>FirstNameUser</th>
+                <td>{{ user.firstNameUser }}</td>
+            </tr>
+            <tr>
+                <th>LastNameUser</th>
+                <td>{{ user.lastNameUser }}</td>
+            </tr>
+            <tr>
+                <th>PseudoUser</th>
+                <td>{{ user.pseudoUser }}</td>
+            </tr>
+            <tr>
+                <th>PhotoAvatarUser</th>
+                <td>{{ user.photoAvatarUser }}</td>
+            </tr>
+            <tr>
+                <th>BirthdayDateUser</th>
+                <td>{{ user.birthdayDateUser ? user.birthdayDateUser|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>PostalCodeUser</th>
+                <td>{{ user.postalCodeUser }}</td>
+            </tr>
+            <tr>
+                <th>AdressUser</th>
+                <td>{{ user.adressUser }}</td>
+            </tr>
+            <tr>
+                <th>CityUser</th>
+                <td>{{ user.cityUser }}</td>
+            </tr>
         </tbody>
     </table>
 

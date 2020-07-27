@@ -93,27 +93,38 @@ class __TwigTemplate_a34750d87bd6bb1b33f170df28786b55d2c062a07afa82275d67284a300
         echo "\">se deconnecter</a></li>
      
       </ul>
+\t  
       <ul class=\"side-nav\" id=\"mobile-demo\">
+\t  <li><div class=\"user-view\">
+      <div class=\"background\">
+        <img src=\"https://miro.medium.com/max/1080/1*hU0QQDiOnsKpX4qlIyn_4w.jpeg\">
+      </div>
+      <a href=\"#!user\"><img class=\"circle\" src=\"https://randomuser.me/api/portraits/men/66.jpg\"></a>
+      <a href=\"#!name\"><span class=\"white-text name\"> Bonjour John Doe</span></a>
+      <a href=\"#!email\"><span class=\"white-text email\">jdandturk@gmail.com</span></a>
+    </div></li>
+    <li><div class=\"divider\"></div></li>
+\t<li> <p>Les Lames Du Ponant</p>\t</li>
+    <li><a class=\"waves-effect\" href=\"#!\">Third Link With Waves</a></li>
 <li>
 \t<a href=\"";
-        // line 31
+        // line 43
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
         echo "\">se connecter</a>
 </li>
 <li>
 \t<a href=\"";
-        // line 34
+        // line 46
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_register");
         echo "\">s'enregistrer</a>
 </li>
 <li>
 \t<a href=\"";
-        // line 37
+        // line 49
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
         echo "\">se deconnecter</a>
 </li>
 <li>
-
 </li>
 
       </ul>
@@ -144,7 +155,7 @@ class __TwigTemplate_a34750d87bd6bb1b33f170df28786b55d2c062a07afa82275d67284a300
   </header>
 <main>
 ";
-        // line 70
+        // line 81
         $this->displayBlock('body', $context, $blocks);
         echo "</main>
 
@@ -175,9 +186,9 @@ class __TwigTemplate_a34750d87bd6bb1b33f170df28786b55d2c062a07afa82275d67284a300
 </footer>
 
 \t";
-        // line 98
+        // line 109
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 103
+        // line 114
         echo "\t</body>
 
 </html>";
@@ -226,7 +237,7 @@ class __TwigTemplate_a34750d87bd6bb1b33f170df28786b55d2c062a07afa82275d67284a300
 
     }
 
-    // line 70
+    // line 81
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -244,7 +255,7 @@ class __TwigTemplate_a34750d87bd6bb1b33f170df28786b55d2c062a07afa82275d67284a300
 
     }
 
-    // line 98
+    // line 109
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -258,7 +269,7 @@ class __TwigTemplate_a34750d87bd6bb1b33f170df28786b55d2c062a07afa82275d67284a300
       <script type=\"text/javascript\" src=\"https://code.jquery.com/jquery-3.2.1.min.js\"></script>
       <script src=\"https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js\"></script>
       <script type=\"text/javascript\" src=\"";
-        // line 101
+        // line 112
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/bin/materialize.js"), "html", null, true);
         echo "\"></script>
 ";
@@ -282,7 +293,7 @@ class __TwigTemplate_a34750d87bd6bb1b33f170df28786b55d2c062a07afa82275d67284a300
 
     public function getDebugInfo()
     {
-        return array (  262 => 101,  248 => 98,  230 => 70,  212 => 15,  193 => 9,  181 => 103,  179 => 98,  148 => 70,  112 => 37,  106 => 34,  100 => 31,  92 => 26,  88 => 25,  84 => 24,  78 => 21,  71 => 16,  69 => 15,  65 => 14,  59 => 10,  57 => 9,  47 => 1,);
+        return array (  273 => 112,  259 => 109,  241 => 81,  223 => 15,  204 => 9,  192 => 114,  190 => 109,  159 => 81,  124 => 49,  118 => 46,  112 => 43,  92 => 26,  88 => 25,  84 => 24,  78 => 21,  71 => 16,  69 => 15,  65 => 14,  59 => 10,  57 => 9,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -315,7 +326,19 @@ class __TwigTemplate_a34750d87bd6bb1b33f170df28786b55d2c062a07afa82275d67284a300
         <li><a href=\"{{path('app_logout')}}\">se deconnecter</a></li>
      
       </ul>
+\t  
       <ul class=\"side-nav\" id=\"mobile-demo\">
+\t  <li><div class=\"user-view\">
+      <div class=\"background\">
+        <img src=\"https://miro.medium.com/max/1080/1*hU0QQDiOnsKpX4qlIyn_4w.jpeg\">
+      </div>
+      <a href=\"#!user\"><img class=\"circle\" src=\"https://randomuser.me/api/portraits/men/66.jpg\"></a>
+      <a href=\"#!name\"><span class=\"white-text name\"> Bonjour John Doe</span></a>
+      <a href=\"#!email\"><span class=\"white-text email\">jdandturk@gmail.com</span></a>
+    </div></li>
+    <li><div class=\"divider\"></div></li>
+\t<li> <p>Les Lames Du Ponant</p>\t</li>
+    <li><a class=\"waves-effect\" href=\"#!\">Third Link With Waves</a></li>
 <li>
 \t<a href=\"{{path('app_login')}}\">se connecter</a>
 </li>
@@ -326,7 +349,6 @@ class __TwigTemplate_a34750d87bd6bb1b33f170df28786b55d2c062a07afa82275d67284a300
 \t<a href=\"{{path('app_logout')}}\">se deconnecter</a>
 </li>
 <li>
-
 </li>
 
       </ul>
@@ -391,6 +413,6 @@ class __TwigTemplate_a34750d87bd6bb1b33f170df28786b55d2c062a07afa82275d67284a300
 {% endblock %}
 \t</body>
 
-</html>", "base.html.twig", "C:\\wamp64\\www\\LesLamesDuPonant\\LesLamesDuPonant\\templates\\base.html.twig");
+</html>", "base.html.twig", "C:\\wamp64\\www\\leslamesduPonant\\LesLamesDuPonant\\LesLamesDuPonant\\templates\\base.html.twig");
     }
 }

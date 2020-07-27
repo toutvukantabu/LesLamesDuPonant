@@ -1,12 +1,20 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Reset your password{% endblock %}
+{% block title 'renouvellement mdp' %}
 
 {% block body %}
-    <h1>Reset your password</h1>
-
     {{ form_start(resetForm) }}
-        {{ form_row(resetForm.plainPassword) }}
+    	<div class="container">
+		<div class="row formRegister z-depth-5" >
+			     <h5 class="center-align ">Renouvellement mot de passe Les Lames du Ponant</h5>		
+			<div class="input-field col s12 l12 m12 ">
+        {{ form_row(resetForm.plainPassword.first) }}
+        </div>
+            <div class="input-field col s12 l12 m12">
+              {{ form_row(resetForm.plainPassword.second) }}
+              </div>
+		  <div class="input-field col s12 l12 m12">
         <button class="btn btn-primary">Reset password</button>
+   	</div>
     {{ form_end(resetForm) }}
 {% endblock %}

@@ -30,12 +30,10 @@ class ChangePasswordFormType extends AbstractType
                         ]),
                     ],
                     'label' => 'Nouveau mot de passe',
-                    'for'  => 'password',
                 ],
                 'second_options' => [
                     'label' => 'Répeter mot de passe',
                 ],
-                'message' => 'le mot de passe ne correspond pas',
                 // Instead of being set onto the object directly,
                 // this is read and encoded in the controller
                 'mapped' => false,

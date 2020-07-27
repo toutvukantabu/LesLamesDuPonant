@@ -137,14 +137,14 @@ final class Versions
   'symfony/maker-bundle' => 'v1.20.0@b048c7b2be5bce9024ae3b0db97d44a107029c27',
   'symfony/phpunit-bridge' => 'v5.1.2@de5f0fec631a0cbfe98630b053be1fad7b75aece',
   'symfony/web-profiler-bundle' => 'v5.1.2@25d892ab4927e7df32b0e8dce23cc7a1d4a3bd1c',
-  'paragonie/random_compat' => '2.*@252137cf7ff2387f14c503947f251d55260479e9',
-  'symfony/polyfill-ctype' => '*@252137cf7ff2387f14c503947f251d55260479e9',
-  'symfony/polyfill-iconv' => '*@252137cf7ff2387f14c503947f251d55260479e9',
-  'symfony/polyfill-php72' => '*@252137cf7ff2387f14c503947f251d55260479e9',
-  'symfony/polyfill-php71' => '*@252137cf7ff2387f14c503947f251d55260479e9',
-  'symfony/polyfill-php70' => '*@252137cf7ff2387f14c503947f251d55260479e9',
-  'symfony/polyfill-php56' => '*@252137cf7ff2387f14c503947f251d55260479e9',
-  '__root__' => 'dev-application-du-theme-materialize@252137cf7ff2387f14c503947f251d55260479e9',
+  'paragonie/random_compat' => '2.*@9122ad10b5498ef03833a849581228322673ce25',
+  'symfony/polyfill-ctype' => '*@9122ad10b5498ef03833a849581228322673ce25',
+  'symfony/polyfill-iconv' => '*@9122ad10b5498ef03833a849581228322673ce25',
+  'symfony/polyfill-php72' => '*@9122ad10b5498ef03833a849581228322673ce25',
+  'symfony/polyfill-php71' => '*@9122ad10b5498ef03833a849581228322673ce25',
+  'symfony/polyfill-php70' => '*@9122ad10b5498ef03833a849581228322673ce25',
+  'symfony/polyfill-php56' => '*@9122ad10b5498ef03833a849581228322673ce25',
+  '__root__' => 'dev-Formulaire-registration/login/reset-password@9122ad10b5498ef03833a849581228322673ce25',
 );
 
     private function __construct()

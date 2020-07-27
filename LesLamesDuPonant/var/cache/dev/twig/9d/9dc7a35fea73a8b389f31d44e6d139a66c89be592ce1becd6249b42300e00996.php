@@ -210,6 +210,6 @@ class __TwigTemplate_ba2581d91a6bd3a823e029ce1ba84a466cbb6f63914e03ff67b061dfb27
 \t{{ form_end(registrationForm) }}
 
 {% endblock %}
-", "registration/register.html.twig", "C:\\wamp64\\www\\LesLamesDuPonant\\LesLamesDuPonant\\templates\\registration\\register.html.twig");
+", "registration/register.html.twig", "C:\\wamp64\\www\\leslamesduPonant\\LesLamesDuPonant\\LesLamesDuPonant\\templates\\registration\\register.html.twig");
     }
 }

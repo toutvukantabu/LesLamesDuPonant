@@ -47,6 +47,46 @@ class User implements UserInterface
      */
     private $isVerified = false;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $firstNameUser;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $lastNameUser;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $pseudoUser;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $photoAvatarUser;
+
+    /**
+     * @ORM\Column(type="date", nullable=true)
+     */
+    private $birthdayDateUser;
+
+    /**
+     * @ORM\Column(type="string", length=20, nullable=true)
+     */
+    private $postalCodeUser;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $adressUser;
+
+    /**
+     * @ORM\Column(type="string", length=50, nullable=true)
+     */
+    private $cityUser;
+
     public function __construct()
     {
     $this->roles = [self::ROLE_USER];
@@ -138,6 +178,102 @@ class User implements UserInterface
     public function setIsVerified(bool $isVerified): self
     {
         $this->isVerified = $isVerified;
+
+        return $this;
+    }
+
+    public function getFirstNameUser(): ?string
+    {
+        return $this->firstNameUser;
+    }
+
+    public function setFirstNameUser(?string $firstNameUser): self
+    {
+        $this->firstNameUser = $firstNameUser;
+
+        return $this;
+    }
+
+    public function getLastNameUser(): ?string
+    {
+        return $this->lastNameUser;
+    }
+
+    public function setLastNameUser(?string $lastNameUser): self
+    {
+        $this->lastNameUser = $lastNameUser;
+
+        return $this;
+    }
+
+    public function getPseudoUser(): ?string
+    {
+        return $this->pseudoUser;
+    }
+
+    public function setPseudoUser(string $pseudoUser): self
+    {
+        $this->pseudoUser = $pseudoUser;
+
+        return $this;
+    }
+
+    public function getPhotoAvatarUser(): ?string
+    {
+        return $this->photoAvatarUser;
+    }
+
+    public function setPhotoAvatarUser(?string $photoAvatarUser): self
+    {
+        $this->photoAvatarUser = $photoAvatarUser;
+
+        return $this;
+    }
+
+    public function getBirthdayDateUser(): ?\DateTimeInterface
+    {
+        return $this->birthdayDateUser;
+    }
+
+    public function setBirthdayDateUser(?\DateTimeInterface $birthdayDateUser): self
+    {
+        $this->birthdayDateUser = $birthdayDateUser;
+
+        return $this;
+    }
+
+    public function getPostalCodeUser(): ?string
+    {
+        return $this->postalCodeUser;
+    }
+
+    public function setPostalCodeUser(?string $postalCodeUser): self
+    {
+        $this->postalCodeUser = $postalCodeUser;
+
+        return $this;
+    }
+
+    public function getAdressUser(): ?string
+    {
+        return $this->adressUser;
+    }
+
+    public function setAdressUser(?string $adressUser): self
+    {
+        $this->adressUser = $adressUser;
+
+        return $this;
+    }
+
+    public function getCityUser(): ?string
+    {
+        return $this->cityUser;
+    }
+
+    public function setCityUser(?string $cityUser): self
+    {
+        $this->cityUser = $cityUser;
 
         return $this;
     }
