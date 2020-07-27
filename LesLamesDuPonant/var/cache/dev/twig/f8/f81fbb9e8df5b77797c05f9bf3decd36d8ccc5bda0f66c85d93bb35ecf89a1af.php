@@ -100,58 +100,43 @@ class __TwigTemplate_a34750d87bd6bb1b33f170df28786b55d2c062a07afa82275d67284a300
       </ul>
     </div>
   </nav>
-  </header>
 <div class=\"carousel carousel-slider center\" data-indicators=\"true\">
-    <div class=\"carousel-fixed-item center\">
-      <a class=\"btn waves-effect white grey-text darken-text-2\">button</a>
-    </div>
-    <div class=\"carousel-item red white-text\" href=\"#one!\">
-    <img src=\"https://lorempixel.com/800/400/food/4\">
-      <h2>First Panel</h2>
-      <p class=\"white-text\">This is your first panel</p>
-    </div>
-    <div class=\"carousel-item amber white-text\" href=\"#two!\">
-    <img src=\"https://lorempixel.com/800/400/food/3\">
-      <h2>Second Panel</h2>
-      <p class=\"white-text\">This is your second panel</p>
-    </div>
-    <div class=\"carousel-item green white-text\" href=\"#three!\">
-    <img src=\"https://lorempixel.com/800/400/food/3\">
-      <h2>Third Panel</h2>
-      <p class=\"white-text\">This is your third panel</p>
-    </div>
-    <div class=\"carousel-item blue white-text\" href=\"#four!\">
-    <img src=\"https://lorempixel.com/800/400/food/3\">
-      <h2>Fourth Panel</h2>
-      <p class=\"white-text\">This is your fourth panel</p>
-    </div>
-  </div>
-        
-  <div class=\"parallax-container\">
-  <div class=\"section white\">
-    <div class=\"row container\">
-      <h2 class=\"header\">Parallax</h2>
-      <p class=\"grey-text text-darken-3 lighten-3\">Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling.</p>
-    </div>
-  </div>
-    <div class=\"parallax\"><img src=\"https://ostdugriffonnoir.com/wp-content/uploads/2017/01/9.jpg\"></div>
-  </div>
-  <div class=\"section white\">
-    <div class=\"row container\">
-      <h2 class=\"header\">Parallax</h2>
-      <p class=\"grey-text text-darken-3 lighten-3\">Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling.</p>
-    </div>
-  </div>
-  <div class=\"parallax-container\">
-    <div class=\"parallax\"><img src=\"https://ostdugriffonnoir.com/wp-content/uploads/2017/01/9.jpg\"></div>
-  </div>
+\t<div class=\"carousel-fixed-item center\">
+\t\t<a class=\"btn waves-effect white grey-text darken-text-2\">button</a>
+\t</div>
+\t<div class=\"carousel-item red white-text\" href=\"#one!\">
+\t\t<img src=\"https://lorempixel.com/800/400/food/4\">
+\t\t<h2>First Panel</h2>
+\t\t<p class=\"white-text\">This is your first panel</p>
+\t</div>
+\t<div class=\"carousel-item amber white-text\" href=\"#two!\">
+\t\t<img src=\"https://lorempixel.com/800/400/food/3\">
+\t\t<h2>Second Panel</h2>
+\t\t<p class=\"white-text\">This is your second panel</p>
+\t</div>
+\t<div class=\"carousel-item green white-text\" href=\"#three!\">
+\t\t<img src=\"https://lorempixel.com/800/400/food/3\">
+\t\t<h2>Third Panel</h2>
+\t\t<p class=\"white-text\">This is your third panel</p>
+\t</div>
+\t<div class=\"carousel-item blue white-text\" href=\"#four!\">
+\t\t<img src=\"https://lorempixel.com/800/400/food/3\">
+\t\t<h2>Fourth Panel</h2>
+\t\t<p class=\"white-text\">This is your fourth panel</p>
+\t</div>
+</div>
+
+
+  </header>
+ 
+
 \t";
-        // line 81
+        // line 66
         $this->displayBlock('body', $context, $blocks);
-        // line 82
+        // line 67
         echo "\t";
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 87
+        // line 72
         echo "\t</body>
 
 </html>";
@@ -200,7 +185,7 @@ class __TwigTemplate_a34750d87bd6bb1b33f170df28786b55d2c062a07afa82275d67284a300
 
     }
 
-    // line 81
+    // line 66
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -218,7 +203,7 @@ class __TwigTemplate_a34750d87bd6bb1b33f170df28786b55d2c062a07afa82275d67284a300
 
     }
 
-    // line 82
+    // line 67
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -232,7 +217,7 @@ class __TwigTemplate_a34750d87bd6bb1b33f170df28786b55d2c062a07afa82275d67284a300
       <script type=\"text/javascript\" src=\"https://code.jquery.com/jquery-3.2.1.min.js\"></script>
       <script src=\"https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js\"></script>
       <script type=\"text/javascript\" src=\"";
-        // line 85
+        // line 70
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/bin/materialize.js"), "html", null, true);
         echo "\"></script>
 ";
@@ -256,7 +241,7 @@ class __TwigTemplate_a34750d87bd6bb1b33f170df28786b55d2c062a07afa82275d67284a300
 
     public function getDebugInfo()
     {
-        return array (  236 => 85,  222 => 82,  204 => 81,  186 => 15,  167 => 9,  155 => 87,  152 => 82,  150 => 81,  91 => 25,  87 => 24,  83 => 23,  77 => 20,  71 => 16,  69 => 15,  65 => 14,  59 => 10,  57 => 9,  47 => 1,);
+        return array (  221 => 70,  207 => 67,  189 => 66,  171 => 15,  152 => 9,  140 => 72,  137 => 67,  135 => 66,  91 => 25,  87 => 24,  83 => 23,  77 => 20,  71 => 16,  69 => 15,  65 => 14,  59 => 10,  57 => 9,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -296,51 +281,36 @@ class __TwigTemplate_a34750d87bd6bb1b33f170df28786b55d2c062a07afa82275d67284a300
       </ul>
     </div>
   </nav>
-  </header>
 <div class=\"carousel carousel-slider center\" data-indicators=\"true\">
-    <div class=\"carousel-fixed-item center\">
-      <a class=\"btn waves-effect white grey-text darken-text-2\">button</a>
-    </div>
-    <div class=\"carousel-item red white-text\" href=\"#one!\">
-    <img src=\"https://lorempixel.com/800/400/food/4\">
-      <h2>First Panel</h2>
-      <p class=\"white-text\">This is your first panel</p>
-    </div>
-    <div class=\"carousel-item amber white-text\" href=\"#two!\">
-    <img src=\"https://lorempixel.com/800/400/food/3\">
-      <h2>Second Panel</h2>
-      <p class=\"white-text\">This is your second panel</p>
-    </div>
-    <div class=\"carousel-item green white-text\" href=\"#three!\">
-    <img src=\"https://lorempixel.com/800/400/food/3\">
-      <h2>Third Panel</h2>
-      <p class=\"white-text\">This is your third panel</p>
-    </div>
-    <div class=\"carousel-item blue white-text\" href=\"#four!\">
-    <img src=\"https://lorempixel.com/800/400/food/3\">
-      <h2>Fourth Panel</h2>
-      <p class=\"white-text\">This is your fourth panel</p>
-    </div>
-  </div>
-        
-  <div class=\"parallax-container\">
-  <div class=\"section white\">
-    <div class=\"row container\">
-      <h2 class=\"header\">Parallax</h2>
-      <p class=\"grey-text text-darken-3 lighten-3\">Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling.</p>
-    </div>
-  </div>
-    <div class=\"parallax\"><img src=\"https://ostdugriffonnoir.com/wp-content/uploads/2017/01/9.jpg\"></div>
-  </div>
-  <div class=\"section white\">
-    <div class=\"row container\">
-      <h2 class=\"header\">Parallax</h2>
-      <p class=\"grey-text text-darken-3 lighten-3\">Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling.</p>
-    </div>
-  </div>
-  <div class=\"parallax-container\">
-    <div class=\"parallax\"><img src=\"https://ostdugriffonnoir.com/wp-content/uploads/2017/01/9.jpg\"></div>
-  </div>
+\t<div class=\"carousel-fixed-item center\">
+\t\t<a class=\"btn waves-effect white grey-text darken-text-2\">button</a>
+\t</div>
+\t<div class=\"carousel-item red white-text\" href=\"#one!\">
+\t\t<img src=\"https://lorempixel.com/800/400/food/4\">
+\t\t<h2>First Panel</h2>
+\t\t<p class=\"white-text\">This is your first panel</p>
+\t</div>
+\t<div class=\"carousel-item amber white-text\" href=\"#two!\">
+\t\t<img src=\"https://lorempixel.com/800/400/food/3\">
+\t\t<h2>Second Panel</h2>
+\t\t<p class=\"white-text\">This is your second panel</p>
+\t</div>
+\t<div class=\"carousel-item green white-text\" href=\"#three!\">
+\t\t<img src=\"https://lorempixel.com/800/400/food/3\">
+\t\t<h2>Third Panel</h2>
+\t\t<p class=\"white-text\">This is your third panel</p>
+\t</div>
+\t<div class=\"carousel-item blue white-text\" href=\"#four!\">
+\t\t<img src=\"https://lorempixel.com/800/400/food/3\">
+\t\t<h2>Fourth Panel</h2>
+\t\t<p class=\"white-text\">This is your fourth panel</p>
+\t</div>
+</div>
+
+
+  </header>
+ 
+
 \t{% block body %}{% endblock %}
 \t{% block javascripts %}\t<!--Import jQuery before materialize.js-->
       <script type=\"text/javascript\" src=\"https://code.jquery.com/jquery-3.2.1.min.js\"></script>
