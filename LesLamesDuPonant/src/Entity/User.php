@@ -6,10 +6,11 @@ use App\Repository\UserRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
- * @UniqueEntity(fields={"email"}, message="There is already an account with this email")
+ * @UniqueEntity(fields={"email"}, message="il y a deja un accompte avec cet email")
  */
 class User implements UserInterface
 {
@@ -35,6 +36,7 @@ class User implements UserInterface
     private $roles = [];
 
     /**
+     * @Assert\Length(min=8)
      * @var string The hashed password
      * @ORM\Column(type="string")
      */
@@ -44,6 +46,46 @@ class User implements UserInterface
      * @ORM\Column(type="boolean")
      */
     private $isVerified = false;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $firstNameUser;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $lastNameUser;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $pseudoUser;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $photoAvatarUser;
+
+    /**
+     * @ORM\Column(type="date", nullable=true)
+     */
+    private $birthdayDateUser;
+
+    /**
+     * @ORM\Column(type="string", length=20, nullable=true)
+     */
+    private $postalCodeUser;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $adressUser;
+
+    /**
+     * @ORM\Column(type="string", length=50, nullable=true)
+     */
+    private $cityUser;
 
     public function __construct()
     {
@@ -66,6 +108,7 @@ class User implements UserInterface
 
         return $this;
     }
+    
 
     /**
      * A visual identifier that represents this user.
@@ -136,6 +179,102 @@ class User implements UserInterface
     public function setIsVerified(bool $isVerified): self
     {
         $this->isVerified = $isVerified;
+
+        return $this;
+    }
+
+    public function getFirstNameUser(): ?string
+    {
+        return $this->firstNameUser;
+    }
+
+    public function setFirstNameUser(?string $firstNameUser): self
+    {
+        $this->firstNameUser = $firstNameUser;
+
+        return $this;
+    }
+
+    public function getLastNameUser(): ?string
+    {
+        return $this->lastNameUser;
+    }
+
+    public function setLastNameUser(?string $lastNameUser): self
+    {
+        $this->lastNameUser = $lastNameUser;
+
+        return $this;
+    }
+
+    public function getPseudoUser(): ?string
+    {
+        return $this->pseudoUser;
+    }
+
+    public function setPseudoUser(string $pseudoUser): self
+    {
+        $this->pseudoUser = $pseudoUser;
+
+        return $this;
+    }
+
+    public function getPhotoAvatarUser(): ?string
+    {
+        return $this->photoAvatarUser;
+    }
+
+    public function setPhotoAvatarUser(?string $photoAvatarUser): self
+    {
+        $this->photoAvatarUser = $photoAvatarUser;
+
+        return $this;
+    }
+
+    public function getBirthdayDateUser(): ?\DateTimeInterface
+    {
+        return $this->birthdayDateUser;
+    }
+
+    public function setBirthdayDateUser(?\DateTimeInterface $birthdayDateUser): self
+    {
+        $this->birthdayDateUser = $birthdayDateUser;
+
+        return $this;
+    }
+
+    public function getPostalCodeUser(): ?string
+    {
+        return $this->postalCodeUser;
+    }
+
+    public function setPostalCodeUser(?string $postalCodeUser): self
+    {
+        $this->postalCodeUser = $postalCodeUser;
+
+        return $this;
+    }
+
+    public function getAdressUser(): ?string
+    {
+        return $this->adressUser;
+    }
+
+    public function setAdressUser(?string $adressUser): self
+    {
+        $this->adressUser = $adressUser;
+
+        return $this;
+    }
+
+    public function getCityUser(): ?string
+    {
+        return $this->cityUser;
+    }
+
+    public function setCityUser(?string $cityUser): self
+    {
+        $this->cityUser = $cityUser;
 
         return $this;
     }

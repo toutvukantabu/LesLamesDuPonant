@@ -10018,29 +10018,34 @@ if (Vel) {
 
     $.error('Method ' + methodOrOptions + ' does not exist on jQuery.tap-target');
   };
-})(jQuery);
-
-$( document ).ready(function(){
-  $("#formValidate").validate({
-             rules: {
-            cEmail: {
-                required: true,
-                email:true
-            },
-            password: {
-				required: true,
-				minlength: 8
-			},
-			cPassword: {
-				required: true,
-				minlength: 8,
-				equalTo: "#password"
-			},
-      
-        
-       }});
-
-
-
-
 })
+
+  $('.carousel.carousel-slider').carousel({
+    fullWidth: true
+  });
+
+  $('.datepicker').on('mousedown', function (event) {
+    event.preventDefault();
+  });
+
+ $('.datepicker').pickadate({
+   format: 'dd-mm-yyyy',
+   selectMonths: true, // Creates a dropdown to control month
+   selectYears: 100, // Creates a dropdown of 15 years to control year,
+   today: 'Today',
+   clear: 'Clear',
+   close: 'Ok',
+   closeOnSelect: false, // Close upon selecting a date,
+   container: 'form', // ex. 'body' will append picker to body
+   
+ });
+
+
+$(document).ready(function(){
+  $('.parallax').parallax();  
+    $('.carousel').carousel();
+      $(".button-collapse").sideNav();
+ $('select').material_select();
+});
+
+    

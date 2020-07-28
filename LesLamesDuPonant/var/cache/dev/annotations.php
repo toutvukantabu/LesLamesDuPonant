@@ -738,7 +738,7 @@ return [[
 
 0 => 'N;',
 1 => [],
-2 => 1595596165,
+2 => 1595855507,
 3 => static function () {
     return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
         $o = [
@@ -1226,7 +1226,7 @@ return [[
                     'App\\Repository\\UserRepository',
                 ],
                 'message' => [
-                    1 => 'There is already an account with this email',
+                    1 => 'il y a deja un accompte avec cet email',
                 ],
                 'fields' => [
                     1 => [
@@ -1291,12 +1291,25 @@ return [[
 27 => static function () {
     return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
         $o = [
-            clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Doctrine\\ORM\\Mapping\\Column'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Column')),
+            clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Symfony\\Component\\Validator\\Constraints\\Length'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Validator\\Constraints\\Length')),
+            clone ($p['Doctrine\\ORM\\Mapping\\Column'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Column')),
         ],
         null,
-        [],
+        [
+            'stdClass' => [
+                'min' => [
+                    8,
+                ],
+                'groups' => [
+                    [
+                        'Default',
+                    ],
+                ],
+            ],
+        ],
         [
             $o[0],
+            $o[1],
         ],
         []
     );
