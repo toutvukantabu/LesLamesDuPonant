@@ -46,33 +46,32 @@ class __TwigTemplate_a34750d87bd6bb1b33f170df28786b55d2c062a07afa82275d67284a300
         // line 1
         echo "<!DOCTYPE html>
 <html>
-
 \t<head>
 \t\t<meta charset=\"UTF-8\"/>
 \t\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/>
 \t\t<title>
 \t\t\t";
-        // line 8
+        // line 7
         $this->displayBlock('title', $context, $blocks);
-        // line 9
+        // line 8
         echo "\t\t</title>
 \t\t<!--Import Google Icon Font-->
 \t\t<link
 \t\thref=\"https://fonts.googleapis.com/icon?family=Material+Icons\" rel=\"stylesheet\">
 \t\t<!--Import materialize.css-->
 \t\t<link type=\"text/css\" rel=\"stylesheet\" href=\"";
-        // line 14
+        // line 13
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("sass/materialize.css"), "html", null, true);
         echo "\" media=\"screen,projection\"/> ";
         $this->displayBlock('stylesheets', $context, $blocks);
-        // line 15
+        // line 14
         echo "\t\t</head>
 \t\t<body>
 \t\t\t<header>
 \t\t\t\t<nav>
 \t\t\t\t\t<div class=\"nav-wrapper  blue accent-4\">
 \t\t\t\t\t\t<a href=\"";
-        // line 20
+        // line 19
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
         echo " \" class=\"brand-logo \">Logo</a>
 \t\t\t\t\t\t<a href=\"#\" data-activates=\"mobile-demo\" class=\"button-collapse\">
@@ -81,15 +80,16 @@ class __TwigTemplate_a34750d87bd6bb1b33f170df28786b55d2c062a07afa82275d67284a300
 \t\t\t\t\t\t<ul class=\"right hide-on-med-and-down\">
 \t\t\t\t\t\t\t<li>
 \t\t\t\t\t\t\t\t<a href=\"";
-        // line 26
+        // line 25
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
         echo "\">Les AMHE</a>
 \t\t\t\t\t\t\t</li>
 \t\t\t\t\t\t\t<li>
 \t\t\t\t\t\t\t\t<a href=\"";
-        // line 29
+        // line 28
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
-        echo "\"> Boutique</a>
+        echo "\">
+\t\t\t\t\t\t\t\t\tBoutique</a>
 \t\t\t\t\t\t\t</li>
 \t\t\t\t\t\t\t<li>
 \t\t\t\t\t\t\t\t<a href=\"";
@@ -97,41 +97,52 @@ class __TwigTemplate_a34750d87bd6bb1b33f170df28786b55d2c062a07afa82275d67284a300
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
         echo "\">Forum</a>
 \t\t\t\t\t\t\t</li>
-
-
-
 \t\t\t\t\t\t\t";
-        // line 37
-        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("IS_AUTHENTICATED_FULLY")) {
-            // line 38
-            echo "\t\t\t\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t<a href=\"#\" data-activates=\"mobile-demo\"  class=\"monProfilBtn\"> Mon profil</a>
-\t\t\t\t\t\t\t</li>
-\t\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t\t<a href=\"";
-            // line 42
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
-            echo "\">se deconnecter</a>
-\t\t\t\t\t\t\t</li>
-\t\t\t\t\t\t
-\t\t\t\t\t\t\t";
-        } else {
-            // line 46
-            echo "\t\t\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t\t<a href=\"";
-            // line 47
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
-            echo "\">se connecter</a>
-\t\t\t\t\t\t\t</li>
-\t\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t\t<a href=\"";
-            // line 50
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_register");
-            echo "\">s'enregistrer</a>
-\t\t\t\t\t\t\t</li>
+        // line 34
+        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("Role_Administrateur")) {
+            // line 35
+            echo "
+\t\t\t\t\t\t\t\t<a href=\"#\">Administration</a>
+
+
 \t\t\t\t\t\t\t";
         }
-        // line 53
+        // line 40
+        echo "
+
+\t\t\t\t\t\t\t";
+        // line 42
+        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("IS_AUTHENTICATED_FULLY")) {
+            // line 43
+            echo "\t\t\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t\t\t<a href=\"#\" data-activates=\"mobile-demo\" class=\"monProfilBtn\">
+\t\t\t\t\t\t\t\t\t\tMon profil</a>
+\t\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t\t\t<a href=\"";
+            // line 48
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
+            echo "\">se deconnecter</a>
+\t\t\t\t\t\t\t\t</li>
+
+\t\t\t\t\t\t\t";
+        } else {
+            // line 52
+            echo "\t\t\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t\t\t<a href=\"";
+            // line 53
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
+            echo "\">se connecter</a>
+\t\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t\t\t<a href=\"";
+            // line 56
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_register");
+            echo "\">s'enregistrer</a>
+\t\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t";
+        }
+        // line 59
         echo "
 \t\t\t\t\t\t</ul>
 
@@ -140,75 +151,107 @@ class __TwigTemplate_a34750d87bd6bb1b33f170df28786b55d2c062a07afa82275d67284a300
 \t\t\t\t\t\t\t\t<div class=\"user-view\">
 \t\t\t\t\t\t\t\t\t<div class=\"background\">
 \t\t\t\t\t\t\t\t\t\t<img src=\"https://miro.medium.com/max/1080/1*hU0QQDiOnsKpX4qlIyn_4w.jpeg\">
-\t\t\t\t\t\t\t\t\t</div>";
-        // line 61
+\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t";
+        // line 68
         if (($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("IS_AUTHENTICATED_FULLY") && (isset($context["photoAvatarUser"]) || array_key_exists("photoAvatarUser", $context)))) {
-            // line 62
-            echo "\t\t\t\t\t\t\t\t\t<a href=\"#!user\"><img class=\"circle\" src=\"";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 62, $this->source); })()), "user", [], "any", false, false, false, 62), "photoAvatarUser", [], "any", false, false, false, 62), "html", null, true);
+            // line 69
+            echo "\t\t\t\t\t\t\t\t\t\t<a href=\"#!user\"><img class=\"circle\" src=\"";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 69, $this->source); })()), "user", [], "any", false, false, false, 69), "photoAvatarUser", [], "any", false, false, false, 69), "html", null, true);
             echo "\"></a>
 \t\t\t\t\t\t\t\t\t";
         } else {
-            // line 64
-            echo "\t\t\t\t\t\t\t\t\t<a href=\"#!user\"><img class=\"circle\" src=\"uploads\\avatar.jpg\"></a>
-\t\t\t\t\t\t\t\t\t";
-        }
-        // line 66
-        echo "\t\t\t\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t\t\t\t";
-        // line 67
-        if (($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("IS_AUTHENTICATED_FULLY") && (isset($context["PseudoUser"]) || array_key_exists("PseudoUser", $context)))) {
-            // line 68
-            echo "\t\t\t\t\t\t\t\t\t\t<span class=\"white-text name\">\tBonjour ";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 68, $this->source); })()), "user", [], "any", false, false, false, 68), "pseudoUser", [], "any", false, false, false, 68), "html", null, true);
-            echo "</span>
-\t\t\t\t\t\t\t\t\t";
-        } else {
-            // line 70
-            echo "\t\t\t\t\t\t\t\t\t<span class=\"white-text name\">\tBonjour \"Illustre inconnu\"</span>
-\t\t\t\t\t\t\t\t\t<Small>Tu peux ajouter ton pseudo dans la partie mon profil ;)</Small>
+            // line 71
+            echo "\t\t\t\t\t\t\t\t\t\t<a href=\"#!user\"><img class=\"circle\" src=\"uploads\\avatar.jpg\"></a>
 \t\t\t\t\t\t\t\t\t";
         }
         // line 73
+        echo "
+\t\t\t\t\t\t\t\t\t";
+        // line 74
+        if (($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("IS_AUTHENTICATED_FULLY") && (isset($context["PseudoUser"]) || array_key_exists("PseudoUser", $context)))) {
+            // line 75
+            echo "\t\t\t\t\t\t\t\t\t\t<span class=\"white-text name\">
+\t\t\t\t\t\t\t\t\t\t\tBonjour
+\t\t\t\t\t\t\t\t\t\t\t";
+            // line 77
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 77, $this->source); })()), "user", [], "any", false, false, false, 77), "pseudoUser", [], "any", false, false, false, 77), "html", null, true);
+            echo "</span>
+\t\t\t\t\t\t\t\t\t";
+        } else {
+            // line 79
+            echo "\t\t\t\t\t\t\t\t\t\t<span class=\"white-text name\">
+\t\t\t\t\t\t\t\t\t\t\tBonjour \"Illustre inconnu\"</span>
+\t\t\t\t\t\t\t\t\t\t<Small>Tu peux modifier ton pseudo en cliquant sur \"Mes infos</Small>
+\t\t\t\t\t\t\t\t\t";
+        }
+        // line 83
         echo "\t\t\t\t\t\t\t\t\t";
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("IS_AUTHENTICATED_FULLY")) {
-            // line 74
-            echo "\t\t\t\t\t\t\t\t\t\t\t<span class=\"white-text email\">";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 74, $this->source); })()), "user", [], "any", false, false, false, 74), "email", [], "any", false, false, false, 74), "html", null, true);
+            // line 84
+            echo "\t\t\t\t\t\t\t\t\t\t<span class=\"white-text email\">";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 84, $this->source); })()), "user", [], "any", false, false, false, 84), "email", [], "any", false, false, false, 84), "html", null, true);
             echo "</span>
-\t\t\t\t\t\t\t\t\t\t";
+\t\t\t\t\t\t\t\t\t\t<a href=\"";
+            // line 85
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
+            echo "\">
+\t\t\t\t\t\t\t\t\t\t\t<span class=\"white-text email\">
+\t\t\t\t\t\t\t\t\t\t\t\tse déconnecter</span>
+\t\t\t\t\t\t\t\t\t\t</a>
+\t\t\t\t\t\t\t\t\t";
         }
-        // line 76
-        echo "
-\t\t\t\t\t\t\t\t\t</a>
-\t\t\t\t\t\t\t\t</div>
+        // line 90
+        echo "\t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t</li>
 \t\t\t\t\t\t\t<li>
 \t\t\t\t\t\t\t\t<div class=\"divider\"></div>
 \t\t\t\t\t\t\t</li>
 \t\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t\t<p>Les Lames Du Ponant</p>
+\t\t\t\t\t\t\t\t<h5 class=\"black-text center-align\">Les lames du Ponant</h5>
 \t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t<div class=\"divider\"></div>
 \t\t\t\t\t\t\t<li>
 \t\t\t\t\t\t\t\t<a href=\"";
-        // line 87
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
-        echo "\">se connecter</a>
+        // line 100
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
+        echo "\">
+\t\t\t\t\t\t\t\t\t<span>Messagerie</span>
+\t\t\t\t\t\t\t\t</a>
 \t\t\t\t\t\t\t</li>
 \t\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t\t<a href=\"";
-        // line 90
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_register");
-        echo "\">s'enregistrer</a>
-\t\t\t\t\t\t\t</li>
-\t\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t\t<a href=\"";
-        // line 93
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
-        echo "\">se deconnecter</a>
-\t\t\t\t\t\t\t</li>
-\t\t\t\t\t\t\t<li></li>
+\t\t\t
+\t\t
+\t\t\t\t\t
+                            <a href=\"";
+        // line 108
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_edit", ["id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 108, $this->source); })()), "user", [], "any", false, false, false, 108), "id", [], "any", false, false, false, 108)]), "html", null, true);
+        echo "\">
+        
 
+\t\t\t\t\t\t\t\t\t<span>Modifier mes infos</span>
+\t\t\t\t\t\t\t\t</a>
+\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t<div class=\"divider\"></div>
+\t\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t\t<a href=\"";
+        // line 116
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
+        echo "\">Les AMHE</a>
+\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t\t<a href=\"";
+        // line 119
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
+        echo "\">
+\t\t\t\t\t\t\t\t\tBoutique</a>
+\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t\t<a href=\"";
+        // line 123
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
+        echo "\">Forum</a>
+\t\t\t\t\t\t\t</li>
 \t\t\t\t\t\t</ul>
 \t\t\t\t\t</div>
 \t\t\t\t</nav>
@@ -217,7 +260,8 @@ class __TwigTemplate_a34750d87bd6bb1b33f170df28786b55d2c062a07afa82275d67284a300
 \t\t\t\t\t<ul class=\"slides\">
 \t\t\t\t\t\t<li>
 \t\t\t\t\t\t\t<img
-\t\t\t\t\t\t\tsrc=\"https://lorempixel.com/580/250/nature/1\">
+\t\t\t\t\t\t\tsrc=\"uploads/Parallax1.jpg\">
+
 \t\t\t\t\t\t\t<!-- random image -->
 \t\t\t\t\t\t\t<div class=\"caption center-align\">
 \t\t\t\t\t\t\t\t<h3>This is our big Tagline!</h3>
@@ -262,14 +306,14 @@ class __TwigTemplate_a34750d87bd6bb1b33f170df28786b55d2c062a07afa82275d67284a300
 \t\t\t</header>
 \t\t\t<main>
 \t\t\t\t";
-        // line 149
+        // line 178
         $this->displayBlock('body', $context, $blocks);
-        // line 150
+        // line 179
         echo "
 \t\t\t\t";
-        // line 151
-        if ((0 === twig_compare(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 151, $this->source); })()), "request", [], "any", false, false, false, 151), "get", [0 => "_route"], "method", false, false, false, 151), "home"))) {
-            // line 152
+        // line 180
+        if ((0 === twig_compare(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 180, $this->source); })()), "request", [], "any", false, false, false, 180), "get", [0 => "_route"], "method", false, false, false, 180), "home"))) {
+            // line 181
             echo "\t\t\t\t\t<div class=\"section white homeSectionPresentation\">
 \t\t\t\t\t\t<div class=\"row container\">
 \t\t\t\t\t\t\t<h2 class=\"header\">Parallax</h2>
@@ -277,7 +321,9 @@ class __TwigTemplate_a34750d87bd6bb1b33f170df28786b55d2c062a07afa82275d67284a300
 \t\t\t\t\t\t</div>
 \t\t\t\t\t</div>
 \t\t\t\t\t<div class=\"parallax-container\">
-\t\t\t\t\t\t<div class=\"parallax\"><img src=\"https://lorempixel.com/580/250/nature/8\"></div>
+\t\t\t\t\t\t<div class=\"parallax\"><img src=\"https://lorempixel.com/580/250/nature/8\">
+\t\t\t\t\t\t\t<h5 class=\"white-text\" position=\"absolute\">nos activités</h5>
+\t\t\t\t\t\t</div>
 \t\t\t\t\t</div>
 \t\t\t\t\t<div class=\"section white homeSectionActivity\">
 \t\t\t\t\t\t<div class=\"row container\">
@@ -295,7 +341,7 @@ class __TwigTemplate_a34750d87bd6bb1b33f170df28786b55d2c062a07afa82275d67284a300
 \t\t\t\t\t\t</div>
 \t\t\t\t\t";
         }
-        // line 176
+        // line 207
         echo "
 
 \t\t\t\t</main>
@@ -327,9 +373,9 @@ class __TwigTemplate_a34750d87bd6bb1b33f170df28786b55d2c062a07afa82275d67284a300
 \t\t\t\t</footer>
 
 \t\t\t\t";
-        // line 206
+        // line 237
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 212
+        // line 243
         echo "\t\t\t</body>
 \t\t</body>
 \t</html>
@@ -342,7 +388,7 @@ class __TwigTemplate_a34750d87bd6bb1b33f170df28786b55d2c062a07afa82275d67284a300
 
     }
 
-    // line 8
+    // line 7
     public function block_title($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -361,7 +407,7 @@ class __TwigTemplate_a34750d87bd6bb1b33f170df28786b55d2c062a07afa82275d67284a300
 
     }
 
-    // line 14
+    // line 13
     public function block_stylesheets($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -379,7 +425,7 @@ class __TwigTemplate_a34750d87bd6bb1b33f170df28786b55d2c062a07afa82275d67284a300
 
     }
 
-    // line 149
+    // line 178
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -397,7 +443,7 @@ class __TwigTemplate_a34750d87bd6bb1b33f170df28786b55d2c062a07afa82275d67284a300
 
     }
 
-    // line 206
+    // line 237
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -407,12 +453,12 @@ class __TwigTemplate_a34750d87bd6bb1b33f170df28786b55d2c062a07afa82275d67284a300
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 207
+        // line 238
         echo "\t\t\t\t\t<!--Import jQuery before materialize.js-->
 \t\t\t\t\t<script type=\"text/javascript\" src=\"https://code.jquery.com/jquery-3.2.1.min.js\"></script>
 \t\t\t\t\t<script src=\"https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js\"></script>
 \t\t\t\t\t<script type=\"text/javascript\" src=\"";
-        // line 210
+        // line 241
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/bin/materialize.js"), "html", null, true);
         echo "\"></script>
 \t\t\t\t";
@@ -436,14 +482,13 @@ class __TwigTemplate_a34750d87bd6bb1b33f170df28786b55d2c062a07afa82275d67284a300
 
     public function getDebugInfo()
     {
-        return array (  416 => 210,  411 => 207,  401 => 206,  383 => 149,  365 => 14,  346 => 8,  333 => 212,  331 => 206,  299 => 176,  273 => 152,  271 => 151,  268 => 150,  266 => 149,  207 => 93,  201 => 90,  195 => 87,  182 => 76,  176 => 74,  173 => 73,  168 => 70,  162 => 68,  160 => 67,  157 => 66,  153 => 64,  147 => 62,  145 => 61,  135 => 53,  129 => 50,  123 => 47,  120 => 46,  113 => 42,  107 => 38,  105 => 37,  97 => 32,  91 => 29,  85 => 26,  76 => 20,  69 => 15,  65 => 14,  58 => 9,  56 => 8,  47 => 1,);
+        return array (  462 => 241,  457 => 238,  447 => 237,  429 => 178,  411 => 13,  392 => 7,  379 => 243,  377 => 237,  345 => 207,  317 => 181,  315 => 180,  312 => 179,  310 => 178,  252 => 123,  245 => 119,  239 => 116,  228 => 108,  217 => 100,  205 => 90,  197 => 85,  192 => 84,  189 => 83,  183 => 79,  178 => 77,  174 => 75,  172 => 74,  169 => 73,  165 => 71,  159 => 69,  157 => 68,  146 => 59,  140 => 56,  134 => 53,  131 => 52,  124 => 48,  117 => 43,  115 => 42,  111 => 40,  104 => 35,  102 => 34,  97 => 32,  90 => 28,  84 => 25,  75 => 19,  68 => 14,  64 => 13,  57 => 8,  55 => 7,  47 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("<!DOCTYPE html>
 <html>
-
 \t<head>
 \t\t<meta charset=\"UTF-8\"/>
 \t\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/>
@@ -469,29 +514,36 @@ class __TwigTemplate_a34750d87bd6bb1b33f170df28786b55d2c062a07afa82275d67284a300
 \t\t\t\t\t\t\t\t<a href=\"{{path('home')}}\">Les AMHE</a>
 \t\t\t\t\t\t\t</li>
 \t\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t\t<a href=\"{{path('home')}}\"> Boutique</a>
+\t\t\t\t\t\t\t\t<a href=\"{{path('home')}}\">
+\t\t\t\t\t\t\t\t\tBoutique</a>
 \t\t\t\t\t\t\t</li>
 \t\t\t\t\t\t\t<li>
 \t\t\t\t\t\t\t\t<a href=\"{{path('home')}}\">Forum</a>
 \t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t{% if is_granted('Role_Administrateur')%}
 
+\t\t\t\t\t\t\t\t<a href=\"#\">Administration</a>
+
+
+\t\t\t\t\t\t\t{% endif %}
 
 
 \t\t\t\t\t\t\t{% if is_granted('IS_AUTHENTICATED_FULLY')%}
-\t\t\t\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t<a href=\"#\" data-activates=\"mobile-demo\"  class=\"monProfilBtn\"> Mon profil</a>
-\t\t\t\t\t\t\t</li>
-\t\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t\t<a href=\"{{path('app_logout')}}\">se deconnecter</a>
-\t\t\t\t\t\t\t</li>
-\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t\t\t<a href=\"#\" data-activates=\"mobile-demo\" class=\"monProfilBtn\">
+\t\t\t\t\t\t\t\t\t\tMon profil</a>
+\t\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t\t\t<a href=\"{{path('app_logout')}}\">se deconnecter</a>
+\t\t\t\t\t\t\t\t</li>
+
 \t\t\t\t\t\t\t{% else %}
 \t\t\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t\t<a href=\"{{path('app_login')}}\">se connecter</a>
-\t\t\t\t\t\t\t</li>
-\t\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t\t<a href=\"{{path('app_register')}}\">s'enregistrer</a>
-\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t\t\t<a href=\"{{path('app_login')}}\">se connecter</a>
+\t\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t\t\t<a href=\"{{path('app_register')}}\">s'enregistrer</a>
+\t\t\t\t\t\t\t\t</li>
 \t\t\t\t\t\t\t{% endif %}
 
 \t\t\t\t\t\t</ul>
@@ -501,42 +553,64 @@ class __TwigTemplate_a34750d87bd6bb1b33f170df28786b55d2c062a07afa82275d67284a300
 \t\t\t\t\t\t\t\t<div class=\"user-view\">
 \t\t\t\t\t\t\t\t\t<div class=\"background\">
 \t\t\t\t\t\t\t\t\t\t<img src=\"https://miro.medium.com/max/1080/1*hU0QQDiOnsKpX4qlIyn_4w.jpeg\">
-\t\t\t\t\t\t\t\t\t</div>{% if is_granted('IS_AUTHENTICATED_FULLY') and photoAvatarUser is defined  %}
-\t\t\t\t\t\t\t\t\t<a href=\"#!user\"><img class=\"circle\" src=\"{{app.user.photoAvatarUser}}\"></a>
+\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t{% if is_granted('IS_AUTHENTICATED_FULLY') and photoAvatarUser is defined  %}
+\t\t\t\t\t\t\t\t\t\t<a href=\"#!user\"><img class=\"circle\" src=\"{{app.user.photoAvatarUser}}\"></a>
 \t\t\t\t\t\t\t\t\t{% else %}
-\t\t\t\t\t\t\t\t\t<a href=\"#!user\"><img class=\"circle\" src=\"uploads\\avatar.jpg\"></a>
+\t\t\t\t\t\t\t\t\t\t<a href=\"#!user\"><img class=\"circle\" src=\"uploads\\avatar.jpg\"></a>
 \t\t\t\t\t\t\t\t\t{% endif %}
-\t\t\t\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t\t\t\t{% if is_granted('IS_AUTHENTICATED_FULLY') and PseudoUser is defined  %}
-\t\t\t\t\t\t\t\t\t\t<span class=\"white-text name\">\tBonjour {{app.user.pseudoUser}}</span>
+
+\t\t\t\t\t\t\t\t\t{% if is_granted('IS_AUTHENTICATED_FULLY') and PseudoUser is defined  %}
+\t\t\t\t\t\t\t\t\t\t<span class=\"white-text name\">
+\t\t\t\t\t\t\t\t\t\t\tBonjour
+\t\t\t\t\t\t\t\t\t\t\t{{app.user.pseudoUser}}</span>
 \t\t\t\t\t\t\t\t\t{% else %}
-\t\t\t\t\t\t\t\t\t<span class=\"white-text name\">\tBonjour \"Illustre inconnu\"</span>
-\t\t\t\t\t\t\t\t\t<Small>Tu peux ajouter ton pseudo dans la partie mon profil ;)</Small>
+\t\t\t\t\t\t\t\t\t\t<span class=\"white-text name\">
+\t\t\t\t\t\t\t\t\t\t\tBonjour \"Illustre inconnu\"</span>
+\t\t\t\t\t\t\t\t\t\t<Small>Tu peux modifier ton pseudo en cliquant sur \"Mes infos</Small>
 \t\t\t\t\t\t\t\t\t{% endif %}
 \t\t\t\t\t\t\t\t\t{% if is_granted('IS_AUTHENTICATED_FULLY') %}
-\t\t\t\t\t\t\t\t\t\t\t<span class=\"white-text email\">{{ app.user.email }}</span>
-\t\t\t\t\t\t\t\t\t\t{% endif %}
-
-\t\t\t\t\t\t\t\t\t</a>
+\t\t\t\t\t\t\t\t\t\t<span class=\"white-text email\">{{ app.user.email }}</span>
+\t\t\t\t\t\t\t\t\t\t<a href=\"{{path('app_logout')}}\">
+\t\t\t\t\t\t\t\t\t\t\t<span class=\"white-text email\">
+\t\t\t\t\t\t\t\t\t\t\t\tse déconnecter</span>
+\t\t\t\t\t\t\t\t\t\t</a>
+\t\t\t\t\t\t\t\t\t{% endif %}
 \t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t</li>
 \t\t\t\t\t\t\t<li>
 \t\t\t\t\t\t\t\t<div class=\"divider\"></div>
 \t\t\t\t\t\t\t</li>
 \t\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t\t<p>Les Lames Du Ponant</p>
+\t\t\t\t\t\t\t\t<h5 class=\"black-text center-align\">Les lames du Ponant</h5>
+\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t<div class=\"divider\"></div>
+\t\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t\t<a href=\"{{path('home')}}\">
+\t\t\t\t\t\t\t\t\t<span>Messagerie</span>
+\t\t\t\t\t\t\t\t</a>
 \t\t\t\t\t\t\t</li>
 \t\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t\t<a href=\"{{path('app_login')}}\">se connecter</a>
-\t\t\t\t\t\t\t</li>
-\t\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t\t<a href=\"{{path('app_register')}}\">s'enregistrer</a>
-\t\t\t\t\t\t\t</li>
-\t\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t\t<a href=\"{{path('app_logout')}}\">se deconnecter</a>
-\t\t\t\t\t\t\t</li>
-\t\t\t\t\t\t\t<li></li>
+\t\t\t
+\t\t
+\t\t\t\t\t
+                            <a href=\"{{path('user_edit',{'id': app.user.id })}}\">
+        
 
+\t\t\t\t\t\t\t\t\t<span>Modifier mes infos</span>
+\t\t\t\t\t\t\t\t</a>
+\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t<div class=\"divider\"></div>
+\t\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t\t<a href=\"{{path('home')}}\">Les AMHE</a>
+\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t\t<a href=\"{{path('home')}}\">
+\t\t\t\t\t\t\t\t\tBoutique</a>
+\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t\t<a href=\"{{path('home')}}\">Forum</a>
+\t\t\t\t\t\t\t</li>
 \t\t\t\t\t\t</ul>
 \t\t\t\t\t</div>
 \t\t\t\t</nav>
@@ -545,7 +619,8 @@ class __TwigTemplate_a34750d87bd6bb1b33f170df28786b55d2c062a07afa82275d67284a300
 \t\t\t\t\t<ul class=\"slides\">
 \t\t\t\t\t\t<li>
 \t\t\t\t\t\t\t<img
-\t\t\t\t\t\t\tsrc=\"https://lorempixel.com/580/250/nature/1\">
+\t\t\t\t\t\t\tsrc=\"uploads/Parallax1.jpg\">
+
 \t\t\t\t\t\t\t<!-- random image -->
 \t\t\t\t\t\t\t<div class=\"caption center-align\">
 \t\t\t\t\t\t\t\t<h3>This is our big Tagline!</h3>
@@ -599,7 +674,9 @@ class __TwigTemplate_a34750d87bd6bb1b33f170df28786b55d2c062a07afa82275d67284a300
 \t\t\t\t\t\t</div>
 \t\t\t\t\t</div>
 \t\t\t\t\t<div class=\"parallax-container\">
-\t\t\t\t\t\t<div class=\"parallax\"><img src=\"https://lorempixel.com/580/250/nature/8\"></div>
+\t\t\t\t\t\t<div class=\"parallax\"><img src=\"https://lorempixel.com/580/250/nature/8\">
+\t\t\t\t\t\t\t<h5 class=\"white-text\" position=\"absolute\">nos activités</h5>
+\t\t\t\t\t\t</div>
 \t\t\t\t\t</div>
 \t\t\t\t\t<div class=\"section white homeSectionActivity\">
 \t\t\t\t\t\t<div class=\"row container\">
@@ -655,6 +732,6 @@ class __TwigTemplate_a34750d87bd6bb1b33f170df28786b55d2c062a07afa82275d67284a300
 \t\t\t</body>
 \t\t</body>
 \t</html>
-", "base.html.twig", "C:\\wamp64\\www\\leslamesduPonant\\LesLamesDuPonant\\LesLamesDuPonant\\templates\\base.html.twig");
+", "base.html.twig", "C:\\wamp64\\www\\LesLamesDuPonant\\LesLamesDuPonant\\templates\\base.html.twig");
     }
 }

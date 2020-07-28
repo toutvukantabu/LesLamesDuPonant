@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 	<head>
 		<meta charset="UTF-8"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -26,29 +25,36 @@
 								<a href="{{path('home')}}">Les AMHE</a>
 							</li>
 							<li>
-								<a href="{{path('home')}}"> Boutique</a>
+								<a href="{{path('home')}}">
+									Boutique</a>
 							</li>
 							<li>
 								<a href="{{path('home')}}">Forum</a>
 							</li>
+							{% if is_granted('Role_Administrateur')%}
 
+								<a href="#">Administration</a>
+
+
+							{% endif %}
 
 
 							{% if is_granted('IS_AUTHENTICATED_FULLY')%}
-									<li>
-							<a href="#" data-activates="mobile-demo"  class="monProfilBtn"> Mon profil</a>
-							</li>
-							<li>
-								<a href="{{path('app_logout')}}">se deconnecter</a>
-							</li>
-						
+								<li>
+									<a href="#" data-activates="mobile-demo" class="monProfilBtn">
+										Mon profil</a>
+								</li>
+								<li>
+									<a href="{{path('app_logout')}}">se deconnecter</a>
+								</li>
+
 							{% else %}
 								<li>
-								<a href="{{path('app_login')}}">se connecter</a>
-							</li>
-							<li>
-								<a href="{{path('app_register')}}">s'enregistrer</a>
-							</li>
+									<a href="{{path('app_login')}}">se connecter</a>
+								</li>
+								<li>
+									<a href="{{path('app_register')}}">s'enregistrer</a>
+								</li>
 							{% endif %}
 
 						</ul>
@@ -58,42 +64,64 @@
 								<div class="user-view">
 									<div class="background">
 										<img src="https://miro.medium.com/max/1080/1*hU0QQDiOnsKpX4qlIyn_4w.jpeg">
-									</div>{% if is_granted('IS_AUTHENTICATED_FULLY') and photoAvatarUser is defined  %}
-									<a href="#!user"><img class="circle" src="{{app.user.photoAvatarUser}}"></a>
+									</div>
+									{% if is_granted('IS_AUTHENTICATED_FULLY') and photoAvatarUser is defined  %}
+										<a href="#!user"><img class="circle" src="{{app.user.photoAvatarUser}}"></a>
 									{% else %}
-									<a href="#!user"><img class="circle" src="uploads\avatar.jpg"></a>
+										<a href="#!user"><img class="circle" src="uploads\avatar.jpg"></a>
 									{% endif %}
-										
-										{% if is_granted('IS_AUTHENTICATED_FULLY') and PseudoUser is defined  %}
-										<span class="white-text name">	Bonjour {{app.user.pseudoUser}}</span>
+
+									{% if is_granted('IS_AUTHENTICATED_FULLY') and PseudoUser is defined  %}
+										<span class="white-text name">
+											Bonjour
+											{{app.user.pseudoUser}}</span>
 									{% else %}
-									<span class="white-text name">	Bonjour "Illustre inconnu"</span>
-									<Small>Tu peux ajouter ton pseudo dans la partie mon profil ;)</Small>
+										<span class="white-text name">
+											Bonjour "Illustre inconnu"</span>
+										<Small>Tu peux modifier ton pseudo en cliquant sur "Mes infos</Small>
 									{% endif %}
 									{% if is_granted('IS_AUTHENTICATED_FULLY') %}
-											<span class="white-text email">{{ app.user.email }}</span>
-										{% endif %}
-
-									</a>
+										<span class="white-text email">{{ app.user.email }}</span>
+										<a href="{{path('app_logout')}}">
+											<span class="white-text email">
+												se déconnecter</span>
+										</a>
+									{% endif %}
 								</div>
 							</li>
 							<li>
 								<div class="divider"></div>
 							</li>
 							<li>
-								<p>Les Lames Du Ponant</p>
+								<h5 class="black-text center-align">Les lames du Ponant</h5>
+							</li>
+							<div class="divider"></div>
+							<li>
+								<a href="{{path('home')}}">
+									<span>Messagerie</span>
+								</a>
 							</li>
 							<li>
-								<a href="{{path('app_login')}}">se connecter</a>
-							</li>
-							<li>
-								<a href="{{path('app_register')}}">s'enregistrer</a>
-							</li>
-							<li>
-								<a href="{{path('app_logout')}}">se deconnecter</a>
-							</li>
-							<li></li>
+			
+		
+					
+                            <a href="{{path('user_edit',{'id': app.user.id })}}">
+        
 
+									<span>Modifier mes infos</span>
+								</a>
+							</li>
+							<div class="divider"></div>
+							<li>
+								<a href="{{path('home')}}">Les AMHE</a>
+							</li>
+							<li>
+								<a href="{{path('home')}}">
+									Boutique</a>
+							</li>
+							<li>
+								<a href="{{path('home')}}">Forum</a>
+							</li>
 						</ul>
 					</div>
 				</nav>
@@ -102,7 +130,8 @@
 					<ul class="slides">
 						<li>
 							<img
-							src="https://lorempixel.com/580/250/nature/1">
+							src="uploads/Parallax1.jpg">
+
 							<!-- random image -->
 							<div class="caption center-align">
 								<h3>This is our big Tagline!</h3>
@@ -156,7 +185,9 @@
 						</div>
 					</div>
 					<div class="parallax-container">
-						<div class="parallax"><img src="https://lorempixel.com/580/250/nature/8"></div>
+						<div class="parallax"><img src="https://lorempixel.com/580/250/nature/8">
+							<h5 class="white-text" position="absolute">nos activités</h5>
+						</div>
 					</div>
 					<div class="section white homeSectionActivity">
 						<div class="row container">
