@@ -10,12 +10,12 @@ use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Validator\Constraints\File;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
-use Symfony\Component\Form\Extension\Core\Type\BirthdayType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\TelType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 
-class User1Type extends AbstractType
+class UserType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
@@ -30,7 +30,7 @@ class User1Type extends AbstractType
                     'Utilisateur' => User::ROLE_USER,
                 ],
                 'multiple' => true,
-                'expanded' => true,
+                'expanded' => false,
                 'required' => true,
             ],
             TextType::class,
@@ -40,8 +40,28 @@ class User1Type extends AbstractType
             ->add('firstNameUser')
             ->add('lastNameUser')
             ->add('pseudoUser')
-            ->add('photoAvatarUser')
-            ->add('birthdayDateUser')
+        ->add('photoAvatarUser', FileType::class, [
+            'label' => 'Photo',
+            'mapped' => false,
+            'required' => false,
+            'constraints' => [
+                new File([
+                    'maxSize' => '6000k',
+                    'mimeTypes' => [
+                        'image/*',
+                    ],
+                    'mimeTypesMessage' => 'Veuillez entrer un format de document valide',
+                ])
+            ],
+        ])
+            ->add('birthdayDateUser', DateType::class,[
+                'widget' => 'single_text',
+                'html5' => false,
+                'format'=> 'dd-mm-yyyy',
+                'attr' => [
+                    'class'=> 'datepicker',
+                ]
+            ])
             ->add('postalCodeUser')
             ->add('adressUser')
             ->add('cityUser')
