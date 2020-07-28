@@ -52,14 +52,28 @@
       flex: 1 0 auto;
   }
 
+  .parallax-container {
+    height: "400px";
+  }
+
+  .homeSectionPresentation,.homeSectionActivity,.homeSectionCalendar{
+
+    height: 400px;
+  }
+
+
 
 .formRegister,.formLogin,.formReset{
 margin-top: 100px;
 margin-bottom: 100px;
 border-radius: 10px;
 padding:20px ;
+
 }
 .loginResetPassword, .smallResetPassword{
 margin-bottom: 40px;
 
 }
+
+
+

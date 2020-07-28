@@ -10042,10 +10042,28 @@ if (Vel) {
 
 
 $(document).ready(function(){
-  $('.parallax').parallax();  
+  $('.parallax').parallax();
+
     $('.carousel').carousel();
+
+
       $(".button-collapse").sideNav();
+      $(".monProfilBtn").sideNav();
+
+
+
+      $('.slider').slider({
+        transition: 1000,
+        interval: 10000,
+      }
+
+      );
+
+
+
  $('select').material_select();
+
+
 });
 
     
