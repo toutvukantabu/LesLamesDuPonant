@@ -9396,4 +9396,18 @@ main {
 .loginResetPassword, .smallResetPassword {
   margin-bottom: 40px;
 }
+
+.navScroll {
+  background-color: rgba(12, 12, 136, 0.424);
+}
+
+nav {
+  background-color: rgba(12, 12, 136, 0.918);
+}
+
+nav li a:hover {
+  background-color: rgba(75, 123, 212, 0.424);
+  -webkit-transition-duration: 420ms;
+          transition-duration: 420ms;
+}
 /*# sourceMappingURL=materialize.css.map */

@@ -10040,29 +10040,36 @@ if (Vel) {
    
  });
 
+ //navbar transparent
+$(document).ready(function () {
+
+  $(window).scroll(function () {
+
+    if ($(window).scrollTop() > 200) {
+      $('nav').addClass('navScroll');
+    } else {
+      $('nav').removeClass('navScroll');
+    }
+  });
+
+});
 
 $(document).ready(function(){
   $('.parallax').parallax();
-
-    $('.carousel').carousel();
-
-
+    $('.carousel').carousel(
+  
+    );
       $(".button-collapse").sideNav();
       $(".monProfilBtn").sideNav();
-
-
-
       $('.slider').slider({
         transition: 1000,
         interval: 10000,
+            height :500,
       }
 
       );
 
-
-
  $('select').material_select();
-
 
 });
 

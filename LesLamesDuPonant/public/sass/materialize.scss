@@ -6,7 +6,7 @@
 // Variables;
 @import "components/variables";
 
-// Reset
+// Reset;
 @import "components/normalize";
 
 // components
@@ -75,5 +75,19 @@ margin-bottom: 40px;
 
 }
 
+.navScroll{
+ background-color: rgba(12, 12, 136, 0.424);
+}
+
+nav{
+  background-color: rgba(12, 12, 136, 0.918);
+
+
+  li a:hover{
+   background-color: rgba(75, 123, 212, 0.424);
+   transition-duration: 420ms;
+
+}
+}
 
 

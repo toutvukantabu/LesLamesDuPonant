@@ -14,125 +14,122 @@
 		</head>
 		<body>
 			<header>
-				<nav>
-					<div class="nav-wrapper  blue accent-4">
-						<a href="{{path('home')}} " class="brand-logo ">Logo</a>
-						<a href="#" data-activates="mobile-demo" class="button-collapse">
-							<i class="material-icons">menu</i>
-						</a>
-						<ul class="right hide-on-med-and-down">
-							<li>
-								<a href="{{path('home')}}">Les AMHE</a>
-							</li>
-							<li>
-								<a href="{{path('home')}}">
-									Boutique</a>
-							</li>
-							<li>
-								<a href="{{path('home')}}">Forum</a>
-							</li>
-							{% if is_granted('Role_Administrateur')%}
+<div class="container " id="HomeTitle">
 
-								<a href="#">Administration</a>
-
-
-							{% endif %}
-
-
-							{% if is_granted('IS_AUTHENTICATED_FULLY')%}
-								<li>
-									<a href="#" data-activates="mobile-demo" class="monProfilBtn">
-										Mon profil</a>
-								</li>
-								<li>
-									<a href="{{path('app_logout')}}">se deconnecter</a>
-								</li>
-
+	<div class="row">
+	<div class="col m12 s12 l12 xl12"></div>
+<img src="{{ asset('uploads/LogoLDP_Black_HD2.png')}}">
+	</div>
+</div>
+				<ul class="side-nav z-depth-4" id="mobile-demo">
+					<li>
+						<div class="user-view">
+							<div class="background">
+								<img src="https://miro.medium.com/max/1080/1*hU0QQDiOnsKpX4qlIyn_4w.jpeg">
+							</div>
+							{% if is_granted('IS_AUTHENTICATED_FULLY') and photoAvatarUser is defined  %}
+								<a href="#!user"><img class="circle" src="{{app.user.photoAvatarUser}}"></a>
 							{% else %}
-								<li>
-									<a href="{{path('app_login')}}">se connecter</a>
-								</li>
-								<li>
-									<a href="{{path('app_register')}}">s'enregistrer</a>
-								</li>
+								<a href="#!user"><img class="circle" src="uploads\avatar.jpg"></a>
 							{% endif %}
 
-						</ul>
-
-						<ul class="side-nav" id="mobile-demo">
-							<li>
-								<div class="user-view">
-									<div class="background">
-										<img src="https://miro.medium.com/max/1080/1*hU0QQDiOnsKpX4qlIyn_4w.jpeg">
-									</div>
-									{% if is_granted('IS_AUTHENTICATED_FULLY') and photoAvatarUser is defined  %}
-										<a href="#!user"><img class="circle" src="{{app.user.photoAvatarUser}}"></a>
-									{% else %}
-										<a href="#!user"><img class="circle" src="uploads\avatar.jpg"></a>
-									{% endif %}
-
-									{% if is_granted('IS_AUTHENTICATED_FULLY') and PseudoUser is defined  %}
-										<span class="white-text name">
-											Bonjour
-											{{app.user.pseudoUser}}</span>
-									{% else %}
-										<span class="white-text name">
-											Bonjour "Illustre inconnu"</span>
-										<Small>Tu peux modifier ton pseudo en cliquant sur "Mes infos</Small>
-									{% endif %}
-									{% if is_granted('IS_AUTHENTICATED_FULLY') %}
-										<span class="white-text email">{{ app.user.email }}</span>
-										<a href="{{path('app_logout')}}">
-											<span class="white-text email">
-												se déconnecter</span>
-										</a>
-									{% endif %}
-								</div>
-							</li>
-							<li>
-								<div class="divider"></div>
-							</li>
-							<li>
-								<h5 class="black-text center-align">Les lames du Ponant</h5>
-							</li>
-							<div class="divider"></div>
-							<li>
-								<a href="{{path('home')}}">
-									<span>Messagerie</span>
+							{% if is_granted('IS_AUTHENTICATED_FULLY') and PseudoUser is defined  %}
+								<span class="white-text name">
+									Bonjour
+									{{app.user.pseudoUser}}</span>
+							{% else %}
+								<span class="white-text name">
+									Bonjour "Illustre inconnu"</span>
+								<Small>Tu peux modifier ton pseudo en cliquant sur "Mes infos</Small>
+							{% endif %}
+							{% if is_granted('IS_AUTHENTICATED_FULLY') %}
+								<span class="white-text email">{{ app.user.email }}</span>
+								<a href="{{path('app_logout')}}">
+									<span class="white-text email">
+										se déconnecter</span>
 								</a>
-							</li>
-							<li>
-			
-		
-					
-                            <a href="{{path('user_edit',{'id': app.user.id })}}">
-        
+							{% endif %}
+						</div>
+					</li>
+					<li>
+						<div class="divider"></div>
+					</li>
+					<li>
+						<h5 class="black-text center-align">Les lames du Ponant</h5>
+					</li>
+					<div class="divider"></div>
+					<li>
+						<a href="{{path('home')}}">
+							<span>Messagerie</span>
+						</a>
+					</li>
+					<li>
+						{% if is_granted('IS_AUTHENTICATED_FULLY')%}
+							<a href="{{path('user_edit',{'id': app.user.id })}}">
+							{% endif %}
+							<span>Modifier mes infos</span>
+						</a>
+					</li>
+					<div class="divider"></div>
+					<li>
+						<a href="{{path('home')}}">Les AMHE</a>
+					</li>
+					<li>
+						<a href="{{path('home')}}">
+							Boutique</a>
+					</li>
+					<li>
+						<a href="{{path('home')}}">Forum</a>
+					</li>
+				</ul>
+				<div class="navbar-fixed">
+					<nav class="">
+						<div class="nav-wrapper">
+							<a href="{{path('home')}} " class="brand-logo center">Accueil</a>
+							<a href="#" data-activates="mobile-demo" class="button-collapse">
+								<i class="material-icons">menu</i>
+							</a>
+							<ul class="right hide-on-med-and-down">
+								<li>
+									<a href="{{path('home')}}">Les AMHE</a>
+								</li>
+								<li>
+									<a href="{{path('home')}}">
+										Boutique</a>
+								</li>
+								<li>
+									<a href="{{path('home')}}">Forum</a>
+								</li>
+								{% if is_granted('Role_Administrateur')%}
 
-									<span>Modifier mes infos</span>
-								</a>
-							</li>
-							<div class="divider"></div>
-							<li>
-								<a href="{{path('home')}}">Les AMHE</a>
-							</li>
-							<li>
-								<a href="{{path('home')}}">
-									Boutique</a>
-							</li>
-							<li>
-								<a href="{{path('home')}}">Forum</a>
-							</li>
-						</ul>
-					</div>
-				</nav>
+									<a href="#">Administration</a>
+								{% endif %}
+								{% if is_granted('IS_AUTHENTICATED_FULLY')%}
+									<li>
+										<a href="#" data-activates="mobile-demo" class="monProfilBtn">
+											Mon profil</a>
+									</li>
+									<li>
+										<a href="{{path('app_logout')}}">se deconnecter</a>
+									</li>
 
+								{% else %}
+									<li>
+										<a href="{{path('app_login')}}">se connecter</a>
+									</li>
+									<li>
+										<a href="{{path('app_register')}}">s'enregistrer</a>
+									</li>
+								{% endif %}
+
+							</ul>
+						</div>
+					</nav>
+				</div>
 				<div class="slider">
 					<ul class="slides">
 						<li>
-							<img
-							src="uploads/Parallax1.jpg">
-
-							<!-- random image -->
+							<img src="{{ asset('uploads/Parallax1.jpg')}}">
 							<div class="caption center-align">
 								<h3>This is our big Tagline!</h3>
 								<h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
@@ -140,8 +137,8 @@
 							</div>
 						</li>
 						<li>
-							<img
-							src="https://lorempixel.com/580/250/nature/2">
+                      <img src="{{ asset('uploads/Parallax2.jpg')}}">
+
 							<!-- random image -->
 							<div class="caption left-align">
 								<h3>Left Aligned Caption</h3>
@@ -185,7 +182,8 @@
 						</div>
 					</div>
 					<div class="parallax-container">
-						<div class="parallax"><img src="https://lorempixel.com/580/250/nature/8">
+<div class="parallax"><img src="{{ asset('uploads/Parallax2.jpg')}}">
+
 							<h5 class="white-text" position="absolute">nos activités</h5>
 						</div>
 					</div>
@@ -196,7 +194,8 @@
 						</div>
 					</div>
 					<div class="parallax-container">
-						<div class="parallax"><img src="https://lorempixel.com/580/250/nature/7"></div>
+<div class="parallax"><img src="{{ asset('uploads/Parallax3.jpg')}}"></div>
+
 					</div>
 					<div class="section white homeSectionCalendar">
 						<div class="row container">
