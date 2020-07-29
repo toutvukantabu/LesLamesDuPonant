@@ -14,13 +14,14 @@
 		</head>
 		<body>
 			<header>
-<div class="container " id="HomeTitle">
+				<div class="container " id="HomeTitle">
+					<div class="row">
+						<div class="col m12 s12 l12 xl12">
 
-	<div class="row">
-	<div class="col m12 s12 l12 xl12"></div>
-<img src="{{ asset('uploads/LogoLDP_Black_HD2.png')}}">
-	</div>
-</div>
+							<img src="{{ asset('uploads/LogoLDP_Black_HD2.png')}}">
+						</div>
+					</div>
+				</div>
 				<ul class="side-nav z-depth-4" id="mobile-demo">
 					<li>
 						<div class="user-view">
@@ -82,14 +83,14 @@
 						<a href="{{path('home')}}">Forum</a>
 					</li>
 				</ul>
-				<div class="navbar-fixed">
+				<div class="menu">
 					<nav class="">
 						<div class="nav-wrapper">
 							<a href="{{path('home')}} " class="brand-logo center">Accueil</a>
 							<a href="#" data-activates="mobile-demo" class="button-collapse">
 								<i class="material-icons">menu</i>
 							</a>
-							<ul class="right hide-on-med-and-down">
+							<ul class="left hide-on-med-and-down">
 								<li>
 									<a href="{{path('home')}}">Les AMHE</a>
 								</li>
@@ -104,16 +105,30 @@
 
 									<a href="#">Administration</a>
 								{% endif %}
+							</ul>
+							<ul class="right hide-on-med-and-down">
+
 								{% if is_granted('IS_AUTHENTICATED_FULLY')%}
 									<li>
 										<a href="#" data-activates="mobile-demo" class="monProfilBtn">
 											Mon profil</a>
 									</li>
 									<li>
+										<a href="{{path('app_login')}}">infos</a>
+									</li>
+									<li>
+										<a href="{{path('app_login')}}">contact</a>
+									</li>
+									<li>
 										<a href="{{path('app_logout')}}">se deconnecter</a>
 									</li>
-
 								{% else %}
+									<li>
+										<a href="{{path('app_login')}}">infos</a>
+									</li>
+									<li>
+										<a href="{{path('app_login')}}">contact</a>
+									</li>
 									<li>
 										<a href="{{path('app_login')}}">se connecter</a>
 									</li>
@@ -137,9 +152,7 @@
 							</div>
 						</li>
 						<li>
-                      <img src="{{ asset('uploads/Parallax2.jpg')}}">
-
-							<!-- random image -->
+							<img src="{{ asset('uploads/Parallax2.jpg')}}">
 							<div class="caption left-align">
 								<h3>Left Aligned Caption</h3>
 								<h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
@@ -182,7 +195,7 @@
 						</div>
 					</div>
 					<div class="parallax-container">
-<div class="parallax"><img src="{{ asset('uploads/Parallax2.jpg')}}">
+						<div class="parallax"><img src="{{ asset('uploads/Parallax2.jpg')}}">
 
 							<h5 class="white-text" position="absolute">nos activités</h5>
 						</div>
@@ -194,7 +207,7 @@
 						</div>
 					</div>
 					<div class="parallax-container">
-<div class="parallax"><img src="{{ asset('uploads/Parallax3.jpg')}}"></div>
+						<div class="parallax"><img src="{{ asset('uploads/Parallax3.jpg')}}"></div>
 
 					</div>
 					<div class="section white homeSectionCalendar">

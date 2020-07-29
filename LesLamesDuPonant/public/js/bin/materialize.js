@@ -10044,8 +10044,7 @@ if (Vel) {
 $(document).ready(function () {
 
   $(window).scroll(function () {
-
-    if ($(window).scrollTop() > 200) {
+    if ($(window).scrollTop() > 0) {
       $('nav').addClass('navScroll');
     } else {
       $('nav').removeClass('navScroll');

@@ -9378,6 +9378,65 @@ main {
           flex: 1 0 auto;
 }
 
+/* Banner home
+  *================
+  */
+#HomeTitle {
+  margin-bottom: 56px;
+  text-align: center;
+}
+
+#HomeTitle img {
+  height: 155px;
+  width: 315px;
+}
+
+/* Navbar
+  *================
+  */
+.navScroll {
+  background-color: rgba(12, 12, 136, 0.424);
+  position: fixed;
+  -webkit-transition: top 0.2s ease;
+  transition: top 0.2s ease;
+  -webkit-transition: 0.2s;
+  z-index: 4;
+  top: 0;
+}
+
+nav {
+  position: fixed;
+  top: 153px;
+  z-index: 4;
+  -webkit-transition: top 0.2s linear;
+  transition: top 0.2s linear;
+  -webkit-transition: 0.2s;
+  background-color: rgba(12, 12, 136, 0.918);
+}
+
+nav li a:hover {
+  background-color: rgba(75, 123, 212, 0.424);
+  -webkit-transition-duration: 420ms;
+          transition-duration: 420ms;
+}
+
+/* User Nav Profil left
+  *================
+  */
+.background img {
+  opacity: 0.8;
+}
+
+/* Slider
+  *================
+  */
+.slider {
+  z-index: 0;
+}
+
+/* Parallax
+  *================
+  */
 .parallax-container {
   height: "400px";
 }
@@ -9386,6 +9445,9 @@ main {
   height: 400px;
 }
 
+/* Form login, register, password,
+  *================
+  */
 .formRegister, .formLogin, .formReset {
   margin-top: 100px;
   margin-bottom: 100px;
@@ -9395,19 +9457,5 @@ main {
 
 .loginResetPassword, .smallResetPassword {
   margin-bottom: 40px;
-}
-
-.navScroll {
-  background-color: rgba(12, 12, 136, 0.424);
-}
-
-nav {
-  background-color: rgba(12, 12, 136, 0.918);
-}
-
-nav li a:hover {
-  background-color: rgba(75, 123, 212, 0.424);
-  -webkit-transition-duration: 420ms;
-          transition-duration: 420ms;
 }
 /*# sourceMappingURL=materialize.css.map */

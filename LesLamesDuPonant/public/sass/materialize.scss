@@ -52,6 +52,65 @@
       flex: 1 0 auto;
   }
 
+
+  /* Banner home
+  *================
+  */
+#HomeTitle{
+  margin-bottom: 56px;
+text-align: center;
+  img{
+    height: 155px;
+    width: 315px;
+  }
+}
+/* Navbar
+  *================
+  */
+.navScroll{
+  background-color: rgba(12, 12, 136, 0.424);
+  position: fixed;
+  transition: top 0.2s ease;
+  -webkit-transition:  0.2s;
+  z-index: 4;
+  top: 0;
+}
+ 
+ nav{
+  position: fixed;
+  top: 153px;
+  z-index: 4;
+  transition: top 0.2s linear;
+  -webkit-transition:  0.2s;
+   background-color: rgba(12, 12, 136, 0.918);
+  
+   li a:hover{
+    background-color: rgba(75, 123, 212, 0.424);
+    transition-duration: 420ms;
+
+   }
+ }
+ 
+/* User Nav Profil left
+  *================
+  */
+.background img{
+
+  opacity: 0.8;
+}
+
+
+
+ /* Slider
+  *================
+  */
+ .slider{
+z-index: 0;
+ }
+
+/* Parallax
+  *================
+  */
   .parallax-container {
     height: "400px";
   }
@@ -61,8 +120,9 @@
     height: 400px;
   }
 
-
-
+  /* Form login, register, password,
+  *================
+  */
 .formRegister,.formLogin,.formReset{
 margin-top: 100px;
 margin-bottom: 100px;
@@ -75,19 +135,6 @@ margin-bottom: 40px;
 
 }
 
-.navScroll{
- background-color: rgba(12, 12, 136, 0.424);
-}
 
-nav{
-  background-color: rgba(12, 12, 136, 0.918);
-
-
-  li a:hover{
-   background-color: rgba(75, 123, 212, 0.424);
-   transition-duration: 420ms;
-
-}
-}
 
 
