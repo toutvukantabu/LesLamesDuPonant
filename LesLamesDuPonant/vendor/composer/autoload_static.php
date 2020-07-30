@@ -124,6 +124,10 @@ class ComposerStaticInitc4ce61fc1f6b9eb4f6512ca2fab67a81
         array (
             'Monolog\\' => 8,
         ),
+        'F' => 
+        array (
+            'FOS\\CKEditorBundle\\' => 19,
+        ),
         'E' => 
         array (
             'Egulias\\EmailValidator\\' => 23,
@@ -484,6 +488,10 @@ class ComposerStaticInitc4ce61fc1f6b9eb4f6512ca2fab67a81
         array (
             0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
         ),
+        'FOS\\CKEditorBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/friendsofsymfony/ckeditor-bundle/src',
+        ),
         'Egulias\\EmailValidator\\' => 
         array (
             0 => __DIR__ . '/..' . '/egulias/email-validator/src',
@@ -572,18 +580,22 @@ class ComposerStaticInitc4ce61fc1f6b9eb4f6512ca2fab67a81
     );
 
     public static $classMap = array (
+        'App\\Controller\\ContactMessageController' => __DIR__ . '/../..' . '/src/Controller/ContactMessageController.php',
         'App\\Controller\\HomeController' => __DIR__ . '/../..' . '/src/Controller/HomeController.php',
         'App\\Controller\\RegistrationController' => __DIR__ . '/../..' . '/src/Controller/RegistrationController.php',
         'App\\Controller\\ResetPasswordController' => __DIR__ . '/../..' . '/src/Controller/ResetPasswordController.php',
         'App\\Controller\\SecurityController' => __DIR__ . '/../..' . '/src/Controller/SecurityController.php',
         'App\\Controller\\UserController' => __DIR__ . '/../..' . '/src/Controller/UserController.php',
+        'App\\Entity\\ContactMessage' => __DIR__ . '/../..' . '/src/Entity/ContactMessage.php',
         'App\\Entity\\ResetPasswordRequest' => __DIR__ . '/../..' . '/src/Entity/ResetPasswordRequest.php',
         'App\\Entity\\User' => __DIR__ . '/../..' . '/src/Entity/User.php',
         'App\\Form\\ChangePasswordFormType' => __DIR__ . '/../..' . '/src/Form/ChangePasswordFormType.php',
+        'App\\Form\\ContactMessageType' => __DIR__ . '/../..' . '/src/Form/ContactMessageType.php',
         'App\\Form\\RegistrationFormType' => __DIR__ . '/../..' . '/src/Form/RegistrationFormType.php',
         'App\\Form\\ResetPasswordRequestFormType' => __DIR__ . '/../..' . '/src/Form/ResetPasswordRequestFormType.php',
         'App\\Form\\UserType' => __DIR__ . '/../..' . '/src/Form/UserType.php',
         'App\\Kernel' => __DIR__ . '/../..' . '/src/Kernel.php',
+        'App\\Repository\\ContactMessageRepository' => __DIR__ . '/../..' . '/src/Repository/ContactMessageRepository.php',
         'App\\Repository\\ResetPasswordRequestRepository' => __DIR__ . '/../..' . '/src/Repository/ResetPasswordRequestRepository.php',
         'App\\Repository\\UserRepository' => __DIR__ . '/../..' . '/src/Repository/UserRepository.php',
         'App\\Security\\AppAuthenticator' => __DIR__ . '/../..' . '/src/Security/AppAuthenticator.php',
@@ -1697,6 +1709,21 @@ class ComposerStaticInitc4ce61fc1f6b9eb4f6512ca2fab67a81
         'Egulias\\EmailValidator\\Warning\\QuotedString' => __DIR__ . '/..' . '/egulias/email-validator/src/Warning/QuotedString.php',
         'Egulias\\EmailValidator\\Warning\\TLD' => __DIR__ . '/..' . '/egulias/email-validator/src/Warning/TLD.php',
         'Egulias\\EmailValidator\\Warning\\Warning' => __DIR__ . '/..' . '/egulias/email-validator/src/Warning/Warning.php',
+        'FOS\\CKEditorBundle\\Builder\\JsonBuilder' => __DIR__ . '/..' . '/friendsofsymfony/ckeditor-bundle/src/Builder/JsonBuilder.php',
+        'FOS\\CKEditorBundle\\Command\\CKEditorInstallerCommand' => __DIR__ . '/..' . '/friendsofsymfony/ckeditor-bundle/src/Command/CKEditorInstallerCommand.php',
+        'FOS\\CKEditorBundle\\Config\\CKEditorConfiguration' => __DIR__ . '/..' . '/friendsofsymfony/ckeditor-bundle/src/Config/CKEditorConfiguration.php',
+        'FOS\\CKEditorBundle\\Config\\CKEditorConfigurationInterface' => __DIR__ . '/..' . '/friendsofsymfony/ckeditor-bundle/src/Config/CKEditorConfigurationInterface.php',
+        'FOS\\CKEditorBundle\\DependencyInjection\\Configuration' => __DIR__ . '/..' . '/friendsofsymfony/ckeditor-bundle/src/DependencyInjection/Configuration.php',
+        'FOS\\CKEditorBundle\\DependencyInjection\\FOSCKEditorExtension' => __DIR__ . '/..' . '/friendsofsymfony/ckeditor-bundle/src/DependencyInjection/FOSCKEditorExtension.php',
+        'FOS\\CKEditorBundle\\Exception\\BadProxyUrlException' => __DIR__ . '/..' . '/friendsofsymfony/ckeditor-bundle/src/Exception/BadProxyUrlException.php',
+        'FOS\\CKEditorBundle\\Exception\\ConfigException' => __DIR__ . '/..' . '/friendsofsymfony/ckeditor-bundle/src/Exception/ConfigException.php',
+        'FOS\\CKEditorBundle\\Exception\\FOSCKEditorException' => __DIR__ . '/..' . '/friendsofsymfony/ckeditor-bundle/src/Exception/FOSCKEditorException.php',
+        'FOS\\CKEditorBundle\\FOSCKEditorBundle' => __DIR__ . '/..' . '/friendsofsymfony/ckeditor-bundle/src/FOSCKEditorBundle.php',
+        'FOS\\CKEditorBundle\\Form\\Type\\CKEditorType' => __DIR__ . '/..' . '/friendsofsymfony/ckeditor-bundle/src/Form/Type/CKEditorType.php',
+        'FOS\\CKEditorBundle\\Installer\\CKEditorInstaller' => __DIR__ . '/..' . '/friendsofsymfony/ckeditor-bundle/src/Installer/CKEditorInstaller.php',
+        'FOS\\CKEditorBundle\\Renderer\\CKEditorRenderer' => __DIR__ . '/..' . '/friendsofsymfony/ckeditor-bundle/src/Renderer/CKEditorRenderer.php',
+        'FOS\\CKEditorBundle\\Renderer\\CKEditorRendererInterface' => __DIR__ . '/..' . '/friendsofsymfony/ckeditor-bundle/src/Renderer/CKEditorRendererInterface.php',
+        'FOS\\CKEditorBundle\\Twig\\CKEditorExtension' => __DIR__ . '/..' . '/friendsofsymfony/ckeditor-bundle/src/Twig/CKEditorExtension.php',
         'IntlDateFormatter' => __DIR__ . '/..' . '/symfony/intl/Resources/stubs/IntlDateFormatter.php',
         'JsonException' => __DIR__ . '/..' . '/symfony/polyfill-php73/Resources/stubs/JsonException.php',
         'Locale' => __DIR__ . '/..' . '/symfony/intl/Resources/stubs/Locale.php',
