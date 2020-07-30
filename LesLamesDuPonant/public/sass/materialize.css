@@ -9382,7 +9382,7 @@ main {
   *================
   */
 #HomeTitle {
-  margin-bottom: 56px;
+  margin-bottom: 100px;
   text-align: center;
 }
 
@@ -9402,11 +9402,13 @@ main {
   -webkit-transition: 0.2s;
   z-index: 4;
   top: 0;
+  margin-top: -10px;
 }
 
 nav {
+  margin-top: 10px;
   position: fixed;
-  top: 153px;
+  top: 187px;
   z-index: 4;
   -webkit-transition: top 0.2s linear;
   transition: top 0.2s linear;

@@ -204,87 +204,88 @@ class __TwigTemplate_a34750d87bd6bb1b33f170df28786b55d2c062a07afa82275d67284a300
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
         echo "\">Les AMHE</a>
 \t\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t<li>
 \t\t\t\t\t\t\t\t\t<a href=\"";
-        // line 98
+        // line 99
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
         echo "\">
 \t\t\t\t\t\t\t\t\t\tBoutique</a>
 \t\t\t\t\t\t\t\t</li>
 \t\t\t\t\t\t\t\t<li>
 \t\t\t\t\t\t\t\t\t<a href=\"";
-        // line 102
+        // line 103
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
         echo "\">Forum</a>
 \t\t\t\t\t\t\t\t</li>
 \t\t\t\t\t\t\t\t";
-        // line 104
+        // line 105
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("Role_Administrateur")) {
-            // line 105
+            // line 106
             echo "
 \t\t\t\t\t\t\t\t\t<a href=\"#\">Administration</a>
 \t\t\t\t\t\t\t\t";
         }
-        // line 108
+        // line 109
         echo "\t\t\t\t\t\t\t</ul>
 \t\t\t\t\t\t\t<ul class=\"right hide-on-med-and-down\">
 
 \t\t\t\t\t\t\t\t";
-        // line 111
+        // line 112
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("IS_AUTHENTICATED_FULLY")) {
-            // line 112
+            // line 113
             echo "\t\t\t\t\t\t\t\t\t<li>
 \t\t\t\t\t\t\t\t\t\t<a href=\"#\" data-activates=\"mobile-demo\" class=\"monProfilBtn\">
 \t\t\t\t\t\t\t\t\t\t\tMon profil</a>
 \t\t\t\t\t\t\t\t\t</li>
 \t\t\t\t\t\t\t\t\t<li>
 \t\t\t\t\t\t\t\t\t\t<a href=\"";
-            // line 117
+            // line 118
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
             echo "\">infos</a>
 \t\t\t\t\t\t\t\t\t</li>
 \t\t\t\t\t\t\t\t\t<li>
 \t\t\t\t\t\t\t\t\t\t<a href=\"";
-            // line 120
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
+            // line 121
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("contact_message_new");
             echo "\">contact</a>
 \t\t\t\t\t\t\t\t\t</li>
 \t\t\t\t\t\t\t\t\t<li>
 \t\t\t\t\t\t\t\t\t\t<a href=\"";
-            // line 123
+            // line 124
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
             echo "\">se deconnecter</a>
 \t\t\t\t\t\t\t\t\t</li>
 \t\t\t\t\t\t\t\t";
         } else {
-            // line 126
+            // line 127
             echo "\t\t\t\t\t\t\t\t\t<li>
 \t\t\t\t\t\t\t\t\t\t<a href=\"";
-            // line 127
+            // line 128
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
             echo "\">infos</a>
 \t\t\t\t\t\t\t\t\t</li>
 \t\t\t\t\t\t\t\t\t<li>
 \t\t\t\t\t\t\t\t\t\t<a href=\"";
-            // line 130
+            // line 131
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
             echo "\">contact</a>
 \t\t\t\t\t\t\t\t\t</li>
 \t\t\t\t\t\t\t\t\t<li>
 \t\t\t\t\t\t\t\t\t\t<a href=\"";
-            // line 133
+            // line 134
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
             echo "\">se connecter</a>
 \t\t\t\t\t\t\t\t\t</li>
 \t\t\t\t\t\t\t\t\t<li>
 \t\t\t\t\t\t\t\t\t\t<a href=\"";
-            // line 136
+            // line 137
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_register");
             echo "\">s'enregistrer</a>
 \t\t\t\t\t\t\t\t\t</li>
 \t\t\t\t\t\t\t\t";
         }
-        // line 139
+        // line 140
         echo "
 \t\t\t\t\t\t\t</ul>
 \t\t\t\t\t\t</div>
@@ -294,7 +295,7 @@ class __TwigTemplate_a34750d87bd6bb1b33f170df28786b55d2c062a07afa82275d67284a300
 \t\t\t\t\t<ul class=\"slides\">
 \t\t\t\t\t\t<li>
 \t\t\t\t\t\t\t<img src=\"";
-        // line 147
+        // line 148
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("uploads/Parallax1.jpg"), "html", null, true);
         echo "\">
 \t\t\t\t\t\t\t<div class=\"caption center-align\">
@@ -305,7 +306,7 @@ class __TwigTemplate_a34750d87bd6bb1b33f170df28786b55d2c062a07afa82275d67284a300
 \t\t\t\t\t\t</li>
 \t\t\t\t\t\t<li>
 \t\t\t\t\t\t\t<img src=\"";
-        // line 155
+        // line 156
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("uploads/Parallax2.jpg"), "html", null, true);
         echo "\">
 \t\t\t\t\t\t\t<div class=\"caption left-align\">
@@ -341,14 +342,14 @@ class __TwigTemplate_a34750d87bd6bb1b33f170df28786b55d2c062a07afa82275d67284a300
 \t\t\t</header>
 \t\t\t<main>
 \t\t\t\t";
-        // line 188
-        $this->displayBlock('body', $context, $blocks);
         // line 189
+        $this->displayBlock('body', $context, $blocks);
+        // line 190
         echo "
 \t\t\t\t";
-        // line 190
-        if ((0 === twig_compare(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 190, $this->source); })()), "request", [], "any", false, false, false, 190), "get", [0 => "_route"], "method", false, false, false, 190), "home"))) {
-            // line 191
+        // line 191
+        if ((0 === twig_compare(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 191, $this->source); })()), "request", [], "any", false, false, false, 191), "get", [0 => "_route"], "method", false, false, false, 191), "home"))) {
+            // line 192
             echo "\t\t\t\t\t<div class=\"section white homeSectionPresentation\">
 \t\t\t\t\t\t<div class=\"row container\">
 \t\t\t\t\t\t\t<h2 class=\"header\">Parallax</h2>
@@ -357,7 +358,7 @@ class __TwigTemplate_a34750d87bd6bb1b33f170df28786b55d2c062a07afa82275d67284a300
 \t\t\t\t\t</div>
 \t\t\t\t\t<div class=\"parallax-container\">
 \t\t\t\t\t\t<div class=\"parallax\"><img src=\"";
-            // line 198
+            // line 199
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("uploads/Parallax2.jpg"), "html", null, true);
             echo "\">
 
@@ -372,7 +373,7 @@ class __TwigTemplate_a34750d87bd6bb1b33f170df28786b55d2c062a07afa82275d67284a300
 \t\t\t\t\t</div>
 \t\t\t\t\t<div class=\"parallax-container\">
 \t\t\t\t\t\t<div class=\"parallax\"><img src=\"";
-            // line 210
+            // line 211
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("uploads/Parallax3.jpg"), "html", null, true);
             echo "\"></div>
 
@@ -384,7 +385,7 @@ class __TwigTemplate_a34750d87bd6bb1b33f170df28786b55d2c062a07afa82275d67284a300
 \t\t\t\t\t\t</div>
 \t\t\t\t\t";
         }
-        // line 219
+        // line 220
         echo "
 
 \t\t\t\t</main>
@@ -416,9 +417,9 @@ class __TwigTemplate_a34750d87bd6bb1b33f170df28786b55d2c062a07afa82275d67284a300
 \t\t\t\t</footer>
 
 \t\t\t\t";
-        // line 249
+        // line 250
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 255
+        // line 256
         echo "\t\t\t</body>
 \t\t</body>
 \t</html>
@@ -468,7 +469,7 @@ class __TwigTemplate_a34750d87bd6bb1b33f170df28786b55d2c062a07afa82275d67284a300
 
     }
 
-    // line 188
+    // line 189
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -486,7 +487,7 @@ class __TwigTemplate_a34750d87bd6bb1b33f170df28786b55d2c062a07afa82275d67284a300
 
     }
 
-    // line 249
+    // line 250
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -496,12 +497,12 @@ class __TwigTemplate_a34750d87bd6bb1b33f170df28786b55d2c062a07afa82275d67284a300
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 250
+        // line 251
         echo "\t\t\t\t\t<!--Import jQuery before materialize.js-->
 \t\t\t\t\t<script type=\"text/javascript\" src=\"https://code.jquery.com/jquery-3.2.1.min.js\"></script>
 \t\t\t\t\t<script src=\"https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js\"></script>
 \t\t\t\t\t<script type=\"text/javascript\" src=\"";
-        // line 253
+        // line 254
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/bin/materialize.js"), "html", null, true);
         echo "\"></script>
 \t\t\t\t";
@@ -525,7 +526,7 @@ class __TwigTemplate_a34750d87bd6bb1b33f170df28786b55d2c062a07afa82275d67284a300
 
     public function getDebugInfo()
     {
-        return array (  505 => 253,  500 => 250,  490 => 249,  472 => 188,  454 => 13,  435 => 7,  422 => 255,  420 => 249,  388 => 219,  376 => 210,  361 => 198,  352 => 191,  350 => 190,  347 => 189,  345 => 188,  309 => 155,  298 => 147,  288 => 139,  282 => 136,  276 => 133,  270 => 130,  264 => 127,  261 => 126,  255 => 123,  249 => 120,  243 => 117,  236 => 112,  234 => 111,  229 => 108,  224 => 105,  222 => 104,  217 => 102,  210 => 98,  204 => 95,  195 => 89,  186 => 83,  179 => 79,  173 => 76,  166 => 71,  160 => 69,  158 => 68,  150 => 63,  138 => 53,  130 => 48,  125 => 47,  122 => 46,  116 => 42,  111 => 40,  107 => 38,  105 => 37,  102 => 36,  98 => 34,  92 => 32,  90 => 31,  77 => 21,  68 => 14,  64 => 13,  57 => 8,  55 => 7,  47 => 1,);
+        return array (  506 => 254,  501 => 251,  491 => 250,  473 => 189,  455 => 13,  436 => 7,  423 => 256,  421 => 250,  389 => 220,  377 => 211,  362 => 199,  353 => 192,  351 => 191,  348 => 190,  346 => 189,  310 => 156,  299 => 148,  289 => 140,  283 => 137,  277 => 134,  271 => 131,  265 => 128,  262 => 127,  256 => 124,  250 => 121,  244 => 118,  237 => 113,  235 => 112,  230 => 109,  225 => 106,  223 => 105,  218 => 103,  211 => 99,  204 => 95,  195 => 89,  186 => 83,  179 => 79,  173 => 76,  166 => 71,  160 => 69,  158 => 68,  150 => 63,  138 => 53,  130 => 48,  125 => 47,  122 => 46,  116 => 42,  111 => 40,  107 => 38,  105 => 37,  102 => 36,  98 => 34,  92 => 32,  90 => 31,  77 => 21,  68 => 14,  64 => 13,  57 => 8,  55 => 7,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -626,6 +627,7 @@ class __TwigTemplate_a34750d87bd6bb1b33f170df28786b55d2c062a07afa82275d67284a300
 \t\t\t\t\t\t\t\t<li>
 \t\t\t\t\t\t\t\t\t<a href=\"{{path('home')}}\">Les AMHE</a>
 \t\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t<li>
 \t\t\t\t\t\t\t\t\t<a href=\"{{path('home')}}\">
 \t\t\t\t\t\t\t\t\t\tBoutique</a>
@@ -649,7 +651,7 @@ class __TwigTemplate_a34750d87bd6bb1b33f170df28786b55d2c062a07afa82275d67284a300
 \t\t\t\t\t\t\t\t\t\t<a href=\"{{path('app_login')}}\">infos</a>
 \t\t\t\t\t\t\t\t\t</li>
 \t\t\t\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t\t\t\t<a href=\"{{path('app_login')}}\">contact</a>
+\t\t\t\t\t\t\t\t\t\t<a href=\"{{path('contact_message_new')}}\">contact</a>
 \t\t\t\t\t\t\t\t\t</li>
 \t\t\t\t\t\t\t\t\t<li>
 \t\t\t\t\t\t\t\t\t\t<a href=\"{{path('app_logout')}}\">se deconnecter</a>

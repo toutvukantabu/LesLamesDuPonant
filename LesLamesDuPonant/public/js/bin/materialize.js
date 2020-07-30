@@ -10023,11 +10023,10 @@ if (Vel) {
   $('.carousel.carousel-slider').carousel({
     fullWidth: true
   });
-
+//Birtyhday date pîcker
   $('.datepicker').on('mousedown', function (event) {
     event.preventDefault();
   });
-
  $('.datepicker').pickadate({
    format: 'dd-mm-yyyy',
    selectMonths: true, // Creates a dropdown to control month
@@ -10044,7 +10043,7 @@ if (Vel) {
 $(document).ready(function () {
 
   $(window).scroll(function () {
-    if ($(window).scrollTop() > 0) {
+    if ($(window).scrollTop() > 95) {
       $('nav').addClass('navScroll');
     } else {
       $('nav').removeClass('navScroll');
