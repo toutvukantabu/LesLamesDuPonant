@@ -10023,11 +10023,10 @@ if (Vel) {
   $('.carousel.carousel-slider').carousel({
     fullWidth: true
   });
-
+//Birtyhday date pîcker
   $('.datepicker').on('mousedown', function (event) {
     event.preventDefault();
   });
-
  $('.datepicker').pickadate({
    format: 'dd-mm-yyyy',
    selectMonths: true, // Creates a dropdown to control month
@@ -10040,12 +10039,36 @@ if (Vel) {
    
  });
 
+ //navbar transparent
+$(document).ready(function () {
+
+  $(window).scroll(function () {
+    if ($(window).scrollTop() > 95) {
+      $('nav').addClass('navScroll');
+    } else {
+      $('nav').removeClass('navScroll');
+    }
+  });
+
+});
 
 $(document).ready(function(){
-  $('.parallax').parallax();  
-    $('.carousel').carousel();
+  $('.parallax').parallax();
+    $('.carousel').carousel(
+  
+    );
       $(".button-collapse").sideNav();
+      $(".monProfilBtn").sideNav();
+      $('.slider').slider({
+        transition: 1000,
+        interval: 10000,
+            height :500,
+      }
+
+      );
+
  $('select').material_select();
+
 });
 
     

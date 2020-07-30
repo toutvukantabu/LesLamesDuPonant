@@ -1,116 +1,258 @@
-
 <!DOCTYPE html>
 <html>
+	<head>
+		<meta charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<title>
+			{% block title 'Lame Du Ponant ' %}
+		</title>
+		<!--Import Google Icon Font-->
+		<link
+		href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<!--Import materialize.css-->
+		<link type="text/css" rel="stylesheet" href="{{ asset('sass/materialize.css') }}" media="screen,projection"/> {% block stylesheets %}{% endblock %}
+		</head>
+		<body>
+			<header>
+				<div class="container " id="HomeTitle">
+					<div class="row">
+						<div class="col m12 s12 l12 xl12">
 
-<head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<title>
-		{% block title 'Lame Du Ponant ' %}
-	</title>
-	  <!--Import Google Icon Font-->
-      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-      <!--Import materialize.css-->
-      <link type="text/css" rel="stylesheet" href="{{ asset('sass/materialize.css') }}"  media="screen,projection"/>
-	{% block stylesheets %}{% endblock %}
-</head>
-<body>
-<header>
-  <nav>
-    <div class="nav-wrapper ">
-      <a href="{{path('home')}} " class="brand-logo">Logo</a>
-      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="{{path('app_login')}}">se connecter</a></li>
-        <li><a href="{{path('app_register')}}">s'enregistrer</a></li>
-        <li><a href="{{path('app_logout')}}">se deconnecter</a></li>
-     
-      </ul>
-	  
-      <ul class="side-nav" id="mobile-demo">
-	  <li><div class="user-view">
-      <div class="background">
-        <img src="https://miro.medium.com/max/1080/1*hU0QQDiOnsKpX4qlIyn_4w.jpeg">
-      </div>
-      <a href="#!user"><img class="circle" src="https://randomuser.me/api/portraits/men/66.jpg"></a>
-      <a href="#!name"><span class="white-text name"> Bonjour John Doe</span></a>
-      <a href="#!email"><span class="white-text email">jdandturk@gmail.com</span></a>
-    </div></li>
-    <li><div class="divider"></div></li>
-	<li> <p>Les Lames Du Ponant</p>	</li>
-    <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
-<li>
-	<a href="{{path('app_login')}}">se connecter</a>
-</li>
-<li>
-	<a href="{{path('app_register')}}">s'enregistrer</a>
-</li>
-<li>
-	<a href="{{path('app_logout')}}">se deconnecter</a>
-</li>
-<li>
-</li>
+							<img src="{{ asset('uploads/LogoLDP_Black_HD2.png')}}">
+						</div>
+					</div>
+				</div>
+				<ul class="side-nav z-depth-4" id="mobile-demo">
+					<li>
+						<div class="user-view">
+							<div class="background">
+								<img src="https://miro.medium.com/max/1080/1*hU0QQDiOnsKpX4qlIyn_4w.jpeg">
+							</div>
+							{% if is_granted('IS_AUTHENTICATED_FULLY') and photoAvatarUser is defined  %}
+								<a href="#!user"><img class="circle" src="{{app.user.photoAvatarUser}}"></a>
+							{% else %}
+								<a href="#!user"><img class="circle" src="uploads\avatar.jpg"></a>
+							{% endif %}
 
-      </ul>
-    </div>
-  </nav>
-<div class="carousel carousel-slider center" data-indicators="true">
-	<div class="carousel-fixed-item center">
-		<a class="btn waves-effect white grey-text darken-text-2">button</a>
-	</div>
-	<div class="carousel-item red white-text" href="#one!">
-		<h2>First Panel</h2>
-		<p class="white-text">This is your first panel</p>
-	</div>
-	<div class="carousel-item amber white-text" href="#two!">
-		<h2>Second Panel</h2>
-		<p class="white-text">This is your second panel</p>
-	</div>
-	<div class="carousel-item green white-text" href="#three!">
-
-		<h2>Third Panel</h2>
-		<p class="white-text">This is your third panel</p>
-	</div>
-	<div class="carousel-item blue white-text" href="#four!">
-		<h2>Fourth Panel</h2>
-		<p class="white-text">This is your fourth panel</p>
-	</div>
-</div>
-  </header>
-<main>
-{% block body %}{% endblock %}</main>
-
-<footer class="page-footer">
-	<div class="container">
-		<div class="row">
-			<div class="col l6 s12">
-				<h5 class="white-text">Footer Content</h5>
-				<p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
-			</div>
-			<div class="col l4 offset-l2 s12">
-				<h5 class="white-text">Links</h5>
-				<ul>
-					<li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-					<li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-					<li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-					<li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+							{% if is_granted('IS_AUTHENTICATED_FULLY') and PseudoUser is defined  %}
+								<span class="white-text name">
+									Bonjour
+									{{app.user.pseudoUser}}</span>
+							{% else %}
+								<span class="white-text name">
+									Bonjour "Illustre inconnu"</span>
+								<Small>Tu peux modifier ton pseudo en cliquant sur "Mes infos</Small>
+							{% endif %}
+							{% if is_granted('IS_AUTHENTICATED_FULLY') %}
+								<span class="white-text email">{{ app.user.email }}</span>
+								<a href="{{path('app_logout')}}">
+									<span class="white-text email">
+										se déconnecter</span>
+								</a>
+							{% endif %}
+						</div>
+					</li>
+					<li>
+						<div class="divider"></div>
+					</li>
+					<li>
+						<h5 class="black-text center-align">Les lames du Ponant</h5>
+					</li>
+					<div class="divider"></div>
+					<li>
+						<a href="{{path('home')}}">
+							<span>Messagerie</span>
+						</a>
+					</li>
+					<li>
+						{% if is_granted('IS_AUTHENTICATED_FULLY')%}
+							<a href="{{path('user_edit',{'id': app.user.id })}}">
+							{% endif %}
+							<span>Modifier mes infos</span>
+						</a>
+					</li>
+					<div class="divider"></div>
+					<li>
+						<a href="{{path('home')}}">Les AMHE</a>
+					</li>
+					<li>
+						<a href="{{path('home')}}">
+							Boutique</a>
+					</li>
+					<li>
+						<a href="{{path('home')}}">Forum</a>
+					</li>
 				</ul>
-			</div>
-		</div>
-	</div>
-	<div class="footer-copyright">
-		<div class="container">
-			© 2014 Copyright Text
-			<a class="grey-text text-lighten-4 right" href="#!">More Links</a>
-		</div>
-	</div>
-</footer>
+				<div class="menu">
+					<nav class="">
+						<div class="nav-wrapper">
+							<a href="{{path('home')}} " class="brand-logo center">Accueil</a>
+							<a href="#" data-activates="mobile-demo" class="button-collapse">
+								<i class="material-icons">menu</i>
+							</a>
+							<ul class="left hide-on-med-and-down">
+								<li>
+									<a href="{{path('home')}}">Les AMHE</a>
+								</li>
+								
+								<li>
+									<a href="{{path('home')}}">
+										Boutique</a>
+								</li>
+								<li>
+									<a href="{{path('home')}}">Forum</a>
+								</li>
+								{% if is_granted('Role_Administrateur')%}
 
-	{% block javascripts %}	<!--Import jQuery before materialize.js-->
-      <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
-      <script type="text/javascript" src="{{ asset('js/bin/materialize.js') }}"></script>
-{% endblock %}
-	</body>
+									<a href="#">Administration</a>
+								{% endif %}
+							</ul>
+							<ul class="right hide-on-med-and-down">
 
-</html>
+								{% if is_granted('IS_AUTHENTICATED_FULLY')%}
+									<li>
+										<a href="#" data-activates="mobile-demo" class="monProfilBtn">
+											Mon profil</a>
+									</li>
+									<li>
+										<a href="{{path('app_login')}}">infos</a>
+									</li>
+									<li>
+										<a href="{{path('contact_message_new')}}">contact</a>
+									</li>
+									<li>
+										<a href="{{path('app_logout')}}">se deconnecter</a>
+									</li>
+								{% else %}
+									<li>
+										<a href="{{path('app_login')}}">infos</a>
+									</li>
+									<li>
+										<a href="{{path('app_login')}}">contact</a>
+									</li>
+									<li>
+										<a href="{{path('app_login')}}">se connecter</a>
+									</li>
+									<li>
+										<a href="{{path('app_register')}}">s'enregistrer</a>
+									</li>
+								{% endif %}
+
+							</ul>
+						</div>
+					</nav>
+				</div>
+				<div class="slider">
+					<ul class="slides">
+						<li>
+							<img src="{{ asset('uploads/Parallax1.jpg')}}">
+							<div class="caption center-align">
+								<h3>This is our big Tagline!</h3>
+								<h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+								<button class="btn">hello</button>
+							</div>
+						</li>
+						<li>
+							<img src="{{ asset('uploads/Parallax2.jpg')}}">
+							<div class="caption left-align">
+								<h3>Left Aligned Caption</h3>
+								<h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+								<a href="#">
+									<button class="btn">hello</button>
+								</a>
+							</div>
+						</li>
+						<li>
+							<img
+							src="https://lorempixel.com/580/250/nature/3">
+							<!-- random image -->
+							<div class="caption right-align">
+								<h3>Right Aligned Caption</h3>
+								<h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+								<button class="btn">hello2</button>
+							</div>
+						</li>
+						<li>
+							<img
+							src="https://lorempixel.com/580/250/nature/4">
+							<!-- random image -->
+							<div class="caption center-align">
+								<h3>This is our big Tagline!</h3>
+								<h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+								<button class="btn">hello3</button>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</header>
+			<main>
+				{% block body %}{% endblock %}
+
+				{% if app.request.get('_route') == 'home' %}
+					<div class="section white homeSectionPresentation">
+						<div class="row container">
+							<h2 class="header">Parallax</h2>
+							<p class="grey-text text-darken-3 lighten-3">Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling.</p>
+						</div>
+					</div>
+					<div class="parallax-container">
+						<div class="parallax"><img src="{{ asset('uploads/Parallax2.jpg')}}">
+
+							<h5 class="white-text" position="absolute">nos activités</h5>
+						</div>
+					</div>
+					<div class="section white homeSectionActivity">
+						<div class="row container">
+							<h2 class="header">Parallax</h2>
+							<p class="grey-text text-darken-3 lighten-3">Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling.</p>
+						</div>
+					</div>
+					<div class="parallax-container">
+						<div class="parallax"><img src="{{ asset('uploads/Parallax3.jpg')}}"></div>
+
+					</div>
+					<div class="section white homeSectionCalendar">
+						<div class="row container">
+							<h2 class="header">Parallax</h2>
+							<p class="grey-text text-darken-3 lighten-3">Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling.</p>
+						</div>
+					{% endif %}
+
+
+				</main>
+
+				<footer class="page-footer">
+					<div class="container">
+						<div class="row">
+							<div class="col l6 s12">
+								<h5 class="white-text">Footer Content</h5>
+								<p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+							</div>
+							<div class="col l4 offset-l2 s12">
+								<h5 class="white-text">Links</h5>
+								<ul>
+									<li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+									<li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+									<li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+									<li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="footer-copyright">
+						<div class="container">
+							© 2014 Copyright Text
+							<a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+						</div>
+					</div>
+				</footer>
+
+				{% block javascripts %}
+					<!--Import jQuery before materialize.js-->
+					<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+					<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+					<script type="text/javascript" src="{{ asset('js/bin/materialize.js') }}"></script>
+				{% endblock %}
+			</body>
+		</body>
+	</html>
