@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -87,9 +89,27 @@ class User implements UserInterface
      */
     private $cityUser;
 
+    /**
+     * @ORM\OneToMany(targetEntity=messageForum::class, mappedBy="user")
+     */
+    private $messageForum;
+
+    /**
+     * @ORM\OneToMany(targetEntity=SubjectForum::class, mappedBy="user")
+     */
+    private $subjectForum;
+
+    /**
+     * @ORM\OneToMany(targetEntity=CategoryForum::class, mappedBy="user")
+     */
+    private $categoryForum;
+
     public function __construct()
     {
     $this->roles = [self::ROLE_USER];
+    $this->messageForum = new ArrayCollection();
+    $this->subjectForum = new ArrayCollection();
+    $this->categoryForum = new ArrayCollection();
     }
    
     public function getId(): ?int
@@ -275,6 +295,99 @@ class User implements UserInterface
     public function setCityUser(?string $cityUser): self
     {
         $this->cityUser = $cityUser;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|messageForum[]
+     */
+    public function getMessageForum(): Collection
+    {
+        return $this->messageForum;
+    }
+
+    public function addMessageForum(messageForum $messageForum): self
+    {
+        if (!$this->messageForum->contains($messageForum)) {
+            $this->messageForum[] = $messageForum;
+            $messageForum->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeMessageForum(messageForum $messageForum): self
+    {
+        if ($this->messageForum->contains($messageForum)) {
+            $this->messageForum->removeElement($messageForum);
+            // set the owning side to null (unless already changed)
+            if ($messageForum->getUser() === $this) {
+                $messageForum->setUser(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|SubjectForum[]
+     */
+    public function getSubjectForum(): Collection
+    {
+        return $this->subjectForum;
+    }
+
+    public function addSubjectForum(SubjectForum $subjectForum): self
+    {
+        if (!$this->subjectForum->contains($subjectForum)) {
+            $this->subjectForum[] = $subjectForum;
+            $subjectForum->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeSubjectForum(SubjectForum $subjectForum): self
+    {
+        if ($this->subjectForum->contains($subjectForum)) {
+            $this->subjectForum->removeElement($subjectForum);
+            // set the owning side to null (unless already changed)
+            if ($subjectForum->getUser() === $this) {
+                $subjectForum->setUser(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|CategoryForum[]
+     */
+    public function getCategoryForum(): Collection
+    {
+        return $this->categoryForum;
+    }
+
+    public function addCategoryForum(CategoryForum $categoryForum): self
+    {
+        if (!$this->categoryForum->contains($categoryForum)) {
+            $this->categoryForum[] = $categoryForum;
+            $categoryForum->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCategoryForum(CategoryForum $categoryForum): self
+    {
+        if ($this->categoryForum->contains($categoryForum)) {
+            $this->categoryForum->removeElement($categoryForum);
+            // set the owning side to null (unless already changed)
+            if ($categoryForum->getUser() === $this) {
+                $categoryForum->setUser(null);
+            }
+        }
 
         return $this;
     }

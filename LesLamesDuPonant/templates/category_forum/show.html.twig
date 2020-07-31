@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}CategoryForum{% endblock %}
+
+{% block body %}
+    <h1>CategoryForum</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ category_forum.id }}</td>
+            </tr>
+            <tr>
+                <th>TitleCategory</th>
+                <td>{{ category_forum.titleCategory }}</td>
+            </tr>
+            <tr>
+                <th>DateCategoryForum</th>
+                <td>{{ category_forum.dateCategoryForum ? category_forum.dateCategoryForum|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('category_forum_index') }}">back to list</a>
+
+    <a href="{{ path('category_forum_edit', {'id': category_forum.id}) }}">edit</a>
+
+    {{ include('category_forum/_delete_form.html.twig') }}
+{% endblock %}

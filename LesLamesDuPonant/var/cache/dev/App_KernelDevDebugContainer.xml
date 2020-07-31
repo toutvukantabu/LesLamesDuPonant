@@ -352,6 +352,13 @@
         <argument type="service" id=".service_locator.g9CqTPp.App\Controller\HomeController"/>
       </call>
     </service>
+    <service id="App\Controller\MessageForumController" class="App\Controller\MessageForumController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.g9CqTPp.App\Controller\MessageForumController"/>
+      </call>
+    </service>
     <service id="App\Controller\RegistrationController" class="App\Controller\RegistrationController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -375,6 +382,13 @@
         <argument type="service" id=".service_locator.g9CqTPp.App\Controller\SecurityController"/>
       </call>
     </service>
+    <service id="App\Controller\SubjectForumController" class="App\Controller\SubjectForumController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.g9CqTPp.App\Controller\SubjectForumController"/>
+      </call>
+    </service>
     <service id="App\Controller\UserController" class="App\Controller\UserController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -388,20 +402,38 @@
     <service id="App\Form\ContactMessageType" class="App\Form\ContactMessageType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
+    <service id="App\Form\MessageForumType" class="App\Form\MessageForumType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
     <service id="App\Form\RegistrationFormType" class="App\Form\RegistrationFormType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
     <service id="App\Form\ResetPasswordRequestFormType" class="App\Form\ResetPasswordRequestFormType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
+    <service id="App\Form\SubjectForumType" class="App\Form\SubjectForumType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
     <service id="App\Form\UserType" class="App\Form\UserType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
+    </service>
+    <service id="App\Repository\CategoryForumRepository" class="App\Repository\CategoryForumRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
     </service>
     <service id="App\Repository\ContactMessageRepository" class="App\Repository\ContactMessageRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
+    <service id="App\Repository\MessageForumRepository" class="App\Repository\MessageForumRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
     <service id="App\Repository\ResetPasswordRequestRepository" class="App\Repository\ResetPasswordRequestRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\SubjectForumRepository" class="App\Repository\SubjectForumRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
@@ -861,8 +893,10 @@
       <argument type="collection">
         <argument>App\Form\ChangePasswordFormType</argument>
         <argument>App\Form\ContactMessageType</argument>
+        <argument>App\Form\MessageForumType</argument>
         <argument>App\Form\RegistrationFormType</argument>
         <argument>App\Form\ResetPasswordRequestFormType</argument>
+        <argument>App\Form\SubjectForumType</argument>
         <argument>App\Form\UserType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\FormType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\ChoiceType</argument>
@@ -1206,7 +1240,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension" public="false">
-      <argument type="service" id=".service_locator.P3.2XTE"/>
+      <argument type="service" id=".service_locator.8paBEEz"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -3675,7 +3709,7 @@
       <factory class="Doctrine\ORM\EntityManager" method="create"/>
     </service>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory" public="false">
-      <argument type="service" id=".service_locator.0B1Fx.x"/>
+      <argument type="service" id=".service_locator.2sgrLoP"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -5215,6 +5249,9 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\HomeController" class="App\Controller\HomeController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\HomeController" class="App\Controller\HomeController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\HomeController" class="App\Controller\HomeController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\MessageForumController" class="App\Controller\MessageForumController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\MessageForumController" class="App\Controller\MessageForumController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\MessageForumController" class="App\Controller\MessageForumController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\RegistrationController" class="App\Controller\RegistrationController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\RegistrationController" class="App\Controller\RegistrationController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\RegistrationController" class="App\Controller\RegistrationController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -5224,6 +5261,9 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\SecurityController" class="App\Controller\SecurityController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\SecurityController" class="App\Controller\SecurityController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\SecurityController" class="App\Controller\SecurityController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\SubjectForumController" class="App\Controller\SubjectForumController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\SubjectForumController" class="App\Controller\SubjectForumController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\SubjectForumController" class="App\Controller\SubjectForumController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\UserController" class="App\Controller\UserController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\UserController" class="App\Controller\UserController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\UserController" class="App\Controller\UserController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -5231,16 +5271,26 @@
     <service id=".abstract.instanceof.App\Form\ChangePasswordFormType" class="App\Form\ChangePasswordFormType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ContactMessageType" class="App\Form\ContactMessageType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\ContactMessageType" class="App\Form\ContactMessageType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\MessageForumType" class="App\Form\MessageForumType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\MessageForumType" class="App\Form\MessageForumType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\RegistrationFormType" class="App\Form\RegistrationFormType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\RegistrationFormType" class="App\Form\RegistrationFormType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ResetPasswordRequestFormType" class="App\Form\ResetPasswordRequestFormType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\ResetPasswordRequestFormType" class="App\Form\ResetPasswordRequestFormType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\SubjectForumType" class="App\Form\SubjectForumType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\SubjectForumType" class="App\Form\SubjectForumType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\UserType" class="App\Form\UserType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\UserType" class="App\Form\UserType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\CategoryForumRepository" class="App\Repository\CategoryForumRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\CategoryForumRepository" class="App\Repository\CategoryForumRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ContactMessageRepository" class="App\Repository\ContactMessageRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\ContactMessageRepository" class="App\Repository\ContactMessageRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\MessageForumRepository" class="App\Repository\MessageForumRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\MessageForumRepository" class="App\Repository\MessageForumRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ResetPasswordRequestRepository" class="App\Repository\ResetPasswordRequestRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\ResetPasswordRequestRepository" class="App\Repository\ResetPasswordRequestRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\SubjectForumRepository" class="App\Repository\SubjectForumRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\SubjectForumRepository" class="App\Repository\SubjectForumRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\UserRepository" class="App\Repository\UserRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\UserRepository" class="App\Repository\UserRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".service_locator.WaGDpDt" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
@@ -5514,6 +5564,18 @@
         <argument key="userRepository" type="service" id="App\Repository\UserRepository"/>
       </argument>
     </service>
+    <service id=".service_locator.E4xZ27q" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="messageForumRepository" type="service" id="App\Repository\MessageForumRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.JG2Goki" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="messageForum" type="service" id=".errored..service_locator.JG2Goki.App\Entity\MessageForum"/>
+      </argument>
+    </service>
     <service id=".service_locator.bifUV3P" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -5540,6 +5602,18 @@
         <argument key="authenticationUtils" type="service" id="security.authentication_utils"/>
       </argument>
     </service>
+    <service id=".service_locator.fFZRktq" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="subjectForumRepository" type="service" id="App\Repository\SubjectForumRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.0RFo5YJ" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="subjectForum" type="service" id=".errored..service_locator.0RFo5YJ.App\Entity\SubjectForum"/>
+      </argument>
+    </service>
     <service id=".service_locator.hEwcf7A" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -5553,7 +5627,7 @@
         <argument key="user" type="service" id=".errored..service_locator.ikUdgSe.App\Entity\User"/>
       </argument>
     </service>
-    <service id=".service_locator.ulhn1sB" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.4r4iJp5" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\ContactMessageController::delete" type="service" id=".service_locator.i2geDc0"/>
@@ -5561,10 +5635,18 @@
         <argument key="App\Controller\ContactMessageController::index" type="service" id=".service_locator.uIuCgCK"/>
         <argument key="App\Controller\ContactMessageController::show" type="service" id=".service_locator.i2geDc0"/>
         <argument key="App\Controller\HomeController::index" type="service" id=".service_locator.FXD6KYr"/>
+        <argument key="App\Controller\MessageForumController::delete" type="service" id=".service_locator.JG2Goki"/>
+        <argument key="App\Controller\MessageForumController::edit" type="service" id=".service_locator.JG2Goki"/>
+        <argument key="App\Controller\MessageForumController::index" type="service" id=".service_locator.E4xZ27q"/>
+        <argument key="App\Controller\MessageForumController::show" type="service" id=".service_locator.JG2Goki"/>
         <argument key="App\Controller\RegistrationController::register" type="service" id=".service_locator.bifUV3P"/>
         <argument key="App\Controller\ResetPasswordController::request" type="service" id=".service_locator.A0rcl1e"/>
         <argument key="App\Controller\ResetPasswordController::reset" type="service" id=".service_locator.j5_bHjD"/>
         <argument key="App\Controller\SecurityController::login" type="service" id=".service_locator.xA8Fw_."/>
+        <argument key="App\Controller\SubjectForumController::delete" type="service" id=".service_locator.0RFo5YJ"/>
+        <argument key="App\Controller\SubjectForumController::edit" type="service" id=".service_locator.0RFo5YJ"/>
+        <argument key="App\Controller\SubjectForumController::index" type="service" id=".service_locator.fFZRktq"/>
+        <argument key="App\Controller\SubjectForumController::show" type="service" id=".service_locator.0RFo5YJ"/>
         <argument key="App\Controller\UserController::delete" type="service" id=".service_locator.hEwcf7A"/>
         <argument key="App\Controller\UserController::edit" type="service" id=".service_locator.ikUdgSe"/>
         <argument key="App\Controller\UserController::index" type="service" id=".service_locator.FXD6KYr"/>
@@ -5580,10 +5662,18 @@
         <argument key="App\Controller\ContactMessageController:index" type="service" id=".service_locator.uIuCgCK"/>
         <argument key="App\Controller\ContactMessageController:show" type="service" id=".service_locator.i2geDc0"/>
         <argument key="App\Controller\HomeController:index" type="service" id=".service_locator.FXD6KYr"/>
+        <argument key="App\Controller\MessageForumController:delete" type="service" id=".service_locator.JG2Goki"/>
+        <argument key="App\Controller\MessageForumController:edit" type="service" id=".service_locator.JG2Goki"/>
+        <argument key="App\Controller\MessageForumController:index" type="service" id=".service_locator.E4xZ27q"/>
+        <argument key="App\Controller\MessageForumController:show" type="service" id=".service_locator.JG2Goki"/>
         <argument key="App\Controller\RegistrationController:register" type="service" id=".service_locator.bifUV3P"/>
         <argument key="App\Controller\ResetPasswordController:request" type="service" id=".service_locator.A0rcl1e"/>
         <argument key="App\Controller\ResetPasswordController:reset" type="service" id=".service_locator.j5_bHjD"/>
         <argument key="App\Controller\SecurityController:login" type="service" id=".service_locator.xA8Fw_."/>
+        <argument key="App\Controller\SubjectForumController:delete" type="service" id=".service_locator.0RFo5YJ"/>
+        <argument key="App\Controller\SubjectForumController:edit" type="service" id=".service_locator.0RFo5YJ"/>
+        <argument key="App\Controller\SubjectForumController:index" type="service" id=".service_locator.fFZRktq"/>
+        <argument key="App\Controller\SubjectForumController:show" type="service" id=".service_locator.0RFo5YJ"/>
         <argument key="App\Controller\UserController:delete" type="service" id=".service_locator.hEwcf7A"/>
         <argument key="App\Controller\UserController:edit" type="service" id=".service_locator.ikUdgSe"/>
         <argument key="App\Controller\UserController:index" type="service" id=".service_locator.FXD6KYr"/>
@@ -5652,13 +5742,15 @@
       <argument type="service" id="debug.argument_resolver.not_tagged_controller.inner"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.P3.2XTE" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.8paBEEz" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Form\ChangePasswordFormType" type="service" id="App\Form\ChangePasswordFormType"/>
         <argument key="App\Form\ContactMessageType" type="service" id="App\Form\ContactMessageType"/>
+        <argument key="App\Form\MessageForumType" type="service" id="App\Form\MessageForumType"/>
         <argument key="App\Form\RegistrationFormType" type="service" id="App\Form\RegistrationFormType"/>
         <argument key="App\Form\ResetPasswordRequestFormType" type="service" id="App\Form\ResetPasswordRequestFormType"/>
+        <argument key="App\Form\SubjectForumType" type="service" id="App\Form\SubjectForumType"/>
         <argument key="App\Form\UserType" type="service" id="App\Form\UserType"/>
         <argument key="FOS\CKEditorBundle\Form\Type\CKEditorType" type="service" id="fos_ck_editor.form.type"/>
         <argument key="Symfony\Bridge\Doctrine\Form\Type\EntityType" type="service" id="form.type.entity"/>
@@ -5679,11 +5771,14 @@
         <argument key="doctrine.orm.default_listeners.attach_entity_listeners" type="service" id="doctrine.orm.default_listeners.attach_entity_listeners"/>
       </argument>
     </service>
-    <service id=".service_locator.0B1Fx.x" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.2sgrLoP" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="App\Repository\CategoryForumRepository" type="service" id="App\Repository\CategoryForumRepository"/>
         <argument key="App\Repository\ContactMessageRepository" type="service" id="App\Repository\ContactMessageRepository"/>
+        <argument key="App\Repository\MessageForumRepository" type="service" id="App\Repository\MessageForumRepository"/>
         <argument key="App\Repository\ResetPasswordRequestRepository" type="service" id="App\Repository\ResetPasswordRequestRepository"/>
+        <argument key="App\Repository\SubjectForumRepository" type="service" id="App\Repository\SubjectForumRepository"/>
         <argument key="App\Repository\UserRepository" type="service" id="App\Repository\UserRepository"/>
       </argument>
     </service>
@@ -5899,6 +5994,12 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.g9CqTPp" method="withContext"/>
     </service>
+    <service id=".service_locator.g9CqTPp.App\Controller\MessageForumController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\MessageForumController"/>
+      <argument>App\Controller\MessageForumController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.g9CqTPp" method="withContext"/>
+    </service>
     <service id=".service_locator.g9CqTPp.App\Controller\RegistrationController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator_context" id="App\Controller\RegistrationController"/>
       <argument>App\Controller\RegistrationController</argument>
@@ -5914,6 +6015,12 @@
     <service id=".service_locator.g9CqTPp.App\Controller\SecurityController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator_context" id="App\Controller\SecurityController"/>
       <argument>App\Controller\SecurityController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.g9CqTPp" method="withContext"/>
+    </service>
+    <service id=".service_locator.g9CqTPp.App\Controller\SubjectForumController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\SubjectForumController"/>
+      <argument>App\Controller\SubjectForumController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.g9CqTPp" method="withContext"/>
     </service>
@@ -6084,12 +6191,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
-      <argument type="service" id=".service_locator.ulhn1sB"/>
+      <argument type="service" id=".service_locator.4r4iJp5"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver" public="false"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver" public="false">
-      <argument type="service" id=".service_locator.ulhn1sB"/>
+      <argument type="service" id=".service_locator.4r4iJp5"/>
     </service>
     <service id=".debug.http_client.inner" class="Symfony\Contracts\HttpClient\HttpClientInterface" public="false">
       <argument type="collection"/>
@@ -6102,6 +6209,8 @@
     <service id=".errored..service_locator.beq5mCo.Symfony\Component\HttpFoundation\Response" class="Symfony\Component\HttpFoundation\Response"/>
     <service id=".errored..service_locator.C9JCBPC.Symfony\Component\Config\Loader\LoaderInterface" class="Symfony\Component\Config\Loader\LoaderInterface"/>
     <service id=".errored..service_locator.i2geDc0.App\Entity\ContactMessage" class="App\Entity\ContactMessage"/>
+    <service id=".errored..service_locator.JG2Goki.App\Entity\MessageForum" class="App\Entity\MessageForum"/>
+    <service id=".errored..service_locator.0RFo5YJ.App\Entity\SubjectForum" class="App\Entity\SubjectForum"/>
     <service id=".errored..service_locator.hEwcf7A.App\Entity\User" class="App\Entity\User"/>
     <service id=".errored..service_locator.ikUdgSe.App\Entity\User" class="App\Entity\User"/>
     <service id="console.command_loader" class="Symfony\Component\Console\CommandLoader\ContainerCommandLoader" public="true">
@@ -6495,7 +6604,7 @@
     <service id="SymfonyCasts\Bundle\ResetPassword\ResetPasswordHelperInterface" alias="symfonycasts.reset_password.helper"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.WaGDpDt" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem" public="false"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.ulhn1sB"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.4r4iJp5"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
     <service id="Psr\Log\LoggerInterface $consoleLogger" alias="monolog.logger.console"/>
