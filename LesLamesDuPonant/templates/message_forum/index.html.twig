@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}MessageForum index{% endblock %}
+
+{% block body %}
+    <h1>MessageForum index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>ContentMessageForum</th>
+                <th>DatePublicationMessageForum</th>
+                <th>PhotoMessageForum</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for message_forum in message_forums %}
+            <tr>
+                <td>{{ message_forum.id }}</td>
+                <td>{{ message_forum.ContentMessageForum }}</td>
+                <td>{{ message_forum.datePublicationMessageForum ? message_forum.datePublicationMessageForum|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ message_forum.photoMessageForum }}</td>
+                <td>
+                    <a href="{{ path('message_forum_show', {'id': message_forum.id}) }}">show</a>
+                    <a href="{{ path('message_forum_edit', {'id': message_forum.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('message_forum_new') }}">Create new</a>
+{% endblock %}

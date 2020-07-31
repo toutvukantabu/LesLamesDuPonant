@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit MessageForum{% endblock %}
+
+{% block body %}
+    <h1>Edit MessageForum</h1>
+
+    {{ include('message_forum/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('message_forum_index') }}">back to list</a>
+
+    {{ include('message_forum/_delete_form.html.twig') }}
+{% endblock %}

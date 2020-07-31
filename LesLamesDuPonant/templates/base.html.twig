@@ -28,13 +28,14 @@
 							<div class="background">
 								<img src="https://miro.medium.com/max/1080/1*hU0QQDiOnsKpX4qlIyn_4w.jpeg">
 							</div>
-							{% if is_granted('IS_AUTHENTICATED_FULLY') and photoAvatarUser is defined  %}
-								<a href="#!user"><img class="circle" src="{{app.user.photoAvatarUser}}"></a>
-							{% else %}
-								<a href="#!user"><img class="circle" src="uploads\avatar.jpg"></a>
-							{% endif %}
+							{% if is_granted('IS_AUTHENTICATED_FULLY') and app.user.photoAvatarUser is defined != NULL %}
+					
+									<img class="circle" src="{{ asset('uploads/photos/' ~ app.user.photoAvatarUser)}}">
 
-							{% if is_granted('IS_AUTHENTICATED_FULLY') and PseudoUser is defined  %}
+							{% else %}
+							<img class="circle" src="{{asset('uploads/avatar.jpg')}}">
+							{% endif %}
+							{% if is_granted('IS_AUTHENTICATED_FULLY') and app.user.pseudoUser is defined != NULL %}
 								<span class="white-text name">
 									Bonjour
 									{{app.user.pseudoUser}}</span>
@@ -94,7 +95,7 @@
 								<li>
 									<a href="{{path('home')}}">Les AMHE</a>
 								</li>
-								
+
 								<li>
 									<a href="{{path('home')}}">
 										Boutique</a>
