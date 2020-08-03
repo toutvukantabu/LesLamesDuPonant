@@ -14,8 +14,6 @@ class SubjectForumType extends AbstractType
         $builder
             ->add('titleSubjectForum')
             ->add('contentSubjectForum')
-            ->add('dateSubjectForum')
-            ->add('user')
         ;
     }
 

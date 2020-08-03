@@ -59,7 +59,7 @@ class MessageForum
         return $this->datePublicationMessageForum;
     }
 
-    public function setDDatePublicationMessageForum(\DateTimeInterface $datePublicationMessageForum): self
+    public function setDatePublicationMessageForum(\DateTimeInterface $datePublicationMessageForum): self
     {
         $this->datePublicationMessageForum = $datePublicationMessageForum;
 

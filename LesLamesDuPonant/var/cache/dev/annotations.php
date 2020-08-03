@@ -257,6 +257,24 @@ return [[
 '%5B%5BC%5DApp%5CEntity%5CUser%23getCityUser%5D%5B1%5D' => 2,
 '%5BApp%5CEntity%5CUser%23setCityUser%5D%5B1%5D' => 1,
 '%5B%5BC%5DApp%5CEntity%5CUser%23setCityUser%5D%5B1%5D' => 2,
+'%5BApp%5CEntity%5CUser%23getMessageForum%5D%5B1%5D' => 1,
+'%5B%5BC%5DApp%5CEntity%5CUser%23getMessageForum%5D%5B1%5D' => 2,
+'%5BApp%5CEntity%5CUser%23addMessageForum%5D%5B1%5D' => 1,
+'%5B%5BC%5DApp%5CEntity%5CUser%23addMessageForum%5D%5B1%5D' => 2,
+'%5BApp%5CEntity%5CUser%23removeMessageForum%5D%5B1%5D' => 1,
+'%5B%5BC%5DApp%5CEntity%5CUser%23removeMessageForum%5D%5B1%5D' => 2,
+'%5BApp%5CEntity%5CUser%23getSubjectForum%5D%5B1%5D' => 1,
+'%5B%5BC%5DApp%5CEntity%5CUser%23getSubjectForum%5D%5B1%5D' => 2,
+'%5BApp%5CEntity%5CUser%23addSubjectForum%5D%5B1%5D' => 1,
+'%5B%5BC%5DApp%5CEntity%5CUser%23addSubjectForum%5D%5B1%5D' => 2,
+'%5BApp%5CEntity%5CUser%23removeSubjectForum%5D%5B1%5D' => 1,
+'%5B%5BC%5DApp%5CEntity%5CUser%23removeSubjectForum%5D%5B1%5D' => 2,
+'%5BApp%5CEntity%5CUser%23getCategoryForum%5D%5B1%5D' => 1,
+'%5B%5BC%5DApp%5CEntity%5CUser%23getCategoryForum%5D%5B1%5D' => 2,
+'%5BApp%5CEntity%5CUser%23addCategoryForum%5D%5B1%5D' => 1,
+'%5B%5BC%5DApp%5CEntity%5CUser%23addCategoryForum%5D%5B1%5D' => 2,
+'%5BApp%5CEntity%5CUser%23removeCategoryForum%5D%5B1%5D' => 1,
+'%5B%5BC%5DApp%5CEntity%5CUser%23removeCategoryForum%5D%5B1%5D' => 2,
 '%5BApp%5CEntity%5CUser%24id%5D%5B1%5D' => 25,
 '%5B%5BC%5DApp%5CEntity%5CUser%24id%5D%5B1%5D' => 2,
 '%5BApp%5CEntity%5CUser%24email%5D%5B1%5D' => 36,
@@ -283,6 +301,12 @@ return [[
 '%5B%5BC%5DApp%5CEntity%5CUser%24adressUser%5D%5B1%5D' => 2,
 '%5BApp%5CEntity%5CUser%24cityUser%5D%5B1%5D' => 42,
 '%5B%5BC%5DApp%5CEntity%5CUser%24cityUser%5D%5B1%5D' => 2,
+'%5BApp%5CEntity%5CUser%24messageForum%5D%5B1%5D' => 43,
+'%5B%5BC%5DApp%5CEntity%5CUser%24messageForum%5D%5B1%5D' => 2,
+'%5BApp%5CEntity%5CUser%24subjectForum%5D%5B1%5D' => 44,
+'%5B%5BC%5DApp%5CEntity%5CUser%24subjectForum%5D%5B1%5D' => 2,
+'%5BApp%5CEntity%5CUser%24categoryForum%5D%5B1%5D' => 45,
+'%5B%5BC%5DApp%5CEntity%5CUser%24categoryForum%5D%5B1%5D' => 2,
 '%5BDoctrine%5CBundle%5CDoctrineBundle%5CController%5CProfilerController%5D%5B1%5D' => 1,
 '%5B%5BC%5DDoctrine%5CBundle%5CDoctrineBundle%5CController%5CProfilerController%5D%5B1%5D' => 2,
 '%5BDoctrine%5CBundle%5CDoctrineBundle%5CController%5CProfilerController%23setContainer%5D%5B1%5D' => 1,
@@ -834,7 +858,7 @@ return [[
 
 0 => 'N;',
 1 => [],
-2 => 1596115726,
+2 => 1596484700,
 3 => static function () {
     return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
         $o = [
@@ -1740,6 +1764,72 @@ return [[
                 ],
                 'nullable' => [
                     true,
+                ],
+            ],
+        ],
+        [
+            $o[0],
+        ],
+        []
+    );
+},
+43 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Doctrine\\ORM\\Mapping\\OneToMany'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\OneToMany')),
+        ],
+        null,
+        [
+            'stdClass' => [
+                'mappedBy' => [
+                    'user',
+                ],
+                'targetEntity' => [
+                    'App\\Entity\\messageForum',
+                ],
+            ],
+        ],
+        [
+            $o[0],
+        ],
+        []
+    );
+},
+44 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Doctrine\\ORM\\Mapping\\OneToMany'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\OneToMany')),
+        ],
+        null,
+        [
+            'stdClass' => [
+                'mappedBy' => [
+                    'user',
+                ],
+                'targetEntity' => [
+                    'App\\Entity\\SubjectForum',
+                ],
+            ],
+        ],
+        [
+            $o[0],
+        ],
+        []
+    );
+},
+45 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Doctrine\\ORM\\Mapping\\OneToMany'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\OneToMany')),
+        ],
+        null,
+        [
+            'stdClass' => [
+                'mappedBy' => [
+                    'user',
+                ],
+                'targetEntity' => [
+                    'App\\Entity\\CategoryForum',
                 ],
             ],
         ],

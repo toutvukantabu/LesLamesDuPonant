@@ -31,6 +31,8 @@ class SubjectForumController extends AbstractController
     public function new(Request $request): Response
     {
         $subjectForum = new SubjectForum();
+        $subjectForum->setUser($this->getUser());
+        $subjectForum->setDateSubjectForum(new \DateTime());
         $form = $this->createForm(SubjectForumType::class, $subjectForum);
         $form->handleRequest($request);
 
