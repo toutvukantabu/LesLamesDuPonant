@@ -13,9 +13,8 @@ class MessageForumType extends AbstractType
     {
         $builder
             ->add('ContentMessageForum')
-            ->add('datePublicationMessageForum')
             ->add('photoMessageForum')
-            ->add('user')
+           
         ;
     }
 

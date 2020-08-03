@@ -338,6 +338,13 @@
       <tag name="controller.service_arguments"/>
       <tag name="routing.route_loader"/>
     </service>
+    <service id="App\Controller\CategoryForumController" class="App\Controller\CategoryForumController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.g9CqTPp.App\Controller\CategoryForumController"/>
+      </call>
+    </service>
     <service id="App\Controller\ContactMessageController" class="App\Controller\ContactMessageController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -395,6 +402,9 @@
       <call method="setContainer">
         <argument type="service" id=".service_locator.g9CqTPp.App\Controller\UserController"/>
       </call>
+    </service>
+    <service id="App\Form\CategoryForumType" class="App\Form\CategoryForumType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
     </service>
     <service id="App\Form\ChangePasswordFormType" class="App\Form\ChangePasswordFormType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
@@ -891,6 +901,7 @@
         <argument>FOS\CKEditorBundle\Form\Type</argument>
       </argument>
       <argument type="collection">
+        <argument>App\Form\CategoryForumType</argument>
         <argument>App\Form\ChangePasswordFormType</argument>
         <argument>App\Form\ContactMessageType</argument>
         <argument>App\Form\MessageForumType</argument>
@@ -1240,7 +1251,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension" public="false">
-      <argument type="service" id=".service_locator.8paBEEz"/>
+      <argument type="service" id=".service_locator.6N_dVc7"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -5243,6 +5254,9 @@
       <tag name="twig.extension"/>
       <argument type="service" id="fos_ck_editor.renderer"/>
     </service>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\CategoryForumController" class="App\Controller\CategoryForumController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\CategoryForumController" class="App\Controller\CategoryForumController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\CategoryForumController" class="App\Controller\CategoryForumController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ContactMessageController" class="App\Controller\ContactMessageController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ContactMessageController" class="App\Controller\ContactMessageController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\ContactMessageController" class="App\Controller\ContactMessageController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -5267,6 +5281,8 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\UserController" class="App\Controller\UserController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\UserController" class="App\Controller\UserController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\UserController" class="App\Controller\UserController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\CategoryForumType" class="App\Form\CategoryForumType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\CategoryForumType" class="App\Form\CategoryForumType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ChangePasswordFormType" class="App\Form\ChangePasswordFormType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\ChangePasswordFormType" class="App\Form\ChangePasswordFormType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ContactMessageType" class="App\Form\ContactMessageType" autowire="true" abstract="true"/>
@@ -5546,6 +5562,24 @@
         <argument key="loader" type="service" id=".errored..service_locator.C9JCBPC.Symfony\Component\Config\Loader\LoaderInterface"/>
       </argument>
     </service>
+    <service id=".service_locator.1oURJky" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="categoryForumRepository" type="service" id="App\Repository\CategoryForumRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.1cFtlgg" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="slugger" type="service" id="slugger"/>
+      </argument>
+    </service>
+    <service id=".service_locator.KGenLOu" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="categoryForum" type="service" id=".errored..service_locator.KGenLOu.App\Entity\CategoryForum"/>
+      </argument>
+    </service>
     <service id=".service_locator.uIuCgCK" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -5627,9 +5661,14 @@
         <argument key="user" type="service" id=".errored..service_locator.ikUdgSe.App\Entity\User"/>
       </argument>
     </service>
-    <service id=".service_locator.4r4iJp5" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.af54faY" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="App\Controller\CategoryForumController::delete" type="service" id=".service_locator.KGenLOu"/>
+        <argument key="App\Controller\CategoryForumController::edit" type="service" id=".service_locator.KGenLOu"/>
+        <argument key="App\Controller\CategoryForumController::index" type="service" id=".service_locator.1oURJky"/>
+        <argument key="App\Controller\CategoryForumController::new" type="service" id=".service_locator.1cFtlgg"/>
+        <argument key="App\Controller\CategoryForumController::show" type="service" id=".service_locator.KGenLOu"/>
         <argument key="App\Controller\ContactMessageController::delete" type="service" id=".service_locator.i2geDc0"/>
         <argument key="App\Controller\ContactMessageController::edit" type="service" id=".service_locator.i2geDc0"/>
         <argument key="App\Controller\ContactMessageController::index" type="service" id=".service_locator.uIuCgCK"/>
@@ -5657,6 +5696,11 @@
         <argument key="kernel::loadRoutes" type="service" id=".service_locator.C9JCBPC"/>
         <argument key="kernel::registerContainerConfiguration" type="service" id=".service_locator.C9JCBPC"/>
         <argument key="kernel::terminate" type="service" id=".service_locator.beq5mCo"/>
+        <argument key="App\Controller\CategoryForumController:delete" type="service" id=".service_locator.KGenLOu"/>
+        <argument key="App\Controller\CategoryForumController:edit" type="service" id=".service_locator.KGenLOu"/>
+        <argument key="App\Controller\CategoryForumController:index" type="service" id=".service_locator.1oURJky"/>
+        <argument key="App\Controller\CategoryForumController:new" type="service" id=".service_locator.1cFtlgg"/>
+        <argument key="App\Controller\CategoryForumController:show" type="service" id=".service_locator.KGenLOu"/>
         <argument key="App\Controller\ContactMessageController:delete" type="service" id=".service_locator.i2geDc0"/>
         <argument key="App\Controller\ContactMessageController:edit" type="service" id=".service_locator.i2geDc0"/>
         <argument key="App\Controller\ContactMessageController:index" type="service" id=".service_locator.uIuCgCK"/>
@@ -5742,9 +5786,10 @@
       <argument type="service" id="debug.argument_resolver.not_tagged_controller.inner"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.8paBEEz" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.6N_dVc7" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="App\Form\CategoryForumType" type="service" id="App\Form\CategoryForumType"/>
         <argument key="App\Form\ChangePasswordFormType" type="service" id="App\Form\ChangePasswordFormType"/>
         <argument key="App\Form\ContactMessageType" type="service" id="App\Form\ContactMessageType"/>
         <argument key="App\Form\MessageForumType" type="service" id="App\Form\MessageForumType"/>
@@ -5982,6 +6027,12 @@
         <argument key="twig" type="service" id="twig" on-invalid="ignore"/>
       </argument>
     </service>
+    <service id=".service_locator.g9CqTPp.App\Controller\CategoryForumController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\CategoryForumController"/>
+      <argument>App\Controller\CategoryForumController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.g9CqTPp" method="withContext"/>
+    </service>
     <service id=".service_locator.g9CqTPp.App\Controller\ContactMessageController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator_context" id="App\Controller\ContactMessageController"/>
       <argument>App\Controller\ContactMessageController</argument>
@@ -6191,12 +6242,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
-      <argument type="service" id=".service_locator.4r4iJp5"/>
+      <argument type="service" id=".service_locator.af54faY"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver" public="false"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver" public="false">
-      <argument type="service" id=".service_locator.4r4iJp5"/>
+      <argument type="service" id=".service_locator.af54faY"/>
     </service>
     <service id=".debug.http_client.inner" class="Symfony\Contracts\HttpClient\HttpClientInterface" public="false">
       <argument type="collection"/>
@@ -6208,6 +6259,7 @@
     </service>
     <service id=".errored..service_locator.beq5mCo.Symfony\Component\HttpFoundation\Response" class="Symfony\Component\HttpFoundation\Response"/>
     <service id=".errored..service_locator.C9JCBPC.Symfony\Component\Config\Loader\LoaderInterface" class="Symfony\Component\Config\Loader\LoaderInterface"/>
+    <service id=".errored..service_locator.KGenLOu.App\Entity\CategoryForum" class="App\Entity\CategoryForum"/>
     <service id=".errored..service_locator.i2geDc0.App\Entity\ContactMessage" class="App\Entity\ContactMessage"/>
     <service id=".errored..service_locator.JG2Goki.App\Entity\MessageForum" class="App\Entity\MessageForum"/>
     <service id=".errored..service_locator.0RFo5YJ.App\Entity\SubjectForum" class="App\Entity\SubjectForum"/>
@@ -6604,7 +6656,7 @@
     <service id="SymfonyCasts\Bundle\ResetPassword\ResetPasswordHelperInterface" alias="symfonycasts.reset_password.helper"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.WaGDpDt" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem" public="false"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.4r4iJp5"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.af54faY"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
     <service id="Psr\Log\LoggerInterface $consoleLogger" alias="monolog.logger.console"/>

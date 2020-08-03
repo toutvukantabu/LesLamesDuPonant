@@ -13,8 +13,6 @@ class CategoryForumType extends AbstractType
     {
         $builder
             ->add('titleCategory')
-            ->add('dateCategoryForum')
-            ->add('user')
         ;
     }
 

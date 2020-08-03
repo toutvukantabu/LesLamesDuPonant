@@ -90,7 +90,7 @@ class User implements UserInterface
     private $cityUser;
 
     /**
-     * @ORM\OneToMany(targetEntity=messageForum::class, mappedBy="user")
+     * @ORM\OneToMany(targetEntity=MessageForum::class, mappedBy="user")
      */
     private $messageForum;
 
@@ -300,14 +300,14 @@ class User implements UserInterface
     }
 
     /**
-     * @return Collection|messageForum[]
+     * @return Collection|MessageForum[]
      */
     public function getMessageForum(): Collection
     {
         return $this->messageForum;
     }
 
-    public function addMessageForum(messageForum $messageForum): self
+    public function addMessageForum(MessageForum $messageForum): self
     {
         if (!$this->messageForum->contains($messageForum)) {
             $this->messageForum[] = $messageForum;
@@ -317,7 +317,7 @@ class User implements UserInterface
         return $this;
     }
 
-    public function removeMessageForum(messageForum $messageForum): self
+    public function removeMessageForum(MessageForum $messageForum): self
     {
         if ($this->messageForum->contains($messageForum)) {
             $this->messageForum->removeElement($messageForum);

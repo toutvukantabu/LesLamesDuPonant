@@ -31,6 +31,8 @@ class MessageForumController extends AbstractController
     public function new(Request $request): Response
     {
         $messageForum = new MessageForum();
+        $messageForum->setUser($this->getUser());
+        $messageForum->setDatePublicationMessageForum(new \DateTime());
         $form = $this->createForm(MessageForumType::class, $messageForum);
         $form->handleRequest($request);
 

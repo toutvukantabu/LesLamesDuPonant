@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\CategoryForum;
 use App\Form\CategoryForumType;
 use App\Repository\CategoryForumRepository;
+use Symfony\Component\String\Slugger\SluggerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -18,7 +19,7 @@ class CategoryForumController extends AbstractController
     /**
      * @Route("/", name="category_forum_index", methods={"GET"})
      */
-    public function index(CategoryForumRepository $categoryForumRepository): Response
+    public function index(CategoryForumRepository $categoryForumRepository ): Response
     {
         return $this->render('category_forum/index.html.twig', [
             'category_forums' => $categoryForumRepository->findAll(),
@@ -28,9 +29,11 @@ class CategoryForumController extends AbstractController
     /**
      * @Route("/new", name="category_forum_new", methods={"GET","POST"})
      */
-    public function new(Request $request): Response
+    public function new(Request $request, SluggerInterface $slugger): Response
     {
         $categoryForum = new CategoryForum();
+        $categoryForum->setUser($this->getUser());
+        $categoryForum->setDateCategoryForum(new \DateTime());
         $form = $this->createForm(CategoryForumType::class, $categoryForum);
         $form->handleRequest($request);
 
