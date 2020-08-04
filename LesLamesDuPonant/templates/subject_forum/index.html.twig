@@ -1,39 +1,42 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}SubjectForum index{% endblock %}
+{% block title %}SubjectForum index
+{% endblock %}
 
 {% block body %}
-    <h1>SubjectForum index</h1>
+	<h1>SubjectForum index</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>TitleSubjectForum</th>
-                <th>ContentSubjectForum</th>
-                <th>DateSubjectForum</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for subject_forum in subject_forums %}
-            <tr>
-                <td>{{ subject_forum.id }}</td>
-                <td>{{ subject_forum.titleSubjectForum }}</td>
-                <td>{{ subject_forum.contentSubjectForum }}</td>
-                <td>{{ subject_forum.dateSubjectForum ? subject_forum.dateSubjectForum|date('Y-m-d H:i:s') : '' }}</td>
-                <td>
-                    <a href="{{ path('subject_forum_show', {'id': subject_forum.id}) }}">show</a>
-                    <a href="{{ path('subject_forum_edit', {'id': subject_forum.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="5">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>TitleSubjectForum</th>
+				<th>ContentSubjectForum</th>
+				<th>DateSubjectForum</th>
+				<th>CategorySubjectForum</th>
+				<th>actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for subject_forum in subject_forums %}
+				<tr>
+					<td>{{ subject_forum.id }}</td>
+					<td>{{ subject_forum.titleSubjectForum }}</td>
+					<td>{{ subject_forum.contentSubjectForum }}</td>
+					<td>{{ subject_forum.CategorySubjectForum }}</td>
+					<td>{{ subject_forum.dateSubjectForum ? subject_forum.dateSubjectForum|date('Y-m-d H:i:s') : '' }}</td>
+					<td>
+						<a href="{{ path('subject_forum_show', {'id': subject_forum.id}) }}">show</a>
+						<a href="{{ path('subject_forum_edit', {'id': subject_forum.id}) }}">edit</a>
+					</td>
+				</tr>
+			{% else %}
+				<tr>
+					<td colspan="5">no records found</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
 
-    <a href="{{ path('subject_forum_new') }}">Create new</a>
+	<a href="{{ path('subject_forum_new') }}">Create new</a>
 {% endblock %}

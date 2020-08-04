@@ -100,3 +100,38 @@ paralkax
   <div class="parallax-container">
     <div class="parallax"><img src="https://ostdugriffonnoir.com/wp-content/uploads/2017/01/9.jpg"></div>
   </div>
+
+
+  Ligne verticale tableau 
+
+  table { border-collapse: collapse; }
+tr { border: none; }
+td {
+  border-right: solid 1px #f00; 
+  border-left: solid 1px #f00;
+}
+<table>
+  <tr>
+    <td>a</td>
+    <td>b</td>
+  </tr>
+  <tr>
+    <td>c</td>
+    <td>d</td>
+  </tr>
+</table>table { border-collapse: collapse; }
+tr { border: none; }
+td {
+  border-right: solid 1px #f00; 
+  border-left: solid 1px #f00;
+}
+<table>
+  <tr>
+    <td>a</td>
+    <td>b</td>
+  </tr>
+  <tr>
+    <td>c</td>
+    <td>d</td>
+  </tr>
+</table>

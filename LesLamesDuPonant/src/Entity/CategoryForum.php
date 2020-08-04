@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\CategoryForumRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -31,6 +33,21 @@ class CategoryForum
      * @ORM\ManyToOne(targetEntity=User::class, inversedBy="categoryForum")
      */
     private $user;
+
+    /**
+     * @ORM\OneToMany(targetEntity=SubjectForum::class, mappedBy="CategorySubjectForum")
+     */
+    private $subjectCategory;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=HomeSectionForum::class, inversedBy="categoryHomeSectionForum")
+     */
+    private $SectionCategoryForum;
+
+    public function __construct()
+    {
+        $this->subjectCategory = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -69,6 +86,49 @@ class CategoryForum
     public function setUser(?User $user): self
     {
         $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|SubjectForum[]
+     */
+    public function getSubjectCategory(): Collection
+    {
+        return $this->subjectCategory;
+    }
+
+    public function addSubjectCategory(SubjectForum $subjectCategory): self
+    {
+        if (!$this->subjectCategory->contains($subjectCategory)) {
+            $this->subjectCategory[] = $subjectCategory;
+            $subjectCategory->setCategorySubjectForum($this);
+        }
+
+        return $this;
+    }
+
+    public function removeSubjectCategory(SubjectForum $subjectCategory): self
+    {
+        if ($this->subjectCategory->contains($subjectCategory)) {
+            $this->subjectCategory->removeElement($subjectCategory);
+            // set the owning side to null (unless already changed)
+            if ($subjectCategory->getCategorySubjectForum() === $this) {
+                $subjectCategory->setCategorySubjectForum(null);
+            }
+        }
+
+        return $this;
+    }
+
+    public function getSectionCategoryForum(): ?HomeSectionForum
+    {
+        return $this->SectionCategoryForum;
+    }
+
+    public function setSectionCategoryForum(?HomeSectionForum $SectionCategoryForum): self
+    {
+        $this->SectionCategoryForum = $SectionCategoryForum;
 
         return $this;
     }
