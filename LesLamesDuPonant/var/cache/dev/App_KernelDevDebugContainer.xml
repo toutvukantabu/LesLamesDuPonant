@@ -412,6 +412,9 @@
     <service id="App\Form\ContactMessageType" class="App\Form\ContactMessageType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
+    <service id="App\Form\HomeSectionForumType" class="App\Form\HomeSectionForumType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
     <service id="App\Form\MessageForumType" class="App\Form\MessageForumType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
@@ -908,6 +911,7 @@
         <argument>App\Form\CategoryForumType</argument>
         <argument>App\Form\ChangePasswordFormType</argument>
         <argument>App\Form\ContactMessageType</argument>
+        <argument>App\Form\HomeSectionForumType</argument>
         <argument>App\Form\MessageForumType</argument>
         <argument>App\Form\RegistrationFormType</argument>
         <argument>App\Form\ResetPasswordRequestFormType</argument>
@@ -1255,7 +1259,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension" public="false">
-      <argument type="service" id=".service_locator.6N_dVc7"/>
+      <argument type="service" id=".service_locator.QqqU6rL"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -5291,6 +5295,8 @@
     <service id=".abstract.instanceof.App\Form\ChangePasswordFormType" class="App\Form\ChangePasswordFormType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ContactMessageType" class="App\Form\ContactMessageType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\ContactMessageType" class="App\Form\ContactMessageType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\HomeSectionForumType" class="App\Form\HomeSectionForumType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\HomeSectionForumType" class="App\Form\HomeSectionForumType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\MessageForumType" class="App\Form\MessageForumType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\MessageForumType" class="App\Form\MessageForumType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\RegistrationFormType" class="App\Form\RegistrationFormType" autowire="true" abstract="true"/>
@@ -5792,12 +5798,13 @@
       <argument type="service" id="debug.argument_resolver.not_tagged_controller.inner"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.6N_dVc7" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.QqqU6rL" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Form\CategoryForumType" type="service" id="App\Form\CategoryForumType"/>
         <argument key="App\Form\ChangePasswordFormType" type="service" id="App\Form\ChangePasswordFormType"/>
         <argument key="App\Form\ContactMessageType" type="service" id="App\Form\ContactMessageType"/>
+        <argument key="App\Form\HomeSectionForumType" type="service" id="App\Form\HomeSectionForumType"/>
         <argument key="App\Form\MessageForumType" type="service" id="App\Form\MessageForumType"/>
         <argument key="App\Form\RegistrationFormType" type="service" id="App\Form\RegistrationFormType"/>
         <argument key="App\Form\ResetPasswordRequestFormType" type="service" id="App\Form\ResetPasswordRequestFormType"/>

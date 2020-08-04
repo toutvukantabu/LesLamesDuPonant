@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}HomeSectionForum{% endblock %}
+
+{% block body %}
+    <h1>HomeSectionForum</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ home_section_forum.id }}</td>
+            </tr>
+            <tr>
+                <th>SectionTitleForum</th>
+                <td>{{ home_section_forum.sectionTitleForum }}</td>
+            </tr>
+            <tr>
+                <th>SectionDateForum</th>
+                <td>{{ home_section_forum.sectionDateForum ? home_section_forum.sectionDateForum|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('home_section_forum_index') }}">back to list</a>
+
+    <a href="{{ path('home_section_forum_edit', {'id': home_section_forum.id}) }}">edit</a>
+
+    {{ include('home_section_forum/_delete_form.html.twig') }}
+{% endblock %}
