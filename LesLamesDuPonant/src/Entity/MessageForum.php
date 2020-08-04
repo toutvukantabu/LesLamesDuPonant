@@ -37,6 +37,11 @@ class MessageForum
      */
     private $user;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=SubjectForum::class, inversedBy="messageSubjectForum")
+     */
+    private $subjectMessageForum;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -86,6 +91,18 @@ class MessageForum
     public function setUser(?User $user): self
     {
         $this->user = $user;
+
+        return $this;
+    }
+
+    public function getSubjectMessageForum(): ?SubjectForum
+    {
+        return $this->subjectMessageForum;
+    }
+
+    public function setSubjectMessageForum(?SubjectForum $subjectMessageForum): self
+    {
+        $this->subjectMessageForum = $subjectMessageForum;
 
         return $this;
     }

@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\SubjectForumRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -36,6 +38,21 @@ class SubjectForum
      * @ORM\ManyToOne(targetEntity=User::class, inversedBy="subjectForum")
      */
     private $user;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=CategoryForum::class, inversedBy="subjectCategory")
+     */
+    private $CategorySubjectForum;
+
+    /**
+     * @ORM\OneToMany(targetEntity=MessageForum::class, mappedBy="subjectMessageForum")
+     */
+    private $messageSubjectForum;
+
+    public function __construct()
+    {
+        $this->messageSubjectForum = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -86,6 +103,49 @@ class SubjectForum
     public function setUser(?User $user): self
     {
         $this->user = $user;
+
+        return $this;
+    }
+
+    public function getCategorySubjectForum(): ?CategoryForum
+    {
+        return $this->CategorySubjectForum;
+    }
+
+    public function setCategorySubjectForum(?CategoryForum $CategorySubjectForum): self
+    {
+        $this->CategorySubjectForum = $CategorySubjectForum;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|MessageForum[]
+     */
+    public function getMessageSubjectForum(): Collection
+    {
+        return $this->messageSubjectForum;
+    }
+
+    public function addMessageSubjectForum(MessageForum $messageSubjectForum): self
+    {
+        if (!$this->messageSubjectForum->contains($messageSubjectForum)) {
+            $this->messageSubjectForum[] = $messageSubjectForum;
+            $messageSubjectForum->setSubjectMessageForum($this);
+        }
+
+        return $this;
+    }
+
+    public function removeMessageSubjectForum(MessageForum $messageSubjectForum): self
+    {
+        if ($this->messageSubjectForum->contains($messageSubjectForum)) {
+            $this->messageSubjectForum->removeElement($messageSubjectForum);
+            // set the owning side to null (unless already changed)
+            if ($messageSubjectForum->getSubjectMessageForum() === $this) {
+                $messageSubjectForum->setSubjectMessageForum(null);
+            }
+        }
 
         return $this;
     }
