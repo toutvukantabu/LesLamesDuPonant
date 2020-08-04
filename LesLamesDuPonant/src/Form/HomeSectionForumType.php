@@ -7,12 +7,13 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class HomeSectionForum1Type extends AbstractType
+class HomeSectionForumType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
             ->add('sectionTitleForum');
+           
     }
 
     public function configureOptions(OptionsResolver $resolver)

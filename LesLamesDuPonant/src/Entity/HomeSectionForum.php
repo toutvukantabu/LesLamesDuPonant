@@ -34,6 +34,11 @@ class HomeSectionForum
      */
     private $categoryHomeSectionForum;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="homeSectionForum")
+     */
+    private $user;
+
     public function __construct()
     {
         $this->categoryHomeSectionForum = new ArrayCollection();
@@ -95,6 +100,18 @@ class HomeSectionForum
                 $categoryHomeSectionForum->setSectionCategoryForum(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getUser(): ?User
+    {
+        return $this->user;
+    }
+
+    public function setUser(?User $user): self
+    {
+        $this->user = $user;
 
         return $this;
     }

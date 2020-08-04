@@ -31,6 +31,8 @@ class HomeSectionForumController extends AbstractController
     public function new(Request $request): Response
     {
         $homeSectionForum = new HomeSectionForum();
+        $homeSectionForum->setUser($this->getUser());
+        $homeSectionForum->setsectionDateForum(new \DateTime());
         $form = $this->createForm(HomeSectionForumType::class, $homeSectionForum);
         $form->handleRequest($request);
 

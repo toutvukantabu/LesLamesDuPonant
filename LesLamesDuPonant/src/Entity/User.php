@@ -104,12 +104,18 @@ class User implements UserInterface
      */
     private $categoryForum;
 
+    /**
+     * @ORM\OneToMany(targetEntity=HomeSectionForum::class, mappedBy="user")
+     */
+    private $homeSectionForum;
+
     public function __construct()
     {
     $this->roles = [self::ROLE_USER];
     $this->messageForum = new ArrayCollection();
     $this->subjectForum = new ArrayCollection();
     $this->categoryForum = new ArrayCollection();
+    $this->homeSectionForum = new ArrayCollection();
     }
    
     public function getId(): ?int
@@ -386,6 +392,37 @@ class User implements UserInterface
             // set the owning side to null (unless already changed)
             if ($categoryForum->getUser() === $this) {
                 $categoryForum->setUser(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|HomeSectionForum[]
+     */
+    public function getHomeSectionForum(): Collection
+    {
+        return $this->homeSectionForum;
+    }
+
+    public function addHomeSectionForum(HomeSectionForum $homeSectionForum): self
+    {
+        if (!$this->homeSectionForum->contains($homeSectionForum)) {
+            $this->homeSectionForum[] = $homeSectionForum;
+            $homeSectionForum->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeHomeSectionForum(HomeSectionForum $homeSectionForum): self
+    {
+        if ($this->homeSectionForum->contains($homeSectionForum)) {
+            $this->homeSectionForum->removeElement($homeSectionForum);
+            // set the owning side to null (unless already changed)
+            if ($homeSectionForum->getUser() === $this) {
+                $homeSectionForum->setUser(null);
             }
         }
 

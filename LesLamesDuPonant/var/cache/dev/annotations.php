@@ -289,7 +289,7 @@ return [[
 '%5B%5BC%5DApp%5CEntity%5CUser%24firstNameUser%5D%5B1%5D' => 2,
 '%5BApp%5CEntity%5CUser%24lastNameUser%5D%5B1%5D' => 26,
 '%5B%5BC%5DApp%5CEntity%5CUser%24lastNameUser%5D%5B1%5D' => 2,
-'%5BApp%5CEntity%5CUser%24pseudoUser%5D%5B1%5D' => 28,
+'%5BApp%5CEntity%5CUser%24pseudoUser%5D%5B1%5D' => 26,
 '%5B%5BC%5DApp%5CEntity%5CUser%24pseudoUser%5D%5B1%5D' => 2,
 '%5BApp%5CEntity%5CUser%24photoAvatarUser%5D%5B1%5D' => 26,
 '%5B%5BC%5DApp%5CEntity%5CUser%24photoAvatarUser%5D%5B1%5D' => 2,
@@ -858,7 +858,7 @@ return [[
 
 0 => 'N;',
 1 => [],
-2 => 1596484700,
+2 => 1596577596,
 3 => static function () {
     return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
         $o = [
@@ -1785,7 +1785,7 @@ return [[
                     'user',
                 ],
                 'targetEntity' => [
-                    'App\\Entity\\messageForum',
+                    'App\\Entity\\MessageForum',
                 ],
             ],
         ],
