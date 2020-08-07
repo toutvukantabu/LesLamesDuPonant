@@ -38,6 +38,10 @@ class ComposerStaticInit0a09e1c68b76724eded72350a3a76a39
             'Psr\\EventDispatcher\\' => 20,
             'Psr\\Container\\' => 14,
         ),
+        'F' => 
+        array (
+            'Faker\\' => 6,
+        ),
         'E' => 
         array (
             'Egulias\\EmailValidator\\' => 23,
@@ -108,6 +112,10 @@ class ComposerStaticInit0a09e1c68b76724eded72350a3a76a39
         'Psr\\Container\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/container/src',
+        ),
+        'Faker\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker',
         ),
         'Egulias\\EmailValidator\\' => 
         array (

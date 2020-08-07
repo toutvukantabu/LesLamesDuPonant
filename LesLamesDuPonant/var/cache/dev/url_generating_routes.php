@@ -25,6 +25,7 @@ return [
     'contact_message_show' => [['id'], ['_controller' => 'App\\Controller\\ContactMessageController::show'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/contact/message']], [], []],
     'contact_message_edit' => [['id'], ['_controller' => 'App\\Controller\\ContactMessageController::edit'], [], [['text', '/edit'], ['variable', '/', '[^/]++', 'id', true], ['text', '/contact/message']], [], []],
     'contact_message_delete' => [['id'], ['_controller' => 'App\\Controller\\ContactMessageController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/contact/message']], [], []],
+    'forum_home' => [[], ['_controller' => 'App\\Controller\\ForumHomeController::index'], [], [['text', '/forum/home']], [], []],
     'home' => [[], ['_controller' => 'App\\Controller\\HomeController::index'], [], [['text', '/']], [], []],
     'home_section_forum_index' => [[], ['_controller' => 'App\\Controller\\HomeSectionForumController::index'], [], [['text', '/home/section/forum/']], [], []],
     'home_section_forum_new' => [[], ['_controller' => 'App\\Controller\\HomeSectionForumController::new'], [], [['text', '/home/section/forum/new']], [], []],

@@ -61,41 +61,77 @@ return [[
 '%5B%5BC%5DSymfony%5CBundle%5CFrameworkBundle%5CController%5CAbstractController%23addLink%5D%5B1%5D' => 2,
 '%5BSymfony%5CBundle%5CFrameworkBundle%5CController%5CAbstractController%24container%5D%5B1%5D' => 1,
 '%5B%5BC%5DSymfony%5CBundle%5CFrameworkBundle%5CController%5CAbstractController%24container%5D%5B1%5D' => 2,
-'%5BApp%5CController%5CContactMessageController%5D%5B1%5D' => 3,
+'%5BApp%5CController%5CCategoryForumController%5D%5B1%5D' => 3,
+'%5B%5BC%5DApp%5CController%5CCategoryForumController%5D%5B1%5D' => 2,
+'%5BApp%5CController%5CCategoryForumController%23index%5D%5B1%5D' => 4,
+'%5B%5BC%5DApp%5CController%5CCategoryForumController%23index%5D%5B1%5D' => 2,
+'%5BApp%5CController%5CCategoryForumController%23new%5D%5B1%5D' => 5,
+'%5B%5BC%5DApp%5CController%5CCategoryForumController%23new%5D%5B1%5D' => 2,
+'%5BApp%5CController%5CCategoryForumController%23show%5D%5B1%5D' => 6,
+'%5B%5BC%5DApp%5CController%5CCategoryForumController%23show%5D%5B1%5D' => 2,
+'%5BApp%5CController%5CCategoryForumController%23edit%5D%5B1%5D' => 7,
+'%5B%5BC%5DApp%5CController%5CCategoryForumController%23edit%5D%5B1%5D' => 2,
+'%5BApp%5CController%5CCategoryForumController%23delete%5D%5B1%5D' => 8,
+'%5B%5BC%5DApp%5CController%5CCategoryForumController%23delete%5D%5B1%5D' => 2,
+'%5BApp%5CController%5CContactMessageController%5D%5B1%5D' => 9,
 '%5B%5BC%5DApp%5CController%5CContactMessageController%5D%5B1%5D' => 2,
-'%5BApp%5CController%5CContactMessageController%23index%5D%5B1%5D' => 4,
+'%5BApp%5CController%5CContactMessageController%23index%5D%5B1%5D' => 10,
 '%5B%5BC%5DApp%5CController%5CContactMessageController%23index%5D%5B1%5D' => 2,
-'%5BApp%5CController%5CContactMessageController%23new%5D%5B1%5D' => 5,
+'%5BApp%5CController%5CContactMessageController%23new%5D%5B1%5D' => 11,
 '%5B%5BC%5DApp%5CController%5CContactMessageController%23new%5D%5B1%5D' => 2,
-'%5BApp%5CController%5CContactMessageController%23show%5D%5B1%5D' => 6,
+'%5BApp%5CController%5CContactMessageController%23show%5D%5B1%5D' => 12,
 '%5B%5BC%5DApp%5CController%5CContactMessageController%23show%5D%5B1%5D' => 2,
-'%5BApp%5CController%5CContactMessageController%23edit%5D%5B1%5D' => 7,
+'%5BApp%5CController%5CContactMessageController%23edit%5D%5B1%5D' => 13,
 '%5B%5BC%5DApp%5CController%5CContactMessageController%23edit%5D%5B1%5D' => 2,
-'%5BApp%5CController%5CContactMessageController%23delete%5D%5B1%5D' => 8,
+'%5BApp%5CController%5CContactMessageController%23delete%5D%5B1%5D' => 14,
 '%5B%5BC%5DApp%5CController%5CContactMessageController%23delete%5D%5B1%5D' => 2,
 '%5BApp%5CController%5CHomeController%5D%5B1%5D' => 1,
 '%5B%5BC%5DApp%5CController%5CHomeController%5D%5B1%5D' => 2,
-'%5BApp%5CController%5CHomeController%23index%5D%5B1%5D' => 9,
+'%5BApp%5CController%5CHomeController%23index%5D%5B1%5D' => 15,
 '%5B%5BC%5DApp%5CController%5CHomeController%23index%5D%5B1%5D' => 2,
+'%5BApp%5CController%5CHomeSectionForumController%5D%5B1%5D' => 16,
+'%5B%5BC%5DApp%5CController%5CHomeSectionForumController%5D%5B1%5D' => 2,
+'%5BApp%5CController%5CHomeSectionForumController%23index%5D%5B1%5D' => 17,
+'%5B%5BC%5DApp%5CController%5CHomeSectionForumController%23index%5D%5B1%5D' => 2,
+'%5BApp%5CController%5CHomeSectionForumController%23new%5D%5B1%5D' => 18,
+'%5B%5BC%5DApp%5CController%5CHomeSectionForumController%23new%5D%5B1%5D' => 2,
+'%5BApp%5CController%5CHomeSectionForumController%23show%5D%5B1%5D' => 19,
+'%5B%5BC%5DApp%5CController%5CHomeSectionForumController%23show%5D%5B1%5D' => 2,
+'%5BApp%5CController%5CHomeSectionForumController%23edit%5D%5B1%5D' => 20,
+'%5B%5BC%5DApp%5CController%5CHomeSectionForumController%23edit%5D%5B1%5D' => 2,
+'%5BApp%5CController%5CHomeSectionForumController%23delete%5D%5B1%5D' => 21,
+'%5B%5BC%5DApp%5CController%5CHomeSectionForumController%23delete%5D%5B1%5D' => 2,
+'%5BApp%5CController%5CMessageForumController%5D%5B1%5D' => 22,
+'%5B%5BC%5DApp%5CController%5CMessageForumController%5D%5B1%5D' => 2,
+'%5BApp%5CController%5CMessageForumController%23index%5D%5B1%5D' => 23,
+'%5B%5BC%5DApp%5CController%5CMessageForumController%23index%5D%5B1%5D' => 2,
+'%5BApp%5CController%5CMessageForumController%23new%5D%5B1%5D' => 24,
+'%5B%5BC%5DApp%5CController%5CMessageForumController%23new%5D%5B1%5D' => 2,
+'%5BApp%5CController%5CMessageForumController%23show%5D%5B1%5D' => 25,
+'%5B%5BC%5DApp%5CController%5CMessageForumController%23show%5D%5B1%5D' => 2,
+'%5BApp%5CController%5CMessageForumController%23edit%5D%5B1%5D' => 26,
+'%5B%5BC%5DApp%5CController%5CMessageForumController%23edit%5D%5B1%5D' => 2,
+'%5BApp%5CController%5CMessageForumController%23delete%5D%5B1%5D' => 27,
+'%5B%5BC%5DApp%5CController%5CMessageForumController%23delete%5D%5B1%5D' => 2,
 '%5BApp%5CController%5CRegistrationController%5D%5B1%5D' => 1,
 '%5B%5BC%5DApp%5CController%5CRegistrationController%5D%5B1%5D' => 2,
 '%5BApp%5CController%5CRegistrationController%23__construct%5D%5B1%5D' => 1,
 '%5B%5BC%5DApp%5CController%5CRegistrationController%23__construct%5D%5B1%5D' => 2,
-'%5BApp%5CController%5CRegistrationController%23register%5D%5B1%5D' => 10,
+'%5BApp%5CController%5CRegistrationController%23register%5D%5B1%5D' => 28,
 '%5B%5BC%5DApp%5CController%5CRegistrationController%23register%5D%5B1%5D' => 2,
-'%5BApp%5CController%5CRegistrationController%23verifyUserEmail%5D%5B1%5D' => 11,
+'%5BApp%5CController%5CRegistrationController%23verifyUserEmail%5D%5B1%5D' => 29,
 '%5B%5BC%5DApp%5CController%5CRegistrationController%23verifyUserEmail%5D%5B1%5D' => 2,
 '%5BApp%5CController%5CRegistrationController%24emailVerifier%5D%5B1%5D' => 1,
 '%5B%5BC%5DApp%5CController%5CRegistrationController%24emailVerifier%5D%5B1%5D' => 2,
-'%5BApp%5CController%5CResetPasswordController%5D%5B1%5D' => 12,
+'%5BApp%5CController%5CResetPasswordController%5D%5B1%5D' => 30,
 '%5B%5BC%5DApp%5CController%5CResetPasswordController%5D%5B1%5D' => 2,
 '%5BApp%5CController%5CResetPasswordController%23__construct%5D%5B1%5D' => 1,
 '%5B%5BC%5DApp%5CController%5CResetPasswordController%23__construct%5D%5B1%5D' => 2,
-'%5BApp%5CController%5CResetPasswordController%23request%5D%5B1%5D' => 13,
+'%5BApp%5CController%5CResetPasswordController%23request%5D%5B1%5D' => 31,
 '%5B%5BC%5DApp%5CController%5CResetPasswordController%23request%5D%5B1%5D' => 2,
-'%5BApp%5CController%5CResetPasswordController%23checkEmail%5D%5B1%5D' => 14,
+'%5BApp%5CController%5CResetPasswordController%23checkEmail%5D%5B1%5D' => 32,
 '%5B%5BC%5DApp%5CController%5CResetPasswordController%23checkEmail%5D%5B1%5D' => 2,
-'%5BApp%5CController%5CResetPasswordController%23reset%5D%5B1%5D' => 15,
+'%5BApp%5CController%5CResetPasswordController%23reset%5D%5B1%5D' => 33,
 '%5B%5BC%5DApp%5CController%5CResetPasswordController%23reset%5D%5B1%5D' => 2,
 '%5BApp%5CController%5CResetPasswordController%23processSendingPasswordResetEmail%5D%5B1%5D' => 1,
 '%5B%5BC%5DApp%5CController%5CResetPasswordController%23processSendingPasswordResetEmail%5D%5B1%5D' => 2,
@@ -115,23 +151,75 @@ return [[
 '%5B%5BC%5DApp%5CController%5CResetPasswordController%24resetPasswordHelper%5D%5B1%5D' => 2,
 '%5BApp%5CController%5CSecurityController%5D%5B1%5D' => 1,
 '%5B%5BC%5DApp%5CController%5CSecurityController%5D%5B1%5D' => 2,
-'%5BApp%5CController%5CSecurityController%23login%5D%5B1%5D' => 16,
+'%5BApp%5CController%5CSecurityController%23login%5D%5B1%5D' => 34,
 '%5B%5BC%5DApp%5CController%5CSecurityController%23login%5D%5B1%5D' => 2,
-'%5BApp%5CController%5CSecurityController%23logout%5D%5B1%5D' => 17,
+'%5BApp%5CController%5CSecurityController%23logout%5D%5B1%5D' => 35,
 '%5B%5BC%5DApp%5CController%5CSecurityController%23logout%5D%5B1%5D' => 2,
-'%5BApp%5CController%5CUserController%5D%5B1%5D' => 18,
+'%5BApp%5CController%5CSubjectForumController%5D%5B1%5D' => 36,
+'%5B%5BC%5DApp%5CController%5CSubjectForumController%5D%5B1%5D' => 2,
+'%5BApp%5CController%5CSubjectForumController%23index%5D%5B1%5D' => 37,
+'%5B%5BC%5DApp%5CController%5CSubjectForumController%23index%5D%5B1%5D' => 2,
+'%5BApp%5CController%5CSubjectForumController%23new%5D%5B1%5D' => 38,
+'%5B%5BC%5DApp%5CController%5CSubjectForumController%23new%5D%5B1%5D' => 2,
+'%5BApp%5CController%5CSubjectForumController%23show%5D%5B1%5D' => 39,
+'%5B%5BC%5DApp%5CController%5CSubjectForumController%23show%5D%5B1%5D' => 2,
+'%5BApp%5CController%5CSubjectForumController%23edit%5D%5B1%5D' => 40,
+'%5B%5BC%5DApp%5CController%5CSubjectForumController%23edit%5D%5B1%5D' => 2,
+'%5BApp%5CController%5CSubjectForumController%23delete%5D%5B1%5D' => 41,
+'%5B%5BC%5DApp%5CController%5CSubjectForumController%23delete%5D%5B1%5D' => 2,
+'%5BApp%5CController%5CUserController%5D%5B1%5D' => 42,
 '%5B%5BC%5DApp%5CController%5CUserController%5D%5B1%5D' => 2,
-'%5BApp%5CController%5CUserController%23index%5D%5B1%5D' => 19,
+'%5BApp%5CController%5CUserController%23index%5D%5B1%5D' => 43,
 '%5B%5BC%5DApp%5CController%5CUserController%23index%5D%5B1%5D' => 2,
-'%5BApp%5CController%5CUserController%23new%5D%5B1%5D' => 20,
+'%5BApp%5CController%5CUserController%23new%5D%5B1%5D' => 44,
 '%5B%5BC%5DApp%5CController%5CUserController%23new%5D%5B1%5D' => 2,
-'%5BApp%5CController%5CUserController%23show%5D%5B1%5D' => 21,
+'%5BApp%5CController%5CUserController%23show%5D%5B1%5D' => 45,
 '%5B%5BC%5DApp%5CController%5CUserController%23show%5D%5B1%5D' => 2,
-'%5BApp%5CController%5CUserController%23edit%5D%5B1%5D' => 22,
+'%5BApp%5CController%5CUserController%23edit%5D%5B1%5D' => 46,
 '%5B%5BC%5DApp%5CController%5CUserController%23edit%5D%5B1%5D' => 2,
-'%5BApp%5CController%5CUserController%23delete%5D%5B1%5D' => 23,
+'%5BApp%5CController%5CUserController%23delete%5D%5B1%5D' => 47,
 '%5B%5BC%5DApp%5CController%5CUserController%23delete%5D%5B1%5D' => 2,
-'%5BApp%5CEntity%5CContactMessage%5D%5B1%5D' => 24,
+'%5BApp%5CEntity%5CCategoryForum%5D%5B1%5D' => 48,
+'%5B%5BC%5DApp%5CEntity%5CCategoryForum%5D%5B1%5D' => 2,
+'%5BApp%5CEntity%5CCategoryForum%23__construct%5D%5B1%5D' => 1,
+'%5B%5BC%5DApp%5CEntity%5CCategoryForum%23__construct%5D%5B1%5D' => 2,
+'%5BApp%5CEntity%5CCategoryForum%23getId%5D%5B1%5D' => 1,
+'%5B%5BC%5DApp%5CEntity%5CCategoryForum%23getId%5D%5B1%5D' => 2,
+'%5BApp%5CEntity%5CCategoryForum%23getTitleCategory%5D%5B1%5D' => 1,
+'%5B%5BC%5DApp%5CEntity%5CCategoryForum%23getTitleCategory%5D%5B1%5D' => 2,
+'%5BApp%5CEntity%5CCategoryForum%23setTitleCategory%5D%5B1%5D' => 1,
+'%5B%5BC%5DApp%5CEntity%5CCategoryForum%23setTitleCategory%5D%5B1%5D' => 2,
+'%5BApp%5CEntity%5CCategoryForum%23getDateCategoryForum%5D%5B1%5D' => 1,
+'%5B%5BC%5DApp%5CEntity%5CCategoryForum%23getDateCategoryForum%5D%5B1%5D' => 2,
+'%5BApp%5CEntity%5CCategoryForum%23setDateCategoryForum%5D%5B1%5D' => 1,
+'%5B%5BC%5DApp%5CEntity%5CCategoryForum%23setDateCategoryForum%5D%5B1%5D' => 2,
+'%5BApp%5CEntity%5CCategoryForum%23getUser%5D%5B1%5D' => 1,
+'%5B%5BC%5DApp%5CEntity%5CCategoryForum%23getUser%5D%5B1%5D' => 2,
+'%5BApp%5CEntity%5CCategoryForum%23setUser%5D%5B1%5D' => 1,
+'%5B%5BC%5DApp%5CEntity%5CCategoryForum%23setUser%5D%5B1%5D' => 2,
+'%5BApp%5CEntity%5CCategoryForum%23getSubjectCategory%5D%5B1%5D' => 1,
+'%5B%5BC%5DApp%5CEntity%5CCategoryForum%23getSubjectCategory%5D%5B1%5D' => 2,
+'%5BApp%5CEntity%5CCategoryForum%23addSubjectCategory%5D%5B1%5D' => 1,
+'%5B%5BC%5DApp%5CEntity%5CCategoryForum%23addSubjectCategory%5D%5B1%5D' => 2,
+'%5BApp%5CEntity%5CCategoryForum%23removeSubjectCategory%5D%5B1%5D' => 1,
+'%5B%5BC%5DApp%5CEntity%5CCategoryForum%23removeSubjectCategory%5D%5B1%5D' => 2,
+'%5BApp%5CEntity%5CCategoryForum%23getSectionCategoryForum%5D%5B1%5D' => 1,
+'%5B%5BC%5DApp%5CEntity%5CCategoryForum%23getSectionCategoryForum%5D%5B1%5D' => 2,
+'%5BApp%5CEntity%5CCategoryForum%23setSectionCategoryForum%5D%5B1%5D' => 1,
+'%5B%5BC%5DApp%5CEntity%5CCategoryForum%23setSectionCategoryForum%5D%5B1%5D' => 2,
+'%5BApp%5CEntity%5CCategoryForum%24id%5D%5B1%5D' => 49,
+'%5B%5BC%5DApp%5CEntity%5CCategoryForum%24id%5D%5B1%5D' => 2,
+'%5BApp%5CEntity%5CCategoryForum%24titleCategory%5D%5B1%5D' => 50,
+'%5B%5BC%5DApp%5CEntity%5CCategoryForum%24titleCategory%5D%5B1%5D' => 2,
+'%5BApp%5CEntity%5CCategoryForum%24dateCategoryForum%5D%5B1%5D' => 51,
+'%5B%5BC%5DApp%5CEntity%5CCategoryForum%24dateCategoryForum%5D%5B1%5D' => 2,
+'%5BApp%5CEntity%5CCategoryForum%24user%5D%5B1%5D' => 52,
+'%5B%5BC%5DApp%5CEntity%5CCategoryForum%24user%5D%5B1%5D' => 2,
+'%5BApp%5CEntity%5CCategoryForum%24subjectCategory%5D%5B1%5D' => 53,
+'%5B%5BC%5DApp%5CEntity%5CCategoryForum%24subjectCategory%5D%5B1%5D' => 2,
+'%5BApp%5CEntity%5CCategoryForum%24SectionCategoryForum%5D%5B1%5D' => 54,
+'%5B%5BC%5DApp%5CEntity%5CCategoryForum%24SectionCategoryForum%5D%5B1%5D' => 2,
+'%5BApp%5CEntity%5CContactMessage%5D%5B1%5D' => 55,
 '%5B%5BC%5DApp%5CEntity%5CContactMessage%5D%5B1%5D' => 2,
 '%5BApp%5CEntity%5CContactMessage%23getId%5D%5B1%5D' => 1,
 '%5B%5BC%5DApp%5CEntity%5CContactMessage%23getId%5D%5B1%5D' => 2,
@@ -155,19 +243,89 @@ return [[
 '%5B%5BC%5DApp%5CEntity%5CContactMessage%23getDateContactMessage%5D%5B1%5D' => 2,
 '%5BApp%5CEntity%5CContactMessage%23setDateContactMessage%5D%5B1%5D' => 1,
 '%5B%5BC%5DApp%5CEntity%5CContactMessage%23setDateContactMessage%5D%5B1%5D' => 2,
-'%5BApp%5CEntity%5CContactMessage%24id%5D%5B1%5D' => 25,
+'%5BApp%5CEntity%5CContactMessage%24id%5D%5B1%5D' => 49,
 '%5B%5BC%5DApp%5CEntity%5CContactMessage%24id%5D%5B1%5D' => 2,
-'%5BApp%5CEntity%5CContactMessage%24authorNameContactMessage%5D%5B1%5D' => 26,
+'%5BApp%5CEntity%5CContactMessage%24authorNameContactMessage%5D%5B1%5D' => 56,
 '%5B%5BC%5DApp%5CEntity%5CContactMessage%24authorNameContactMessage%5D%5B1%5D' => 2,
-'%5BApp%5CEntity%5CContactMessage%24authorLastNamecContactMessage%5D%5B1%5D' => 26,
+'%5BApp%5CEntity%5CContactMessage%24authorLastNamecContactMessage%5D%5B1%5D' => 56,
 '%5B%5BC%5DApp%5CEntity%5CContactMessage%24authorLastNamecContactMessage%5D%5B1%5D' => 2,
-'%5BApp%5CEntity%5CContactMessage%24contentContactMessage%5D%5B1%5D' => 27,
+'%5BApp%5CEntity%5CContactMessage%24contentContactMessage%5D%5B1%5D' => 57,
 '%5B%5BC%5DApp%5CEntity%5CContactMessage%24contentContactMessage%5D%5B1%5D' => 2,
-'%5BApp%5CEntity%5CContactMessage%24emailContactMessage%5D%5B1%5D' => 28,
+'%5BApp%5CEntity%5CContactMessage%24emailContactMessage%5D%5B1%5D' => 50,
 '%5B%5BC%5DApp%5CEntity%5CContactMessage%24emailContactMessage%5D%5B1%5D' => 2,
-'%5BApp%5CEntity%5CContactMessage%24dateContactMessage%5D%5B1%5D' => 29,
+'%5BApp%5CEntity%5CContactMessage%24dateContactMessage%5D%5B1%5D' => 58,
 '%5B%5BC%5DApp%5CEntity%5CContactMessage%24dateContactMessage%5D%5B1%5D' => 2,
-'%5BApp%5CEntity%5CResetPasswordRequest%5D%5B1%5D' => 30,
+'%5BApp%5CEntity%5CHomeSectionForum%5D%5B1%5D' => 59,
+'%5B%5BC%5DApp%5CEntity%5CHomeSectionForum%5D%5B1%5D' => 2,
+'%5BApp%5CEntity%5CHomeSectionForum%23__construct%5D%5B1%5D' => 1,
+'%5B%5BC%5DApp%5CEntity%5CHomeSectionForum%23__construct%5D%5B1%5D' => 2,
+'%5BApp%5CEntity%5CHomeSectionForum%23getId%5D%5B1%5D' => 1,
+'%5B%5BC%5DApp%5CEntity%5CHomeSectionForum%23getId%5D%5B1%5D' => 2,
+'%5BApp%5CEntity%5CHomeSectionForum%23getSectionTitleForum%5D%5B1%5D' => 1,
+'%5B%5BC%5DApp%5CEntity%5CHomeSectionForum%23getSectionTitleForum%5D%5B1%5D' => 2,
+'%5BApp%5CEntity%5CHomeSectionForum%23setSectionTitleForum%5D%5B1%5D' => 1,
+'%5B%5BC%5DApp%5CEntity%5CHomeSectionForum%23setSectionTitleForum%5D%5B1%5D' => 2,
+'%5BApp%5CEntity%5CHomeSectionForum%23getSectionDateForum%5D%5B1%5D' => 1,
+'%5B%5BC%5DApp%5CEntity%5CHomeSectionForum%23getSectionDateForum%5D%5B1%5D' => 2,
+'%5BApp%5CEntity%5CHomeSectionForum%23setSectionDateForum%5D%5B1%5D' => 1,
+'%5B%5BC%5DApp%5CEntity%5CHomeSectionForum%23setSectionDateForum%5D%5B1%5D' => 2,
+'%5BApp%5CEntity%5CHomeSectionForum%23getCategoryHomeSectionForum%5D%5B1%5D' => 1,
+'%5B%5BC%5DApp%5CEntity%5CHomeSectionForum%23getCategoryHomeSectionForum%5D%5B1%5D' => 2,
+'%5BApp%5CEntity%5CHomeSectionForum%23addCategoryHomeSectionForum%5D%5B1%5D' => 1,
+'%5B%5BC%5DApp%5CEntity%5CHomeSectionForum%23addCategoryHomeSectionForum%5D%5B1%5D' => 2,
+'%5BApp%5CEntity%5CHomeSectionForum%23removeCategoryHomeSectionForum%5D%5B1%5D' => 1,
+'%5B%5BC%5DApp%5CEntity%5CHomeSectionForum%23removeCategoryHomeSectionForum%5D%5B1%5D' => 2,
+'%5BApp%5CEntity%5CHomeSectionForum%23getUser%5D%5B1%5D' => 1,
+'%5B%5BC%5DApp%5CEntity%5CHomeSectionForum%23getUser%5D%5B1%5D' => 2,
+'%5BApp%5CEntity%5CHomeSectionForum%23setUser%5D%5B1%5D' => 1,
+'%5B%5BC%5DApp%5CEntity%5CHomeSectionForum%23setUser%5D%5B1%5D' => 2,
+'%5BApp%5CEntity%5CHomeSectionForum%24id%5D%5B1%5D' => 49,
+'%5B%5BC%5DApp%5CEntity%5CHomeSectionForum%24id%5D%5B1%5D' => 2,
+'%5BApp%5CEntity%5CHomeSectionForum%24sectionTitleForum%5D%5B1%5D' => 56,
+'%5B%5BC%5DApp%5CEntity%5CHomeSectionForum%24sectionTitleForum%5D%5B1%5D' => 2,
+'%5BApp%5CEntity%5CHomeSectionForum%24sectionDateForum%5D%5B1%5D' => 51,
+'%5B%5BC%5DApp%5CEntity%5CHomeSectionForum%24sectionDateForum%5D%5B1%5D' => 2,
+'%5BApp%5CEntity%5CHomeSectionForum%24categoryHomeSectionForum%5D%5B1%5D' => 60,
+'%5B%5BC%5DApp%5CEntity%5CHomeSectionForum%24categoryHomeSectionForum%5D%5B1%5D' => 2,
+'%5BApp%5CEntity%5CHomeSectionForum%24user%5D%5B1%5D' => 61,
+'%5B%5BC%5DApp%5CEntity%5CHomeSectionForum%24user%5D%5B1%5D' => 2,
+'%5BApp%5CEntity%5CMessageForum%5D%5B1%5D' => 62,
+'%5B%5BC%5DApp%5CEntity%5CMessageForum%5D%5B1%5D' => 2,
+'%5BApp%5CEntity%5CMessageForum%23getId%5D%5B1%5D' => 1,
+'%5B%5BC%5DApp%5CEntity%5CMessageForum%23getId%5D%5B1%5D' => 2,
+'%5BApp%5CEntity%5CMessageForum%23getContentMessageForum%5D%5B1%5D' => 1,
+'%5B%5BC%5DApp%5CEntity%5CMessageForum%23getContentMessageForum%5D%5B1%5D' => 2,
+'%5BApp%5CEntity%5CMessageForum%23setContentMessageForum%5D%5B1%5D' => 1,
+'%5B%5BC%5DApp%5CEntity%5CMessageForum%23setContentMessageForum%5D%5B1%5D' => 2,
+'%5BApp%5CEntity%5CMessageForum%23getDatePublicationMessageForum%5D%5B1%5D' => 1,
+'%5B%5BC%5DApp%5CEntity%5CMessageForum%23getDatePublicationMessageForum%5D%5B1%5D' => 2,
+'%5BApp%5CEntity%5CMessageForum%23setDatePublicationMessageForum%5D%5B1%5D' => 1,
+'%5B%5BC%5DApp%5CEntity%5CMessageForum%23setDatePublicationMessageForum%5D%5B1%5D' => 2,
+'%5BApp%5CEntity%5CMessageForum%23getPhotoMessageForum%5D%5B1%5D' => 1,
+'%5B%5BC%5DApp%5CEntity%5CMessageForum%23getPhotoMessageForum%5D%5B1%5D' => 2,
+'%5BApp%5CEntity%5CMessageForum%23setPhotoMessageForum%5D%5B1%5D' => 1,
+'%5B%5BC%5DApp%5CEntity%5CMessageForum%23setPhotoMessageForum%5D%5B1%5D' => 2,
+'%5BApp%5CEntity%5CMessageForum%23getUser%5D%5B1%5D' => 1,
+'%5B%5BC%5DApp%5CEntity%5CMessageForum%23getUser%5D%5B1%5D' => 2,
+'%5BApp%5CEntity%5CMessageForum%23setUser%5D%5B1%5D' => 1,
+'%5B%5BC%5DApp%5CEntity%5CMessageForum%23setUser%5D%5B1%5D' => 2,
+'%5BApp%5CEntity%5CMessageForum%23getSubjectMessageForum%5D%5B1%5D' => 1,
+'%5B%5BC%5DApp%5CEntity%5CMessageForum%23getSubjectMessageForum%5D%5B1%5D' => 2,
+'%5BApp%5CEntity%5CMessageForum%23setSubjectMessageForum%5D%5B1%5D' => 1,
+'%5B%5BC%5DApp%5CEntity%5CMessageForum%23setSubjectMessageForum%5D%5B1%5D' => 2,
+'%5BApp%5CEntity%5CMessageForum%24id%5D%5B1%5D' => 49,
+'%5B%5BC%5DApp%5CEntity%5CMessageForum%24id%5D%5B1%5D' => 2,
+'%5BApp%5CEntity%5CMessageForum%24ContentMessageForum%5D%5B1%5D' => 63,
+'%5B%5BC%5DApp%5CEntity%5CMessageForum%24ContentMessageForum%5D%5B1%5D' => 2,
+'%5BApp%5CEntity%5CMessageForum%24datePublicationMessageForum%5D%5B1%5D' => 58,
+'%5B%5BC%5DApp%5CEntity%5CMessageForum%24datePublicationMessageForum%5D%5B1%5D' => 2,
+'%5BApp%5CEntity%5CMessageForum%24photoMessageForum%5D%5B1%5D' => 56,
+'%5B%5BC%5DApp%5CEntity%5CMessageForum%24photoMessageForum%5D%5B1%5D' => 2,
+'%5BApp%5CEntity%5CMessageForum%24user%5D%5B1%5D' => 64,
+'%5B%5BC%5DApp%5CEntity%5CMessageForum%24user%5D%5B1%5D' => 2,
+'%5BApp%5CEntity%5CMessageForum%24subjectMessageForum%5D%5B1%5D' => 65,
+'%5B%5BC%5DApp%5CEntity%5CMessageForum%24subjectMessageForum%5D%5B1%5D' => 2,
+'%5BApp%5CEntity%5CResetPasswordRequest%5D%5B1%5D' => 66,
 '%5B%5BC%5DApp%5CEntity%5CResetPasswordRequest%5D%5B1%5D' => 2,
 '%5BApp%5CEntity%5CResetPasswordRequest%23__construct%5D%5B1%5D' => 1,
 '%5B%5BC%5DApp%5CEntity%5CResetPasswordRequest%23__construct%5D%5B1%5D' => 2,
@@ -185,19 +343,65 @@ return [[
 '%5B%5BC%5DApp%5CEntity%5CResetPasswordRequest%23getExpiresAt%5D%5B1%5D' => 2,
 '%5BApp%5CEntity%5CResetPasswordRequest%23getHashedToken%5D%5B1%5D' => 1,
 '%5B%5BC%5DApp%5CEntity%5CResetPasswordRequest%23getHashedToken%5D%5B1%5D' => 2,
-'%5BApp%5CEntity%5CResetPasswordRequest%24id%5D%5B1%5D' => 25,
+'%5BApp%5CEntity%5CResetPasswordRequest%24id%5D%5B1%5D' => 49,
 '%5B%5BC%5DApp%5CEntity%5CResetPasswordRequest%24id%5D%5B1%5D' => 2,
-'%5BApp%5CEntity%5CResetPasswordRequest%24user%5D%5B1%5D' => 31,
+'%5BApp%5CEntity%5CResetPasswordRequest%24user%5D%5B1%5D' => 67,
 '%5B%5BC%5DApp%5CEntity%5CResetPasswordRequest%24user%5D%5B1%5D' => 2,
-'%5BApp%5CEntity%5CResetPasswordRequest%24selector%5D%5B1%5D' => 32,
+'%5BApp%5CEntity%5CResetPasswordRequest%24selector%5D%5B1%5D' => 68,
 '%5B%5BC%5DApp%5CEntity%5CResetPasswordRequest%24selector%5D%5B1%5D' => 2,
-'%5BApp%5CEntity%5CResetPasswordRequest%24hashedToken%5D%5B1%5D' => 33,
+'%5BApp%5CEntity%5CResetPasswordRequest%24hashedToken%5D%5B1%5D' => 69,
 '%5B%5BC%5DApp%5CEntity%5CResetPasswordRequest%24hashedToken%5D%5B1%5D' => 2,
-'%5BApp%5CEntity%5CResetPasswordRequest%24requestedAt%5D%5B1%5D' => 34,
+'%5BApp%5CEntity%5CResetPasswordRequest%24requestedAt%5D%5B1%5D' => 70,
 '%5B%5BC%5DApp%5CEntity%5CResetPasswordRequest%24requestedAt%5D%5B1%5D' => 2,
-'%5BApp%5CEntity%5CResetPasswordRequest%24expiresAt%5D%5B1%5D' => 34,
+'%5BApp%5CEntity%5CResetPasswordRequest%24expiresAt%5D%5B1%5D' => 70,
 '%5B%5BC%5DApp%5CEntity%5CResetPasswordRequest%24expiresAt%5D%5B1%5D' => 2,
-'%5BApp%5CEntity%5CUser%5D%5B1%5D' => 35,
+'%5BApp%5CEntity%5CSubjectForum%5D%5B1%5D' => 71,
+'%5B%5BC%5DApp%5CEntity%5CSubjectForum%5D%5B1%5D' => 2,
+'%5BApp%5CEntity%5CSubjectForum%23__construct%5D%5B1%5D' => 1,
+'%5B%5BC%5DApp%5CEntity%5CSubjectForum%23__construct%5D%5B1%5D' => 2,
+'%5BApp%5CEntity%5CSubjectForum%23getId%5D%5B1%5D' => 1,
+'%5B%5BC%5DApp%5CEntity%5CSubjectForum%23getId%5D%5B1%5D' => 2,
+'%5BApp%5CEntity%5CSubjectForum%23getTitleSubjectForum%5D%5B1%5D' => 1,
+'%5B%5BC%5DApp%5CEntity%5CSubjectForum%23getTitleSubjectForum%5D%5B1%5D' => 2,
+'%5BApp%5CEntity%5CSubjectForum%23setTitleSubjectForum%5D%5B1%5D' => 1,
+'%5B%5BC%5DApp%5CEntity%5CSubjectForum%23setTitleSubjectForum%5D%5B1%5D' => 2,
+'%5BApp%5CEntity%5CSubjectForum%23getContentSubjectForum%5D%5B1%5D' => 1,
+'%5B%5BC%5DApp%5CEntity%5CSubjectForum%23getContentSubjectForum%5D%5B1%5D' => 2,
+'%5BApp%5CEntity%5CSubjectForum%23setContentSubjectForum%5D%5B1%5D' => 1,
+'%5B%5BC%5DApp%5CEntity%5CSubjectForum%23setContentSubjectForum%5D%5B1%5D' => 2,
+'%5BApp%5CEntity%5CSubjectForum%23getDateSubjectForum%5D%5B1%5D' => 1,
+'%5B%5BC%5DApp%5CEntity%5CSubjectForum%23getDateSubjectForum%5D%5B1%5D' => 2,
+'%5BApp%5CEntity%5CSubjectForum%23setDateSubjectForum%5D%5B1%5D' => 1,
+'%5B%5BC%5DApp%5CEntity%5CSubjectForum%23setDateSubjectForum%5D%5B1%5D' => 2,
+'%5BApp%5CEntity%5CSubjectForum%23getUser%5D%5B1%5D' => 1,
+'%5B%5BC%5DApp%5CEntity%5CSubjectForum%23getUser%5D%5B1%5D' => 2,
+'%5BApp%5CEntity%5CSubjectForum%23setUser%5D%5B1%5D' => 1,
+'%5B%5BC%5DApp%5CEntity%5CSubjectForum%23setUser%5D%5B1%5D' => 2,
+'%5BApp%5CEntity%5CSubjectForum%23getCategorySubjectForum%5D%5B1%5D' => 1,
+'%5B%5BC%5DApp%5CEntity%5CSubjectForum%23getCategorySubjectForum%5D%5B1%5D' => 2,
+'%5BApp%5CEntity%5CSubjectForum%23setCategorySubjectForum%5D%5B1%5D' => 1,
+'%5B%5BC%5DApp%5CEntity%5CSubjectForum%23setCategorySubjectForum%5D%5B1%5D' => 2,
+'%5BApp%5CEntity%5CSubjectForum%23getMessageSubjectForum%5D%5B1%5D' => 1,
+'%5B%5BC%5DApp%5CEntity%5CSubjectForum%23getMessageSubjectForum%5D%5B1%5D' => 2,
+'%5BApp%5CEntity%5CSubjectForum%23addMessageSubjectForum%5D%5B1%5D' => 1,
+'%5B%5BC%5DApp%5CEntity%5CSubjectForum%23addMessageSubjectForum%5D%5B1%5D' => 2,
+'%5BApp%5CEntity%5CSubjectForum%23removeMessageSubjectForum%5D%5B1%5D' => 1,
+'%5B%5BC%5DApp%5CEntity%5CSubjectForum%23removeMessageSubjectForum%5D%5B1%5D' => 2,
+'%5BApp%5CEntity%5CSubjectForum%24id%5D%5B1%5D' => 49,
+'%5B%5BC%5DApp%5CEntity%5CSubjectForum%24id%5D%5B1%5D' => 2,
+'%5BApp%5CEntity%5CSubjectForum%24titleSubjectForum%5D%5B1%5D' => 50,
+'%5B%5BC%5DApp%5CEntity%5CSubjectForum%24titleSubjectForum%5D%5B1%5D' => 2,
+'%5BApp%5CEntity%5CSubjectForum%24contentSubjectForum%5D%5B1%5D' => 63,
+'%5B%5BC%5DApp%5CEntity%5CSubjectForum%24contentSubjectForum%5D%5B1%5D' => 2,
+'%5BApp%5CEntity%5CSubjectForum%24dateSubjectForum%5D%5B1%5D' => 51,
+'%5B%5BC%5DApp%5CEntity%5CSubjectForum%24dateSubjectForum%5D%5B1%5D' => 2,
+'%5BApp%5CEntity%5CSubjectForum%24user%5D%5B1%5D' => 72,
+'%5B%5BC%5DApp%5CEntity%5CSubjectForum%24user%5D%5B1%5D' => 2,
+'%5BApp%5CEntity%5CSubjectForum%24CategorySubjectForum%5D%5B1%5D' => 73,
+'%5B%5BC%5DApp%5CEntity%5CSubjectForum%24CategorySubjectForum%5D%5B1%5D' => 2,
+'%5BApp%5CEntity%5CSubjectForum%24messageSubjectForum%5D%5B1%5D' => 74,
+'%5B%5BC%5DApp%5CEntity%5CSubjectForum%24messageSubjectForum%5D%5B1%5D' => 2,
+'%5BApp%5CEntity%5CUser%5D%5B1%5D' => 75,
 '%5B%5BC%5DApp%5CEntity%5CUser%5D%5B1%5D' => 2,
 '%5BApp%5CEntity%5CUser%23__construct%5D%5B1%5D' => 1,
 '%5B%5BC%5DApp%5CEntity%5CUser%23__construct%5D%5B1%5D' => 2,
@@ -275,38 +479,46 @@ return [[
 '%5B%5BC%5DApp%5CEntity%5CUser%23addCategoryForum%5D%5B1%5D' => 2,
 '%5BApp%5CEntity%5CUser%23removeCategoryForum%5D%5B1%5D' => 1,
 '%5B%5BC%5DApp%5CEntity%5CUser%23removeCategoryForum%5D%5B1%5D' => 2,
-'%5BApp%5CEntity%5CUser%24id%5D%5B1%5D' => 25,
+'%5BApp%5CEntity%5CUser%23getHomeSectionForum%5D%5B1%5D' => 1,
+'%5B%5BC%5DApp%5CEntity%5CUser%23getHomeSectionForum%5D%5B1%5D' => 2,
+'%5BApp%5CEntity%5CUser%23addHomeSectionForum%5D%5B1%5D' => 1,
+'%5B%5BC%5DApp%5CEntity%5CUser%23addHomeSectionForum%5D%5B1%5D' => 2,
+'%5BApp%5CEntity%5CUser%23removeHomeSectionForum%5D%5B1%5D' => 1,
+'%5B%5BC%5DApp%5CEntity%5CUser%23removeHomeSectionForum%5D%5B1%5D' => 2,
+'%5BApp%5CEntity%5CUser%24id%5D%5B1%5D' => 49,
 '%5B%5BC%5DApp%5CEntity%5CUser%24id%5D%5B1%5D' => 2,
-'%5BApp%5CEntity%5CUser%24email%5D%5B1%5D' => 36,
+'%5BApp%5CEntity%5CUser%24email%5D%5B1%5D' => 76,
 '%5B%5BC%5DApp%5CEntity%5CUser%24email%5D%5B1%5D' => 2,
-'%5BApp%5CEntity%5CUser%24roles%5D%5B1%5D' => 37,
+'%5BApp%5CEntity%5CUser%24roles%5D%5B1%5D' => 77,
 '%5B%5BC%5DApp%5CEntity%5CUser%24roles%5D%5B1%5D' => 2,
-'%5BApp%5CEntity%5CUser%24password%5D%5B1%5D' => 38,
+'%5BApp%5CEntity%5CUser%24password%5D%5B1%5D' => 78,
 '%5B%5BC%5DApp%5CEntity%5CUser%24password%5D%5B1%5D' => 2,
-'%5BApp%5CEntity%5CUser%24isVerified%5D%5B1%5D' => 39,
+'%5BApp%5CEntity%5CUser%24isVerified%5D%5B1%5D' => 79,
 '%5B%5BC%5DApp%5CEntity%5CUser%24isVerified%5D%5B1%5D' => 2,
-'%5BApp%5CEntity%5CUser%24firstNameUser%5D%5B1%5D' => 26,
+'%5BApp%5CEntity%5CUser%24firstNameUser%5D%5B1%5D' => 56,
 '%5B%5BC%5DApp%5CEntity%5CUser%24firstNameUser%5D%5B1%5D' => 2,
-'%5BApp%5CEntity%5CUser%24lastNameUser%5D%5B1%5D' => 26,
+'%5BApp%5CEntity%5CUser%24lastNameUser%5D%5B1%5D' => 56,
 '%5B%5BC%5DApp%5CEntity%5CUser%24lastNameUser%5D%5B1%5D' => 2,
-'%5BApp%5CEntity%5CUser%24pseudoUser%5D%5B1%5D' => 26,
+'%5BApp%5CEntity%5CUser%24pseudoUser%5D%5B1%5D' => 56,
 '%5B%5BC%5DApp%5CEntity%5CUser%24pseudoUser%5D%5B1%5D' => 2,
-'%5BApp%5CEntity%5CUser%24photoAvatarUser%5D%5B1%5D' => 26,
+'%5BApp%5CEntity%5CUser%24photoAvatarUser%5D%5B1%5D' => 56,
 '%5B%5BC%5DApp%5CEntity%5CUser%24photoAvatarUser%5D%5B1%5D' => 2,
-'%5BApp%5CEntity%5CUser%24birthdayDateUser%5D%5B1%5D' => 40,
+'%5BApp%5CEntity%5CUser%24birthdayDateUser%5D%5B1%5D' => 80,
 '%5B%5BC%5DApp%5CEntity%5CUser%24birthdayDateUser%5D%5B1%5D' => 2,
-'%5BApp%5CEntity%5CUser%24postalCodeUser%5D%5B1%5D' => 41,
+'%5BApp%5CEntity%5CUser%24postalCodeUser%5D%5B1%5D' => 81,
 '%5B%5BC%5DApp%5CEntity%5CUser%24postalCodeUser%5D%5B1%5D' => 2,
-'%5BApp%5CEntity%5CUser%24adressUser%5D%5B1%5D' => 26,
+'%5BApp%5CEntity%5CUser%24adressUser%5D%5B1%5D' => 56,
 '%5B%5BC%5DApp%5CEntity%5CUser%24adressUser%5D%5B1%5D' => 2,
-'%5BApp%5CEntity%5CUser%24cityUser%5D%5B1%5D' => 42,
+'%5BApp%5CEntity%5CUser%24cityUser%5D%5B1%5D' => 82,
 '%5B%5BC%5DApp%5CEntity%5CUser%24cityUser%5D%5B1%5D' => 2,
-'%5BApp%5CEntity%5CUser%24messageForum%5D%5B1%5D' => 43,
+'%5BApp%5CEntity%5CUser%24messageForum%5D%5B1%5D' => 83,
 '%5B%5BC%5DApp%5CEntity%5CUser%24messageForum%5D%5B1%5D' => 2,
-'%5BApp%5CEntity%5CUser%24subjectForum%5D%5B1%5D' => 44,
+'%5BApp%5CEntity%5CUser%24subjectForum%5D%5B1%5D' => 84,
 '%5B%5BC%5DApp%5CEntity%5CUser%24subjectForum%5D%5B1%5D' => 2,
-'%5BApp%5CEntity%5CUser%24categoryForum%5D%5B1%5D' => 45,
+'%5BApp%5CEntity%5CUser%24categoryForum%5D%5B1%5D' => 85,
 '%5B%5BC%5DApp%5CEntity%5CUser%24categoryForum%5D%5B1%5D' => 2,
+'%5BApp%5CEntity%5CUser%24homeSectionForum%5D%5B1%5D' => 86,
+'%5B%5BC%5DApp%5CEntity%5CUser%24homeSectionForum%5D%5B1%5D' => 2,
 '%5BDoctrine%5CBundle%5CDoctrineBundle%5CController%5CProfilerController%5D%5B1%5D' => 1,
 '%5B%5BC%5DDoctrine%5CBundle%5CDoctrineBundle%5CController%5CProfilerController%5D%5B1%5D' => 2,
 '%5BDoctrine%5CBundle%5CDoctrineBundle%5CController%5CProfilerController%23setContainer%5D%5B1%5D' => 1,
@@ -858,7 +1070,7 @@ return [[
 
 0 => 'N;',
 1 => [],
-2 => 1596577596,
+2 => 1596579160,
 3 => static function () {
     return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
         $o = [
@@ -868,7 +1080,7 @@ return [[
         [
             'Symfony\\Component\\Routing\\Annotation\\Route' => [
                 'path' => [
-                    '/contact/message',
+                    '/category/forum',
                 ],
             ],
         ],
@@ -890,7 +1102,7 @@ return [[
                     '/',
                 ],
                 'name' => [
-                    'contact_message_index',
+                    'category_forum_index',
                 ],
                 'methods' => [
                     [
@@ -917,7 +1129,7 @@ return [[
                     '/new',
                 ],
                 'name' => [
-                    'contact_message_new',
+                    'category_forum_new',
                 ],
                 'methods' => [
                     [
@@ -945,7 +1157,7 @@ return [[
                     '/{id}',
                 ],
                 'name' => [
-                    'contact_message_show',
+                    'category_forum_show',
                 ],
                 'methods' => [
                     [
@@ -972,7 +1184,7 @@ return [[
                     '/{id}/edit',
                 ],
                 'name' => [
-                    'contact_message_edit',
+                    'category_forum_edit',
                 ],
                 'methods' => [
                     [
@@ -1000,7 +1212,7 @@ return [[
                     '/{id}',
                 ],
                 'name' => [
-                    'contact_message_delete',
+                    'category_forum_delete',
                 ],
                 'methods' => [
                     [
@@ -1024,10 +1236,7 @@ return [[
         [
             'Symfony\\Component\\Routing\\Annotation\\Route' => [
                 'path' => [
-                    '/',
-                ],
-                'name' => [
-                    'home',
+                    '/contact/message',
                 ],
             ],
         ],
@@ -1046,10 +1255,15 @@ return [[
         [
             'Symfony\\Component\\Routing\\Annotation\\Route' => [
                 'path' => [
-                    '/register',
+                    '/',
                 ],
                 'name' => [
-                    'app_register',
+                    'contact_message_index',
+                ],
+                'methods' => [
+                    [
+                        'GET',
+                    ],
                 ],
             ],
         ],
@@ -1068,10 +1282,16 @@ return [[
         [
             'Symfony\\Component\\Routing\\Annotation\\Route' => [
                 'path' => [
-                    '/verify/email',
+                    '/new',
                 ],
                 'name' => [
-                    'app_verify_email',
+                    'contact_message_new',
+                ],
+                'methods' => [
+                    [
+                        'GET',
+                        'POST',
+                    ],
                 ],
             ],
         ],
@@ -1090,7 +1310,15 @@ return [[
         [
             'Symfony\\Component\\Routing\\Annotation\\Route' => [
                 'path' => [
-                    '/reset-password',
+                    '/{id}',
+                ],
+                'name' => [
+                    'contact_message_show',
+                ],
+                'methods' => [
+                    [
+                        'GET',
+                    ],
                 ],
             ],
         ],
@@ -1109,10 +1337,16 @@ return [[
         [
             'Symfony\\Component\\Routing\\Annotation\\Route' => [
                 'path' => [
-                    '',
+                    '/{id}/edit',
                 ],
                 'name' => [
-                    'app_forgot_password_request',
+                    'contact_message_edit',
+                ],
+                'methods' => [
+                    [
+                        'GET',
+                        'POST',
+                    ],
                 ],
             ],
         ],
@@ -1131,10 +1365,15 @@ return [[
         [
             'Symfony\\Component\\Routing\\Annotation\\Route' => [
                 'path' => [
-                    '/check-email',
+                    '/{id}',
                 ],
                 'name' => [
-                    'app_check_email',
+                    'contact_message_delete',
+                ],
+                'methods' => [
+                    [
+                        'DELETE',
+                    ],
                 ],
             ],
         ],
@@ -1153,10 +1392,10 @@ return [[
         [
             'Symfony\\Component\\Routing\\Annotation\\Route' => [
                 'path' => [
-                    '/reset/{token}',
+                    '/',
                 ],
                 'name' => [
-                    'app_reset_password',
+                    'home',
                 ],
             ],
         ],
@@ -1175,10 +1414,7 @@ return [[
         [
             'Symfony\\Component\\Routing\\Annotation\\Route' => [
                 'path' => [
-                    '/login',
-                ],
-                'name' => [
-                    'app_login',
+                    '/home/section/forum',
                 ],
             ],
         ],
@@ -1197,10 +1433,15 @@ return [[
         [
             'Symfony\\Component\\Routing\\Annotation\\Route' => [
                 'path' => [
-                    '/logout',
+                    '/',
                 ],
                 'name' => [
-                    'app_logout',
+                    'home_section_forum_index',
+                ],
+                'methods' => [
+                    [
+                        'GET',
+                    ],
                 ],
             ],
         ],
@@ -1219,7 +1460,16 @@ return [[
         [
             'Symfony\\Component\\Routing\\Annotation\\Route' => [
                 'path' => [
-                    '/user',
+                    '/new',
+                ],
+                'name' => [
+                    'home_section_forum_new',
+                ],
+                'methods' => [
+                    [
+                        'GET',
+                        'POST',
+                    ],
                 ],
             ],
         ],
@@ -1238,10 +1488,10 @@ return [[
         [
             'Symfony\\Component\\Routing\\Annotation\\Route' => [
                 'path' => [
-                    '/',
+                    '/{id}',
                 ],
                 'name' => [
-                    'user_index',
+                    'home_section_forum_show',
                 ],
                 'methods' => [
                     [
@@ -1265,10 +1515,10 @@ return [[
         [
             'Symfony\\Component\\Routing\\Annotation\\Route' => [
                 'path' => [
-                    '/new',
+                    '/{id}/edit',
                 ],
                 'name' => [
-                    'user_new',
+                    'home_section_forum_edit',
                 ],
                 'methods' => [
                     [
@@ -1296,6 +1546,592 @@ return [[
                     '/{id}',
                 ],
                 'name' => [
+                    'home_section_forum_delete',
+                ],
+                'methods' => [
+                    [
+                        'DELETE',
+                    ],
+                ],
+            ],
+        ],
+        [
+            $o[0],
+        ],
+        []
+    );
+},
+22 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Symfony\\Component\\Routing\\Annotation\\Route'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Routing\\Annotation\\Route')),
+        ],
+        null,
+        [
+            'Symfony\\Component\\Routing\\Annotation\\Route' => [
+                'path' => [
+                    '/message/forum',
+                ],
+            ],
+        ],
+        [
+            $o[0],
+        ],
+        []
+    );
+},
+23 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Symfony\\Component\\Routing\\Annotation\\Route'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Routing\\Annotation\\Route')),
+        ],
+        null,
+        [
+            'Symfony\\Component\\Routing\\Annotation\\Route' => [
+                'path' => [
+                    '/',
+                ],
+                'name' => [
+                    'message_forum_index',
+                ],
+                'methods' => [
+                    [
+                        'GET',
+                    ],
+                ],
+            ],
+        ],
+        [
+            $o[0],
+        ],
+        []
+    );
+},
+24 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Symfony\\Component\\Routing\\Annotation\\Route'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Routing\\Annotation\\Route')),
+        ],
+        null,
+        [
+            'Symfony\\Component\\Routing\\Annotation\\Route' => [
+                'path' => [
+                    '/new',
+                ],
+                'name' => [
+                    'message_forum_new',
+                ],
+                'methods' => [
+                    [
+                        'GET',
+                        'POST',
+                    ],
+                ],
+            ],
+        ],
+        [
+            $o[0],
+        ],
+        []
+    );
+},
+25 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Symfony\\Component\\Routing\\Annotation\\Route'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Routing\\Annotation\\Route')),
+        ],
+        null,
+        [
+            'Symfony\\Component\\Routing\\Annotation\\Route' => [
+                'path' => [
+                    '/{id}',
+                ],
+                'name' => [
+                    'message_forum_show',
+                ],
+                'methods' => [
+                    [
+                        'GET',
+                    ],
+                ],
+            ],
+        ],
+        [
+            $o[0],
+        ],
+        []
+    );
+},
+26 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Symfony\\Component\\Routing\\Annotation\\Route'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Routing\\Annotation\\Route')),
+        ],
+        null,
+        [
+            'Symfony\\Component\\Routing\\Annotation\\Route' => [
+                'path' => [
+                    '/{id}/edit',
+                ],
+                'name' => [
+                    'message_forum_edit',
+                ],
+                'methods' => [
+                    [
+                        'GET',
+                        'POST',
+                    ],
+                ],
+            ],
+        ],
+        [
+            $o[0],
+        ],
+        []
+    );
+},
+27 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Symfony\\Component\\Routing\\Annotation\\Route'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Routing\\Annotation\\Route')),
+        ],
+        null,
+        [
+            'Symfony\\Component\\Routing\\Annotation\\Route' => [
+                'path' => [
+                    '/{id}',
+                ],
+                'name' => [
+                    'message_forum_delete',
+                ],
+                'methods' => [
+                    [
+                        'DELETE',
+                    ],
+                ],
+            ],
+        ],
+        [
+            $o[0],
+        ],
+        []
+    );
+},
+28 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Symfony\\Component\\Routing\\Annotation\\Route'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Routing\\Annotation\\Route')),
+        ],
+        null,
+        [
+            'Symfony\\Component\\Routing\\Annotation\\Route' => [
+                'path' => [
+                    '/register',
+                ],
+                'name' => [
+                    'app_register',
+                ],
+            ],
+        ],
+        [
+            $o[0],
+        ],
+        []
+    );
+},
+29 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Symfony\\Component\\Routing\\Annotation\\Route'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Routing\\Annotation\\Route')),
+        ],
+        null,
+        [
+            'Symfony\\Component\\Routing\\Annotation\\Route' => [
+                'path' => [
+                    '/verify/email',
+                ],
+                'name' => [
+                    'app_verify_email',
+                ],
+            ],
+        ],
+        [
+            $o[0],
+        ],
+        []
+    );
+},
+30 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Symfony\\Component\\Routing\\Annotation\\Route'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Routing\\Annotation\\Route')),
+        ],
+        null,
+        [
+            'Symfony\\Component\\Routing\\Annotation\\Route' => [
+                'path' => [
+                    '/reset-password',
+                ],
+            ],
+        ],
+        [
+            $o[0],
+        ],
+        []
+    );
+},
+31 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Symfony\\Component\\Routing\\Annotation\\Route'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Routing\\Annotation\\Route')),
+        ],
+        null,
+        [
+            'Symfony\\Component\\Routing\\Annotation\\Route' => [
+                'path' => [
+                    '',
+                ],
+                'name' => [
+                    'app_forgot_password_request',
+                ],
+            ],
+        ],
+        [
+            $o[0],
+        ],
+        []
+    );
+},
+32 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Symfony\\Component\\Routing\\Annotation\\Route'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Routing\\Annotation\\Route')),
+        ],
+        null,
+        [
+            'Symfony\\Component\\Routing\\Annotation\\Route' => [
+                'path' => [
+                    '/check-email',
+                ],
+                'name' => [
+                    'app_check_email',
+                ],
+            ],
+        ],
+        [
+            $o[0],
+        ],
+        []
+    );
+},
+33 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Symfony\\Component\\Routing\\Annotation\\Route'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Routing\\Annotation\\Route')),
+        ],
+        null,
+        [
+            'Symfony\\Component\\Routing\\Annotation\\Route' => [
+                'path' => [
+                    '/reset/{token}',
+                ],
+                'name' => [
+                    'app_reset_password',
+                ],
+            ],
+        ],
+        [
+            $o[0],
+        ],
+        []
+    );
+},
+34 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Symfony\\Component\\Routing\\Annotation\\Route'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Routing\\Annotation\\Route')),
+        ],
+        null,
+        [
+            'Symfony\\Component\\Routing\\Annotation\\Route' => [
+                'path' => [
+                    '/login',
+                ],
+                'name' => [
+                    'app_login',
+                ],
+            ],
+        ],
+        [
+            $o[0],
+        ],
+        []
+    );
+},
+35 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Symfony\\Component\\Routing\\Annotation\\Route'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Routing\\Annotation\\Route')),
+        ],
+        null,
+        [
+            'Symfony\\Component\\Routing\\Annotation\\Route' => [
+                'path' => [
+                    '/logout',
+                ],
+                'name' => [
+                    'app_logout',
+                ],
+            ],
+        ],
+        [
+            $o[0],
+        ],
+        []
+    );
+},
+36 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Symfony\\Component\\Routing\\Annotation\\Route'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Routing\\Annotation\\Route')),
+        ],
+        null,
+        [
+            'Symfony\\Component\\Routing\\Annotation\\Route' => [
+                'path' => [
+                    '/subject/forum',
+                ],
+            ],
+        ],
+        [
+            $o[0],
+        ],
+        []
+    );
+},
+37 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Symfony\\Component\\Routing\\Annotation\\Route'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Routing\\Annotation\\Route')),
+        ],
+        null,
+        [
+            'Symfony\\Component\\Routing\\Annotation\\Route' => [
+                'path' => [
+                    '/',
+                ],
+                'name' => [
+                    'subject_forum_index',
+                ],
+                'methods' => [
+                    [
+                        'GET',
+                    ],
+                ],
+            ],
+        ],
+        [
+            $o[0],
+        ],
+        []
+    );
+},
+38 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Symfony\\Component\\Routing\\Annotation\\Route'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Routing\\Annotation\\Route')),
+        ],
+        null,
+        [
+            'Symfony\\Component\\Routing\\Annotation\\Route' => [
+                'path' => [
+                    '/new',
+                ],
+                'name' => [
+                    'subject_forum_new',
+                ],
+                'methods' => [
+                    [
+                        'GET',
+                        'POST',
+                    ],
+                ],
+            ],
+        ],
+        [
+            $o[0],
+        ],
+        []
+    );
+},
+39 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Symfony\\Component\\Routing\\Annotation\\Route'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Routing\\Annotation\\Route')),
+        ],
+        null,
+        [
+            'Symfony\\Component\\Routing\\Annotation\\Route' => [
+                'path' => [
+                    '/{id}',
+                ],
+                'name' => [
+                    'subject_forum_show',
+                ],
+                'methods' => [
+                    [
+                        'GET',
+                    ],
+                ],
+            ],
+        ],
+        [
+            $o[0],
+        ],
+        []
+    );
+},
+40 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Symfony\\Component\\Routing\\Annotation\\Route'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Routing\\Annotation\\Route')),
+        ],
+        null,
+        [
+            'Symfony\\Component\\Routing\\Annotation\\Route' => [
+                'path' => [
+                    '/{id}/edit',
+                ],
+                'name' => [
+                    'subject_forum_edit',
+                ],
+                'methods' => [
+                    [
+                        'GET',
+                        'POST',
+                    ],
+                ],
+            ],
+        ],
+        [
+            $o[0],
+        ],
+        []
+    );
+},
+41 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Symfony\\Component\\Routing\\Annotation\\Route'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Routing\\Annotation\\Route')),
+        ],
+        null,
+        [
+            'Symfony\\Component\\Routing\\Annotation\\Route' => [
+                'path' => [
+                    '/{id}',
+                ],
+                'name' => [
+                    'subject_forum_delete',
+                ],
+                'methods' => [
+                    [
+                        'DELETE',
+                    ],
+                ],
+            ],
+        ],
+        [
+            $o[0],
+        ],
+        []
+    );
+},
+42 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Symfony\\Component\\Routing\\Annotation\\Route'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Routing\\Annotation\\Route')),
+        ],
+        null,
+        [
+            'Symfony\\Component\\Routing\\Annotation\\Route' => [
+                'path' => [
+                    '/user',
+                ],
+            ],
+        ],
+        [
+            $o[0],
+        ],
+        []
+    );
+},
+43 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Symfony\\Component\\Routing\\Annotation\\Route'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Routing\\Annotation\\Route')),
+        ],
+        null,
+        [
+            'Symfony\\Component\\Routing\\Annotation\\Route' => [
+                'path' => [
+                    '/',
+                ],
+                'name' => [
+                    'user_index',
+                ],
+                'methods' => [
+                    [
+                        'GET',
+                    ],
+                ],
+            ],
+        ],
+        [
+            $o[0],
+        ],
+        []
+    );
+},
+44 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Symfony\\Component\\Routing\\Annotation\\Route'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Routing\\Annotation\\Route')),
+        ],
+        null,
+        [
+            'Symfony\\Component\\Routing\\Annotation\\Route' => [
+                'path' => [
+                    '/new',
+                ],
+                'name' => [
+                    'user_new',
+                ],
+                'methods' => [
+                    [
+                        'GET',
+                        'POST',
+                    ],
+                ],
+            ],
+        ],
+        [
+            $o[0],
+        ],
+        []
+    );
+},
+45 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Symfony\\Component\\Routing\\Annotation\\Route'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Routing\\Annotation\\Route')),
+        ],
+        null,
+        [
+            'Symfony\\Component\\Routing\\Annotation\\Route' => [
+                'path' => [
+                    '/{id}',
+                ],
+                'name' => [
                     'user_show',
                 ],
                 'methods' => [
@@ -1311,7 +2147,7 @@ return [[
         []
     );
 },
-22 => static function () {
+46 => static function () {
     return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
         $o = [
             clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Symfony\\Component\\Routing\\Annotation\\Route'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Routing\\Annotation\\Route')),
@@ -1339,7 +2175,7 @@ return [[
         []
     );
 },
-23 => static function () {
+47 => static function () {
     return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
         $o = [
             clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Symfony\\Component\\Routing\\Annotation\\Route'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Routing\\Annotation\\Route')),
@@ -1366,7 +2202,7 @@ return [[
         []
     );
 },
-24 => static function () {
+48 => static function () {
     return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
         $o = [
             clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Doctrine\\ORM\\Mapping\\Entity'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Entity')),
@@ -1375,7 +2211,7 @@ return [[
         [
             'stdClass' => [
                 'repositoryClass' => [
-                    'App\\Repository\\ContactMessageRepository',
+                    'App\\Repository\\CategoryForumRepository',
                 ],
             ],
         ],
@@ -1385,7 +2221,7 @@ return [[
         []
     );
 },
-25 => static function () {
+49 => static function () {
     return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
         $o = [
             clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Mapping\\Id'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Id')),
@@ -1408,7 +2244,133 @@ return [[
         []
     );
 },
-26 => static function () {
+50 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Doctrine\\ORM\\Mapping\\Column'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Column')),
+        ],
+        null,
+        [
+            'stdClass' => [
+                'length' => [
+                    255,
+                ],
+            ],
+        ],
+        [
+            $o[0],
+        ],
+        []
+    );
+},
+51 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Doctrine\\ORM\\Mapping\\Column'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Column')),
+        ],
+        null,
+        [
+            'stdClass' => [
+                'type' => [
+                    'datetime',
+                ],
+                'nullable' => [
+                    true,
+                ],
+            ],
+        ],
+        [
+            $o[0],
+        ],
+        []
+    );
+},
+52 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Doctrine\\ORM\\Mapping\\ManyToOne'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\ManyToOne')),
+        ],
+        null,
+        [
+            'stdClass' => [
+                'targetEntity' => [
+                    'App\\Entity\\User',
+                ],
+                'inversedBy' => [
+                    'categoryForum',
+                ],
+            ],
+        ],
+        [
+            $o[0],
+        ],
+        []
+    );
+},
+53 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Doctrine\\ORM\\Mapping\\OneToMany'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\OneToMany')),
+        ],
+        null,
+        [
+            'stdClass' => [
+                'mappedBy' => [
+                    'CategorySubjectForum',
+                ],
+                'targetEntity' => [
+                    'App\\Entity\\SubjectForum',
+                ],
+            ],
+        ],
+        [
+            $o[0],
+        ],
+        []
+    );
+},
+54 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Doctrine\\ORM\\Mapping\\ManyToOne'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\ManyToOne')),
+        ],
+        null,
+        [
+            'stdClass' => [
+                'targetEntity' => [
+                    'App\\Entity\\HomeSectionForum',
+                ],
+                'inversedBy' => [
+                    'categoryHomeSectionForum',
+                ],
+            ],
+        ],
+        [
+            $o[0],
+        ],
+        []
+    );
+},
+55 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Doctrine\\ORM\\Mapping\\Entity'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Entity')),
+        ],
+        null,
+        [
+            'stdClass' => [
+                'repositoryClass' => [
+                    'App\\Repository\\ContactMessageRepository',
+                ],
+            ],
+        ],
+        [
+            $o[0],
+        ],
+        []
+    );
+},
+56 => static function () {
     return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
         $o = [
             clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Doctrine\\ORM\\Mapping\\Column'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Column')),
@@ -1430,7 +2392,7 @@ return [[
         []
     );
 },
-27 => static function () {
+57 => static function () {
     return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
         $o = [
             clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Doctrine\\ORM\\Mapping\\Column'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Column')),
@@ -1449,26 +2411,7 @@ return [[
         []
     );
 },
-28 => static function () {
-    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
-        $o = [
-            clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Doctrine\\ORM\\Mapping\\Column'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Column')),
-        ],
-        null,
-        [
-            'stdClass' => [
-                'length' => [
-                    255,
-                ],
-            ],
-        ],
-        [
-            $o[0],
-        ],
-        []
-    );
-},
-29 => static function () {
+58 => static function () {
     return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
         $o = [
             clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Doctrine\\ORM\\Mapping\\Column'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Column')),
@@ -1487,7 +2430,155 @@ return [[
         []
     );
 },
-30 => static function () {
+59 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Doctrine\\ORM\\Mapping\\Entity'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Entity')),
+        ],
+        null,
+        [
+            'stdClass' => [
+                'repositoryClass' => [
+                    'App\\Repository\\HomeSectionForumRepository',
+                ],
+            ],
+        ],
+        [
+            $o[0],
+        ],
+        []
+    );
+},
+60 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Doctrine\\ORM\\Mapping\\OneToMany'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\OneToMany')),
+        ],
+        null,
+        [
+            'stdClass' => [
+                'mappedBy' => [
+                    'SectionCategoryForum',
+                ],
+                'targetEntity' => [
+                    'App\\Entity\\CategoryForum',
+                ],
+            ],
+        ],
+        [
+            $o[0],
+        ],
+        []
+    );
+},
+61 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Doctrine\\ORM\\Mapping\\ManyToOne'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\ManyToOne')),
+        ],
+        null,
+        [
+            'stdClass' => [
+                'targetEntity' => [
+                    'App\\Entity\\User',
+                ],
+                'inversedBy' => [
+                    'homeSectionForum',
+                ],
+            ],
+        ],
+        [
+            $o[0],
+        ],
+        []
+    );
+},
+62 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Doctrine\\ORM\\Mapping\\Entity'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Entity')),
+        ],
+        null,
+        [
+            'stdClass' => [
+                'repositoryClass' => [
+                    'App\\Repository\\MessageForumRepository',
+                ],
+            ],
+        ],
+        [
+            $o[0],
+        ],
+        []
+    );
+},
+63 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Doctrine\\ORM\\Mapping\\Column'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Column')),
+        ],
+        null,
+        [
+            'stdClass' => [
+                'type' => [
+                    'text',
+                ],
+                'nullable' => [
+                    true,
+                ],
+            ],
+        ],
+        [
+            $o[0],
+        ],
+        []
+    );
+},
+64 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Doctrine\\ORM\\Mapping\\ManyToOne'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\ManyToOne')),
+        ],
+        null,
+        [
+            'stdClass' => [
+                'targetEntity' => [
+                    'App\\Entity\\User',
+                ],
+                'inversedBy' => [
+                    'messageForum',
+                ],
+            ],
+        ],
+        [
+            $o[0],
+        ],
+        []
+    );
+},
+65 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Doctrine\\ORM\\Mapping\\ManyToOne'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\ManyToOne')),
+        ],
+        null,
+        [
+            'stdClass' => [
+                'targetEntity' => [
+                    'App\\Entity\\SubjectForum',
+                ],
+                'inversedBy' => [
+                    'messageSubjectForum',
+                ],
+            ],
+        ],
+        [
+            $o[0],
+        ],
+        []
+    );
+},
+66 => static function () {
     return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
         $o = [
             clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Doctrine\\ORM\\Mapping\\Entity'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Entity')),
@@ -1506,7 +2597,7 @@ return [[
         []
     );
 },
-31 => static function () {
+67 => static function () {
     return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
         $o = [
             clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Mapping\\ManyToOne'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\ManyToOne')),
@@ -1530,7 +2621,7 @@ return [[
         []
     );
 },
-32 => static function () {
+68 => static function () {
     return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
         $o = [
             clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Doctrine\\ORM\\Mapping\\Column'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Column')),
@@ -1549,7 +2640,7 @@ return [[
         []
     );
 },
-33 => static function () {
+69 => static function () {
     return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
         $o = [
             clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Doctrine\\ORM\\Mapping\\Column'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Column')),
@@ -1568,7 +2659,7 @@ return [[
         []
     );
 },
-34 => static function () {
+70 => static function () {
     return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
         $o = [
             clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Doctrine\\ORM\\Mapping\\Column'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Column')),
@@ -1587,7 +2678,92 @@ return [[
         []
     );
 },
-35 => static function () {
+71 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Doctrine\\ORM\\Mapping\\Entity'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Entity')),
+        ],
+        null,
+        [
+            'stdClass' => [
+                'repositoryClass' => [
+                    'App\\Repository\\SubjectForumRepository',
+                ],
+            ],
+        ],
+        [
+            $o[0],
+        ],
+        []
+    );
+},
+72 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Doctrine\\ORM\\Mapping\\ManyToOne'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\ManyToOne')),
+        ],
+        null,
+        [
+            'stdClass' => [
+                'targetEntity' => [
+                    'App\\Entity\\User',
+                ],
+                'inversedBy' => [
+                    'subjectForum',
+                ],
+            ],
+        ],
+        [
+            $o[0],
+        ],
+        []
+    );
+},
+73 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Doctrine\\ORM\\Mapping\\ManyToOne'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\ManyToOne')),
+        ],
+        null,
+        [
+            'stdClass' => [
+                'targetEntity' => [
+                    'App\\Entity\\CategoryForum',
+                ],
+                'inversedBy' => [
+                    'subjectCategory',
+                ],
+            ],
+        ],
+        [
+            $o[0],
+        ],
+        []
+    );
+},
+74 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Doctrine\\ORM\\Mapping\\OneToMany'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\OneToMany')),
+        ],
+        null,
+        [
+            'stdClass' => [
+                'mappedBy' => [
+                    'subjectMessageForum',
+                ],
+                'targetEntity' => [
+                    'App\\Entity\\MessageForum',
+                ],
+            ],
+        ],
+        [
+            $o[0],
+        ],
+        []
+    );
+},
+75 => static function () {
     return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
         $o = [
             clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Mapping\\Entity'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Entity')),
@@ -1621,7 +2797,7 @@ return [[
         []
     );
 },
-36 => static function () {
+76 => static function () {
     return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
         $o = [
             clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Doctrine\\ORM\\Mapping\\Column'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Column')),
@@ -1643,7 +2819,7 @@ return [[
         []
     );
 },
-37 => static function () {
+77 => static function () {
     return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
         $o = [
             clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Doctrine\\ORM\\Mapping\\Column'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Column')),
@@ -1662,7 +2838,7 @@ return [[
         []
     );
 },
-38 => static function () {
+78 => static function () {
     return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
         $o = [
             clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Symfony\\Component\\Validator\\Constraints\\Length'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Validator\\Constraints\\Length')),
@@ -1688,7 +2864,7 @@ return [[
         []
     );
 },
-39 => static function () {
+79 => static function () {
     return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
         $o = [
             clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Doctrine\\ORM\\Mapping\\Column'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Column')),
@@ -1707,7 +2883,7 @@ return [[
         []
     );
 },
-40 => static function () {
+80 => static function () {
     return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
         $o = [
             clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Doctrine\\ORM\\Mapping\\Column'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Column')),
@@ -1729,7 +2905,7 @@ return [[
         []
     );
 },
-41 => static function () {
+81 => static function () {
     return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
         $o = [
             clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Doctrine\\ORM\\Mapping\\Column'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Column')),
@@ -1751,7 +2927,7 @@ return [[
         []
     );
 },
-42 => static function () {
+82 => static function () {
     return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
         $o = [
             clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Doctrine\\ORM\\Mapping\\Column'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Column')),
@@ -1773,7 +2949,7 @@ return [[
         []
     );
 },
-43 => static function () {
+83 => static function () {
     return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
         $o = [
             clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Doctrine\\ORM\\Mapping\\OneToMany'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\OneToMany')),
@@ -1795,7 +2971,7 @@ return [[
         []
     );
 },
-44 => static function () {
+84 => static function () {
     return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
         $o = [
             clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Doctrine\\ORM\\Mapping\\OneToMany'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\OneToMany')),
@@ -1817,7 +2993,7 @@ return [[
         []
     );
 },
-45 => static function () {
+85 => static function () {
     return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
         $o = [
             clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Doctrine\\ORM\\Mapping\\OneToMany'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\OneToMany')),
@@ -1830,6 +3006,28 @@ return [[
                 ],
                 'targetEntity' => [
                     'App\\Entity\\CategoryForum',
+                ],
+            ],
+        ],
+        [
+            $o[0],
+        ],
+        []
+    );
+},
+86 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Doctrine\\ORM\\Mapping\\OneToMany'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\OneToMany')),
+        ],
+        null,
+        [
+            'stdClass' => [
+                'mappedBy' => [
+                    'user',
+                ],
+                'targetEntity' => [
+                    'App\\Entity\\HomeSectionForum',
                 ],
             ],
         ],
