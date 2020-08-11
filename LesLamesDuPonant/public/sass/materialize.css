@@ -4474,6 +4474,7 @@ html {
 h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
   line-height: 1.1;
+  font-family: 'Maven Pro',sans-serif;
 }
 
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
@@ -4668,7 +4669,7 @@ small {
 
 @media only screen and (max-width: 360px) {
   .flow-text {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
   }
 }
 
@@ -9416,10 +9417,30 @@ nav {
   background-color: rgba(12, 12, 136, 0.918);
 }
 
+nav li a {
+  font-family: 'MedievalSharp', cursive;
+}
+
 nav li a:hover {
   background-color: rgba(75, 123, 212, 0.424);
   -webkit-transition-duration: 420ms;
           transition-duration: 420ms;
+}
+
+nav ul a {
+  font-size: 1.5rem;
+}
+
+/* Discipline carousel
+  *================
+  */
+.card-rounded {
+  padding: 5px;
+  margin: 0.2rem 0 2rem 0;
+  -webkit-box-shadow: 0px 0px 30px 0px #0408ff;
+          box-shadow: 0px 0px 30px 0px #0408ff;
+  border-radius: 100%;
+  background-color: #fff;
 }
 
 /* User Nav Profil left
@@ -9432,19 +9453,15 @@ nav li a:hover {
 /* Slider
   *================
   */
-.slider {
-  z-index: 0;
-}
-
 /* Parallax
   *================
   */
 .parallax-container {
-  height: "400px";
+  height: "300px";
 }
 
 .homeSectionPresentation, .homeSectionActivity, .homeSectionCalendar {
-  height: 400px;
+  height: 600px;
 }
 
 /* Form login, register, password,

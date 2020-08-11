@@ -42,6 +42,7 @@
 @import "components/date_picker/default.time";
 
 
+
   body {
       display: flex;
       min-height: 100vh;
@@ -51,6 +52,7 @@
   main {
       flex: 1 0 auto;
   }
+
 
 
   /* Banner home
@@ -85,14 +87,37 @@ text-align: center;
   transition: top 0.2s linear;
   -webkit-transition:  0.2s;
    background-color: rgba(12, 12, 136, 0.918);
-  
+  li a{
+font-family: 'MedievalSharp',
+cursive;
+  }
    li a:hover{
     background-color: rgba(75, 123, 212, 0.424);
-    transition-duration: 420ms;
-
-   }
+    transition-duration: 420ms;  }
  }
- 
+
+ nav ul a{
+
+  font-size: 1.5rem;
+ }
+
+
+/* Discipline carousel
+  *================
+  */
+
+.card-rounded {
+  
+  padding: 5px;
+  margin: 0.2rem 0 2rem 0;
+  box-shadow: 0px 0px 30px 0px rgb(4, 8, 255);
+  border-radius: 100%;
+  background-color: #fff;
+  
+}
+
+
+
 /* User Nav Profil left
   *================
   */
@@ -104,20 +129,19 @@ text-align: center;
  /* Slider
   *================
   */
- .slider{
-z-index: 0;
- }
-
+ 
 /* Parallax
   *================
   */
+
+  
   .parallax-container {
-    height: "400px";
+    height: "300px";
   }
 
   .homeSectionPresentation,.homeSectionActivity,.homeSectionCalendar{
 
-    height: 400px;
+    height: 600px;
   }
 
   /* Form login, register, password,

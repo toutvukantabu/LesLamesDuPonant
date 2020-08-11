@@ -16,6 +16,11 @@ if (!\class_exists(App_KernelDevDebugContainer::class, false)) {
 
 return new \ContainerLHKTxQx\App_KernelDevDebugContainer([
     'container.build_hash' => 'LHKTxQx',
+<<<<<<< Updated upstream
     'container.build_id' => '3c384d9e',
     'container.build_time' => 1597155977,
+=======
+    'container.build_id' => 'ae39fb2d',
+    'container.build_time' => 1596973693,
+>>>>>>> Stashed changes
 ], __DIR__.\DIRECTORY_SEPARATOR.'ContainerLHKTxQx');

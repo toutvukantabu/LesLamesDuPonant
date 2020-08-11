@@ -10020,9 +10020,15 @@ if (Vel) {
   };
 })
 
+
+
+
   $('.carousel.carousel-slider').carousel({
     fullWidth: true
   });
+
+
+
 //Birtyhday date pîcker
   $('.datepicker').on('mousedown', function (event) {
     event.preventDefault();
@@ -10049,17 +10055,35 @@ $(document).ready(function () {
       $('nav').removeClass('navScroll');
     }
   });
+});
 
+//Carousel Discipline
+$(document).ready(function () {
+  
+  $(".carousel").carousel({
+    dist: 5,
+    padding: 500,
+    indicators: false,
+    numVisible: 3,
+  
+  });
+});
+$(document).ready(function () {
+  $('.carousel').carousel({
+    dist: 50
+  });
+  window.setInterval(function () {
+    $('.carousel').carousel('next')
+  },5000)
 });
 
 $(document).ready(function(){
   $('.parallax').parallax();
-    $('.carousel').carousel(
-  
+    $('.carousel').carousel(  
     );
-      $(".button-collapse").sideNav();
+  $(".button-collapse").sideNav();
       $(".monProfilBtn").sideNav();
-      $('.slider').slider({
+    $('.slider').slider({
         transition: 1000,
         interval: 10000,
             height :500,
