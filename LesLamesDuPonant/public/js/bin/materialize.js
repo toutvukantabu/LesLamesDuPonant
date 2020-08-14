@@ -10049,26 +10049,26 @@ $(document).ready(function () {
       $('nav').removeClass('sticky-nav');
     }
   });
-
 });
 
 $(document).ready(function(){
   $('.parallax').parallax();
-    $('.carousel').carousel(
-  
-    );
+ 
       $(".button-collapse").sideNav();
       $(".monProfilBtn").sideNav();
-      $('.slider').slider({
-        transition: 1000,
-        interval: 10000,
-            height :500,
-      }
-
-      );
-
+   
  $('select').material_select();
-
 });
 
+ //Carousel Home
+$(document).ready(function () {
+  $(".carouselHome").carousel({
+    dist: 0,
+    padding:1000,
+    indicators: false,
+    numVisible: 4,
+
+  });
+});
+    
     
