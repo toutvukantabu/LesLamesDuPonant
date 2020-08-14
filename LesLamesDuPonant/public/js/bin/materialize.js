@@ -10043,10 +10043,10 @@ if (Vel) {
 $(document).ready(function () {
 
   $(window).scroll(function () {
-    if ($(window).scrollTop() > 95) {
-      $('nav').addClass('navScroll');
+    if ($(window).scrollTop() >250) {
+      $('nav').addClass('sticky-nav');
     } else {
-      $('nav').removeClass('navScroll');
+      $('nav').removeClass('sticky-nav');
     }
   });
 
