@@ -42,66 +42,152 @@
 @import "components/date_picker/default.time";
 
 
-  body {
-      display: flex;
-      min-height: 100vh;
-      flex-direction: column;
+
+/* Document Infomation
+- Website:LLames Du Ponant
+-version 1 ( version).0( maj majeur). 0 (patch)
+author:Gwendal Bescont
+*/
+
+
+/* COLORS
+defaut body text    
+-h1   color:#fff;              
+-h2   color:#fff              
+-h3   color:#fff
+-h4   color:#eee
+-button
+-button:hover
+
+-icon               
+*/
+/* FONTS
+
+ H1 font-family: 'Ubuntu',cursive, sans-serif;
+ H2 font-family: 'Rochester', cursive;   
+    
+*/
+
+/* CSS DIRECTORY
+
+1. =GLOBAL
+***********
+-fonts
+2. =NAVBAR
+***********
+-user-nav Profil Left
+3. =HOMEPAGE
+***********
+-Home Banner
+-Home image
+-Home Présentation (qui sommes nous)
+-Home Parallax
+-Home Dicipline/Activity
+-Home timeline/Agenda/Info
+
+4. =
+5. =
+6. =
+7. =
+8. =
+*/
+
+
+//GLOBAL
+//******************************************
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+//FONT
+//=============
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: fantasy, sans-serif;
+}
+
+h1,
+h2,
+h4 {
+
+  &:after {
+    display: block;
+    height: 2px;
+    background-color: rgba(29, 26, 228, 0.568);
+    width: 150px;
+    content: " ";
+    margin: 0 auto;
+    margin-top: 10px;
   }
+}
 
-  main {
-      flex: 1 0 auto;
+
+//NAVBAR
+//*****************************************
+
+.sticky-nav {
+  background-color: rgba(12, 12, 136, 0.424);
+  position: fixed;
+  top: 0;
+}
+
+nav {
+  transition: top 0.2s linear;
+  -webkit-transition: 0.2s;
+  background-color: rgba(12, 12, 136, 0.918);
+
+  li a:hover {
+    background-color: rgba(75, 123, 212, 0.424);
+    transition-duration: 420ms;
+
   }
+}
 
-
-  /* Banner home
+/* User-Nav Profil left
   *================
   */
-#HomeTitle{
+.background img {
+  opacity: 0.8;
+}
 
-text-align: center;
-  img{
+
+//HOME PAGE
+//*****************************************
+
+/* Home Banner
+  *================
+  */
+#HomeTitle {
+
+  text-align: center;
+
+  img {
     height: 250px;
     width: 315px;
     padding: 2px 30px;
   }
 }
-/* Navbar
+
+
+/* Home Image
   *================
   */
-.sticky-nav{
-  background-color: rgba(12, 12, 136, 0.424);
- position: fixed;
- top:0;
-}
- 
- nav{
-  transition: top 0.2s linear;
-  -webkit-transition:  0.2s;
-   background-color: rgba(12, 12, 136, 0.918);
-  
-   li a:hover{
-    background-color: rgba(75, 123, 212, 0.424);
-    transition-duration: 420ms;
-
-   }
- }
- 
-/* User Nav Profil left
-  *================
-  */
-.background img{
-
-  opacity: 0.8;
-}
-
- /* Home Imgage
-  *================
-  */
-#HomeImg  {
+#HomeImg {
   margin-bottom: -7px;
+
   img {
 
-    max-height:80vh;
+    max-height: 80vh;
     width: 100%;
 
   }
@@ -110,72 +196,121 @@ text-align: center;
 /* Home Présentation (qui sommes nous)
   *================
   */
-  .homeSectionPresentation{
-min-height: 400px;
-h2:after {
-  display: block;
-  height: 2px;
-  background-color: rgba(29, 26, 228, 0.568);
-  width: 200px;
-  content: " ";
-  margin: 0 auto;
-  margin-top: 10px;
+.homeSectionPresentation {
+  min-height: 400px;
+
 }
-  }
+
 .homsectionPresentationText {
-  background-color: #aba59f1a;
-border: 1px solid rgba(199, 195, 195, 0.418);
-border-radius: 10px;
-padding: 30px;
-margin-bottom: 10px;
-max-width: 70%;
-margin: 0 auto;
+  border: 1px solid rgba(199, 195, 195, 0.418);
+  border-radius: 10px;
+  padding: 30px;
+  margin-bottom: 10px;
+  max-width: 70%;
+  margin: 0 auto;
+  -webkit-box-shadow: 0px 0px 50px 6px rgba(176, 167, 176, 0.94);
+  -moz-box-shadow: 0px 0px 50px 6px rgba(176, 167, 176, 0.94);
+  box-shadow: 0px 0px 50px 6px rgba(176, 167, 176, 0.94);
 
-p{
-text-align: justify;
-font-size: 19px;
-}
-}
-
-/* Parallax
-  *================
-  */
-  .homeSectionPresentation,.homeSectionActivity,.homeSectionCalendar{
-    min-height: 440px;
-    background-image: url(../uploads/Background/sectionHome.jpg);
-   background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+  p {
+    text-align: justify;
+    font-size: 19px;
   }
-/* Dcipline
-  *================
-  */
-
-
-
-
-
-  /* Form login, register, password,
-  *================
-  */
-.formRegister,.formLogin,.formReset{
-margin-top: 100px;
-margin-bottom: 100px;
-border-radius: 10px;
-padding:20px ;
-
-}
-.loginResetPassword, .smallResetPassword{
-margin-bottom: 40px;
-
 }
 
- /* FOOTER timeline
+/* Home Parallax
   *================
   */
+
+.homeSectionPresentation,
+.homeSectionActivity {
+  min-height: 480px;
+  background-image: url(../uploads/Background/sectionHome.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  -webkit-box-shadow: inset 0px 0px 50px 12px rgba(176, 167, 176, 0.94);
+  -moz-box-shadow: inset 0px 0px 50px 12px rgba(176, 167, 176, 0.94);
+  box-shadow: inset 0px 0px 50px 12px rgba(14, 13, 14, 0.94);
+}
+
+.homeSectionActivity,
+.homeSectionCalendar {
+  height: 680px;
+}
+
+/* Home Dicipline/Activity
+  *================
+  */
+.homeSectionActivity {
+  padding-bottom: 20px;
+
+  h2 {
+    margin-bottom: -85px;
+  }
+}
+
+.disciplineHomeTitle {
+  margin-top: -88px;
+  width: 300px;
+  margin-left: -50px;
+      margin-bottom: -54px;
+
+  &:after {
+    display: block;
+    height: 2px;
+    background-color: rgba(0, 0, 7, 0.568);
+    width: 50px;
+    content: " ";
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 15px;
+  }
+}
+
+.card-rounded {
+  padding: 1px;
+  margin: 0.2rem 0 2rem 0;
+  box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 100%;
+  background-color: rgba(30, 49, 221, 0.582);
+  transform: scale(0.85, 0.85);
+  margin-left: -60px;
+  margin-bottom: -20px;
+  margin-top: 20px;
+  -webkit-filter: grayscale(0);
+  filter: grayscale(0);
+
+  &:hover {
+    -webkit-box-shadow: 0px 0px 50px 12px rgba(176, 167, 176, 0.94);
+    -moz-box-shadow: 0px 0px 50px 12px rgba(176, 167, 176, 0.94);
+    box-shadow: 0px 0px 50px 12px rgba(176, 167, 176, 0.94);
+    filter: blur(1px);
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+
+  }
+}
+
+
+.disciplineHomeDescription {
+
+  word-wrap: break-word;
+  margin-left: -73px;
+  width: 345px;
+  font-size: 15px;
+}
+
+/*  Home timeline/Agenda/Info
+  *================
+  */
+.HomeInfoTitle{
+
+  margin-bottom: 50px;
+}
 .history-tl-container {
-
- 
   margin: auto;
   display: block;
   position: relative;
@@ -183,18 +318,17 @@ margin-bottom: 40px;
 }
 
 .history-tl-container ul.tl {
-  margin: 20px -103px 20px 0;
+  margin: 20px -50px 20px 0;
   padding: 0;
   display: inline-block;
-
 }
 
 .history-tl-container ul.tl li {
   list-style: none;
   margin: auto;
-  margin-left:69px;
+  margin-left: 130px;
   min-height: 50px;
-
+  max-height: 140px;
   border-left: 1px dashed #86D6FF;
   padding: 0 0 50px 30px;
   position: relative;
@@ -212,10 +346,9 @@ margin-bottom: 40px;
   border: 8px solid rgba(255, 255, 255, 0.74);
   border-radius: 500%;
   background: #258CC7;
-  height: 20px;
-  width: 20px;
+  height: 21px;
+  width: 21px;
   transition: all 500ms ease-in-out;
-
 }
 
 .history-tl-container ul.tl li:hover::before {
@@ -223,25 +356,42 @@ margin-bottom: 40px;
   transition: all 1000ms ease-in-out;
 }
 
-
-
 ul.tl li .item-detail {
   color: rgba(0, 0, 0, 0.5);
-  font-size: 12px;
+  font-size: 14px;
   text-align: left;
 }
-ul.tl li .item-title{
-text-align: left;
 
+ul.tl li .item-title {
+  text-align: left;
+  font-size: 18px;
+  max-width: 150px;
 }
 
 ul.tl li .timestamp {
-  color: #8D8D8D;
+  color: #7e7979;
   position: absolute;
-  width: 100px;
-  left: -68%;
+  width: 150px;
+  left: -95%;
   text-align: right;
-  font-size: 12px;
+  font-size: 14px;
 }
 
+/* Form login, register, password,
+  *================
+  */
+.formRegister,
+.formLogin,
+.formReset {
+  margin-top: 100px;
+  margin-bottom: 100px;
+  border-radius: 10px;
+  padding: 20px;
 
+}
+
+.loginResetPassword,
+.smallResetPassword {
+  margin-bottom: 40px;
+
+}
