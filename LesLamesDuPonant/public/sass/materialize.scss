@@ -112,14 +112,14 @@ h1,
 h2,
 h3,
 h4,
-h5 {
+h5,
+h6 {
   font-family: fantasy, sans-serif;
 }
 
 h1,
 h2,
 h4 {
-
   &:after {
     display: block;
     height: 2px;
@@ -145,22 +145,19 @@ nav {
   transition: top 0.2s linear;
   -webkit-transition: 0.2s;
   background-color: rgba(12, 12, 136, 0.918);
-
   li a:hover {
     background-color: rgba(75, 123, 212, 0.424);
     transition-duration: 420ms;
-
   }
 }
 
 /* User-Nav Profil left
   *================
   */
+
 .background img {
   opacity: 0.8;
 }
-
-
 //HOME PAGE
 //*****************************************
 
@@ -168,9 +165,7 @@ nav {
   *================
   */
 #HomeTitle {
-
   text-align: center;
-
   img {
     height: 250px;
     width: 315px;
@@ -184,12 +179,9 @@ nav {
   */
 #HomeImg {
   margin-bottom: -7px;
-
   img {
-
     max-height: 80vh;
     width: 100%;
-
   }
 }
 
@@ -197,24 +189,27 @@ nav {
   *================
   */
 .homeSectionPresentation {
-  min-height: 400px;
+  min-height: 350px;
+  h2{
+margin-bottom:50px;
 
+  }
 }
 
 .homsectionPresentationText {
   border: 1px solid rgba(199, 195, 195, 0.418);
   border-radius: 10px;
-  padding: 30px;
+  padding: 20px;
   margin-bottom: 10px;
-  max-width: 70%;
-  margin: 0 auto;
+max-width: 700px;
+margin:0 auto;
   -webkit-box-shadow: 0px 0px 50px 6px rgba(176, 167, 176, 0.94);
   -moz-box-shadow: 0px 0px 50px 6px rgba(176, 167, 176, 0.94);
   box-shadow: 0px 0px 50px 6px rgba(176, 167, 176, 0.94);
 
   p {
     text-align: justify;
-    font-size: 19px;
+  
   }
 }
 
@@ -223,7 +218,7 @@ nav {
   */
 
 .homeSectionPresentation,
-.homeSectionActivity {
+.homeSectionActivity{
   min-height: 480px;
   background-image: url(../uploads/Background/sectionHome.jpg);
   background-position: center;
@@ -234,11 +229,13 @@ nav {
   box-shadow: inset 0px 0px 50px 12px rgba(14, 13, 14, 0.94);
 }
 
-.homeSectionActivity,
-.homeSectionCalendar {
-  height: 680px;
+.homeSectionActivity{
+ max-height: 640px;
 }
 
+.homeSectionCalendar{
+max-height: 490px;
+}
 /* Home Dicipline/Activity
   *================
   */
@@ -303,6 +300,9 @@ nav {
   font-size: 15px;
 }
 
+//FOOTER
+//****************************************
+
 /*  Home timeline/Agenda/Info
   *================
   */
@@ -318,7 +318,7 @@ nav {
 }
 
 .history-tl-container ul.tl {
-  margin: 20px -50px 20px 0;
+  margin: 3px -50px 20px 0;
   padding: 0;
   display: inline-block;
 }
@@ -376,6 +376,37 @@ ul.tl li .timestamp {
   text-align: right;
   font-size: 14px;
 }
+
+// Information
+//========================
+
+.informationFooterLeft{
+text-align: center;
+margin-top: -3px;
+
+.divider{
+margin: 0 auto;
+width:100px;
+}
+}
+
+.informationFooterRight {
+    margin-top: 9px;
+    text-align: center;
+
+  img{
+border-radius: 10px;
+-webkit-box-shadow: 0px 0px 50px 6px rgba(176, 167, 176, 0.94);
+-moz-box-shadow: 0px 0px 50px 6px rgba(176, 167, 176, 0.94);
+box-shadow: 0px 0px 50px 6px rgba(176, 167, 176, 0.94);
+
+  }
+}
+
+
+
+
+
 
 /* Form login, register, password,
   *================

@@ -1,315 +1,381 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8"/>
-		<meta name="viewport" content="width=device-width, initial-scale=1"/>
-		<title>
-			{% block title 'Lame Du Ponant ' %}
-		</title>
-		<!--Import Google Icon Font-->
-		<link
-		href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-		<!--Import materialize.css-->
-		<link type="text/css" rel="stylesheet" href="{{ asset('sass/materialize.css') }}" media="screen,projection"/> {% block stylesheets %}{% endblock %}
-		</head>
-		<body>
-			<header>
-				<div class="container " id="HomeTitle">
-					<div class="row">
-						<div class="  col m12 s12 l12 xl12">
 
-							<img src="{{ asset('uploads/LogoLDP2020.png')}}">
-						</div>
-					</div>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>
+		{% block title 'Lame Du Ponant ' %}
+	</title>
+	<!--Import Google Icon Font-->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<!--Import materialize.css-->
+	<link type="text/css" rel="stylesheet" href="{{ asset('sass/materialize.css') }}" media="screen,projection" />
+	{% block stylesheets %}{% endblock %}
+</head>
+
+<body>
+	<header>
+		<div class="container " id="HomeTitle">
+			<div class="row">
+				<div class="  col m12 s12 l12 xl12">
+
+					<img src="{{ asset('uploads/LogoLDP2020.png')}}">
 				</div>
-			</header>
-
-			<ul class="side-nav z-depth-4" id="mobile-demo">
-				<li>
-					<div class="user-view">
-						<div class="background">
-							<img src="https://miro.medium.com/max/1080/1*hU0QQDiOnsKpX4qlIyn_4w.jpeg">
-						</div>
-						{% if is_granted('IS_AUTHENTICATED_FULLY') and app.user.photoAvatarUser  != NULL %}
-
-							<img class="circle" src="{{ asset('uploads/photos/' ~ app.user.photoAvatarUser)}}">
-
-						{% else %}
-							<img class="circle" src="{{asset('uploads/avatar.jpg')}}">
-						{% endif %}
-						{% if is_granted('IS_AUTHENTICATED_FULLY') and app.user.pseudoUser != NULL %}
-							<span class="white-text name">Bonjour
-								{{app.user.pseudoUser}}</span>
-
-						{% elseif is_granted('IS_AUTHENTICATED_FULLY') and app.user.pseudoUser == NULL%}
-							<span class="white-text name">Bonjour "Illustre inconnu n°{{app.user.id}}"
-
-							{% else %}
-								<span class="white-text name">Bonjour "Illustre inconnu "
-
-
-								</span>
-							{% endif %}
-							{% if is_granted('IS_AUTHENTICATED_FULLY') %}
-								<span class="white-text email">{{ app.user.email }}</span>
-								<a href="{{path('app_logout')}}">
-									<span class="white-text email">
-										se déconnecter</span>
-								</a>
-							{% endif %}
-						</div>
-					</li>
-				</li>
-				<li>
-					<div class="divider"></div>
-				</li>
-				<li>
-					<h5 class="black-text center-align">Les lames du Ponant</h5>
-				</li>
-				<div class="divider"></div>
-				<li>
-					<a href="{{path('home')}}">
-						<span>Messagerie</span>
-					</a>
-				</li>
-				<li>
-					{% if is_granted('IS_AUTHENTICATED_FULLY')%}
-						<a href="{{path('user_edit',{'id': app.user.id })}}">
-						{% endif %}
-						<span>Modifier mes infos</span>
-					</a>
-				</li>
-				<div class="divider"></div>
-				<li>
-					<a href="{{path('home')}}">Les AMHE</a>
-				</li>
-				<li>
-					<a href="{{path('home')}}">
-						Boutique</a>
-				</li>
-				<li>
-					<a href="{{path('home')}}">Forum</a>
-				</li>
-			</ul>
-			<div class="menu">
-				<nav>
-					<div class="nav-wrapper">
-						<a href="{{path('home')}} " class="brand-logo center">Accueil</a>
-						<a href="#" data-activates="mobile-demo" class="button-collapse">
-							<i class="material-icons">menu</i>
-						</a>
-						<ul class="left hide-on-med-and-down">
-							<li>
-								<a href="{{path('home')}}">Les AMHE</a>
-							</li>
-
-							<li>
-								<a href="{{path('home')}}">
-									Boutique</a>
-							</li>
-							<li>
-								<a href="{{path('home')}}">Forum</a>
-							</li>
-							{% if is_granted('Role_Administrateur')%}
-
-								<a href="#">Administration</a>
-							{% endif %}
-						</ul>
-						<ul class="right hide-on-med-and-down">
-
-							{% if is_granted('IS_AUTHENTICATED_FULLY')%}
-								<li>
-									<a href="#" data-activates="mobile-demo" class="monProfilBtn">
-										Mon profil</a>
-								</li>
-								<li>
-									<a href="{{path('app_login')}}">infos</a>
-								</li>
-								<li>
-									<a href="{{path('contact_message_new')}}">contact</a>
-								</li>
-								<li>
-									<a href="{{path('app_logout')}}">se deconnecter</a>
-								</li>
-							{% else %}
-								<li>
-									<a href="{{path('app_login')}}">infos</a>
-								</li>
-								<li>
-									<a href="{{path('app_login')}}">contact</a>
-								</li>
-								<li>
-									<a href="{{path('app_login')}}">se connecter</a>
-								</li>
-								<li>
-									<a href="{{path('app_register')}}">s'enregistrer</a>
-								</li>
-							{% endif %}
-
-						</ul>
-					</div>
-				</nav>
 			</div>
-			{% if app.request.get('_route') == 'home' %}
+		</div>
+	</header>
 
-				<div id="HomeImg">
-					<img src="{{ asset('uploads/Parallax3.jpg')}}" alt="">
+	<ul class="side-nav z-depth-4" id="mobile-demo">
+		<li>
+			<div class="user-view">
+				<div class="background">
+					<img src="https://miro.medium.com/max/1080/1*hU0QQDiOnsKpX4qlIyn_4w.jpeg">
 				</div>
-			{% endif %}
-			<main>
-				{% block body %}{% endblock %}
-				{% if app.request.get('_route') == 'home' %}
-					<div class="section white homeSectionPresentation">
-						<div class="row container">
-							<h2 class="header center-align">Qui sommes nous</h2>
-							<div class="homsectionPresentationText">
-								<p class="grey-text text-darken-3 lighten-3">
-									Apprendre un art en lisant de vieux livres ». Ce rêve de l’humanisme de la Renaissance, qui peut choquer les sportifs et les adeptes d’arts martiaux, est pourtant le mot d’ordre d’une discipline rassemblant aujourd’hui plus d’un millier de pratiquants en France et plusieurs dizaines de milliers de par le monde. Cette discipline, qui s’applique à transmettre un patrimoine culturel immatériel méconnu et pourtant riche de centaines de traditions différentes</p>
-							</p>
-							<a href="#">en savoir plus</a>
-						</div>
-					</div>
+				{% if is_granted('IS_AUTHENTICATED_FULLY') and app.user.photoAvatarUser  != NULL %}
+
+				<img class="circle" src="{{ asset('uploads/photos/' ~ app.user.photoAvatarUser)}}">
+
+				{% else %}
+				<img class="circle" src="{{asset('uploads/avatar.jpg')}}">
+				{% endif %}
+				{% if is_granted('IS_AUTHENTICATED_FULLY') and app.user.pseudoUser != NULL %}
+				<span class="white-text name">Bonjour
+					{{app.user.pseudoUser}}</span>
+
+				{% elseif is_granted('IS_AUTHENTICATED_FULLY') and app.user.pseudoUser == NULL%}
+				<span class="white-text name">Bonjour "Illustre inconnu n°{{app.user.id}}"
+
+					{% else %}
+					<span class="white-text name">Bonjour "Illustre inconnu "
+
+
+					</span>
+					{% endif %}
+					{% if is_granted('IS_AUTHENTICATED_FULLY') %}
+					<span class="white-text email">{{ app.user.email }}</span>
+					<a href="{{path('app_logout')}}">
+						<span class="white-text email">
+							se déconnecter</span>
+					</a>
+					{% endif %}
+			</div>
+		</li>
+		</li>
+		<li>
+
+		</li>
+		<li>
+			<h5 class="black-text center-align">Les lames du Ponant</h5>
+		</li>
+		<div class="divider"></div>
+		{% if is_granted('IS_AUTHENTICATED_FULLY')%}
+		<li>
+			<a href="{{path('home')}}">
+				<span>Messagerie</span>
+			</a>
+		</li>
+		<li>
+			<a href="{{path('user_edit',{'id': app.user.id })}}">
+
+				<span>Mon Profil</span>
+			</a>
+		</li>
+		<li>
+			<a href="{{path('app_login')}}">infos</a>
+		</li>
+		<li>
+			<a href="{{path('contact_message_new')}}">contact</a>
+		</li>
+		<li>
+			<a href="{{path('app_logout')}}">se deconnecter</a>
+		</li>
+		{% else %}
+		<li>
+			<a href="{{path('app_login')}}">infos</a>
+		</li>
+		<li>
+			<a href="{{path('app_login')}}">contact</a>
+		</li>
+		<li>
+			<a href="{{path('app_login')}}">se connecter</a>
+		</li>
+		<li>
+			<a href="{{path('app_register')}}">s'enregistrer</a>
+		</li>
+		{% endif %}
+		{# <div class="divider"></div> #}
+		<li>
+			<a href="{{path('home')}}">
+				Les disciplines</a>
+		</li>
+		<li>
+			<a href="{{path('home')}}">
+				Les AMHE</a>
+		</li>
+		<li>
+			<a href="{{path('home')}}">
+				Boutique</a>
+		</li>
+		<li>
+			<a href="{{path('home')}}">Forum</a>
+		</li>
+	</ul>
+	<div class="menu">
+		<nav>
+			<div class="nav-wrapper">
+				<a href="{{path('home')}} " class="brand-logo center">Accueil</a>
+				<a href="#" data-activates="mobile-demo" class="button-collapse">
+					<i class="material-icons">menu</i>
+				</a>
+				<ul class="left hide-on-med-and-down">
+					<li>
+						<a href="{{path('home')}}">Les AMHE</a>
+					</li>
+
+					<li>
+						<a href="{{path('home')}}">
+							Boutique</a>
+					</li>
+					<li>
+						<a href="{{path('home')}}">Forum</a>
+					</li>
+					{% if is_granted('Role_Administrateur')%}
+
+					<a href="#">Administration</a>
+					{% endif %}
+				</ul>
+				<ul class="right hide-on-med-and-down">
+
+					{% if is_granted('IS_AUTHENTICATED_FULLY')%}
+					<li>
+						<a href="#" data-activates="mobile-demo" class="monProfilBtn">
+							Mon profil</a>
+					</li>
+					<li>
+						<a href="{{path('app_login')}}">infos</a>
+					</li>
+					<li>
+						<a href="{{path('contact_message_new')}}">contact</a>
+					</li>
+					<li>
+						<a href="{{path('app_logout')}}">se deconnecter</a>
+					</li>
+					{% else %}
+					<li>
+						<a href="{{path('app_login')}}">infos</a>
+					</li>
+					<li>
+						<a href="{{path('app_login')}}">contact</a>
+					</li>
+					<li>
+						<a href="{{path('app_login')}}">se connecter</a>
+					</li>
+					<li>
+						<a href="{{path('app_register')}}">s'enregistrer</a>
+					</li>
+					{% endif %}
+
+				</ul>
+			</div>
+		</nav>
+	</div>
+	{% if app.request.get('_route') == 'home' %}
+
+	<div id="HomeImg">
+		<img src="{{ asset('uploads/Parallax3.jpg')}}" alt="">
+	</div>
+	{% endif %}
+	<main>
+		{% block body %}{% endblock %}
+		{% if app.request.get('_route') == 'home' %}
+		<div class="section white homeSectionPresentation">
+			<div class="row container">
+				<h2 class="header center-align">Qui sommes nous</h2>
+				<div class="homsectionPresentationText">
+					<p class="grey-text text-darken-3 lighten-3">
+						Apprendre un art en lisant de vieux livres ». Ce rêve de l’humanisme de la Renaissance, qui peut
+						choquer les sportifs et les adeptes d’arts martiaux, est pourtant le mot d’ordre d’une
+						discipline rassemblant aujourd’hui plus d’un millier de pratiquants en France et plusieurs
+						dizaines de milliers de par le monde. Cette discipline, qui s’applique à transmettre un
+						patrimoine culturel immatériel méconnu et pourtant riche de centaines de traditions différentes
+					</p>
+					</p>
+					<a href="#">en savoir plus</a>
 				</div>
-				<div class="parallax-container">
-					<div class="parallax"><img src="{{ asset('uploads/Parallax2.jpg')}}">
-					</div>
+			</div>
+		</div>
+		<div class="parallax-container">
+			<div class="parallax"><img src="{{ asset('uploads/Parallax2.jpg')}}">
+			</div>
+		</div>
+		<div class="section white homeSectionActivity">
+			<h2 class="header center-align">Les disciplines</h2>
+
+
+			<div class="col s12 carousel center carouselHome " style="height: 600px;">
+				<div class="carousel-item  " href="#one!">
+					<h5 class="center-align disciplineHomeTitle">Viking</h5>
+					<a href="/"><img class="card-rounded hoverable" src="{{asset('uploads/avatar.jpg')}}"></a>
+
+					<p class="disciplineHomeDescription ">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas
+						maxime fugit doloribus adipisci nostrum ab quam, distinctio odit autem delectus, voluptates,
+						provident eos ducimus. Aperiam cumque vero maiores aspernatur tempore. Lorem ipsum dolor sit
+						amet consecteturcsdsqdqsdqssqsqdsqdqsdqddqsdsqdsqdsqdsdqqsdqsqsdqsdsqdsdq</p>
 				</div>
-				<div class="section white homeSectionActivity">
-					<h2 class="header center-align">Les disciplines</h2>
+				<div class="carousel-item  " href="#one!">
+					<h5 class="center-align disciplineHomeTitle">Epée Bocle</h5>
+					<a href="/">
+						<img class="card-rounded hoverable" src="{{asset('uploads/avatar.jpg')}}">
+					</a>
 
 
-					<div class="col s12 carousel center carouselHome " style="height: 600px;">
-						<div class="carousel-item  " href="#one!">
-							<h5 class="center-align disciplineHomeTitle">Viking</h5>
-							<a href="/"><img class="card-rounded hoverable" src="{{asset('uploads/avatar.jpg')}}"></a>
-
-							<p class="disciplineHomeDescription ">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas maxime fugit doloribus adipisci nostrum ab quam, distinctio odit autem delectus, voluptates, provident eos ducimus. Aperiam cumque vero maiores aspernatur tempore.  Lorem ipsum dolor sit amet consecteturcsdsqdqsdqssqsqdsqdqsdqddqsdsqdsqdsqdsdqqsdqsqsdqsdsqdsdq</p>
-						</div>
-						<div class="carousel-item  " href="#one!">
-							<h5 class="center-align disciplineHomeTitle">Epée Bocle</h5>
-							<a href="/">
-								<img class="card-rounded hoverable" src="{{asset('uploads/avatar.jpg')}}">
-							</a>
+					<p class="disciplineHomeDescription">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est
+						adipisci maxime unde error dolorum possimus nostrum eligendi, deserunt officiis minima modi
+						fugiat quidem repellat dicta odio impedit, qui illum. Nostrum!</p>
+				</div>
+				<div class="carousel-item  " href="#one!">
+					<h5 class="center-align disciplineHomeTitle">Epée longue (comme ma B)
+					</h5>
+					<a href="/"><img class="card-rounded hoverable" src="{{asset('uploads/avatar.jpg')}}"></a>
+					</a>
 
 
-							<p class="disciplineHomeDescription">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est adipisci maxime unde error dolorum possimus nostrum eligendi, deserunt officiis minima modi fugiat quidem repellat dicta odio impedit, qui illum. Nostrum!</p>
-						</div>
-						<div class="carousel-item  " href="#one!">
-							<h5 class="center-align disciplineHomeTitle">Epée longue (comme ma B)
-							</h5>
-							<a href="/"><img class="card-rounded hoverable" src="{{asset('uploads/avatar.jpg')}}"></a>
-						</a>
+					<p class="disciplineHomeDescription">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure,
+						adipisci eveniet obcaecati sed odio veniam hic consequuntur deleniti nobis eos aspernatur
+						delectus, ullam quisquam provident corrupti vel quae magnam quia?</p>
 
 
-						<p class="disciplineHomeDescription">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, adipisci eveniet obcaecati sed odio veniam hic consequuntur deleniti nobis eos aspernatur delectus, ullam quisquam provident corrupti vel quae magnam quia?</p>
-
-
-					</div>
-					<div class="carousel-item  " href="#one!">
-						<h5 class="center-align disciplineHomeTitle">Le pic dans L'anus</h5>
-						<a href="/"><img class="card-rounded hoverable" src="{{asset('uploads/avatar.jpg')}}"></a>
+				</div>
+				<div class="carousel-item  " href="#one!">
+					<h5 class="center-align disciplineHomeTitle">Le pic dans L'anus</h5>
+					<a href="/"><img class="card-rounded hoverable" src="{{asset('uploads/avatar.jpg')}}"></a>
 
 					</a>
 
-					<p class="disciplineHomeDescription">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis aliquid tenetur, odio culpa pariatur nisi dolore temporibus commodi quod ea officiis saepe, nemo sint impedit. Et dicta iusto consequuntur necessitatibus.</p>
+					<p class="disciplineHomeDescription">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+						Perspiciatis aliquid tenetur, odio culpa pariatur nisi dolore temporibus commodi quod ea
+						officiis saepe, nemo sint impedit. Et dicta iusto consequuntur necessitatibus.</p>
 				</div>
 				<div class="carousel-item  " href="#one!">
 					<h5 class="center-align disciplineHomeTitle">Viking</h5>
 					<a href="/"><img class="card-rounded hoverable" src="{{asset('uploads/avatar.jpg')}}"></a>
 
-				</a>
+					</a>
 
-				<p class="disciplineHomeDescription">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus sint dolorum enim, adipisci autem laborum possimus ex excepturi beatae neque numquam, ea illum totam nesciunt voluptatibus minus rem. Distinctio, eaque!</p>
+					<p class="disciplineHomeDescription">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+						Delectus sint dolorum enim, adipisci autem laborum possimus ex excepturi beatae neque numquam,
+						ea illum totam nesciunt voluptatibus minus rem. Distinctio, eaque!</p>
+				</div>
+</body>
+
+</html>
+</div>
+</div>
+<div class="parallax-container">
+	<div class="parallax"><img src="{{ asset('uploads/Parallax3.jpg')}}"></div>
+</div>
+<div class="section white homeSectionCalendar">
+	<div class="container">
+		<div class="row ">
+			<div class="col xl4 l5 s12 ">
+				<h4 class="HomeInfoTitle center-align">
+					Actualités</h4>
+				<div class="history-tl-container">
+					<ul class="tl">
+						<li class="tl-item" ng-repeat="item in retailer_history">
+							<div class="timestamp">
+								3rd March 2015<br>
+								7:00 PM
+							</div>
+							<div class="item-title">Start from Shire</div>
+							<div class="item-detail">Don't forget the ring</div>		
+						</li>				
+						<li class="tl-item" ng-repeat="item in retailer_history">
+							<div class="timestamp">
+								19th March 2015<br>
+								3:00 PM
+							</div>
+							<div class="item-title">Kill some Orcs</div>
+							<div class="item-detail">Don't enter the caves!!</div>
+						</li>
+						<li class="tl-item" ng-repeat="item in retailer_history">
+							<div class="timestamp">
+								1st June 2015<br>
+								7:00 PM
+							</div>
+							<div class="item-title">Throw that goddamn ring
+							</div>
+							<div class="item-detail">Also, throw that Gollum too</div>
+						</li>
+
+					</ul>
+				</div>
 			</div>
-		</body>
-	</html>
-</div></div><div class="parallax-container">
-<div class="parallax"><img src="{{ asset('uploads/Parallax3.jpg')}}"></div></div><div class="section white homeSectionCalendar">
-<div class="container">
-	<div class="row ">
-		<div class="col xl4 l5 s12 ">
-			<h4 class="HomeInfoTitle center-align">
-				Actualités</h4>
-			<div class="history-tl-container">
-				<ul class="tl">
-					<li class="tl-item" ng-repeat="item in retailer_history">
-						<div class="timestamp">
-							3rd March 2015<br>
-							7:00 PM
-						</div>
-						<div class="item-title">Start from Shire</div>
-						<div class="item-detail">Don't forget the ring</div>
-					</li>
-					<li class="tl-item" ng-repeat="item in retailer_history">
-						<div class="timestamp">
-							19th March 2015<br>
-							3:00 PM
-						</div>
-						<div class="item-title">Kill some Orcs</div>
-						<div class="item-detail">Don't enter the caves!!</div>
-					</li>
-					<li class="tl-item" ng-repeat="item in retailer_history">
-						<div class="timestamp">
-							1st June 2015<br>
-							7:00 PM
-						</div>
-						<div class="item-title">Throw that goddamn ring
-						</div>
-						<div class="item-detail">Also, throw that Gollum too</div>
-					</li>
+			<div class="col xl8 l7 s12">
 
-				</ul>
-			</div>
-		</div>
-		<div class="col xl8 l7 s12">
+				<h4 class="HomeInfoTitle center-align">
+					Informations pratiques</h4>
+				<div class="row">
+					<div class="col xl6 l7 m7 s12 informationFooterLeft">
+						<h6>Horaires:</h6>
+			             <p>lundi:  20h30-22h30</p>	
+						 <p>jeudi:  20h30-22h30</p>	
+						<div class="row">
+						<div class="divider"></div>
+							<div class="col xl12 l12 m12 s12">
 
-			<h4 class="HomeInfoTitle center-align">
-				Informations pratiques</h4>
-			<div class="row">
-				<div class="col xl6 l6 m6 s12">
-					Horaires
-					lundi 20h30-22h30
-					jeudi 20h30-22h30
+							<h6>Adresse:</h6>	
+							<p>Rue des Droits de l'Homme</p> 
+							<p>44550 Saint-Malo-de-Guersac</p> 
+							 <div class="divider"></div>
+							 <h6>GPS :</h6>
+							<p> 47.354104, -2.179935</p>
+
+							</div>
+						</div>
+					</div>
+					<div class="col xl6 l5 m5 s12 informationFooterRight ">
+						<img src="{{ asset('uploads/complexeSaintMaloGuerssac.jpg')}}" alt="">
+					</div>
 
 				</div>
-				<div class="col xl6 l6 m6 s12"></div>
-				Adresse
-				Rue des Droits de l'Homme, 44550 Saint-Malo-de-Guersac
-				GPS : 47.354104, -2.179935
+
 			</div>
-<div class="col xl6 l6 s12">
-<img src="{{ asset('uploads/complexeSaintMaloGuerssac.jpg')}}" alt="">
-
-
-
-</div>
-<div class="col xl6 l6 s12">
-<img src="{{ asset('uploads/complexeSaintMaloGuerssac.jpg')}}" alt="">
-
-
-</div>
-</div>
-
 		</div>
 	</div>
-</div></div></main>{% endif %}<footer class="page-footer"><div class="container"><div class="row">
-<div class="col l6 s12">
-	<h5 class="white-text">
-		content</h5>
-	<p class="grey-text text-lighten-4">
-		can use rows and columns here to organize your footer content.</p>
 </div>
-<div class="col l4 offset-l2 s12">
-	<h5 class="white-text">>
-		<ul>
-			<li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-			<li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-			<li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-			<li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
-		</ul>
+</div>
+</main>{% endif %}<footer class="page-footer">
+	<div class="container">
+		<div class="row">
+			<div class="col l6 s12">
+				<h5 class="white-text">
+					content</h5>
+				<p class="grey-text text-lighten-4">
+					can use rows and columns here to organize your footer content.</p>
+			</div>
+			<div class="col l4 offset-l2 s12">
+				<h5 class="white-text">>
+					<ul>
+						<li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+						<li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+						<li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+						<li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+					</ul>
+			</div>
+		</div>
 	</div>
-</div></div><div class="footer-copyright">
-<div class="container">
-	2020 Gwendal Bescont
-	<a class="grey-text text-lighten-4 right" href="">plus d'infos</a>
-</div></div></footer>{% block javascripts %}<!--Import jQuery before materialize.js--><script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script><script type="text/javascript" src="{{ asset('js/bin/materialize.js') }}"></script>{% endblock %}</body></html>
+	<div class="footer-copyright">
+		<div class="container">
+			2020 Gwendal Bescont
+			<a class="grey-text text-lighten-4 right" href="">plus d'infos</a>
+		</div>
+	</div>
+</footer>{% block javascripts %}
+<!--Import jQuery before materialize.js-->
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+<script type="text/javascript" src="{{ asset('js/bin/materialize.js') }}"></script>{% endblock %}</body>
+
+</html>

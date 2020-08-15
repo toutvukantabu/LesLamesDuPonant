@@ -9424,11 +9424,7 @@ main {
           flex: 1 0 auto;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5 {
+h1, h2, h3, h4, h5, h6 {
   font-family: fantasy, sans-serif;
 }
 
@@ -9499,15 +9495,19 @@ nav li a:hover {
   *================
   */
 .homeSectionPresentation {
-  min-height: 400px;
+  min-height: 350px;
+}
+
+.homeSectionPresentation h2 {
+  margin-bottom: 50px;
 }
 
 .homsectionPresentationText {
   border: 1px solid rgba(199, 195, 195, 0.418);
   border-radius: 10px;
-  padding: 30px;
+  padding: 20px;
   margin-bottom: 10px;
-  max-width: 70%;
+  max-width: 700px;
   margin: 0 auto;
   -webkit-box-shadow: 0px 0px 50px 6px rgba(176, 167, 176, 0.94);
   box-shadow: 0px 0px 50px 6px rgba(176, 167, 176, 0.94);
@@ -9515,7 +9515,6 @@ nav li a:hover {
 
 .homsectionPresentationText p {
   text-align: justify;
-  font-size: 19px;
 }
 
 /* Home Parallax
@@ -9532,9 +9531,12 @@ nav li a:hover {
   box-shadow: inset 0px 0px 50px 12px rgba(14, 13, 14, 0.94);
 }
 
-.homeSectionActivity,
+.homeSectionActivity {
+  max-height: 640px;
+}
+
 .homeSectionCalendar {
-  height: 680px;
+  max-height: 490px;
 }
 
 /* Home Dicipline/Activity
@@ -9614,7 +9616,7 @@ nav li a:hover {
 }
 
 .history-tl-container ul.tl {
-  margin: 20px -50px 20px 0;
+  margin: 3px -50px 20px 0;
   padding: 0;
   display: inline-block;
 }
@@ -9673,6 +9675,27 @@ ul.tl li .timestamp {
   left: -95%;
   text-align: right;
   font-size: 14px;
+}
+
+.informationFooterLeft {
+  text-align: center;
+  margin-top: -3px;
+}
+
+.informationFooterLeft .divider {
+  margin: 0 auto;
+  width: 100px;
+}
+
+.informationFooterRight {
+  margin-top: 9px;
+  text-align: center;
+}
+
+.informationFooterRight img {
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 0px 50px 6px rgba(176, 167, 176, 0.94);
+  box-shadow: 0px 0px 50px 6px rgba(176, 167, 176, 0.94);
 }
 
 /* Form login, register, password,
