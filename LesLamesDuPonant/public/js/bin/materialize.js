@@ -10062,13 +10062,17 @@ $(document).ready(function(){
 
  //Carousel Home
 $(document).ready(function () {
+
   $(".carouselHome").carousel({
     dist: 0,
     padding:1000,
     indicators: false,
     numVisible: 4,
-
   });
+  window.setInterval(function () { $('.carouselHome').carousel('next') }, 9000)
+  
 });
-    
-    
+
+
+
+   
