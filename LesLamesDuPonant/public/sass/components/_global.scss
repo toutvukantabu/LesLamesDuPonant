@@ -8,9 +8,9 @@ html {
 }
 
 body {
-  // display: flex;
-  // min-height: 100vh;
-  // flex-direction: column;
+  display: flex;
+   min-height: 100vh;
+   flex-direction: column;
 }
 
 main {
@@ -348,7 +348,6 @@ ul.staggered-list li {
     align-items: center;
     padding: 10px 0px;
     color: $footer-copyright-font-color;
-    background-color: $footer-copyright-bg-color;
     @extend .light;
   }
 }
