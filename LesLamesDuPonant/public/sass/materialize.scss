@@ -139,16 +139,25 @@ h4 {
   background-color: rgba(12, 12, 136, 0.424);
   position: fixed;
   top: 0;
+  z-index: 1000;
 }
 
 nav {
   transition: top 0.2s linear;
   -webkit-transition: 0.2s;
   background-color: rgba(12, 12, 136, 0.918);
+  z-index: 1000;
+
   li a:hover {
     background-color: rgba(75, 123, 212, 0.424);
     transition-duration: 420ms;
   }
+}
+
+.side-nav {
+
+  z-index: 10000;
+
 }
 
 /* User-Nav Profil left
@@ -158,6 +167,7 @@ nav {
 .background img {
   opacity: 0.8;
 }
+
 //HOME PAGE
 //*****************************************
 
@@ -166,6 +176,7 @@ nav {
   */
 #HomeTitle {
   text-align: center;
+
   img {
     height: 250px;
     width: 315px;
@@ -179,6 +190,7 @@ nav {
   */
 #HomeImg {
   margin-bottom: -7px;
+
   img {
     max-height: 80vh;
     width: 100%;
@@ -190,8 +202,9 @@ nav {
   */
 .homeSectionPresentation {
   min-height: 350px;
-  h2{
-margin-bottom:50px;
+
+  h2 {
+    margin-bottom: 50px;
 
   }
 }
@@ -201,15 +214,15 @@ margin-bottom:50px;
   border-radius: 10px;
   padding: 20px;
   margin-bottom: 10px;
-max-width: 700px;
-margin:0 auto;
+  max-width: 700px;
+  margin: 0 auto;
   -webkit-box-shadow: 0px 0px 50px 6px rgba(176, 167, 176, 0.94);
   -moz-box-shadow: 0px 0px 50px 6px rgba(176, 167, 176, 0.94);
   box-shadow: 0px 0px 50px 6px rgba(176, 167, 176, 0.94);
 
   p {
     text-align: justify;
-  
+
   }
 }
 
@@ -218,7 +231,7 @@ margin:0 auto;
   */
 
 .homeSectionPresentation,
-.homeSectionActivity{
+.homeSectionActivity {
   min-height: 480px;
   background-image: url(../uploads/Background/sectionHome.jpg);
   background-position: center;
@@ -229,13 +242,14 @@ margin:0 auto;
   box-shadow: inset 0px 0px 50px 12px rgba(14, 13, 14, 0.94);
 }
 
-.homeSectionActivity{
- max-height: 640px;
+.homeSectionActivity {
+  max-height: 640px;
 }
 
-.homeSectionCalendar{
-max-height: 490px;
+.homeSectionCalendar {
+  max-height: 490px;
 }
+
 /* Home Dicipline/Activity
   *================
   */
@@ -251,7 +265,7 @@ max-height: 490px;
   margin-top: -88px;
   width: 300px;
   margin-left: -50px;
-      margin-bottom: -54px;
+  margin-bottom: -54px;
 
   &:after {
     display: block;
@@ -302,14 +316,14 @@ max-height: 490px;
 
 //FOOTER
 //****************************************
-
 /*  Home timeline/Agenda/Info
   *================
   */
-.HomeInfoTitle{
+.HomeInfoTitle {
 
   margin-bottom: 50px;
 }
+
 .history-tl-container {
   margin: auto;
   display: block;
@@ -334,9 +348,7 @@ max-height: 490px;
   position: relative;
 }
 
-.history-tl-container ul.tl li:last-child {
-  border-left: 0;
-}
+
 
 .history-tl-container ul.tl li::before {
   position: absolute;
@@ -364,7 +376,7 @@ ul.tl li .item-detail {
 
 ul.tl li .item-title {
   text-align: left;
-  font-size: 18px;
+  font-size: 15px;
   max-width: 150px;
 }
 
@@ -380,33 +392,69 @@ ul.tl li .timestamp {
 // Information
 //========================
 
-.informationFooterLeft{
-text-align: center;
-margin-top: -3px;
+.informationFooterLeft {
+  text-align: center;
+  margin-top: -3px;
 
-.divider{
-margin: 0 auto;
-width:100px;
-}
+  .divider {
+    margin: 0 auto;
+    width: 100px;
+  }
 }
 
 .informationFooterRight {
-    margin-top: 9px;
-    text-align: center;
+  margin-top: 9px;
+  text-align: center;
 
-  img{
-border-radius: 10px;
--webkit-box-shadow: 0px 0px 50px 6px rgba(176, 167, 176, 0.94);
--moz-box-shadow: 0px 0px 50px 6px rgba(176, 167, 176, 0.94);
-box-shadow: 0px 0px 50px 6px rgba(176, 167, 176, 0.94);
+  img {
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 0px 50px 6px rgba(176, 167, 176, 0.94);
+    -moz-box-shadow: 0px 0px 50px 6px rgba(176, 167, 176, 0.94);
+    box-shadow: 0px 0px 50px 6px rgba(176, 167, 176, 0.94);
 
   }
 }
 
+//PAGE FOOTER
+//************************
+.footerLameDuPonantLeft{
+  border-right: 1px solid #fff;
+  border-right-width: unset;
 
+  h5{
+    text-align: center;
+  }
+  i{
+  display: block;
+margin-top: 14px;
+text-align: left;
+}
+p{
+margin-left: 40%;
+margin-top: 20px;
+min-width: 103px;
 
+}
+}
 
+.footerLameDuPonantCenter{
+h5{
+  text-align: center;
+}
+img{
+  display: block;
+  height: 130px;
+  width: 130px;
+  border-radius: 500%;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+}
+.page-footer{
+  background-color: #202092;
 
+}
 
 /* Form login, register, password,
   *================
