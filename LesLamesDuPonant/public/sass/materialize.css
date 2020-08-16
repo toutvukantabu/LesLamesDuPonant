@@ -9444,6 +9444,7 @@ h4:after {
   background-color: rgba(12, 12, 136, 0.424);
   position: fixed;
   top: 0;
+  z-index: 1000;
 }
 
 nav {
@@ -9451,12 +9452,17 @@ nav {
   transition: top 0.2s linear;
   -webkit-transition: 0.2s;
   background-color: rgba(12, 12, 136, 0.918);
+  z-index: 1000;
 }
 
 nav li a:hover {
   background-color: rgba(75, 123, 212, 0.424);
   -webkit-transition-duration: 420ms;
           transition-duration: 420ms;
+}
+
+.side-nav {
+  z-index: 10000;
 }
 
 /* User-Nav Profil left
@@ -9632,10 +9638,6 @@ nav li a:hover {
   position: relative;
 }
 
-.history-tl-container ul.tl li:last-child {
-  border-left: 0;
-}
-
 .history-tl-container ul.tl li::before {
   position: absolute;
   left: -11px;
@@ -9664,7 +9666,7 @@ ul.tl li .item-detail {
 
 ul.tl li .item-title {
   text-align: left;
-  font-size: 18px;
+  font-size: 15px;
   max-width: 150px;
 }
 
@@ -9696,6 +9698,45 @@ ul.tl li .timestamp {
   border-radius: 10px;
   -webkit-box-shadow: 0px 0px 50px 6px rgba(176, 167, 176, 0.94);
   box-shadow: 0px 0px 50px 6px rgba(176, 167, 176, 0.94);
+}
+
+.footerLameDuPonantLeft {
+  border-right: 1px solid #fff;
+  border-right-width: unset;
+}
+
+.footerLameDuPonantLeft h5 {
+  text-align: center;
+}
+
+.footerLameDuPonantLeft i {
+  display: block;
+  margin-top: 14px;
+  text-align: left;
+}
+
+.footerLameDuPonantLeft p {
+  margin-left: 40%;
+  margin-top: 20px;
+  min-width: 103px;
+}
+
+.footerLameDuPonantCenter h5 {
+  text-align: center;
+}
+
+.footerLameDuPonantCenter img {
+  display: block;
+  height: 130px;
+  width: 130px;
+  border-radius: 500%;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.page-footer {
+  background-color: #202092;
 }
 
 /* Form login, register, password,

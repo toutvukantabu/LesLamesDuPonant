@@ -10073,6 +10073,19 @@ $(document).ready(function () {
   
 });
 
+//classBody
 
+window.location.href1 = 'http://127.0.0.1:8000/login';
+if (window.location.href1 == 'http://127.0.0.1:8000/login') {
+  document.querySelectorAll('#Body').forEach(function(ele, idx) {
+    ele.classList.add('newClass');
+  });
+};
+window.location.href1 = 'http://127.0.0.1:8000/login';
+if (window.location.href1 == 'http://127.0.0.1:8000/login') {
+  document.querySelectorAll('#Body').forEach(function(ele, idx) {
+    ele.classList.add('newClass');
+  });
+};
 
    
