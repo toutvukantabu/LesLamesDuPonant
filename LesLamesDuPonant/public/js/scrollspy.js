@@ -235,4 +235,8 @@
 		return $.scrollSpy($(this), options);
 	};
 
-})(jQuery);
+});
+
+$(document).ready(function(){
+    $('.scrollspy').scrollSpy();
+  });

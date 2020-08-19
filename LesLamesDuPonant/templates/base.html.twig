@@ -11,6 +11,7 @@
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<!--Import materialize.css-->
 	<link type="text/css" rel="stylesheet" href="{{ asset('sass/materialize.css') }}" media="screen,projection" />
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css">
 	{% block stylesheets %}{% endblock %}
 </head>
 
@@ -40,14 +41,10 @@
 				{% if is_granted('IS_AUTHENTICATED_FULLY') and app.user.pseudoUser != NULL %}
 				<span class="white-text name">Bonjour
 					{{app.user.pseudoUser}}</span>
-
 				{% elseif is_granted('IS_AUTHENTICATED_FULLY') and app.user.pseudoUser == NULL%}
 				<span class="white-text name">Bonjour "Illustre inconnu n°{{app.user.id}}"
-
 					{% else %}
 					<span class="white-text name">Bonjour "Illustre inconnu "
-
-
 					</span>
 					{% endif %}
 					{% if is_granted('IS_AUTHENTICATED_FULLY') %}
@@ -136,7 +133,7 @@
 					<li>
 						<a href="{{path('home')}}">Forum</a>
 					</li>
-					{% if is_granted('Role_Administrateur')%}
+					{% if is_granted('Role_Administrateur') or is_granted('Role_Super_Administrateur') %}
 
 					<a href="#">Administration</a>
 					{% endif %}
@@ -171,13 +168,11 @@
 						<a href="{{path('app_register')}}">s'enregistrer</a>
 					</li>
 					{% endif %}
-
 				</ul>
 			</div>
 		</nav>
 	</div>
 	{% if app.request.get('_route') == 'home' %}
-
 	<div id="HomeImg">
 		<img src="{{ asset('uploads/Parallax3.jpg')}}" alt="">
 	</div>
@@ -207,53 +202,20 @@
 		</div>
 		<div class="section white homeSectionActivity">
 			<h2 class="header center-align">Les disciplines</h2>
-
-
 			<div class="col s12 carousel center carouselHome " style="height: 600px;">
-				<div class="carousel-item  " href="#one!">
-					<h5 class="center-align disciplineHomeTitle">Viking</h5>
+				{% for home_discipline in home_disciplines %}
+				<div class="carousel-item">
+					<h5 class="center-align disciplineHomeTitle">{{ home_discipline.nameDiscipline }}</h5>
+					{% if home_discipline.imageHomeDiscipline != NULL %}
+					<a href="{{ path('home_discipline_show', {'id': home_discipline.id}) }}"><img
+							class="card-rounded hoverable" src="{{ home_discipline.imageHomeDiscipline }}"></a>
+					{% else %}
 					<a href="/"><img class="card-rounded hoverable" src="{{asset('uploads/avatar.jpg')}}"></a>
-
-					<p class="disciplineHomeDescription ">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas
-						maxime fugit doloribus adipisci nostrum ab quam, distinctio odit autem delectus, voluptates,
-						provident eos ducimus. Aperiam cumque vero maiores aspernatur tempore. Lorem ipsum dolor sit
-						amet consecteturcsdsqdqsdqssqsqdsqdqsdqddqsdsqdsqdsqdsdqqsdqsqsdqsdsqdsdq</p>
-				</div>
-				<div class="carousel-item  " href="#one!">
-					<h5 class="center-align disciplineHomeTitle">Epée Bocle</h5>
-					<a href="/">
-						<img class="card-rounded hoverable" src="{{asset('uploads/avatar.jpg')}}">
-					</a>
-
-
-					<p class="disciplineHomeDescription">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est
-						adipisci maxime unde error dolorum possimus nostrum eligendi, deserunt officiis minima modi
-						fugiat quidem repellat dicta odio impedit, qui illum. Nostrum!</p>
-				</div>
-				<div class="carousel-item  " href="#one!">
-					<h5 class="center-align disciplineHomeTitle">Epée longue (comme ma B)
-					</h5>
-					<a href="/"><img class="card-rounded hoverable" src="{{asset('uploads/avatar.jpg')}}"></a>
-					</a>
-
-
-					<p class="disciplineHomeDescription">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure,
-						delectus, ullam quisquam provident corrupti vel quae magnam quia?</p>
-				</div>
-				<div class="carousel-item  " href="#one!">
-					<h5 class="center-align disciplineHomeTitle">Le pic dans L'anus</h5>
-					<a href="/"><img class="card-rounded hoverable" src="{{asset('uploads/avatar.jpg')}}"></a>
-					</a>
-					<p class="disciplineHomeDescription">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-						erspiciatis aliquid tenetur, odio culpa pariatur nisi dolore temporibus commodi quod e officiis
-						saepe, nemo sint impedit. Et dicta iusto consequuntur necessitatibus.</p>
-				</div>
-				<div class="carousel-item  " href="#one!">
-					<h5 class="center-align disciplineHomeTitle">Viking</h5>
-					<a href="/"><img class="card-rounded hoverable" src="{{asset('uploads/avatar.jpg')}}"></a>
-					</a>
-					<p class="disciplineHomeDescription">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-						ea illum totam nesciunt voluptatibus minus rem. Distinctio, eaque!</p>
+				
+					<p class="disciplineHomeDescription ">
+						{{ home_discipline.descriptionDiscipline }}</p>
+						{% endif %}
+						{% endfor %}
 				</div>
 			</div>
 		</div>
@@ -267,16 +229,15 @@
 						<h4 class="HomeInfoTitle center-align">
 							Actualités</h4>
 						<div class="history-tl-container">
-							<ul class="tl">{% for timeStamp in timestamp %}
-								
-							
+							<ul class="tl">
+								{% for time_stamp in time_stamp %}
 								<li class="tl-item" ng-repeat="item in retailer_history">
 									<div class="timestamp">
-										3rd March 2015<br>
-										7:00 PM
+										{{ time_stamp.dateTimeStamp ? time_stamp.dateTimeStamp|date('d-m-Y') : '' }}<br>
+										{{ time_stamp.hourTimeStamp ? time_stamp.hourTimeStamp|date('H:i:s') : '' }}
 									</div>
-									<div class="item-title">Start from Shire</div>
-									<div class="item-detail">Don't forget the ring</div>
+									<div class="item-title">{{ time_stamp.titleTimeStamp }}</div>
+									<div class="item-detail">{{ time_stamp.descriptionTimeStamp }}</div>
 								</li>
 								{% endfor %}
 							</ul>
@@ -312,7 +273,7 @@
 				</div>
 			</div>
 		</div>
-			{% endif %}
+		{% endif %}
 	</main>
 
 	<footer class="page-footer">
@@ -341,19 +302,28 @@
 				</div>
 				<div class="col  xl4 l4  s12  footerLameDuPonantCenter">
 					<h5>La Féderation Française des AMHE</h5>
-					<a href="https://www.ffamhe.fr"><img class="rounded" src="{{ asset('uploads/logo_FFAMHE.png')}}" alt=""></a>
+					<a href="https://www.ffamhe.fr"><img class="rounded" src="{{ asset('uploads/logo_FFAMHE.png')}}"
+							alt=""></a>
 
 				</div>
 				<div class="col  xl4 l4  s12  footerLameDuPonantRight">
-				<h5>Règles</h5>
-				<a href=""><span>Condition Génerale d'utilisation</span></a>
-				<a href=""><span>Cookies</span></a>
-				<a href=""><span>F.A.Q</span></a>
+					<h5>Règles</h5>
+					<a href="">
+						<span>Condition Génerale d'utilisation</span>
+					</a>
+					<a href="">
+						<span>Cookies</span>
+					</a>
+					<a href="">
+						<span>F.A.Q</span>
+					</a>
 				</div>
 			</div>
 		</div>
 		<div class="footer-copyright footerCopyright">
-			<div class="container"> 2020 Les Lames Du Ponant. Tous droits réservés.<a class="grey-text text-lighten-4 right" href="">Crée par un p'tit Breton</a>
+			<div class="container">
+				2020 Les Lames Du Ponant. Tous droits réservés.<a class="grey-text text-lighten-4 right" href="">Crée
+					par un p'tit Breton</a>
 			</div>
 		</div>
 	</footer>
@@ -361,8 +331,11 @@
 	{% block javascripts %}
 	<!--Import jQuery before materialize.js-->
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js">
+	</script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
 	<script type="text/javascript" src="{{ asset('js/bin/materialize.js') }}"></script>
 	{% endblock %}
 </body>
+
 </html>
