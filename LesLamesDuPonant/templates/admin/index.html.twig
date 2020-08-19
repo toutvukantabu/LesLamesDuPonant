@@ -1,0 +1,178 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AdminController!
+{% endblock %}
+
+{% block body %}
+<div class="container">
+  <div class="row">
+    <div class="col s11 m8 l9 xl10">
+      <div id="User" class="section scrollspy">
+        <h4 class="center-align">table des utilisateurs</h4>
+ 
+          <table class="table tableAdmin display" data-order='[[ 1, "asc" ]]' data-page-length='25' 
+            id="myTable">
+            <thead>
+              <tr>
+                <th>Id</th>
+                <th>Email</th>
+                <th>Roles</th>
+                <th>Pseudo utilisateur</th>
+                <th>Code postale</th>
+                <th>action</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for user in user %}
+              <tr>
+                <td>{{ user.id }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
+                <td>{{ user.pseudoUser }}</td>
+                <td>{{ user.postalCodeUser }}</td>
+                <td>
+                  <a href="{{ path('user_show', {'id': user.id}) }}">show</a>
+                  <a href="{{ path('user_edit', {'id': user.id}) }}">edit</a>
+                </td>
+              </tr>
+              {% else %}
+              <tr>
+                <td colspan="14">no records found</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+       
+
+        <div id="message" class="section scrollspy">
+        <h4 class="center-align">Messagerie</h4>
+            <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Auteur du message</th>
+                <th>Nom de famille de l'auteur</th>
+                <th>contenu du message</th>
+                <th>Email</th>
+                <th>Date du message</th>
+                <th>action</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for contact_message in contact_messages %}
+            <tr>
+                <td>{{ contact_message.id }}</td>
+                <td>{{ contact_message.authorNameContactMessage }}</td>
+                <td>{{ contact_message.authorLastNamecContactMessage }}</td>
+                <td>{{ contact_message.contentContactMessage }}</td>
+                <td>{{ contact_message.emailContactMessage }}</td>
+                <td>{{ contact_message.dateContactMessage ? contact_message.dateContactMessage|date('Y-m-d H:i:s') : '' }}</td>
+                <td>
+                    <a href="{{ path('contact_message_show', {'id': contact_message.id}) }}">show</a>
+                    <a href="{{ path('contact_message_edit', {'id': contact_message.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+        </div>
+        <div id="discipline" class="section scrollspy">
+        <h4 class="center-align">Disciplines page d'accueil</h4>
+          <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom de la discipline</th>
+                <th>image</th>
+                <th>description</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for home_discipline in home_disciplines %}
+            <tr>
+                <td>{{ home_discipline.id }}</td>
+                <td>{{ home_discipline.nameDiscipline }}</td>
+                <td>{{ home_discipline.imageHomeDiscipline }}</td>
+                <td>{{ home_discipline.descriptionDiscipline }}</td>
+                <td>
+                    <a href="{{ path('home_discipline_show', {'id': home_discipline.id}) }}">show</a>
+                    <a href="{{ path('home_discipline_edit', {'id': home_discipline.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+     <a href="{{ path('home_discipline_new') }}">Créer une nouvelle discipline</a>
+        </div>
+
+        <div id="agenda" class="section scrollspy">
+          <table class="table tableAdmin display" id="myTable2">
+            <h4 class="center-align">Agenda</h4>
+
+            <thead>
+              <tr>
+                <th>Id</th>
+                <th>titre de l'évenement</th>
+                <th>déscription de l'évenement</th>
+                <th>date de l'évenement</th>
+                <th>heure de l'évènement</th>
+                <th>action</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for time_stamp in time_stamps %}
+              <tr>
+                <td>{{ time_stamp.id }}</td>
+                <td>{{ time_stamp.titleTimeStamp }}</td>
+                <td>{{ time_stamp.descriptionTimeStamp }}</td>
+                <td>{{ time_stamp.dateTimeStamp ? time_stamp.dateTimeStamp|date('Y-m-d') : '' }}</td>
+                <td>{{ time_stamp.hourTimeStamp ? time_stamp.hourTimeStamp|date('H:i:s') : '' }}</td>
+                <td>
+                  <a href="{{ path('time_stamp_show', {'id': time_stamp.id}) }}">show</a>
+                  <a href="{{ path('time_stamp_edit', {'id': time_stamp.id}) }}">edit</a>
+                </td>
+              </tr>
+              {% else %}
+              <tr>
+                <td colspan="6">no records found</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+        <a href="{{ path('time_stamp_new') }}">Créer un nouvel évenement</a>
+      </div>
+    </div>
+    <div class="col hide-on-small-only m3 l2">
+      <ul class="section table-of-contents fixed">
+        <h6 class="center-align">Membres du site</h6>
+        <li>
+          <a href="#User">édition des utilisateurs</a>
+        </li>
+        <div class="divider"></div>
+        <h6 class="center-align">Messagerie</h6>
+        <li>
+          <a href="#message">messages</a>
+        </li>
+        <div class="divider"></div>
+        <h6 class="center-align">Page d'accueil</h6>
+        <li>
+          <a href="#disciplines">édition des disciplines</a>
+        </li>
+        <li>
+          <a href="#agenda">Agenda/évenement</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+{% endblock %}
