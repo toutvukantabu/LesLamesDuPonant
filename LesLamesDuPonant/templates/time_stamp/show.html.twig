@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}TimeStamp{% endblock %}
+
+{% block body %}
+    <h1>TimeStamp</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ time_stamp.id }}</td>
+            </tr>
+            <tr>
+                <th>TitleTimeStamp</th>
+                <td>{{ time_stamp.titleTimeStamp }}</td>
+            </tr>
+            <tr>
+                <th>DescriptionTimeStamp</th>
+                <td>{{ time_stamp.descriptionTimeStamp }}</td>
+            </tr>
+            <tr>
+                <th>DateTimeStamp</th>
+                <td>{{ time_stamp.dateTimeStamp ? time_stamp.dateTimeStamp|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>HourTimeStamp</th>
+                <td>{{ time_stamp.hourTimeStamp ? time_stamp.hourTimeStamp|date('H:i:s') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('time_stamp_index') }}">back to list</a>
+
+    <a href="{{ path('time_stamp_edit', {'id': time_stamp.id}) }}">edit</a>
+
+    {{ include('time_stamp/_delete_form.html.twig') }}
+{% endblock %}
