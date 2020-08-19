@@ -210,15 +210,14 @@ nav {
 }
 
 .homsectionPresentationText {
-  border: 1px solid rgba(199, 195, 195, 0.418);
+
   border-radius: 10px;
   padding: 20px;
   margin-bottom: 10px;
   max-width: 700px;
   margin: 0 auto;
-  -webkit-box-shadow: 0px 0px 50px 6px rgba(176, 167, 176, 0.94);
-  -moz-box-shadow: 0px 0px 50px 6px rgba(176, 167, 176, 0.94);
-  box-shadow: 0px 0px 50px 6px rgba(176, 167, 176, 0.94);
+  
+
 
   p {
     text-align: justify;
@@ -436,10 +435,14 @@ margin-top: 14px;
 text-align: left;
 margin-left: 11px;
 }
+i:hover{
+  color: #fff;
+}
 p{
 margin-left: 27%;
 margin-top: 20px;
 min-width: 103px;
+font-size: 19px;
 
 }
 }
@@ -454,7 +457,7 @@ img{
   width: 130px;
   border-radius: 500%;
   text-align: center;
-  margin: 20px auto 21px auto;
+  margin: 44px auto 21px auto;
  
 }
 }
@@ -483,8 +486,8 @@ margin-top: 20px;
 .formRegister,
 .formLogin,
 .formReset {
-  margin-top: 100px;
-  margin-bottom: 100px;
+  margin-top: 150px;
+  margin-bottom: 150px;
   border-radius: 10px;
   padding: 20px;
 
