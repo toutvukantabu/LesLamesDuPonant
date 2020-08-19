@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}TimeStamp index{% endblock %}
+
+{% block body %}
+    <h1>TimeStamp index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>TitleTimeStamp</th>
+                <th>DescriptionTimeStamp</th>
+                <th>DateTimeStamp</th>
+                <th>HourTimeStamp</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for time_stamp in time_stamps %}
+            <tr>
+                <td>{{ time_stamp.id }}</td>
+                <td>{{ time_stamp.titleTimeStamp }}</td>
+                <td>{{ time_stamp.descriptionTimeStamp }}</td>
+                <td>{{ time_stamp.dateTimeStamp ? time_stamp.dateTimeStamp|date('Y-m-d') : '' }}</td>
+                <td>{{ time_stamp.hourTimeStamp ? time_stamp.hourTimeStamp|date('H:i:s') : '' }}</td>
+                <td>
+                    <a href="{{ path('time_stamp_show', {'id': time_stamp.id}) }}">show</a>
+                    <a href="{{ path('time_stamp_edit', {'id': time_stamp.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('time_stamp_new') }}">Create new</a>
+{% endblock %}
