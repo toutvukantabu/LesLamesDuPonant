@@ -133,9 +133,10 @@
 					<li>
 						<a href="{{path('home')}}">Forum</a>
 					</li>
-					{% if is_granted('Role_Administrateur') or is_granted('Role_Super_Administrateur') %}
-
-					<a href="#">Administration</a>
+					{% if is_granted('ROLE_ADMIN') or is_granted('Role_Super_Administrateur') %}
+<li>
+					<a href="{{path('admin')}}">Administration</a>
+					</li>
 					{% endif %}
 				</ul>
 				<ul class="right hide-on-med-and-down">
