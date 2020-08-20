@@ -10095,10 +10095,3 @@ if (window.location.href1 == 'http://127.0.0.1:8000/login') {
     $('#myTable2').DataTable();
 
 } );
-$(document).ready(function(){
-  $('.scrollspy').scrollSpy({
-    scrollOffset:400
-
-  });
-  
-});
