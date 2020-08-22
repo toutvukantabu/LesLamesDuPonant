@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit AMHE{% endblock %}
+
+{% block body %}
+    <h1>Edit AMHE</h1>
+
+    {{ include('amhe/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('amhe_index') }}">back to list</a>
+
+    {{ include('amhe/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit User{% endblock %}
+{% block title 'edition du profil'%}
 
 {% block body %}
 
@@ -9,9 +9,9 @@
 <div class="container">
 	<div class="row formRegister z-depth-5">
     <h3 class="center-align">édition des utilisateurs</h3>
-    {{ include('user/_form.html.twig', {'button_label': 'Update'}) }}
+    {{ include('user/_form.html.twig', {'button_label': 'Maj Profil'}) }}
 
-    <a href="{{ path('user_index') }}">back to list</a>
+    <a href="{{ path('user_index') }}">retour à la liste</a>
 
     {{ include('user/_delete_form.html.twig') }}
 

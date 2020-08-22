@@ -82,7 +82,12 @@
     </parameter>
     <parameter key="kernel.charset">UTF-8</parameter>
     <parameter key="kernel.container_class">App_KernelDevDebugContainer</parameter>
-    <parameter key="photos_directory">C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant/public/uploads/photos</parameter>
+    <parameter key="avatar_directory">C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant/public/uploads/avatar</parameter>
+    <parameter key="amhe_directory">C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant/public/uploads/amhe</parameter>
+    <parameter key="discipline_directory">C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant/public/uploads/discipline</parameter>
+    <parameter key="forum_directory">C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant/public/uploads/forum</parameter>
+    <parameter key="parallax_directory">C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant/public/uploads/parallax</parameter>
+    <parameter key="other_directory">C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant/public/uploads/other</parameter>
     <parameter key="event_dispatcher.event_aliases" type="collection">
       <parameter key="Symfony\Component\Console\Event\ConsoleCommandEvent">console.command</parameter>
       <parameter key="Symfony\Component\Console\Event\ConsoleErrorEvent">console.error</parameter>
@@ -338,6 +343,13 @@
       <tag name="controller.service_arguments"/>
       <tag name="routing.route_loader"/>
     </service>
+    <service id="App\Controller\AMHEController" class="App\Controller\AMHEController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.g9CqTPp.App\Controller\AMHEController"/>
+      </call>
+    </service>
     <service id="App\Controller\AdminController" class="App\Controller\AdminController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -378,6 +390,27 @@
       <tag name="container.service_subscriber"/>
       <call method="setContainer">
         <argument type="service" id=".service_locator.g9CqTPp.App\Controller\HomeSectionForumController"/>
+      </call>
+    </service>
+    <service id="App\Controller\LesAMHEController" class="App\Controller\LesAMHEController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.g9CqTPp.App\Controller\LesAMHEController"/>
+      </call>
+    </service>
+    <service id="App\Controller\LesLamesDuPonantController" class="App\Controller\LesLamesDuPonantController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.g9CqTPp.App\Controller\LesLamesDuPonantController"/>
+      </call>
+    </service>
+    <service id="App\Controller\MedievalFamilyController" class="App\Controller\MedievalFamilyController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.g9CqTPp.App\Controller\MedievalFamilyController"/>
       </call>
     </service>
     <service id="App\Controller\MessageForumController" class="App\Controller\MessageForumController" public="true" autowire="true" autoconfigure="true">
@@ -431,6 +464,9 @@
         <argument type="service" id=".service_locator.g9CqTPp.App\Controller\UserController"/>
       </call>
     </service>
+    <service id="App\Form\AMHEType" class="App\Form\AMHEType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
     <service id="App\Form\CategoryForumType" class="App\Form\CategoryForumType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
@@ -444,6 +480,12 @@
       <tag name="form.type"/>
     </service>
     <service id="App\Form\HomeSectionForumType" class="App\Form\HomeSectionForumType" autowire="true" autoconfigure="true"/>
+    <service id="App\Form\LesLamesDuPonantType" class="App\Form\LesLamesDuPonantType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\MedievalFamilyType" class="App\Form\MedievalFamilyType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
     <service id="App\Form\MessageForumType" class="App\Form\MessageForumType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
@@ -462,6 +504,10 @@
     <service id="App\Form\UserType" class="App\Form\UserType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
+    <service id="App\Repository\AMHERepository" class="App\Repository\AMHERepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
     <service id="App\Repository\CategoryForumRepository" class="App\Repository\CategoryForumRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
@@ -475,6 +521,14 @@
       <argument type="service" id="doctrine"/>
     </service>
     <service id="App\Repository\HomeSectionForumRepository" class="App\Repository\HomeSectionForumRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\LesLamesDuPonantRepository" class="App\Repository\LesLamesDuPonantRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\MedievalFamilyRepository" class="App\Repository\MedievalFamilyRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
@@ -948,10 +1002,13 @@
         <argument>FOS\CKEditorBundle\Form\Type</argument>
       </argument>
       <argument type="collection">
+        <argument>App\Form\AMHEType</argument>
         <argument>App\Form\CategoryForumType</argument>
         <argument>App\Form\ChangePasswordFormType</argument>
         <argument>App\Form\ContactMessageType</argument>
         <argument>App\Form\HomeDisciplineType</argument>
+        <argument>App\Form\LesLamesDuPonantType</argument>
+        <argument>App\Form\MedievalFamilyType</argument>
         <argument>App\Form\MessageForumType</argument>
         <argument>App\Form\RegistrationFormType</argument>
         <argument>App\Form\ResetPasswordRequestFormType</argument>
@@ -1300,7 +1357,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension" public="false">
-      <argument type="service" id=".service_locator.pO0DUeb"/>
+      <argument type="service" id=".service_locator.CgZxxEW"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -3769,7 +3826,7 @@
       <factory class="Doctrine\ORM\EntityManager" method="create"/>
     </service>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory" public="false">
-      <argument type="service" id=".service_locator.A2XG4Te"/>
+      <argument type="service" id=".service_locator.TGYQ2q1"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -5303,6 +5360,9 @@
       <tag name="twig.extension"/>
       <argument type="service" id="fos_ck_editor.renderer"/>
     </service>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\AMHEController" class="App\Controller\AMHEController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\AMHEController" class="App\Controller\AMHEController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\AMHEController" class="App\Controller\AMHEController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\AdminController" class="App\Controller\AdminController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\AdminController" class="App\Controller\AdminController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\AdminController" class="App\Controller\AdminController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -5321,6 +5381,15 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\HomeSectionForumController" class="App\Controller\HomeSectionForumController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\HomeSectionForumController" class="App\Controller\HomeSectionForumController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\HomeSectionForumController" class="App\Controller\HomeSectionForumController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\LesAMHEController" class="App\Controller\LesAMHEController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\LesAMHEController" class="App\Controller\LesAMHEController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\LesAMHEController" class="App\Controller\LesAMHEController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\LesLamesDuPonantController" class="App\Controller\LesLamesDuPonantController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\LesLamesDuPonantController" class="App\Controller\LesLamesDuPonantController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\LesLamesDuPonantController" class="App\Controller\LesLamesDuPonantController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\MedievalFamilyController" class="App\Controller\MedievalFamilyController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\MedievalFamilyController" class="App\Controller\MedievalFamilyController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\MedievalFamilyController" class="App\Controller\MedievalFamilyController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\MessageForumController" class="App\Controller\MessageForumController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\MessageForumController" class="App\Controller\MessageForumController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\MessageForumController" class="App\Controller\MessageForumController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -5342,6 +5411,8 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\UserController" class="App\Controller\UserController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\UserController" class="App\Controller\UserController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\UserController" class="App\Controller\UserController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\AMHEType" class="App\Form\AMHEType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\AMHEType" class="App\Form\AMHEType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\CategoryForumType" class="App\Form\CategoryForumType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\CategoryForumType" class="App\Form\CategoryForumType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ChangePasswordFormType" class="App\Form\ChangePasswordFormType" autowire="true" abstract="true"/>
@@ -5350,6 +5421,10 @@
     <service id=".abstract.instanceof.App\Form\ContactMessageType" class="App\Form\ContactMessageType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\HomeDisciplineType" class="App\Form\HomeDisciplineType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\HomeDisciplineType" class="App\Form\HomeDisciplineType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\LesLamesDuPonantType" class="App\Form\LesLamesDuPonantType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\LesLamesDuPonantType" class="App\Form\LesLamesDuPonantType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\MedievalFamilyType" class="App\Form\MedievalFamilyType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\MedievalFamilyType" class="App\Form\MedievalFamilyType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\MessageForumType" class="App\Form\MessageForumType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\MessageForumType" class="App\Form\MessageForumType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\RegistrationFormType" class="App\Form\RegistrationFormType" autowire="true" abstract="true"/>
@@ -5362,6 +5437,8 @@
     <service id=".abstract.instanceof.App\Form\TimeStampType" class="App\Form\TimeStampType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\UserType" class="App\Form\UserType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\UserType" class="App\Form\UserType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\AMHERepository" class="App\Repository\AMHERepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\AMHERepository" class="App\Repository\AMHERepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\CategoryForumRepository" class="App\Repository\CategoryForumRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\CategoryForumRepository" class="App\Repository\CategoryForumRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ContactMessageRepository" class="App\Repository\ContactMessageRepository" autowire="true" abstract="true"/>
@@ -5370,6 +5447,10 @@
     <service id=".abstract.instanceof.App\Repository\HomeDisciplineRepository" class="App\Repository\HomeDisciplineRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\HomeSectionForumRepository" class="App\Repository\HomeSectionForumRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\HomeSectionForumRepository" class="App\Repository\HomeSectionForumRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\LesLamesDuPonantRepository" class="App\Repository\LesLamesDuPonantRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\LesLamesDuPonantRepository" class="App\Repository\LesLamesDuPonantRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\MedievalFamilyRepository" class="App\Repository\MedievalFamilyRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\MedievalFamilyRepository" class="App\Repository\MedievalFamilyRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\MessageForumRepository" class="App\Repository\MessageForumRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\MessageForumRepository" class="App\Repository\MessageForumRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ResetPasswordRequestRepository" class="App\Repository\ResetPasswordRequestRepository" autowire="true" abstract="true"/>
@@ -5633,11 +5714,25 @@
         <argument key="loader" type="service" id=".errored..service_locator.C9JCBPC.Symfony\Component\Config\Loader\LoaderInterface"/>
       </argument>
     </service>
-    <service id=".service_locator.p7UA1Ww" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.d2ed_or" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="aMHERepository" type="service" id="App\Repository\AMHERepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.Yu9Pcj8" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="aMHE" type="service" id=".errored..service_locator.Yu9Pcj8.App\Entity\AMHE"/>
+      </argument>
+    </service>
+    <service id=".service_locator.e0J_yCu" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="aMHERepository" type="service" id="App\Repository\AMHERepository"/>
         <argument key="contactMessageRepository" type="service" id="App\Repository\ContactMessageRepository"/>
         <argument key="homeDisciplineRepository" type="service" id="App\Repository\HomeDisciplineRepository"/>
+        <argument key="medievalFamilyRepository" type="service" id="App\Repository\MedievalFamilyRepository"/>
         <argument key="timeStampRepository" type="service" id="App\Repository\TimeStampRepository"/>
         <argument key="userRepository" type="service" id="App\Repository\UserRepository"/>
       </argument>
@@ -5702,6 +5797,38 @@
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="homeSectionForum" type="service" id=".errored..service_locator.ahw4_vS.App\Entity\HomeSectionForum"/>
+      </argument>
+    </service>
+    <service id=".service_locator.IM1ypip" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="aMHERepository" type="service" id="App\Repository\AMHERepository"/>
+        <argument key="lesLamesDuPonantRepository" type="service" id="App\Repository\LesLamesDuPonantRepository"/>
+        <argument key="medievalFamilyRepository" type="service" id="App\Repository\MedievalFamilyRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.2MFkbty" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="lesLamesDuPonantRepository" type="service" id="App\Repository\LesLamesDuPonantRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.6WWz9RI" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="lesLamesDuPonant" type="service" id=".errored..service_locator.6WWz9RI.App\Entity\LesLamesDuPonant"/>
+      </argument>
+    </service>
+    <service id=".service_locator.jkCPVev" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="medievalFamilyRepository" type="service" id="App\Repository\MedievalFamilyRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.F0JKktY" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="medievalFamily" type="service" id=".errored..service_locator.F0JKktY.App\Entity\MedievalFamily"/>
       </argument>
     </service>
     <service id=".service_locator.E4xZ27q" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
@@ -5785,10 +5912,14 @@
         <argument key="user" type="service" id=".errored..service_locator.ikUdgSe.App\Entity\User"/>
       </argument>
     </service>
-    <service id=".service_locator.VJ5K4gH" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.KsiExMr" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="App\Controller\AdminController::index" type="service" id=".service_locator.p7UA1Ww"/>
+        <argument key="App\Controller\AMHEController::delete" type="service" id=".service_locator.Yu9Pcj8"/>
+        <argument key="App\Controller\AMHEController::edit" type="service" id=".service_locator.Yu9Pcj8"/>
+        <argument key="App\Controller\AMHEController::index" type="service" id=".service_locator.d2ed_or"/>
+        <argument key="App\Controller\AMHEController::show" type="service" id=".service_locator.Yu9Pcj8"/>
+        <argument key="App\Controller\AdminController::index" type="service" id=".service_locator.e0J_yCu"/>
         <argument key="App\Controller\CategoryForumController::delete" type="service" id=".service_locator.KGenLOu"/>
         <argument key="App\Controller\CategoryForumController::edit" type="service" id=".service_locator.KGenLOu"/>
         <argument key="App\Controller\CategoryForumController::index" type="service" id=".service_locator.1oURJky"/>
@@ -5807,6 +5938,15 @@
         <argument key="App\Controller\HomeSectionForumController::edit" type="service" id=".service_locator.ahw4_vS"/>
         <argument key="App\Controller\HomeSectionForumController::index" type="service" id=".service_locator.sKzeMVn"/>
         <argument key="App\Controller\HomeSectionForumController::show" type="service" id=".service_locator.ahw4_vS"/>
+        <argument key="App\Controller\LesAMHEController::index" type="service" id=".service_locator.IM1ypip"/>
+        <argument key="App\Controller\LesLamesDuPonantController::delete" type="service" id=".service_locator.6WWz9RI"/>
+        <argument key="App\Controller\LesLamesDuPonantController::edit" type="service" id=".service_locator.6WWz9RI"/>
+        <argument key="App\Controller\LesLamesDuPonantController::index" type="service" id=".service_locator.2MFkbty"/>
+        <argument key="App\Controller\LesLamesDuPonantController::show" type="service" id=".service_locator.6WWz9RI"/>
+        <argument key="App\Controller\MedievalFamilyController::delete" type="service" id=".service_locator.F0JKktY"/>
+        <argument key="App\Controller\MedievalFamilyController::edit" type="service" id=".service_locator.F0JKktY"/>
+        <argument key="App\Controller\MedievalFamilyController::index" type="service" id=".service_locator.jkCPVev"/>
+        <argument key="App\Controller\MedievalFamilyController::show" type="service" id=".service_locator.F0JKktY"/>
         <argument key="App\Controller\MessageForumController::delete" type="service" id=".service_locator.JG2Goki"/>
         <argument key="App\Controller\MessageForumController::edit" type="service" id=".service_locator.JG2Goki"/>
         <argument key="App\Controller\MessageForumController::index" type="service" id=".service_locator.E4xZ27q"/>
@@ -5833,7 +5973,11 @@
         <argument key="kernel::loadRoutes" type="service" id=".service_locator.C9JCBPC"/>
         <argument key="kernel::registerContainerConfiguration" type="service" id=".service_locator.C9JCBPC"/>
         <argument key="kernel::terminate" type="service" id=".service_locator.beq5mCo"/>
-        <argument key="App\Controller\AdminController:index" type="service" id=".service_locator.p7UA1Ww"/>
+        <argument key="App\Controller\AMHEController:delete" type="service" id=".service_locator.Yu9Pcj8"/>
+        <argument key="App\Controller\AMHEController:edit" type="service" id=".service_locator.Yu9Pcj8"/>
+        <argument key="App\Controller\AMHEController:index" type="service" id=".service_locator.d2ed_or"/>
+        <argument key="App\Controller\AMHEController:show" type="service" id=".service_locator.Yu9Pcj8"/>
+        <argument key="App\Controller\AdminController:index" type="service" id=".service_locator.e0J_yCu"/>
         <argument key="App\Controller\CategoryForumController:delete" type="service" id=".service_locator.KGenLOu"/>
         <argument key="App\Controller\CategoryForumController:edit" type="service" id=".service_locator.KGenLOu"/>
         <argument key="App\Controller\CategoryForumController:index" type="service" id=".service_locator.1oURJky"/>
@@ -5852,6 +5996,15 @@
         <argument key="App\Controller\HomeSectionForumController:edit" type="service" id=".service_locator.ahw4_vS"/>
         <argument key="App\Controller\HomeSectionForumController:index" type="service" id=".service_locator.sKzeMVn"/>
         <argument key="App\Controller\HomeSectionForumController:show" type="service" id=".service_locator.ahw4_vS"/>
+        <argument key="App\Controller\LesAMHEController:index" type="service" id=".service_locator.IM1ypip"/>
+        <argument key="App\Controller\LesLamesDuPonantController:delete" type="service" id=".service_locator.6WWz9RI"/>
+        <argument key="App\Controller\LesLamesDuPonantController:edit" type="service" id=".service_locator.6WWz9RI"/>
+        <argument key="App\Controller\LesLamesDuPonantController:index" type="service" id=".service_locator.2MFkbty"/>
+        <argument key="App\Controller\LesLamesDuPonantController:show" type="service" id=".service_locator.6WWz9RI"/>
+        <argument key="App\Controller\MedievalFamilyController:delete" type="service" id=".service_locator.F0JKktY"/>
+        <argument key="App\Controller\MedievalFamilyController:edit" type="service" id=".service_locator.F0JKktY"/>
+        <argument key="App\Controller\MedievalFamilyController:index" type="service" id=".service_locator.jkCPVev"/>
+        <argument key="App\Controller\MedievalFamilyController:show" type="service" id=".service_locator.F0JKktY"/>
         <argument key="App\Controller\MessageForumController:delete" type="service" id=".service_locator.JG2Goki"/>
         <argument key="App\Controller\MessageForumController:edit" type="service" id=".service_locator.JG2Goki"/>
         <argument key="App\Controller\MessageForumController:index" type="service" id=".service_locator.E4xZ27q"/>
@@ -5936,13 +6089,16 @@
       <argument type="service" id="debug.argument_resolver.not_tagged_controller.inner"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.pO0DUeb" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.CgZxxEW" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="App\Form\AMHEType" type="service" id="App\Form\AMHEType"/>
         <argument key="App\Form\CategoryForumType" type="service" id="App\Form\CategoryForumType"/>
         <argument key="App\Form\ChangePasswordFormType" type="service" id="App\Form\ChangePasswordFormType"/>
         <argument key="App\Form\ContactMessageType" type="service" id="App\Form\ContactMessageType"/>
         <argument key="App\Form\HomeDisciplineType" type="service" id="App\Form\HomeDisciplineType"/>
+        <argument key="App\Form\LesLamesDuPonantType" type="service" id="App\Form\LesLamesDuPonantType"/>
+        <argument key="App\Form\MedievalFamilyType" type="service" id="App\Form\MedievalFamilyType"/>
         <argument key="App\Form\MessageForumType" type="service" id="App\Form\MessageForumType"/>
         <argument key="App\Form\RegistrationFormType" type="service" id="App\Form\RegistrationFormType"/>
         <argument key="App\Form\ResetPasswordRequestFormType" type="service" id="App\Form\ResetPasswordRequestFormType"/>
@@ -5968,13 +6124,16 @@
         <argument key="doctrine.orm.default_listeners.attach_entity_listeners" type="service" id="doctrine.orm.default_listeners.attach_entity_listeners"/>
       </argument>
     </service>
-    <service id=".service_locator.A2XG4Te" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.TGYQ2q1" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="App\Repository\AMHERepository" type="service" id="App\Repository\AMHERepository"/>
         <argument key="App\Repository\CategoryForumRepository" type="service" id="App\Repository\CategoryForumRepository"/>
         <argument key="App\Repository\ContactMessageRepository" type="service" id="App\Repository\ContactMessageRepository"/>
         <argument key="App\Repository\HomeDisciplineRepository" type="service" id="App\Repository\HomeDisciplineRepository"/>
         <argument key="App\Repository\HomeSectionForumRepository" type="service" id="App\Repository\HomeSectionForumRepository"/>
+        <argument key="App\Repository\LesLamesDuPonantRepository" type="service" id="App\Repository\LesLamesDuPonantRepository"/>
+        <argument key="App\Repository\MedievalFamilyRepository" type="service" id="App\Repository\MedievalFamilyRepository"/>
         <argument key="App\Repository\MessageForumRepository" type="service" id="App\Repository\MessageForumRepository"/>
         <argument key="App\Repository\ResetPasswordRequestRepository" type="service" id="App\Repository\ResetPasswordRequestRepository"/>
         <argument key="App\Repository\SubjectForumRepository" type="service" id="App\Repository\SubjectForumRepository"/>
@@ -6182,6 +6341,12 @@
         <argument key="twig" type="service" id="twig" on-invalid="ignore"/>
       </argument>
     </service>
+    <service id=".service_locator.g9CqTPp.App\Controller\AMHEController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\AMHEController"/>
+      <argument>App\Controller\AMHEController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.g9CqTPp" method="withContext"/>
+    </service>
     <service id=".service_locator.g9CqTPp.App\Controller\AdminController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator_context" id="App\Controller\AdminController"/>
       <argument>App\Controller\AdminController</argument>
@@ -6215,6 +6380,24 @@
     <service id=".service_locator.g9CqTPp.App\Controller\HomeSectionForumController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator_context" id="App\Controller\HomeSectionForumController"/>
       <argument>App\Controller\HomeSectionForumController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.g9CqTPp" method="withContext"/>
+    </service>
+    <service id=".service_locator.g9CqTPp.App\Controller\LesAMHEController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\LesAMHEController"/>
+      <argument>App\Controller\LesAMHEController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.g9CqTPp" method="withContext"/>
+    </service>
+    <service id=".service_locator.g9CqTPp.App\Controller\LesLamesDuPonantController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\LesLamesDuPonantController"/>
+      <argument>App\Controller\LesLamesDuPonantController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.g9CqTPp" method="withContext"/>
+    </service>
+    <service id=".service_locator.g9CqTPp.App\Controller\MedievalFamilyController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\MedievalFamilyController"/>
+      <argument>App\Controller\MedievalFamilyController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.g9CqTPp" method="withContext"/>
     </service>
@@ -6421,12 +6604,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
-      <argument type="service" id=".service_locator.VJ5K4gH"/>
+      <argument type="service" id=".service_locator.KsiExMr"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver" public="false"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver" public="false">
-      <argument type="service" id=".service_locator.VJ5K4gH"/>
+      <argument type="service" id=".service_locator.KsiExMr"/>
     </service>
     <service id=".debug.http_client.inner" class="Symfony\Contracts\HttpClient\HttpClientInterface" public="false">
       <argument type="collection"/>
@@ -6438,10 +6621,13 @@
     </service>
     <service id=".errored..service_locator.beq5mCo.Symfony\Component\HttpFoundation\Response" class="Symfony\Component\HttpFoundation\Response"/>
     <service id=".errored..service_locator.C9JCBPC.Symfony\Component\Config\Loader\LoaderInterface" class="Symfony\Component\Config\Loader\LoaderInterface"/>
+    <service id=".errored..service_locator.Yu9Pcj8.App\Entity\AMHE" class="App\Entity\AMHE"/>
     <service id=".errored..service_locator.KGenLOu.App\Entity\CategoryForum" class="App\Entity\CategoryForum"/>
     <service id=".errored..service_locator.i2geDc0.App\Entity\ContactMessage" class="App\Entity\ContactMessage"/>
     <service id=".errored..service_locator.22Da741.App\Entity\HomeDiscipline" class="App\Entity\HomeDiscipline"/>
     <service id=".errored..service_locator.ahw4_vS.App\Entity\HomeSectionForum" class="App\Entity\HomeSectionForum"/>
+    <service id=".errored..service_locator.6WWz9RI.App\Entity\LesLamesDuPonant" class="App\Entity\LesLamesDuPonant"/>
+    <service id=".errored..service_locator.F0JKktY.App\Entity\MedievalFamily" class="App\Entity\MedievalFamily"/>
     <service id=".errored..service_locator.JG2Goki.App\Entity\MessageForum" class="App\Entity\MessageForum"/>
     <service id=".errored..service_locator.0RFo5YJ.App\Entity\SubjectForum" class="App\Entity\SubjectForum"/>
     <service id=".errored..service_locator.bAyv6wa.App\Entity\TimeStamp" class="App\Entity\TimeStamp"/>
@@ -6838,7 +7024,7 @@
     <service id="SymfonyCasts\Bundle\ResetPassword\ResetPasswordHelperInterface" alias="symfonycasts.reset_password.helper"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.WaGDpDt" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem" public="false"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.VJ5K4gH"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.KsiExMr"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
     <service id="Psr\Log\LoggerInterface $consoleLogger" alias="monolog.logger.console"/>

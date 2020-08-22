@@ -4,7 +4,13 @@
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
-    photos_directory: '%kernel.project_dir%/public/uploads/photos'  
+    avatar_directory: '%kernel.project_dir%/public/uploads/avatar'
+    amhe_directory: '%kernel.project_dir%/public/uploads/amhe'
+    discipline_directory: '%kernel.project_dir%/public/uploads/discipline'
+    forum_directory: '%kernel.project_dir%/public/uploads/forum'
+    parallax_directory: '%kernel.project_dir%/public/uploads/parallax'
+    other_directory: '%kernel.project_dir%/public/uploads/other' 
+
 services:
     # default configuration for services in *this* file
     _defaults:

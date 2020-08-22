@@ -7,12 +7,13 @@
 	<title>
 		{% block title 'Lame Du Ponant ' %}
 	</title>
+{% block stylesheets %}
 	<!--Import Google Icon Font-->
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<!--Import materialize.css-->
 	<link type="text/css" rel="stylesheet" href="{{ asset('sass/materialize.css') }}" media="screen,projection" />
 	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css">
-	{% block stylesheets %}{% endblock %}
+{% endblock %}
 </head>
 
 <body id="Body" class="">
@@ -34,7 +35,7 @@
 				</div>
 				{% if is_granted('IS_AUTHENTICATED_FULLY') and app.user.photoAvatarUser  != NULL %}
 
-				<img class="circle" src="{{ asset('uploads/photos/' ~ app.user.photoAvatarUser )}}">
+				<img class="circle" src="{{ asset('uploads/avatar/' ~ app.user.photoAvatarUser )}}">
 				{% else %}
 				<img class="circle" src="{{asset('uploads/avatar.jpg')}}">
 				{% endif %}
@@ -123,7 +124,7 @@
 				</a>
 				<ul class="left hide-on-med-and-down">
 					<li>
-						<a href="{{path('home')}}">Les AMHE</a>
+						<a href="{{path('les_amhe')}}">Les AMHE</a>
 					</li>
 
 					<li>
@@ -212,12 +213,11 @@
 							class="card-rounded hoverable" src="{{ home_discipline.imageHomeDiscipline }}"></a>
 					{% else %}
 					<a href="/"><img class="card-rounded hoverable" src="{{asset('uploads/avatar.jpg')}}"></a>
-				
+						{% endif %}
 					<p class="disciplineHomeDescription ">
 						{{ home_discipline.descriptionDiscipline }}</p>
-						{% endif %}
+							</div>
 						{% endfor %}
-				</div>
 			</div>
 		</div>
 		<div class="parallax-container">

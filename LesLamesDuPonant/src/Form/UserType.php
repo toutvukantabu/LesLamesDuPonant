@@ -14,13 +14,14 @@ use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\TelType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 
 class UserType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('email')
+            ->add('email', emailType::class, ['label' => 'E-mail'])
             ->add('roles',
             ChoiceType::class,
             [
@@ -35,13 +36,12 @@ class UserType extends AbstractType
             ],
             TextType::class,
             ['label' => 'Rôle'])
-            ->add('password')
-            ->add('isVerified')
-            ->add('firstNameUser')
-            ->add('lastNameUser')
-            ->add('pseudoUser')
+            ->add('password' , PasswordType::class,[ 'label'=> 'mot de passe'])
+            ->add('isVerified', CheckboxType::class,['label' => 'email Verifié ?'])
+            ->add('firstNameUser', TextType::class,['label' => 'Nom'])
+            ->add('lastNameUser', TextType::class,['label' => 'Prénom'])
+            ->add('pseudoUser', TextType::class,['label' => 'Pseudo'])
         ->add('photoAvatarUser', FileType::class, [
-            'label' => 'Photo',
             'mapped' => false,
             'required' => false,
             'constraints' => [
@@ -55,6 +55,7 @@ class UserType extends AbstractType
             ],
         ])
             ->add('birthdayDateUser', DateType::class,[
+                'label' => 'Date d\'anniverssaire',
                 'widget' => 'single_text',
                 'html5' => false,
                 'format'=> 'dd-mm-yyyy',
@@ -62,9 +63,9 @@ class UserType extends AbstractType
                     'class'=> 'datepicker',
                 ]
             ])
-            ->add('postalCodeUser')
-            ->add('adressUser')
-            ->add('cityUser')
+            ->add('postalCodeUser', TextType::class,['label' => 'Code postal'])
+            ->add('adressUser', TextType::class,['label' => 'Adresse'])
+            ->add('cityUser', TextType::class,['label' => 'Ville'])
         ;
     }
 

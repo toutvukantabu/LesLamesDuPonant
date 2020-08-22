@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New AMHE{% endblock %}
+
+{% block body %}
+    <h1>Create new AMHE</h1>
+
+    {{ include('amhe/_form.html.twig') }}
+
+    <a href="{{ path('amhe_index') }}">back to list</a>
+{% endblock %}

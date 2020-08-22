@@ -82,7 +82,7 @@ class UserController extends AbstractController
 
                 try {
                     $photoAvatarUser->move(
-                        $this->getParameter('photos_directory'),
+                        $this->getParameter('avatar_directory'),
                         $newFilename
                     );
                 } catch (FileException $e) {
@@ -98,7 +98,7 @@ class UserController extends AbstractController
             $entityManager->persist($user);
             $entityManager->flush();
 
-            return $this->redirectToRoute('home');
+            return $this->redirectToRoute('user_index');
         }
 
 
