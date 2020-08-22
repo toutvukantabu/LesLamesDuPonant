@@ -136,7 +136,7 @@ h4 {
 //*****************************************
 
 .sticky-nav {
-  background-color: rgba(12, 12, 136, 0.424);
+  background-color: #0080ff5d;
   position: fixed;
   top: 0;
   z-index: 1000;
@@ -145,11 +145,11 @@ h4 {
 nav {
   transition: top 0.2s linear;
   -webkit-transition: 0.2s;
-  background-color: rgba(12, 12, 136, 0.918);
+  background-color:#3D5695;
   z-index: 1000;
 
   li a:hover {
-    background-color: rgba(75, 123, 212, 0.424);
+    background-color:#032b53a6;
     transition-duration: 420ms;
   }
 }
@@ -417,7 +417,7 @@ ul.tl li .timestamp {
 //PAGE FOOTER
 //************************
 .page-footer{
-  background-color: #202092;
+  background-color: #3D5695;
 
 
 .footerLameDuPonantCenter,.footerLameDuPonantLeft,.footerLameDuPonantRight{

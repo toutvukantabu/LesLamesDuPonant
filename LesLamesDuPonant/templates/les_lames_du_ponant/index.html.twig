@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}LesLamesDuPonant index{% endblock %}
+
+{% block body %}
+    <h1>LesLamesDuPonant index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>TitleLLDP</th>
+                <th>DesciptionLLDP</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for les_lames_du_ponant in les_lames_du_ponants %}
+            <tr>
+                <td>{{ les_lames_du_ponant.id }}</td>
+                <td>{{ les_lames_du_ponant.titleLLDP }}</td>
+                <td>{{ les_lames_du_ponant.desciptionLLDP }}</td>
+                <td>
+                    <a href="{{ path('les_lames_du_ponant_show', {'id': les_lames_du_ponant.id}) }}">show</a>
+                    <a href="{{ path('les_lames_du_ponant_edit', {'id': les_lames_du_ponant.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('les_lames_du_ponant_new') }}">Create new</a>
+{% endblock %}

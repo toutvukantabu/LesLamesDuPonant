@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}MedievalFamily{% endblock %}
+
+{% block body %}
+    <h1>MedievalFamily</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ medieval_family.id }}</td>
+            </tr>
+            <tr>
+                <th>TitleMedievalFamily</th>
+                <td>{{ medieval_family.titleMedievalFamily }}</td>
+            </tr>
+            <tr>
+                <th>DescriptionMedievalFamily</th>
+                <td>{{ medieval_family.descriptionMedievalFamily }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('medieval_family_index') }}">back to list</a>
+
+    <a href="{{ path('medieval_family_edit', {'id': medieval_family.id}) }}">edit</a>
+
+    {{ include('medieval_family/_delete_form.html.twig') }}
+{% endblock %}
