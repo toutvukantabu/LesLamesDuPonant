@@ -3,18 +3,18 @@
 {% block title %}ContactMessage index{% endblock %}
 
 {% block body %}
-    <h1>ContactMessage index</h1>
+<H4 class="center-align"> Index des messages</H4>
 
     <table class="table">
         <thead>
             <tr>
                 <th>Id</th>
-                <th>AuthorNameContactMessage</th>
-                <th>AuthorLastNamecContactMessage</th>
-                <th>ContentContactMessage</th>
-                <th>EmailContactMessage</th>
+                <th>Nom du contact</th>
+                <th>Prénom du contact</th>
+                <th>contenu du message</th>
+                <th>e-mail</th>
                 <th>DateContactMessage</th>
-                <th>actions</th>
+                <th>action</th>
             </tr>
         </thead>
         <tbody>
@@ -33,11 +33,11 @@
             </tr>
         {% else %}
             <tr>
-                <td colspan="7">no records found</td>
+                <td colspan="7">Pas de contenu trouvé</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('contact_message_new') }}">Create new</a>
+    <a href="{{ path('contact_message_new') }}">Envoyez voter message</a>
 {% endblock %}

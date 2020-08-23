@@ -1,11 +1,11 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New ContactMessage{% endblock %}
+{% block title 'Contactez les Lames Du Ponant'%}
 
 {% block body %}
-    <h2>Contact</h2>
+  <h4 class="center-align"> Contactez-nous pour toutes informations</h4>
 
     {{ include('contact_message/_form.html.twig') }}
 
-    <a href="{{ path('contact_message_index') }}">back to list</a>
+    <a href="{{ path('contact_message_index') }}">retours à la liste</a>
 {% endblock %}

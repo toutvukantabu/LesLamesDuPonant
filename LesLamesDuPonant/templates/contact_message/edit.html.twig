@@ -1,13 +1,13 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit ContactMessage{% endblock %}
+{% block title %}
 
-{% block body %}
-    <h1>Edit ContactMessage</h1>
+{% block body 'édition des messages'%}
+    <h4 class="center-align">édition des messages</h4>
 
-    {{ include('contact_message/_form.html.twig', {'button_label': 'Update'}) }}
+    {{ include('contact_message/_form.html.twig', {'button_label': 'update'}) }}
 
-    <a href="{{ path('contact_message_index') }}">back to list</a>
+    <a href="{{ path('contact_message_index') }}">retour à la liste</a>
 
     {{ include('contact_message/_delete_form.html.twig') }}
 {% endblock %}
