@@ -1,13 +1,13 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit HomeSectionForum{% endblock %}
+{% block title %}edit HomeSectionForum{% endblock %}
 
 {% block body %}
-    <h1>Edit HomeSectionForum</h1>
+    <h4 class="center-align">éditer HomeSectionForum</h4>
 
-    {{ include('home_section_forum/_form.html.twig', {'button_label': 'Update'}) }}
+    {{ include('home_section_forum/_form.html.twig', {'button_label': 'maj'}) }}
 
-    <a href="{{ path('home_section_forum_index') }}">back to list</a>
+    <a href="{{ path('home_section_forum_index') }}">retours à la liste</a>
 
     {{ include('home_section_forum/_delete_form.html.twig') }}
 {% endblock %}

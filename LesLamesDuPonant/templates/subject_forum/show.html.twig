@@ -3,7 +3,7 @@
 {% block title %}SubjectForum{% endblock %}
 
 {% block body %}
-    <h1>SubjectForum</h1>
+    <h4 class="center-align">SubjectForum</h4>
 
     <table class="table">
         <tbody>
@@ -26,9 +26,9 @@
         </tbody>
     </table>
 
-    <a href="{{ path('subject_forum_index') }}">back to list</a>
+    <a href="{{ path('subject_forum_index') }}">retours à la liste</a>
 
-    <a href="{{ path('subject_forum_edit', {'id': subject_forum.id}) }}">edit</a>
+    <a href="{{ path('subject_forum_edit', {'id': subject_forum.id}) }}">éditer</a>
 
     {{ include('subject_forum/_delete_form.html.twig') }}
 {% endblock %}

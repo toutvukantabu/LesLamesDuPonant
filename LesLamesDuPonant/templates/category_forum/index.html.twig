@@ -33,7 +33,7 @@
 	</div>
 
 
-	<h1>CategoryForum index</h1>
+	<h4 class="center-align">CategoryForum index</h4>
 
 	<table class="table">
 		<thead>
@@ -41,7 +41,7 @@
 				<th>Id</th>
 				<th>TitleCategory</th>
 				<th>DateCategoryForum</th>
-				<th>actions</th>
+				<th>action</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -51,17 +51,17 @@
 					<td>{{ category_forum.titleCategory }}</td>
 					<td>{{ category_forum.dateCategoryForum ? category_forum.dateCategoryForum|date('Y-m-d H:i:s') : '' }}</td>
 					<td>
-						<a href="{{ path('category_forum_show', {'id': category_forum.id}) }}">show</a>
-						<a href="{{ path('category_forum_edit', {'id': category_forum.id}) }}">edit</a>
+						<a href="{{ path('category_forum_show', {'id': category_forum.id}) }}">voir</a>
+						<a href="{{ path('category_forum_edit', {'id': category_forum.id}) }}">éditer</a>
 					</td>
 				</tr>
 			{% else %}
 				<tr>
-					<td colspan="4">no records found</td>
+					<td colspan="4">Aucun enregistrement trouvé.</td>
 				</tr>
 			{% endfor %}
 		</tbody>
 	</table>
 
-	<a href="{{ path('category_forum_new') }}">Create new</a>
+	<a href="{{ path('category_forum_new') }}">Créer un nouveau</a>
 {% endblock %}

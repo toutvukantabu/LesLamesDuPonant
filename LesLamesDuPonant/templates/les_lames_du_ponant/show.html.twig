@@ -3,7 +3,7 @@
 {% block title %}LesLamesDuPonant{% endblock %}
 
 {% block body %}
-    <h1>LesLamesDuPonant</h1>
+    <h4 class="center-align">LesLamesDuPonant</h4>
 
     <table class="table">
         <tbody>
@@ -22,9 +22,9 @@
         </tbody>
     </table>
 
-    <a href="{{ path('les_lames_du_ponant_index') }}">back to list</a>
+    <a href="{{ path('les_lames_du_ponant_index') }}">retours à la liste</a>
 
-    <a href="{{ path('les_lames_du_ponant_edit', {'id': les_lames_du_ponant.id}) }}">edit</a>
+    <a href="{{ path('les_lames_du_ponant_edit', {'id': les_lames_du_ponant.id}) }}">éditer</a>
 
     {{ include('les_lames_du_ponant/_delete_form.html.twig') }}
 {% endblock %}

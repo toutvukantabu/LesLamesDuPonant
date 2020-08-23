@@ -4,8 +4,6 @@
 
 {% block body %}
   <h4 class="center-align"> Contactez-nous pour toutes informations</h4>
-
-    {{ include('contact_message/_form.html.twig') }}
-
+      {{ include('contact_message/_form.html.twig') }} 
     <a href="{{ path('contact_message_index') }}">retours à la liste</a>
 {% endblock %}

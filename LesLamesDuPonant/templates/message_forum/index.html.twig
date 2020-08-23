@@ -3,7 +3,7 @@
 {% block title %}MessageForum index{% endblock %}
 
 {% block body %}
-    <h1>MessageForum index</h1>
+    <h4 class="center-align">MessageForum index</h4>
 
     <table class="table">
         <thead>
@@ -12,7 +12,7 @@
                 <th>ContentMessageForum</th>
                 <th>DatePublicationMessageForum</th>
                 <th>PhotoMessageForum</th>
-                <th>actions</th>
+                <th>action</th>
             </tr>
         </thead>
         <tbody>
@@ -23,17 +23,17 @@
                 <td>{{ message_forum.datePublicationMessageForum ? message_forum.datePublicationMessageForum|date('Y-m-d H:i:s') : '' }}</td>
                 <td>{{ message_forum.photoMessageForum }}</td>
                 <td>
-                    <a href="{{ path('message_forum_show', {'id': message_forum.id}) }}">show</a>
-                    <a href="{{ path('message_forum_edit', {'id': message_forum.id}) }}">edit</a>
+                    <a href="{{ path('message_forum_show', {'id': message_forum.id}) }}">voir</a>
+                    <a href="{{ path('message_forum_edit', {'id': message_forum.id}) }}">éditer</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="5">no records found</td>
+                <td colspan="5">Aucun enregistrement trouvé.</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('message_forum_new') }}">Create new</a>
+    <a href="{{ path('message_forum_new') }}">Créer un nouveau</a>
 {% endblock %}

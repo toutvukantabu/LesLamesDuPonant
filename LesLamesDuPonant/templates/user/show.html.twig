@@ -3,7 +3,7 @@
 {% block title %}User{% endblock %}
 
 {% block body %}
-    <h1>User</h1>
+    <h4 class="center-align">User</h4>
 
     <table class="table">
         <tbody>
@@ -20,51 +20,51 @@
                 <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
             </tr>
             <tr>
-                <th>Password</th>
+                <th>mot de passe</th>
                 <td>{{ user.password }}</td>
             </tr>
             <tr>
-                <th>IsVerified</th>
+                <th>email Valide?</th>
                 <td>{{ user.isVerified ? 'Yes' : 'No' }}</td>
             </tr>
             <tr>
-                <th>FirstNameUser</th>
+                <th>Prénom</th>
                 <td>{{ user.firstNameUser }}</td>
             </tr>
             <tr>
-                <th>LastNameUser</th>
+                <th>nom</th>
                 <td>{{ user.lastNameUser }}</td>
             </tr>
             <tr>
-                <th>PseudoUser</th>
+                <th>Pseudo</th>
                 <td>{{ user.pseudoUser }}</td>
             </tr>
             <tr>
-                <th>PhotoAvatarUser</th>
+                <th>Avatar</th>
                 <td>{{ user.photoAvatarUser }}</td>
             </tr>
             <tr>
-                <th>BirthdayDateUser</th>
+                <th>Date d'anniversaire</th>
                 <td>{{ user.birthdayDateUser ? user.birthdayDateUser|date('Y-m-d') : '' }}</td>
             </tr>
             <tr>
-                <th>PostalCodeUser</th>
+                <th>code postal</th>
                 <td>{{ user.postalCodeUser }}</td>
             </tr>
             <tr>
-                <th>AdressUser</th>
+                <th>Adresse</th>
                 <td>{{ user.adressUser }}</td>
             </tr>
             <tr>
-                <th>CityUser</th>
+                <th>Ville</th>
                 <td>{{ user.cityUser }}</td>
             </tr>
         </tbody>
     </table>
 
-    <a href="{{ path('user_index') }}">back to list</a>
+    <a href="{{ path('user_index') }}">retour à la liste</a>
 
-    <a href="{{ path('user_edit', {'id': user.id}) }}">edit</a>
+    <a href="{{ path('user_edit', {'id': user.id}) }}">éditer</a>
 
     {{ include('user/_delete_form.html.twig') }}
 {% endblock %}

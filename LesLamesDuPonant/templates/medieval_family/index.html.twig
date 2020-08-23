@@ -3,7 +3,7 @@
 {% block title %}MedievalFamily index{% endblock %}
 
 {% block body %}
-    <h1>MedievalFamily index</h1>
+    <h4 class="center-align">MedievalFamily index</h4>
 
     <table class="table">
         <thead>
@@ -11,7 +11,7 @@
                 <th>Id</th>
                 <th>TitleMedievalFamily</th>
                 <th>DescriptionMedievalFamily</th>
-                <th>actions</th>
+                <th>action</th>
             </tr>
         </thead>
         <tbody>
@@ -21,17 +21,17 @@
                 <td>{{ medieval_family.titleMedievalFamily }}</td>
                 <td>{{ medieval_family.descriptionMedievalFamily }}</td>
                 <td>
-                    <a href="{{ path('medieval_family_show', {'id': medieval_family.id}) }}">show</a>
-                    <a href="{{ path('medieval_family_edit', {'id': medieval_family.id}) }}">edit</a>
+                    <a href="{{ path('medieval_family_show', {'id': medieval_family.id}) }}">voir</a>
+                    <a href="{{ path('medieval_family_edit', {'id': medieval_family.id}) }}">éditer</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="4">no records found</td>
+                <td colspan="4">Aucun enregistrement trouvé.</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('medieval_family_new') }}">Create new</a>
+    <a href="{{ path('medieval_family_new') }}">Créer un nouveau</a>
 {% endblock %}

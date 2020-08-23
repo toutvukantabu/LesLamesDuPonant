@@ -1,20 +1,20 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}AMHE index{% endblock %}
+{% block title 'AMHE index'%}
 
 {% block body %}
-    <h1>AMHE index</h1>
+    <h4 class="center-align">AMHE index</h4>
 
     <table class="table">
         <thead>
             <tr>
                 <th>Id</th>
-                <th>TitleAMHE</th>
-                <th>DescriptionAMHE</th>
-                <th>PhotoOneAMHE</th>
-                <th>PhotoTwoAMHE</th>
-                <th>PhotoThreeAMHE</th>
-                <th>actions</th>
+                <th>Titre</th>
+                <th>Description</th>
+                <th>Photo carousel 1</th>
+                <th>Photo carousel 2</th>
+                <th>Photo carousel 3</th>
+                <th>action</th>
             </tr>
         </thead>
         <tbody>
@@ -27,17 +27,17 @@
                 <td>{{ amhe.photoTwoAMHE }}</td>
                 <td>{{ amhe.photoThreeAMHE }}</td>
                 <td>
-                    <a href="{{ path('amhe_show', {'id': amhe.id}) }}">show</a>
-                    <a href="{{ path('amhe_edit', {'id': amhe.id}) }}">edit</a>
+                    <a href="{{ path('amhe_show', {'id': amhe.id}) }}">voir</a>
+                    <a href="{{ path('amhe_edit', {'id': amhe.id}) }}">éditerer</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="7">no records found</td>
+                <td colspan="7">pas de donnée trouvée</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('amhe_new') }}">Create new</a>
+    <a href="{{ path('amhe_new') }}">créer une nouvelle</a>
 {% endblock %}

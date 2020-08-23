@@ -1,13 +1,13 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit MedievalFamily{% endblock %}
+{% block title %}edit MedievalFamily{% endblock %}
 
 {% block body %}
-    <h1>Edit MedievalFamily</h1>
+    <h4 class="center-align">éditer MedievalFamily</h4>
 
-    {{ include('medieval_family/_form.html.twig', {'button_label': 'Update'}) }}
+    {{ include('medieval_family/_form.html.twig', {'button_label': 'maj'}) }}
 
-    <a href="{{ path('medieval_family_index') }}">back to list</a>
+    <a href="{{ path('medieval_family_index') }}">retours à la liste</a>
 
     {{ include('medieval_family/_delete_form.html.twig') }}
 {% endblock %}

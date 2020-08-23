@@ -1,13 +1,13 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit SubjectForum{% endblock %}
+{% block title %}edit SubjectForum{% endblock %}
 
 {% block body %}
-    <h1>Edit SubjectForum</h1>
+    <h4 class="center-align">éditer SubjectForum</h4>
 
-    {{ include('subject_forum/_form.html.twig', {'button_label': 'Update'}) }}
+    {{ include('subject_forum/_form.html.twig', {'button_label': 'maj'}) }}
 
-    <a href="{{ path('subject_forum_index') }}">back to list</a>
+    <a href="{{ path('subject_forum_index') }}">retours à la liste</a>
 
     {{ include('subject_forum/_delete_form.html.twig') }}
 {% endblock %}

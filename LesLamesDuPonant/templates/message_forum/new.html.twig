@@ -3,9 +3,9 @@
 {% block title %}New MessageForum{% endblock %}
 
 {% block body %}
-    <h1>Create new MessageForum</h1>
+    <h4 class="center-align">Create new MessageForum</h4>
 
     {{ include('message_forum/_form.html.twig') }}
 
-    <a href="{{ path('message_forum_index') }}">back to list</a>
+    <a href="{{ path('message_forum_index') }}">retours à la liste</a>
 {% endblock %}

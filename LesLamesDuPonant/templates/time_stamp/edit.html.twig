@@ -1,13 +1,13 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit TimeStamp{% endblock %}
+{% block title %}edit TimeStamp{% endblock %}
 
 {% block body %}
-    <h1>Edit TimeStamp</h1>
+    <h4 class="center-align">éditer TimeStamp</h4>
 
-    {{ include('time_stamp/_form.html.twig', {'button_label': 'Update'}) }}
+    {{ include('time_stamp/_form.html.twig', {'button_label': 'maj'}) }}
 
-    <a href="{{ path('time_stamp_index') }}">back to list</a>
+    <a href="{{ path('time_stamp_index') }}">retours à la liste</a>
 
     {{ include('time_stamp/_delete_form.html.twig') }}
 {% endblock %}

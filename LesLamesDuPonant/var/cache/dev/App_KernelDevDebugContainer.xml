@@ -5720,10 +5720,23 @@
         <argument key="aMHERepository" type="service" id="App\Repository\AMHERepository"/>
       </argument>
     </service>
+    <service id=".service_locator.1cFtlgg" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="slugger" type="service" id="slugger"/>
+      </argument>
+    </service>
     <service id=".service_locator.Yu9Pcj8" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="aMHE" type="service" id=".errored..service_locator.Yu9Pcj8.App\Entity\AMHE"/>
+      </argument>
+    </service>
+    <service id=".service_locator.mPdP5lR" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="aMHE" type="service" id=".errored..service_locator.mPdP5lR.App\Entity\AMHE"/>
+        <argument key="slugger" type="service" id="slugger"/>
       </argument>
     </service>
     <service id=".service_locator.e0J_yCu" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
@@ -5741,12 +5754,6 @@
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="categoryForumRepository" type="service" id="App\Repository\CategoryForumRepository"/>
-      </argument>
-    </service>
-    <service id=".service_locator.1cFtlgg" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
-        <argument key="slugger" type="service" id="slugger"/>
       </argument>
     </service>
     <service id=".service_locator.KGenLOu" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
@@ -5912,12 +5919,13 @@
         <argument key="user" type="service" id=".errored..service_locator.ikUdgSe.App\Entity\User"/>
       </argument>
     </service>
-    <service id=".service_locator.KsiExMr" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.yZea3UT" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\AMHEController::delete" type="service" id=".service_locator.Yu9Pcj8"/>
-        <argument key="App\Controller\AMHEController::edit" type="service" id=".service_locator.Yu9Pcj8"/>
+        <argument key="App\Controller\AMHEController::edit" type="service" id=".service_locator.mPdP5lR"/>
         <argument key="App\Controller\AMHEController::index" type="service" id=".service_locator.d2ed_or"/>
+        <argument key="App\Controller\AMHEController::new" type="service" id=".service_locator.1cFtlgg"/>
         <argument key="App\Controller\AMHEController::show" type="service" id=".service_locator.Yu9Pcj8"/>
         <argument key="App\Controller\AdminController::index" type="service" id=".service_locator.e0J_yCu"/>
         <argument key="App\Controller\CategoryForumController::delete" type="service" id=".service_locator.KGenLOu"/>
@@ -5974,8 +5982,9 @@
         <argument key="kernel::registerContainerConfiguration" type="service" id=".service_locator.C9JCBPC"/>
         <argument key="kernel::terminate" type="service" id=".service_locator.beq5mCo"/>
         <argument key="App\Controller\AMHEController:delete" type="service" id=".service_locator.Yu9Pcj8"/>
-        <argument key="App\Controller\AMHEController:edit" type="service" id=".service_locator.Yu9Pcj8"/>
+        <argument key="App\Controller\AMHEController:edit" type="service" id=".service_locator.mPdP5lR"/>
         <argument key="App\Controller\AMHEController:index" type="service" id=".service_locator.d2ed_or"/>
+        <argument key="App\Controller\AMHEController:new" type="service" id=".service_locator.1cFtlgg"/>
         <argument key="App\Controller\AMHEController:show" type="service" id=".service_locator.Yu9Pcj8"/>
         <argument key="App\Controller\AdminController:index" type="service" id=".service_locator.e0J_yCu"/>
         <argument key="App\Controller\CategoryForumController:delete" type="service" id=".service_locator.KGenLOu"/>
@@ -6604,12 +6613,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
-      <argument type="service" id=".service_locator.KsiExMr"/>
+      <argument type="service" id=".service_locator.yZea3UT"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver" public="false"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver" public="false">
-      <argument type="service" id=".service_locator.KsiExMr"/>
+      <argument type="service" id=".service_locator.yZea3UT"/>
     </service>
     <service id=".debug.http_client.inner" class="Symfony\Contracts\HttpClient\HttpClientInterface" public="false">
       <argument type="collection"/>
@@ -6622,6 +6631,7 @@
     <service id=".errored..service_locator.beq5mCo.Symfony\Component\HttpFoundation\Response" class="Symfony\Component\HttpFoundation\Response"/>
     <service id=".errored..service_locator.C9JCBPC.Symfony\Component\Config\Loader\LoaderInterface" class="Symfony\Component\Config\Loader\LoaderInterface"/>
     <service id=".errored..service_locator.Yu9Pcj8.App\Entity\AMHE" class="App\Entity\AMHE"/>
+    <service id=".errored..service_locator.mPdP5lR.App\Entity\AMHE" class="App\Entity\AMHE"/>
     <service id=".errored..service_locator.KGenLOu.App\Entity\CategoryForum" class="App\Entity\CategoryForum"/>
     <service id=".errored..service_locator.i2geDc0.App\Entity\ContactMessage" class="App\Entity\ContactMessage"/>
     <service id=".errored..service_locator.22Da741.App\Entity\HomeDiscipline" class="App\Entity\HomeDiscipline"/>
@@ -7024,7 +7034,7 @@
     <service id="SymfonyCasts\Bundle\ResetPassword\ResetPasswordHelperInterface" alias="symfonycasts.reset_password.helper"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.WaGDpDt" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem" public="false"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.KsiExMr"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.yZea3UT"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
     <service id="Psr\Log\LoggerInterface $consoleLogger" alias="monolog.logger.console"/>

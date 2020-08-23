@@ -12,8 +12,8 @@ class MedievalFamilyType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('titleMedievalFamily')
-            ->add('descriptionMedievalFamily')
+            ->add('titleMedievalFamily', TextType::class,['label' => 'Titre famille médiéval'])
+            ->add('descriptionMedievalFamily', TextType::class,['label' => 'Déscription famille médiéval'])
         ;
     }
 

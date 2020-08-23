@@ -43,6 +43,8 @@ class ContactMessageType extends AbstractType
             ])
             ->add('contentContactMessage', TextareaType::class,[
                 
+                    'label'=>'contenu de votre message'
+                
             ])
           
         ;

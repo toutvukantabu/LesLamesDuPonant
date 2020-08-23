@@ -1,13 +1,13 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit HomeDiscipline{% endblock %}
+{% block title %}edit HomeDiscipline{% endblock %}
 
 {% block body %}
-    <h1>Edit HomeDiscipline</h1>
+    <h4 class="center-align">éditer HomeDiscipline</h4>
 
-    {{ include('home_discipline/_form.html.twig', {'button_label': 'Update'}) }}
+    {{ include('home_discipline/_form.html.twig', {'button_label': 'maj'}) }}
 
-    <a href="{{ path('home_discipline_index') }}">back to list</a>
+    <a href="{{ path('home_discipline_index') }}">retours à la liste</a>
 
     {{ include('home_discipline/_delete_form.html.twig') }}
 {% endblock %}

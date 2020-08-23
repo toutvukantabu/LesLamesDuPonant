@@ -6,17 +6,60 @@ use App\Entity\AMHE;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Validator\Constraints\File;
 
 class AMHEType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('titleAMHE')
-            ->add('DescriptionAMHE')
-            ->add('photoOneAMHE')
-            ->add('photoTwoAMHE')
-            ->add('photoThreeAMHE')
+            ->add('titleAMHE',TextType::class,['label' => 'Titre AMHE'])
+            ->add('DescriptionAMHE',TextType::class,['label' => 'Déscription Discipline'])
+            ->add('photoOneAMHE', FileType::class, [
+                'mapped' => false,
+                'required' => false,
+                'constraints' => [
+                    new File([
+                        'maxSize' => '1024k',
+                        'mimeTypes' => [
+                            'image/*',
+                        ],
+                        'mimeTypesMessage' => 'Veuillez entrer un format de document valide',
+                    ])
+                ],
+            ])
+            ->add('photoTwoAMHE', FileType::class, [
+                'mapped' => false,
+                'required' => false,
+                'attr' => [
+                    'class'=> 'file-path validate ',
+                    'placefolder'=>'photo deux AMHE'
+                ],
+                'constraints' => [
+                    new File([
+                        'maxSize' => '1024k',
+                        'mimeTypes' => [
+                            'image/*',
+                        ],
+                        'mimeTypesMessage' => 'Veuillez entrer un format de document valide',
+                    ])
+                ],
+            ])
+            ->add('photoThreeAMHE', FileType::class, [
+                'mapped' => false,
+                'required' => false,
+                'constraints' => [
+                    new File([
+                        'maxSize' => '1024k',
+                        'mimeTypes' => [
+                            'image/*',
+                        ],
+                        'mimeTypesMessage' => 'Veuillez entrer un format de document valide',
+                    ])
+                ],
+            ])
         ;
     }
 

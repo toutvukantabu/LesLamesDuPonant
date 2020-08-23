@@ -1,16 +1,16 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello AdminController!
-{% endblock %}
+{% block title 'administration' %}
+
 
 {% block body %}
 <div class="container">
   <div class="row">
-    <div class="col s11 m8 l9 xl10">
+    <div class="col s12 m8 l9 xl10">
       <div id="User" class="section scrollspy">
         <h4 class="center-align">table des utilisateurs</h4>
  
-          <table class="table tableAdmin display" data-order='[[ 1, "asc" ]]' data-page-length='25' 
+          <table class="table tableAdmin display" data-order='[[ 1, "asc" ]]' data-page-length='20' 
             id="myTable">
             <thead>
               <tr>
@@ -31,13 +31,13 @@
                 <td>{{ user.pseudoUser }}</td>
                 <td>{{ user.postalCodeUser }}</td>
                 <td>
-                  <a href="{{ path('user_show', {'id': user.id}) }}">show</a>
-                  <a href="{{ path('user_edit', {'id': user.id}) }}">edit</a>
+                  <a href="{{ path('user_show', {'id': user.id}) }}">voir</a>
+                  <a href="{{ path('user_edit', {'id': user.id}) }}">éditer</a>
                 </td>
               </tr>
               {% else %}
               <tr>
-                <td colspan="14">no records found</td>
+                <td colspan="14">Aucun enregistrement trouvé.</td>
               </tr>
               {% endfor %}
             </tbody>
@@ -68,13 +68,13 @@
                 <td>{{ contact_message.emailContactMessage }}</td>
                 <td>{{ contact_message.dateContactMessage ? contact_message.dateContactMessage|date('Y-m-d H:i:s') : '' }}</td>
                 <td>
-                    <a href="{{ path('contact_message_show', {'id': contact_message.id}) }}">show</a>
-                    <a href="{{ path('contact_message_edit', {'id': contact_message.id}) }}">edit</a>
+                    <a href="{{ path('contact_message_show', {'id': contact_message.id}) }}">voir</a>
+                    <a href="{{ path('contact_message_edit', {'id': contact_message.id}) }}">éditer</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="7">no records found</td>
+                <td colspan="7">Aucun enregistrement trouvé.</td>
             </tr>
         {% endfor %}
         </tbody>
@@ -89,7 +89,7 @@
                 <th>Nom de la discipline</th>
                 <th>image</th>
                 <th>description</th>
-                <th>actions</th>
+                <th>action</th>
             </tr>
         </thead>
         <tbody>
@@ -100,13 +100,13 @@
                 <td>{{ home_discipline.imageHomeDiscipline }}</td>
                 <td>{{ home_discipline.descriptionDiscipline }}</td>
                 <td>
-                    <a href="{{ path('home_discipline_show', {'id': home_discipline.id}) }}">show</a>
-                    <a href="{{ path('home_discipline_edit', {'id': home_discipline.id}) }}">edit</a>
+                    <a href="{{ path('home_discipline_show', {'id': home_discipline.id}) }}">voir</a>
+                    <a href="{{ path('home_discipline_edit', {'id': home_discipline.id}) }}">éditer</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="5">no records found</td>
+                <td colspan="5">Aucun enregistrement trouvé.</td>
             </tr>
         {% endfor %}
         </tbody>
@@ -137,13 +137,13 @@
                 <td>{{ time_stamp.dateTimeStamp ? time_stamp.dateTimeStamp|date('Y-m-d') : '' }}</td>
                 <td>{{ time_stamp.hourTimeStamp ? time_stamp.hourTimeStamp|date('H:i:s') : '' }}</td>
                 <td>
-                  <a href="{{ path('time_stamp_show', {'id': time_stamp.id}) }}">show</a>
-                  <a href="{{ path('time_stamp_edit', {'id': time_stamp.id}) }}">edit</a>
+                  <a href="{{ path('time_stamp_show', {'id': time_stamp.id}) }}">voir</a>
+                  <a href="{{ path('time_stamp_edit', {'id': time_stamp.id}) }}">éditer</a>
                 </td>
               </tr>
               {% else %}
               <tr>
-                <td colspan="6">no records found</td>
+                <td colspan="6">Aucun enregistrement trouvé.</td>
               </tr>
               {% endfor %}
             </tbody>
@@ -152,7 +152,7 @@
         <a href="{{ path('time_stamp_new') }}">Créer un nouvel évenement</a>
       </div>
     </div>
-    <div class="col hide-on-small-only m3 l2">
+    <div class="col hide-on-small-only m3 l2 s12">
       <ul class="section table-of-contents fixed">
         <h6 class="center-align">Membres du site</h6>
         <li>
