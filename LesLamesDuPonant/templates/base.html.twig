@@ -17,21 +17,30 @@
 </head>
 
 <body id="Body" class="">
+{# LOGO #}
+{# ======================= #}
+
 	<header>
 		<div class="container " id="HomeTitle">
 			<div class="row">
 				<div class="  col m12 s12 l12 xl12">
-					<img src="{{ asset('uploads/LogoLDP2020.png')}}">
+				 {# {% for home_picture in home_pictures %}
+					<img src="{{ asset('uploads/parallax/'~ home_picture.homeLogoPicture)}}">
+					{% endfor %} #}
 				</div>
 			</div>
 		</div>
 	</header>
 
+{# NABAR
+======================== #}
 	<ul class="side-nav z-depth-4" id="mobile-demo">
 		<li>
 			<div class="user-view">
 				<div class="background">
-					<img src="https://miro.medium.com/max/1080/1*hU0QQDiOnsKpX4qlIyn_4w.jpeg">
+				
+					{# <img src="{{ asset()}}"> #}
+				
 				</div>
 				{% if is_granted('IS_AUTHENTICATED_FULLY') and app.user.photoAvatarUser  != NULL %}
 
@@ -135,7 +144,7 @@
 						<a href="{{path('home')}}">Forum</a>
 					</li>
 					{% if is_granted('ROLE_ADMIN') or is_granted('Role_Super_Administrateur') %}
-<li>
+					<li>
 					<a href="{{path('admin')}}">Administration</a>
 					</li>
 					{% endif %}
@@ -174,12 +183,20 @@
 			</div>
 		</nav>
 	</div>
+	{# IMAGE HomeTitle
+	=============== #}
 	{% if app.request.get('_route') == 'home' %}
 	<div id="HomeImg">
-		<img src="{{ asset('uploads/Parallax3.jpg')}}" alt="">
+	 {# {% for home_picture in home_pictures %}
+					<img src="{{ asset('uploads/parallax/'~ home_picture.homeTitlePicture)}}">
+	{% endfor %} #}
 	</div>
 	{% endif %}
 	<main>
+
+{# PRESENTATION leslamesduponant
+============================= #}
+
 		{% block body %}{% endblock %}
 		{% if app.request.get('_route') == 'home' %}
 		<div class="section white homeSectionPresentation">
@@ -198,10 +215,21 @@
 				</div>
 			</div>
 		</div>
+
+{# PARALLAX1	
+=================== #}
+
+
 		<div class="parallax-container">
-			<div class="parallax"><img src="{{ asset('uploads/Parallax2.jpg')}}">
+			 {# {% for home_picture in home_pictures %}
+				<div class="parallax"><img src="{{ asset('uploads/parallax/'~ home_picture.homeParallax1)}}"></div>	
+					{% endfor %} #}
 			</div>
 		</div>
+
+{# DISCIPLINE Carousel
+================ #}
+
 		<div class="section white homeSectionActivity">
 			<h2 class="header center-align">Les disciplines</h2>
 			<div class="col s12 carousel center carouselHome " style="height:600px ;">
@@ -220,9 +248,14 @@
 						{% endfor %}
 			</div>
 		</div>
-		<div class="parallax-container">
-			<div class="parallax"><img src="{{ asset('uploads/Parallax3.jpg')}}"></div>
+{# Parralax2	
+================== #}
+		{# <div class="parallax-container">
+				 {% for home_picture in home_pictures %}
+				<div class="parallax"><img src="{{ asset('uploads/parallax/'~ home_picture.homeParallax2)}}"></div>
+	{% endfor %} #}
 		</div>
+
 		<div class="section white homeSectionCalendar">
 			<div class="container">
 				<div class="row ">

@@ -3,11 +3,11 @@
 {% block title %}Edit HomePictures{% endblock %}
 
 {% block body %}
-    <h1>Edit HomePictures</h1>
+    <h4 class="center-align">édition des images de la page d'accueil</h4>
 
-    {{ include('home_pictures/_form.html.twig', {'button_label': 'Update'}) }}
+    {{ include('home_pictures/_form.html.twig', {'button_label': 'maj'}) }}
 
-    <a href="{{ path('home_pictures_index') }}">back to list</a>
+    <a href="{{ path('home_pictures_index') }}">retours en arrière</a>
 
     {{ include('home_pictures/_delete_form.html.twig') }}
 {% endblock %}

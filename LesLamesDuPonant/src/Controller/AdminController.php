@@ -26,8 +26,9 @@ class AdminController extends AbstractController
             'contact_messages' => $contactMessageRepository->findAll(),
             'home_disciplines' => $homeDisciplineRepository->findAll(),
             'medieval_families' => $medievalFamilyRepository->findAll(),
-            'amhes' => $aMHERepository->findAll(),
+            'amhes' => $aMHERepository->findAll(),  
             'home_pictures' => $homePicturesRepository->findAll(),
+          
 
         ]);
     }

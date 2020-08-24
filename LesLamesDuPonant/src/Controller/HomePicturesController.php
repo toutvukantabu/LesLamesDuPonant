@@ -121,7 +121,7 @@ class HomePicturesController extends AbstractController
         }
 
         return $this->render('home_pictures/new.html.twig', [
-            'home_picture' => $homePicture,
+            'home_pictures' => $homePicture,
             'form' => $form->createView(),
         ]);
     }
@@ -132,7 +132,7 @@ class HomePicturesController extends AbstractController
     public function show(HomePictures $homePicture): Response
     {
         return $this->render('home_pictures/show.html.twig', [
-            'home_picture' => $homePicture,
+            'home_pictures' => $homePicture,
         ]);
     }
 
@@ -222,7 +222,7 @@ class HomePicturesController extends AbstractController
         }
 
         return $this->render('home_pictures/edit.html.twig', [
-            'home_picture' => $homePicture,
+            'home_pictures' => $homePicture,
             'form' => $form->createView(),
         ]);
     }

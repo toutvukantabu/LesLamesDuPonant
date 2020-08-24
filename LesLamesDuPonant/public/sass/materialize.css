@@ -9503,7 +9503,7 @@ nav li a:hover {
 }
 
 #HomeImg img {
-  max-height: 80vh;
+  max-height: 100vh;
   width: 100%;
 }
 
@@ -9724,7 +9724,7 @@ ul.tl li .timestamp {
 
 .page-footer .footerLameDuPonantLeft i {
   display: block;
-  margin-top: 14px;
+  margin-top: 20px;
   text-align: left;
   margin-left: 11px;
 }
@@ -9736,7 +9736,7 @@ ul.tl li .timestamp {
 .page-footer .footerLameDuPonantLeft p {
   margin-left: 27%;
   margin-top: 20px;
-  min-width: 103px;
+  min-width: 130px;
   font-size: 19px;
 }
 

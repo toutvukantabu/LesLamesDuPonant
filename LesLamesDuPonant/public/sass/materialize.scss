@@ -184,7 +184,6 @@ nav {
   }
 }
 
-
 /* Home Image
   *================
   */
@@ -192,7 +191,7 @@ nav {
   margin-bottom: -7px;
 
   img {
-    max-height: 80vh;
+    max-height: 100vh;
     width: 100%;
   }
 }
@@ -202,10 +201,8 @@ nav {
   */
 .homeSectionPresentation {
   min-height: 350px;
-
   h2 {
     margin-bottom: 50px;
-
   }
 }
 
@@ -217,8 +214,6 @@ nav {
   max-width: 700px;
   margin: 0 auto;
   
-
-
   p {
     text-align: justify;
 
@@ -433,7 +428,7 @@ ul.tl li .timestamp {
   border-right-width: unset;
   i{
   display: block;
-margin-top: 14px;
+margin-top: 20px;
 text-align: left;
 margin-left: 11px;
 }
@@ -443,7 +438,7 @@ i:hover{
 p{
 margin-left: 27%;
 margin-top: 20px;
-min-width: 103px;
+min-width: 130px;
 font-size: 19px;
 
 }
