@@ -44,7 +44,7 @@ class RegistrationFormType extends AbstractType
                     ],
                     'constraints' => [
                         new NotBlank([
-                            'message' => 'Please enter a password',
+                            'message' => 'Entrez votre mot de passe',
                         ]),
                         new Length([
                             'min' => 6,

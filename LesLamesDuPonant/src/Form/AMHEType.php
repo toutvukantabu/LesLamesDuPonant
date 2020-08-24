@@ -33,10 +33,6 @@ class AMHEType extends AbstractType
             ->add('photoTwoAMHE', FileType::class, [
                 'mapped' => false,
                 'required' => false,
-                'attr' => [
-                    'class'=> 'file-path validate ',
-                    'placefolder'=>'photo deux AMHE'
-                ],
                 'constraints' => [
                     new File([
                         'maxSize' => '1024k',

@@ -9,6 +9,11 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\String\Slugger\SluggerInterface;
+use Symfony\Component\HttpFoundation\File\Exception\FileException;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
 /**
  * @Route("/home/discipline")
@@ -28,13 +33,35 @@ class HomeDisciplineController extends AbstractController
     /**
      * @Route("/new", name="home_discipline_new", methods={"GET","POST"})
      */
-    public function new(Request $request): Response
+    public function new(Request $request, SluggerInterface $slugger): Response
     {
         $homeDiscipline = new HomeDiscipline();
         $form = $this->createForm(HomeDisciplineType::class, $homeDiscipline);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $imageHomeDiscipline = $form->get('imageHomeDiscipline')->getData();
+
+            if ($imageHomeDiscipline) {
+                $originalFilename = pathinfo($imageHomeDiscipline->getClientOriginalName(), PATHINFO_FILENAME);
+                // ceci est nécessaire pour inclure en toute sécurité le nom de fichier dans l'URL
+                $safeFilename = $slugger->slug($originalFilename);
+                $newFilename = $safeFilename . '-' . uniqid() . '.' . $imageHomeDiscipline->guessExtension();
+
+                // Déplacez le fichier dans le répertoire où les brochures sont stockées
+                try {
+                    $imageHomeDiscipline->move(
+                        $this->getParameter('discipline_directory'),
+                        $newFilename
+                    );
+                } catch (FileException $e) {
+                    // ... gérer l'exception si quelque chose se produit pendant le téléchargement du fichier
+                }
+
+                // met à jour la propriété 'imageHomeDiscipline' pour stocker le nom du fichier PDF
+                // au lieu de son contenu
+                $homeDiscipline->setimageHomeDiscipline($newFilename);
+            }
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($homeDiscipline);
             $entityManager->flush();
@@ -61,12 +88,34 @@ class HomeDisciplineController extends AbstractController
     /**
      * @Route("/{id}/edit", name="home_discipline_edit", methods={"GET","POST"})
      */
-    public function edit(Request $request, HomeDiscipline $homeDiscipline): Response
+    public function edit(Request $request, HomeDiscipline $homeDiscipline, SluggerInterface $slugger): Response
     {
         $form = $this->createForm(HomeDisciplineType::class, $homeDiscipline);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $imageHomeDiscipline = $form->get('imageHomeDiscipline')->getData();
+
+            if ($imageHomeDiscipline) {
+                $originalFilename = pathinfo($imageHomeDiscipline->getClientOriginalName(), PATHINFO_FILENAME);
+                // ceci est nécessaire pour inclure en toute sécurité le nom de fichier dans l'URL
+                $safeFilename = $slugger->slug($originalFilename);
+                $newFilename = $safeFilename . '-' . uniqid() . '.' . $imageHomeDiscipline->guessExtension();
+
+                // Déplacez le fichier dans le répertoire où les brochures sont stockées
+                try {
+                    $imageHomeDiscipline->move(
+                        $this->getParameter('discipline_directory'),
+                        $newFilename
+                    );
+                } catch (FileException $e) {
+                    // ... gérer l'exception si quelque chose se produit pendant le téléchargement du fichier
+                }
+
+                // met à jour la propriété 'imageHomeDiscipline' pour stocker le nom du fichier PDF
+                // au lieu de son contenu
+                $homeDiscipline->setimageHomeDiscipline($newFilename);
+            }
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('home_discipline_index');

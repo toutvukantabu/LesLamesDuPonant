@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New HomePictures{% endblock %}
+
+{% block body %}
+    <h1>Create new HomePictures</h1>
+
+    {{ include('home_pictures/_form.html.twig') }}
+
+    <a href="{{ path('home_pictures_index') }}">back to list</a>
+{% endblock %}
