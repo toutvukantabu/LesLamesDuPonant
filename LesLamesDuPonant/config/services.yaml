@@ -10,7 +10,7 @@ parameters:
     forum_directory: '%kernel.project_dir%/public/uploads/forum'
     homepicture_directory: '%kernel.project_dir%/public/uploads/parallax'
     other_directory: '%kernel.project_dir%/public/uploads/other'
-    leslamesduponant_directory: '%kernel.project_dir%/public/uploads/other'
+    leslamesduponant_directory: '%kernel.project_dir%/public/uploads/lldp'
 
 
 services:

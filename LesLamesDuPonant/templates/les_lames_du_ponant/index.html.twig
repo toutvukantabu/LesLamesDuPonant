@@ -3,15 +3,16 @@
 {% block title %}LesLamesDuPonant index{% endblock %}
 
 {% block body %}
-    <h4 class="center-align">LesLamesDuPonant index</h4>
+    <h1>LesLamesDuPonant index</h1>
 
     <table class="table">
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Titre</th>
-                <th>Desciption</th>
-                <th>action</th>
+                <th>TitleLLDP</th>
+                <th>DesciptionLLDP</th>
+                <th>PictureLesLamesDuponant</th>
+                <th>actions</th>
             </tr>
         </thead>
         <tbody>
@@ -20,18 +21,19 @@
                 <td>{{ les_lames_du_ponant.id }}</td>
                 <td>{{ les_lames_du_ponant.titleLLDP }}</td>
                 <td>{{ les_lames_du_ponant.desciptionLLDP }}</td>
+                <td>{{ les_lames_du_ponant.pictureLesLamesDuponant }}</td>
                 <td>
-                    <a href="{{ path('les_lames_du_ponant_show', {'id': les_lames_du_ponant.id}) }}">voir</a>
-                    <a href="{{ path('les_lames_du_ponant_edit', {'id': les_lames_du_ponant.id}) }}">éditer</a>
+                    <a href="{{ path('les_lames_du_ponant_show', {'id': les_lames_du_ponant.id}) }}">show</a>
+                    <a href="{{ path('les_lames_du_ponant_edit', {'id': les_lames_du_ponant.id}) }}">edit</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="4">Aucun enregistrement trouvé.</td>
+                <td colspan="5">no records found</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('les_lames_du_ponant_new') }}">Créer un nouveau</a>
+    <a href="{{ path('les_lames_du_ponant_new') }}">Create new</a>
 {% endblock %}

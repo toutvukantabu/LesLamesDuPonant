@@ -9782,4 +9782,9 @@ ul.tl li .timestamp {
 .smallResetPassword {
   margin-bottom: 40px;
 }
+
+#homeAdmin img {
+  height: 90px;
+  width: 120px;
+}
 /*# sourceMappingURL=materialize.css.map */

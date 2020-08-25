@@ -66,7 +66,7 @@ class HomeDisciplineController extends AbstractController
             $entityManager->persist($homeDiscipline);
             $entityManager->flush();
 
-            return $this->redirectToRoute('home_discipline_index');
+            return $this->redirectToRoute('admin');
         }
 
         return $this->render('home_discipline/new.html.twig', [
@@ -118,7 +118,7 @@ class HomeDisciplineController extends AbstractController
             }
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('home_discipline_index');
+            return $this->redirectToRoute('admin');
         }
 
         return $this->render('home_discipline/edit.html.twig', [
@@ -138,6 +138,6 @@ class HomeDisciplineController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('home_discipline_index');
+        return $this->redirectToRoute('admin');
     }
 }

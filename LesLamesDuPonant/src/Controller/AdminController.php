@@ -2,22 +2,23 @@
 
 namespace App\Controller;
 
+use App\Repository\AMHERepository;
 use App\Repository\UserRepository;
-use App\Repository\MedievalFamilyRepository;
-use App\Repository\HomeDisciplineRepository;
-use App\Repository\ContactMessageRepository;
 use App\Repository\TimeStampRepository;
 use App\Repository\HomePicturesRepository;
-use App\Repository\AMHERepository;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Repository\ContactMessageRepository;
+use App\Repository\HomeDisciplineRepository;
+use App\Repository\MedievalFamilyRepository;
+use App\Repository\LesLamesDuPonantRepository;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class AdminController extends AbstractController
 {
     /**
      * @Route("/admin", name="admin")
      */
-    public function index(HomePicturesRepository $homePicturesRepository,AMHERepository $aMHERepository,MedievalFamilyRepository $medievalFamilyRepository,HomeDisciplineRepository $homeDisciplineRepository,ContactMessageRepository $contactMessageRepository,TimeStampRepository $timeStampRepository,UserRepository $userRepository )
+    public function index(LesLamesDuPonantRepository $lesLamesDuPonantRepository,HomePicturesRepository $homePicturesRepository,AMHERepository $aMHERepository,MedievalFamilyRepository $medievalFamilyRepository,HomeDisciplineRepository $homeDisciplineRepository,ContactMessageRepository $contactMessageRepository,TimeStampRepository $timeStampRepository,UserRepository $userRepository )
     {
         return $this->render('admin/index.html.twig', [
             'controller_name' => 'AdminController',
@@ -28,6 +29,7 @@ class AdminController extends AbstractController
             'medieval_families' => $medievalFamilyRepository->findAll(),
             'amhes' => $aMHERepository->findAll(),  
             'home_pictures' => $homePicturesRepository->findAll(),
+            'les_lames_du_ponants' => $lesLamesDuPonantRepository->findAll(),
           
 
         ]);

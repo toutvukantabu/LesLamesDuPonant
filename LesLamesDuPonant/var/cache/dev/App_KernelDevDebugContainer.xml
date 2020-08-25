@@ -88,7 +88,7 @@
     <parameter key="forum_directory">C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant/public/uploads/forum</parameter>
     <parameter key="homepicture_directory">C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant/public/uploads/parallax</parameter>
     <parameter key="other_directory">C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant/public/uploads/other</parameter>
-    <parameter key="leslamesduponant_directory">C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant/public/uploads/other</parameter>
+    <parameter key="leslamesduponant_directory">C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant/public/uploads/lldp</parameter>
     <parameter key="event_dispatcher.event_aliases" type="collection">
       <parameter key="Symfony\Component\Console\Event\ConsoleCommandEvent">console.command</parameter>
       <parameter key="Symfony\Component\Console\Event\ConsoleErrorEvent">console.error</parameter>
@@ -5762,13 +5762,14 @@
         <argument key="slugger" type="service" id="slugger"/>
       </argument>
     </service>
-    <service id=".service_locator.bu7.aAM" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.PVbfdAu" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="aMHERepository" type="service" id="App\Repository\AMHERepository"/>
         <argument key="contactMessageRepository" type="service" id="App\Repository\ContactMessageRepository"/>
         <argument key="homeDisciplineRepository" type="service" id="App\Repository\HomeDisciplineRepository"/>
         <argument key="homePicturesRepository" type="service" id="App\Repository\HomePicturesRepository"/>
+        <argument key="lesLamesDuPonantRepository" type="service" id="App\Repository\LesLamesDuPonantRepository"/>
         <argument key="medievalFamilyRepository" type="service" id="App\Repository\MedievalFamilyRepository"/>
         <argument key="timeStampRepository" type="service" id="App\Repository\TimeStampRepository"/>
         <argument key="userRepository" type="service" id="App\Repository\UserRepository"/>
@@ -5977,7 +5978,7 @@
         <argument key="user" type="service" id=".errored..service_locator.ikUdgSe.App\Entity\User"/>
       </argument>
     </service>
-    <service id=".service_locator.u0E8r80" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.ycWXk73" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\AMHEController::delete" type="service" id=".service_locator.Yu9Pcj8"/>
@@ -5985,7 +5986,7 @@
         <argument key="App\Controller\AMHEController::index" type="service" id=".service_locator.d2ed_or"/>
         <argument key="App\Controller\AMHEController::new" type="service" id=".service_locator.1cFtlgg"/>
         <argument key="App\Controller\AMHEController::show" type="service" id=".service_locator.Yu9Pcj8"/>
-        <argument key="App\Controller\AdminController::index" type="service" id=".service_locator.bu7.aAM"/>
+        <argument key="App\Controller\AdminController::index" type="service" id=".service_locator.PVbfdAu"/>
         <argument key="App\Controller\CategoryForumController::delete" type="service" id=".service_locator.KGenLOu"/>
         <argument key="App\Controller\CategoryForumController::edit" type="service" id=".service_locator.KGenLOu"/>
         <argument key="App\Controller\CategoryForumController::index" type="service" id=".service_locator.1oURJky"/>
@@ -6051,7 +6052,7 @@
         <argument key="App\Controller\AMHEController:index" type="service" id=".service_locator.d2ed_or"/>
         <argument key="App\Controller\AMHEController:new" type="service" id=".service_locator.1cFtlgg"/>
         <argument key="App\Controller\AMHEController:show" type="service" id=".service_locator.Yu9Pcj8"/>
-        <argument key="App\Controller\AdminController:index" type="service" id=".service_locator.bu7.aAM"/>
+        <argument key="App\Controller\AdminController:index" type="service" id=".service_locator.PVbfdAu"/>
         <argument key="App\Controller\CategoryForumController:delete" type="service" id=".service_locator.KGenLOu"/>
         <argument key="App\Controller\CategoryForumController:edit" type="service" id=".service_locator.KGenLOu"/>
         <argument key="App\Controller\CategoryForumController:index" type="service" id=".service_locator.1oURJky"/>
@@ -6693,12 +6694,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
-      <argument type="service" id=".service_locator.u0E8r80"/>
+      <argument type="service" id=".service_locator.ycWXk73"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver" public="false"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver" public="false">
-      <argument type="service" id=".service_locator.u0E8r80"/>
+      <argument type="service" id=".service_locator.ycWXk73"/>
     </service>
     <service id=".debug.http_client.inner" class="Symfony\Contracts\HttpClient\HttpClientInterface" public="false">
       <argument type="collection"/>
@@ -7118,7 +7119,7 @@
     <service id="SymfonyCasts\Bundle\ResetPassword\ResetPasswordHelperInterface" alias="symfonycasts.reset_password.helper"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.WaGDpDt" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem" public="false"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.u0E8r80"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.ycWXk73"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
     <service id="Psr\Log\LoggerInterface $consoleLogger" alias="monolog.logger.console"/>

@@ -7,18 +7,20 @@
 <div class="container" id="homeAdmin">
 	<div class="row">
 		<div class="col s12 m8 l9 xl10">
+			{# USER
+========== #}
 			<div id="User" class="section scrollspy">
 				<h4 class="center-align">table des utilisateurs</h4>
-
-				<table class="table tableAdmin display" data-order='[[ 1, "asc" ]]' data-page-length='20' id="myTable">
+				<table class="table tableAdmin display" data-order='[[ 1, "asc" ]]' data-page-length='10' id="myTable">
 					<thead>
 						<tr>
 							<th>Id</th>
 							<th>Email</th>
-							<th>Roles</th>
 							<th>Pseudo utilisateur</th>
 							<th>Code postal</th>
-							<th>action</th>
+							<th>voir</th>
+							<th>éditer</th>
+							<th>supprimer</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -26,12 +28,32 @@
 						<tr>
 							<td>{{ user.id }}</td>
 							<td>{{ user.email }}</td>
-							<td>{{ user.roles ? user.roles|json_encode : '' }}</td>
 							<td>{{ user.pseudoUser }}</td>
 							<td>{{ user.postalCodeUser }}</td>
 							<td>
-								<a href="{{ path('user_show', {'id': user.id}) }}">voir</a>
-								<a href="{{ path('user_edit', {'id': user.id}) }}">éditer</a>
+								<a href="{{ path('user_show', {'id': user.id}) }}">
+									<button class="btn blue">
+										<i class=" tiny material-icons ">visibility</i>
+									</button>
+								</a>
+							</td>
+							<td>
+								<a href="{{ path('user_edit', {'id': user.id}) }}">
+									<button class="btn orange">
+										<i class=" tiny material-icons ">create</i>
+									</button>
+								</a>
+							</td>
+							<td>
+								<form method="post" action="{{ path('user_delete', {'id': user.id}) }}"
+									onsubmit="return confirm('Voulez vous vraiment supprimer cet utilisateur?');">
+									<input type="hidden" name="_method" value="DELETE">
+									<input type="hidden" name="_token" value="{{ csrf_token('delete' ~ user.id) }}">
+									<button class="btn red">
+										<i class=" tiny material-icons ">delete</i>
+									</button>
+								</form>
+
 							</td>
 						</tr>
 						{% else %}
@@ -42,7 +64,8 @@
 					</tbody>
 				</table>
 			</div>
-
+			{# MESSAGERIE
+=========== #}
 			<div id="message" class="section scrollspy">
 				<h4 class="center-align">Messagerie</h4>
 				<table class="table" id="myTable2">
@@ -54,7 +77,9 @@
 							<th>contenu du message</th>
 							<th>Email</th>
 							<th>Date du message</th>
-							<th>action</th>
+							<th>voir</th>
+							<th>supprimer</th>
+
 						</tr>
 					</thead>
 					<tbody>
@@ -68,8 +93,23 @@
 							<td>{{ contact_message.dateContactMessage ? contact_message.dateContactMessage|date('Y-m-d H:i:s') : '' }}
 							</td>
 							<td>
-								<a href="{{ path('contact_message_show', {'id': contact_message.id}) }}">voir</a>
-								<a href="{{ path('contact_message_edit', {'id': contact_message.id}) }}">éditer</a>
+								<a href="{{ path('contact_message_show', {'id': contact_message.id}) }}">
+									<button class="btn blue">
+										<i class=" tiny material-icons ">visibility</i>
+									</button>
+								</a>
+							</td>
+							<td>
+								<form method="post"
+									action="{{ path('contact_message_delete', {'id': contact_message.id}) }}"
+									onsubmit="return confirm('Confirmer la suppression?');">
+									<input type="hidden" name="_method" value="DELETE">
+									<input type="hidden" name="_token"
+										value="{{ csrf_token('delete' ~ contact_message.id) }}">
+									<button class="btn red">
+										<i class=" tiny material-icons ">delete</i>
+									</button>
+								</form>
 							</td>
 						</tr>
 						{% else %}
@@ -80,6 +120,8 @@
 					</tbody>
 				</table>
 			</div>
+			{# DISCIPLINE
+=========== #}
 			<div id="discipline" class="section scrollspy">
 				<h4 class="center-align">Disciplines page d'accueil</h4>
 				<table class="table" id="myTable3">
@@ -89,7 +131,9 @@
 							<th>Nom de la discipline</th>
 							<th>image</th>
 							<th>description</th>
-							<th>action</th>
+							<th>voir</th>
+							<th>éditer</th>
+							<th>supprimer</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -97,11 +141,34 @@
 						<tr>
 							<td>{{ home_discipline.id }}</td>
 							<td>{{ home_discipline.nameDiscipline }}</td>
-							<td>{{ home_discipline.imageHomeDiscipline }}</td>
-							<td>{{ home_discipline.descriptionDiscipline }}</td>
+							<td><img src="{{asset('/uploads/discipline/') ~ home_discipline.imageHomeDiscipline }}"
+									alt=""></td>
+							<td>{{ home_discipline.descriptionDiscipline|raw }}</td>
 							<td>
-								<a href="{{ path('home_discipline_show', {'id': home_discipline.id}) }}">voir</a>
-								<a href="{{ path('home_discipline_edit', {'id': home_discipline.id}) }}">éditer</a>
+								<a href="{{ path('home_discipline_show', {'id': home_discipline.id}) }}">
+									<button class="btn blue">
+										<i class=" tiny material-icons ">visibility</i>
+									</button>
+								</a>
+							</td>
+							<td>
+								<a href="{{ path('home_discipline_edit', {'id': home_discipline.id}) }}">
+									<button class="btn orange">
+										<i class=" tiny material-icons ">create</i>
+									</button>
+								</a>
+							</td>
+							<td>
+								<form method="post"
+									action="{{ path('home_discipline_delete', {'id': home_discipline.id}) }}"
+									onsubmit="return confirm('Confirmer la suppression?');">
+									<input type="hidden" name="_method" value="DELETE">
+									<input type="hidden" name="_token"
+										value="{{ csrf_token('delete' ~ home_discipline.id) }}">
+									<button class="btn red">
+										<i class=" tiny material-icons ">delete</i>
+									</button>
+								</form>
 							</td>
 						</tr>
 						{% else %}
@@ -113,46 +180,75 @@
 				</table>
 				<a href="{{ path('home_discipline_new') }}">Créer une nouvelle discipline</a>
 			</div>
+			{# HOME PICTURE
+================ #}
 			<div id="homepicture" class="section scrollspy">
-			 <table class="table tableAdmin display" id="myTable4">
-			 <h4 class="center-align">édition images logo page d'accueil</h4>
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>HomeLogoPicture</th>
-                <th>HomeTitlePicture</th>
-                <th>HomeParallax1</th>
-                <th>HomeParallax2</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-       {% for home_picture in home_pictures %} 
-            <tr>
-                <td>{{ home_picture.id }}</td>
-                <td>{{ home_picture.homeLogoPicture }}</td>
-                <td>{{ home_picture.homeTitlePicture }}</td>
-                <td>{{ home_picture.homeParallax1 }}</td>
-                <td>{{ home_picture.homeParallax2 }}</td>
-                <td>
-                    <a href="{{ path('home_pictures_show', {'id': home_picture.id}) }}">show</a>
-                    <a href="{{ path('home_pictures_edit', {'id': home_picture.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="6">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+				<table class="table tableAdmin display" id="myTable4">
+					<h4 class="center-align">édition images logo page d'accueil</h4>
+					<thead>
+						<tr>
+							<th>Id</th>
+							<th>HomeLogoPicture</th>
+							<th>HomeTitlePicture</th>
+							<th>HomeParallax1</th>
+							<th>HomeParallax2</th>
+							<th>voir</th>
+							<th>éditer</th>
+							<th>supprimer</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for home_picture in home_pictures %}
+						<tr>
+							<td>{{ home_picture.id }}</td>
+							<td><img src="{{ asset('/uploads/parallax/') ~ home_picture.homeLogoPicture }} " alt="">
+							</td>
+							<td><img src="{{asset('/uploads/parallax/') ~ home_picture.homeTitlePicture }}" alt="">
+							</td>
+							<td><img src="{{asset('/uploads/parallax/') ~ home_picture.homeParallax1 }}" alt=""></td>
+							<td><img src="{{asset('/uploads/parallax/') ~ home_picture.homeParallax2 }}" alt=""></td>
+							<td>
+								<a href="{{ path('home_pictures_show', {'id': home_picture.id}) }}">
+									<button class="btn blue">
+										<i class=" tiny material-icons ">visibility</i>
+									</button>
+								</a>
+							</td>
+							<td>
+								<a href="{{ path('home_pictures_edit', {'id': home_picture.id}) }}">
+									<button class="btn orange">
+										<i class=" tiny material-icons ">create</i>
+									</button>
+								</a>
+							</td>
+							<td>
+							<form method="post" action="{{ path('home_pictures_delete', {'id': home_pictures.id}) }}" onsubmit="return confirm('Are you sure you want to delete this item?');">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ home_pictures.id) }}">
+    <button class="btn">Delete</button>
+</form>
 
-    <a href="{{ path('home_pictures_new') }}">Create new</a>
+							</td>
+						</tr>
+						{% else %}
+						<tr>
+							<td colspan="6">no records found</td>
+						</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+				<a href="{{ path('home_pictures_new') }}">Create new</a>
 			</div>
-		
+
+			{# TIMESTAMP
+======= #}
 			<div id="agenda" class="section scrollspy">
 				<table class="table tableAdmin display" id="myTable5">
 					<h4 class="center-align">Agenda</h4>
+					<a href="{{ path('time_stamp_new') }}"
+						class="btn-floating btn-large waves-effect waves-light blue float-right ">
+						<i class="material-icons">add</i>
+					</a>
 					<thead>
 						<tr>
 							<th>Id</th>
@@ -160,7 +256,9 @@
 							<th>déscription de l'évenement</th>
 							<th>date de l'évenement</th>
 							<th>heure de l'évènement</th>
-							<th>action</th>
+							<th>voir</th>
+							<th>éditer</th>
+							<th>supprimer</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -172,9 +270,23 @@
 							<td>{{ time_stamp.dateTimeStamp ? time_stamp.dateTimeStamp|date('Y-m-d') : '' }}</td>
 							<td>{{ time_stamp.hourTimeStamp ? time_stamp.hourTimeStamp|date('H:i:s') : '' }}</td>
 							<td>
-								<a href="{{ path('time_stamp_show', {'id': time_stamp.id}) }}">voir</a>
-								<a href="{{ path('time_stamp_edit', {'id': time_stamp.id}) }}">éditer</a>
-							</td>
+								<a href="{{ path('time_stamp_show', {'id': time_stamp.id}) }}">
+									<button class="btn blue">
+										<i class=" tiny material-icons ">visibility</i>
+									</button>
+								</a>
+								</td>
+								<td>
+								<a href="{{ path('time_stamp_edit', {'id': time_stamp.id}) }}">
+									<button class=" btn orange"><i class=" tiny material-icons ">create</i></button>
+								</a></td>
+								<td>
+								<form method="post" action="{{ path('time_stamp_delete', {'id': time_stamp.id}) }}" onsubmit="return confirm('Confirmer la suppression?');">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ time_stamp.id) }}">
+    <button class="btn red"><i class=" tiny material-icons ">delete</i></button>
+</form>
+								</td>
 						</tr>
 						{% else %}
 						<tr>
@@ -183,89 +295,178 @@
 						{% endfor %}
 					</tbody>
 				</table>
-				<a href="{{ path('time_stamp_new') }}">Créer un nouvel évenement</a>
+
 			</div>
+			{# AMHE
+=========== #}
 			<div id="amhe" class="section scrollspy">
-			 <h4 class="center-align">édition amhe image et texte</h4>
+				<h4 class="center-align">édition amhe image et texte</h4>
 
-    <table class="table tableAdmin display" id="myTable6">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Titre</th>
-                <th>Description</th>
-                <th>Photo carousel 1</th>
-                <th>Photo carousel 2</th>
-                <th>Photo carousel 3</th>
-                <th>action</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for amhe in amhes %}
-            <tr>
-                <td>{{ amhe.id }}</td>
-                <td>{{ amhe.titleAMHE }}</td>
-                <td>{{ amhe.DescriptionAMHE | raw}}</td>
-                <td><img src="{{asset ('/uploads/amhe/'~ amhe.photoOneAMHE) }}" alt="" height="50px"></td>
-                <td>{{ amhe.photoTwoAMHE }}</td>
-                <td>{{ amhe.photoThreeAMHE }}</td>
-                <td>
-                    <a href="{{ path('amhe_show', {'id': amhe.id}) }}">voir</a>
-                    <a href="{{ path('amhe_edit', {'id': amhe.id}) }}">éditerer</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="7">pas de donnée trouvée</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-    <a href="{{ path('amhe_new') }}">créer une nouvelle</a>
+				<table class="table tableAdmin display" id="myTable6">
+					<thead>
+						<tr>
+							<th>Id</th>
+							<th>Titre</th>
+							<th>Description</th>
+							<th>Photo carousel 1</th>
+							<th>Photo carousel 2</th>
+							<th>Photo carousel 3</th>
+							<th>voir</th>
+							<th>éditer</th>
+							<th>supprimer</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for amhe in amhes %}
+						<tr>
+							<td>{{ amhe.id }}</td>
+							<td>{{ amhe.titleAMHE }}</td>
+							<td >{{ amhe.DescriptionAMHE|raw}}</td>
+							<td><img src="{{asset ('/uploads/amhe/' ~ amhe.photoOneAMHE) }}" alt=""></td>
+							<td><img src="{{asset('/uploads/amhe/') ~ amhe.photoTwoAMHE }}" alt=""></td>
+							<td><img src="{{asset('/uploads/amhe/') ~ amhe.photoThreeAMHE }}" alt=""></td>
+							<td>
+								<a href="{{ path('amhe_show', {'id': amhe.id}) }}">
+									<button class="btn blue">
+										<i class=" tiny material-icons ">visibility</i>
+									</button>
+								</a>
+							
+							</td>
+							<td>
+								<a href="{{ path('amhe_edit', {'id': amhe.id}) }}">
+									<button class="btn orange"><i class=" tiny material-icons ">create</i></button>
+								</a>
+							</td>
+							<td>
+							<form method="post" action="{{ path('amhe_delete', {'id': amhe.id}) }}" onsubmit="return confirm('Voulez vous vraiment supprimer AMHE?');">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ amhe.id) }}">
+    <button class="btn red"><i class="tiny material-icons">delete</i></button>
+</form>
+							
+							</td>
+						</tr>
+						{% else %}
+						<tr>
+							<td colspan="7">pas de donnée trouvée</td>
+						</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+				<a href="{{ path('amhe_new') }}">créer une nouvelle</a>
 			</div>
-			
-		<div id="medievalFamily" class="section scrollspy">
-    <h4 class="center-align">MedievalFamily index</h4>
-<table class="table tableAdmin display" id="myTable7"
-    <table >
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>TitleMedievalFamily</th>
-                <th>DescriptionMedievalFamily</th>
-                <th>action</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for medieval_family in medieval_families %}
-            <tr>
-                <td>{{ medieval_family.id }}</td>
-                <td>{{ medieval_family.titleMedievalFamily }}</td>
-                <td>{{ medieval_family.descriptionMedievalFamily | raw }}</td>
-                <td>
-                    <a href="{{ path('medieval_family_show', {'id': medieval_family.id}) }}">voir</a>
-                    <a href="{{ path('medieval_family_edit', {'id': medieval_family.id}) }}">éditer</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="4">Aucun enregistrement trouvé.</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+			{# MEDIEVALFAMILY
+				=============== #}
+			<div id="medievalFamily" class="section scrollspy">
+				<h4 class="center-align">MedievalFamily index</h4>
+				<table class="table tableAdmin display" id="myTable7">
+					<table>
+						<thead>
+							<tr>
+								<th>Id</th>
+								<th>TitleMedievalFamily</th>
+								<th>DescriptionMedievalFamily</th>
+								<th>voir</th>
+								<th>éditer</th>
+								<th>supprimer</th>
+							</tr>
+						</thead>
+						<tbody>
+							{% for medieval_family in medieval_families %}
+							<tr>
+								<td>{{ medieval_family.id }}</td>
+								<td>{{ medieval_family.titleMedievalFamily }}</td>
+								<td>{{ medieval_family.descriptionMedievalFamily|raw }}</td>
+								<td>
+									<a href="{{ path('medieval_family_show', {'id': medieval_family.id}) }}">
+										<button class="btn blue">
+											<i class=" tiny material-icons ">visibility</i>
+										</button>
+									</a>
+								</td>
+								<td> <a href="{{ path('medieval_family_edit', {'id': medieval_family.id}) }}">
+										<button class="btn orange"><i class=" tiny material-icons ">create</i></button>
+									</a></td>
+								<td>
+									<form method="post"
+										action="{{ path('medieval_family_delete', {'id': medieval_family.id}) }}"
+										onsubmit="return confirm('Confirmer la suppression?');">
+										<input type="hidden" name="_method" value="DELETE">
+										<input type="hidden" name="_token"
+											value="{{ csrf_token('delete' ~ medieval_family.id) }}">
+										<button class="btn red"><i class=" tiny material-icons ">delete</i></button>
+									</form>
+								</td>
 
-    <a href="{{ path('medieval_family_new') }}">Créer un nouveau</a>
-
-
+							</tr>
+							{% else %}
+							<tr>
+								<td colspan="4">Aucun enregistrement trouvé.</td>
+							</tr>
+							{% endfor %}
+						</tbody>
+					</table>
+					<a href="{{ path('medieval_family_new') }}">Créer un nouveau</a>
 			</div>
-		
-		<div id="lldp" class="section scrollspy">
+			{# LES LAMES DU Ponant
+=================== #}
+			<div id="lldp" class="section scrollspy">
+				<table class="table tableAdmin display" id="myTable8">
+					<thead>
+						<tr>
+							<th>Id</th>
+							<th>TitleLLDP</th>
+							<th>DesciptionLLDP</th>
+							<th>PictureLesLamesDuponant</th>
+							<th>voir</th>
+							<th>éditer</th>
+							<th>supprimer</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for les_lames_du_ponant in les_lames_du_ponants %}
+						<tr>
+							<td>{{ les_lames_du_ponant.id }}</td>
+							<td>{{ les_lames_du_ponant.titleLLDP }}</td>
+							<td>{{ les_lames_du_ponant.desciptionLLDP | raw}}</td>
+							<td><img src="{{asset('/uploads/lldp/') ~ les_lames_du_ponant.pictureLesLamesDuponant }}"
+									alt=""></td>
+							<td>
+								<a href="{{ path('les_lames_du_ponant_show', {'id': les_lames_du_ponant.id}) }}">
+									<button class="btn blue">
+										<i class=" tiny material-icons ">visibility</i>
+									</button>
+								</a>
+							</td>
+							<td>
+								<a href="{{ path('les_lames_du_ponant_edit', {'id': les_lames_du_ponant.id}) }}">
+									<button class="btn orange"><i class=" tiny material-icons ">create</i></button>
+								</a>
+							</td>
+							<td>
+								<form method="post"
+									action="{{ path('les_lames_du_ponant_delete', {'id': les_lames_du_ponant.id}) }}"
+									onsubmit="return confirm('Are you sure you want to delete this item?');">
+									<input type="hidden" name="_method" value="DELETE">
+									<input type="hidden" name="_token"
+										value="{{ csrf_token('delete' ~ les_lames_du_ponant.id) }}">
+									<button class="btn red"><i class=" tiny material-icons ">delete</i></button>
+								</form>
+
+							</td>
+						</tr>
+						{% else %}
+						<tr>
+							<td colspan="5">no records found</td>
+						</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+				<a href="{{ path('les_lames_du_ponant_new') }}">Create new</a>
 			</div>
-		
-		
-		
 		</div>
+
 		<div class="col hide-on-small-only m3 l2 ">
 			<ul class="section table-of-contents fixed">
 				<h6 class="center-align">Membres du site</h6>
