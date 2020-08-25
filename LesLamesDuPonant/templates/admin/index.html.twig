@@ -188,7 +188,7 @@
 			<div id="amhe" class="section scrollspy">
 			 <h4 class="center-align">édition amhe image et texte</h4>
 
-    <tableclass="table tableAdmin display" id="myTable6">
+    <table class="table tableAdmin display" id="myTable6">
         <thead>
             <tr>
                 <th>Id</th>
@@ -225,6 +225,39 @@
 			</div>
 			
 		<div id="medievalFamily" class="section scrollspy">
+    <h4 class="center-align">MedievalFamily index</h4>
+
+    <table class="table tableAdmin display" id="myTable7">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>TitleMedievalFamily</th>
+                <th>DescriptionMedievalFamily</th>
+                <th>action</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for medieval_family in medieval_families %}
+            <tr>
+                <td>{{ medieval_family.id }}</td>
+                <td>{{ medieval_family.titleMedievalFamily }}</td>
+                <td>{{ medieval_family.descriptionMedievalFamily }}</td>
+                <td>
+                    <a href="{{ path('medieval_family_show', {'id': medieval_family.id}) }}">voir</a>
+                    <a href="{{ path('medieval_family_edit', {'id': medieval_family.id}) }}">éditer</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">Aucun enregistrement trouvé.</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('medieval_family_new') }}">Créer un nouveau</a>
+
+
 			</div>
 		
 		<div id="lldp" class="section scrollspy">

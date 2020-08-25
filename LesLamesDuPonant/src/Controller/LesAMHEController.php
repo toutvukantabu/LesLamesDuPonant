@@ -21,4 +21,5 @@ class LesAMHEController extends AbstractController
             'les_lames_du_ponants' => $lesLamesDuPonantRepository->findAll(),
         ]);
     }
+    
 }
