@@ -10113,4 +10113,9 @@ if (window.location.href1 == 'http://127.0.0.1:8000/login') {
     $('#myTable2').DataTable();
     $('#myTable3').DataTable();
     $('#myTable4').DataTable();
+    $('#myTable5').DataTable();
+    $('#myTable6').DataTable();
+    $('#myTable7').DataTable();
+    $('#myTable8').DataTable();
+
 } );

@@ -17,11 +17,11 @@
             </tr>
             <tr>
                 <th>ImageHomeDiscipline</th>
-                <td>{{ home_discipline.imageHomeDiscipline }}</td>
+                <td><img src="{{asset('uploads/discipline' ~ home_discipline.imageHomeDiscipline )}} " alt=""></td>
             </tr>
             <tr>
                 <th>DescriptionDiscipline</th>
-                <td>{{ home_discipline.descriptionDiscipline }}</td>
+                <td>{{ home_discipline.descriptionDiscipline | raw }}</td>
             </tr>
         </tbody>
     </table>

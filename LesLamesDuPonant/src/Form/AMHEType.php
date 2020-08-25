@@ -3,6 +3,7 @@
 namespace App\Form;
 
 use App\Entity\AMHE;
+use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -16,7 +17,7 @@ class AMHEType extends AbstractType
     {
         $builder
             ->add('titleAMHE',TextType::class,['label' => 'Titre AMHE'])
-            ->add('DescriptionAMHE',TextType::class,['label' => 'Déscription Discipline'])
+            ->add('DescriptionAMHE',CKEditorType::class,['label' => 'Déscription Discipline'])
             ->add('photoOneAMHE', FileType::class, [
                 'mapped' => false,
                 'required' => false,

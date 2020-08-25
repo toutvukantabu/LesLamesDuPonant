@@ -9,7 +9,9 @@ parameters:
     discipline_directory: '%kernel.project_dir%/public/uploads/discipline'
     forum_directory: '%kernel.project_dir%/public/uploads/forum'
     homepicture_directory: '%kernel.project_dir%/public/uploads/parallax'
-    other_directory: '%kernel.project_dir%/public/uploads/other' 
+    other_directory: '%kernel.project_dir%/public/uploads/other'
+    leslamesduponant_directory: '%kernel.project_dir%/public/uploads/other'
+
 
 services:
     # default configuration for services in *this* file

@@ -88,6 +88,7 @@
     <parameter key="forum_directory">C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant/public/uploads/forum</parameter>
     <parameter key="homepicture_directory">C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant/public/uploads/parallax</parameter>
     <parameter key="other_directory">C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant/public/uploads/other</parameter>
+    <parameter key="leslamesduponant_directory">C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant/public/uploads/other</parameter>
     <parameter key="event_dispatcher.event_aliases" type="collection">
       <parameter key="Symfony\Component\Console\Event\ConsoleCommandEvent">console.command</parameter>
       <parameter key="Symfony\Component\Console\Event\ConsoleErrorEvent">console.error</parameter>
@@ -5876,6 +5877,13 @@
         <argument key="lesLamesDuPonant" type="service" id=".errored..service_locator.6WWz9RI.App\Entity\LesLamesDuPonant"/>
       </argument>
     </service>
+    <service id=".service_locator.qFXpODI" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="lesLamesDuPonant" type="service" id=".errored..service_locator.qFXpODI.App\Entity\LesLamesDuPonant"/>
+        <argument key="slugger" type="service" id="slugger"/>
+      </argument>
+    </service>
     <service id=".service_locator.jkCPVev" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -5969,7 +5977,7 @@
         <argument key="user" type="service" id=".errored..service_locator.ikUdgSe.App\Entity\User"/>
       </argument>
     </service>
-    <service id=".service_locator.cESrjbR" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.u0E8r80" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\AMHEController::delete" type="service" id=".service_locator.Yu9Pcj8"/>
@@ -6004,8 +6012,9 @@
         <argument key="App\Controller\HomeSectionForumController::show" type="service" id=".service_locator.ahw4_vS"/>
         <argument key="App\Controller\LesAMHEController::index" type="service" id=".service_locator.IM1ypip"/>
         <argument key="App\Controller\LesLamesDuPonantController::delete" type="service" id=".service_locator.6WWz9RI"/>
-        <argument key="App\Controller\LesLamesDuPonantController::edit" type="service" id=".service_locator.6WWz9RI"/>
+        <argument key="App\Controller\LesLamesDuPonantController::edit" type="service" id=".service_locator.qFXpODI"/>
         <argument key="App\Controller\LesLamesDuPonantController::index" type="service" id=".service_locator.2MFkbty"/>
+        <argument key="App\Controller\LesLamesDuPonantController::new" type="service" id=".service_locator.1cFtlgg"/>
         <argument key="App\Controller\LesLamesDuPonantController::show" type="service" id=".service_locator.6WWz9RI"/>
         <argument key="App\Controller\MedievalFamilyController::delete" type="service" id=".service_locator.F0JKktY"/>
         <argument key="App\Controller\MedievalFamilyController::edit" type="service" id=".service_locator.F0JKktY"/>
@@ -6069,8 +6078,9 @@
         <argument key="App\Controller\HomeSectionForumController:show" type="service" id=".service_locator.ahw4_vS"/>
         <argument key="App\Controller\LesAMHEController:index" type="service" id=".service_locator.IM1ypip"/>
         <argument key="App\Controller\LesLamesDuPonantController:delete" type="service" id=".service_locator.6WWz9RI"/>
-        <argument key="App\Controller\LesLamesDuPonantController:edit" type="service" id=".service_locator.6WWz9RI"/>
+        <argument key="App\Controller\LesLamesDuPonantController:edit" type="service" id=".service_locator.qFXpODI"/>
         <argument key="App\Controller\LesLamesDuPonantController:index" type="service" id=".service_locator.2MFkbty"/>
+        <argument key="App\Controller\LesLamesDuPonantController:new" type="service" id=".service_locator.1cFtlgg"/>
         <argument key="App\Controller\LesLamesDuPonantController:show" type="service" id=".service_locator.6WWz9RI"/>
         <argument key="App\Controller\MedievalFamilyController:delete" type="service" id=".service_locator.F0JKktY"/>
         <argument key="App\Controller\MedievalFamilyController:edit" type="service" id=".service_locator.F0JKktY"/>
@@ -6683,12 +6693,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
-      <argument type="service" id=".service_locator.cESrjbR"/>
+      <argument type="service" id=".service_locator.u0E8r80"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver" public="false"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver" public="false">
-      <argument type="service" id=".service_locator.cESrjbR"/>
+      <argument type="service" id=".service_locator.u0E8r80"/>
     </service>
     <service id=".debug.http_client.inner" class="Symfony\Contracts\HttpClient\HttpClientInterface" public="false">
       <argument type="collection"/>
@@ -6710,6 +6720,7 @@
     <service id=".errored..service_locator.c0WwyLC.App\Entity\HomePictures" class="App\Entity\HomePictures"/>
     <service id=".errored..service_locator.ahw4_vS.App\Entity\HomeSectionForum" class="App\Entity\HomeSectionForum"/>
     <service id=".errored..service_locator.6WWz9RI.App\Entity\LesLamesDuPonant" class="App\Entity\LesLamesDuPonant"/>
+    <service id=".errored..service_locator.qFXpODI.App\Entity\LesLamesDuPonant" class="App\Entity\LesLamesDuPonant"/>
     <service id=".errored..service_locator.F0JKktY.App\Entity\MedievalFamily" class="App\Entity\MedievalFamily"/>
     <service id=".errored..service_locator.JG2Goki.App\Entity\MessageForum" class="App\Entity\MessageForum"/>
     <service id=".errored..service_locator.0RFo5YJ.App\Entity\SubjectForum" class="App\Entity\SubjectForum"/>
@@ -7107,7 +7118,7 @@
     <service id="SymfonyCasts\Bundle\ResetPassword\ResetPasswordHelperInterface" alias="symfonycasts.reset_password.helper"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.WaGDpDt" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem" public="false"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.cESrjbR"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.u0E8r80"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
     <service id="Psr\Log\LoggerInterface $consoleLogger" alias="monolog.logger.console"/>

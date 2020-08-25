@@ -3,6 +3,7 @@
 namespace App\Form;
 
 use App\Entity\HomeDiscipline;
+use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -29,7 +30,7 @@ class HomeDisciplineType extends AbstractType
                     ])
                 ],
             ])
-            ->add('descriptionDiscipline', TextType::class,['label' => 'Déscription de la discipline'])
+            ->add('descriptionDiscipline', CKEditorType::class,['label' => 'Déscription de la discipline'])
         ;
     }
 

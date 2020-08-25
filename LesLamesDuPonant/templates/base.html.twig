@@ -187,9 +187,9 @@
 	=============== #}
 	{% if app.request.get('_route') == 'home' %}
 	<div id="HomeImg">
-	 {# {% for home_picture in home_pictures %}
+	 {% for home_picture in home_pictures %}
 					<img src="{{ asset('uploads/parallax/'~ home_picture.homeTitlePicture)}}">
-	{% endfor %} #}
+	{% endfor %}
 	</div>
 	{% endif %}
 	<main>
@@ -221,9 +221,9 @@
 
 
 		<div class="parallax-container">
-			 {# {% for home_picture in home_pictures %}
+			 {% for home_picture in home_pictures %}
 				<div class="parallax"><img src="{{ asset('uploads/parallax/'~ home_picture.homeParallax1)}}"></div>	
-					{% endfor %} #}
+					{% endfor %}
 			</div>
 		</div>
 
@@ -250,10 +250,10 @@
 		</div>
 {# Parralax2	
 ================== #}
-		{# <div class="parallax-container">
+		<div class="parallax-container">
 				 {% for home_picture in home_pictures %}
 				<div class="parallax"><img src="{{ asset('uploads/parallax/'~ home_picture.homeParallax2)}}"></div>
-	{% endfor %} #}
+	{% endfor %}
 		</div>
 
 		<div class="section white homeSectionCalendar">
