@@ -6,9 +6,10 @@
     <h4 class="center-align">éditer HomeDiscipline</h4>
 <div class="container">
 	<div class="row formRegister z-depth-5">
+
     {{ include('home_discipline/_form.html.twig', {'button_label': 'maj'}) }}
 
-    <a href="{{ path('admin') }}">retours à la liste</a>
+    <a href="{{ path('admin')}}#discipline"><button class="btn green btnForm">retour à la liste</button></a>
 
     {{ include('home_discipline/_delete_form.html.twig') }}
     </div>
