@@ -24,8 +24,8 @@
 	<li><a href="#message">messages</a></li>
 	<div class="divider"></div>
 	<h6 class="center-align">Page d'accueil</h6>
-	<li><a href="#disciplines">édition disciplines</a></li>
-	<li><a href="#homepicture">édition images/logo </a></li>
+	<li><a href="#disciplines">disciplines</a></li>
+	<li><a href="#homepicture">images/logo </a></li>
 	<li><a href="#agenda">Agenda/évenement</a></li>
 	<div class="divider"></div>
 	<h6 class="center-align">Les Amhe</h6>
@@ -120,8 +120,8 @@
 							<td>{{ contact_message.id }}</td>
 							<td>{{ contact_message.authorNameContactMessage }}</td>
 							<td>{{ contact_message.authorLastNamecContactMessage }}</td>
-							<td>{{ contact_message.contentContactMessage }}</td>
-							<td>{{ contact_message.emailContactMessage }}</td>
+							<td>{{ contact_message.contentContactMessage|striptags|u.truncate(40)|raw }}</td>
+							<td>{{ contact_message.emailContactMessage |striptags|u.truncate(10)|raw}}</td>
 							<td>{{ contact_message.dateContactMessage ? contact_message.dateContactMessage|date('Y-m-d H:i:s') : '' }}
 							</td>
 							<td>
@@ -175,7 +175,7 @@
 							<td>{{ home_discipline.nameDiscipline }}</td>
 							<td><img src="{{asset('/uploads/discipline/') ~ home_discipline.imageHomeDiscipline }}"
 									alt=""></td>
-							<td>{{ home_discipline.descriptionDiscipline|raw }}</td>
+							<td>{{ home_discipline.descriptionDiscipline|striptags|u.truncate(50)|raw}}</td>
 							<td>
 								<a href="{{ path('home_discipline_show', {'id': home_discipline.id}) }}">
 									<button class="btn blue">
@@ -300,8 +300,8 @@
 						{% for time_stamp in time_stamps %}
 						<tr>
 							<td>{{ time_stamp.id }}</td>
-							<td>{{ time_stamp.titleTimeStamp }}</td>
-							<td>{{ time_stamp.descriptionTimeStamp }}</td>
+							<td>{{ time_stamp.titleTimeStamp|striptags|u.truncate(50)|raw }}</td>
+							<td>{{ time_stamp.descriptionTimeStamp|striptags|u.truncate(50)|raw }}</td>
 							<td>{{ time_stamp.dateTimeStamp ? time_stamp.dateTimeStamp|date('Y-m-d') : '' }}</td>
 							<td>{{ time_stamp.hourTimeStamp ? time_stamp.hourTimeStamp|date('H:i:s') : '' }}</td>
 							<td>
@@ -358,7 +358,7 @@
 						<tr>
 							<td>{{ amhe.id }}</td>
 							<td>{{ amhe.titleAMHE }}</td>
-							<td>{{ amhe.DescriptionAMHE|raw}}</td>
+							<td>{{ amhe.DescriptionAMHE|striptags|u.truncate(50)|raw}}</td>
 							<td><img src="{{asset ('/uploads/amhe/' ~ amhe.photoOneAMHE) }}" alt=""></td>
 							<td><img src="{{asset('/uploads/amhe/') ~ amhe.photoTwoAMHE }}" alt=""></td>
 							<td><img src="{{asset('/uploads/amhe/') ~ amhe.photoThreeAMHE }}" alt=""></td>
@@ -415,7 +415,7 @@
 							<tr>
 								<td>{{ medieval_family.id }}</td>
 								<td>{{ medieval_family.titleMedievalFamily }}</td>
-								<td>{{ medieval_family.descriptionMedievalFamily|raw }}</td>
+								<td>{{ medieval_family.descriptionMedievalFamily|striptags|u.truncate(50,)|raw}}</td>
 								<td>
 									<a href="{{ path('medieval_family_show', {'id': medieval_family.id}) }}">
 										<button class="btn blue">
@@ -467,7 +467,7 @@
 						<tr>
 							<td>{{ les_lames_du_ponant.id }}</td>
 							<td>{{ les_lames_du_ponant.titleLLDP }}</td>
-							<td>{{ les_lames_du_ponant.desciptionLLDP | raw}}</td>
+							<td>{{ les_lames_du_ponant.desciptionLLDP|striptags|u.truncate(50)|raw}}</td>
 							<td><img src="{{asset('/uploads/lldp/') ~ les_lames_du_ponant.pictureLesLamesDuponant }}"
 									alt=""></td>
 							<td>
@@ -506,5 +506,6 @@
 		</div>
 	</div>
 </div>
+ </div>
 
 {% endblock %}

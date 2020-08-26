@@ -1,13 +1,17 @@
-{% extends 'base.html.twig' %}
+{% extends 'default.html.twig' %}
 
 {% block title %}edit HomeDiscipline{% endblock %}
 
 {% block body %}
     <h4 class="center-align">éditer HomeDiscipline</h4>
-
+<div class="container">
+	<div class="row formRegister z-depth-5">
     {{ include('home_discipline/_form.html.twig', {'button_label': 'maj'}) }}
 
-    <a href="{{ path('home_discipline_index') }}">retours à la liste</a>
+    <a href="{{ path('admin') }}">retours à la liste</a>
 
     {{ include('home_discipline/_delete_form.html.twig') }}
+    </div>
+
+</div>
 {% endblock %}

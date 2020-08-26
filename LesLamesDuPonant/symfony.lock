@@ -277,9 +277,6 @@
     "symfony/http-kernel": {
         "version": "v5.1.2"
     },
-    "symfony/inflector": {
-        "version": "v5.1.2"
-    },
     "symfony/intl": {
         "version": "v5.1.2"
     },
@@ -539,6 +536,9 @@
     },
     "twig/extra-bundle": {
         "version": "v3.0.4"
+    },
+    "twig/string-extra": {
+        "version": "v3.0.5"
     },
     "twig/twig": {
         "version": "v3.0.4"

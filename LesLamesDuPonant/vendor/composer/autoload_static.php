@@ -37,6 +37,7 @@ class ComposerStaticInitc4ce61fc1f6b9eb4f6512ca2fab67a81
         'T' => 
         array (
             'Twig\\Extra\\TwigExtraBundle\\' => 27,
+            'Twig\\Extra\\String\\' => 18,
             'Twig\\' => 5,
         ),
         'S' => 
@@ -76,7 +77,6 @@ class ComposerStaticInitc4ce61fc1f6b9eb4f6512ca2fab67a81
             'Symfony\\Component\\Mailer\\Bridge\\Google\\' => 39,
             'Symfony\\Component\\Mailer\\' => 25,
             'Symfony\\Component\\Intl\\' => 23,
-            'Symfony\\Component\\Inflector\\' => 28,
             'Symfony\\Component\\HttpKernel\\' => 29,
             'Symfony\\Component\\HttpFoundation\\' => 33,
             'Symfony\\Component\\HttpClient\\' => 29,
@@ -179,6 +179,10 @@ class ComposerStaticInitc4ce61fc1f6b9eb4f6512ca2fab67a81
         'Twig\\Extra\\TwigExtraBundle\\' => 
         array (
             0 => __DIR__ . '/..' . '/twig/extra-bundle/src',
+        ),
+        'Twig\\Extra\\String\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/twig/string-extra/src',
         ),
         'Twig\\' => 
         array (
@@ -323,10 +327,6 @@ class ComposerStaticInitc4ce61fc1f6b9eb4f6512ca2fab67a81
         'Symfony\\Component\\Intl\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/intl',
-        ),
-        'Symfony\\Component\\Inflector\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/symfony/inflector',
         ),
         'Symfony\\Component\\HttpKernel\\' => 
         array (
@@ -765,40 +765,8 @@ class ComposerStaticInitc4ce61fc1f6b9eb4f6512ca2fab67a81
         'Doctrine\\Common\\EventManager' => __DIR__ . '/..' . '/doctrine/event-manager/lib/Doctrine/Common/EventManager.php',
         'Doctrine\\Common\\EventSubscriber' => __DIR__ . '/..' . '/doctrine/event-manager/lib/Doctrine/Common/EventSubscriber.php',
         'Doctrine\\Common\\Inflector\\Inflector' => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Common/Inflector/Inflector.php',
-        'Doctrine\\Common\\Lexer' => __DIR__ . '/..' . '/doctrine/common/lib/Doctrine/Common/Lexer.php',
         'Doctrine\\Common\\Lexer\\AbstractLexer' => __DIR__ . '/..' . '/doctrine/lexer/lib/Doctrine/Common/Lexer/AbstractLexer.php',
-        'Doctrine\\Common\\NotifyPropertyChanged' => __DIR__ . '/..' . '/doctrine/persistence/lib/Doctrine/Common/NotifyPropertyChanged.php',
-        'Doctrine\\Common\\Persistence\\AbstractManagerRegistry' => __DIR__ . '/..' . '/doctrine/persistence/lib/Doctrine/Common/Persistence/AbstractManagerRegistry.php',
-        'Doctrine\\Common\\Persistence\\ConnectionRegistry' => __DIR__ . '/..' . '/doctrine/persistence/lib/Doctrine/Common/Persistence/ConnectionRegistry.php',
-        'Doctrine\\Common\\Persistence\\Event\\LifecycleEventArgs' => __DIR__ . '/..' . '/doctrine/persistence/lib/Doctrine/Common/Persistence/Event/LifecycleEventArgs.php',
-        'Doctrine\\Common\\Persistence\\Event\\LoadClassMetadataEventArgs' => __DIR__ . '/..' . '/doctrine/persistence/lib/Doctrine/Common/Persistence/Event/LoadClassMetadataEventArgs.php',
-        'Doctrine\\Common\\Persistence\\Event\\ManagerEventArgs' => __DIR__ . '/..' . '/doctrine/persistence/lib/Doctrine/Common/Persistence/Event/ManagerEventArgs.php',
-        'Doctrine\\Common\\Persistence\\Event\\OnClearEventArgs' => __DIR__ . '/..' . '/doctrine/persistence/lib/Doctrine/Common/Persistence/Event/OnClearEventArgs.php',
-        'Doctrine\\Common\\Persistence\\Event\\PreUpdateEventArgs' => __DIR__ . '/..' . '/doctrine/persistence/lib/Doctrine/Common/Persistence/Event/PreUpdateEventArgs.php',
-        'Doctrine\\Common\\Persistence\\ManagerRegistry' => __DIR__ . '/..' . '/doctrine/persistence/lib/Doctrine/Common/Persistence/ManagerRegistry.php',
-        'Doctrine\\Common\\Persistence\\Mapping\\AbstractClassMetadataFactory' => __DIR__ . '/..' . '/doctrine/persistence/lib/Doctrine/Common/Persistence/Mapping/AbstractClassMetadataFactory.php',
-        'Doctrine\\Common\\Persistence\\Mapping\\ClassMetadata' => __DIR__ . '/..' . '/doctrine/persistence/lib/Doctrine/Common/Persistence/Mapping/ClassMetadata.php',
-        'Doctrine\\Common\\Persistence\\Mapping\\ClassMetadataFactory' => __DIR__ . '/..' . '/doctrine/persistence/lib/Doctrine/Common/Persistence/Mapping/ClassMetadataFactory.php',
-        'Doctrine\\Common\\Persistence\\Mapping\\Driver\\AnnotationDriver' => __DIR__ . '/..' . '/doctrine/persistence/lib/Doctrine/Common/Persistence/Mapping/Driver/AnnotationDriver.php',
-        'Doctrine\\Common\\Persistence\\Mapping\\Driver\\DefaultFileLocator' => __DIR__ . '/..' . '/doctrine/persistence/lib/Doctrine/Common/Persistence/Mapping/Driver/DefaultFileLocator.php',
-        'Doctrine\\Common\\Persistence\\Mapping\\Driver\\FileDriver' => __DIR__ . '/..' . '/doctrine/persistence/lib/Doctrine/Common/Persistence/Mapping/Driver/FileDriver.php',
-        'Doctrine\\Common\\Persistence\\Mapping\\Driver\\FileLocator' => __DIR__ . '/..' . '/doctrine/persistence/lib/Doctrine/Common/Persistence/Mapping/Driver/FileLocator.php',
-        'Doctrine\\Common\\Persistence\\Mapping\\Driver\\MappingDriver' => __DIR__ . '/..' . '/doctrine/persistence/lib/Doctrine/Common/Persistence/Mapping/Driver/MappingDriver.php',
-        'Doctrine\\Common\\Persistence\\Mapping\\Driver\\MappingDriverChain' => __DIR__ . '/..' . '/doctrine/persistence/lib/Doctrine/Common/Persistence/Mapping/Driver/MappingDriverChain.php',
-        'Doctrine\\Common\\Persistence\\Mapping\\Driver\\PHPDriver' => __DIR__ . '/..' . '/doctrine/persistence/lib/Doctrine/Common/Persistence/Mapping/Driver/PHPDriver.php',
-        'Doctrine\\Common\\Persistence\\Mapping\\Driver\\StaticPHPDriver' => __DIR__ . '/..' . '/doctrine/persistence/lib/Doctrine/Common/Persistence/Mapping/Driver/StaticPHPDriver.php',
-        'Doctrine\\Common\\Persistence\\Mapping\\Driver\\SymfonyFileLocator' => __DIR__ . '/..' . '/doctrine/persistence/lib/Doctrine/Common/Persistence/Mapping/Driver/SymfonyFileLocator.php',
-        'Doctrine\\Common\\Persistence\\Mapping\\MappingException' => __DIR__ . '/..' . '/doctrine/persistence/lib/Doctrine/Common/Persistence/Mapping/MappingException.php',
-        'Doctrine\\Common\\Persistence\\Mapping\\ReflectionService' => __DIR__ . '/..' . '/doctrine/persistence/lib/Doctrine/Common/Persistence/Mapping/ReflectionService.php',
-        'Doctrine\\Common\\Persistence\\Mapping\\RuntimeReflectionService' => __DIR__ . '/..' . '/doctrine/persistence/lib/Doctrine/Common/Persistence/Mapping/RuntimeReflectionService.php',
-        'Doctrine\\Common\\Persistence\\Mapping\\StaticReflectionService' => __DIR__ . '/..' . '/doctrine/persistence/lib/Doctrine/Common/Persistence/Mapping/StaticReflectionService.php',
-        'Doctrine\\Common\\Persistence\\ObjectManager' => __DIR__ . '/..' . '/doctrine/persistence/lib/Doctrine/Common/Persistence/ObjectManager.php',
-        'Doctrine\\Common\\Persistence\\ObjectManagerAware' => __DIR__ . '/..' . '/doctrine/persistence/lib/Doctrine/Common/Persistence/ObjectManagerAware.php',
-        'Doctrine\\Common\\Persistence\\ObjectManagerDecorator' => __DIR__ . '/..' . '/doctrine/persistence/lib/Doctrine/Common/Persistence/ObjectManagerDecorator.php',
-        'Doctrine\\Common\\Persistence\\ObjectRepository' => __DIR__ . '/..' . '/doctrine/persistence/lib/Doctrine/Common/Persistence/ObjectRepository.php',
         'Doctrine\\Common\\Persistence\\PersistentObject' => __DIR__ . '/..' . '/doctrine/persistence/lib/Doctrine/Common/Persistence/PersistentObject.php',
-        'Doctrine\\Common\\Persistence\\Proxy' => __DIR__ . '/..' . '/doctrine/persistence/lib/Doctrine/Common/Persistence/Proxy.php',
-        'Doctrine\\Common\\PropertyChangedListener' => __DIR__ . '/..' . '/doctrine/persistence/lib/Doctrine/Common/PropertyChangedListener.php',
         'Doctrine\\Common\\Proxy\\AbstractProxyFactory' => __DIR__ . '/..' . '/doctrine/common/lib/Doctrine/Common/Proxy/AbstractProxyFactory.php',
         'Doctrine\\Common\\Proxy\\Autoloader' => __DIR__ . '/..' . '/doctrine/common/lib/Doctrine/Common/Proxy/Autoloader.php',
         'Doctrine\\Common\\Proxy\\Exception\\InvalidArgumentException' => __DIR__ . '/..' . '/doctrine/common/lib/Doctrine/Common/Proxy/Exception/InvalidArgumentException.php',
@@ -819,8 +787,6 @@ class ComposerStaticInitc4ce61fc1f6b9eb4f6512ca2fab67a81
         'Doctrine\\Common\\Reflection\\TypedNoDefaultReflectionProperty' => __DIR__ . '/..' . '/doctrine/reflection/lib/Doctrine/Common/Reflection/TypedNoDefaultReflectionProperty.php',
         'Doctrine\\Common\\Util\\ClassUtils' => __DIR__ . '/..' . '/doctrine/common/lib/Doctrine/Common/Util/ClassUtils.php',
         'Doctrine\\Common\\Util\\Debug' => __DIR__ . '/..' . '/doctrine/common/lib/Doctrine/Common/Util/Debug.php',
-        'Doctrine\\Common\\Util\\Inflector' => __DIR__ . '/..' . '/doctrine/common/lib/Doctrine/Common/Util/Inflector.php',
-        'Doctrine\\Common\\Version' => __DIR__ . '/..' . '/doctrine/common/lib/Doctrine/Common/Version.php',
         'Doctrine\\DBAL\\Cache\\ArrayStatement' => __DIR__ . '/..' . '/doctrine/dbal/lib/Doctrine/DBAL/Cache/ArrayStatement.php',
         'Doctrine\\DBAL\\Cache\\CacheException' => __DIR__ . '/..' . '/doctrine/dbal/lib/Doctrine/DBAL/Cache/CacheException.php',
         'Doctrine\\DBAL\\Cache\\QueryCacheProfile' => __DIR__ . '/..' . '/doctrine/dbal/lib/Doctrine/DBAL/Cache/QueryCacheProfile.php',
@@ -2030,6 +1996,7 @@ class ComposerStaticInitc4ce61fc1f6b9eb4f6512ca2fab67a81
         'PhpParser\\Node\\Expr\\StaticCall' => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser/Node/Expr/StaticCall.php',
         'PhpParser\\Node\\Expr\\StaticPropertyFetch' => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser/Node/Expr/StaticPropertyFetch.php',
         'PhpParser\\Node\\Expr\\Ternary' => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser/Node/Expr/Ternary.php',
+        'PhpParser\\Node\\Expr\\Throw_' => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser/Node/Expr/Throw_.php',
         'PhpParser\\Node\\Expr\\UnaryMinus' => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser/Node/Expr/UnaryMinus.php',
         'PhpParser\\Node\\Expr\\UnaryPlus' => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser/Node/Expr/UnaryPlus.php',
         'PhpParser\\Node\\Expr\\Variable' => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser/Node/Expr/Variable.php',
@@ -2704,7 +2671,6 @@ class ComposerStaticInitc4ce61fc1f6b9eb4f6512ca2fab67a81
         'Symfony\\Bundle\\SecurityBundle\\DependencyInjection\\Security\\UserProvider\\InMemoryFactory' => __DIR__ . '/..' . '/symfony/security-bundle/DependencyInjection/Security/UserProvider/InMemoryFactory.php',
         'Symfony\\Bundle\\SecurityBundle\\DependencyInjection\\Security\\UserProvider\\LdapFactory' => __DIR__ . '/..' . '/symfony/security-bundle/DependencyInjection/Security/UserProvider/LdapFactory.php',
         'Symfony\\Bundle\\SecurityBundle\\DependencyInjection\\Security\\UserProvider\\UserProviderFactoryInterface' => __DIR__ . '/..' . '/symfony/security-bundle/DependencyInjection/Security/UserProvider/UserProviderFactoryInterface.php',
-        'Symfony\\Bundle\\SecurityBundle\\EventListener\\FirewallEventBubblingListener' => __DIR__ . '/..' . '/symfony/security-bundle/EventListener/FirewallEventBubblingListener.php',
         'Symfony\\Bundle\\SecurityBundle\\EventListener\\FirewallListener' => __DIR__ . '/..' . '/symfony/security-bundle/EventListener/FirewallListener.php',
         'Symfony\\Bundle\\SecurityBundle\\EventListener\\VoteListener' => __DIR__ . '/..' . '/symfony/security-bundle/EventListener/VoteListener.php',
         'Symfony\\Bundle\\SecurityBundle\\SecurityBundle' => __DIR__ . '/..' . '/symfony/security-bundle/SecurityBundle.php',
@@ -3769,7 +3735,6 @@ class ComposerStaticInitc4ce61fc1f6b9eb4f6512ca2fab67a81
         'Symfony\\Component\\HttpKernel\\RebootableInterface' => __DIR__ . '/..' . '/symfony/http-kernel/RebootableInterface.php',
         'Symfony\\Component\\HttpKernel\\TerminableInterface' => __DIR__ . '/..' . '/symfony/http-kernel/TerminableInterface.php',
         'Symfony\\Component\\HttpKernel\\UriSigner' => __DIR__ . '/..' . '/symfony/http-kernel/UriSigner.php',
-        'Symfony\\Component\\Inflector\\Inflector' => __DIR__ . '/..' . '/symfony/inflector/Inflector.php',
         'Symfony\\Component\\Intl\\Collator\\Collator' => __DIR__ . '/..' . '/symfony/intl/Collator/Collator.php',
         'Symfony\\Component\\Intl\\Countries' => __DIR__ . '/..' . '/symfony/intl/Countries.php',
         'Symfony\\Component\\Intl\\Currencies' => __DIR__ . '/..' . '/symfony/intl/Currencies.php',
@@ -4922,6 +4887,7 @@ class ComposerStaticInitc4ce61fc1f6b9eb4f6512ca2fab67a81
         'Twig\\Extension\\SandboxExtension' => __DIR__ . '/..' . '/twig/twig/src/Extension/SandboxExtension.php',
         'Twig\\Extension\\StagingExtension' => __DIR__ . '/..' . '/twig/twig/src/Extension/StagingExtension.php',
         'Twig\\Extension\\StringLoaderExtension' => __DIR__ . '/..' . '/twig/twig/src/Extension/StringLoaderExtension.php',
+        'Twig\\Extra\\String\\StringExtension' => __DIR__ . '/..' . '/twig/string-extra/src/StringExtension.php',
         'Twig\\Extra\\TwigExtraBundle\\DependencyInjection\\Compiler\\MissingExtensionSuggestorPass' => __DIR__ . '/..' . '/twig/extra-bundle/src/DependencyInjection/Compiler/MissingExtensionSuggestorPass.php',
         'Twig\\Extra\\TwigExtraBundle\\DependencyInjection\\Configuration' => __DIR__ . '/..' . '/twig/extra-bundle/src/DependencyInjection/Configuration.php',
         'Twig\\Extra\\TwigExtraBundle\\DependencyInjection\\TwigExtraExtension' => __DIR__ . '/..' . '/twig/extra-bundle/src/DependencyInjection/TwigExtraExtension.php',

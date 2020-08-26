@@ -1,19 +1,23 @@
 {% extends 'default.html.twig' %}
-{% block navbar %}
+
 {# LOGO #}
 {# ======================= #}
 
+{% block logo %}
+	{% if app.request.get('_route') == 'home' %}
 	<header>
 		<div class="container " id="HomeTitle">
 			<div class="row">
 				<div class="  col m12 s12 l12 xl12">
-			    {# {% for home_picture in home_pictures %}
+			    {% for home_picture in home_pictures %}
 				<img src="{{ asset('uploads/parallax/'~ home_picture.homeLogoPicture)}}">
-				{% endfor %} #}
+				{% endfor %}
 				</div>
 			</div>
 		</div>
-	</header>
+	</header>{% endif %}
+	{% endblock %}
+{% block navbar %}
 
 {# NABAR
 ======================== #}
@@ -60,6 +64,11 @@
 				<span>Mon Profil</span>
 			</a>
 		</li>
+			{% if is_granted('ROLE_ADMIN') or is_granted('Role_Super_Administrateur') %}
+					<li>
+					<a href="{{path('admin')}}">Administration</a>
+					</li>
+					{% endif %}
 		<li>
 			<a href="{{path('app_login')}}">infos</a>
 		</li>

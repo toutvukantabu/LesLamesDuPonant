@@ -237,6 +237,10 @@
     <parameter key="security.authentication.session_strategy.strategy">migrate</parameter>
     <parameter key="security.access.always_authenticate_before_granting">false</parameter>
     <parameter key="security.authentication.hide_user_not_found">true</parameter>
+    <parameter key="security.firewalls" type="collection">
+      <parameter>dev</parameter>
+      <parameter>main</parameter>
+    </parameter>
     <parameter key="web_profiler.debug_toolbar.intercept_redirects">false</parameter>
     <parameter key="web_profiler.debug_toolbar.mode">2</parameter>
     <parameter key="monolog.use_microseconds">true</parameter>
@@ -3391,6 +3395,9 @@
         <argument type="service" id="twig.extension.dump"/>
       </call>
       <call method="addExtension">
+        <argument type="service" id="twig.extension.string"/>
+      </call>
+      <call method="addExtension">
         <argument type="service" id="doctrine.twig.doctrine_extension"/>
       </call>
       <call method="addExtension">
@@ -3633,6 +3640,9 @@
       <argument type="service" id="twig"/>
     </service>
     <service id="twig.missing_extension_suggestor" class="Twig\Extra\TwigExtraBundle\MissingExtensionSuggestor" public="false"/>
+    <service id="twig.extension.string" class="Twig\Extra\String\StringExtension" public="false">
+      <tag name="twig.extension"/>
+    </service>
     <service id="sensio_framework_extra.controller.listener" class="Sensio\Bundle\FrameworkExtraBundle\EventListener\ControllerListener">
       <tag name="kernel.event_subscriber"/>
       <tag name="container.hot_path"/>
@@ -4276,7 +4286,7 @@
     </service>
     <service id="security.user_checker" class="Symfony\Component\Security\Core\User\UserChecker" public="false"/>
     <service id="security.expression_language" class="Symfony\Component\Security\Core\Authorization\ExpressionLanguage" public="false">
-      <argument type="service" id="cache.security_expression_language"/>
+      <argument type="service" id="cache.security_expression_language" on-invalid="null"/>
     </service>
     <service id="security.authentication_utils" class="Symfony\Component\Security\Http\Authentication\AuthenticationUtils" public="true">
       <argument type="service" id="request_stack"/>
@@ -4732,38 +4742,6 @@
       <call method="addListener">
         <argument>Symfony\Component\Security\Http\Event\LogoutEvent</argument>
         <argument type="collection">
-          <argument type="service" id="security.event_dispatcher.main.event_bubbling_listener"/>
-          <argument>bubbleEvent</argument>
-        </argument>
-        <argument>0</argument>
-      </call>
-      <call method="addListener">
-        <argument>Symfony\Component\Security\Http\Event\LoginFailureEvent</argument>
-        <argument type="collection">
-          <argument type="service" id="security.event_dispatcher.main.event_bubbling_listener"/>
-          <argument>bubbleEvent</argument>
-        </argument>
-        <argument>0</argument>
-      </call>
-      <call method="addListener">
-        <argument>Symfony\Component\Security\Http\Event\LoginSuccessEvent</argument>
-        <argument type="collection">
-          <argument type="service" id="security.event_dispatcher.main.event_bubbling_listener"/>
-          <argument>bubbleEvent</argument>
-        </argument>
-        <argument>0</argument>
-      </call>
-      <call method="addListener">
-        <argument>Symfony\Component\Security\Http\Event\CheckPassportEvent</argument>
-        <argument type="collection">
-          <argument type="service" id="security.event_dispatcher.main.event_bubbling_listener"/>
-          <argument>bubbleEvent</argument>
-        </argument>
-        <argument>0</argument>
-      </call>
-      <call method="addListener">
-        <argument>Symfony\Component\Security\Http\Event\LogoutEvent</argument>
-        <argument type="collection">
           <argument type="service" id="security.logout.listener.default.main"/>
           <argument>onLogout</argument>
         </argument>
@@ -4777,10 +4755,14 @@
         </argument>
         <argument>0</argument>
       </call>
-    </service>
-    <service id="security.event_dispatcher.main.event_bubbling_listener" class="Symfony\Bundle\SecurityBundle\EventListener\FirewallEventBubblingListener" public="false">
-      <tag name="kernel.event_subscriber" dispatcher="security.event_dispatcher.main"/>
-      <argument type="service" id="debug.event_dispatcher"/>
+      <call method="addListener">
+        <argument>Symfony\Component\Security\Http\Event\LogoutEvent</argument>
+        <argument type="collection">
+          <argument type="service" id="security.logout.listener.csrf_token_clearing"/>
+          <argument>onLogout</argument>
+        </argument>
+        <argument>0</argument>
+      </call>
     </service>
     <service id="security.context_listener.0" class="Symfony\Component\Security\Http\Firewall\ContextListener" public="false">
       <argument type="service" id="security.untracked_token_storage"/>
@@ -5205,6 +5187,7 @@
       <tag name="maker.command"/>
       <argument type="service" id="maker.file_manager"/>
       <argument type="service" id="maker.doctrine_helper"/>
+      <argument type="service" id="maker.entity_class_generator"/>
     </service>
     <service id="maker.maker.make_serializer_encoder" class="Symfony\Bundle\MakerBundle\Maker\MakeSerializerEncoder" public="false">
       <tag name="maker.command"/>
@@ -7018,10 +7001,11 @@
     <service id="cache.default_pdo_provider" alias="doctrine.dbal.default_connection" public="false"/>
     <service id="Symfony\Component\HttpFoundation\Session\SessionInterface" alias="session" public="false"/>
     <service id="Symfony\Component\HttpFoundation\Session\Storage\SessionStorageInterface" alias="session.storage.native" public="false"/>
-    <service id="SessionHandlerInterface" alias="session.handler" public="false"/>
+    <service id="SessionHandlerInterface" alias="session.handler.native_file" public="false"/>
     <service id="Symfony\Component\HttpFoundation\Session\Flash\FlashBagInterface" alias="session.flash_bag" public="false"/>
     <service id="session.storage.filesystem" alias="session.storage.mock_file" public="false"/>
     <service id="session.storage" alias="session.storage.native"/>
+    <service id="session.handler" alias="session.handler.native_file"/>
     <service id="Symfony\Component\Security\Csrf\TokenGenerator\TokenGeneratorInterface" alias="security.csrf.token_generator" public="false"/>
     <service id="Symfony\Component\Security\Csrf\TokenStorage\TokenStorageInterface" alias="security.csrf.token_storage" public="false"/>
     <service id="Symfony\Component\Security\Csrf\CsrfTokenManagerInterface" alias="security.csrf.token_manager" public="false"/>
