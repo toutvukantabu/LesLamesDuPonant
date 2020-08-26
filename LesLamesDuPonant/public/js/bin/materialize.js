@@ -10062,21 +10062,20 @@ $(document).ready(function () {
 
   $(window).scroll(function () {
     if ($(window).scrollTop() >250) {
-      $('nav').addClass('sticky-nav');
+      $('#navbarHome,#navbarAdmin').addClass('sticky-nav');
     } else {
-      $('nav').removeClass('sticky-nav');
+      $('#navbarHome, #navbarAdmin').removeClass('sticky-nav');
     }
   });
 });
 
 $(document).ready(function(){
   $('.parallax').parallax();
- 
-      $(".button-collapse").sideNav();
-      $(".monProfilBtn").sideNav();
-   
+  $(".monProfilBtn").sideNav();
  $('select').material_select();
+
 });
+
 
  //Carousel Home
 $(document).ready(function () {
@@ -10093,31 +10092,90 @@ $(document).ready(function () {
 
 //classBody
 
-window.location.href1 = 'http://127.0.0.1:8000/login';
-if (window.location.href1 == 'http://127.0.0.1:8000/login') {
-  document.querySelectorAll('#Body').forEach(function(ele, idx) {
-    ele.classList.add('newClass');
-  });
-};
-window.location.href1 = 'http://127.0.0.1:8000/login';
-if (window.location.href1 == 'http://127.0.0.1:8000/login') {
-  document.querySelectorAll('#Body').forEach(function(ele, idx) {
-    ele.classList.add('newClass');
-  });
-};
+// window.location.href1 = 'http://127.0.0.1:8000/admin';
+// if (window.location.href1 == 'http://127.0.0.1:8000/admin') {
+//   document.querySelectorAll('#Body').forEach(function(ele, idx) {
+//     ele.classList.add('adminSideNav');
+//   });
+// };
+
 
   //Datatable
   $(document).ready( function () {
-    $('#myTable').DataTable({
-      "iDisplayLength": 50
+    $('#myTable').dataTable({
+      responsive: true
     });
-    $('#myTable1').DataTable();
-    $('#myTable2').DataTable();
-    $('#myTable3').DataTable();
-    $('#myTable4').DataTable();
-    $('#myTable5').DataTable();
-    $('#myTable6').DataTable();
-    $('#myTable7').DataTable();
-    $('#myTable8').DataTable();
+    $('#myTable2').dataTable({
+      responsive: true
+    });
+    $('#myTable3').dataTable({    
+      responsive: true
+    });
+    $('#myTable4').dataTable({    
+      responsive: true
+    });
+    $('#myTable5').dataTable({    
+      responsive: true
+    });
+    $('#myTable6').dataTable({    
+      responsive: true
+    });
+    $('#myTable7').dataTable({    
+      responsive: true
+    });
+    $('#myTable8').dataTable({    
+      responsive: true
+    });
 
 } );
+
+//SIDENAV
+$(document).ready( function () {
+  $(".button-collapse").sideNav();
+  $('.collapsible').collapsible();
+
+});
+ $(document).ready(function() {
+    
+   $('.dropdown-button').dropdown({
+      inDuration: 300,
+      outDuration: 225,
+      constrainWidth: false, // Does not change width of dropdown to that of the activator
+      hover: true, // Activate on hover
+      gutter: 0, // Spacing from edge
+      belowOrigin: false, // Displays dropdown below the button
+      alignment: 'left', // Displays dropdown with edge aligned to the left of button
+      stopPropagation: false // Stops event propagation
+    }
+  );
+   
+   $('.collapsible').collapsible({
+    accordion: true, // A setting that changes the collapsible behavior to expandable instead of the default accordion style
+    onOpen: function(el) {  }, // Callback for Collapsible open
+    onClose: function(el) {  } // Callback for Collapsible close
+  });
+   
+   $('.button-collapse').sideNav({
+      menuWidth: 200, // Default is 300
+      edge: 'left', // Choose the horizontal origin
+      closeOnClick: false, // Closes side-nav on <a> clicks, useful for Angular/Meteor
+      draggable: true, // Choose whether you can drag to open on touch screens,
+      onOpen: function(el) {}, /* Do Stuff* / }, // A function to be called when sideNav is opened*/
+      onClose: function(el) { }/* Do Stuff* / }, // A function to be called when sideNav is closed*/
+    });
+ 
+    $('.side-nav li').click(function(){
+      $('.side-nav li.active').removeClass('active');
+      $(this).closest('li').addClass('active');
+    });
+   
+    $('.dropchange .head').on('click', function () {
+      $(this)
+        .find('.changed')
+        .toggleClass('fa-angle-down')
+        .toggleClass('fa-angle-right');
+    });
+ 
+   
+   
+ });

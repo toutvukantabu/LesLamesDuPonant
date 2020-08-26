@@ -9457,7 +9457,7 @@ h4:after {
   z-index: 1000;
 }
 
-nav {
+#navbarHome, #navbarAdmin {
   -webkit-transition: top 0.2s linear;
   transition: top 0.2s linear;
   -webkit-transition: 0.2s;
@@ -9465,7 +9465,7 @@ nav {
   z-index: 1000;
 }
 
-nav li a:hover {
+#navbarHome li a:hover, #navbarAdmin li a:hover {
   background-color: #032b53a6;
   -webkit-transition-duration: 420ms;
           transition-duration: 420ms;

@@ -41,7 +41,7 @@ return [
     'home_pictures_new' => [[], ['_controller' => 'App\\Controller\\HomePicturesController::new'], [], [['text', '/home/pictures/new']], [], []],
     'home_pictures_show' => [['id'], ['_controller' => 'App\\Controller\\HomePicturesController::show'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/home/pictures']], [], []],
     'home_pictures_edit' => [['id'], ['_controller' => 'App\\Controller\\HomePicturesController::edit'], [], [['text', '/edit'], ['variable', '/', '[^/]++', 'id', true], ['text', '/home/pictures']], [], []],
-    'home_pictures_delete' => [['id'], ['_controller' => 'App\\Controller\\HomePicturesController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/home/pictures']], [], []],
+    'home_pictures_deletes' => [['id'], ['_controller' => 'App\\Controller\\HomePicturesController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/home/pictures']], [], []],
     'home_section_forum_index' => [[], ['_controller' => 'App\\Controller\\HomeSectionForumController::index'], [], [['text', '/home/section/forum/']], [], []],
     'home_section_forum_new' => [[], ['_controller' => 'App\\Controller\\HomeSectionForumController::new'], [], [['text', '/home/section/forum/new']], [], []],
     'home_section_forum_show' => [['id'], ['_controller' => 'App\\Controller\\HomeSectionForumController::show'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/home/section/forum']], [], []],

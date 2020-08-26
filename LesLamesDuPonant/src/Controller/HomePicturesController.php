@@ -228,7 +228,7 @@ class HomePicturesController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="home_pictures_delete", methods={"DELETE"})
+     * @Route("/{id}", name="home_pictures_deletes", methods={"DELETE"})
      */
     public function delete(Request $request, HomePictures $homePicture): Response
     {
@@ -238,6 +238,6 @@ class HomePicturesController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('home_pictures_index');
+        return $this->redirectToRoute('admin');
     }
 }

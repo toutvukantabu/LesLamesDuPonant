@@ -1,22 +1,5 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<title>
-		{% block title 'Lame Du Ponant ' %}
-	</title>
-{% block stylesheets %}
-	<!--Import Google Icon Font-->
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<!--Import materialize.css-->
-	<link type="text/css" rel="stylesheet" href="{{ asset('sass/materialize.css') }}" media="screen,projection" />
-	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css">
-{% endblock %}
-</head>
-
-<body id="Body" class="">
+{% extends 'default.html.twig' %}
+{% block navbar %}
 {# LOGO #}
 {# ======================= #}
 
@@ -37,13 +20,7 @@
 	<ul class="side-nav z-depth-4" id="mobile-demo">
 		<li>
 			<div class="user-view">
-				<div class="background">
-				
-					{# <img src="{{ asset()}}"> #}
-				
-				</div>
-				{% if is_granted('IS_AUTHENTICATED_FULLY') and app.user.photoAvatarUser  != NULL %}
-
+			{% if is_granted('IS_AUTHENTICATED_FULLY') and app.user.photoAvatarUser  != NULL %}
 				<img class="circle" src="{{ asset('uploads/avatar/' ~ app.user.photoAvatarUser )}}">
 				{% else %}
 				<img class="circle" src="{{asset('uploads/avatar.jpg')}}">
@@ -67,7 +44,6 @@
 			</div>
 		</li>
 		</li>
-		<li></li>
 		<li>
 			<h5 class="black-text center-align">Les lames du Ponant</h5>
 		</li>
@@ -107,13 +83,13 @@
 			<a href="{{path('app_register')}}">s'enregistrer</a>
 		</li>
 		{% endif %}
-		{# <div class="divider"></div> #}
+		<div class="divider"></div>
 		<li>
 			<a href="{{path('home')}}">
 				Les disciplines</a>
 		</li>
 		<li>
-			<a href="{{path('home')}}">
+			<a href="{{path('les_amhe')}}">
 				Les AMHE</a>
 		</li>
 		<li>
@@ -122,10 +98,10 @@
 		</li>
 		<li>
 			<a href="{{path('home')}}">Forum</a>
-		</li>
+		</li>X
 	</ul>
 	<div class="menu">
-		<nav>
+		<nav id="navbarHome">
 			<div class="nav-wrapper">
 				<a href="{{path('home')}} " class="brand-logo center">Accueil</a>
 				<a href="#" data-activates="mobile-demo" class="button-collapse">
@@ -183,6 +159,7 @@
 			</div>
 		</nav>
 	</div>
+	
 	{# IMAGE HomeTitle
 	=============== #}
 	{% if app.request.get('_route') == 'home' %}
@@ -193,11 +170,14 @@
 	</div>
 	{% endif %}
 	<main>
-
+{% endblock %}
 {# PRESENTATION leslamesduponant
 ============================= #}
 
 		{% block body %}{% endblock %}
+		{% block footer%}
+			
+	
 		{% if app.request.get('_route') == 'home' %}
 		<div class="section white homeSectionPresentation">
 			<div class="row container">
@@ -361,15 +341,6 @@
 			</div>
 		</div>
 	</footer>
-
-	{% block javascripts %}
-	<!--Import jQuery before materialize.js-->
-	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-	<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js">
-	</script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
-	<script type="text/javascript" src="{{ asset('js/bin/materialize.js') }}"></script>
 	{% endblock %}
-</body>
+	
 
-</html>
