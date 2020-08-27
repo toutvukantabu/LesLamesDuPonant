@@ -1,4 +1,4 @@
-{% extends 'default.html.twig' %}
+{% extends 'base.html.twig' %}
 
 {% block title 'Les AMHE'%}
 
@@ -41,9 +41,9 @@
         {% for les_lames_du_ponant in les_lames_du_ponants %}
 <h4 class="center-align">{{ les_lames_du_ponant.titleLLDP }} </h4>
 <img src="{{asset('/uploads/')}} " alt="">
-<p>{{ les_lames_du_ponant.desciptionLLDP | raw}}</p>
+<p>{{ les_lames_du_ponant.desciptionLLDP|raw}}</p>
 
-
+{% endfor %}
 </div>
 
 

@@ -4,15 +4,13 @@
 
 {% block body %}
     <h4 class="center-align">éditer MedievalFamily</h4>
-<div class="container">
-	<div class="row formRegister z-depth-5">
+
     {{ include('medieval_family/_form.html.twig', {'button_label': 'maj'}) }}
-<div class="editBtnFlex">
+
     <a href="{{ path('admin') }}"><button class="btn green btnForm">retour à la liste</button></a>
 
     {{ include('medieval_family/_delete_form.html.twig') }}
-    </div>
-    </div>
+   
 
-</div>
+
 {% endblock %}
