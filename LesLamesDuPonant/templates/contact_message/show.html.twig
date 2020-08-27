@@ -5,34 +5,32 @@
 {% block body %}
   <H4 class="center-align"> contenu du message</H4>
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ contact_message.id }}</td>
-            </tr>
-            <tr>
-                <th>AuthorNameContactMessage</th>
-                <td>{{ contact_message.authorNameContactMessage }}</td>
-            </tr>
-            <tr>
-                <th>AuthorLastNamecContactMessage</th>
-                <td>{{ contact_message.authorLastNamecContactMessage }}</td>
-            </tr>
-            <tr>
-                <th>ContentContactMessage</th>
-                <td>{{ contact_message.contentContactMessage }}</td>
-            </tr>
-            <tr>
-                <th>EmailContactMessage</th>
-                <td>{{ contact_message.emailContactMessage }}</td>
-            </tr>
-            <tr>
-                <th>DateContactMessage</th>
-                <td>{{ contact_message.dateContactMessage ? contact_message.dateContactMessage|date('Y-m-d H:i:s') : '' }}</td>
-            </tr>
-        </tbody>
-    </table>
+
+<div class="container">
+
+<div class="row">
+
+
+
+
+<p>{{ contact_message.dateContactMessage ? contact_message.dateContactMessage|date('Y-m-d H:i:s') : '' }}</p>
+<p> {{ contact_message.authorNameContactMessage }}</p>
+<p>  {{ contact_message.authorLastNamecContactMessage }}</p>
+<p>{{ contact_message.contentContactMessage|raw }}</p>
+<p></p>
+
+<a href="{{ contact_message.emailContactMessage }}"><button class="btn">répondre</button></a>
+
+
+</div>
+</div>
+                
+        
+       
+               
+
+
+ 
 
     <a href="{{ path('contact_message_index') }}">retours à la liste</a>
 
