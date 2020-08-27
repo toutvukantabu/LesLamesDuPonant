@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New HowWeAre{% endblock %}
+
+{% block body %}
+    <h1>Create new HowWeAre</h1>
+
+    {{ include('how_we_are/_form.html.twig') }}
+
+    <a href="{{ path('how_we_are_index') }}">back to list</a>
+{% endblock %}

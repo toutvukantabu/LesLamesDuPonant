@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}HomeInfo index{% endblock %}
+
+{% block body %}
+    <h1>HomeInfo index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>TitleInfo</th>
+                <th>DescriptionInfo</th>
+                <th>TitleCost</th>
+                <th>DescriptionCost</th>
+                <th>TitleFaqInfo</th>
+                <th>DescriptionFaqInfo</th>
+                <th>ImageOneInfo</th>
+                <th>ImageTwoInfo</th>
+                <th>ImageThreeInfo</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for home_info in home_infos %}
+            <tr>
+                <td>{{ home_info.id }}</td>
+                <td>{{ home_info.titleInfo }}</td>
+                <td>{{ home_info.descriptionInfo }}</td>
+                <td>{{ home_info.titleCost }}</td>
+                <td>{{ home_info.descriptionCost }}</td>
+                <td>{{ home_info.titleFaqInfo }}</td>
+                <td>{{ home_info.descriptionFaqInfo }}</td>
+                <td>{{ home_info.imageOneInfo }}</td>
+                <td>{{ home_info.imageTwoInfo }}</td>
+                <td>{{ home_info.ImageThreeInfo }}</td>
+                <td>
+                    <a href="{{ path('home_info_show', {'id': home_info.id}) }}">show</a>
+                    <a href="{{ path('home_info_edit', {'id': home_info.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="11">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('home_info_new') }}">Create new</a>
+{% endblock %}

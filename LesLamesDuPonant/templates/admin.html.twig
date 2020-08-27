@@ -3,155 +3,117 @@
 
 {# NABAR
 ======================== #}
-	<ul class="side-nav z-depth-4" id="mobile-demo">
+<ul class="side-nav z-depth-4" id="mobile-demo">
+	<ul class="collapsible" data-collapsible="accordion">
 		<li>
-			<div class="user-view">
-			{% if is_granted('IS_AUTHENTICATED_FULLY') and app.user.photoAvatarUser  != NULL %}
-				<img class="circle" src="{{ asset('uploads/avatar/' ~ app.user.photoAvatarUser )}}">
-				{% else %}
-				<img class="circle" src="{{asset('uploads/avatar.jpg')}}">
-				{% endif %}
-				{% if is_granted('IS_AUTHENTICATED_FULLY') and app.user.pseudoUser != NULL %}
-				<span class="white-text name">Bonjour
-					{{app.user.pseudoUser}}</span>
-				{% elseif is_granted('IS_AUTHENTICATED_FULLY') and app.user.pseudoUser == NULL%}
-				<span class="white-text name">Bonjour "Illustre inconnu n°{{app.user.id}}"
-					{% else %}
-					<span class="white-text name">Bonjour "Illustre inconnu "
-					</span>
-					{% endif %}
-					{% if is_granted('IS_AUTHENTICATED_FULLY') %}
-					<span class="white-text email">{{ app.user.email }}</span>
-					<a href="{{path('app_logout')}}">
-						<span class="white-text email">
-							se déconnecter</span>
-					</a>
-					{% endif %}
+			<div class="collapsible-header"><i class="material-icons">home</i>Accueil</div>
+			<div class="collapsible-body">
+				<ul>
+					<li><a href="{{path('how_we_are_index')}}">Qui sommes nous?</a></li>
+					<li><a href="{{path('home_discipline_index')}}">Les disciplines</a></li>
+					<li><a href="{{path('home_pictures_index')}}">parallax/logo</a></li>
+					<li><a href="{{path('time_stamp_index')}}">Agenda</a></li>
+				</ul>
 			</div>
 		</li>
+		<li>
+			<div class="collapsible-header"><i class="material-icons">security</i>AMHE</div>
+			<div class="collapsible-body">
+				<ul>
+					<li><a href="{{path('amhe_index')}}">AMHE</a></li>
+					<li><a href="{{path('medieval_family_index')}}">famille médiévale</a></li>
+					<li><a href=" {{path('les_lames_du_ponant_index')}}">Les Lames Du Ponant</a></li>
+				</ul>
+			</div>
 		</li>
 		<li>
-			<h5 class="black-text center-align">Les lames du Ponant</h5>
-		</li>
-		<div class="divider"></div>
-		{% if is_granted('IS_AUTHENTICATED_FULLY')%}
-		<li>
-			<a href="{{path('home')}}">
-				<span>Messagerie</span>
-			</a>
+			<div class="collapsible-header"><i class="material-icons">sports_kabaddi</i>Disciplines</div>
+			<div class="collapsible-body">
+				<ul>
+					<li><a href="{{path('discipline_index')}}">éditer disciplines</a></li>
+				</ul>
+			</div>
 		</li>
 		<li>
-			<a href="{{path('user_edit',{'id': app.user.id })}}">
-
-				<span>Mon Profil</span>
-			</a>
-		</li>
-			{% if is_granted('ROLE_ADMIN') or is_granted('Role_Super_Administrateur') %}
-					<li>
-					<a href="{{path('admin')}}">Administration</a>
-					</li>
-					{% endif %}
-		<li>
-			<a href="{{path('app_login')}}">infos</a>
+			<div class="collapsible-header"><i class="material-icons">live_help</i>infos</div>
+			<div class="collapsible-body">
+				<ul>
+					<li><a href="{{path('home_info_index')}}">éditer infos</a></li>
+				</ul>
+			</div>
 		</li>
 		<li>
-			<a href="{{path('contact_message_new')}}">contact</a>
+			<div class="collapsible-header"><i class="material-icons">message</i>forum</div>
+			<div class="collapsible-body">
+				<ul>
+					<li><a href="{{path('home_section_forum_index')}}">section</a></li>
+					<li><a href="{{path('category_forum_index')}}">categorie</a></li>
+					<li><a href="{{path('subject_forum_index')}}">sujet</a></li>
+					<li><a href="{{path('message_forum_index')}}">message</a></li>
+				</ul>
+			</div>
 		</li>
 		<li>
-			<a href="{{path('app_logout')}}">se deconnecter</a>
-		</li>
-		{% else %}
-		<li>
-			<a href="{{path('app_login')}}">infos</a>
-		</li>
-		<li>
-			<a href="{{path('app_login')}}">contact</a>
-		</li>
-		<li>
-			<a href="{{path('app_login')}}">se connecter</a>
-		</li>
-		<li>
-			<a href="{{path('app_register')}}">s'enregistrer</a>
-		</li>
-		{% endif %}
-		<div class="divider"></div>
-		<li>
-			<a href="{{path('home')}}">
-				Les disciplines</a>
-		</li>
-		<li>
-			<a href="{{path('les_amhe')}}">
-				Les AMHE</a>
-		</li>
-		<li>
-			<a href="{{path('home')}}">
-				Boutique</a>
-		</li>
-		<li>
-			<a href="{{path('home')}}">Forum</a>
+			<div class="collapsible-header"><i class="material-icons">perm_identity</i>administration</div>
+			<div class="collapsible-body">
+				<ul >
+					<li><a href="{{path('user_index')}}">Membres</a></li>
+					<li><a href="{{path('contact_message_index')}}">Message</a></li>
+				</ul>
+			</div>
 		</li>
 	</ul>
-	<div class="menu">
-						<ul id="dropdown1" class="dropdown-content">
-  <li><a href="#!">Qui sommes nous?</a></li>
-  <li><a href="{{path('home_discipline_index')}}">Les disciplines</a></li>
-  <li><a href="{{path('home_pictures_index')}}">parallax/logo</a></li>
-   <li><a href="{{path('time_stamp_index')}}">Agenda</a></li>
-</ul>					<ul id="dropdown2" class="dropdown-content">
-  <li><a href="{{path('amhe_index')}}">AMHE</a></li>
-  <li><a href="{{path('medieval_family_index')}}">famille médiévale</a></li>
-  <li><a href=" {{path('les_lames_du_ponant_index')}}">Les Lames Du Ponant</a></li>
-{# </ul>					<ul id="dropdown3" class="dropdown-content">
-  <li><a href="{{path('les_lames_du_ponant_index')}}">Les Lames </a></li>
-  <li><a href="{{path('')}}">Famille médiévale</a></li>
-  <li class="divider"></li>
-  <li><a href="{{path('')}}">three</a></li> #}
-</ul>					<ul id="dropdown4" class="dropdown-content">
-  <li><a href="{{path('')}}">one</a></li>
-  <li><a href="{{path('')}}">two</a></li>
-  <li class="divider"></li>
-  <li><a href="{{path('')}}">three</a></li>
-</ul>					<ul id="dropdown5" class="dropdown-content">
-  <li><a href="{{path('')}}">one</a></li>
-  <li><a href="{{path('')}}">two</a></li>
-  <li class="divider"></li>
-  <li><a href="{{path('')}}">three</a></li>
-</ul>					<ul id="dropdown6" class="dropdown-content">
-  <li><a href="{{path('')}}">Produits</a></li>
-  
-  <li><a href="{{path('')}}">three</a></li>
-</ul>					<ul id="dropdown7" class="dropdown-content">
-  <li><a href="{{path('')}}">Condition d'utilisation</a></li>
-  <li><a href="{{path('')}}">two</a></li>
- 
-</ul>					<ul id="dropdown8" class="dropdown-content">
-  <li><a href="{{path('')}}">Membres</a></li>
-  <li><a href="{{path('')}}">Message</a></li>
-  
 </ul>
-		<nav id="navbarHome">
-			<div class="nav-wrapper">
-				<a href="{{path('home')}} " class="brand-logo center">Accueil</a>
-				<a href="#" data-activates="mobile-demo" class="button-collapse">
-					<i class="material-icons">menu</i>
-				</a>
-				<ul class="left hide-on-med-and-down">
- <li><a class="dropdown-button" href="#!" data-activates="dropdown1"> Page Accueil<i class="material-icons right"></i></a></li>
-  <li><a class="dropdown-button" href="#!" data-activates="dropdown2">AMHE<i class="material-icons right"></i></a></li>
-   <li><a class="dropdown-button" href="#!" data-activates="dropdown3">Disciplines<i class="material-icons right"></i></a></li>
-    <li><a class="dropdown-button" href="#!" data-activates="dropdown4">Infos<i class="material-icons right"></i></a></li>
-
-				</ul>
-				<ul class="right hide-on-med-and-down">
- <li><a class="dropdown-button" href="#!" data-activates="dropdown5">Forum<i class="material-icons right"></i></a></li>
-  <li><a class="dropdown-button" href="#!" data-activates="dropdown6">Boutique<i class="material-icons right"></i></a></li>
-   <li><a class="dropdown-button" href="#!" data-activates="dropdown7">RGPD<i class="material-icons right"></i></a></li>
-    <li><a class="dropdown-button" href="#!" data-activates="dropdown8">Administration<i class="material-icons right"></i></a></li>
-
-				
-				</ul>
-			</div>
-		</nav>
-	</div>
-	{% endblock %}
-	{% block body %}{% endblock %}
+<div class="menu">
+	<ul id="dropdown1" class="dropdown-content">
+		<li><a href="{{path('how_we_are_index')}}">Qui sommes nous?</a></li>
+		<li><a href="{{path('home_discipline_index')}}">Les disciplines</a></li>
+		<li><a href="{{path('home_pictures_index')}}">parallax/logo</a></li>
+		<li><a href="{{path('time_stamp_index')}}">Agenda</a></li>
+	</ul>
+	<ul id="dropdown2" class="dropdown-content">
+		<li><a href="{{path('amhe_index')}}">AMHE</a></li>
+		<li><a href="{{path('medieval_family_index')}}">famille médiévale</a></li>
+		<li><a href=" {{path('les_lames_du_ponant_index')}}">Les Lames Du Ponant</a></li>
+	</ul>
+	<ul id="dropdown5" class="dropdown-content">
+		<li><a href="{{path('home_section_forum_index')}}">section</a></li>
+		<li><a href="{{path('category_forum_index')}}">categorie</a></li>
+		<li><a href="{{path('subject_forum_index')}}">sujet</a></li>
+		<li><a href="{{path('message_forum_index')}}">message</a></li>
+	</ul>
+	<ul id="dropdown8" class="dropdown-content">
+		<li><a href="{{path('user_index')}}">Membres</a></li>
+		<li><a href="{{path('contact_message_index')}}">Message</a></li>
+	</ul>
+	<nav id="navbarHome">
+		<div class="nav-wrapper">
+			<a href="{{path('home')}} " class="brand-logo center">Accueil</a>
+			<a href="#" data-activates="mobile-demo" class="button-collapse">
+				<i class="material-icons">menu</i>
+			</a>
+			<ul class="left hide-on-med-and-down">
+				<li><a class="dropdown-button" href="#!" data-activates="dropdown1"> Page Accueil<i
+							class="material-icons right"></i></a></li>
+				<li><a class="dropdown-button" href="#!" data-activates="dropdown2">AMHE<i
+							class="material-icons right"></i></a></li>
+				<li><a class="dropdown-button" href="{{path('discipline_index')}}"
+						data-activates="dropdown3">Disciplines<i class="material-icons right"></i></a></li>
+				<li><a class="dropdown-button" href="{{path('home_info_index')}}" data-activates="dropdown4">Infos<i
+							class="material-icons right"></i></a></li>
+			</ul>
+			<ul class="right hide-on-med-and-down">
+				<li><a class="dropdown-button" href="#!" data-activates="dropdown5">Forum<i
+							class="material-icons right"></i></a></li>
+				<li><a class="dropdown-button" href="#!" data-activates="dropdown6">Boutique<i
+							class="material-icons right"></i></a></li>
+				<li><a class="dropdown-button" href="#!" data-activates="dropdown7">RGPD<i
+							class="material-icons right"></i></a></li>
+				<li><a class="dropdown-button" href="#!" data-activates="dropdown8">Administration<i
+							class="material-icons right"></i></a></li>
+			</ul>
+		</div>
+	</nav>
+</div>
+{% endblock %}
+{% block body %}{% endblock %}

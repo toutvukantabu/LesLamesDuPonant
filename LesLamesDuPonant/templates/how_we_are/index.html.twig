@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}HowWeAre index{% endblock %}
+
+{% block body %}
+    <h1>HowWeAre index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>TitleHowWeAre</th>
+                <th>DescriptionHowWeAre</th>
+                <th>PhotoHowWeAre</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for how_we_are in how_we_ares %}
+            <tr>
+                <td>{{ how_we_are.id }}</td>
+                <td>{{ how_we_are.titleHowWeAre }}</td>
+                <td>{{ how_we_are.descriptionHowWeAre }}</td>
+                <td>{{ how_we_are.PhotoHowWeAre }}</td>
+                <td>
+                    <a href="{{ path('how_we_are_show', {'id': how_we_are.id}) }}">show</a>
+                    <a href="{{ path('how_we_are_edit', {'id': how_we_are.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('how_we_are_new') }}">Create new</a>
+{% endblock %}

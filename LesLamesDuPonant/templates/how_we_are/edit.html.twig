@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit HowWeAre{% endblock %}
+
+{% block body %}
+    <h1>Edit HowWeAre</h1>
+
+    {{ include('how_we_are/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('how_we_are_index') }}">back to list</a>
+
+    {{ include('how_we_are/_delete_form.html.twig') }}
+{% endblock %}
