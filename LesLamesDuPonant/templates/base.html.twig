@@ -4,18 +4,18 @@
 {# ======================= #}
 
 {% block logo %}
-	{% if app.request.get('_route') == 'home' %}
+
 	<header>
 		<div class="container " id="HomeTitle">
 			<div class="row">
 				<div class="  col m12 s12 l12 xl12">
 			    {% for home_picture in home_pictures %}
-				<img src="{{ asset('uploads/parallax/'~ home_picture.homeLogoPicture)}}">
+				<img src="{{ asset('uploads/parallax/' ~ home_picture.homeLogoPicture)}}">
 				{% endfor %}
 				</div>
 			</div>
 		</div>
-	</header>{% endif %}
+	</header>
 	{% endblock %}
 {% block navbar %}
 

@@ -451,6 +451,7 @@
 =================== #}
 			<div id="lldp">
 				<table class="table tableAdmin display datatable" id="myTable8">
+				<h4 class="center-align"> Les Lames du Ponant</h4>
 					<thead>
 						<tr>
 							<th>Id</th>
@@ -467,6 +468,7 @@
 						<tr>
 							<td>{{ les_lames_du_ponant.id }}</td>
 							<td>{{ les_lames_du_ponant.titleLLDP }}</td>
+							<td>{{asset('/uploads/lldp/') ~ les_lames_du_ponant.pictureLesLamesDuponant }}</td>
 							<td>{{ les_lames_du_ponant.desciptionLLDP|striptags|u.truncate(50)|raw}}</td>
 							<td><img src="{{asset('/uploads/lldp/') ~ les_lames_du_ponant.pictureLesLamesDuponant }}"
 									alt=""></td>
