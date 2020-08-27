@@ -20,7 +20,7 @@ class AdminController extends AbstractController
      */
     public function index(LesLamesDuPonantRepository $lesLamesDuPonantRepository,HomePicturesRepository $homePicturesRepository,AMHERepository $aMHERepository,MedievalFamilyRepository $medievalFamilyRepository,HomeDisciplineRepository $homeDisciplineRepository,ContactMessageRepository $contactMessageRepository,TimeStampRepository $timeStampRepository,UserRepository $userRepository )
     {
-        return $this->render('admin/index.html.twig', [
+        return $this->render('admin.html.twig', [
             'controller_name' => 'AdminController',
             'time_stamps' => $timeStampRepository->findAll(),
             'user' => $userRepository->findAll(),

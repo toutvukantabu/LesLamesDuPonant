@@ -3,39 +3,62 @@
 {% block title %}HomePictures index{% endblock %}
 
 {% block body %}
-    <h1>HomePictures index</h1>
+<div id="User">
+				<h4 class="center-align">table des utilisateurs</h4>
+				<table class="table tableAdmin  display datatable"
+ data-page-length='10' id="myTable">
+					<thead>
+						<tr>
+							<th>Id</th>
+							<th>Email</th>
+							<th>Pseudo utilisateur</th>
+							<th>Code postal</th>
+							<th>voir</th>
+							<th>éditer</th>
+							<th>supprimer</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for user in user %}
+						<tr>
+							<td>{{ user.id }}</td>
+							<td>{{ user.email }}</td>
+							<td>{{ user.pseudoUser }}</td>
+							<td>{{ user.postalCodeUser }}</td>
+							<td>
+								<a href="{{ path('user_show', {'id': user.id}) }}">
+									<button class="btn blue">
+										<i class=" tiny material-icons ">visibility</i>
+									</button>
+								</a>
+							</td>
+							<td>
+								<a href="{{ path('user_edit', {'id': user.id}) }}">
+									<button class="btn orange">
+										<i class=" tiny material-icons ">create</i>
+									</button>
+								</a>
+							</td>
+							<td>
+								<form method="post" action="{{ path('user_delete', {'id': user.id}) }}"
+									onsubmit="return confirm('Voulez vous vraiment supprimer cet utilisateur?');">
+									<input type="hidden" name="_method" value="DELETE">
+									<input type="hidden" name="_token" value="{{ csrf_token('delete' ~ user.id) }}">
+									<button class="btn red">
+										<i class=" tiny material-icons ">delete</i>
+									</button>
+								</form>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>HomeLogoPicture</th>
-                <th>HomeTitlePicture</th>
-                <th>HomeParallax1</th>
-                <th>HomeParallax2</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for home_picture in home_pictures %}
-            <tr>
-                <td>{{ home_picture.id }}</td>
-                <td>{{ home_picture.homeLogoPicture }}</td>
-                <td>{{ home_picture.homeTitlePicture }}</td>
-                <td>{{ home_picture.homeParallax1 }}</td>
-                <td>{{ home_picture.homeParallax2 }}</td>
-                <td>
-                    <a href="{{ path('home_pictures_show', {'id': home_picture.id}) }}">show</a>
-                    <a href="{{ path('home_pictures_edit', {'id': home_picture.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="6">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+							</td>
+						</tr>
+						{% else %}
+						<tr>
+							<td colspan="14">Aucun enregistrement trouvé.</td>
+						</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+			</div>
 
     <a href="{{ path('home_pictures_new') }}">Create new</a>
 {% endblock %}
