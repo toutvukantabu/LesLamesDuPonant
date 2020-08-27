@@ -9,6 +9,7 @@ use RecursiveIteratorIterator;
 use const DIRECTORY_SEPARATOR;
 use function array_keys;
 use function array_merge;
+use function class_exists;
 use function is_dir;
 use function is_file;
 use function realpath;
@@ -228,3 +229,5 @@ class SymfonyFileLocator implements FileLocator
         throw MappingException::mappingFileNotFound($className, substr($className, strrpos($className, '\\') + 1) . $this->fileExtension);
     }
 }
+
+class_exists(\Doctrine\Common\Persistence\Mapping\Driver\SymfonyFileLocator::class);

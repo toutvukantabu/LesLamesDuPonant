@@ -12,6 +12,7 @@ use ReflectionClass;
 use RegexIterator;
 use function array_merge;
 use function array_unique;
+use function class_exists;
 use function get_class;
 use function get_declared_classes;
 use function in_array;
@@ -253,3 +254,5 @@ abstract class AnnotationDriver implements MappingDriver
         return $classes;
     }
 }
+
+class_exists(\Doctrine\Common\Persistence\Mapping\Driver\AnnotationDriver::class);

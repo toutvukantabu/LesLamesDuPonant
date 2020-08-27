@@ -4,6 +4,7 @@ namespace Doctrine\Persistence;
 
 use Doctrine\Persistence\Mapping\ClassMetadata;
 use Doctrine\Persistence\Mapping\ClassMetadataFactory;
+use function interface_exists;
 
 /**
  * Contract for a Doctrine persistence layer ObjectManager class to implement.
@@ -19,10 +20,6 @@ interface ObjectManager
      * @param mixed  $id        The identity of the object to find.
      *
      * @return object|null The found object.
-     *
-     * @template T
-     * @psalm-param class-string<T> $className
-     * @psalm-return T|null
      */
     public function find($className, $id);
 
@@ -114,9 +111,9 @@ interface ObjectManager
     /**
      * Gets the repository for a class.
      *
-     * @template T
-     * @psalm-param class-string<T> $className
-     * @psalm-return ObjectRepository<T>
+     * @param string $className
+     *
+     * @return ObjectRepository
      */
     public function getRepository($className);
 
@@ -159,3 +156,5 @@ interface ObjectManager
      */
     public function contains($object);
 }
+
+interface_exists(\Doctrine\Common\Persistence\ObjectManager::class);

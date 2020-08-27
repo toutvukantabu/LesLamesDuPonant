@@ -3,6 +3,7 @@
 namespace Doctrine\Persistence\Mapping\Driver;
 
 use Doctrine\Persistence\Mapping\ClassMetadata;
+use function interface_exists;
 
 /**
  * Contract for metadata drivers.
@@ -35,3 +36,6 @@ interface MappingDriver
      */
     public function isTransient($className);
 }
+
+interface_exists(\Doctrine\Common\Persistence\Mapping\Driver\MappingDriver::class);
+interface_exists(ClassMetadata::class);

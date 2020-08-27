@@ -2,6 +2,8 @@
 
 namespace Doctrine\Persistence;
 
+use function interface_exists;
+
 /**
  * Interface for classes that notify event listeners of changes to their managed properties.
  *
@@ -18,3 +20,6 @@ interface NotifyPropertyChanged
      */
     public function addPropertyChangedListener(PropertyChangedListener $listener);
 }
+
+interface_exists(\Doctrine\Common\NotifyPropertyChanged::class);
+interface_exists(PropertyChangedListener::class);

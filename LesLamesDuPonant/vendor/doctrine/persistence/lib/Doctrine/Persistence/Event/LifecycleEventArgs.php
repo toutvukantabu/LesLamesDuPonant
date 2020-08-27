@@ -4,6 +4,7 @@ namespace Doctrine\Persistence\Event;
 
 use Doctrine\Common\EventArgs;
 use Doctrine\Persistence\ObjectManager;
+use function class_exists;
 
 /**
  * Lifecycle Events are triggered by the UnitOfWork during lifecycle transitions
@@ -58,3 +59,5 @@ class LifecycleEventArgs extends EventArgs
         return $this->objectManager;
     }
 }
+
+class_exists(\Doctrine\Common\Persistence\Event\LifecycleEventArgs::class);

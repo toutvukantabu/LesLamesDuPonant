@@ -5,6 +5,7 @@ namespace Doctrine\Persistence\Event;
 use Doctrine\Common\EventArgs;
 use Doctrine\Persistence\Mapping\ClassMetadata;
 use Doctrine\Persistence\ObjectManager;
+use function class_exists;
 
 /**
  * Class that holds event arguments for a loadMetadata event.
@@ -43,3 +44,5 @@ class LoadClassMetadataEventArgs extends EventArgs
         return $this->objectManager;
     }
 }
+
+class_exists(\Doctrine\Common\Persistence\Event\LoadClassMetadataEventArgs::class);

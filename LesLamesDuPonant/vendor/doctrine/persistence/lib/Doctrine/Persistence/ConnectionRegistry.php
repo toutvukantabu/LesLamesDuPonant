@@ -2,6 +2,8 @@
 
 namespace Doctrine\Persistence;
 
+use function interface_exists;
+
 /**
  * Contract covering connection for a Doctrine persistence layer ManagerRegistry class to implement.
  */
@@ -37,3 +39,5 @@ interface ConnectionRegistry
      */
     public function getConnectionNames();
 }
+
+interface_exists(\Doctrine\Common\Persistence\ConnectionRegistry::class);

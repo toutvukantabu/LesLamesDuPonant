@@ -4,6 +4,7 @@ namespace Doctrine\Persistence\Event;
 
 use Doctrine\Common\EventArgs;
 use Doctrine\Persistence\ObjectManager;
+use function class_exists;
 
 /**
  * Provides event arguments for the onClear event.
@@ -56,3 +57,5 @@ class OnClearEventArgs extends EventArgs
         return $this->entityClass === null;
     }
 }
+
+class_exists(\Doctrine\Common\Persistence\Event\OnClearEventArgs::class);

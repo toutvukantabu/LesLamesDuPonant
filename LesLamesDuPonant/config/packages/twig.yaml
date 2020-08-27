@@ -2,6 +2,4 @@ twig:
     default_path: '%kernel.project_dir%/templates'
     form_themes: 
     - 'templates/materialize_layout.html.twig'
-    globals:
-        # the value is the service's id
-        logo: '@App\Entity\HomePictures'
+  

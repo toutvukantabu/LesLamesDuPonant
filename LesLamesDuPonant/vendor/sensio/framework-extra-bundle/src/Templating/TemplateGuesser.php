@@ -11,7 +11,7 @@
 
 namespace Sensio\Bundle\FrameworkExtraBundle\Templating;
 
-use Doctrine\Persistence\Proxy;
+use Doctrine\Common\Persistence\Proxy;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\KernelInterface;
 

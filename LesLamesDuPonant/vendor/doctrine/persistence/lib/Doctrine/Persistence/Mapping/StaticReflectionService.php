@@ -2,6 +2,7 @@
 
 namespace Doctrine\Persistence\Mapping;
 
+use function class_exists;
 use function strpos;
 use function strrev;
 use function strrpos;
@@ -69,3 +70,5 @@ class StaticReflectionService implements ReflectionService
         return true;
     }
 }
+
+class_exists(\Doctrine\Common\Persistence\Mapping\StaticReflectionService::class);

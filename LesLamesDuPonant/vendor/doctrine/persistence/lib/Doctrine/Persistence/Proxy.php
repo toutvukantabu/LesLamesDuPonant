@@ -2,6 +2,8 @@
 
 namespace Doctrine\Persistence;
 
+use function interface_exists;
+
 /**
  * Interface for proxy classes.
  */
@@ -33,3 +35,5 @@ interface Proxy
      */
     public function __isInitialized();
 }
+
+interface_exists(\Doctrine\Common\Persistence\Proxy::class);
