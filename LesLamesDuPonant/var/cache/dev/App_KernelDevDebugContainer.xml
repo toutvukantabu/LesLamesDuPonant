@@ -86,8 +86,9 @@
     <parameter key="amhe_directory">C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant/public/uploads/amhe</parameter>
     <parameter key="discipline_directory">C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant/public/uploads/discipline</parameter>
     <parameter key="forum_directory">C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant/public/uploads/forum</parameter>
-    <parameter key="parallax_directory">C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant/public/uploads/parallax</parameter>
+    <parameter key="homepicture_directory">C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant/public/uploads/parallax</parameter>
     <parameter key="other_directory">C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant/public/uploads/other</parameter>
+    <parameter key="leslamesduponant_directory">C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant/public/uploads/lldp</parameter>
     <parameter key="event_dispatcher.event_aliases" type="collection">
       <parameter key="Symfony\Component\Console\Event\ConsoleCommandEvent">console.command</parameter>
       <parameter key="Symfony\Component\Console\Event\ConsoleErrorEvent">console.error</parameter>
@@ -236,6 +237,10 @@
     <parameter key="security.authentication.session_strategy.strategy">migrate</parameter>
     <parameter key="security.access.always_authenticate_before_granting">false</parameter>
     <parameter key="security.authentication.hide_user_not_found">true</parameter>
+    <parameter key="security.firewalls" type="collection">
+      <parameter>dev</parameter>
+      <parameter>main</parameter>
+    </parameter>
     <parameter key="web_profiler.debug_toolbar.intercept_redirects">false</parameter>
     <parameter key="web_profiler.debug_toolbar.mode">2</parameter>
     <parameter key="monolog.use_microseconds">true</parameter>
@@ -371,6 +376,20 @@
         <argument type="service" id=".service_locator.g9CqTPp.App\Controller\ContactMessageController"/>
       </call>
     </service>
+    <service id="App\Controller\DisciplineController" class="App\Controller\DisciplineController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.g9CqTPp.App\Controller\DisciplineController"/>
+      </call>
+    </service>
+    <service id="App\Controller\FaqController" class="App\Controller\FaqController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.g9CqTPp.App\Controller\FaqController"/>
+      </call>
+    </service>
     <service id="App\Controller\HomeController" class="App\Controller\HomeController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -385,11 +404,32 @@
         <argument type="service" id=".service_locator.g9CqTPp.App\Controller\HomeDisciplineController"/>
       </call>
     </service>
+    <service id="App\Controller\HomeInfoController" class="App\Controller\HomeInfoController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.g9CqTPp.App\Controller\HomeInfoController"/>
+      </call>
+    </service>
+    <service id="App\Controller\HomePicturesController" class="App\Controller\HomePicturesController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.g9CqTPp.App\Controller\HomePicturesController"/>
+      </call>
+    </service>
     <service id="App\Controller\HomeSectionForumController" class="App\Controller\HomeSectionForumController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
       <call method="setContainer">
         <argument type="service" id=".service_locator.g9CqTPp.App\Controller\HomeSectionForumController"/>
+      </call>
+    </service>
+    <service id="App\Controller\HowWeAreController" class="App\Controller\HowWeAreController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.g9CqTPp.App\Controller\HowWeAreController"/>
       </call>
     </service>
     <service id="App\Controller\LesAMHEController" class="App\Controller\LesAMHEController" public="true" autowire="true" autoconfigure="true">
@@ -476,10 +516,25 @@
     <service id="App\Form\ContactMessageType" class="App\Form\ContactMessageType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
+    <service id="App\Form\DisciplineType" class="App\Form\DisciplineType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\FaqType" class="App\Form\FaqType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
     <service id="App\Form\HomeDisciplineType" class="App\Form\HomeDisciplineType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
+    <service id="App\Form\HomeInfoType" class="App\Form\HomeInfoType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\HomePicturesType" class="App\Form\HomePicturesType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
     <service id="App\Form\HomeSectionForumType" class="App\Form\HomeSectionForumType" autowire="true" autoconfigure="true"/>
+    <service id="App\Form\HowWeAreType" class="App\Form\HowWeAreType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
     <service id="App\Form\LesLamesDuPonantType" class="App\Form\LesLamesDuPonantType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
@@ -516,11 +571,31 @@
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
+    <service id="App\Repository\DisciplineRepository" class="App\Repository\DisciplineRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\FaqRepository" class="App\Repository\FaqRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
     <service id="App\Repository\HomeDisciplineRepository" class="App\Repository\HomeDisciplineRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
+    <service id="App\Repository\HomeInfoRepository" class="App\Repository\HomeInfoRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\HomePicturesRepository" class="App\Repository\HomePicturesRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
     <service id="App\Repository\HomeSectionForumRepository" class="App\Repository\HomeSectionForumRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\HowWeAreRepository" class="App\Repository\HowWeAreRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
@@ -1006,7 +1081,12 @@
         <argument>App\Form\CategoryForumType</argument>
         <argument>App\Form\ChangePasswordFormType</argument>
         <argument>App\Form\ContactMessageType</argument>
+        <argument>App\Form\DisciplineType</argument>
+        <argument>App\Form\FaqType</argument>
         <argument>App\Form\HomeDisciplineType</argument>
+        <argument>App\Form\HomeInfoType</argument>
+        <argument>App\Form\HomePicturesType</argument>
+        <argument>App\Form\HowWeAreType</argument>
         <argument>App\Form\LesLamesDuPonantType</argument>
         <argument>App\Form\MedievalFamilyType</argument>
         <argument>App\Form\MessageForumType</argument>
@@ -1357,7 +1437,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension" public="false">
-      <argument type="service" id=".service_locator.CgZxxEW"/>
+      <argument type="service" id=".service_locator.cfZb_WO"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -3375,6 +3455,9 @@
         <argument type="service" id="twig.extension.dump"/>
       </call>
       <call method="addExtension">
+        <argument type="service" id="twig.extension.string"/>
+      </call>
+      <call method="addExtension">
         <argument type="service" id="doctrine.twig.doctrine_extension"/>
       </call>
       <call method="addExtension">
@@ -3617,6 +3700,9 @@
       <argument type="service" id="twig"/>
     </service>
     <service id="twig.missing_extension_suggestor" class="Twig\Extra\TwigExtraBundle\MissingExtensionSuggestor" public="false"/>
+    <service id="twig.extension.string" class="Twig\Extra\String\StringExtension" public="false">
+      <tag name="twig.extension"/>
+    </service>
     <service id="sensio_framework_extra.controller.listener" class="Sensio\Bundle\FrameworkExtraBundle\EventListener\ControllerListener">
       <tag name="kernel.event_subscriber"/>
       <tag name="container.hot_path"/>
@@ -3826,7 +3912,7 @@
       <factory class="Doctrine\ORM\EntityManager" method="create"/>
     </service>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory" public="false">
-      <argument type="service" id=".service_locator.TGYQ2q1"/>
+      <argument type="service" id=".service_locator.MHYetjW"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -4260,7 +4346,7 @@
     </service>
     <service id="security.user_checker" class="Symfony\Component\Security\Core\User\UserChecker" public="false"/>
     <service id="security.expression_language" class="Symfony\Component\Security\Core\Authorization\ExpressionLanguage" public="false">
-      <argument type="service" id="cache.security_expression_language"/>
+      <argument type="service" id="cache.security_expression_language" on-invalid="null"/>
     </service>
     <service id="security.authentication_utils" class="Symfony\Component\Security\Http\Authentication\AuthenticationUtils" public="true">
       <argument type="service" id="request_stack"/>
@@ -4716,38 +4802,6 @@
       <call method="addListener">
         <argument>Symfony\Component\Security\Http\Event\LogoutEvent</argument>
         <argument type="collection">
-          <argument type="service" id="security.event_dispatcher.main.event_bubbling_listener"/>
-          <argument>bubbleEvent</argument>
-        </argument>
-        <argument>0</argument>
-      </call>
-      <call method="addListener">
-        <argument>Symfony\Component\Security\Http\Event\LoginFailureEvent</argument>
-        <argument type="collection">
-          <argument type="service" id="security.event_dispatcher.main.event_bubbling_listener"/>
-          <argument>bubbleEvent</argument>
-        </argument>
-        <argument>0</argument>
-      </call>
-      <call method="addListener">
-        <argument>Symfony\Component\Security\Http\Event\LoginSuccessEvent</argument>
-        <argument type="collection">
-          <argument type="service" id="security.event_dispatcher.main.event_bubbling_listener"/>
-          <argument>bubbleEvent</argument>
-        </argument>
-        <argument>0</argument>
-      </call>
-      <call method="addListener">
-        <argument>Symfony\Component\Security\Http\Event\CheckPassportEvent</argument>
-        <argument type="collection">
-          <argument type="service" id="security.event_dispatcher.main.event_bubbling_listener"/>
-          <argument>bubbleEvent</argument>
-        </argument>
-        <argument>0</argument>
-      </call>
-      <call method="addListener">
-        <argument>Symfony\Component\Security\Http\Event\LogoutEvent</argument>
-        <argument type="collection">
           <argument type="service" id="security.logout.listener.default.main"/>
           <argument>onLogout</argument>
         </argument>
@@ -4761,10 +4815,14 @@
         </argument>
         <argument>0</argument>
       </call>
-    </service>
-    <service id="security.event_dispatcher.main.event_bubbling_listener" class="Symfony\Bundle\SecurityBundle\EventListener\FirewallEventBubblingListener" public="false">
-      <tag name="kernel.event_subscriber" dispatcher="security.event_dispatcher.main"/>
-      <argument type="service" id="debug.event_dispatcher"/>
+      <call method="addListener">
+        <argument>Symfony\Component\Security\Http\Event\LogoutEvent</argument>
+        <argument type="collection">
+          <argument type="service" id="security.logout.listener.csrf_token_clearing"/>
+          <argument>onLogout</argument>
+        </argument>
+        <argument>0</argument>
+      </call>
     </service>
     <service id="security.context_listener.0" class="Symfony\Component\Security\Http\Firewall\ContextListener" public="false">
       <argument type="service" id="security.untracked_token_storage"/>
@@ -5189,6 +5247,7 @@
       <tag name="maker.command"/>
       <argument type="service" id="maker.file_manager"/>
       <argument type="service" id="maker.doctrine_helper"/>
+      <argument type="service" id="maker.entity_class_generator"/>
     </service>
     <service id="maker.maker.make_serializer_encoder" class="Symfony\Bundle\MakerBundle\Maker\MakeSerializerEncoder" public="false">
       <tag name="maker.command"/>
@@ -5372,15 +5431,30 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ContactMessageController" class="App\Controller\ContactMessageController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ContactMessageController" class="App\Controller\ContactMessageController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\ContactMessageController" class="App\Controller\ContactMessageController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\DisciplineController" class="App\Controller\DisciplineController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\DisciplineController" class="App\Controller\DisciplineController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\DisciplineController" class="App\Controller\DisciplineController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\FaqController" class="App\Controller\FaqController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\FaqController" class="App\Controller\FaqController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\FaqController" class="App\Controller\FaqController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\HomeController" class="App\Controller\HomeController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\HomeController" class="App\Controller\HomeController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\HomeController" class="App\Controller\HomeController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\HomeDisciplineController" class="App\Controller\HomeDisciplineController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\HomeDisciplineController" class="App\Controller\HomeDisciplineController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\HomeDisciplineController" class="App\Controller\HomeDisciplineController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\HomeInfoController" class="App\Controller\HomeInfoController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\HomeInfoController" class="App\Controller\HomeInfoController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\HomeInfoController" class="App\Controller\HomeInfoController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\HomePicturesController" class="App\Controller\HomePicturesController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\HomePicturesController" class="App\Controller\HomePicturesController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\HomePicturesController" class="App\Controller\HomePicturesController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\HomeSectionForumController" class="App\Controller\HomeSectionForumController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\HomeSectionForumController" class="App\Controller\HomeSectionForumController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\HomeSectionForumController" class="App\Controller\HomeSectionForumController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\HowWeAreController" class="App\Controller\HowWeAreController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\HowWeAreController" class="App\Controller\HowWeAreController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\HowWeAreController" class="App\Controller\HowWeAreController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\LesAMHEController" class="App\Controller\LesAMHEController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\LesAMHEController" class="App\Controller\LesAMHEController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\LesAMHEController" class="App\Controller\LesAMHEController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -5419,8 +5493,18 @@
     <service id=".abstract.instanceof.App\Form\ChangePasswordFormType" class="App\Form\ChangePasswordFormType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ContactMessageType" class="App\Form\ContactMessageType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\ContactMessageType" class="App\Form\ContactMessageType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\DisciplineType" class="App\Form\DisciplineType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\DisciplineType" class="App\Form\DisciplineType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\FaqType" class="App\Form\FaqType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\FaqType" class="App\Form\FaqType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\HomeDisciplineType" class="App\Form\HomeDisciplineType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\HomeDisciplineType" class="App\Form\HomeDisciplineType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\HomeInfoType" class="App\Form\HomeInfoType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\HomeInfoType" class="App\Form\HomeInfoType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\HomePicturesType" class="App\Form\HomePicturesType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\HomePicturesType" class="App\Form\HomePicturesType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\HowWeAreType" class="App\Form\HowWeAreType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\HowWeAreType" class="App\Form\HowWeAreType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\LesLamesDuPonantType" class="App\Form\LesLamesDuPonantType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\LesLamesDuPonantType" class="App\Form\LesLamesDuPonantType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\MedievalFamilyType" class="App\Form\MedievalFamilyType" autowire="true" abstract="true"/>
@@ -5443,10 +5527,20 @@
     <service id=".abstract.instanceof.App\Repository\CategoryForumRepository" class="App\Repository\CategoryForumRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ContactMessageRepository" class="App\Repository\ContactMessageRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\ContactMessageRepository" class="App\Repository\ContactMessageRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\DisciplineRepository" class="App\Repository\DisciplineRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\DisciplineRepository" class="App\Repository\DisciplineRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\FaqRepository" class="App\Repository\FaqRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\FaqRepository" class="App\Repository\FaqRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\HomeDisciplineRepository" class="App\Repository\HomeDisciplineRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\HomeDisciplineRepository" class="App\Repository\HomeDisciplineRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\HomeInfoRepository" class="App\Repository\HomeInfoRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\HomeInfoRepository" class="App\Repository\HomeInfoRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\HomePicturesRepository" class="App\Repository\HomePicturesRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\HomePicturesRepository" class="App\Repository\HomePicturesRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\HomeSectionForumRepository" class="App\Repository\HomeSectionForumRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\HomeSectionForumRepository" class="App\Repository\HomeSectionForumRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\HowWeAreRepository" class="App\Repository\HowWeAreRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\HowWeAreRepository" class="App\Repository\HowWeAreRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\LesLamesDuPonantRepository" class="App\Repository\LesLamesDuPonantRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\LesLamesDuPonantRepository" class="App\Repository\LesLamesDuPonantRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\MedievalFamilyRepository" class="App\Repository\MedievalFamilyRepository" autowire="true" abstract="true"/>
@@ -5720,18 +5814,33 @@
         <argument key="aMHERepository" type="service" id="App\Repository\AMHERepository"/>
       </argument>
     </service>
+    <service id=".service_locator.1cFtlgg" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="slugger" type="service" id="slugger"/>
+      </argument>
+    </service>
     <service id=".service_locator.Yu9Pcj8" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="aMHE" type="service" id=".errored..service_locator.Yu9Pcj8.App\Entity\AMHE"/>
       </argument>
     </service>
-    <service id=".service_locator.e0J_yCu" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.mPdP5lR" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="aMHE" type="service" id=".errored..service_locator.mPdP5lR.App\Entity\AMHE"/>
+        <argument key="slugger" type="service" id="slugger"/>
+      </argument>
+    </service>
+    <service id=".service_locator.PVbfdAu" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="aMHERepository" type="service" id="App\Repository\AMHERepository"/>
         <argument key="contactMessageRepository" type="service" id="App\Repository\ContactMessageRepository"/>
         <argument key="homeDisciplineRepository" type="service" id="App\Repository\HomeDisciplineRepository"/>
+        <argument key="homePicturesRepository" type="service" id="App\Repository\HomePicturesRepository"/>
+        <argument key="lesLamesDuPonantRepository" type="service" id="App\Repository\LesLamesDuPonantRepository"/>
         <argument key="medievalFamilyRepository" type="service" id="App\Repository\MedievalFamilyRepository"/>
         <argument key="timeStampRepository" type="service" id="App\Repository\TimeStampRepository"/>
         <argument key="userRepository" type="service" id="App\Repository\UserRepository"/>
@@ -5741,12 +5850,6 @@
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="categoryForumRepository" type="service" id="App\Repository\CategoryForumRepository"/>
-      </argument>
-    </service>
-    <service id=".service_locator.1cFtlgg" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
-        <argument key="slugger" type="service" id="slugger"/>
       </argument>
     </service>
     <service id=".service_locator.KGenLOu" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
@@ -5767,10 +5870,35 @@
         <argument key="contactMessage" type="service" id=".errored..service_locator.i2geDc0.App\Entity\ContactMessage"/>
       </argument>
     </service>
-    <service id=".service_locator.ly5HlRQ" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.G2t7sZQ" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="disciplineRepository" type="service" id="App\Repository\DisciplineRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.Ivtfxr5" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="discipline" type="service" id=".errored..service_locator.Ivtfxr5.App\Entity\Discipline"/>
+      </argument>
+    </service>
+    <service id=".service_locator.5Uu9FjM" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="faqRepository" type="service" id="App\Repository\FaqRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.o64zwYl" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="faq" type="service" id=".errored..service_locator.o64zwYl.App\Entity\Faq"/>
+      </argument>
+    </service>
+    <service id=".service_locator.kkTiCna" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="homeDisciplineRepository" type="service" id="App\Repository\HomeDisciplineRepository"/>
+        <argument key="homePicturesRepository" type="service" id="App\Repository\HomePicturesRepository"/>
         <argument key="timeStampRepository" type="service" id="App\Repository\TimeStampRepository"/>
         <argument key="userRepository" type="service" id="App\Repository\UserRepository"/>
       </argument>
@@ -5787,6 +5915,44 @@
         <argument key="homeDiscipline" type="service" id=".errored..service_locator.22Da741.App\Entity\HomeDiscipline"/>
       </argument>
     </service>
+    <service id=".service_locator.sPCVzSW" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="homeDiscipline" type="service" id=".errored..service_locator.sPCVzSW.App\Entity\HomeDiscipline"/>
+        <argument key="slugger" type="service" id="slugger"/>
+      </argument>
+    </service>
+    <service id=".service_locator.0_dT2PR" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="homeInfoRepository" type="service" id="App\Repository\HomeInfoRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator..1y3WyX" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="homeInfo" type="service" id=".errored..service_locator..1y3WyX.App\Entity\HomeInfo"/>
+      </argument>
+    </service>
+    <service id=".service_locator..dCZRUn" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="homePicturesRepository" type="service" id="App\Repository\HomePicturesRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.6OdiqlJ" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="homePicture" type="service" id=".errored..service_locator.6OdiqlJ.App\Entity\HomePictures"/>
+      </argument>
+    </service>
+    <service id=".service_locator.c0WwyLC" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="homePicture" type="service" id=".errored..service_locator.c0WwyLC.App\Entity\HomePictures"/>
+        <argument key="slugger" type="service" id="slugger"/>
+      </argument>
+    </service>
     <service id=".service_locator.sKzeMVn" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -5797,6 +5963,18 @@
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="homeSectionForum" type="service" id=".errored..service_locator.ahw4_vS.App\Entity\HomeSectionForum"/>
+      </argument>
+    </service>
+    <service id=".service_locator.lZ8SM6f" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="howWeAreRepository" type="service" id="App\Repository\HowWeAreRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.8iRGIK4" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="howWeAre" type="service" id=".errored..service_locator.8iRGIK4.App\Entity\HowWeAre"/>
       </argument>
     </service>
     <service id=".service_locator.IM1ypip" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
@@ -5817,6 +5995,13 @@
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="lesLamesDuPonant" type="service" id=".errored..service_locator.6WWz9RI.App\Entity\LesLamesDuPonant"/>
+      </argument>
+    </service>
+    <service id=".service_locator.qFXpODI" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="lesLamesDuPonant" type="service" id=".errored..service_locator.qFXpODI.App\Entity\LesLamesDuPonant"/>
+        <argument key="slugger" type="service" id="slugger"/>
       </argument>
     </service>
     <service id=".service_locator.jkCPVev" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
@@ -5912,36 +6097,66 @@
         <argument key="user" type="service" id=".errored..service_locator.ikUdgSe.App\Entity\User"/>
       </argument>
     </service>
-    <service id=".service_locator.KsiExMr" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.FSVYQ_R" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="App\Controller\AMHEController::activerAMHE" type="service" id=".service_locator.Yu9Pcj8"/>
         <argument key="App\Controller\AMHEController::delete" type="service" id=".service_locator.Yu9Pcj8"/>
-        <argument key="App\Controller\AMHEController::edit" type="service" id=".service_locator.Yu9Pcj8"/>
+        <argument key="App\Controller\AMHEController::edit" type="service" id=".service_locator.mPdP5lR"/>
         <argument key="App\Controller\AMHEController::index" type="service" id=".service_locator.d2ed_or"/>
+        <argument key="App\Controller\AMHEController::new" type="service" id=".service_locator.1cFtlgg"/>
         <argument key="App\Controller\AMHEController::show" type="service" id=".service_locator.Yu9Pcj8"/>
-        <argument key="App\Controller\AdminController::index" type="service" id=".service_locator.e0J_yCu"/>
+        <argument key="App\Controller\AMHEController::supprimer" type="service" id=".service_locator.Yu9Pcj8"/>
+        <argument key="App\Controller\AdminController::index" type="service" id=".service_locator.PVbfdAu"/>
+        <argument key="App\Controller\CategoryForumController::activerAMHE" type="service" id=".service_locator.KGenLOu"/>
         <argument key="App\Controller\CategoryForumController::delete" type="service" id=".service_locator.KGenLOu"/>
         <argument key="App\Controller\CategoryForumController::edit" type="service" id=".service_locator.KGenLOu"/>
         <argument key="App\Controller\CategoryForumController::index" type="service" id=".service_locator.1oURJky"/>
         <argument key="App\Controller\CategoryForumController::new" type="service" id=".service_locator.1cFtlgg"/>
         <argument key="App\Controller\CategoryForumController::show" type="service" id=".service_locator.KGenLOu"/>
+        <argument key="App\Controller\CategoryForumController::supprimer" type="service" id=".service_locator.KGenLOu"/>
         <argument key="App\Controller\ContactMessageController::delete" type="service" id=".service_locator.i2geDc0"/>
         <argument key="App\Controller\ContactMessageController::edit" type="service" id=".service_locator.i2geDc0"/>
         <argument key="App\Controller\ContactMessageController::index" type="service" id=".service_locator.uIuCgCK"/>
         <argument key="App\Controller\ContactMessageController::show" type="service" id=".service_locator.i2geDc0"/>
-        <argument key="App\Controller\HomeController::index" type="service" id=".service_locator.ly5HlRQ"/>
+        <argument key="App\Controller\DisciplineController::delete" type="service" id=".service_locator.Ivtfxr5"/>
+        <argument key="App\Controller\DisciplineController::edit" type="service" id=".service_locator.Ivtfxr5"/>
+        <argument key="App\Controller\DisciplineController::index" type="service" id=".service_locator.G2t7sZQ"/>
+        <argument key="App\Controller\DisciplineController::show" type="service" id=".service_locator.Ivtfxr5"/>
+        <argument key="App\Controller\FaqController::delete" type="service" id=".service_locator.o64zwYl"/>
+        <argument key="App\Controller\FaqController::edit" type="service" id=".service_locator.o64zwYl"/>
+        <argument key="App\Controller\FaqController::index" type="service" id=".service_locator.5Uu9FjM"/>
+        <argument key="App\Controller\FaqController::show" type="service" id=".service_locator.o64zwYl"/>
+        <argument key="App\Controller\HomeController::index" type="service" id=".service_locator.kkTiCna"/>
         <argument key="App\Controller\HomeDisciplineController::delete" type="service" id=".service_locator.22Da741"/>
-        <argument key="App\Controller\HomeDisciplineController::edit" type="service" id=".service_locator.22Da741"/>
+        <argument key="App\Controller\HomeDisciplineController::edit" type="service" id=".service_locator.sPCVzSW"/>
         <argument key="App\Controller\HomeDisciplineController::index" type="service" id=".service_locator.jhT17UT"/>
+        <argument key="App\Controller\HomeDisciplineController::new" type="service" id=".service_locator.1cFtlgg"/>
         <argument key="App\Controller\HomeDisciplineController::show" type="service" id=".service_locator.22Da741"/>
+        <argument key="App\Controller\HomeInfoController::delete" type="service" id=".service_locator..1y3WyX"/>
+        <argument key="App\Controller\HomeInfoController::edit" type="service" id=".service_locator..1y3WyX"/>
+        <argument key="App\Controller\HomeInfoController::index" type="service" id=".service_locator.0_dT2PR"/>
+        <argument key="App\Controller\HomeInfoController::show" type="service" id=".service_locator..1y3WyX"/>
+        <argument key="App\Controller\HomePicturesController::delete" type="service" id=".service_locator.6OdiqlJ"/>
+        <argument key="App\Controller\HomePicturesController::edit" type="service" id=".service_locator.c0WwyLC"/>
+        <argument key="App\Controller\HomePicturesController::index" type="service" id=".service_locator..dCZRUn"/>
+        <argument key="App\Controller\HomePicturesController::new" type="service" id=".service_locator.1cFtlgg"/>
+        <argument key="App\Controller\HomePicturesController::show" type="service" id=".service_locator.6OdiqlJ"/>
         <argument key="App\Controller\HomeSectionForumController::delete" type="service" id=".service_locator.ahw4_vS"/>
         <argument key="App\Controller\HomeSectionForumController::edit" type="service" id=".service_locator.ahw4_vS"/>
         <argument key="App\Controller\HomeSectionForumController::index" type="service" id=".service_locator.sKzeMVn"/>
         <argument key="App\Controller\HomeSectionForumController::show" type="service" id=".service_locator.ahw4_vS"/>
+        <argument key="App\Controller\HowWeAreController::activerHowWeAre" type="service" id=".service_locator.8iRGIK4"/>
+        <argument key="App\Controller\HowWeAreController::delete" type="service" id=".service_locator.8iRGIK4"/>
+        <argument key="App\Controller\HowWeAreController::edit" type="service" id=".service_locator.8iRGIK4"/>
+        <argument key="App\Controller\HowWeAreController::index" type="service" id=".service_locator.lZ8SM6f"/>
+        <argument key="App\Controller\HowWeAreController::show" type="service" id=".service_locator.8iRGIK4"/>
+        <argument key="App\Controller\HowWeAreController::supprimer" type="service" id=".service_locator.8iRGIK4"/>
         <argument key="App\Controller\LesAMHEController::index" type="service" id=".service_locator.IM1ypip"/>
         <argument key="App\Controller\LesLamesDuPonantController::delete" type="service" id=".service_locator.6WWz9RI"/>
-        <argument key="App\Controller\LesLamesDuPonantController::edit" type="service" id=".service_locator.6WWz9RI"/>
+        <argument key="App\Controller\LesLamesDuPonantController::edit" type="service" id=".service_locator.qFXpODI"/>
         <argument key="App\Controller\LesLamesDuPonantController::index" type="service" id=".service_locator.2MFkbty"/>
+        <argument key="App\Controller\LesLamesDuPonantController::new" type="service" id=".service_locator.1cFtlgg"/>
         <argument key="App\Controller\LesLamesDuPonantController::show" type="service" id=".service_locator.6WWz9RI"/>
         <argument key="App\Controller\MedievalFamilyController::delete" type="service" id=".service_locator.F0JKktY"/>
         <argument key="App\Controller\MedievalFamilyController::edit" type="service" id=".service_locator.F0JKktY"/>
@@ -5973,33 +6188,63 @@
         <argument key="kernel::loadRoutes" type="service" id=".service_locator.C9JCBPC"/>
         <argument key="kernel::registerContainerConfiguration" type="service" id=".service_locator.C9JCBPC"/>
         <argument key="kernel::terminate" type="service" id=".service_locator.beq5mCo"/>
+        <argument key="App\Controller\AMHEController:activerAMHE" type="service" id=".service_locator.Yu9Pcj8"/>
         <argument key="App\Controller\AMHEController:delete" type="service" id=".service_locator.Yu9Pcj8"/>
-        <argument key="App\Controller\AMHEController:edit" type="service" id=".service_locator.Yu9Pcj8"/>
+        <argument key="App\Controller\AMHEController:edit" type="service" id=".service_locator.mPdP5lR"/>
         <argument key="App\Controller\AMHEController:index" type="service" id=".service_locator.d2ed_or"/>
+        <argument key="App\Controller\AMHEController:new" type="service" id=".service_locator.1cFtlgg"/>
         <argument key="App\Controller\AMHEController:show" type="service" id=".service_locator.Yu9Pcj8"/>
-        <argument key="App\Controller\AdminController:index" type="service" id=".service_locator.e0J_yCu"/>
+        <argument key="App\Controller\AMHEController:supprimer" type="service" id=".service_locator.Yu9Pcj8"/>
+        <argument key="App\Controller\AdminController:index" type="service" id=".service_locator.PVbfdAu"/>
+        <argument key="App\Controller\CategoryForumController:activerAMHE" type="service" id=".service_locator.KGenLOu"/>
         <argument key="App\Controller\CategoryForumController:delete" type="service" id=".service_locator.KGenLOu"/>
         <argument key="App\Controller\CategoryForumController:edit" type="service" id=".service_locator.KGenLOu"/>
         <argument key="App\Controller\CategoryForumController:index" type="service" id=".service_locator.1oURJky"/>
         <argument key="App\Controller\CategoryForumController:new" type="service" id=".service_locator.1cFtlgg"/>
         <argument key="App\Controller\CategoryForumController:show" type="service" id=".service_locator.KGenLOu"/>
+        <argument key="App\Controller\CategoryForumController:supprimer" type="service" id=".service_locator.KGenLOu"/>
         <argument key="App\Controller\ContactMessageController:delete" type="service" id=".service_locator.i2geDc0"/>
         <argument key="App\Controller\ContactMessageController:edit" type="service" id=".service_locator.i2geDc0"/>
         <argument key="App\Controller\ContactMessageController:index" type="service" id=".service_locator.uIuCgCK"/>
         <argument key="App\Controller\ContactMessageController:show" type="service" id=".service_locator.i2geDc0"/>
-        <argument key="App\Controller\HomeController:index" type="service" id=".service_locator.ly5HlRQ"/>
+        <argument key="App\Controller\DisciplineController:delete" type="service" id=".service_locator.Ivtfxr5"/>
+        <argument key="App\Controller\DisciplineController:edit" type="service" id=".service_locator.Ivtfxr5"/>
+        <argument key="App\Controller\DisciplineController:index" type="service" id=".service_locator.G2t7sZQ"/>
+        <argument key="App\Controller\DisciplineController:show" type="service" id=".service_locator.Ivtfxr5"/>
+        <argument key="App\Controller\FaqController:delete" type="service" id=".service_locator.o64zwYl"/>
+        <argument key="App\Controller\FaqController:edit" type="service" id=".service_locator.o64zwYl"/>
+        <argument key="App\Controller\FaqController:index" type="service" id=".service_locator.5Uu9FjM"/>
+        <argument key="App\Controller\FaqController:show" type="service" id=".service_locator.o64zwYl"/>
+        <argument key="App\Controller\HomeController:index" type="service" id=".service_locator.kkTiCna"/>
         <argument key="App\Controller\HomeDisciplineController:delete" type="service" id=".service_locator.22Da741"/>
-        <argument key="App\Controller\HomeDisciplineController:edit" type="service" id=".service_locator.22Da741"/>
+        <argument key="App\Controller\HomeDisciplineController:edit" type="service" id=".service_locator.sPCVzSW"/>
         <argument key="App\Controller\HomeDisciplineController:index" type="service" id=".service_locator.jhT17UT"/>
+        <argument key="App\Controller\HomeDisciplineController:new" type="service" id=".service_locator.1cFtlgg"/>
         <argument key="App\Controller\HomeDisciplineController:show" type="service" id=".service_locator.22Da741"/>
+        <argument key="App\Controller\HomeInfoController:delete" type="service" id=".service_locator..1y3WyX"/>
+        <argument key="App\Controller\HomeInfoController:edit" type="service" id=".service_locator..1y3WyX"/>
+        <argument key="App\Controller\HomeInfoController:index" type="service" id=".service_locator.0_dT2PR"/>
+        <argument key="App\Controller\HomeInfoController:show" type="service" id=".service_locator..1y3WyX"/>
+        <argument key="App\Controller\HomePicturesController:delete" type="service" id=".service_locator.6OdiqlJ"/>
+        <argument key="App\Controller\HomePicturesController:edit" type="service" id=".service_locator.c0WwyLC"/>
+        <argument key="App\Controller\HomePicturesController:index" type="service" id=".service_locator..dCZRUn"/>
+        <argument key="App\Controller\HomePicturesController:new" type="service" id=".service_locator.1cFtlgg"/>
+        <argument key="App\Controller\HomePicturesController:show" type="service" id=".service_locator.6OdiqlJ"/>
         <argument key="App\Controller\HomeSectionForumController:delete" type="service" id=".service_locator.ahw4_vS"/>
         <argument key="App\Controller\HomeSectionForumController:edit" type="service" id=".service_locator.ahw4_vS"/>
         <argument key="App\Controller\HomeSectionForumController:index" type="service" id=".service_locator.sKzeMVn"/>
         <argument key="App\Controller\HomeSectionForumController:show" type="service" id=".service_locator.ahw4_vS"/>
+        <argument key="App\Controller\HowWeAreController:activerHowWeAre" type="service" id=".service_locator.8iRGIK4"/>
+        <argument key="App\Controller\HowWeAreController:delete" type="service" id=".service_locator.8iRGIK4"/>
+        <argument key="App\Controller\HowWeAreController:edit" type="service" id=".service_locator.8iRGIK4"/>
+        <argument key="App\Controller\HowWeAreController:index" type="service" id=".service_locator.lZ8SM6f"/>
+        <argument key="App\Controller\HowWeAreController:show" type="service" id=".service_locator.8iRGIK4"/>
+        <argument key="App\Controller\HowWeAreController:supprimer" type="service" id=".service_locator.8iRGIK4"/>
         <argument key="App\Controller\LesAMHEController:index" type="service" id=".service_locator.IM1ypip"/>
         <argument key="App\Controller\LesLamesDuPonantController:delete" type="service" id=".service_locator.6WWz9RI"/>
-        <argument key="App\Controller\LesLamesDuPonantController:edit" type="service" id=".service_locator.6WWz9RI"/>
+        <argument key="App\Controller\LesLamesDuPonantController:edit" type="service" id=".service_locator.qFXpODI"/>
         <argument key="App\Controller\LesLamesDuPonantController:index" type="service" id=".service_locator.2MFkbty"/>
+        <argument key="App\Controller\LesLamesDuPonantController:new" type="service" id=".service_locator.1cFtlgg"/>
         <argument key="App\Controller\LesLamesDuPonantController:show" type="service" id=".service_locator.6WWz9RI"/>
         <argument key="App\Controller\MedievalFamilyController:delete" type="service" id=".service_locator.F0JKktY"/>
         <argument key="App\Controller\MedievalFamilyController:edit" type="service" id=".service_locator.F0JKktY"/>
@@ -6089,14 +6334,19 @@
       <argument type="service" id="debug.argument_resolver.not_tagged_controller.inner"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.CgZxxEW" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.cfZb_WO" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Form\AMHEType" type="service" id="App\Form\AMHEType"/>
         <argument key="App\Form\CategoryForumType" type="service" id="App\Form\CategoryForumType"/>
         <argument key="App\Form\ChangePasswordFormType" type="service" id="App\Form\ChangePasswordFormType"/>
         <argument key="App\Form\ContactMessageType" type="service" id="App\Form\ContactMessageType"/>
+        <argument key="App\Form\DisciplineType" type="service" id="App\Form\DisciplineType"/>
+        <argument key="App\Form\FaqType" type="service" id="App\Form\FaqType"/>
         <argument key="App\Form\HomeDisciplineType" type="service" id="App\Form\HomeDisciplineType"/>
+        <argument key="App\Form\HomeInfoType" type="service" id="App\Form\HomeInfoType"/>
+        <argument key="App\Form\HomePicturesType" type="service" id="App\Form\HomePicturesType"/>
+        <argument key="App\Form\HowWeAreType" type="service" id="App\Form\HowWeAreType"/>
         <argument key="App\Form\LesLamesDuPonantType" type="service" id="App\Form\LesLamesDuPonantType"/>
         <argument key="App\Form\MedievalFamilyType" type="service" id="App\Form\MedievalFamilyType"/>
         <argument key="App\Form\MessageForumType" type="service" id="App\Form\MessageForumType"/>
@@ -6124,14 +6374,19 @@
         <argument key="doctrine.orm.default_listeners.attach_entity_listeners" type="service" id="doctrine.orm.default_listeners.attach_entity_listeners"/>
       </argument>
     </service>
-    <service id=".service_locator.TGYQ2q1" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.MHYetjW" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Repository\AMHERepository" type="service" id="App\Repository\AMHERepository"/>
         <argument key="App\Repository\CategoryForumRepository" type="service" id="App\Repository\CategoryForumRepository"/>
         <argument key="App\Repository\ContactMessageRepository" type="service" id="App\Repository\ContactMessageRepository"/>
+        <argument key="App\Repository\DisciplineRepository" type="service" id="App\Repository\DisciplineRepository"/>
+        <argument key="App\Repository\FaqRepository" type="service" id="App\Repository\FaqRepository"/>
         <argument key="App\Repository\HomeDisciplineRepository" type="service" id="App\Repository\HomeDisciplineRepository"/>
+        <argument key="App\Repository\HomeInfoRepository" type="service" id="App\Repository\HomeInfoRepository"/>
+        <argument key="App\Repository\HomePicturesRepository" type="service" id="App\Repository\HomePicturesRepository"/>
         <argument key="App\Repository\HomeSectionForumRepository" type="service" id="App\Repository\HomeSectionForumRepository"/>
+        <argument key="App\Repository\HowWeAreRepository" type="service" id="App\Repository\HowWeAreRepository"/>
         <argument key="App\Repository\LesLamesDuPonantRepository" type="service" id="App\Repository\LesLamesDuPonantRepository"/>
         <argument key="App\Repository\MedievalFamilyRepository" type="service" id="App\Repository\MedievalFamilyRepository"/>
         <argument key="App\Repository\MessageForumRepository" type="service" id="App\Repository\MessageForumRepository"/>
@@ -6365,6 +6620,18 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.g9CqTPp" method="withContext"/>
     </service>
+    <service id=".service_locator.g9CqTPp.App\Controller\DisciplineController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\DisciplineController"/>
+      <argument>App\Controller\DisciplineController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.g9CqTPp" method="withContext"/>
+    </service>
+    <service id=".service_locator.g9CqTPp.App\Controller\FaqController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\FaqController"/>
+      <argument>App\Controller\FaqController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.g9CqTPp" method="withContext"/>
+    </service>
     <service id=".service_locator.g9CqTPp.App\Controller\HomeController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator_context" id="App\Controller\HomeController"/>
       <argument>App\Controller\HomeController</argument>
@@ -6377,9 +6644,27 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.g9CqTPp" method="withContext"/>
     </service>
+    <service id=".service_locator.g9CqTPp.App\Controller\HomeInfoController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\HomeInfoController"/>
+      <argument>App\Controller\HomeInfoController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.g9CqTPp" method="withContext"/>
+    </service>
+    <service id=".service_locator.g9CqTPp.App\Controller\HomePicturesController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\HomePicturesController"/>
+      <argument>App\Controller\HomePicturesController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.g9CqTPp" method="withContext"/>
+    </service>
     <service id=".service_locator.g9CqTPp.App\Controller\HomeSectionForumController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator_context" id="App\Controller\HomeSectionForumController"/>
       <argument>App\Controller\HomeSectionForumController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.g9CqTPp" method="withContext"/>
+    </service>
+    <service id=".service_locator.g9CqTPp.App\Controller\HowWeAreController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\HowWeAreController"/>
+      <argument>App\Controller\HowWeAreController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.g9CqTPp" method="withContext"/>
     </service>
@@ -6604,12 +6889,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
-      <argument type="service" id=".service_locator.KsiExMr"/>
+      <argument type="service" id=".service_locator.FSVYQ_R"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver" public="false"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver" public="false">
-      <argument type="service" id=".service_locator.KsiExMr"/>
+      <argument type="service" id=".service_locator.FSVYQ_R"/>
     </service>
     <service id=".debug.http_client.inner" class="Symfony\Contracts\HttpClient\HttpClientInterface" public="false">
       <argument type="collection"/>
@@ -6622,11 +6907,20 @@
     <service id=".errored..service_locator.beq5mCo.Symfony\Component\HttpFoundation\Response" class="Symfony\Component\HttpFoundation\Response"/>
     <service id=".errored..service_locator.C9JCBPC.Symfony\Component\Config\Loader\LoaderInterface" class="Symfony\Component\Config\Loader\LoaderInterface"/>
     <service id=".errored..service_locator.Yu9Pcj8.App\Entity\AMHE" class="App\Entity\AMHE"/>
+    <service id=".errored..service_locator.mPdP5lR.App\Entity\AMHE" class="App\Entity\AMHE"/>
     <service id=".errored..service_locator.KGenLOu.App\Entity\CategoryForum" class="App\Entity\CategoryForum"/>
     <service id=".errored..service_locator.i2geDc0.App\Entity\ContactMessage" class="App\Entity\ContactMessage"/>
+    <service id=".errored..service_locator.Ivtfxr5.App\Entity\Discipline" class="App\Entity\Discipline"/>
+    <service id=".errored..service_locator.o64zwYl.App\Entity\Faq" class="App\Entity\Faq"/>
     <service id=".errored..service_locator.22Da741.App\Entity\HomeDiscipline" class="App\Entity\HomeDiscipline"/>
+    <service id=".errored..service_locator.sPCVzSW.App\Entity\HomeDiscipline" class="App\Entity\HomeDiscipline"/>
+    <service id=".errored..service_locator..1y3WyX.App\Entity\HomeInfo" class="App\Entity\HomeInfo"/>
+    <service id=".errored..service_locator.6OdiqlJ.App\Entity\HomePictures" class="App\Entity\HomePictures"/>
+    <service id=".errored..service_locator.c0WwyLC.App\Entity\HomePictures" class="App\Entity\HomePictures"/>
     <service id=".errored..service_locator.ahw4_vS.App\Entity\HomeSectionForum" class="App\Entity\HomeSectionForum"/>
+    <service id=".errored..service_locator.8iRGIK4.App\Entity\HowWeAre" class="App\Entity\HowWeAre"/>
     <service id=".errored..service_locator.6WWz9RI.App\Entity\LesLamesDuPonant" class="App\Entity\LesLamesDuPonant"/>
+    <service id=".errored..service_locator.qFXpODI.App\Entity\LesLamesDuPonant" class="App\Entity\LesLamesDuPonant"/>
     <service id=".errored..service_locator.F0JKktY.App\Entity\MedievalFamily" class="App\Entity\MedievalFamily"/>
     <service id=".errored..service_locator.JG2Goki.App\Entity\MessageForum" class="App\Entity\MessageForum"/>
     <service id=".errored..service_locator.0RFo5YJ.App\Entity\SubjectForum" class="App\Entity\SubjectForum"/>
@@ -6923,10 +7217,11 @@
     <service id="cache.default_pdo_provider" alias="doctrine.dbal.default_connection" public="false"/>
     <service id="Symfony\Component\HttpFoundation\Session\SessionInterface" alias="session" public="false"/>
     <service id="Symfony\Component\HttpFoundation\Session\Storage\SessionStorageInterface" alias="session.storage.native" public="false"/>
-    <service id="SessionHandlerInterface" alias="session.handler" public="false"/>
+    <service id="SessionHandlerInterface" alias="session.handler.native_file" public="false"/>
     <service id="Symfony\Component\HttpFoundation\Session\Flash\FlashBagInterface" alias="session.flash_bag" public="false"/>
     <service id="session.storage.filesystem" alias="session.storage.mock_file" public="false"/>
     <service id="session.storage" alias="session.storage.native"/>
+    <service id="session.handler" alias="session.handler.native_file"/>
     <service id="Symfony\Component\Security\Csrf\TokenGenerator\TokenGeneratorInterface" alias="security.csrf.token_generator" public="false"/>
     <service id="Symfony\Component\Security\Csrf\TokenStorage\TokenStorageInterface" alias="security.csrf.token_storage" public="false"/>
     <service id="Symfony\Component\Security\Csrf\CsrfTokenManagerInterface" alias="security.csrf.token_manager" public="false"/>
@@ -7024,7 +7319,7 @@
     <service id="SymfonyCasts\Bundle\ResetPassword\ResetPasswordHelperInterface" alias="symfonycasts.reset_password.helper"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.WaGDpDt" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem" public="false"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.KsiExMr"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.FSVYQ_R"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
     <service id="Psr\Log\LoggerInterface $consoleLogger" alias="monolog.logger.console"/>

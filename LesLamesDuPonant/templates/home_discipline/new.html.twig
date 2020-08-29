@@ -1,11 +1,11 @@
-{% extends 'base.html.twig' %}
+{% extends 'admin.html.twig' %}
 
-{% block title %}New HomeDiscipline{% endblock %}
+{% block title 'Nouv Discipline'%}
 
 {% block body %}
-    <h1>Create new HomeDiscipline</h1>
+    <h4 class="center-align">Créer nouvelle discipline</h4>
 
     {{ include('home_discipline/_form.html.twig') }}
 
-    <a href="{{ path('home_discipline_index') }}">back to list</a>
+    <a href="{{ path('admin') }}#discipline"><button class="btn btnForm"><button class="btn orange"> liste</button></button> </a>
 {% endblock %}

@@ -1,13 +1,16 @@
-{% extends 'base.html.twig' %}
+{% extends 'admin.html.twig' %}
 
-{% block title %}Edit CategoryForum{% endblock %}
+{% block title %}edit CategoryForum{% endblock %}
 
 {% block body %}
-    <h1>Edit CategoryForum</h1>
+    <h4 class="center-align">éditer CategoryForum</h4>
 
-    {{ include('category_forum/_form.html.twig', {'button_label': 'Update'}) }}
+    {{ include('category_forum/_form.html.twig', {'button_label': 'maj'}) }}
 
-    <a href="{{ path('category_forum_index') }}">back to list</a>
+    <a href="{{ path('category_forum_index') }}"><button class="btn orange"> liste</button></a>
 
-    {{ include('category_forum/_delete_form.html.twig') }}
+ </div>
+{{ form_end(form) }}
+</div>
+</div>
 {% endblock %}

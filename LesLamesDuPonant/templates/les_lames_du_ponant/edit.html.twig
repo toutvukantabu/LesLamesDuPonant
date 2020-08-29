@@ -1,13 +1,17 @@
-{% extends 'base.html.twig' %}
+{% extends 'default.html.twig' %}
 
-{% block title %}Edit LesLamesDuPonant{% endblock %}
+{% block title %}Edit Les LamesDuPonant{% endblock %}
 
 {% block body %}
-    <h1>Edit LesLamesDuPonant</h1>
+      <h4 class="center-align">éditer Les Lames Du Ponant</h4>
 
-    {{ include('les_lames_du_ponant/_form.html.twig', {'button_label': 'Update'}) }}
+    {{ include('les_lames_du_ponant/_form.html.twig', {'button_label': 'maj'}) }}
 
-    <a href="{{ path('les_lames_du_ponant_index') }}">back to list</a>
+    <a href="{{ path('admin') }}#lldp"><button class="btn green btnForm">retour à la liste</button></a>
 
     {{ include('les_lames_du_ponant/_delete_form.html.twig') }}
+    </div>
+{{ form_end(form) }}
+</div>
+</div>
 {% endblock %}

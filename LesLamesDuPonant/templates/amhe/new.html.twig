@@ -1,11 +1,13 @@
-{% extends 'base.html.twig' %}
+{% extends 'admin.html.twig' %}
 
-{% block title %}New AMHE{% endblock %}
+{% block title 'crea AMHE'%}
 
 {% block body %}
-    <h1>Create new AMHE</h1>
-
+<h4 class="center-align">Création de la page AMHE</h4>
     {{ include('amhe/_form.html.twig') }}
 
-    <a href="{{ path('amhe_index') }}">back to list</a>
+    <a href="{{ path('amhe_index') }}"><button class="btn orange">liste</button></a>
+
+
+
 {% endblock %}

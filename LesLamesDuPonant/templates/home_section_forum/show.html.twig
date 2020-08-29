@@ -1,9 +1,9 @@
-{% extends 'base.html.twig' %}
+{% extends 'default.html.twig' %}
 
 {% block title %}HomeSectionForum{% endblock %}
 
 {% block body %}
-    <h1>HomeSectionForum</h1>
+    <h4 class="center-align">HomeSectionForum</h4>
 
     <table class="table">
         <tbody>
@@ -22,9 +22,9 @@
         </tbody>
     </table>
 
-    <a href="{{ path('home_section_forum_index') }}">back to list</a>
+    <a href="{{ path('home_section_forum_index') }}"><button class="btn orange"> liste</button></a>
 
-    <a href="{{ path('home_section_forum_edit', {'id': home_section_forum.id}) }}">edit</a>
+    <a href="{{ path('home_section_forum_edit', {'id': home_section_forum.id}) }}">éditer</a>
 
     {{ include('home_section_forum/_delete_form.html.twig') }}
 {% endblock %}

@@ -1,9 +1,9 @@
-{% extends 'base.html.twig' %}
+{% extends 'default.html.twig' %}
 
 {% block title %}TimeStamp index{% endblock %}
 
 {% block body %}
-    <h1>TimeStamp index</h1>
+    <h4 class="center-align">TimeStamp index</h4>
 
     <table class="table">
         <thead>
@@ -13,7 +13,7 @@
                 <th>DescriptionTimeStamp</th>
                 <th>DateTimeStamp</th>
                 <th>HourTimeStamp</th>
-                <th>actions</th>
+                <th>action</th>
             </tr>
         </thead>
         <tbody>
@@ -25,17 +25,17 @@
                 <td>{{ time_stamp.dateTimeStamp ? time_stamp.dateTimeStamp|date('Y-m-d') : '' }}</td>
                 <td>{{ time_stamp.hourTimeStamp ? time_stamp.hourTimeStamp|date('H:i:s') : '' }}</td>
                 <td>
-                    <a href="{{ path('time_stamp_show', {'id': time_stamp.id}) }}">show</a>
-                    <a href="{{ path('time_stamp_edit', {'id': time_stamp.id}) }}">edit</a>
+                    <a href="{{ path('time_stamp_show', {'id': time_stamp.id}) }}">voir</a>
+                    <a href="{{ path('time_stamp_edit', {'id': time_stamp.id}) }}">éditer</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="6">no records found</td>
+                <td colspan="6">Aucun enregistrement trouvé.</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('time_stamp_new') }}">Create new</a>
+    <a href="{{ path('time_stamp_new') }}">Créer un nouveau</a>
 {% endblock %}

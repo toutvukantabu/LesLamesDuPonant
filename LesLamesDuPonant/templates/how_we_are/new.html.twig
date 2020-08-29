@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New HowWeAre{% endblock %}
+
+{% block body %}
+    <h4 class="center-align">Créer qui sommes nous?</h4>
+
+    {{ include('how_we_are/_form.html.twig') }}
+
+    <a href="{{ path('how_we_are_index') }}"><button class="btn orange">liste</button></a>
+{% endblock %}

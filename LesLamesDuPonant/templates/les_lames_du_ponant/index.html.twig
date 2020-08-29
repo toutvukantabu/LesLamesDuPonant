@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'default.html.twig' %}
 
 {% block title %}LesLamesDuPonant index{% endblock %}
 
@@ -11,6 +11,7 @@
                 <th>Id</th>
                 <th>TitleLLDP</th>
                 <th>DesciptionLLDP</th>
+                <th>PictureLesLamesDuponant</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -20,14 +21,20 @@
                 <td>{{ les_lames_du_ponant.id }}</td>
                 <td>{{ les_lames_du_ponant.titleLLDP }}</td>
                 <td>{{ les_lames_du_ponant.desciptionLLDP }}</td>
+                <td>{{ les_lames_du_ponant.pictureLesLamesDuponant }}</td>
                 <td>
+                  <div>
+                    <a class="btn-floating yellow darken-1"><i class="material-icons">visibility</i></a>
+                    <a class="btn-floating green"><i class="material-icons">create</i></a>
+                    <a class="btn-floating red"><i class="material-icons">delete</i></a>
+                </div>
                     <a href="{{ path('les_lames_du_ponant_show', {'id': les_lames_du_ponant.id}) }}">show</a>
                     <a href="{{ path('les_lames_du_ponant_edit', {'id': les_lames_du_ponant.id}) }}">edit</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="4">no records found</td>
+                <td colspan="5">no records found</td>
             </tr>
         {% endfor %}
         </tbody>

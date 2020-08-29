@@ -1,40 +1,30 @@
-<!DOCTYPE html>
-<html>
+{% extends 'default.html.twig' %}
 
-<head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<title>
-		{% block title 'Lame Du Ponant ' %}
-	</title>
-{% block stylesheets %}
-	<!--Import Google Icon Font-->
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<!--Import materialize.css-->
-	<link type="text/css" rel="stylesheet" href="{{ asset('sass/materialize.css') }}" media="screen,projection" />
-	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css">
-{% endblock %}
-</head>
+{# LOGO #}
+{# ======================= #}
 
-<body id="Body" class="">
+{% block logo %}
+
 	<header>
-		<div class="container " id="HomeTitle">
+		{# <div class="container " id="HomeTitle">
 			<div class="row">
 				<div class="  col m12 s12 l12 xl12">
-					<img src="{{ asset('uploads/LogoLDP2020.png')}}">
+			    {% for home_picture in home_pictures %}
+				<img src="{{ asset('uploads/parallax/' ~ home_picture.homeLogoPicture)}}">
+				{% endfor %}
 				</div>
 			</div>
-		</div>
+		</div> #}
 	</header>
+	{% endblock %}
+{% block navbar %}
 
+{# NABAR
+======================== #}
 	<ul class="side-nav z-depth-4" id="mobile-demo">
 		<li>
 			<div class="user-view">
-				<div class="background">
-					<img src="https://miro.medium.com/max/1080/1*hU0QQDiOnsKpX4qlIyn_4w.jpeg">
-				</div>
-				{% if is_granted('IS_AUTHENTICATED_FULLY') and app.user.photoAvatarUser  != NULL %}
-
+			{% if is_granted('IS_AUTHENTICATED_FULLY') and app.user.photoAvatarUser  != NULL %}
 				<img class="circle" src="{{ asset('uploads/avatar/' ~ app.user.photoAvatarUser )}}">
 				{% else %}
 				<img class="circle" src="{{asset('uploads/avatar.jpg')}}">
@@ -58,7 +48,6 @@
 			</div>
 		</li>
 		</li>
-		<li></li>
 		<li>
 			<h5 class="black-text center-align">Les lames du Ponant</h5>
 		</li>
@@ -75,6 +64,11 @@
 				<span>Mon Profil</span>
 			</a>
 		</li>
+			{% if is_granted('ROLE_ADMIN') or is_granted('Role_Super_Administrateur') %}
+					<li>
+					<a href="{{path('admin')}}">Administration</a>
+					</li>
+					{% endif %}
 		<li>
 			<a href="{{path('app_login')}}">infos</a>
 		</li>
@@ -98,13 +92,13 @@
 			<a href="{{path('app_register')}}">s'enregistrer</a>
 		</li>
 		{% endif %}
-		{# <div class="divider"></div> #}
+		<div class="divider"></div>
 		<li>
 			<a href="{{path('home')}}">
 				Les disciplines</a>
 		</li>
 		<li>
-			<a href="{{path('home')}}">
+			<a href="{{path('les_amhe')}}">
 				Les AMHE</a>
 		</li>
 		<li>
@@ -113,10 +107,10 @@
 		</li>
 		<li>
 			<a href="{{path('home')}}">Forum</a>
-		</li>
+		</li>X
 	</ul>
 	<div class="menu">
-		<nav>
+		<nav id="navbarHome">
 			<div class="nav-wrapper">
 				<a href="{{path('home')}} " class="brand-logo center">Accueil</a>
 				<a href="#" data-activates="mobile-demo" class="button-collapse">
@@ -135,7 +129,7 @@
 						<a href="{{path('home')}}">Forum</a>
 					</li>
 					{% if is_granted('ROLE_ADMIN') or is_granted('Role_Super_Administrateur') %}
-<li>
+					<li>
 					<a href="{{path('admin')}}">Administration</a>
 					</li>
 					{% endif %}
@@ -174,13 +168,25 @@
 			</div>
 		</nav>
 	</div>
+	
+	{# IMAGE HomeTitle
+	=============== #}
 	{% if app.request.get('_route') == 'home' %}
 	<div id="HomeImg">
-		<img src="{{ asset('uploads/Parallax3.jpg')}}" alt="">
+	 {% for home_picture in home_pictures %}
+					<img src="{{ asset('uploads/parallax/'~ home_picture.homeTitlePicture)}}">
+	{% endfor %}
 	</div>
 	{% endif %}
 	<main>
+{% endblock %}
+{# PRESENTATION leslamesduponant
+============================= #}
+
 		{% block body %}{% endblock %}
+		{% block footer%}
+			
+	
 		{% if app.request.get('_route') == 'home' %}
 		<div class="section white homeSectionPresentation">
 			<div class="row container">
@@ -198,31 +204,47 @@
 				</div>
 			</div>
 		</div>
+
+{# PARALLAX1	
+=================== #}
+
+
 		<div class="parallax-container">
-			<div class="parallax"><img src="{{ asset('uploads/Parallax2.jpg')}}">
+			 {% for home_picture in home_pictures %}
+				<div class="parallax"><img src="{{ asset('uploads/parallax/'~ home_picture.homeParallax1)}}"></div>	
+					{% endfor %}
 			</div>
 		</div>
+
+{# DISCIPLINE Carousel
+================ #}
+
 		<div class="section white homeSectionActivity">
 			<h2 class="header center-align">Les disciplines</h2>
-			<div class="col s12 carousel center carouselHome " style="height: 600px;">
+			<div class="col s12 carousel center carouselHome " style="height:600px ;">
 				{% for home_discipline in home_disciplines %}
 				<div class="carousel-item">
 					<h5 class="center-align disciplineHomeTitle">{{ home_discipline.nameDiscipline }}</h5>
 					{% if home_discipline.imageHomeDiscipline != NULL %}
 					<a href="{{ path('home_discipline_show', {'id': home_discipline.id}) }}"><img
-							class="card-rounded hoverable" src="{{ home_discipline.imageHomeDiscipline }}"></a>
+							class="card-rounded hoverable" src="{{ asset('uploads/discipline/'~ home_discipline.imageHomeDiscipline)}}"></a>
 					{% else %}
 					<a href="/"><img class="card-rounded hoverable" src="{{asset('uploads/avatar.jpg')}}"></a>
 						{% endif %}
 					<p class="disciplineHomeDescription ">
-						{{ home_discipline.descriptionDiscipline }}</p>
+						{{ home_discipline.descriptionDiscipline|raw }}</p>
 							</div>
 						{% endfor %}
 			</div>
 		</div>
+{# Parralax2	
+================== #}
 		<div class="parallax-container">
-			<div class="parallax"><img src="{{ asset('uploads/Parallax3.jpg')}}"></div>
+				 {% for home_picture in home_pictures %}
+				<div class="parallax"><img src="{{ asset('uploads/parallax/'~ home_picture.homeParallax2)}}"></div>
+	{% endfor %}
 		</div>
+
 		<div class="section white homeSectionCalendar">
 			<div class="container">
 				<div class="row ">
@@ -328,15 +350,6 @@
 			</div>
 		</div>
 	</footer>
-
-	{% block javascripts %}
-	<!--Import jQuery before materialize.js-->
-	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-	<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js">
-	</script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
-	<script type="text/javascript" src="{{ asset('js/bin/materialize.js') }}"></script>
 	{% endblock %}
-</body>
+	
 
-</html>

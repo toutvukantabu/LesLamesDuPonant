@@ -10038,27 +10038,44 @@ if (Vel) {
    container: 'form', // ex. 'body' will append picker to body
    
  });
+//Time Picker
+$('.timepicker').on('mousedown', function (event) {
+  event.preventDefault();
+});
+$('.timepicker').pickatime({
+  default: 'now', // Set default time: 'now', '1:30AM', '16:30'
+  fromnow: 0,       // set default time to * milliseconds from now (using with default = 'now')
+  twelvehour: false, // Use AM/PM or 24-hour format
+  donetext: 'valider', // text for done-button
+  cleartext: 'supprimer', // text for clear-button
+  canceltext: 'annuler', // Text for cancel-button,
+  container: undefined, // ex. 'body' will append picker to body
+  autoclose: false, // automatic close timepicker
+  ampmclickable: false, // make AM PM clickable
+  aftershow: function(){} //Function for after opening timepicker
+});
+      
 
+      
  //navbar transparent
 $(document).ready(function () {
 
   $(window).scroll(function () {
     if ($(window).scrollTop() >250) {
-      $('nav').addClass('sticky-nav');
+      $('#navbarHome,#navbarAdmin').addClass('sticky-nav');
     } else {
-      $('nav').removeClass('sticky-nav');
+      $('#navbarHome, #navbarAdmin').removeClass('sticky-nav');
     }
   });
 });
 
 $(document).ready(function(){
   $('.parallax').parallax();
- 
-      $(".button-collapse").sideNav();
-      $(".monProfilBtn").sideNav();
-   
+  $(".monProfilBtn").sideNav();
  $('select').material_select();
+
 });
+
 
  //Carousel Home
 $(document).ready(function () {
@@ -10075,23 +10092,104 @@ $(document).ready(function () {
 
 //classBody
 
-window.location.href1 = 'http://127.0.0.1:8000/login';
-if (window.location.href1 == 'http://127.0.0.1:8000/login') {
-  document.querySelectorAll('#Body').forEach(function(ele, idx) {
-    ele.classList.add('newClass');
-  });
-};
-window.location.href1 = 'http://127.0.0.1:8000/login';
-if (window.location.href1 == 'http://127.0.0.1:8000/login') {
-  document.querySelectorAll('#Body').forEach(function(ele, idx) {
-    ele.classList.add('newClass');
-  });
-};
+// window.location.href1 = 'http://127.0.0.1:8000/admin';
+// if (window.location.href1 == 'http://127.0.0.1:8000/admin') {
+//   document.querySelectorAll('#Body').forEach(function(ele, idx) {
+//     ele.classList.add('adminSideNav');
+//   });
+// };
+
 
   //Datatable
   $(document).ready( function () {
-    $('#myTable').DataTable();
-
-    $('#myTable2').DataTable();
+    $('#myTable').dataTable({
+      responsive: true
+    });
+    $('#myTable2').dataTable({
+      responsive: true
+    });
+    $('#myTable3').dataTable({    
+      responsive: true
+    });
+    $('#myTable4').dataTable({    
+      responsive: true
+    });
+    $('#myTable5').dataTable({    
+      responsive: true
+    });
+    $('#myTable6').dataTable({    
+      responsive: true
+    });
+    $('#myTable7').dataTable({    
+      responsive: true
+    });
+    $('#myTable8').dataTable({    
+      responsive: true
+    });
 
 } );
+
+//SIDENAV
+$(document).ready( function () {
+  $(".button-collapse").sideNav();
+  $('.collapsible').collapsible();
+
+});
+ $(document).ready(function() {
+    
+   $('.dropdown-button').dropdown({
+      inDuration: 300,
+      outDuration: 225,
+      constrainWidth: false, // Does not change width of dropdown to that of the activator
+      hover: true, // Activate on hover
+      gutter: 0, // Spacing from edge
+      belowOrigin: false, // Displays dropdown below the button
+      alignment: 'left', // Displays dropdown with edge aligned to the left of button
+      stopPropagation: false // Stops event propagation
+    }
+  );
+   
+   $('.collapsible').collapsible({
+    accordion: true, // A setting that changes the collapsible behavior to expandable instead of the default accordion style
+    onOpen: function(el) {  }, // Callback for Collapsible open
+    onClose: function(el) {  } // Callback for Collapsible close
+  });
+   
+   $('.button-collapse').sideNav({
+      menuWidth: 300, // Default is 300
+      edge: 'left', // Choose the horizontal origin
+      closeOnClick: false, // Closes side-nav on <a> clicks, useful for Angular/Meteor
+      draggable: true, // Choose whether you can drag to open on touch screens,
+      onOpen: function(el) {}, /* Do Stuff* / }, // A function to be called when sideNav is opened*/
+      onClose: function(el) { }/* Do Stuff* / }, // A function to be called when sideNav is closed*/
+    });
+ 
+    $('.side-nav li').click(function(){
+      $('.side-nav li.active').removeClass('active');
+      $(this).closest('li').addClass('active');
+    });
+   
+    $('.dropchange .head').on('click', function () {
+      $(this)
+        .find('.changed')
+        .toggleClass('fa-angle-down')
+        .toggleClass('fa-angle-right');
+    });
+
+   
+ });
+
+//  MODAL Delete
+$('#modal-delete').modal({
+  dismissible: true, // Modal can be dismissed by clicking outside of the modal
+  opacity: .5, // Opacity of modal background
+  inDuration: 300, // Transition in duration
+  outDuration: 200, // Transition out duration
+  startingTop: '4%', // Starting top style attribute
+  endingTop: '10%', // Ending top style attribute
+  },
+ 
+);
+
+// ToastMessage
+

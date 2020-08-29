@@ -135,3 +135,22 @@ td {
     <td>d</td>
   </tr>
 </table>
+<h6 class="center-align">Accueil</h6>
+				<li><a href="{{path('home')}}">retour acueil du site</a></li>
+				<div class="divider"></div>
+            <h6 class="center-align">Membres du site</h6>
+				<li><a href="#User">édition des utilisateurs</a></li>
+				<div class="divider"></div>
+				<h6 class="center-align">Messagerie</h6>
+				<li><a href="#message">messages</a></li>
+				<div class="divider"></div>
+				<h6 class="center-align">Page d'accueil</h6>
+				<li><a href="#disciplines">édition des disciplines</a></li>
+				<li><a href="#homepicture">édition images/logo page d'accueil</a></li>
+				<li><a href="#agenda">Agenda/évenement</a></li>
+				<div class="divider"></div>
+				<h6 class="center-align">Les Amhe</h6>
+				<li><a href="#amhe">édition des Amhe + images</a></li>
+				<li><a href="#medievalFamily">éditer famille médievale</a></li>
+				<li><a href="#lldp">édition association Lames du Ponant</a>
+				</li>

@@ -39,7 +39,7 @@ class ContactMessageController extends AbstractController
             $entityManager->persist($contactMessage);
             $entityManager->flush();
 
-            return $this->redirectToRoute('contact_message_index');
+            return $this->redirectToRoute('admin');
         }
 
         return $this->render('contact_message/new.html.twig', [
@@ -69,7 +69,7 @@ class ContactMessageController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('contact_message_index');
+            return $this->redirectToRoute('admin');
         }
 
         return $this->render('contact_message/edit.html.twig', [
@@ -89,6 +89,6 @@ class ContactMessageController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('contact_message_index');
+        return $this->redirectToRoute('admin');
     }
 }

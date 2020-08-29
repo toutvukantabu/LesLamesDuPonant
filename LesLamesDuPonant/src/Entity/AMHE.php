@@ -42,6 +42,11 @@ class AMHE
      */
     private $photoThreeAMHE;
 
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $active;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -103,6 +108,18 @@ class AMHE
     public function setPhotoThreeAMHE(?string $photoThreeAMHE): self
     {
         $this->photoThreeAMHE = $photoThreeAMHE;
+
+        return $this;
+    }
+
+    public function getActive(): ?bool
+    {
+        return $this->active;
+    }
+
+    public function setActive(?bool $active): self
+    {
+        $this->active = $active;
 
         return $this;
     }

@@ -1,9 +1,9 @@
-{% extends 'base.html.twig' %}
+{% extends 'admin.html.twig' %}
 
 {% block title %}AMHE{% endblock %}
 
 {% block body %}
-    <h1>AMHE</h1>
+    <h4 class="center-align">AMHE</h4>
 
     <table class="table">
         <tbody>
@@ -34,9 +34,9 @@
         </tbody>
     </table>
 
-    <a href="{{ path('amhe_index') }}">back to list</a>
+    <a href="{{ path('amhe_index') }}"><button class="btn orange"> liste</button></a>
 
-    <a href="{{ path('amhe_edit', {'id': amhe.id}) }}">edit</a>
+    <a href="{{ path('amhe_edit', {'id': amhe.id}) }}">éditer</a>
 
     {{ include('amhe/_delete_form.html.twig') }}
 {% endblock %}

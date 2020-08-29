@@ -324,6 +324,10 @@ class Flex implements PluginInterface, EventSubscriberInterface
             return;
         }
 
+        // Remove LICENSE (which do not apply to the user project)
+        @unlink('LICENSE');
+
+        // Update composer.json (project is proprietary by default)
         $json = new JsonFile(Factory::getComposerFile());
         $contents = file_get_contents($json->getPath());
         $manipulator = new JsonManipulator($contents);
@@ -469,11 +473,17 @@ class Flex implements PluginInterface, EventSubscriberInterface
             $this->io->writeError('');
             $this->io->writeError('What about running <comment>composer global require symfony/thanks && composer thanks</> now?');
             $this->io->writeError(sprintf('This will spread some %s by sending a %s to the GitHub repositories of your fellow package maintainers.', $love, $star));
-            $this->io->writeError('');
         }
+
+        $this->io->writeError('');
 
         if (!$recipes) {
             $this->lock->write();
+
+            if ($this->downloader->isEnabled()) {
+                $this->io->writeError('Run <comment>composer recipes</> at any time to see the status of your Symfony recipes.');
+                $this->io->writeError('');
+            }
 
             return;
         }
@@ -879,7 +889,7 @@ EOPHP
 
     private function formatOrigin(string $origin): string
     {
-        // symfony/translation:3.3@github.com/symfony/recipes:master
+        // symfony/translation:3.3@github.com/symfony/recipes:branch
         if (!preg_match('/^([^:]++):([^@]++)@(.+)$/', $origin, $matches)) {
             return $origin;
         }

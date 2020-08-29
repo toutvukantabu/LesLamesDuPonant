@@ -1,4 +1,8 @@
+
+<div class="container">
+<div class="row formRegister z-depth-5">
 {{ form_start(form) }}
     {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
-{{ form_end(form) }}
+    <div class="btnEdit">
+    <button class="btn">{{ button_label|default('envoyer') }}<i class="material-icons right">send</i></button>
+

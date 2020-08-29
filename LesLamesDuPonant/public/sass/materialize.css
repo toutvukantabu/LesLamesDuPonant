@@ -9457,7 +9457,7 @@ h4:after {
   z-index: 1000;
 }
 
-nav {
+#navbarHome, #navbarAdmin {
   -webkit-transition: top 0.2s linear;
   transition: top 0.2s linear;
   -webkit-transition: 0.2s;
@@ -9465,7 +9465,7 @@ nav {
   z-index: 1000;
 }
 
-nav li a:hover {
+#navbarHome li a:hover, #navbarAdmin li a:hover {
   background-color: #032b53a6;
   -webkit-transition-duration: 420ms;
           transition-duration: 420ms;
@@ -9503,7 +9503,7 @@ nav li a:hover {
 }
 
 #HomeImg img {
-  max-height: 80vh;
+  max-height: 100vh;
   width: 100%;
 }
 
@@ -9583,6 +9583,10 @@ nav li a:hover {
 
 .card-rounded {
   padding: 1px;
+  min-width: 318px;
+  max-height: 318px;
+  max-width: 318px;
+  min-height: 318px;
   margin: 0.2rem 0 2rem 0;
   -webkit-box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.2);
           box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.2);
@@ -9722,7 +9726,7 @@ ul.tl li .timestamp {
 
 .page-footer .footerLameDuPonantLeft i {
   display: block;
-  margin-top: 14px;
+  margin-top: 20px;
   text-align: left;
   margin-left: 11px;
 }
@@ -9734,7 +9738,7 @@ ul.tl li .timestamp {
 .page-footer .footerLameDuPonantLeft p {
   margin-left: 27%;
   margin-top: 20px;
-  min-width: 103px;
+  min-width: 130px;
   font-size: 19px;
 }
 
@@ -9779,5 +9783,10 @@ ul.tl li .timestamp {
 .loginResetPassword,
 .smallResetPassword {
   margin-bottom: 40px;
+}
+
+#homeAdmin img {
+  height: 90px;
+  width: 120px;
 }
 /*# sourceMappingURL=materialize.css.map */

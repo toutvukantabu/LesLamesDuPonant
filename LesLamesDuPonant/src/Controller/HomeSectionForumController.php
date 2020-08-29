@@ -16,7 +16,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class HomeSectionForumController extends AbstractController
 {
     /**
-     * @Route("/", name="home_section_forum_index", methods={"GET"})
+     * @Route("admin/", name="home_section_forum_index", methods={"GET"})
      */
     public function index(HomeSectionForumRepository $homeSectionForumRepository): Response
     {

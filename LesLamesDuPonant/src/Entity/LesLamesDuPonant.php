@@ -27,6 +27,11 @@ class LesLamesDuPonant
      */
     private $desciptionLLDP;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $pictureLesLamesDuponant;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -52,6 +57,18 @@ class LesLamesDuPonant
     public function setDesciptionLLDP(?string $desciptionLLDP): self
     {
         $this->desciptionLLDP = $desciptionLLDP;
+
+        return $this;
+    }
+
+    public function getPictureLesLamesDuponant(): ?string
+    {
+        return $this->pictureLesLamesDuponant;
+    }
+
+    public function setPictureLesLamesDuponant(?string $pictureLesLamesDuponant): self
+    {
+        $this->pictureLesLamesDuponant = $pictureLesLamesDuponant;
 
         return $this;
     }

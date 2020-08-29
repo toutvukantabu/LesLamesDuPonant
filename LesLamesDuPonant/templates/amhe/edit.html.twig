@@ -1,13 +1,18 @@
-{% extends 'base.html.twig' %}
+{% extends 'admin.html.twig' %}
 
-{% block title %}Edit AMHE{% endblock %}
+{% block title 'édition AMHE'%}
 
 {% block body %}
-    <h1>Edit AMHE</h1>
+<h4 class="center-align"> editer amhe</h4>
 
-    {{ include('amhe/_form.html.twig', {'button_label': 'Update'}) }}
+     {{ include('amhe/_form.html.twig', {'button_label': 'maj'})}}
 
-    <a href="{{ path('amhe_index') }}">back to list</a>
+    <a href="{{ path('amhe_index') }}"><button class="btn orange"> liste</button></a>
 
-    {{ include('amhe/_delete_form.html.twig') }}
+</div>
+{{ form_end(form) }}
+</div>
+</div>
+{% endblock %}
+   
 {% endblock %}

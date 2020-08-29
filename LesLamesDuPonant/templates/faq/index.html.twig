@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Faq index{% endblock %}
+
+{% block body %}
+    <h1>Faq index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>TitleFaq</th>
+                <th>FaqDescription</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for faq in faqs %}
+            <tr>
+                <td>{{ faq.id }}</td>
+                <td>{{ faq.titleFaq }}</td>
+                <td>{{ faq.faqDescription }}</td>
+                <td>
+                    <a href="{{ path('faq_show', {'id': faq.id}) }}">show</a>
+                    <a href="{{ path('faq_edit', {'id': faq.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('faq_new') }}">Create new</a>
+{% endblock %}

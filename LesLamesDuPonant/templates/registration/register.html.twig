@@ -4,6 +4,7 @@
 {% endblock %}
 
 {% block body %}
+
 	{% for flashError in app.flashes('verify_email_error') %}
 		<div class="alert alert-danger" role="alert">{{ flashError }}</div>
 	{% endfor %}
@@ -29,7 +30,7 @@
 			<label for="password" data-error="wrong" data-success="right"></label>
   		</div>
 		   <div class="col s6 l6 m6">
-			<button type="submit" class="btn">vous enregistrer</button>
+			<button type="submit" class="btn btnForm">vous enregistrer</button>
 		</div>
 		</div>
 	</div>

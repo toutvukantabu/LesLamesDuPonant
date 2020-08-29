@@ -1,42 +1,49 @@
-{% extends 'base.html.twig' %}
+{% extends 'default.html.twig' %}
 
-{% block title %}ContactMessage{% endblock %}
+{% block title %}ContactMessage
+{% endblock %}
 
 {% block body %}
-    <h1>ContactMessage</h1>
+<H4 class="center-align">
+  contenu du message</H4>
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ contact_message.id }}</td>
-            </tr>
-            <tr>
-                <th>AuthorNameContactMessage</th>
-                <td>{{ contact_message.authorNameContactMessage }}</td>
-            </tr>
-            <tr>
-                <th>AuthorLastNamecContactMessage</th>
-                <td>{{ contact_message.authorLastNamecContactMessage }}</td>
-            </tr>
-            <tr>
-                <th>ContentContactMessage</th>
-                <td>{{ contact_message.contentContactMessage }}</td>
-            </tr>
-            <tr>
-                <th>EmailContactMessage</th>
-                <td>{{ contact_message.emailContactMessage }}</td>
-            </tr>
-            <tr>
-                <th>DateContactMessage</th>
-                <td>{{ contact_message.dateContactMessage ? contact_message.dateContactMessage|date('Y-m-d H:i:s') : '' }}</td>
-            </tr>
-        </tbody>
-    </table>
 
-    <a href="{{ path('contact_message_index') }}">back to list</a>
+<div class="container">
+  <div class="row formRegister z-depth-5">
+    <div class="input-field col xl6 l6 m6 s12">
+      <input disabled id="first_name" type="text" class="validate">
+      <label for="first_name">{{ contact_message.authorNameContactMessage }}</label>
+    </div>
+    <div class="input-field col col xl6 l6 m6 s12">
+      <input disabled type="text" class="validate">
+      <label for="last_name" color>{{ contact_message.authorLastNamecContactMessage }}</label>
+    </div>
 
-    <a href="{{ path('contact_message_edit', {'id': contact_message.id}) }}">edit</a>
 
-    {{ include('contact_message/_delete_form.html.twig') }}
+    <div class="input-field col col xl6 l6 m6 s12">
+      <input disabled id="first_name" type="text" class="validate">
+      <label>{{ contact_message.dateContactMessage ? contact_message.dateContactMessage|date('Y-m-d H:i:s') : '' }}</label>
+    </div>
+    <div class="input-field col col xl6 l6 m6 s12">
+      <input disabled type="email" class="validate">
+      <label color>{{ contact_message.emailContactMessage }}</label>
+    </div>
+    <div class="input-field col col xl6 l6 m6 s12">
+      <textarea disabled id="textarea1" class="materialize-textarea"></textarea>
+      <label for="textarea1">{{ contact_message.contentContactMessage|raw }}</label>
+    </div>
+    <div class="btnEdit">
+      <a href="">
+        <button class="btn">répondre</button>
+      </a>
+
+      <a href="{{ path('contact_message_index') }}">
+        <button class="btn orange">
+          liste</button>
+      </a>
+    </div>
+  </div>
+</div>
+
+
 {% endblock %}

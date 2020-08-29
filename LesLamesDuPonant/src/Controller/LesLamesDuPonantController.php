@@ -4,11 +4,13 @@ namespace App\Controller;
 
 use App\Entity\LesLamesDuPonant;
 use App\Form\LesLamesDuPonantType;
-use App\Repository\LesLamesDuPonantRepository;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
+use App\Repository\LesLamesDuPonantRepository;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\String\Slugger\SluggerInterface;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\File\Exception\FileException;
 
 /**
  * @Route("/les/lames/du/ponant")
@@ -28,13 +30,29 @@ class LesLamesDuPonantController extends AbstractController
     /**
      * @Route("/new", name="les_lames_du_ponant_new", methods={"GET","POST"})
      */
-    public function new(Request $request): Response
+    public function new(Request $request, SluggerInterface $slugger): Response
     {
         $lesLamesDuPonant = new LesLamesDuPonant();
         $form = $this->createForm(LesLamesDuPonantType::class, $lesLamesDuPonant);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $pictureLesLamesDuPonant = $form->get('pictureLesLamesDuPonant')->getData();
+
+            if ($pictureLesLamesDuPonant) {
+                $originalFilename = pathinfo($pictureLesLamesDuPonant->getClientOriginalName(), PATHINFO_FILENAME);
+                $safeFilename = $slugger->slug($originalFilename);
+                $newFilename = $safeFilename . '-' . uniqid() . '.' . $pictureLesLamesDuPonant->guessExtension();
+
+                try {
+                    $pictureLesLamesDuPonant->move(
+                        $this->getParameter('leslamesduponant_directory'),
+                        $newFilename
+                    );
+                } catch (FileException $e) {}
+
+                $lesLamesDuPonant->setpictureLesLamesDuPonant($newFilename);
+            }
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($lesLamesDuPonant);
             $entityManager->flush();
@@ -61,12 +79,28 @@ class LesLamesDuPonantController extends AbstractController
     /**
      * @Route("/{id}/edit", name="les_lames_du_ponant_edit", methods={"GET","POST"})
      */
-    public function edit(Request $request, LesLamesDuPonant $lesLamesDuPonant): Response
+    public function edit(Request $request, LesLamesDuPonant $lesLamesDuPonant, SluggerInterface $slugger): Response
     {
         $form = $this->createForm(LesLamesDuPonantType::class, $lesLamesDuPonant);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $pictureLesLamesDuPonant = $form->get('pictureLesLamesDuPonant')->getData();
+
+            if ($pictureLesLamesDuPonant) {
+                $originalFilename = pathinfo($pictureLesLamesDuPonant->getClientOriginalName(), PATHINFO_FILENAME);
+                $safeFilename = $slugger->slug($originalFilename);
+                $newFilename = $safeFilename . '-' . uniqid() . '.' . $pictureLesLamesDuPonant->guessExtension();
+
+                try {
+                    $pictureLesLamesDuPonant->move(
+                        $this->getParameter('leslamesduponant_directory'),
+                        $newFilename
+                    );
+                } catch (FileException $e) {}
+
+                $lesLamesDuPonant->setpictureLesLamesDuPonant($newFilename);
+            }
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('les_lames_du_ponant_index');

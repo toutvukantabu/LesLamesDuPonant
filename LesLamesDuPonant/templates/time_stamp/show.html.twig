@@ -1,9 +1,9 @@
-{% extends 'base.html.twig' %}
+{% extends 'default.html.twig' %}
 
 {% block title %}TimeStamp{% endblock %}
 
 {% block body %}
-    <h1>TimeStamp</h1>
+    <h4 class="center-align">TimeStamp</h4>
 
     <table class="table">
         <tbody>
@@ -30,9 +30,9 @@
         </tbody>
     </table>
 
-    <a href="{{ path('time_stamp_index') }}">back to list</a>
+    <a href="{{ path('time_stamp_index') }}"><button class="btn orange"> liste</button></a>
 
-    <a href="{{ path('time_stamp_edit', {'id': time_stamp.id}) }}">edit</a>
+    <a href="{{ path('time_stamp_edit', {'id': time_stamp.id}) }}">éditer</a>
 
     {{ include('time_stamp/_delete_form.html.twig') }}
 {% endblock %}

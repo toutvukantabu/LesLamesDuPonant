@@ -42,6 +42,11 @@ class ContactMessage
      */
     private $dateContactMessage;
 
+    /**
+     * @ORM\Column(type="string", length=2)
+     */
+    private $CategoryContactMessage;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -103,6 +108,18 @@ class ContactMessage
     public function setDateContactMessage(\DateTimeInterface $dateContactMessage): self
     {
         $this->dateContactMessage = $dateContactMessage;
+
+        return $this;
+    }
+
+    public function getCategoryContactMessage(): ?string
+    {
+        return $this->CategoryContactMessage;
+    }
+
+    public function setCategoryContactMessage(string $CategoryContactMessage): self
+    {
+        $this->CategoryContactMessage = $CategoryContactMessage;
 
         return $this;
     }

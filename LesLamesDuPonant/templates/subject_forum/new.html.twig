@@ -1,11 +1,11 @@
-{% extends 'base.html.twig' %}
+{% extends 'default.html.twig' %}
 
 {% block title %}New SubjectForum{% endblock %}
 
 {% block body %}
-    <h1>Create new SubjectForum</h1>
+    <h4 class="center-align">Create new SubjectForum</h4>
 
     {{ include('subject_forum/_form.html.twig') }}
 
-    <a href="{{ path('subject_forum_index') }}">back to list</a>
+    <a href="{{ path('subject_forum_index') }}"><button class="btn orange"> liste</button></a>
 {% endblock %}

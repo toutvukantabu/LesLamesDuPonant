@@ -3,7 +3,7 @@
 {% block title %}HomeDiscipline index{% endblock %}
 
 {% block body %}
-    <h1>HomeDiscipline index</h1>
+    <h4 class="center-align">HomeDiscipline index</h4>
 
     <table class="table">
         <thead>
@@ -12,7 +12,7 @@
                 <th>Nom de la discipline</th>
                 <th>image</th>
                 <th>description</th>
-                <th>actions</th>
+                <th>action</th>
             </tr>
         </thead>
         <tbody>
@@ -23,18 +23,18 @@
                 <td>{{ home_discipline.imageHomeDiscipline }}</td>
                 <td>{{ home_discipline.descriptionDiscipline }}</td>
                 <td>
-                    <a href="{{ path('home_discipline_show', {'id': home_discipline.id}) }}">show</a>
-                    <a href="{{ path('home_discipline_edit', {'id': home_discipline.id}) }}">edit</a>
+                    <a href="{{ path('home_discipline_show', {'id': home_discipline.id}) }}">voir</a>
+                    <a href="{{ path('home_discipline_edit', {'id': home_discipline.id}) }}">éditer</a>
                     
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="5">no records found</td>
+                <td colspan="5">Aucun enregistrement trouvé.</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('home_discipline_new') }}">Create new</a>
+    <a href="{{ path('home_discipline_new') }}">Créer un nouveau</a>
 {% endblock %}

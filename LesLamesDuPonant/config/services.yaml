@@ -8,8 +8,10 @@ parameters:
     amhe_directory: '%kernel.project_dir%/public/uploads/amhe'
     discipline_directory: '%kernel.project_dir%/public/uploads/discipline'
     forum_directory: '%kernel.project_dir%/public/uploads/forum'
-    parallax_directory: '%kernel.project_dir%/public/uploads/parallax'
-    other_directory: '%kernel.project_dir%/public/uploads/other' 
+    homepicture_directory: '%kernel.project_dir%/public/uploads/parallax'
+    other_directory: '%kernel.project_dir%/public/uploads/other'
+    leslamesduponant_directory: '%kernel.project_dir%/public/uploads/lldp'
+
 
 services:
     # default configuration for services in *this* file
