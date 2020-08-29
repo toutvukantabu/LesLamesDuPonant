@@ -1,4 +1,4 @@
-{% extends 'default.html.twig' %}
+{% extends 'admin.html.twig' %}
 
 {% block title %}CategoryForum{% endblock %}
 
@@ -22,7 +22,7 @@
         </tbody>
     </table>
 
-    <a href="{{ path('category_forum_index') }}">retours à la liste</a>
+    <a href="{{ path('category_forum_index') }}"><button class="btn orange"> liste</button></a>
 
     <a href="{{ path('category_forum_edit', {'id': category_forum.id}) }}">éditer</a>
 

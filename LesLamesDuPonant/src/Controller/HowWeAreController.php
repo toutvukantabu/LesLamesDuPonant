@@ -91,4 +91,36 @@ class HowWeAreController extends AbstractController
 
         return $this->redirectToRoute('how_we_are_index');
     }
+
+     /**
+     * @Route("/supprimer/{id}", name="supprimer_how_we_are")
+     */
+public function supprimer( HowWeAre $howWeAre){
+
+    $entityManager = $this->getDoctrine()->getManager();
+    $entityManager->remove($howWeAre);
+    $entityManager->flush();
+    
+    $this->addFlash(
+        'how we are',
+        'supprimé avec succes!');
+    return $this->redirectToRoute('how_we_are_index');
 }
+
+/**
+     * @Route("/activer/{id}", name="activer_how_we_are")
+     */
+    public function activerHowWeAre( HowWeAre $howWeAre){
+
+        $howWeAre->setActive(($howWeAre->getActive())? false : true);
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->persist($howWeAre);
+        $entityManager->flush();
+        return new Response ('true');
+       
+    }
+
+}
+
+
+

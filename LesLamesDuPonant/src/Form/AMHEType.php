@@ -17,8 +17,9 @@ class AMHEType extends AbstractType
     {
         $builder
             ->add('titleAMHE',TextType::class,['label' => 'Titre AMHE'])
-            ->add('DescriptionAMHE',CKEditorType::class,['label' => 'Déscription Discipline'])
+            ->add('DescriptionAMHE',CKEditorType::class,['label' => '  '])
             ->add('photoOneAMHE', FileType::class, [
+                'label' => ' ',
                 'mapped' => false,
                 'required' => false,
                 'constraints' => [
@@ -32,6 +33,7 @@ class AMHEType extends AbstractType
                 ],
             ])
             ->add('photoTwoAMHE', FileType::class, [
+                'label' => ' ',
                 'mapped' => false,
                 'required' => false,
                 'constraints' => [
@@ -45,6 +47,7 @@ class AMHEType extends AbstractType
                 ],
             ])
             ->add('photoThreeAMHE', FileType::class, [
+                'label' => ' ',
                 'mapped' => false,
                 'required' => false,
                 'constraints' => [

@@ -98,7 +98,7 @@
 {% block file_widget -%}
     <{{ element|default('div') }} class="file-field input-field">
     <div class="btn">
-        <span>{{ 'File' | trans }}</span>
+        <span>{{ 'fichier' | trans }}</span>
         <input name="{{ form.vars.full_name }}"
                id="{{ form.vars.id }}"
                type="{{ form.vars.type }}"
@@ -111,6 +111,10 @@
                 type="text"
                 {%- if attr.placeholder is defined and attr.placeholder is not none -%}
                     placeholder="{{ attr.placeholder | trans }}"
+                    
+              {% else %}
+    placeholder="{{ form.vars.name| trans  }}"
+
                 {%- endif -%}
         >
     </div>

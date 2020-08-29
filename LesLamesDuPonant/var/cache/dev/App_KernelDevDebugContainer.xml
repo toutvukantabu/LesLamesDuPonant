@@ -241,7 +241,7 @@
       <parameter>dev</parameter>
       <parameter>main</parameter>
     </parameter>
-    <parameter key="web_profiler.debug_toolbar.intercept_redirects">true</parameter>
+    <parameter key="web_profiler.debug_toolbar.intercept_redirects">false</parameter>
     <parameter key="web_profiler.debug_toolbar.mode">2</parameter>
     <parameter key="monolog.use_microseconds">true</parameter>
     <parameter key="monolog.swift_mailer.handlers" type="collection"/>
@@ -4972,7 +4972,7 @@
       <tag name="kernel.event_subscriber"/>
       <tag name="container.hot_path"/>
       <argument type="service" id="twig"/>
-      <argument>true</argument>
+      <argument>false</argument>
       <argument>2</argument>
       <argument type="service" id="router.default" on-invalid="ignore"/>
       <argument>^/((index|app(_[\w]+)?)\.php/)?_wdt</argument>
@@ -6097,20 +6097,24 @@
         <argument key="user" type="service" id=".errored..service_locator.ikUdgSe.App\Entity\User"/>
       </argument>
     </service>
-    <service id=".service_locator.scukUED" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.FSVYQ_R" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="App\Controller\AMHEController::activerAMHE" type="service" id=".service_locator.Yu9Pcj8"/>
         <argument key="App\Controller\AMHEController::delete" type="service" id=".service_locator.Yu9Pcj8"/>
         <argument key="App\Controller\AMHEController::edit" type="service" id=".service_locator.mPdP5lR"/>
         <argument key="App\Controller\AMHEController::index" type="service" id=".service_locator.d2ed_or"/>
         <argument key="App\Controller\AMHEController::new" type="service" id=".service_locator.1cFtlgg"/>
         <argument key="App\Controller\AMHEController::show" type="service" id=".service_locator.Yu9Pcj8"/>
+        <argument key="App\Controller\AMHEController::supprimer" type="service" id=".service_locator.Yu9Pcj8"/>
         <argument key="App\Controller\AdminController::index" type="service" id=".service_locator.PVbfdAu"/>
+        <argument key="App\Controller\CategoryForumController::activerAMHE" type="service" id=".service_locator.KGenLOu"/>
         <argument key="App\Controller\CategoryForumController::delete" type="service" id=".service_locator.KGenLOu"/>
         <argument key="App\Controller\CategoryForumController::edit" type="service" id=".service_locator.KGenLOu"/>
         <argument key="App\Controller\CategoryForumController::index" type="service" id=".service_locator.1oURJky"/>
         <argument key="App\Controller\CategoryForumController::new" type="service" id=".service_locator.1cFtlgg"/>
         <argument key="App\Controller\CategoryForumController::show" type="service" id=".service_locator.KGenLOu"/>
+        <argument key="App\Controller\CategoryForumController::supprimer" type="service" id=".service_locator.KGenLOu"/>
         <argument key="App\Controller\ContactMessageController::delete" type="service" id=".service_locator.i2geDc0"/>
         <argument key="App\Controller\ContactMessageController::edit" type="service" id=".service_locator.i2geDc0"/>
         <argument key="App\Controller\ContactMessageController::index" type="service" id=".service_locator.uIuCgCK"/>
@@ -6142,10 +6146,12 @@
         <argument key="App\Controller\HomeSectionForumController::edit" type="service" id=".service_locator.ahw4_vS"/>
         <argument key="App\Controller\HomeSectionForumController::index" type="service" id=".service_locator.sKzeMVn"/>
         <argument key="App\Controller\HomeSectionForumController::show" type="service" id=".service_locator.ahw4_vS"/>
+        <argument key="App\Controller\HowWeAreController::activerHowWeAre" type="service" id=".service_locator.8iRGIK4"/>
         <argument key="App\Controller\HowWeAreController::delete" type="service" id=".service_locator.8iRGIK4"/>
         <argument key="App\Controller\HowWeAreController::edit" type="service" id=".service_locator.8iRGIK4"/>
         <argument key="App\Controller\HowWeAreController::index" type="service" id=".service_locator.lZ8SM6f"/>
         <argument key="App\Controller\HowWeAreController::show" type="service" id=".service_locator.8iRGIK4"/>
+        <argument key="App\Controller\HowWeAreController::supprimer" type="service" id=".service_locator.8iRGIK4"/>
         <argument key="App\Controller\LesAMHEController::index" type="service" id=".service_locator.IM1ypip"/>
         <argument key="App\Controller\LesLamesDuPonantController::delete" type="service" id=".service_locator.6WWz9RI"/>
         <argument key="App\Controller\LesLamesDuPonantController::edit" type="service" id=".service_locator.qFXpODI"/>
@@ -6182,17 +6188,21 @@
         <argument key="kernel::loadRoutes" type="service" id=".service_locator.C9JCBPC"/>
         <argument key="kernel::registerContainerConfiguration" type="service" id=".service_locator.C9JCBPC"/>
         <argument key="kernel::terminate" type="service" id=".service_locator.beq5mCo"/>
+        <argument key="App\Controller\AMHEController:activerAMHE" type="service" id=".service_locator.Yu9Pcj8"/>
         <argument key="App\Controller\AMHEController:delete" type="service" id=".service_locator.Yu9Pcj8"/>
         <argument key="App\Controller\AMHEController:edit" type="service" id=".service_locator.mPdP5lR"/>
         <argument key="App\Controller\AMHEController:index" type="service" id=".service_locator.d2ed_or"/>
         <argument key="App\Controller\AMHEController:new" type="service" id=".service_locator.1cFtlgg"/>
         <argument key="App\Controller\AMHEController:show" type="service" id=".service_locator.Yu9Pcj8"/>
+        <argument key="App\Controller\AMHEController:supprimer" type="service" id=".service_locator.Yu9Pcj8"/>
         <argument key="App\Controller\AdminController:index" type="service" id=".service_locator.PVbfdAu"/>
+        <argument key="App\Controller\CategoryForumController:activerAMHE" type="service" id=".service_locator.KGenLOu"/>
         <argument key="App\Controller\CategoryForumController:delete" type="service" id=".service_locator.KGenLOu"/>
         <argument key="App\Controller\CategoryForumController:edit" type="service" id=".service_locator.KGenLOu"/>
         <argument key="App\Controller\CategoryForumController:index" type="service" id=".service_locator.1oURJky"/>
         <argument key="App\Controller\CategoryForumController:new" type="service" id=".service_locator.1cFtlgg"/>
         <argument key="App\Controller\CategoryForumController:show" type="service" id=".service_locator.KGenLOu"/>
+        <argument key="App\Controller\CategoryForumController:supprimer" type="service" id=".service_locator.KGenLOu"/>
         <argument key="App\Controller\ContactMessageController:delete" type="service" id=".service_locator.i2geDc0"/>
         <argument key="App\Controller\ContactMessageController:edit" type="service" id=".service_locator.i2geDc0"/>
         <argument key="App\Controller\ContactMessageController:index" type="service" id=".service_locator.uIuCgCK"/>
@@ -6224,10 +6234,12 @@
         <argument key="App\Controller\HomeSectionForumController:edit" type="service" id=".service_locator.ahw4_vS"/>
         <argument key="App\Controller\HomeSectionForumController:index" type="service" id=".service_locator.sKzeMVn"/>
         <argument key="App\Controller\HomeSectionForumController:show" type="service" id=".service_locator.ahw4_vS"/>
+        <argument key="App\Controller\HowWeAreController:activerHowWeAre" type="service" id=".service_locator.8iRGIK4"/>
         <argument key="App\Controller\HowWeAreController:delete" type="service" id=".service_locator.8iRGIK4"/>
         <argument key="App\Controller\HowWeAreController:edit" type="service" id=".service_locator.8iRGIK4"/>
         <argument key="App\Controller\HowWeAreController:index" type="service" id=".service_locator.lZ8SM6f"/>
         <argument key="App\Controller\HowWeAreController:show" type="service" id=".service_locator.8iRGIK4"/>
+        <argument key="App\Controller\HowWeAreController:supprimer" type="service" id=".service_locator.8iRGIK4"/>
         <argument key="App\Controller\LesAMHEController:index" type="service" id=".service_locator.IM1ypip"/>
         <argument key="App\Controller\LesLamesDuPonantController:delete" type="service" id=".service_locator.6WWz9RI"/>
         <argument key="App\Controller\LesLamesDuPonantController:edit" type="service" id=".service_locator.qFXpODI"/>
@@ -6877,12 +6889,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
-      <argument type="service" id=".service_locator.scukUED"/>
+      <argument type="service" id=".service_locator.FSVYQ_R"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver" public="false"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver" public="false">
-      <argument type="service" id=".service_locator.scukUED"/>
+      <argument type="service" id=".service_locator.FSVYQ_R"/>
     </service>
     <service id=".debug.http_client.inner" class="Symfony\Contracts\HttpClient\HttpClientInterface" public="false">
       <argument type="collection"/>
@@ -7307,7 +7319,7 @@
     <service id="SymfonyCasts\Bundle\ResetPassword\ResetPasswordHelperInterface" alias="symfonycasts.reset_password.helper"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.WaGDpDt" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem" public="false"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.scukUED"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.FSVYQ_R"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
     <service id="Psr\Log\LoggerInterface $consoleLogger" alias="monolog.logger.console"/>

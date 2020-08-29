@@ -1,6 +1,6 @@
-{% extends 'default.html.twig' %}
+{% extends 'admin.html.twig' %}
 
-{% block title %}edit HomeDiscipline{% endblock %}
+{% block title %}edit page accueil Discipline{% endblock %}
 
 {% block body %}
     <h4 class="center-align">éditer HomeDiscipline</h4>
@@ -8,10 +8,13 @@
 
     {{ include('home_discipline/_form.html.twig', {'button_label': 'maj'}) }}
 
-    <a href="{{ path('admin')}}#discipline"><button class="btn green btnForm">retour à la liste</button></a>
+    <a href="{{ path('home_discipline_index')}}"><button class="btn green btnForm">retour à la liste</button></a>
 
     {{ include('home_discipline/_delete_form.html.twig') }}
 
-
+</div>
+{{ form_end(form) }}
+</div>
+</div>
 
 {% endblock %}

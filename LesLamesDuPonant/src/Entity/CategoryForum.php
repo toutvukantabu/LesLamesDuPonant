@@ -20,7 +20,7 @@ class CategoryForum
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $titleCategory;
 
@@ -43,6 +43,11 @@ class CategoryForum
      * @ORM\ManyToOne(targetEntity=HomeSectionForum::class, inversedBy="categoryHomeSectionForum")
      */
     private $SectionCategoryForum;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $active;
 
     public function __construct()
     {
@@ -129,6 +134,18 @@ class CategoryForum
     public function setSectionCategoryForum(?HomeSectionForum $SectionCategoryForum): self
     {
         $this->SectionCategoryForum = $SectionCategoryForum;
+
+        return $this;
+    }
+
+    public function getActive(): ?bool
+    {
+        return $this->active;
+    }
+
+    public function setActive(bool $active): self
+    {
+        $this->active = $active;
 
         return $this;
     }

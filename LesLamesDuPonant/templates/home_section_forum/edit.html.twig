@@ -7,7 +7,7 @@
 
     {{ include('home_section_forum/_form.html.twig', {'button_label': 'maj'}) }}
 
-    <a href="{{ path('home_section_forum_index') }}">retours à la liste</a>
+    <a href="{{ path('home_section_forum_index') }}"><button class="btn orange"> liste</button></a>
 
     {{ include('home_section_forum/_delete_form.html.twig') }}
 {% endblock %}

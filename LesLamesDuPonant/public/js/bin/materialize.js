@@ -10156,7 +10156,7 @@ $(document).ready( function () {
   });
    
    $('.button-collapse').sideNav({
-      menuWidth: 200, // Default is 300
+      menuWidth: 300, // Default is 300
       edge: 'left', // Choose the horizontal origin
       closeOnClick: false, // Closes side-nav on <a> clicks, useful for Angular/Meteor
       draggable: true, // Choose whether you can drag to open on touch screens,
@@ -10175,7 +10175,21 @@ $(document).ready( function () {
         .toggleClass('fa-angle-down')
         .toggleClass('fa-angle-right');
     });
- 
-   
+
    
  });
+
+//  MODAL Delete
+$('#modal-delete').modal({
+  dismissible: true, // Modal can be dismissed by clicking outside of the modal
+  opacity: .5, // Opacity of modal background
+  inDuration: 300, // Transition in duration
+  outDuration: 200, // Transition out duration
+  startingTop: '4%', // Starting top style attribute
+  endingTop: '10%', // Ending top style attribute
+  },
+ 
+);
+
+// ToastMessage
+

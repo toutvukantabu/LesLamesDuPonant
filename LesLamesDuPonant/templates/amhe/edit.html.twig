@@ -1,4 +1,4 @@
-{% extends 'default.html.twig' %}
+{% extends 'admin.html.twig' %}
 
 {% block title 'édition AMHE'%}
 
@@ -7,8 +7,12 @@
 
      {{ include('amhe/_form.html.twig', {'button_label': 'maj'})}}
 
-    <a href="{{ path('admin') }}#amhe"><button class="btn green btnForm">retour à la liste</button></a>
+    <a href="{{ path('amhe_index') }}"><button class="btn orange"> liste</button></a>
 
-    {{ include('amhe/_delete_form.html.twig') }}
+</div>
+{{ form_end(form) }}
+</div>
+</div>
+{% endblock %}
    
 {% endblock %}

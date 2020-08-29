@@ -1,4 +1,4 @@
-{% extends 'default.html.twig' %}
+{% extends 'admin.html.twig' %}
 
 {% block title %}HomeDiscipline{% endblock %}
 
@@ -26,7 +26,7 @@
         </tbody>
     </table>
 
-    <a href="{{ path('home_discipline_index') }}">retours à la liste</a>
+    <a href="{{ path('home_discipline_index') }}"><button class="btn orange"> liste</button></a>
 
     <a href="{{ path('home_discipline_edit', {'id': home_discipline.id}) }}">éditer</a>
 

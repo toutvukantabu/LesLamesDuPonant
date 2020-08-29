@@ -204,4 +204,33 @@ class AMHEController extends AbstractController
 
         return $this->redirectToRoute('amhe_index');
     }
+  /**
+     * @Route("/supprimer/{id}", name="supprimer_amhe")
+     */
+    public function supprimer( AMHE  $aMHE){
+
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->remove($aMHE);
+        $entityManager->flush();
+        
+        $this->addFlash(
+            'how we are',
+            'supprimé avec succes!');
+        return $this->redirectToRoute('how_we_are_index');
+    }
+    
+    /**
+         * @Route("/activer/{id}", name="activer_amhe")
+         */
+        public function activerAMHE ( AMHE  $aMHE){
+    
+            $aMHE->setActive(($aMHE->getActive())? false : true);
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($aMHE);
+            $entityManager->flush();
+            return new Response ('true');
+           
+
+        }
+
 }

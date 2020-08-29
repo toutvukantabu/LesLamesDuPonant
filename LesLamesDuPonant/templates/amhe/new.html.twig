@@ -1,16 +1,13 @@
-{% extends 'default.html.twig' %}
+{% extends 'admin.html.twig' %}
 
 {% block title 'crea AMHE'%}
 
 {% block body %}
 <h4 class="center-align">Création de la page AMHE</h4>
+    {{ include('amhe/_form.html.twig') }}
 
-{{ form_start(form) }}
-    {{ form_widget(form) }}
+    <a href="{{ path('amhe_index') }}"><button class="btn orange">liste</button></a>
 
-<button class="btn btnForm">{{ button_label|default('sauvegarder') }}</button>
-    <a href="{{ path('admin') }}#amhe">retour à la liste</a>
-{{ form_end(form) }}
 
 
 {% endblock %}

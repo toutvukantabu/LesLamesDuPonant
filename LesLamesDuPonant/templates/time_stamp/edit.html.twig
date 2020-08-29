@@ -4,16 +4,13 @@
 
 {% block body %}
     <h4 class="center-align">éditer TimeStamp</h4>
-<div class="container">
-
-	<div class="row formRegister z-depth-5">
-
     {{ include('time_stamp/_form.html.twig', {'button_label': 'maj'}) }}
 
     <a href="{{ path('admin') }}#agenda"><button class="btn green btnForm">retour à la liste</button></a>
 
     {{ include('time_stamp/_delete_form.html.twig') }}
-    </div>
-
+   </div>
+{{ form_end(form) }}
+</div>
 </div>
 {% endblock %}

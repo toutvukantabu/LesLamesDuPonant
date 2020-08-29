@@ -7,7 +7,7 @@
 
     {{ include('message_forum/_form.html.twig', {'button_label': 'maj'}) }}
 
-    <a href="{{ path('message_forum_index') }}">retours à la liste</a>
+    <a href="{{ path('message_forum_index') }}"><button class="btn orange"> liste</button></a>
 
     {{ include('message_forum/_delete_form.html.twig') }}
 {% endblock %}

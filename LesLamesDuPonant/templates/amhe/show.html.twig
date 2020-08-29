@@ -1,4 +1,4 @@
-{% extends 'default.html.twig' %}
+{% extends 'admin.html.twig' %}
 
 {% block title %}AMHE{% endblock %}
 
@@ -34,7 +34,7 @@
         </tbody>
     </table>
 
-    <a href="{{ path('amhe_index') }}">retours à la liste</a>
+    <a href="{{ path('amhe_index') }}"><button class="btn orange"> liste</button></a>
 
     <a href="{{ path('amhe_edit', {'id': amhe.id}) }}">éditer</a>
 

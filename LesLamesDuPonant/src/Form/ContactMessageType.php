@@ -34,8 +34,6 @@ class ContactMessageType extends AbstractType
                     'Renseignement sur les inscriptions' => 2,
                     'Autres Questions' => 3,
                     'Bug du site' => 4,
-
-
                 ],
                 'multiple' => false,
                 'expanded' => false,

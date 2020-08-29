@@ -94,4 +94,34 @@ class CategoryForumController extends AbstractController
 
         return $this->redirectToRoute('category_forum_index');
     }
+     /**
+     * @Route("/supprimer/{id}", name="supprimer_category_forum")
+     */
+         public function supprimer( CategoryForum $categoryForum){
+
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->remove( $categoryForum);
+        $entityManager->flush();
+        
+        $this->addFlash(
+            'how we are',
+            'supprimé avec succes!');
+        return $this->redirectToRoute('category_forum_index');
+    }
+    
+        /**
+         * @Route("/activer/{id}", name="activer_category_forum")
+         */
+        public function activerAMHE ( CategoryForum $categoryForum){
+    
+             $categoryForum->setActive(( $categoryForum->getActive())? false : true);
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist( $categoryForum);
+            $entityManager->flush();
+            return new Response ('true');
+           
+
+        }
+
+   
 }
