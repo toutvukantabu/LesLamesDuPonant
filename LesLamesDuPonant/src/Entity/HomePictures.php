@@ -37,6 +37,11 @@ class HomePictures
      */
     private $homeParallax2;
 
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $active;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -86,6 +91,18 @@ class HomePictures
     public function setHomeParallax2(?string $homeParallax2): self
     {
         $this->homeParallax2 = $homeParallax2;
+
+        return $this;
+    }
+
+    public function getActive(): ?bool
+    {
+        return $this->active;
+    }
+
+    public function setActive(?bool $active): self
+    {
+        $this->active = $active;
 
         return $this;
     }

@@ -19,20 +19,20 @@ class HowWeAreType extends AbstractType
         $builder
             ->add('titleHowWeAre', TextType::class,['label'=>'Titre'])
             ->add('descriptionHowWeAre', CKEditorType::class,['label'=>'  '])
-            ->add('PhotoHowWeAre',FileType::class, [
-                'label' => ' ',
-                'mapped' => false,
-                'required' => false,
-                'constraints' => [
-                    new File([
-                        'maxSize' => '1024k',
-                        'mimeTypes' => [
-                            'image/*',
-                        ],
-                        'mimeTypesMessage' => 'Veuillez entrer un format de document valide',
-                    ])
-                ],
-            ])
+            // ->add('PhotoHowWeAre',FileType::class, [
+            //     'label' => ' ',
+            //     'mapped' => false,
+            //     'required' => false,
+            //     'constraints' => [
+            //         new File([
+            //             'maxSize' => '1024k',
+            //             'mimeTypes' => [
+            //                 'image/*',
+            //             ],
+            //             'mimeTypesMessage' => 'Veuillez entrer un format de document valide',
+            //         ])
+            //     ],
+            // ])
             ;
     }
 

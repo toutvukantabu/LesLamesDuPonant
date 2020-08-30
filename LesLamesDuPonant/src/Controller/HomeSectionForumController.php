@@ -91,4 +91,31 @@ class HomeSectionForumController extends AbstractController
 
         return $this->redirectToRoute('home_section_forum_index');
     }
+    /**
+     * @Route("/supprimer/{id}", name="supprimer_home_pictures")
+     */
+    public function supprimer(   HomeSectionForum $homeSectionForum){
+
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->remove($homeSectionForum);
+        $entityManager->flush();
+        
+        $this->addFlash(
+            'how we are',
+            'supprimé avec succes!');
+        return $this->redirectToRoute('home_section_forum_index');
+    }
+    
+         /**
+         * @Route("/activer/{id}", name="activer_home_pictures")
+         */
+        public function activer(  HomeSectionForum $homeSectionForum){
+    
+            $homeSectionForum->setActive(($homeSectionForum->getActive())? false : true);
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($homeSectionForum);
+            $entityManager->flush();
+            return new Response ('true');
+           
+        }
 }

@@ -241,4 +241,32 @@ class HomePicturesController extends AbstractController
 
         return $this->redirectToRoute('admin');
     }
+     /**
+     * @Route("/supprimer/{id}", name="supprimer_home_pictures")
+     */
+    public function supprimer(  HomePictures $homePicture){
+
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->remove($homePicture);
+        $entityManager->flush();
+        
+        $this->addFlash(
+            'how we are',
+            'supprimé avec succes!');
+        return $this->redirectToRoute('home_pictures_index');
+    }
+    
+         /**
+         * @Route("/activer/{id}", name="activer_home_pictures")
+         */
+        public function activer(  HomePictures $homePicture){
+    
+            $homePicture->setActive(($homePicture->getActive())? false : true);
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($homePicture);
+            $entityManager->flush();
+            return new Response ('true');
+           
+        }
+
 }

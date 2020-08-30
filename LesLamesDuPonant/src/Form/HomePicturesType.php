@@ -15,7 +15,7 @@ class HomePicturesType extends AbstractType
     {
         $builder
             ->add('homeLogoPicture', FileType::class, [
-                'label' => 'Photo',
+                'label' => ' ',
                 'mapped' => false,
                 'required' => false,
                 'constraints' => [
@@ -30,7 +30,7 @@ class HomePicturesType extends AbstractType
             ])
 
             ->add('homeTitlePicture', FileType::class, [
-                'label' => 'Photo',
+                'label' => ' ',
                 'mapped' => false,
                 'required' => false,
                 'constraints' => [
@@ -45,7 +45,7 @@ class HomePicturesType extends AbstractType
             ])
 
             ->add('homeParallax1', FileType::class, [
-                'label' => 'Photo',
+                'label' => ' ',
                 'mapped' => false,
                 'required' => false,
                 'constraints' => [
@@ -60,7 +60,7 @@ class HomePicturesType extends AbstractType
             ])
 
             ->add('homeParallax2', FileType::class, [
-                'label' => 'Photo',
+                'label' => ' ',
                 'mapped' => false,
                 'required' => false,
                 'constraints' => [

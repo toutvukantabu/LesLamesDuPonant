@@ -18,7 +18,6 @@
                 <th>Id</th>
                 <th>titre</th>
                 <th>Description</th>
-                <th>Photo</th>
                 <th>Activation</th>
                 <th>Modifier</th>
             </tr>
@@ -29,8 +28,6 @@
                 <td>{{ how_we_are.id }}</td>
                 <td>{{ how_we_are.titleHowWeAre|striptags|u.truncate(20)|raw}}</td>
                 <td>{{ how_we_are.descriptionHowWeAre|striptags|u.truncate(20)|raw}}</td>
-                <td>{{ how_we_are.PhotoHowWeAre|striptags|u.truncate(20)|raw}}</td>
-                <td>{{ how_we_are.PhotoHowWeAre|striptags|u.truncate(20)|raw}}</td>
                 <td>
                     <div class="switch">
                         <label>

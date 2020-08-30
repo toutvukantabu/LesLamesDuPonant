@@ -202,7 +202,7 @@ class HomeInfoController extends AbstractController
         return $this->redirectToRoute('home_info_index');
     }
      /**
-     * @Route("/supprimer/{id}", name="supprimer_discipline")
+     * @Route("/supprimer/{id}", name="supprimer_home_info")
      */
     public function supprimer(  HomeInfo $homeInfo){
 
@@ -217,7 +217,7 @@ class HomeInfoController extends AbstractController
     }
     
          /**
-         * @Route("/activer/{id}", name="activer_discipline")
+         * @Route("/activer/{id}", name="activer_home_info")
          */
         public function activerdiscipline(  HomeInfo $homeInfo){
     
