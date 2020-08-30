@@ -1,17 +1,24 @@
-{% extends 'base.html.twig' %}
+{% extends 'admin.html.twig' %}
 
 {% block title %}Faq index{% endblock %}
 
 {% block body %}
-    <h1>Faq index</h1>
-
-    <table class="table">
+   {% for message in app.flashes('how we are') %}
+<div class="flash-notice">
+    {{ message }}
+</div>
+{% endfor %}
+<h4 class="center-align">FAQ</h4>
+<div class="container">
+    <a href="{{ path('faq_new') }}" class="btn-floating btn-large waves-effect waves-light blue"><i
+            class="material-icons">add</i></a>
+    <table class="striped centered responsive-table">
         <thead>
             <tr>
                 <th>Id</th>
-                <th>TitleFaq</th>
-                <th>FaqDescription</th>
-                <th>actions</th>
+                <th>Titre</th>
+                <th>Déscription</th>
+                <th>Modifier</th>
             </tr>
         </thead>
         <tbody>
@@ -20,18 +27,45 @@
                 <td>{{ faq.id }}</td>
                 <td>{{ faq.titleFaq }}</td>
                 <td>{{ faq.faqDescription }}</td>
-                <td>
-                    <a href="{{ path('faq_show', {'id': faq.id}) }}">show</a>
-                    <a href="{{ path('faq_edit', {'id': faq.id}) }}">edit</a>
+                  <td>
+                    <div>
+                        <a href="{{ path('faq_edit', {'id': faq.id}) }}" class="btn-floating green"><i
+                                class="material-icons">create</i></a>
+                        <a class=" btn-floating modal-trigger red" href="#modal-delete" data-id="{{faq.id}}"
+                            data-titre ="{{faq.titleFaq }}" data-target="modal-delete"><i
+                                class="material-icons">delete</i></a>
+                    </div>
                 </td>
             </tr>
-        {% else %}
+            {% else %}
             <tr>
-                <td colspan="4">no records found</td>
+                <td colspan="5">pas d'entrée trouvée</td>
             </tr>
-        {% endfor %}
+            {% endfor %}
         </tbody>
     </table>
+</div>
+<!-- Modal Structure -->
+<div id="modal-delete" class="modal">
+    <div>
+        <h4 class="center-align">Suppression </h4>
+        <p class="modal-content center-align"></p>
+    </div>
+    <div class="modal-footer">
+        <a href="#!" class="modal-action modal-close waves-effect waves-green btn green">valider</a>
+        <a href="#!" class="modal-action modal-close waves-effect waves-green btn red">anuler</a>
+    </div>
+</div>
+<script>
+    window.onload = () => {
+        let supprimer = document.querySelectorAll(".modal-trigger")
+			for(let bouton of supprimer){
+				bouton.addEventListener("click", function () {
+					document.querySelector(".modal-footer a").href = `/faq/supprimer/${this.dataset.id}`
+					document.querySelector(".modal-content").innerText = `Êtes-vous sûr(e) de vouloir supprimer  "${this.dataset.titre}"`
 
-    <a href="{{ path('faq_new') }}">Create new</a>
+            })
+        }
+    }
+</script>
 {% endblock %}

@@ -91,4 +91,18 @@ class FaqController extends AbstractController
 
         return $this->redirectToRoute('faq_index');
     }
+    /**
+     * @Route("/supprimer/{id}", name="supprimer_FAQ")
+     */
+    public function supprimer( Faq $faq){
+
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->remove( $faq);
+        $entityManager->flush();
+        
+        $this->addFlash(
+            'how we are',
+            'supprimé avec succes!');
+        return $this->redirectToRoute('faq_index');
+    }
 }

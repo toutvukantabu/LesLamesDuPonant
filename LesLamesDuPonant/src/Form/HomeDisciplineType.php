@@ -2,22 +2,33 @@
 
 namespace App\Form;
 
+use App\Entity\Discipline;
 use App\Entity\HomeDiscipline;
-use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Component\Form\AbstractType;
+use FOS\CKEditorBundle\Form\Type\CKEditorType;
+use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use Symfony\Component\Validator\Constraints\File;
+use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
-use Symfony\Component\Validator\Constraints\File;
-use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class HomeDisciplineType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('nameDiscipline', TextType::class,['label' => 'Titre de la discipline'])
+
+            ->add('relationDiscipline', EntityType::class, [
+                'class' => Discipline::class,
+                'label' => 'Section de la discipline affiliée',
+                'choice_label' => 'disciplinetitle',
+            ])
+            ->add('nameDiscipline', TextType::class, ['label' => 'Titre de la discipline'])
+            ->add('descriptionDiscipline', CKEditorType::class, ['label' => ' '])
+
             ->add('imageHomeDiscipline', FileType::class, [
+                'label'=>' ',
                 'mapped' => false,
                 'required' => false,
                 'constraints' => [
@@ -29,9 +40,7 @@ class HomeDisciplineType extends AbstractType
                         'mimeTypesMessage' => 'Veuillez entrer un format de document valide',
                     ])
                 ],
-            ])
-            ->add('descriptionDiscipline', CKEditorType::class,['label' => 'Déscription de la discipline'])
-        ;
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver)

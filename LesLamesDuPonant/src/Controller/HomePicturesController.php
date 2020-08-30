@@ -36,7 +36,8 @@ class HomePicturesController extends AbstractController
         $form = $this->createForm(HomePicturesType::class, $homePicture);
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {  $homeLogoPicture = $form->get('homeLogoPicture')->getData();
+        if ($form->isSubmitted() && $form->isValid()) {  
+            $homeLogoPicture = $form->get('homeLogoPicture')->getData();
 
             if ($homeLogoPicture) {
                 $originalFilename = pathinfo($homeLogoPicture->getClientOriginalName(), PATHINFO_FILENAME);

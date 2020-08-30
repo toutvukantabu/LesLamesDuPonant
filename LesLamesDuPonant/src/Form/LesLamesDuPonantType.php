@@ -19,7 +19,7 @@ class LesLamesDuPonantType extends AbstractType
             ->add('titleLLDP', TextType::class,['label' => 'Titre Lames Du Ponant'])
             ->add('desciptionLLDP', CKEditorType::class,['label' => 'Déscription de l\'association'])
             ->add ('pictureLesLamesDuPonant',FileType::class, [
-                'label' => 'Photo',
+                'label' => ' ',
                 'mapped' => false,
                 'required' => false,
                 'constraints' => [

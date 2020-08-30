@@ -89,6 +89,7 @@
     <parameter key="homepicture_directory">C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant/public/uploads/parallax</parameter>
     <parameter key="other_directory">C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant/public/uploads/other</parameter>
     <parameter key="leslamesduponant_directory">C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant/public/uploads/lldp</parameter>
+    <parameter key="info_directory">C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant/public/uploads/info</parameter>
     <parameter key="event_dispatcher.event_aliases" type="collection">
       <parameter key="Symfony\Component\Console\Event\ConsoleCommandEvent">console.command</parameter>
       <parameter key="Symfony\Component\Console\Event\ConsoleErrorEvent">console.error</parameter>
@@ -5882,6 +5883,13 @@
         <argument key="discipline" type="service" id=".errored..service_locator.Ivtfxr5.App\Entity\Discipline"/>
       </argument>
     </service>
+    <service id=".service_locator.Ar59x2x" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="discipline" type="service" id=".errored..service_locator.Ar59x2x.App\Entity\Discipline"/>
+        <argument key="slugger" type="service" id="slugger"/>
+      </argument>
+    </service>
     <service id=".service_locator.5Uu9FjM" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -5932,6 +5940,13 @@
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="homeInfo" type="service" id=".errored..service_locator..1y3WyX.App\Entity\HomeInfo"/>
+      </argument>
+    </service>
+    <service id=".service_locator.CU1fCIs" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="homeInfo" type="service" id=".errored..service_locator.CU1fCIs.App\Entity\HomeInfo"/>
+        <argument key="slugger" type="service" id="slugger"/>
       </argument>
     </service>
     <service id=".service_locator..dCZRUn" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
@@ -6097,7 +6112,7 @@
         <argument key="user" type="service" id=".errored..service_locator.ikUdgSe.App\Entity\User"/>
       </argument>
     </service>
-    <service id=".service_locator.FSVYQ_R" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.wecyE_U" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\AMHEController::activerAMHE" type="service" id=".service_locator.Yu9Pcj8"/>
@@ -6119,24 +6134,34 @@
         <argument key="App\Controller\ContactMessageController::edit" type="service" id=".service_locator.i2geDc0"/>
         <argument key="App\Controller\ContactMessageController::index" type="service" id=".service_locator.uIuCgCK"/>
         <argument key="App\Controller\ContactMessageController::show" type="service" id=".service_locator.i2geDc0"/>
+        <argument key="App\Controller\ContactMessageController::supprimer" type="service" id=".service_locator.i2geDc0"/>
+        <argument key="App\Controller\DisciplineController::activerdiscipline" type="service" id=".service_locator.Ivtfxr5"/>
         <argument key="App\Controller\DisciplineController::delete" type="service" id=".service_locator.Ivtfxr5"/>
-        <argument key="App\Controller\DisciplineController::edit" type="service" id=".service_locator.Ivtfxr5"/>
+        <argument key="App\Controller\DisciplineController::edit" type="service" id=".service_locator.Ar59x2x"/>
         <argument key="App\Controller\DisciplineController::index" type="service" id=".service_locator.G2t7sZQ"/>
+        <argument key="App\Controller\DisciplineController::new" type="service" id=".service_locator.1cFtlgg"/>
         <argument key="App\Controller\DisciplineController::show" type="service" id=".service_locator.Ivtfxr5"/>
+        <argument key="App\Controller\DisciplineController::supprimer" type="service" id=".service_locator.Ivtfxr5"/>
         <argument key="App\Controller\FaqController::delete" type="service" id=".service_locator.o64zwYl"/>
         <argument key="App\Controller\FaqController::edit" type="service" id=".service_locator.o64zwYl"/>
         <argument key="App\Controller\FaqController::index" type="service" id=".service_locator.5Uu9FjM"/>
         <argument key="App\Controller\FaqController::show" type="service" id=".service_locator.o64zwYl"/>
+        <argument key="App\Controller\FaqController::supprimer" type="service" id=".service_locator.o64zwYl"/>
         <argument key="App\Controller\HomeController::index" type="service" id=".service_locator.kkTiCna"/>
+        <argument key="App\Controller\HomeDisciplineController::activerhomeDiscipline" type="service" id=".service_locator.22Da741"/>
         <argument key="App\Controller\HomeDisciplineController::delete" type="service" id=".service_locator.22Da741"/>
         <argument key="App\Controller\HomeDisciplineController::edit" type="service" id=".service_locator.sPCVzSW"/>
         <argument key="App\Controller\HomeDisciplineController::index" type="service" id=".service_locator.jhT17UT"/>
         <argument key="App\Controller\HomeDisciplineController::new" type="service" id=".service_locator.1cFtlgg"/>
         <argument key="App\Controller\HomeDisciplineController::show" type="service" id=".service_locator.22Da741"/>
+        <argument key="App\Controller\HomeDisciplineController::supprimer" type="service" id=".service_locator.22Da741"/>
+        <argument key="App\Controller\HomeInfoController::activerdiscipline" type="service" id=".service_locator..1y3WyX"/>
         <argument key="App\Controller\HomeInfoController::delete" type="service" id=".service_locator..1y3WyX"/>
-        <argument key="App\Controller\HomeInfoController::edit" type="service" id=".service_locator..1y3WyX"/>
+        <argument key="App\Controller\HomeInfoController::edit" type="service" id=".service_locator.CU1fCIs"/>
         <argument key="App\Controller\HomeInfoController::index" type="service" id=".service_locator.0_dT2PR"/>
+        <argument key="App\Controller\HomeInfoController::new" type="service" id=".service_locator.1cFtlgg"/>
         <argument key="App\Controller\HomeInfoController::show" type="service" id=".service_locator..1y3WyX"/>
+        <argument key="App\Controller\HomeInfoController::supprimer" type="service" id=".service_locator..1y3WyX"/>
         <argument key="App\Controller\HomePicturesController::delete" type="service" id=".service_locator.6OdiqlJ"/>
         <argument key="App\Controller\HomePicturesController::edit" type="service" id=".service_locator.c0WwyLC"/>
         <argument key="App\Controller\HomePicturesController::index" type="service" id=".service_locator..dCZRUn"/>
@@ -6207,24 +6232,34 @@
         <argument key="App\Controller\ContactMessageController:edit" type="service" id=".service_locator.i2geDc0"/>
         <argument key="App\Controller\ContactMessageController:index" type="service" id=".service_locator.uIuCgCK"/>
         <argument key="App\Controller\ContactMessageController:show" type="service" id=".service_locator.i2geDc0"/>
+        <argument key="App\Controller\ContactMessageController:supprimer" type="service" id=".service_locator.i2geDc0"/>
+        <argument key="App\Controller\DisciplineController:activerdiscipline" type="service" id=".service_locator.Ivtfxr5"/>
         <argument key="App\Controller\DisciplineController:delete" type="service" id=".service_locator.Ivtfxr5"/>
-        <argument key="App\Controller\DisciplineController:edit" type="service" id=".service_locator.Ivtfxr5"/>
+        <argument key="App\Controller\DisciplineController:edit" type="service" id=".service_locator.Ar59x2x"/>
         <argument key="App\Controller\DisciplineController:index" type="service" id=".service_locator.G2t7sZQ"/>
+        <argument key="App\Controller\DisciplineController:new" type="service" id=".service_locator.1cFtlgg"/>
         <argument key="App\Controller\DisciplineController:show" type="service" id=".service_locator.Ivtfxr5"/>
+        <argument key="App\Controller\DisciplineController:supprimer" type="service" id=".service_locator.Ivtfxr5"/>
         <argument key="App\Controller\FaqController:delete" type="service" id=".service_locator.o64zwYl"/>
         <argument key="App\Controller\FaqController:edit" type="service" id=".service_locator.o64zwYl"/>
         <argument key="App\Controller\FaqController:index" type="service" id=".service_locator.5Uu9FjM"/>
         <argument key="App\Controller\FaqController:show" type="service" id=".service_locator.o64zwYl"/>
+        <argument key="App\Controller\FaqController:supprimer" type="service" id=".service_locator.o64zwYl"/>
         <argument key="App\Controller\HomeController:index" type="service" id=".service_locator.kkTiCna"/>
+        <argument key="App\Controller\HomeDisciplineController:activerhomeDiscipline" type="service" id=".service_locator.22Da741"/>
         <argument key="App\Controller\HomeDisciplineController:delete" type="service" id=".service_locator.22Da741"/>
         <argument key="App\Controller\HomeDisciplineController:edit" type="service" id=".service_locator.sPCVzSW"/>
         <argument key="App\Controller\HomeDisciplineController:index" type="service" id=".service_locator.jhT17UT"/>
         <argument key="App\Controller\HomeDisciplineController:new" type="service" id=".service_locator.1cFtlgg"/>
         <argument key="App\Controller\HomeDisciplineController:show" type="service" id=".service_locator.22Da741"/>
+        <argument key="App\Controller\HomeDisciplineController:supprimer" type="service" id=".service_locator.22Da741"/>
+        <argument key="App\Controller\HomeInfoController:activerdiscipline" type="service" id=".service_locator..1y3WyX"/>
         <argument key="App\Controller\HomeInfoController:delete" type="service" id=".service_locator..1y3WyX"/>
-        <argument key="App\Controller\HomeInfoController:edit" type="service" id=".service_locator..1y3WyX"/>
+        <argument key="App\Controller\HomeInfoController:edit" type="service" id=".service_locator.CU1fCIs"/>
         <argument key="App\Controller\HomeInfoController:index" type="service" id=".service_locator.0_dT2PR"/>
+        <argument key="App\Controller\HomeInfoController:new" type="service" id=".service_locator.1cFtlgg"/>
         <argument key="App\Controller\HomeInfoController:show" type="service" id=".service_locator..1y3WyX"/>
+        <argument key="App\Controller\HomeInfoController:supprimer" type="service" id=".service_locator..1y3WyX"/>
         <argument key="App\Controller\HomePicturesController:delete" type="service" id=".service_locator.6OdiqlJ"/>
         <argument key="App\Controller\HomePicturesController:edit" type="service" id=".service_locator.c0WwyLC"/>
         <argument key="App\Controller\HomePicturesController:index" type="service" id=".service_locator..dCZRUn"/>
@@ -6889,12 +6924,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
-      <argument type="service" id=".service_locator.FSVYQ_R"/>
+      <argument type="service" id=".service_locator.wecyE_U"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver" public="false"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver" public="false">
-      <argument type="service" id=".service_locator.FSVYQ_R"/>
+      <argument type="service" id=".service_locator.wecyE_U"/>
     </service>
     <service id=".debug.http_client.inner" class="Symfony\Contracts\HttpClient\HttpClientInterface" public="false">
       <argument type="collection"/>
@@ -6911,10 +6946,12 @@
     <service id=".errored..service_locator.KGenLOu.App\Entity\CategoryForum" class="App\Entity\CategoryForum"/>
     <service id=".errored..service_locator.i2geDc0.App\Entity\ContactMessage" class="App\Entity\ContactMessage"/>
     <service id=".errored..service_locator.Ivtfxr5.App\Entity\Discipline" class="App\Entity\Discipline"/>
+    <service id=".errored..service_locator.Ar59x2x.App\Entity\Discipline" class="App\Entity\Discipline"/>
     <service id=".errored..service_locator.o64zwYl.App\Entity\Faq" class="App\Entity\Faq"/>
     <service id=".errored..service_locator.22Da741.App\Entity\HomeDiscipline" class="App\Entity\HomeDiscipline"/>
     <service id=".errored..service_locator.sPCVzSW.App\Entity\HomeDiscipline" class="App\Entity\HomeDiscipline"/>
     <service id=".errored..service_locator..1y3WyX.App\Entity\HomeInfo" class="App\Entity\HomeInfo"/>
+    <service id=".errored..service_locator.CU1fCIs.App\Entity\HomeInfo" class="App\Entity\HomeInfo"/>
     <service id=".errored..service_locator.6OdiqlJ.App\Entity\HomePictures" class="App\Entity\HomePictures"/>
     <service id=".errored..service_locator.c0WwyLC.App\Entity\HomePictures" class="App\Entity\HomePictures"/>
     <service id=".errored..service_locator.ahw4_vS.App\Entity\HomeSectionForum" class="App\Entity\HomeSectionForum"/>
@@ -7319,7 +7356,7 @@
     <service id="SymfonyCasts\Bundle\ResetPassword\ResetPasswordHelperInterface" alias="symfonycasts.reset_password.helper"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.WaGDpDt" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem" public="false"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.FSVYQ_R"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.wecyE_U"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
     <service id="Psr\Log\LoggerInterface $consoleLogger" alias="monolog.logger.console"/>

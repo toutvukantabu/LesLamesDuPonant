@@ -1,16 +1,12 @@
-{% extends 'base.html.twig' %}
+{% extends 'admin.html.twig' %}
 
-{% block title %}Edit Discipline{% endblock %}
+{% block title %}Editer Discipline{% endblock %}
 
 {% block body %}
-    <h1>Edit Discipline</h1>
-
-    {{ include('discipline/_form.html.twig', {'button_label': 'Update'}) }}
-
-    <a href="{{ path('discipline_index') }}">back to list</a>
-
-    {{ include('discipline/_delete_form.html.twig') }}
-    </div>
+<h4 class="center-align">éditer la discipline</h4>
+    {{ include('discipline/_form.html.twig', {'button_label': 'Maj'})}}
+<a href="{{ path('discipline_index') }}"><button class="btn orange"> liste</button></a>
+</div>
 {{ form_end(form) }}
 </div>
 </div>

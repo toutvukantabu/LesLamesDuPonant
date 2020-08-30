@@ -12,7 +12,7 @@ class HomeSectionForum1Type extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('sectionTitleForum');
+            ->add('sectionTitleForum',TextType::class,['label'=>'Titre de la Section','required'=>false]);
     }
 
     public function configureOptions(OptionsResolver $resolver)

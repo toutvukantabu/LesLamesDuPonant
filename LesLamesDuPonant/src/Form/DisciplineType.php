@@ -3,22 +3,88 @@
 namespace App\Form;
 
 use App\Entity\Discipline;
+use App\Entity\HomeDiscipline;
 use Symfony\Component\Form\AbstractType;
+use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use Symfony\Component\Validator\Constraints\File;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-
+use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 class DisciplineType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('imageOneDiscipline')
-            ->add('imageTwoDiscipline')
-            ->add('imageThreeDiscipline')
-            ->add('disciplinetitle')
-            ->add('disciplineDescription')
-            ->add('nameInstructor')
-            ->add('photoInstructor')
+        ->add('relationHomeDiscipline', EntityType::class,[
+            'class'=> HomeDiscipline::class,
+            'label'=>'Section de la discipline affiliée',
+            'choice_label'=> 'nameDiscipline',
+        ])
+            ->add('disciplinetitle',TextType::class,['label'=>'Nom de la discipline'])
+            ->add('disciplineDescription',CKEditorType::class,['label'=>' '])
+            ->add('nameInstructor',TextType::class,['label'=>'Nom et prénom de l\'instructeur'])
+            ->add('photoInstructor',FileType::class, [
+                'label' => ' ',
+                'mapped' => false,
+                'required' => false,
+                'constraints' => [
+                    new File([
+                        'maxSize' => '1024k',
+                        'mimeTypes' => [
+                            'image/*',
+                        ],
+                        'mimeTypesMessage' => 'Veuillez entrer un format de document valide',
+                    ])
+                ],
+            ])
+            
+          ->add('imageOneDiscipline',FileType::class, [
+            'label' => ' ',
+            'mapped' => false,
+            'required' => false,
+            'constraints' => [
+                new File([
+                    'maxSize' => '1024k',
+                    'mimeTypes' => [
+                        'image/*',
+                    ],
+                    'mimeTypesMessage' => 'Veuillez entrer un format de document valide',
+                ])
+            ],
+        ])
+        
+        ->add('imageTwoDiscipline',FileType::class, [
+            'label' => ' ',
+            'mapped' => false,
+            'required' => false,
+            'constraints' => [
+                new File([
+                    'maxSize' => '1024k',
+                    'mimeTypes' => [
+                        'image/*',
+                    ],
+                    'mimeTypesMessage' => 'Veuillez entrer un format de document valide',
+                ])
+            ],
+        ])
+        
+        ->add('imageThreeDiscipline',FileType::class, [
+            'label' => ' ',
+            'mapped' => false,
+            'required' => false,
+            'constraints' => [
+                new File([
+                    'maxSize' => '1024k',
+                    'mimeTypes' => [
+                        'image/*',
+                    ],
+                    'mimeTypesMessage' => 'Veuillez entrer un format de document valide',
+                ])
+            ],
+        ])
         ;
     }
 

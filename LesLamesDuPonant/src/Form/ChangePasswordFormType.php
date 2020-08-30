@@ -20,7 +20,7 @@ class ChangePasswordFormType extends AbstractType
                 'first_options' => [
                     'constraints' => [
                         new NotBlank([
-                            'message' => 'Please enter a password',
+                            'message' => 'Entrez votre mot de passe',
                         ]),
                         new Length([
                             'min' => 6,

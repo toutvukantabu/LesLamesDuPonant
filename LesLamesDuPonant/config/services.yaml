@@ -11,6 +11,7 @@ parameters:
     homepicture_directory: '%kernel.project_dir%/public/uploads/parallax'
     other_directory: '%kernel.project_dir%/public/uploads/other'
     leslamesduponant_directory: '%kernel.project_dir%/public/uploads/lldp'
+    info_directory: '%kernel.project_dir%/public/uploads/info'
 
 
 services:
