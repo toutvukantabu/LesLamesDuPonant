@@ -1,0 +1,101 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello LesDisciplinesController!{% endblock %}
+
+{% block body %}
+
+{% for discipline in disciplines %}
+
+{% if discipline.active == 1 %}
+
+<div class="container">
+    <div class="carousel carousel-slider center " data-indicators="true">
+        <div class="carousel-fixed-item center middle-indicator">
+            <div class="left">
+                <a href="Previo"
+                    class="movePrevCarousel middle-indicator-text waves-effect waves-light content-indicator"><i
+                        class="material-icons left  middle-indicator-text">chevron_left</i></a>
+            </div>
+
+            <div class="right">
+                <a href="Siguiente"
+                    class=" moveNextCarousel middle-indicator-text waves-effect waves-light content-indicator"><i
+                        class="material-icons right middle-indicator-text">chevron_right</i></a>
+            </div>
+        </div>
+        <div class="carousel-item white-text" href="#one!">
+            <img src="{{asset('/uploads/discipline/') ~ discipline.imageOneDiscipline }}" alt=""
+                class="responsive-image ">
+
+        </div>
+        <div class="carousel-item white-text" href="#two!">
+            <img src="{{asset('/uploads/discipline/') ~ discipline.photoInstructor }}" alt="" class="responsive-image ">
+        </div>
+        <div class="carousel-item  white-text" href="#three!">
+            <img src="{{asset('/uploads/discipline/') ~  discipline.imageThreeDiscipline }}" alt=""
+                class="responsive-image ">
+        </div>
+    </div>
+    <h4 class="center-align">{{ discipline.disciplinetitle}}</h4>
+    <div class="row">
+        <div class="col l8">
+
+            {{ discipline.disciplineDescription|raw}}
+
+        </div>
+        <div class="col l4">
+            <h5 class="center-align">Votre instructeur:</h5>
+            <img src="{{asset('/uploads/discipline/') ~ discipline.photoInstructor }}" alt=""
+                class="responsive-image img-discipline">
+            <h5>{{ discipline.nameInstructor}}</h5>
+        </div>
+    </div>
+
+</div>
+<div class="container">
+    <div class="carousel carousel-slider center " data-indicators="true">
+        <div class="carousel-fixed-item center middle-indicator">
+            <div class="left">
+                <a href="Previo"
+                    class="movePrevCarousel middle-indicator-text waves-effect waves-light content-indicator"><i
+                        class="material-icons left  middle-indicator-text">chevron_left</i></a>
+            </div>
+
+            <div class="right">
+                <a href="Siguiente"
+                    class=" moveNextCarousel middle-indicator-text waves-effect waves-light content-indicator"><i
+                        class="material-icons right middle-indicator-text">chevron_right</i></a>
+            </div>
+        </div>
+        <div class="carousel-item white-text" href="#one!">
+            <img src="{{asset('/uploads/discipline/') ~ discipline.imageOneDiscipline }}" alt=""
+                class="responsive-image ">
+
+        </div>
+        <div class="carousel-item white-text" href="#two!">
+            <img src="{{asset('/uploads/discipline/') ~ discipline.photoInstructor }}" alt="" class="responsive-image ">
+        </div>
+        <div class="carousel-item  white-text" href="#three!">
+            <img src="{{asset('/uploads/discipline/') ~  discipline.imageThreeDiscipline }}" alt=""
+                class="responsive-image ">
+        </div>
+    </div>
+    <h4 class="center-align">{{ discipline.disciplinetitle}}</h4>
+    <div class="row">
+
+        <div class="col l4">
+            <h5 class="center-align">Votre instructeur:</h5>
+            <img src="{{asset('/uploads/discipline/') ~ discipline.photoInstructor }}" alt=""
+                class="responsive-image img-discipline">
+            <h5>{{ discipline.nameInstructor}}</h5>
+        </div>
+        <div class="col l8">
+
+            {{ discipline.disciplineDescription|raw}}
+
+        </div>
+    </div></div>
+    {% endif %}
+    {% endfor %}
+
+    {% endblock %}

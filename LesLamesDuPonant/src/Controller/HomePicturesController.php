@@ -269,4 +269,11 @@ class HomePicturesController extends AbstractController
            
         }
 
+        public function displayLogo(HomePicturesRepository $homePicturesRepository): Response
+    {
+        return $this->render('home_pictures/logo.html.twig', [
+            'logo' => $homePicturesRepository->findAll(),
+        ]);
+    }
+
 }

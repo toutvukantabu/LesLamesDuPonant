@@ -1,0 +1,7 @@
+{% extends 'default.html.twig' %}
+{% block title %}HomePictures index{% endblock %}
+{% block body%}
+        {% for home_picture in logo %}
+                <img src="{{ asset('uploads/parallax/' ~  home_picture.homeLogoPicture )}}">
+        {% endfor %}
+{% endblock %}
