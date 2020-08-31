@@ -91,4 +91,31 @@ class TimeStampController extends AbstractController
 
         return $this->redirectToRoute('time_stamp_index');
     }
+        /**
+     * @Route("/supprimer/{id}", name="supprimer_time_stamp")
+     */
+    public function supprimer(  TimeStamp $timeStamp){
+
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->remove(  $timeStamp);
+        $entityManager->flush();
+        
+        $this->addFlash(
+            'how we are',
+            'supprimé avec succes!');
+        return $this->redirectToRoute('home_pictures_index');
+    }
+    
+         /**
+         * @Route("/activer/{id}", name="activer_time_stamp")
+         */
+        public function activer(  TimeStamp $timeStamp){
+    
+              $timeStamp->setActive((  $timeStamp->getActive())? false : true);
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist(  $timeStamp);
+            $entityManager->flush();
+            return new Response ('true');
+           
+        }
 }

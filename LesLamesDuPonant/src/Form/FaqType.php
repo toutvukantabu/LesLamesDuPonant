@@ -14,8 +14,14 @@ class FaqType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('titleFaq',TextType::class,['label'=>'Titre de la FAQ'])
-            ->add('faqDescription', CKEditorType::class,['label'=> ' '])
+            ->add('titleFaq',TextType::class,[
+                'label'=>'Titre de la FAQ',
+                'required'=>false,
+                ])
+            ->add('faqDescription', CKEditorType::class,[
+                'label'=> ' ',
+                'required'=>false,
+                ])
         ;
     }
 

@@ -32,6 +32,11 @@ class LesLamesDuPonant
      */
     private $pictureLesLamesDuponant;
 
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $active;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -69,6 +74,18 @@ class LesLamesDuPonant
     public function setPictureLesLamesDuponant(?string $pictureLesLamesDuponant): self
     {
         $this->pictureLesLamesDuponant = $pictureLesLamesDuponant;
+
+        return $this;
+    }
+
+    public function getActive(): ?bool
+    {
+        return $this->active;
+    }
+
+    public function setActive(?bool $active): self
+    {
+        $this->active = $active;
 
         return $this;
     }

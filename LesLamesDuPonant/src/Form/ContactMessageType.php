@@ -19,12 +19,15 @@ class ContactMessageType extends AbstractType
         $builder
             ->add('authorNameContactMessage', TextType::class,[
                 'label'=> 'Prénom',
+                'required'=>true,
             ])
             ->add('authorLastNamecContactMessage', TextType::class,[
                 'label'=>'Nom de famille',
+                'required'=>true,
             ])
             ->add('emailContactMessage', EmailType::class,[
                 'label'=> 'Votre email',
+                'required'=>true,
                              ])
 
             ->add('categoryContactMessage', ChoiceType::class, [
@@ -41,7 +44,8 @@ class ContactMessageType extends AbstractType
             ])
             ->add('contentContactMessage', TextareaType::class,[
                 
-                    'label'=>'contenu de votre message'
+                    'label'=>'contenu de votre message',
+                    'required'=>true,
                 
             ])
           

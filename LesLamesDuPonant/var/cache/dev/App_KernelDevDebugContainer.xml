@@ -6074,9 +6074,10 @@
         <argument key="authenticationUtils" type="service" id="security.authentication_utils"/>
       </argument>
     </service>
-    <service id=".service_locator.fFZRktq" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.GMfVkLf" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="categoryForumRepository" type="service" id="App\Repository\CategoryForumRepository"/>
         <argument key="subjectForumRepository" type="service" id="App\Repository\SubjectForumRepository"/>
       </argument>
     </service>
@@ -6117,7 +6118,7 @@
         <argument key="user" type="service" id=".errored..service_locator.ikUdgSe.App\Entity\User"/>
       </argument>
     </service>
-    <service id=".service_locator.cnTzcwA" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.6RKT878" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\AMHEController::activerAMHE" type="service" id=".service_locator.Yu9Pcj8"/>
@@ -6187,31 +6188,41 @@
         <argument key="App\Controller\HowWeAreController::show" type="service" id=".service_locator.8iRGIK4"/>
         <argument key="App\Controller\HowWeAreController::supprimer" type="service" id=".service_locator.8iRGIK4"/>
         <argument key="App\Controller\LesAMHEController::index" type="service" id=".service_locator.IM1ypip"/>
+        <argument key="App\Controller\LesLamesDuPonantController::activer" type="service" id=".service_locator.6WWz9RI"/>
         <argument key="App\Controller\LesLamesDuPonantController::delete" type="service" id=".service_locator.6WWz9RI"/>
         <argument key="App\Controller\LesLamesDuPonantController::edit" type="service" id=".service_locator.qFXpODI"/>
         <argument key="App\Controller\LesLamesDuPonantController::index" type="service" id=".service_locator.2MFkbty"/>
         <argument key="App\Controller\LesLamesDuPonantController::new" type="service" id=".service_locator.1cFtlgg"/>
         <argument key="App\Controller\LesLamesDuPonantController::show" type="service" id=".service_locator.6WWz9RI"/>
+        <argument key="App\Controller\LesLamesDuPonantController::supprimer" type="service" id=".service_locator.6WWz9RI"/>
+        <argument key="App\Controller\MedievalFamilyController::activer" type="service" id=".service_locator.F0JKktY"/>
         <argument key="App\Controller\MedievalFamilyController::delete" type="service" id=".service_locator.F0JKktY"/>
         <argument key="App\Controller\MedievalFamilyController::edit" type="service" id=".service_locator.F0JKktY"/>
         <argument key="App\Controller\MedievalFamilyController::index" type="service" id=".service_locator.jkCPVev"/>
         <argument key="App\Controller\MedievalFamilyController::show" type="service" id=".service_locator.F0JKktY"/>
+        <argument key="App\Controller\MedievalFamilyController::supprimer" type="service" id=".service_locator.F0JKktY"/>
+        <argument key="App\Controller\MessageForumController::activer" type="service" id=".service_locator.JG2Goki"/>
         <argument key="App\Controller\MessageForumController::delete" type="service" id=".service_locator.JG2Goki"/>
         <argument key="App\Controller\MessageForumController::edit" type="service" id=".service_locator.JG2Goki"/>
         <argument key="App\Controller\MessageForumController::index" type="service" id=".service_locator.E4xZ27q"/>
         <argument key="App\Controller\MessageForumController::show" type="service" id=".service_locator.JG2Goki"/>
+        <argument key="App\Controller\MessageForumController::supprimer" type="service" id=".service_locator.JG2Goki"/>
         <argument key="App\Controller\RegistrationController::register" type="service" id=".service_locator.bifUV3P"/>
         <argument key="App\Controller\ResetPasswordController::request" type="service" id=".service_locator.A0rcl1e"/>
         <argument key="App\Controller\ResetPasswordController::reset" type="service" id=".service_locator.j5_bHjD"/>
         <argument key="App\Controller\SecurityController::login" type="service" id=".service_locator.xA8Fw_."/>
+        <argument key="App\Controller\SubjectForumController::activer" type="service" id=".service_locator.0RFo5YJ"/>
         <argument key="App\Controller\SubjectForumController::delete" type="service" id=".service_locator.0RFo5YJ"/>
         <argument key="App\Controller\SubjectForumController::edit" type="service" id=".service_locator.0RFo5YJ"/>
-        <argument key="App\Controller\SubjectForumController::index" type="service" id=".service_locator.fFZRktq"/>
+        <argument key="App\Controller\SubjectForumController::index" type="service" id=".service_locator.GMfVkLf"/>
         <argument key="App\Controller\SubjectForumController::show" type="service" id=".service_locator.0RFo5YJ"/>
+        <argument key="App\Controller\SubjectForumController::supprimer" type="service" id=".service_locator.0RFo5YJ"/>
+        <argument key="App\Controller\TimeStampController::activer" type="service" id=".service_locator.bAyv6wa"/>
         <argument key="App\Controller\TimeStampController::delete" type="service" id=".service_locator.bAyv6wa"/>
         <argument key="App\Controller\TimeStampController::edit" type="service" id=".service_locator.bAyv6wa"/>
         <argument key="App\Controller\TimeStampController::index" type="service" id=".service_locator.9DTT7Ee"/>
         <argument key="App\Controller\TimeStampController::show" type="service" id=".service_locator.bAyv6wa"/>
+        <argument key="App\Controller\TimeStampController::supprimer" type="service" id=".service_locator.bAyv6wa"/>
         <argument key="App\Controller\UserController::delete" type="service" id=".service_locator.hEwcf7A"/>
         <argument key="App\Controller\UserController::edit" type="service" id=".service_locator.ikUdgSe"/>
         <argument key="App\Controller\UserController::index" type="service" id=".service_locator.FXD6KYr"/>
@@ -6289,31 +6300,41 @@
         <argument key="App\Controller\HowWeAreController:show" type="service" id=".service_locator.8iRGIK4"/>
         <argument key="App\Controller\HowWeAreController:supprimer" type="service" id=".service_locator.8iRGIK4"/>
         <argument key="App\Controller\LesAMHEController:index" type="service" id=".service_locator.IM1ypip"/>
+        <argument key="App\Controller\LesLamesDuPonantController:activer" type="service" id=".service_locator.6WWz9RI"/>
         <argument key="App\Controller\LesLamesDuPonantController:delete" type="service" id=".service_locator.6WWz9RI"/>
         <argument key="App\Controller\LesLamesDuPonantController:edit" type="service" id=".service_locator.qFXpODI"/>
         <argument key="App\Controller\LesLamesDuPonantController:index" type="service" id=".service_locator.2MFkbty"/>
         <argument key="App\Controller\LesLamesDuPonantController:new" type="service" id=".service_locator.1cFtlgg"/>
         <argument key="App\Controller\LesLamesDuPonantController:show" type="service" id=".service_locator.6WWz9RI"/>
+        <argument key="App\Controller\LesLamesDuPonantController:supprimer" type="service" id=".service_locator.6WWz9RI"/>
+        <argument key="App\Controller\MedievalFamilyController:activer" type="service" id=".service_locator.F0JKktY"/>
         <argument key="App\Controller\MedievalFamilyController:delete" type="service" id=".service_locator.F0JKktY"/>
         <argument key="App\Controller\MedievalFamilyController:edit" type="service" id=".service_locator.F0JKktY"/>
         <argument key="App\Controller\MedievalFamilyController:index" type="service" id=".service_locator.jkCPVev"/>
         <argument key="App\Controller\MedievalFamilyController:show" type="service" id=".service_locator.F0JKktY"/>
+        <argument key="App\Controller\MedievalFamilyController:supprimer" type="service" id=".service_locator.F0JKktY"/>
+        <argument key="App\Controller\MessageForumController:activer" type="service" id=".service_locator.JG2Goki"/>
         <argument key="App\Controller\MessageForumController:delete" type="service" id=".service_locator.JG2Goki"/>
         <argument key="App\Controller\MessageForumController:edit" type="service" id=".service_locator.JG2Goki"/>
         <argument key="App\Controller\MessageForumController:index" type="service" id=".service_locator.E4xZ27q"/>
         <argument key="App\Controller\MessageForumController:show" type="service" id=".service_locator.JG2Goki"/>
+        <argument key="App\Controller\MessageForumController:supprimer" type="service" id=".service_locator.JG2Goki"/>
         <argument key="App\Controller\RegistrationController:register" type="service" id=".service_locator.bifUV3P"/>
         <argument key="App\Controller\ResetPasswordController:request" type="service" id=".service_locator.A0rcl1e"/>
         <argument key="App\Controller\ResetPasswordController:reset" type="service" id=".service_locator.j5_bHjD"/>
         <argument key="App\Controller\SecurityController:login" type="service" id=".service_locator.xA8Fw_."/>
+        <argument key="App\Controller\SubjectForumController:activer" type="service" id=".service_locator.0RFo5YJ"/>
         <argument key="App\Controller\SubjectForumController:delete" type="service" id=".service_locator.0RFo5YJ"/>
         <argument key="App\Controller\SubjectForumController:edit" type="service" id=".service_locator.0RFo5YJ"/>
-        <argument key="App\Controller\SubjectForumController:index" type="service" id=".service_locator.fFZRktq"/>
+        <argument key="App\Controller\SubjectForumController:index" type="service" id=".service_locator.GMfVkLf"/>
         <argument key="App\Controller\SubjectForumController:show" type="service" id=".service_locator.0RFo5YJ"/>
+        <argument key="App\Controller\SubjectForumController:supprimer" type="service" id=".service_locator.0RFo5YJ"/>
+        <argument key="App\Controller\TimeStampController:activer" type="service" id=".service_locator.bAyv6wa"/>
         <argument key="App\Controller\TimeStampController:delete" type="service" id=".service_locator.bAyv6wa"/>
         <argument key="App\Controller\TimeStampController:edit" type="service" id=".service_locator.bAyv6wa"/>
         <argument key="App\Controller\TimeStampController:index" type="service" id=".service_locator.9DTT7Ee"/>
         <argument key="App\Controller\TimeStampController:show" type="service" id=".service_locator.bAyv6wa"/>
+        <argument key="App\Controller\TimeStampController:supprimer" type="service" id=".service_locator.bAyv6wa"/>
         <argument key="App\Controller\UserController:delete" type="service" id=".service_locator.hEwcf7A"/>
         <argument key="App\Controller\UserController:edit" type="service" id=".service_locator.ikUdgSe"/>
         <argument key="App\Controller\UserController:index" type="service" id=".service_locator.FXD6KYr"/>
@@ -6938,12 +6959,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
-      <argument type="service" id=".service_locator.cnTzcwA"/>
+      <argument type="service" id=".service_locator.6RKT878"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver" public="false"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver" public="false">
-      <argument type="service" id=".service_locator.cnTzcwA"/>
+      <argument type="service" id=".service_locator.6RKT878"/>
     </service>
     <service id=".debug.http_client.inner" class="Symfony\Contracts\HttpClient\HttpClientInterface" public="false">
       <argument type="collection"/>
@@ -7370,7 +7391,7 @@
     <service id="SymfonyCasts\Bundle\ResetPassword\ResetPasswordHelperInterface" alias="symfonycasts.reset_password.helper"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.WaGDpDt" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem" public="false"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.cnTzcwA"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.6RKT878"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
     <service id="Psr\Log\LoggerInterface $consoleLogger" alias="monolog.logger.console"/>

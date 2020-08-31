@@ -22,10 +22,20 @@ class DisciplineType extends AbstractType
             'class'=> HomeDiscipline::class,
             'label'=>'Section de la discipline affiliée',
             'choice_label'=> 'nameDiscipline',
+            'required'=>true,
         ])
-            ->add('disciplinetitle',TextType::class,['label'=>'Nom de la discipline'])
-            ->add('disciplineDescription',CKEditorType::class,['label'=>' '])
-            ->add('nameInstructor',TextType::class,['label'=>'Nom et prénom de l\'instructeur'])
+            ->add('disciplinetitle',TextType::class,[
+                'label'=>'Nom de la discipline',
+                'required'=>true
+                ])
+            ->add('disciplineDescription',CKEditorType::class,[
+                'label'=>' ',
+                'required'=>true,
+                ])
+            ->add('nameInstructor',TextType::class,['
+            label'=>'Nom et prénom de l\'instructeur',
+            'required'=>true,
+            ])
             ->add('photoInstructor',FileType::class, [
                 'label' => ' ',
                 'mapped' => false,

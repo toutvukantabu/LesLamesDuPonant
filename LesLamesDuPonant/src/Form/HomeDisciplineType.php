@@ -23,6 +23,7 @@ class HomeDisciplineType extends AbstractType
                 'class' => Discipline::class,
                 'label' => 'Section de la discipline affiliée',
                 'choice_label' => 'disciplinetitle',
+                'required'=>false,
             ])
             ->add('nameDiscipline', TextType::class, ['label' => 'Titre de la discipline'])
             ->add('descriptionDiscipline', CKEditorType::class, ['label' => ' '])

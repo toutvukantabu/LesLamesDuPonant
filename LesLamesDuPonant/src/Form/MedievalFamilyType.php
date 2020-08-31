@@ -14,7 +14,9 @@ class MedievalFamilyType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('titleMedievalFamily', TextType::class,['label' => 'Titre famille médiéval'])
+            ->add('titleMedievalFamily', TextType::class,['label' => 
+            'Titre famille médiéval',
+            'required' => false,])
             ->add('descriptionMedievalFamily', CKEditorType::class)
         ;
     }

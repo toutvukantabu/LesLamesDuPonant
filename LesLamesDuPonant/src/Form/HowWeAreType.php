@@ -17,8 +17,14 @@ class HowWeAreType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('titleHowWeAre', TextType::class,['label'=>'Titre'])
-            ->add('descriptionHowWeAre', CKEditorType::class,['label'=>'  '])
+            ->add('titleHowWeAre', TextType::class,[
+                'label'=>'Titre',
+                'required' => false,
+                ])
+            ->add('descriptionHowWeAre', CKEditorType::class,[
+                'label'=>'  ',
+                'required' => false,
+                ])
             // ->add('PhotoHowWeAre',FileType::class, [
             //     'label' => ' ',
             //     'mapped' => false,

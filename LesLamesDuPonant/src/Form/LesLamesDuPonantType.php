@@ -16,7 +16,10 @@ class LesLamesDuPonantType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('titleLLDP', TextType::class,['label' => 'Titre Lames Du Ponant'])
+            ->add('titleLLDP', TextType::class,[
+                'label' => 'Titre Lames Du Ponant',
+                'required' => false,
+                ])
             ->add('desciptionLLDP', CKEditorType::class,['label' => 'Déscription de l\'association'])
             ->add ('pictureLesLamesDuPonant',FileType::class, [
                 'label' => ' ',

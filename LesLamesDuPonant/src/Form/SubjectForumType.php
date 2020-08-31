@@ -19,9 +19,12 @@ class SubjectForumType extends AbstractType
         ->add('categorySubjectForum', EntityType::class,[
             'class'=> CategoryForum::class,
             'label' => 'Choissisez la catégorie affiliée',
-            'choice_label' => 'titleCategory'
+            'choice_label' => 'titleCategory',
+            'required' => false,
     ])
-            ->add('titleSubjectForum',TextType::class,['label'=>'Titre de la nouvelle catégorie','required'=>false])
+            ->add('titleSubjectForum',TextType::class,[
+                'label'=>'Titre de la nouvelle catégorie',
+                'required'=>false])
             ->add('contentSubjectForum',CKEditorType::class)
            ;
     }

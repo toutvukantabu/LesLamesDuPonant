@@ -93,4 +93,31 @@ class MessageForumController extends AbstractController
 
         return $this->redirectToRoute('message_forum_index');
     }
+        /**
+     * @Route("/supprimer/{id}", name="supprimer_message_forum")
+     */
+    public function supprimer(  MessageForum $messageForum){
+
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->remove( $messageForum);
+        $entityManager->flush();
+        
+        $this->addFlash(
+            'how we are',
+            'supprimé avec succes!');
+        return $this->redirectToRoute('home_pictures_index');
+    }
+    
+         /**
+         * @Route("/activer/{id}", name="activer_message_forum")
+         */
+        public function activer(  MessageForum $messageForum){
+    
+             $messageForum->setActive(( $messageForum->getActive())? false : true);
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist( $messageForum);
+            $entityManager->flush();
+            return new Response ('true');
+           
+        }
 }

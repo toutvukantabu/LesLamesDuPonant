@@ -125,4 +125,31 @@ class LesLamesDuPonantController extends AbstractController
 
         return $this->redirectToRoute('les_lames_du_ponant_index');
     }
+    /**
+     * @Route("/supprimer/{id}", name="supprimer_les_lames_du_ponant")
+     */
+    public function supprimer(  LesLamesDuPonant $lesLamesDuPonant){
+
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->remove( $lesLamesDuPonant);
+        $entityManager->flush();
+        
+        $this->addFlash(
+            'how we are',
+            'supprimé avec succes!');
+        return $this->redirectToRoute('home_pictures_index');
+    }
+    
+         /**
+         * @Route("/activer/{id}", name="activer_les_lames_du_ponant")
+         */
+        public function activer(  LesLamesDuPonant $lesLamesDuPonant){
+    
+             $lesLamesDuPonant->setActive(( $lesLamesDuPonant->getActive())? false : true);
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist( $lesLamesDuPonant);
+            $entityManager->flush();
+            return new Response ('true');
+           
+        }
 }

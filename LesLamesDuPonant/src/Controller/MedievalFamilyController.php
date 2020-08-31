@@ -91,4 +91,31 @@ class MedievalFamilyController extends AbstractController
 
         return $this->redirectToRoute('medieval_family_index');
     }
+        /**
+     * @Route("/supprimer/{id}", name="supprimer_medieval_family")
+     */
+    public function supprimer( MedievalFamily $medievalFamily){
+
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->remove( $medievalFamily);
+        $entityManager->flush();
+        
+        $this->addFlash(
+            'how we are',
+            'supprimé avec succes!');
+        return $this->redirectToRoute('home_pictures_index');
+    }
+    
+         /**
+         * @Route("/activer/{id}", name="activer_medieval_family")
+         */
+        public function activer(  MedievalFamily $medievalFamily){
+    
+             $medievalFamily->setActive(( $medievalFamily->getActive())? false : true);
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist( $medievalFamily);
+            $entityManager->flush();
+            return new Response ('true');
+           
+        }
 }

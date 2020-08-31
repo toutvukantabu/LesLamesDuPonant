@@ -17,7 +17,8 @@ class HomeInfoType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('titleInfo',TextType::class,['label'=>'Titre Info'])
+            ->add('titleInfo',TextType::class,['label'=>'Titre Info'
+            ])
             ->add('descriptionInfo',CKEditorType::class,['label'=>' '])
             ->add('titleCost',TextType::class,['label'=>'Titre Adhésion'])
             ->add('descriptionCost',CKEditorType::class,['label'=>' '])

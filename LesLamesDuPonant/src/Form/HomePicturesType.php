@@ -29,20 +29,20 @@ class HomePicturesType extends AbstractType
                 ],
             ])
 
-            ->add('homeTitlePicture', FileType::class, [
-                'label' => ' ',
-                'mapped' => false,
-                'required' => false,
-                'constraints' => [
-                    new File([
-                        'maxSize' => '1024k',
-                        'mimeTypes' => [
-                            'image/*',
-                        ],
-                        'mimeTypesMessage' => 'Veuillez entrer un format de document valide',
-                    ])
-                ],
-            ])
+            // ->add('homeTitlePicture', FileType::class, [
+            //     'label' => ' ',
+            //     'mapped' => false,
+            //     'required' => false,
+            //     'constraints' => [
+            //         new File([
+            //             'maxSize' => '1024k',
+            //             'mimeTypes' => [
+            //                 'image/*',
+            //             ],
+            //             'mimeTypesMessage' => 'Veuillez entrer un format de document valide',
+            //         ])
+            //     ],
+            // ])
 
             ->add('homeParallax1', FileType::class, [
                 'label' => ' ',
