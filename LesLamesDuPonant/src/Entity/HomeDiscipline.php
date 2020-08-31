@@ -32,6 +32,16 @@ class HomeDiscipline
      */
     private $descriptionDiscipline;
 
+    /**
+     * @ORM\OneToOne(targetEntity=Discipline::class, mappedBy="relationHomeDiscipline", cascade={"persist", "remove"})
+     */
+    private $relationDiscipline;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $active;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -69,6 +79,36 @@ class HomeDiscipline
     public function setDescriptionDiscipline(?string $descriptionDiscipline): self
     {
         $this->descriptionDiscipline = $descriptionDiscipline;
+
+        return $this;
+    }
+
+    public function getRelationDiscipline(): ?Discipline
+    {
+        return $this->relationDiscipline;
+    }
+
+    public function setRelationDiscipline(?Discipline $relationDiscipline): self
+    {
+        $this->relationDiscipline = $relationDiscipline;
+
+        // set (or unset) the owning side of the relation if necessary
+        $newRelationHomeDiscipline = null === $relationDiscipline ? null : $this;
+        if ($relationDiscipline->getRelationHomeDiscipline() !== $newRelationHomeDiscipline) {
+            $relationDiscipline->setRelationHomeDiscipline($newRelationHomeDiscipline);
+        }
+
+        return $this;
+    }
+
+    public function getActive(): ?bool
+    {
+        return $this->active;
+    }
+
+    public function setActive(?bool $active): self
+    {
+        $this->active = $active;
 
         return $this;
     }

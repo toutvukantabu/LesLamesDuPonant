@@ -1,13 +1,15 @@
-{% extends 'default.html.twig' %}
+{% extends 'admin.html.twig' %}
 
-{% block title %}edit MessageForum{% endblock %}
+{% block title %}Éditer Message Forum{% endblock %}
 
 {% block body %}
-    <h4 class="center-align">éditer MessageForum</h4>
+    <h4 class="center-align">éditer Message Forum</h4>
 
     {{ include('message_forum/_form.html.twig', {'button_label': 'maj'}) }}
 
     <a href="{{ path('message_forum_index') }}"><button class="btn orange"> liste</button></a>
-
-    {{ include('message_forum/_delete_form.html.twig') }}
+</div>
+{{ form_end(form) }}
+</div>
+</div>
 {% endblock %}

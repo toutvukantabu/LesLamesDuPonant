@@ -1,4 +1,4 @@
-{% extends 'default.html.twig' %}
+{% extends 'admin.html.twig' %}
 
 {% block title %}ContactMessage
 {% endblock %}
@@ -10,30 +10,30 @@
 
 <div class="container">
   <div class="row formRegister z-depth-5">
-    <div class="input-field col xl6 l6 m6 s12">
+    <div class="input-field col xl6 l6 m12 s12">
       <input disabled id="first_name" type="text" class="validate">
       <label for="first_name">{{ contact_message.authorNameContactMessage }}</label>
     </div>
-    <div class="input-field col col xl6 l6 m6 s12">
+    <div class="input-field col col xl6 l6 m12 s12">
       <input disabled type="text" class="validate">
       <label for="last_name" color>{{ contact_message.authorLastNamecContactMessage }}</label>
     </div>
 
 
-    <div class="input-field col col xl6 l6 m6 s12">
+    <div class="input-field col col xl6 l6 m12 s12">
       <input disabled id="first_name" type="text" class="validate">
       <label>{{ contact_message.dateContactMessage ? contact_message.dateContactMessage|date('Y-m-d H:i:s') : '' }}</label>
     </div>
-    <div class="input-field col col xl6 l6 m6 s12">
+    <div class="input-field col col xl6 l6 m12 s12">
       <input disabled type="email" class="validate">
       <label color>{{ contact_message.emailContactMessage }}</label>
     </div>
-    <div class="input-field col col xl6 l6 m6 s12">
+    <div class="input-field col col xl12 l12 m12 s12">
       <textarea disabled id="textarea1" class="materialize-textarea"></textarea>
       <label for="textarea1">{{ contact_message.contentContactMessage|raw }}</label>
     </div>
     <div class="btnEdit">
-      <a href="">
+      <a href="mailto:{{ contact_message.emailContactMessage }}">
         <button class="btn">répondre</button>
       </a>
 

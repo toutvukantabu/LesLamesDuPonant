@@ -6,13 +6,14 @@ use App\Entity\HomeSectionForum;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 
-class HomeSectionForum1Type extends AbstractType
+class HomeSectionForumType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('sectionTitleForum');
+            ->add('sectionTitleForum',TextType::class,['label'=>'Titre de la Section','required'=>false]);
     }
 
     public function configureOptions(OptionsResolver $resolver)

@@ -1,39 +1,92 @@
-{% extends 'default.html.twig' %}
+{% extends 'admin.html.twig' %}
 
 {% block title %}MessageForum index{% endblock %}
 
 {% block body %}
-    <h4 class="center-align">MessageForum index</h4>
-
-    <table class="table">
+  {% for message in app.flashes('how we are') %}
+<div class="flash-notice">
+    {{ message }}
+</div>
+{% endfor %}
+<h4 class="center-align">Gestion message Forum</h4>
+<div class="container">
+    <a href="{{ path('message_forum_new') }}" class="btn-floating btn-large waves-effect waves-light blue"><i
+            class="material-icons">add</i></a>
+    <table class="striped centered responsive-table">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>ContentMessageForum</th>
-                <th>DatePublicationMessageForum</th>
-                <th>PhotoMessageForum</th>
-                <th>action</th>
+              <th>Id</th>
+                <th>date</th>
+                <th>Description</th>
+                <th>Activation</th>
+                <th>Modifier</th>
             </tr>
         </thead>
         <tbody>
         {% for message_forum in message_forums %}
             <tr>
                 <td>{{ message_forum.id }}</td>
-                <td>{{ message_forum.ContentMessageForum }}</td>
+                <td>{{ message_forum.ContentMessageForum |striptags|u.truncate(20)|raw}}</td>
                 <td>{{ message_forum.datePublicationMessageForum ? message_forum.datePublicationMessageForum|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ message_forum.photoMessageForum }}</td>
+                {# <td>{{ message_forum.photoMessageForum }}</td> #}
+                 <td>
+                    <div class="switch">
+                        <label>
+                            desactiver
+                            <input type="checkbox" {{(message_forum.active) ? 'checked' : ''}} data-id="{{message_forum.id}}">
+                            <span class="lever"></span>
+                            activer
+                        </label>
+                    </div>
+                </td>
                 <td>
-                    <a href="{{ path('message_forum_show', {'id': message_forum.id}) }}">voir</a>
-                    <a href="{{ path('message_forum_edit', {'id': message_forum.id}) }}">éditer</a>
+                    <div>
+                        <a href="{{ path('message_forum_edit', {'id': message_forum.id}) }}" class="btn-floating green"><i
+                                class="material-icons">create</i></a>
+                        <a class=" btn-floating modal-trigger red" href="#modal-delete" data-id="{{message_forum.id}}"
+                            data-titre ="{{message_forum.id }}" data-target="modal-delete"><i
+                                class="material-icons">delete</i></a>
+                    </div>
                 </td>
             </tr>
-        {% else %}
+            {% else %}
             <tr>
-                <td colspan="5">Aucun enregistrement trouvé.</td>
+                <td colspan="5">pas d'entrée trouvée</td>
             </tr>
-        {% endfor %}
+            {% endfor %}
         </tbody>
     </table>
+</div>
+<!-- Modal Structure -->
+<div id="modal-delete" class="modal">
+    <div>
+        <h4 class="center-align">Suppression </h4>
+        <p class="modal-content center-align">êtes vous sûre de vouloir supprimer</p>
+    </div>
+    <div class="modal-footer">
+        <a href="#!" class="modal-action modal-close waves-effect waves-green btn green">valider</a>
+        <a href="#!" class="modal-action modal-close waves-effect waves-green btn red">anuler</a>
+    </div>
+</div>
+<script>
+    window.onload = () => {
+        let activer_message_forum = document.querySelectorAll("[type=checkbox]")
+        for (let bouton of activer_message_forum) {
+            bouton.addEventListener("click", function () {
+                let xmlhttp = new XMLHttpRequest;
+                xmlhttp.open("get", `/message/forum/activer/${this.dataset.id}`)
+                xmlhttp.send()
 
-    <a href="{{ path('message_forum_new') }}">Créer un nouveau</a>
+            })
+        }
+        let supprimer = document.querySelectorAll(".modal-trigger")
+			for(let bouton of supprimer){
+				bouton.addEventListener("click", function () {
+					document.querySelector(".modal-footer a").href = `/message/forum/supprimer/${this.dataset.id}`
+					document.querySelector(".modal-content").innerText = `Êtes-vous sûr(e) de vouloir supprimer  "${this.dataset.titre}"`
+
+            })
+        }
+    }
+</script>
 {% endblock %}

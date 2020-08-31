@@ -49,6 +49,11 @@ class SubjectForum
      */
     private $messageSubjectForum;
 
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $active;
+
     public function __construct()
     {
         $this->messageSubjectForum = new ArrayCollection();
@@ -146,6 +151,18 @@ class SubjectForum
                 $messageSubjectForum->setSubjectMessageForum(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getActive(): ?bool
+    {
+        return $this->active;
+    }
+
+    public function setActive(?bool $active): self
+    {
+        $this->active = $active;
 
         return $this;
     }

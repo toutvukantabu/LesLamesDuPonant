@@ -15,13 +15,20 @@ class TimeStampType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('titleTimeStamp', TextType::class,['label' => 'titre de l\'évenement'])
-            ->add('descriptionTimeStamp', TextType::class,['label' => 'déscription de l\'évenement'])
+            ->add('titleTimeStamp', TextType::class,[
+                'label' => 'titre de l\'évenement',
+                'required' => false,  
+                ])
+            ->add('descriptionTimeStamp', TextType::class,[
+                'label' => 'déscription de l\'évenement',
+                'required' => false,
+                ])
             ->add('dateTimeStamp', DateType::class,[
                 'label' => 'Date de l\'évenement',
                 'widget' => 'single_text',
                 'html5' => false,
                 'format'=> 'dd-mm-yyyy',
+                'required' => false,
                 'attr' => [
                     'class'=> 'datepicker',
                 ]
@@ -30,6 +37,7 @@ class TimeStampType extends AbstractType
                 'label' => 'Heure de l\'évenement',
                 'widget' => 'single_text',
                 'html5' => false,
+                'required' => false,
                 'attr' => [
                     'class'=> 'timepicker',
                 ]

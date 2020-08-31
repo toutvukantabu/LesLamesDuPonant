@@ -60,7 +60,12 @@ class HomeInfo
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $ImageThreeInfo;
+    private $imageThreeInfo;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $active;
 
     public function getId(): ?int
     {
@@ -165,12 +170,24 @@ class HomeInfo
 
     public function getImageThreeInfo(): ?string
     {
-        return $this->ImageThreeInfo;
+        return $this->imageThreeInfo;
     }
 
-    public function setImageThreeInfo(?string $ImageThreeInfo): self
+    public function setImageThreeInfo(?string $imageThreeInfo): self
     {
-        $this->ImageThreeInfo = $ImageThreeInfo;
+        $this->imageThreeInfo = $imageThreeInfo;
+
+        return $this;
+    }
+
+    public function getActive(): ?bool
+    {
+        return $this->active;
+    }
+
+    public function setActive(?bool $active): self
+    {
+        $this->active = $active;
 
         return $this;
     }

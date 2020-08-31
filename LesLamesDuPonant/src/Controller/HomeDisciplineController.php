@@ -66,7 +66,7 @@ class HomeDisciplineController extends AbstractController
             $entityManager->persist($homeDiscipline);
             $entityManager->flush();
 
-            return $this->redirectToRoute('admin');
+            return $this->redirectToRoute('home_discipline_index');
         }
 
         return $this->render('home_discipline/new.html.twig', [
@@ -118,7 +118,7 @@ class HomeDisciplineController extends AbstractController
             }
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('admin');
+            return $this->redirectToRoute('home_discipline_index',array('id' => $homeDiscipline ->getId()));
         }
 
         return $this->render('home_discipline/edit.html.twig', [
@@ -140,4 +140,32 @@ class HomeDisciplineController extends AbstractController
 
         return $this->redirectToRoute('admin');
     }
+       /**
+     * @Route("/supprimer/{id}", name="supprimer_home_discipline")
+     */
+public function supprimer( HomeDiscipline $homeDiscipline){
+
+    $entityManager = $this->getDoctrine()->getManager();
+    $entityManager->remove($homeDiscipline);
+    $entityManager->flush();
+    
+    $this->addFlash(
+        'how we are',
+        'supprimé avec succes!');
+    return $this->redirectToRoute('home_discipline_index');
+}
+
+/**
+     * @Route("/activer/{id}", name="activer_home_discipline")
+     */
+    public function activerhomeDiscipline( HomeDiscipline $homeDiscipline){
+
+        $homeDiscipline->setActive(($homeDiscipline->getActive())? false : true);
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->persist($homeDiscipline);
+        $entityManager->flush();
+        return new Response ('true');
+       
+    }
+
 }

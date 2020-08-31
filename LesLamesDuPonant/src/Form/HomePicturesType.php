@@ -15,7 +15,7 @@ class HomePicturesType extends AbstractType
     {
         $builder
             ->add('homeLogoPicture', FileType::class, [
-                'label' => 'Photo',
+                'label' => ' ',
                 'mapped' => false,
                 'required' => false,
                 'constraints' => [
@@ -29,23 +29,23 @@ class HomePicturesType extends AbstractType
                 ],
             ])
 
-            ->add('homeTitlePicture', FileType::class, [
-                'label' => 'Photo',
-                'mapped' => false,
-                'required' => false,
-                'constraints' => [
-                    new File([
-                        'maxSize' => '1024k',
-                        'mimeTypes' => [
-                            'image/*',
-                        ],
-                        'mimeTypesMessage' => 'Veuillez entrer un format de document valide',
-                    ])
-                ],
-            ])
+            // ->add('homeTitlePicture', FileType::class, [
+            //     'label' => ' ',
+            //     'mapped' => false,
+            //     'required' => false,
+            //     'constraints' => [
+            //         new File([
+            //             'maxSize' => '1024k',
+            //             'mimeTypes' => [
+            //                 'image/*',
+            //             ],
+            //             'mimeTypesMessage' => 'Veuillez entrer un format de document valide',
+            //         ])
+            //     ],
+            // ])
 
             ->add('homeParallax1', FileType::class, [
-                'label' => 'Photo',
+                'label' => ' ',
                 'mapped' => false,
                 'required' => false,
                 'constraints' => [
@@ -60,7 +60,7 @@ class HomePicturesType extends AbstractType
             ])
 
             ->add('homeParallax2', FileType::class, [
-                'label' => 'Photo',
+                'label' => ' ',
                 'mapped' => false,
                 'required' => false,
                 'constraints' => [

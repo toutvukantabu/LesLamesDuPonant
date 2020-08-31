@@ -1,19 +1,15 @@
-{% extends 'default.html.twig' %}
+{% extends 'admin.html.twig' %}
 
-{% block title %}edit MedievalFamily{% endblock %}
+{% block title %}Éditer Famille médévale{% endblock %}
 
 {% block body %}
-    <h4 class="center-align">éditer MedievalFamily</h4>
+    <h4 class="center-align">Éditer Famille médévale</h4>
 
     {{ include('medieval_family/_form.html.twig', {'button_label': 'maj'}) }}
 
-    <a href="{{ path('admin') }}"><button class="btn green btnForm">retour à la liste</button></a>
-
-    {{ include('medieval_family/_delete_form.html.twig') }}
-   
+   <a href="{{ path('medieval_family_index') }}"><button class="btn orange"> liste</button></a>
 </div>
 {{ form_end(form) }}
 </div>
 </div>
-
 {% endblock %}

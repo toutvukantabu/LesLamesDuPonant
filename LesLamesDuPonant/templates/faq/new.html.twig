@@ -1,11 +1,11 @@
-{% extends 'base.html.twig' %}
+{% extends 'admin.html.twig' %}
 
-{% block title %}New Faq{% endblock %}
+{% block title %}Faq{% endblock %}
 
 {% block body %}
-    <h1>Create new Faq</h1>
+  <h4 class="center-align">Créer FAQ</h4>
 
     {{ include('faq/_form.html.twig') }}
 
-    <a href="{{ path('faq_index') }}">back to list</a>
+    <a href="{{ path('faq_index') }}"><button class="btn orange">liste</button></a>
 {% endblock %}

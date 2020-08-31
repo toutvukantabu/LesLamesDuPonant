@@ -17,22 +17,28 @@ class HowWeAreType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('titleHowWeAre', TextType::class,['label'=>'Titre'])
-            ->add('descriptionHowWeAre', CKEditorType::class,['label'=>'  '])
-            ->add('PhotoHowWeAre',FileType::class, [
-                'label' => ' ',
-                'mapped' => false,
+            ->add('titleHowWeAre', TextType::class,[
+                'label'=>'Titre',
                 'required' => false,
-                'constraints' => [
-                    new File([
-                        'maxSize' => '1024k',
-                        'mimeTypes' => [
-                            'image/*',
-                        ],
-                        'mimeTypesMessage' => 'Veuillez entrer un format de document valide',
-                    ])
-                ],
-            ])
+                ])
+            ->add('descriptionHowWeAre', CKEditorType::class,[
+                'label'=>'  ',
+                'required' => false,
+                ])
+            // ->add('PhotoHowWeAre',FileType::class, [
+            //     'label' => ' ',
+            //     'mapped' => false,
+            //     'required' => false,
+            //     'constraints' => [
+            //         new File([
+            //             'maxSize' => '1024k',
+            //             'mimeTypes' => [
+            //                 'image/*',
+            //             ],
+            //             'mimeTypesMessage' => 'Veuillez entrer un format de document valide',
+            //         ])
+            //     ],
+            // ])
             ;
     }
 

@@ -37,6 +37,11 @@ class TimeStamp
      */
     private $hourTimeStamp;
 
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $active;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -86,6 +91,18 @@ class TimeStamp
     public function setHourTimeStamp(?\DateTimeInterface $hourTimeStamp): self
     {
         $this->hourTimeStamp = $hourTimeStamp;
+
+        return $this;
+    }
+
+    public function getActive(): ?bool
+    {
+        return $this->active;
+    }
+
+    public function setActive(?bool $active): self
+    {
+        $this->active = $active;
 
         return $this;
     }

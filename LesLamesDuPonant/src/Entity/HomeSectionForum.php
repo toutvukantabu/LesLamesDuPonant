@@ -30,9 +30,14 @@ class HomeSectionForum
     private $sectionDateForum;
 
     /**
-     * @ORM\OneToMany(targetEntity=CategoryForum::class, mappedBy="SectionCategoryForum")
+     * @ORM\OneToMany(targetEntity=CategoryForum::class, mappedBy="SectionCategoryForum", orphanRemoval=true)
      */
     private $categoryHomeSectionForum;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $active;
 
     public function __construct()
     {
@@ -95,6 +100,18 @@ class HomeSectionForum
                 $categoryHomeSectionForum->setSectionCategoryForum(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getActive(): ?bool
+    {
+        return $this->active;
+    }
+
+    public function setActive(?bool $active): self
+    {
+        $this->active = $active;
 
         return $this;
     }

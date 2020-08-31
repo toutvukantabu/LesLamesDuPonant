@@ -52,6 +52,16 @@ class Discipline
      */
     private $photoInstructor;
 
+    /**
+     * @ORM\OneToOne(targetEntity=HomeDiscipline::class, inversedBy="relationDiscipline", cascade={"persist", "remove"})
+     */
+    private $relationHomeDiscipline;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $active;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -137,6 +147,30 @@ class Discipline
     public function setPhotoInstructor(?string $photoInstructor): self
     {
         $this->photoInstructor = $photoInstructor;
+
+        return $this;
+    }
+
+    public function getRelationHomeDiscipline(): ?HomeDiscipline
+    {
+        return $this->relationHomeDiscipline;
+    }
+
+    public function setRelationHomeDiscipline(?HomeDiscipline $relationHomeDiscipline): self
+    {
+        $this->relationHomeDiscipline = $relationHomeDiscipline;
+
+        return $this;
+    }
+
+    public function getActive(): ?bool
+    {
+        return $this->active;
+    }
+
+    public function setActive(?bool $active): self
+    {
+        $this->active = $active;
 
         return $this;
     }

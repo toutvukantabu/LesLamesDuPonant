@@ -39,7 +39,7 @@ class ContactMessageController extends AbstractController
             $entityManager->persist($contactMessage);
             $entityManager->flush();
 
-            return $this->redirectToRoute('admin');
+            return $this->redirectToRoute('home');
         }
 
         return $this->render('contact_message/new.html.twig', [
@@ -90,5 +90,19 @@ class ContactMessageController extends AbstractController
         }
 
         return $this->redirectToRoute('admin');
+    }
+    /**
+     * @Route("/supprimer/{id}", name="supprimer_contact_message")
+     */
+    public function supprimer( ContactMessage $contactMessage){
+
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->remove( $contactMessage);
+        $entityManager->flush();
+        
+        $this->addFlash(
+            'how we are',
+            'supprimé avec succes!');
+        return $this->redirectToRoute('contact_message_index');
     }
 }

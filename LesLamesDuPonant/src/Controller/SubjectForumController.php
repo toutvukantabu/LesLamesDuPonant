@@ -5,10 +5,11 @@ namespace App\Controller;
 use App\Entity\SubjectForum;
 use App\Form\SubjectForumType;
 use App\Repository\SubjectForumRepository;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Repository\CategoryForumRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 /**
  * @Route("/subject/forum")
@@ -18,10 +19,11 @@ class SubjectForumController extends AbstractController
     /**
      * @Route("/", name="subject_forum_index", methods={"GET"})
      */
-    public function index(SubjectForumRepository $subjectForumRepository): Response
+    public function index(SubjectForumRepository $subjectForumRepository,CategoryForumRepository $categoryForumRepository): Response
     {
         return $this->render('subject_forum/index.html.twig', [
             'subject_forums' => $subjectForumRepository->findAll(),
+            'category_forums' => $categoryForumRepository->findAll(),
         ]);
     }
 
@@ -93,4 +95,31 @@ class SubjectForumController extends AbstractController
 
         return $this->redirectToRoute('subject_forum_index');
     }
+        /**
+     * @Route("/supprimer/{id}", name="supprimer_subject_forum")
+     */
+    public function supprimer(  SubjectForum $subjectForum){
+
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->remove( $subjectForum);
+        $entityManager->flush();
+        
+        $this->addFlash(
+            'how we are',
+            'supprimé avec succes!');
+        return $this->redirectToRoute('home_pictures_index');
+    }
+    
+         /**
+         * @Route("/activer/{id}", name="activer_subject_forum")
+         */
+        public function activer(  SubjectForum $subjectForum){
+    
+             $subjectForum->setActive(( $subjectForum->getActive())? false : true);
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist( $subjectForum);
+            $entityManager->flush();
+            return new Response ('true');
+           
+        }
 }
