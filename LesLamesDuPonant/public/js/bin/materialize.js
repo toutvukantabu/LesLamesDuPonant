@@ -10020,9 +10020,7 @@ if (Vel) {
   };
 })
 
-  $('.carousel.carousel-slider').carousel({
-    fullWidth: true
-  });
+ 
 //Birtyhday date pîcker
   $('.datepicker').on('mousedown', function (event) {
     event.preventDefault();
@@ -10078,6 +10076,9 @@ $(document).ready(function(){
 
 
  //Carousel Home
+ $('.carousel.carousel-slider').carousel({
+  fullWidth: true
+});
 $(document).ready(function () {
 
   $(".carouselHome").carousel({
@@ -10088,6 +10089,26 @@ $(document).ready(function () {
   });
   window.setInterval(function () { $('.carouselHome').carousel('next') }, 9000)
   
+});
+//Carousel Discipline
+$('.carousel.carousel-slider').carousel({
+  fullWidth: true,
+  indicators: false
+});
+
+
+// move next carousel
+$('.moveNextCarousel').click(function(e){
+  e.preventDefault();
+  e.stopPropagation();
+  $('.carousel').carousel('next');
+});
+
+// move prev carousel
+$('.movePrevCarousel').click(function(e){
+  e.preventDefault();
+  e.stopPropagation();
+  $('.carousel').carousel('prev');
 });
 
 //classBody

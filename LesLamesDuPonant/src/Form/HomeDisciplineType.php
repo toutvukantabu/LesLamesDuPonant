@@ -11,6 +11,7 @@ use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Validator\Constraints\File;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 class HomeDisciplineType extends AbstractType
@@ -26,7 +27,7 @@ class HomeDisciplineType extends AbstractType
                 'required'=>false,
             ])
             ->add('nameDiscipline', TextType::class, ['label' => 'Titre de la discipline'])
-            ->add('descriptionDiscipline', CKEditorType::class, ['label' => ' '])
+            ->add('descriptionDiscipline', TextareaType::class, ['label' => 'description discipline'])
 
             ->add('imageHomeDiscipline', FileType::class, [
                 'label'=>' ',

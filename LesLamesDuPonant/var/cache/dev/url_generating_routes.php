@@ -84,6 +84,8 @@ return [
     'supprimer_how_we_are' => [['id'], ['_controller' => 'App\\Controller\\HowWeAreController::supprimer'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/how/we/are/supprimer']], [], []],
     'activer_how_we_are' => [['id'], ['_controller' => 'App\\Controller\\HowWeAreController::activerHowWeAre'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/how/we/are/activer']], [], []],
     'les_amhe' => [[], ['_controller' => 'App\\Controller\\LesAMHEController::index'], [], [['text', '/lesamhe']], [], []],
+    'les_disciplines' => [[], ['_controller' => 'App\\Controller\\LesDisciplinesController::index'], [], [['text', '/les/disciplines']], [], []],
+    'les_infos' => [[], ['_controller' => 'App\\Controller\\LesInfosController::index'], [], [['text', '/les/infos']], [], []],
     'les_lames_du_ponant_index' => [[], ['_controller' => 'App\\Controller\\LesLamesDuPonantController::index'], [], [['text', '/les/lames/du/ponant/']], [], []],
     'les_lames_du_ponant_new' => [[], ['_controller' => 'App\\Controller\\LesLamesDuPonantController::new'], [], [['text', '/les/lames/du/ponant/new']], [], []],
     'les_lames_du_ponant_show' => [['id'], ['_controller' => 'App\\Controller\\LesLamesDuPonantController::show'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/les/lames/du/ponant']], [], []],

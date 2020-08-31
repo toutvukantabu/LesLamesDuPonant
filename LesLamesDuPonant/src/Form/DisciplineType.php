@@ -32,8 +32,8 @@ class DisciplineType extends AbstractType
                 'label'=>' ',
                 'required'=>true,
                 ])
-            ->add('nameInstructor',TextType::class,['
-            label'=>'Nom et prénom de l\'instructeur',
+            ->add('nameInstructor',TextType::class,[
+            'label'=>'Nom et prénom de l\'instructeur',
             'required'=>true,
             ])
             ->add('photoInstructor',FileType::class, [

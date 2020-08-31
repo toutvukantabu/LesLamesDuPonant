@@ -141,7 +141,7 @@ h4 {
 //*****************************************
 
 .sticky-nav {
-  background-color: #0080ff5d;
+  background-color: #0080ff7e;
   position: fixed;
   top: 0;
   z-index: 1000;
@@ -150,7 +150,7 @@ h4 {
 #navbarHome, #navbarAdmin{
   transition: top 0.2s linear;
   -webkit-transition: 0.2s;
-  background-color:#3D5695;
+  background-color:#3d5695d2;
   z-index: 1000;
 
   li a:hover {
@@ -481,7 +481,7 @@ margin-top: 20px;
  background-color: #242222;
 }
 /* Form login, register, password,
-  *================
+  *===============================
   */
 .formRegister,
 .formLogin,
@@ -498,6 +498,46 @@ margin-top: 20px;
   margin-bottom: 40px;
 
 }
+
+// LES AMHE
+//===============
+
+//LES DISCIPLINES
+//===============
+
+//carousel
+//********
+.middle-indicator{
+  position:absolute;
+  top:50%;
+  }
+ .middle-indicator-text{
+  font-size: 4.2rem;
+ }
+ a.middle-indicator-text{
+   color:white !important;
+ }
+.content-indicator{
+   width: 64px;
+   height: 64px;
+   background: none;
+   -moz-border-radius: 50px;
+   -webkit-border-radius: 50px;
+   border-radius: 50px; 
+ }
+   .indicators{
+   visibility: hidden;
+ }
+ .img-discipline{
+height: 20vh;
+
+
+ }
+
+//BOUTIQUE
+//===============
+
+
 
 //ADMIN
 //*******************************

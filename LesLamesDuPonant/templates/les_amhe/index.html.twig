@@ -4,24 +4,29 @@
 
 {% block body %}
 {% for amhe in amhes %}
+{% if amhe.active ==1 %}
+
+
 <div class="carousel carousel-slider center">
 	<div class="carousel-item  white-text" href="#one!">
-		<img src="{{asset('uploads/amhe/'~ amhe.photoOneAMHE )}}" alt="">
+		<img src="{{asset('uploads/amhe/') ~ amhe.photoOneAMHE }}" alt="">
 	</div>
 	<div class="carousel-item  white-text" href="#one!">
-		<img src="{{asset('uploads/amhe/'~ amhe.photoTwoAMHE )}}" alt="">
+		<img src="{{asset('uploads/amhe/') ~ amhe.photoTwoAMHE }}" alt="">
 	</div>
 	<div class="carousel-item  white-text" href="#one!">
-		<img src="{{asset('uploads/amhe/'~ amhe.photoThreeAMHE )}}" alt=""><img src="{{asset('uploads/Parallax3.jpg')}}"
-			alt="">
+		<img src="{{asset('uploads/amhe/') ~ amhe.photoThreeAMHE }}" alt=""><img
+			src="{{asset('uploads/Parallax3.jpg')}}" alt="">
 	</div>
 </div>
+{# AMHE
+================ #}
 <div class="container white ">
 	<div class="row">
 		<div class="col xl12 l12 m12 s12">
 			<h4 class="center-align">{{ amhe.titleAMHE }}</h4>
-
-			<p>{{ amhe.DescriptionAMHE|raw}}</p>
+			<p>{{amhe.DescriptionAMHE|raw}}</p>
+			{% endif %}
 			{% endfor %}
 		</div>
 	</div>
@@ -30,22 +35,27 @@
 			allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 	</div>
 </div>
+{# MEDIEVAL FAMILY
+========================= #}
 <div class="container white">
 	<div class="row">
 		{% for medieval_family in medieval_families %}
-
+		{% if medieval_family.active ==1 %}
 		<h4 class="center-align"> {{ medieval_family.titleMedievalFamily }}</h4>
-		<p>{{ medieval_family.descriptionMedievalFamily | raw}}</p>
+		<p>{{ medieval_family.descriptionMedievalFamily|raw}}</p>
+		{% endif %}
 		{% endfor %}
-
 	</div>
 </div>
+{# LES LAMES DU PONANT
+======================================= #}
 <div class="container white">
 	<div class="row">
 		{% for les_lames_du_ponant in les_lames_du_ponants %}
 		<h4 class="center-align">{{ les_lames_du_ponant.titleLLDP }} </h4>
 
-		<img  class="responsive-img"src="{{asset('/uploads/lldp/') ~ les_lames_du_ponant.pictureLesLamesDuponant  }} " alt="">
+		<img class="responsive-img" src="{{asset('/uploads/lldp/') ~ les_lames_du_ponant.pictureLesLamesDuponant  }} "
+			alt="">
 		<p>{{ les_lames_du_ponant.desciptionLLDP|raw}}</p>
 		{% endfor %}
 	</div>

@@ -1,4 +1,4 @@
-{% extends 'default.html.twig' %}
+{% extends 'admin.html.twig' %}
 
 {% block title %}MedievalFamily index{% endblock %}
 
@@ -73,7 +73,7 @@
         for (let bouton of activer_medieval_family) {
             bouton.addEventListener("click", function () {
                 let xmlhttp = new XMLHttpRequest;
-                xmlhttp.open("get", `/how/we/are/activer/${this.dataset.id}`)
+                xmlhttp.open("get", `/medieval/family/activer/${this.dataset.id}`)
                 xmlhttp.send()
 
             })
@@ -81,7 +81,7 @@
         let supprimer = document.querySelectorAll(".modal-trigger")
 			for(let bouton of supprimer){
 				bouton.addEventListener("click", function () {
-					document.querySelector(".modal-footer a").href = `/how/we/are/supprimer/${this.dataset.id}`
+					document.querySelector(".modal-footer a").href = `/medieval/family/supprimer/${this.dataset.id}`
 					document.querySelector(".modal-content").innerText = `Êtes-vous sûr(e) de vouloir supprimer  "${this.dataset.titre}"`
 
             })

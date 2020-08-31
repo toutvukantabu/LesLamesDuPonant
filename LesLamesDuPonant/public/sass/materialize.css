@@ -9451,7 +9451,7 @@ h4:after {
 }
 
 .sticky-nav {
-  background-color: #0080ff5d;
+  background-color: #0080ff7e;
   position: fixed;
   top: 0;
   z-index: 1000;
@@ -9461,7 +9461,7 @@ h4:after {
   -webkit-transition: top 0.2s linear;
   transition: top 0.2s linear;
   -webkit-transition: 0.2s;
-  background-color: #3D5695;
+  background-color: #3d5695d2;
   z-index: 1000;
 }
 
@@ -9769,7 +9769,7 @@ ul.tl li .timestamp {
 }
 
 /* Form login, register, password,
-  *================
+  *===============================
   */
 .formRegister,
 .formLogin,
@@ -9783,6 +9783,34 @@ ul.tl li .timestamp {
 .loginResetPassword,
 .smallResetPassword {
   margin-bottom: 40px;
+}
+
+.middle-indicator {
+  position: absolute;
+  top: 50%;
+}
+
+.middle-indicator-text {
+  font-size: 4.2rem;
+}
+
+a.middle-indicator-text {
+  color: white !important;
+}
+
+.content-indicator {
+  width: 64px;
+  height: 64px;
+  background: none;
+  border-radius: 50px;
+}
+
+.indicators {
+  visibility: hidden;
+}
+
+.img-discipline {
+  height: 20vh;
 }
 
 .imgTableAdmin {
