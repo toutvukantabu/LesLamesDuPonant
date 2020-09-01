@@ -9385,6 +9385,7 @@ defaut body text
 -h4   color:#eee
 -button
 -button:hover
+button:waves
 
 -icon               
 */
@@ -9399,6 +9400,7 @@ defaut body text
 1. =GLOBAL
 ***********
 -fonts
+-button effect
 2. =NAVBAR
 ***********
 -user-nav Profil Left
@@ -9435,7 +9437,8 @@ main {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: fantasy, sans-serif;
+  font-family: 'Maven Pro', sans-serif;
+  font-weight: 500;
 }
 
 h1:after,
@@ -9448,6 +9451,14 @@ h4:after {
   content: " ";
   margin: 0 auto;
   margin-top: 10px;
+}
+
+p {
+  line-height: 35px;
+}
+
+.waves-effect.waves-brown .waves-ripple {
+  background-color: rgba(121, 119, 235, 0.274);
 }
 
 .sticky-nav {
@@ -9511,10 +9522,11 @@ h4:after {
   *================
   */
 .homeSectionPresentation {
-  min-height: 350px;
+  min-height: 700px;
 }
 
 .homeSectionPresentation h2 {
+  margin-top: 50px;
   margin-bottom: 50px;
 }
 
@@ -9535,17 +9547,13 @@ h4:after {
   */
 .homeSectionPresentation,
 .homeSectionActivity {
-  min-height: 480px;
+  min-height: 700px;
   background-image: url(../uploads/Background/sectionHome.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   -webkit-box-shadow: inset 0px 0px 50px 12px rgba(176, 167, 176, 0.94);
   box-shadow: inset 0px 0px 50px 12px rgba(14, 13, 14, 0.94);
-}
-
-.homeSectionActivity {
-  max-height: 640px;
 }
 
 .homeSectionCalendar {
@@ -9556,18 +9564,20 @@ h4:after {
   *================
   */
 .homeSectionActivity {
+  max-height: 640px;
   padding-bottom: 20px;
 }
 
 .homeSectionActivity h2 {
-  margin-bottom: -85px;
+  margin-top: 38px;
+  margin-bottom: -60px;
 }
 
 .disciplineHomeTitle {
-  margin-top: -88px;
+  margin-top: -100px;
   width: 300px;
   margin-left: -50px;
-  margin-bottom: -54px;
+  margin-bottom: -15px;
 }
 
 .disciplineHomeTitle:after {
@@ -9615,7 +9625,7 @@ h4:after {
   word-wrap: break-word;
   margin-left: -73px;
   width: 345px;
-  font-size: 15px;
+  font-size: 18px;
 }
 
 /*  Home timeline/Agenda/Info

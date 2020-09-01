@@ -50,6 +50,7 @@ class AppAuthenticator extends AbstractFormLoginAuthenticator implements Passwor
         $credentials = [
             'email' => $request->request->get('email'),
             'password' => $request->request->get('password'),
+            // 'is_verified'=>$request->request->get('is_verified'),
             'csrf_token' => $request->request->get('_csrf_token'),
         ];
         $request->getSession()->set(

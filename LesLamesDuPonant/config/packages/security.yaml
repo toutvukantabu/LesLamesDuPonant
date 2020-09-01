@@ -1,5 +1,5 @@
 security:
-    enable_authenticator_manager: true
+    # enable_authenticator_manager: true
     encoders:
         App\Entity\User:
             algorithm: auto
@@ -22,6 +22,8 @@ security:
             guard:
                 authenticators:
                     - App\Security\AppAuthenticator
+            form_login:
+                default_target_path: false
             logout:
                 path: app_logout
                 # where to redirect after logout
