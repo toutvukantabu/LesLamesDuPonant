@@ -36,7 +36,7 @@ class UserController extends AbstractController
     public function new(Request $request): Response
     {
         $user = new User();
-        $form = $this->createForm(User1Type::class, $user);
+        $form = $this->createForm(UserType::class, $user);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -87,11 +87,10 @@ class UserController extends AbstractController
                         $newFilename
                     );
                 } catch (FileException $e) {
-                    // ... gérer l'exception si quelque chose se produit pendant le téléchargement du fichier
+                    
                 }
 
-                // met à jour la propriété 'photoEleve' pour stocker le nom du fichier PDF
-                // au lieu de son contenu
+              
                 $user->setPhotoAvatarUser($newFilename);
             }
             /** Fin du code à ajouter **/
@@ -99,7 +98,7 @@ class UserController extends AbstractController
             $entityManager->persist($user);
             $entityManager->flush();
         
-            return $this->redirectToRoute('home');
+            return $this->redirectToRoute('admin');
         }
 
 
@@ -121,6 +120,6 @@ class UserController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('admin');
+        return $this->redirectToRoute('user_index');
     }
 }

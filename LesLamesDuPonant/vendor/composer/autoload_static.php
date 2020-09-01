@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitc4ce61fc1f6b9eb4f6512ca2fab67a81
+class ComposerStaticInit51c17aff26056a688656c13b85f10706
 {
     public static $files = array (
         'a4a119a56e50fbb293281d9a48007e0e' => __DIR__ . '/..' . '/symfony/polyfill-php80/bootstrap.php',
@@ -593,6 +593,8 @@ class ComposerStaticInitc4ce61fc1f6b9eb4f6512ca2fab67a81
         'App\\Controller\\HomeSectionForumController' => __DIR__ . '/../..' . '/src/Controller/HomeSectionForumController.php',
         'App\\Controller\\HowWeAreController' => __DIR__ . '/../..' . '/src/Controller/HowWeAreController.php',
         'App\\Controller\\LesAMHEController' => __DIR__ . '/../..' . '/src/Controller/LesAMHEController.php',
+        'App\\Controller\\LesDisciplinesController' => __DIR__ . '/../..' . '/src/Controller/LesDisciplinesController.php',
+        'App\\Controller\\LesInfosController' => __DIR__ . '/../..' . '/src/Controller/LesInfosController.php',
         'App\\Controller\\LesLamesDuPonantController' => __DIR__ . '/../..' . '/src/Controller/LesLamesDuPonantController.php',
         'App\\Controller\\MedievalFamilyController' => __DIR__ . '/../..' . '/src/Controller/MedievalFamilyController.php',
         'App\\Controller\\MessageForumController' => __DIR__ . '/../..' . '/src/Controller/MessageForumController.php',
@@ -628,7 +630,7 @@ class ComposerStaticInitc4ce61fc1f6b9eb4f6512ca2fab67a81
         'App\\Form\\HomeDisciplineType' => __DIR__ . '/../..' . '/src/Form/HomeDisciplineType.php',
         'App\\Form\\HomeInfoType' => __DIR__ . '/../..' . '/src/Form/HomeInfoType.php',
         'App\\Form\\HomePicturesType' => __DIR__ . '/../..' . '/src/Form/HomePicturesType.php',
-        'App\\Form\\HomeSectionForum1Type' => __DIR__ . '/../..' . '/src/Form/HomeSectionForumType.php',
+        'App\\Form\\HomeSectionForumType' => __DIR__ . '/../..' . '/src/Form/HomeSectionForumType.php',
         'App\\Form\\HowWeAreType' => __DIR__ . '/../..' . '/src/Form/HowWeAreType.php',
         'App\\Form\\LesLamesDuPonantType' => __DIR__ . '/../..' . '/src/Form/LesLamesDuPonantType.php',
         'App\\Form\\MedievalFamilyType' => __DIR__ . '/../..' . '/src/Form/MedievalFamilyType.php',
@@ -1715,6 +1717,7 @@ class ComposerStaticInitc4ce61fc1f6b9eb4f6512ca2fab67a81
         'Egulias\\EmailValidator\\Exception\\CommaInDomain' => __DIR__ . '/..' . '/egulias/email-validator/src/Exception/CommaInDomain.php',
         'Egulias\\EmailValidator\\Exception\\ConsecutiveAt' => __DIR__ . '/..' . '/egulias/email-validator/src/Exception/ConsecutiveAt.php',
         'Egulias\\EmailValidator\\Exception\\ConsecutiveDot' => __DIR__ . '/..' . '/egulias/email-validator/src/Exception/ConsecutiveDot.php',
+        'Egulias\\EmailValidator\\Exception\\DomainAcceptsNoMail' => __DIR__ . '/..' . '/egulias/email-validator/src/Exception/DomainAcceptsNoMail.php',
         'Egulias\\EmailValidator\\Exception\\DomainHyphened' => __DIR__ . '/..' . '/egulias/email-validator/src/Exception/DomainHyphened.php',
         'Egulias\\EmailValidator\\Exception\\DotAtEnd' => __DIR__ . '/..' . '/egulias/email-validator/src/Exception/DotAtEnd.php',
         'Egulias\\EmailValidator\\Exception\\DotAtStart' => __DIR__ . '/..' . '/egulias/email-validator/src/Exception/DotAtStart.php',
@@ -1725,6 +1728,7 @@ class ComposerStaticInitc4ce61fc1f6b9eb4f6512ca2fab67a81
         'Egulias\\EmailValidator\\Exception\\ExpectingDomainLiteralClose' => __DIR__ . '/..' . '/egulias/email-validator/src/Exception/ExpectingDomainLiteralClose.php',
         'Egulias\\EmailValidator\\Exception\\ExpectingQPair' => __DIR__ . '/..' . '/egulias/email-validator/src/Exception/ExpectingQPair.php',
         'Egulias\\EmailValidator\\Exception\\InvalidEmail' => __DIR__ . '/..' . '/egulias/email-validator/src/Exception/InvalidEmail.php',
+        'Egulias\\EmailValidator\\Exception\\LocalOrReservedDomain' => __DIR__ . '/..' . '/egulias/email-validator/src/Exception/LocalOrReservedDomain.php',
         'Egulias\\EmailValidator\\Exception\\NoDNSRecord' => __DIR__ . '/..' . '/egulias/email-validator/src/Exception/NoDNSRecord.php',
         'Egulias\\EmailValidator\\Exception\\NoDomainPart' => __DIR__ . '/..' . '/egulias/email-validator/src/Exception/NoDomainPart.php',
         'Egulias\\EmailValidator\\Exception\\NoLocalPart' => __DIR__ . '/..' . '/egulias/email-validator/src/Exception/NoLocalPart.php',
@@ -5294,10 +5298,10 @@ class ComposerStaticInitc4ce61fc1f6b9eb4f6512ca2fab67a81
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitc4ce61fc1f6b9eb4f6512ca2fab67a81::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitc4ce61fc1f6b9eb4f6512ca2fab67a81::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInitc4ce61fc1f6b9eb4f6512ca2fab67a81::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInitc4ce61fc1f6b9eb4f6512ca2fab67a81::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit51c17aff26056a688656c13b85f10706::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit51c17aff26056a688656c13b85f10706::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit51c17aff26056a688656c13b85f10706::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit51c17aff26056a688656c13b85f10706::$classMap;
 
         }, null, ClassLoader::class);
     }
