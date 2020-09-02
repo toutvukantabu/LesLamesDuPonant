@@ -746,6 +746,7 @@
         <argument key="cache.annotations" type="service" id="cache.annotations" on-invalid="ignore_uninitialized"/>
         <argument key="cache.property_info" type="service" id="cache.property_info" on-invalid="ignore_uninitialized"/>
         <argument key="form.choice_list_factory.cached" type="service" id="form.choice_list_factory.cached" on-invalid="ignore_uninitialized"/>
+        <argument key="mailer.logger_message_listener" type="service" id="mailer.logger_message_listener" on-invalid="ignore_uninitialized"/>
         <argument key="profiler" type="service" id="profiler" on-invalid="ignore_uninitialized"/>
         <argument key="debug.validator" type="service" id="debug.validator" on-invalid="ignore_uninitialized"/>
         <argument key="debug.stopwatch" type="service" id="debug.stopwatch" on-invalid="ignore_uninitialized"/>
@@ -777,6 +778,9 @@
           <argument>reset</argument>
         </argument>
         <argument key="form.choice_list_factory.cached" type="collection">
+          <argument>reset</argument>
+        </argument>
+        <argument key="mailer.logger_message_listener" type="collection">
           <argument>reset</argument>
         </argument>
         <argument key="profiler" type="collection">
@@ -1620,6 +1624,7 @@
     </service>
     <service id="mailer.logger_message_listener" class="Symfony\Component\Mailer\EventListener\MessageLoggerListener">
       <tag name="kernel.event_subscriber"/>
+      <tag name="kernel.reset" method="reset"/>
     </service>
     <service id="mailer.transport_factory.abstract" class="Symfony\Component\Mailer\Transport\AbstractTransportFactory" abstract="true">
       <argument type="service" id="debug.event_dispatcher"/>
@@ -3538,14 +3543,6 @@
       <argument type="collection"/>
       <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant</argument>
       <call method="addPath">
-        <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\framework-bundle/Resources/views</argument>
-        <argument>Framework</argument>
-      </call>
-      <call method="addPath">
-        <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfony\framework-bundle/Resources/views</argument>
-        <argument>!Framework</argument>
-      </call>
-      <call method="addPath">
         <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\doctrine\doctrine-bundle/Resources/views</argument>
         <argument>Doctrine</argument>
       </call>
@@ -4968,6 +4965,8 @@
       <argument type="service" id="profiler" on-invalid="null"/>
       <argument type="service" id="twig"/>
       <argument type="service" id="router.default" on-invalid="null"/>
+      <argument>null</argument>
+      <argument type="tagged_iterator" tag="routing.expression_language_provider"/>
     </service>
     <service id="web_profiler.controller.exception_panel" class="Symfony\Bundle\WebProfilerBundle\Controller\ExceptionPanelController" public="true">
       <argument type="service" id="error_handler.error_renderer.html"/>

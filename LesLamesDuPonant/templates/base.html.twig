@@ -29,84 +29,77 @@
 			<img class="circle" src="{{asset('uploads/avatar.jpg')}}">
 			{% endif %}
 			{% if is_granted('IS_AUTHENTICATED_FULLY') and app.user.pseudoUser != NULL %}
-			<span class="white-text name">Bonjour
+			<span class="name">Bonjour
 				{{app.user.pseudoUser}}</span>
 			{% elseif is_granted('IS_AUTHENTICATED_FULLY') and app.user.pseudoUser == NULL%}
-			<span class="white-text name">Bonjour "Illustre inconnu n°{{app.user.id}}"
+			<span class=" name">Bonjour "Illustre inconnu n°{{app.user.id}}"
 				{% else %}
-				<span class="white-text name">Bonjour "Illustre inconnu "
+				<span class=" name">Bonjour "Illustre inconnu "
 				</span>
-				{% endif %}
-				{% if is_granted('IS_AUTHENTICATED_FULLY') %}
-				<span class="white-text email">{{ app.user.email }}</span>
-				<a href="{{path('app_logout')}}">
-					<span class="white-text email">
-						se déconnecter</span>
-				</a>
 				{% endif %}
 		</div>
 	</li>
 	</li>
 	<li>
-		<h5 class="black-text center-align">Les lames du Ponant</h5>
+		<h5 class="black-text center-align">Les Lames du Ponant</h5>
 	</li>
 	<div class="divider"></div>
 	{% if is_granted('IS_AUTHENTICATED_FULLY')%}
-	<li>
+	{# <li>
 		<a href="{{path('home')}}">
 			<span>Messagerie</span>
 		</a>
-	</li>
+	</li> #}
+	{% if is_granted('ROLE_ADMIN') or is_granted('Role_Super_Administrateur') %}
 	<li>
-		<a href="{{path('user_edit',{'id': app.user.id })}}">
+		<a class="waves-effect waves-brown"href="{{path('admin')}}">Administration</a>
+	</li>
+	{% endif %}
+	<li>
+		<a class="waves-effect waves-brown"href="{{path('user_edit',{'id': app.user.id })}}">
 
 			<span>Mon Profil</span>
 		</a>
 	</li>
-	{% if is_granted('ROLE_ADMIN') or is_granted('Role_Super_Administrateur') %}
 	<li>
-		<a href="{{path('admin')}}">Administration</a>
-	</li>
-	{% endif %}
-	<li>
-		<a href="{{path('les_infos')}}">infos</a>
+		<a class="waves-effect waves-brown"href="{{path('les_infos')}}">Infos</a>
 	</li>
 	<li>
-		<a href="{{path('contact_message_new')}}">contact</a>
+		<a class="waves-effect waves-brown"href="{{path('contact_message_new')}}">Contact</a>
 	</li>
 	<li>
-		<a href="{{path('app_logout')}}">se deconnecter</a>
+		<a class="waves-effect waves-brown"href="{{path('app_logout')}}">Déconnexion</a>
 	</li>
 	{% else %}
 	<li>
-		<a href="{{path('les_infos')}}">infos</a>
+		<a class="waves-effect waves-brown" href="{{path('les_infos')}}">Infos</a>
 	</li>
 	<li>
-		<a href="{{path('app_login')}}">contact</a>
+		<a class="waves-effect waves-brown"href="{{path('app_login')}}">Contact</a>
 	</li>
 	<li>
-		<a href="{{path('app_login')}}">se connecter</a>
+		<a class="waves-effect waves-brown" href="{{path('app_login')}}">Connexion</a>
 	</li>
 	<li>
-		<a href="{{path('app_register')}}">s'enregistrer</a>
+		<aclass="waves-effect waves-brown" href="{{path('app_register')}}">S'enregistrer</a>
 	</li>
 	{% endif %}
 	<div class="divider"></div>
 	<li>
-		<a href="{{path('les_disciplines')}}">
-			Les disciplines</a>
+		<a class="waves-effect waves-brown"href="{{path('les_disciplines')}}">
+			Disciplines</a>
 	</li>
 	<li>
-		<a href="{{path('les_amhe')}}">
-			Les AMHE</a>
+		<aclass="waves-effect waves-brown" href="{{path('les_amhe')}}">
+			AMHE</a>
 	</li>
 	<li>
-		<a href="{{path('home')}}">
+		<a class="waves-effect waves-brown"href="{{path('home')}}">
 			Boutique</a>
 	</li>
 	<li>
-		<a href="{{path('home')}}">Forum</a>
-	</li>X
+		<a class="waves-effect waves-brown"href="{{path('home')}}">Forum</a>
+	</li>
 </ul>
 <div class="menu">
 	<nav id="navbarHome">
@@ -117,10 +110,10 @@
 			</a>
 			<ul class="left hide-on-med-and-down">
 				<li>
-					<a href="{{path('les_amhe')}}">Les AMHE</a>
+					<a href="{{path('les_amhe')}}">AMHE</a>
 				</li>
 				<li>
-					<a href="{{path('les_disciplines')}}">Les Disciplines</a>
+					<a href="{{path('les_disciplines')}}">Disciplines</a>
 				</li>
 
 				<li>
@@ -141,29 +134,29 @@
 				{% if is_granted('IS_AUTHENTICATED_FULLY')%}
 				<li>
 					<a href="#" data-activates="mobile-demo" class="monProfilBtn">
-						Mon profil</a>
+						Profil</a>
 				</li>
 				<li>
-					<a href="{{path('les_infos')}}">infos</a>
+					<a href="{{path('les_infos')}}">Infos</a>
 				</li>
 				<li>
-					<a href="{{path('contact_message_new')}}">contact</a>
+					<a href="{{path('contact_message_new')}}">Contact</a>
 				</li>
 				<li>
-					<a href="{{path('app_logout')}}">se deconnecter</a>
+					<a href="{{path('app_logout')}}">Déconnexion</a>
 				</li>
 				{% else %}
 				<li>
-					<a href="{{path('les_infos')}}">infos</a>
+					<a href="{{path('les_infos')}}">Infos</a>
 				</li>
 				<li>
-					<a href="{{path('contact_message_new')}}">contact</a>
+					<a href="{{path('contact_message_new')}}">Contact</a>
 				</li>
 				<li>
-					<a href="{{path('app_login')}}">se connecter</a>
+					<a href="{{path('app_login')}}">Connexion</a>
 				</li>
 				<li>
-					<a href="{{path('app_register')}}">s'enregistrer</a>
+					<a href="{{path('app_register')}}">S'enregistrer</a>
 				</li>
 				{% endif %}
 			</ul>
@@ -186,9 +179,9 @@
 ============================= #}
 
 	{% block body %}{% endblock %}
+
+
 	{% block footer%}
-
-
 	{% if app.request.get('_route') == 'home' %}
 	<div class="section white homeSectionPresentation">
 		<div class="row container">
@@ -199,7 +192,7 @@
 						{{ how_we_are.descriptionHowWeAre|raw}}
 					</p>
 					{% endfor %}
-					<a href="#">en savoir plus</a>
+					<a href="{{path('les_amhe')}}#les-lames-du-ponant">en savoir plus</a>
 				</div>
 		</div>
 	</div>
