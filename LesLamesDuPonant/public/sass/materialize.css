@@ -9795,6 +9795,12 @@ ul.tl li .timestamp {
   margin-bottom: 40px;
 }
 
+#mapid {
+  height: 300px;
+  width: 600px;
+  margin: 0 auto;
+}
+
 .middle-indicator {
   position: absolute;
   top: 50%;

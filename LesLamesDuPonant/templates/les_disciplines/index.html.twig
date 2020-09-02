@@ -6,7 +6,7 @@
 
 {% for discipline in disciplines %}
 
-{% if discipline.active == 1 %}
+{% if discipline.active == 1  and   discipline.orderDiscipline is divisible by(2)  %}
 
 <div class="container">
     <div class="carousel carousel-slider center " data-indicators="true">
@@ -52,6 +52,7 @@
     </div>
 
 </div>
+{% else %}
 <div class="container">
     <div class="carousel carousel-slider center " data-indicators="true">
         <div class="carousel-fixed-item center middle-indicator">

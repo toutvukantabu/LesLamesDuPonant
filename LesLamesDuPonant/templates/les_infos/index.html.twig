@@ -1,20 +1,44 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello LesInfosController!{% endblock %}
+{% block title %}info Les lames Du Ponant{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+{% for home_info in home_infos %}
+{% if home_info.active == 1  %}
+    
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/wamp64/www/LesLamesDuPonant/LesLamesDuPonant/src/Controller/LesInfosController.php'|file_link(0) }}">src/Controller/LesInfosController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/wamp64/www/LesLamesDuPonant/LesLamesDuPonant/templates/les_infos/index.html.twig'|file_link(0) }}">templates/les_infos/index.html.twig</a></code></li>
-    </ul>
+<div class="container">
+<h4 class="center-align">Information Les Lames du Ponant</h4>
+
+<div class="row">
+<div class="col xl3 l3 m12 s12 ">
+<h5 class="center-align">{{ home_info.titleInfo}}</h5>
+<div class="row">
+<p class="center-align">{{ home_info.descriptionInfo|raw}}</p>
 </div>
+<a href="https://goo.gl/maps/7Fmo8wdAKEHxRXUF9"> y aller</a>
+</div>
+<div class="col xl9 l9 m112 s12">
+<h5 class="center-align">Ou nous trouver</h5>
+   <div id="mapid"></div>
+</div>
+</div>
+
+
+
+</div>
+        <td>{{ home_info.id }}</td>
+                <td>{{ home_info.titleInfo|striptags|u.truncate(20)|raw }}</td>
+                <td></td>
+                <td>{{ home_info.titleCost|striptags|u.truncate(20)|raw }}</td>
+                <td>{{ home_info.descriptionCost|striptags|u.truncate(20)|raw }}</td>
+                <td>{{ home_info.titleFaqInfo|striptags|u.truncate(20)|raw }}</td>
+                <td>{{ home_info.descriptionFaqInfo|striptags|u.truncate(20)|raw }}</td>
+                {% endif %}
+
+{% endfor %}
+
 {% endblock %}
+            
+              
