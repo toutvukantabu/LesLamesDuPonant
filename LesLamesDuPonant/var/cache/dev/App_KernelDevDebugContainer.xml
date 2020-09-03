@@ -444,6 +444,13 @@
         <argument type="service" id=".service_locator.g9CqTPp.App\Controller\HowWeAreController"/>
       </call>
     </service>
+    <service id="App\Controller\LeForumController" class="App\Controller\LeForumController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.g9CqTPp.App\Controller\LeForumController"/>
+      </call>
+    </service>
     <service id="App\Controller\LesAMHEController" class="App\Controller\LesAMHEController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -5505,6 +5512,9 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\HowWeAreController" class="App\Controller\HowWeAreController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\HowWeAreController" class="App\Controller\HowWeAreController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\HowWeAreController" class="App\Controller\HowWeAreController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\LeForumController" class="App\Controller\LeForumController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\LeForumController" class="App\Controller\LeForumController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\LeForumController" class="App\Controller\LeForumController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\LesAMHEController" class="App\Controller\LesAMHEController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\LesAMHEController" class="App\Controller\LesAMHEController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\LesAMHEController" class="App\Controller\LesAMHEController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -6050,6 +6060,13 @@
         <argument key="howWeAre" type="service" id=".errored..service_locator.8iRGIK4.App\Entity\HowWeAre"/>
       </argument>
     </service>
+    <service id=".service_locator.0j7lnSO" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="categoryForumRepository" type="service" id="App\Repository\CategoryForumRepository"/>
+        <argument key="homeSectionForumRepository" type="service" id="App\Repository\HomeSectionForumRepository"/>
+      </argument>
+    </service>
     <service id=".service_locator.IM1ypip" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -6171,7 +6188,7 @@
         <argument key="user" type="service" id=".errored..service_locator.ikUdgSe.App\Entity\User"/>
       </argument>
     </service>
-    <service id=".service_locator.IFJkd0M" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.84M2IKi" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\AMHEController::activerAMHE" type="service" id=".service_locator.Yu9Pcj8"/>
@@ -6241,6 +6258,7 @@
         <argument key="App\Controller\HowWeAreController::index" type="service" id=".service_locator.lZ8SM6f"/>
         <argument key="App\Controller\HowWeAreController::show" type="service" id=".service_locator.8iRGIK4"/>
         <argument key="App\Controller\HowWeAreController::supprimer" type="service" id=".service_locator.8iRGIK4"/>
+        <argument key="App\Controller\LeForumController::index" type="service" id=".service_locator.0j7lnSO"/>
         <argument key="App\Controller\LesAMHEController::index" type="service" id=".service_locator.IM1ypip"/>
         <argument key="App\Controller\LesDisciplinesController::index" type="service" id=".service_locator.G2t7sZQ"/>
         <argument key="App\Controller\LesInfosController::index" type="service" id=".service_locator.0_dT2PR"/>
@@ -6356,6 +6374,7 @@
         <argument key="App\Controller\HowWeAreController:index" type="service" id=".service_locator.lZ8SM6f"/>
         <argument key="App\Controller\HowWeAreController:show" type="service" id=".service_locator.8iRGIK4"/>
         <argument key="App\Controller\HowWeAreController:supprimer" type="service" id=".service_locator.8iRGIK4"/>
+        <argument key="App\Controller\LeForumController:index" type="service" id=".service_locator.0j7lnSO"/>
         <argument key="App\Controller\LesAMHEController:index" type="service" id=".service_locator.IM1ypip"/>
         <argument key="App\Controller\LesDisciplinesController:index" type="service" id=".service_locator.G2t7sZQ"/>
         <argument key="App\Controller\LesInfosController:index" type="service" id=".service_locator.0_dT2PR"/>
@@ -6797,6 +6816,12 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.g9CqTPp" method="withContext"/>
     </service>
+    <service id=".service_locator.g9CqTPp.App\Controller\LeForumController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\LeForumController"/>
+      <argument>App\Controller\LeForumController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.g9CqTPp" method="withContext"/>
+    </service>
     <service id=".service_locator.g9CqTPp.App\Controller\LesAMHEController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator_context" id="App\Controller\LesAMHEController"/>
       <argument>App\Controller\LesAMHEController</argument>
@@ -7030,12 +7055,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
-      <argument type="service" id=".service_locator.IFJkd0M"/>
+      <argument type="service" id=".service_locator.84M2IKi"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver" public="false"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver" public="false">
-      <argument type="service" id=".service_locator.IFJkd0M"/>
+      <argument type="service" id=".service_locator.84M2IKi"/>
     </service>
     <service id=".debug.http_client.inner" class="Symfony\Contracts\HttpClient\HttpClientInterface" public="false">
       <argument type="collection"/>
@@ -7462,7 +7487,7 @@
     <service id="SymfonyCasts\Bundle\ResetPassword\ResetPasswordHelperInterface" alias="symfonycasts.reset_password.helper"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.WaGDpDt" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem" public="false"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.IFJkd0M"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.84M2IKi"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
     <service id="Psr\Log\LoggerInterface $consoleLogger" alias="monolog.logger.console"/>

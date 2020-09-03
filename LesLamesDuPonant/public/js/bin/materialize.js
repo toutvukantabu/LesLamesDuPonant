@@ -10211,8 +10211,6 @@ $('#modal-delete').modal({
   },
  
 );
-
-
 ///Open Street Map
 
 //Initialisation de la carte//
@@ -10243,5 +10241,6 @@ function onMapClick(e) {
 }
 
 mymap.on('click', onMapClick);
-// ToastMessage
 
+//FORUM
+//++++++++

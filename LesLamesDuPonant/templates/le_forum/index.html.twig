@@ -1,0 +1,83 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello LeForumController!{% endblock %}
+
+{% block body %}
+<div class="container">
+<div class="col xl12">
+  {# PAGINATION #}
+            <ul class="pagination">
+                <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+                <li class="active"><a href="#!">1</a></li>
+                <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+            </ul>
+
+    <div class="row">
+        <div class="col xl8">
+          
+            <div class="row">
+                {% for home_section_forum in home_section_forums%}
+
+                <table>
+
+                    <thead>{% if home_section_forum.active == 1 %}
+                    <h5 class="center-align">{{home_section_forum.SectionTitleForum}}</h5>
+                          {% endif %}
+                        <tr>
+                            <th>
+                               titre de la catégorie 
+                            </th>
+                            <th>
+                           nombre de sujet
+                            </th>
+                            <th>
+                         dernier sujet
+                            </th>
+
+                        </tr>
+                    </thead>
+                    {% for category_section_forum in home_section_forum.categoryHomeSectionforum %}
+                    <tbody>
+                        <tr>
+                            {% if category_section_forum.active == 1 %}
+                            <td>
+                                {{category_section_forum.titlecategory}}
+                            </td>
+                            {% endif %}
+                        </tr>
+
+                    </tbody>
+                   
+                </table>
+ {% endfor %}
+   {% endfor %}
+            </div>
+        </div>
+        <div class="col xl4">
+        <h5 class="center-align">Liste</h5>
+  {% for home_section_forum in home_section_forums%}
+  {% if home_section_forum.active == 1 %}
+<h5>{{home_section_forum.SectionTitleForum}} </h5>
+{% endif %}
+<ul>
+{% for category_section_forum in home_section_forum.categoryHomeSectionforum %}
+    {% if category_section_forum.active == 1 %}
+<li>{{category_section_forum.titlecategory}}</li>
+<li><span class="new badge" data-badge-caption="custom caption">4</span></li>
+{% endif %}
+</ul>
+    {% endfor %}
+   {% endfor %}                                    
+     </div>
+    </div>
+</div>
+<div class="col xl12">
+  {# PAGINATION #}
+            <ul class="pagination">
+                <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+                <li class="active"><a href="#!">1</a></li>
+                <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+            </ul>
+
+</div>
+{% endblock %}

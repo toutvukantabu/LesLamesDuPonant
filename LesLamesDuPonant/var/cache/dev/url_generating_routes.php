@@ -83,6 +83,7 @@ return [
     'how_we_are_delete' => [['id'], ['_controller' => 'App\\Controller\\HowWeAreController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/how/we/are']], [], []],
     'supprimer_how_we_are' => [['id'], ['_controller' => 'App\\Controller\\HowWeAreController::supprimer'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/how/we/are/supprimer']], [], []],
     'activer_how_we_are' => [['id'], ['_controller' => 'App\\Controller\\HowWeAreController::activerHowWeAre'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/how/we/are/activer']], [], []],
+    'le_forum' => [[], ['_controller' => 'App\\Controller\\LeForumController::index'], [], [['text', '/forumldp']], [], []],
     'les_amhe' => [[], ['_controller' => 'App\\Controller\\LesAMHEController::index'], [], [['text', '/lesamhe']], [], []],
     'les_disciplines' => [[], ['_controller' => 'App\\Controller\\LesDisciplinesController::index'], [], [['text', '/les/disciplines']], [], []],
     'les_infos' => [[], ['_controller' => 'App\\Controller\\LesInfosController::index'], [], [['text', '/les/infos']], [], []],
