@@ -62,6 +62,11 @@ class Discipline
      */
     private $active;
 
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $orderDiscipline;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -171,6 +176,18 @@ class Discipline
     public function setActive(?bool $active): self
     {
         $this->active = $active;
+
+        return $this;
+    }
+
+    public function getOrderDiscipline(): ?int
+    {
+        return $this->orderDiscipline;
+    }
+
+    public function setOrderDiscipline(?int $orderDiscipline): self
+    {
+        $this->orderDiscipline = $orderDiscipline;
 
         return $this;
     }

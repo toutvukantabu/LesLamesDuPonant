@@ -19,6 +19,7 @@
                 <th>carousel 1</th>
                 <th>carousel 2</th>
                 <th>Carousel 3</th>
+                <th>ordre</th>
                 <th>Activation</th>
                 <th>Modifier</th>
             </tr>
@@ -34,6 +35,7 @@
                 <td><img src="{{asset('/uploads/discipline/') ~ discipline.imageOneDiscipline }}" alt="" class="responsive-image imgTableAdmin"></td>
                 <td><img src="{{asset('/uploads/discipline/') ~ discipline.imageTwoDiscipline }}" alt="" class="responsive-image imgTableAdmin"></td>
                 <td><img src="{{asset('/uploads/discipline/') ~  discipline.imageThreeDiscipline }}" alt="" class="responsive-image imgTableAdmin"></td>
+                 <td>{{ discipline.orderDiscipline }}</td>
                  <td>
                     <div class="switch">
                         <label>
