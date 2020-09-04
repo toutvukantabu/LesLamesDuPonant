@@ -1,0 +1,101 @@
+{% extends 'base.html.twig' %}
+
+{% block title 'message'%}
+
+{% block body %}
+<div class="container">
+    <div class="col xl12">
+        {# PAGINATION #}
+        <ul class="pagination">
+            <li class="active blue"><a href="{{path('le_forum')}}">Page d'accueil</a></li>
+            <li class="active blue"><a
+                    href="{{path('le_forum_category', {'id': category_forum.id})}}">{{category_forum.titlecategory}}</a>
+            </li>
+            <li class="active blue"><a
+                    href="{{path('le_forum_subject', {'id': subject_forum.id})}}">{{subject_forum.titleSubjectForum}}</a>
+            </li>
+        </ul>
+        <div class="row">
+            <div class="col xl8">
+                <div class="row">
+                    <table>
+                        <h5 class="center-align">{{subject_forum.contentSubjectForum|striptags|u.truncate(20)|raw }}
+                        </h5>
+                        <thead>
+                            <tr>
+                                <th>
+                                    <div class="chip">
+                                        <img src="{{ asset('uploads/avatar/' ~ subject_forum.user.photoAvatarUser )}}"
+                                            alt="" class="circle responsive-img">
+                                        <span>{{subject_forum.user.pseudoUser|raw}}</span>
+                                    </div>
+                                </th>
+
+                            </tr>
+
+
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    {{subject_forum.contentSubjectForum|raw}}
+                                </td>
+                                <td>
+                             {% for subject_forum in subject_forums%}
+                               <pre>
+                                   {{ dump(subject_forum) }}
+                               </pre>
+                             {% endfor %}
+                                </td>
+                            </tr>
+
+
+
+                        </tbody>
+                    </table>
+                   <div class="container">
+<div class="row formRegister z-depth-5">
+{{ form_start(form) }}
+    {{ form_widget(form) }}
+    <div class="btnEdit">
+    <button class="btn">{{ button_label|default('envoyer') }}</button>
+</div>
+{{ form_end(form) }}
+</div>
+</div>
+                </div>
+            </div>
+            <div class="col xl4">
+                <h5 class="center-align">Liste</h5>
+                {% for home_section_forum in home_section_forums%}
+                {% if home_section_forum.active == 1 %}
+                <h5>{{home_section_forum.SectionTitleForum}}</h5>
+                {% endif %}
+                <ul>
+                    {% for category_section_forum in home_section_forum.categoryHomeSectionforum %}
+                    {% if category_section_forum.active == 1 %}
+                    <li><a href="{{path('le_forum_category', {'id': category_section_forum.id })}}">
+                            {{category_section_forum.titlecategory}}</a></li>
+                    <li></li>
+                    {% endif %}
+                </ul>
+                {% endfor %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="col xl12">
+        {# PAGINATION #}
+        <ul class="pagination">
+            <li class="active blue"><a href="{{path('le_forum')}}">Page d'accueil</a></li>
+            <li class="active blue"><a
+                    href="{{path('le_forum_category', {'id': category_forum.id})}}">{{category_forum.titlecategory}}</a>
+            </li>
+            <li class="active blue"><a
+                    href="{{path('le_forum_subject', {'id': subject_forum.id})}}">{{subject_forum.titleSubjectForum}}</a>
+            </li>
+
+        </ul>
+
+    </div>
+    {% endblock %}

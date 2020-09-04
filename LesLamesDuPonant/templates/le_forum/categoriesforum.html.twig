@@ -1,0 +1,84 @@
+{% extends 'base.html.twig' %}
+
+{% block title 'catégories'%}
+
+{% block body %}
+<div class="container">
+<div class="col xl12">
+  {# PAGINATION #}
+            <ul class="pagination">
+                <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+                <li class="active blue"><a href="{{path('le_forum')}}">Page d'accueil</a></li>
+                <li class="active blue"><a href="{{path('le_forum_category', {'id': category_forum.id})}}">{{category_forum.titlecategory}}</a></li>
+                
+                <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+            </ul>
+    <div class="row">
+        <div class="col xl8"> 
+            <div class="row">
+                <table>
+                    <thead>
+                    <h5 class="center-align">{{category_forum.titlecategory}}</h5>
+                     <a class=" btn-floating modal-trigger red" href="#modal-create" data-id="{{message_forum.id}}"
+                            data-titre ="{{message_forum.id }}" data-target="modal-create"><i
+                                class="material-icons">delete</i></a>
+                         <tr>
+                            <th>    
+                              Sujets 
+                            </th>
+                            <th>
+                           nombre messages
+                            </th>
+                            <th>
+                         dernier message
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>  
+                            <td>  
+                          <a href="{{path('le_forum_subject', {'id': subject_forum.id})}} ">{{subject_forum.titleSubjectForum}}</a> 
+                            </td>
+
+                            <td>     
+                            {{subject_forum|length}}       
+                            </td>
+                             <td>     
+                            {{message_forum|length}}
+                                   
+                            </td>
+                        </tr>
+                    </tbody>                 
+                </table>
+
+            </div>
+        </div>
+        <div class="col xl4">
+        <h5 class="center-align">Liste</h5> 
+   {% for home_section_forum in home_section_forums%}
+  {% if home_section_forum.active == 1 %}
+<h5>{{home_section_forum.SectionTitleForum}}</h5>
+{% endif %}
+<ul>
+{% for category_section_forum in home_section_forum.categoryHomeSectionforum %}
+    {% if category_section_forum.active == 1 %}
+<li><a href="{{path('le_forum_category', {'id': category_section_forum.id })}}">    {{category_section_forum.titlecategory}}</a></li>
+<li></li>
+{% endif %}
+</ul>
+    {% endfor %}    
+       {% endfor %}                               
+     </div>
+    </div>
+</div> 
+<div class="col xl12">
+  {# PAGINATION #}
+           <ul class="pagination">
+                <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+                <li class="active blue"><a href="{{path('le_forum')}}">Page d'accueil</a></li>
+                <li class="active blue"><a href="{{path('le_forum_category', {'id': category_forum.id})}}">{{category_forum.titlecategory}}</a></li>
+                <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+            </ul>
+
+</div>
+{% endblock %}
