@@ -4,7 +4,7 @@ namespace App\Entity;
 
 use App\Repository\MessageForumRepository;
 use Doctrine\ORM\Mapping as ORM;
-
+use Gedmo\Mapping\Annotation as Gedmo;
 /**
  * @ORM\Entity(repositoryClass=MessageForumRepository::class)
  */
@@ -20,9 +20,10 @@ class MessageForum
     /**
      * @ORM\Column(type="text", nullable=true)
      */
-    private $ContentMessageForum;
+    private $contentMessageForum;
 
     /**
+     * @Gedmo\Timestampable(on="create")
      * @ORM\Column(type="datetime")
      */
     private $datePublicationMessageForum;
@@ -47,6 +48,12 @@ class MessageForum
      */
     private $active;
 
+    /**
+     * @Gedmo\Slug(fields={"contentMessageForum"})
+     * @ORM\Column(type="string", length=60)
+     */
+    private $slug;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -54,12 +61,12 @@ class MessageForum
 
     public function getContentMessageForum(): ?string
     {
-        return $this->ContentMessageForum;
+        return $this->contentMessageForum;
     }
 
-    public function setContentMessageForum(?string $ContentMessageForum): self
+    public function setContentMessageForum(?string $contentMessageForum): self
     {
-        $this->ContentMessageForum = $ContentMessageForum;
+        $this->contentMessageForum = $contentMessageForum;
 
         return $this;
     }
@@ -69,12 +76,6 @@ class MessageForum
         return $this->datePublicationMessageForum;
     }
 
-    public function setDatePublicationMessageForum(\DateTimeInterface $datePublicationMessageForum): self
-    {
-        $this->datePublicationMessageForum = $datePublicationMessageForum;
-
-        return $this;
-    }
 
     public function getPhotoMessageForum(): ?string
     {
@@ -123,4 +124,11 @@ class MessageForum
 
         return $this;
     }
+
+    public function getSlug(): ?string
+    {
+        return $this->slug;
+    }
+
+  
 }

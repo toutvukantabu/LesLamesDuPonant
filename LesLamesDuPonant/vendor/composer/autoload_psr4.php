@@ -79,6 +79,7 @@ return array(
     'Symfony\\Bridge\\Doctrine\\' => array($vendorDir . '/symfony/doctrine-bridge'),
     'SymfonyCasts\\Bundle\\VerifyEmail\\' => array($vendorDir . '/symfonycasts/verify-email-bundle/src'),
     'SymfonyCasts\\Bundle\\ResetPassword\\' => array($vendorDir . '/symfonycasts/reset-password-bundle/src'),
+    'Stof\\DoctrineExtensionsBundle\\' => array($vendorDir . '/antishov/doctrine-extensions-bundle'),
     'Sensio\\Bundle\\FrameworkExtraBundle\\' => array($vendorDir . '/sensio/framework-extra-bundle/src'),
     'Psr\\Log\\' => array($vendorDir . '/psr/log/Psr/Log'),
     'Psr\\Link\\' => array($vendorDir . '/psr/link/src'),
@@ -88,6 +89,7 @@ return array(
     'PhpParser\\' => array($vendorDir . '/nikic/php-parser/lib/PhpParser'),
     'PackageVersions\\' => array($vendorDir . '/composer/package-versions-deprecated/src/PackageVersions'),
     'Monolog\\' => array($vendorDir . '/monolog/monolog/src/Monolog'),
+    'Gedmo\\' => array($vendorDir . '/gedmo/doctrine-extensions/lib/Gedmo'),
     'FOS\\CKEditorBundle\\' => array($vendorDir . '/friendsofsymfony/ckeditor-bundle/src'),
     'Egulias\\EmailValidator\\' => array($vendorDir . '/egulias/email-validator/src'),
     'Doctrine\\SqlFormatter\\' => array($vendorDir . '/doctrine/sql-formatter/src'),
@@ -105,6 +107,7 @@ return array(
     'Doctrine\\Common\\' => array($vendorDir . '/doctrine/common/lib/Doctrine/Common', $vendorDir . '/doctrine/event-manager/lib/Doctrine/Common', $vendorDir . '/doctrine/persistence/lib/Doctrine/Common', $vendorDir . '/doctrine/reflection/lib/Doctrine/Common'),
     'Doctrine\\Bundle\\MigrationsBundle\\' => array($vendorDir . '/doctrine/doctrine-migrations-bundle'),
     'Doctrine\\Bundle\\DoctrineBundle\\' => array($vendorDir . '/doctrine/doctrine-bundle'),
+    'Behat\\Transliterator\\' => array($vendorDir . '/behat/transliterator/src/Behat/Transliterator'),
     'App\\Tests\\' => array($baseDir . '/tests'),
     'App\\' => array($baseDir . '/src'),
 );

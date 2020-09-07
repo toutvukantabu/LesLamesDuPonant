@@ -23,9 +23,11 @@ class SubjectForumType extends AbstractType
             'required' => false,
     ])
             ->add('titleSubjectForum',TextType::class,[
-                'label'=>'Titre de la nouvelle catégorie',
+                'label'=>'Titre du nouveau sujet',
                 'required'=>false])
-            ->add('contentSubjectForum',CKEditorType::class)
+            ->add('contentSubjectForum',CKEditorType::class,[
+                'label'=>' ',
+            ])
            ;
     }
 

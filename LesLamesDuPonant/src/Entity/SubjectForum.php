@@ -6,6 +6,7 @@ use App\Repository\SubjectForumRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
  * @ORM\Entity(repositoryClass=SubjectForumRepository::class)
@@ -30,6 +31,7 @@ class SubjectForum
     private $contentSubjectForum;
 
     /**
+     * @Gedmo\Timestampable(on="create")
      * @ORM\Column(type="datetime", nullable=true)
      */
     private $dateSubjectForum;
@@ -53,6 +55,12 @@ class SubjectForum
      * @ORM\Column(type="boolean", nullable=true)
      */
     private $active;
+
+    /**
+     * @Gedmo\Slug(fields={"titleSubjectForum"})
+     * @ORM\Column(type="string", length=60)
+     */
+    private $slug;
 
     public function __construct()
     {
@@ -93,12 +101,6 @@ class SubjectForum
         return $this->dateSubjectForum;
     }
 
-    public function setDateSubjectForum(?\DateTimeInterface $dateSubjectForum): self
-    {
-        $this->dateSubjectForum = $dateSubjectForum;
-
-        return $this;
-    }
 
     public function getUser(): ?User
     {
@@ -163,6 +165,18 @@ class SubjectForum
     public function setActive(?bool $active): self
     {
         $this->active = $active;
+
+        return $this;
+    }
+
+    public function getSlug(): ?string
+    {
+        return $this->slug;
+    }
+
+    public function setSlug(string $slug): self
+    {
+        $this->slug = $slug;
 
         return $this;
     }

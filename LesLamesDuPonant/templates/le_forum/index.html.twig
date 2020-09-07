@@ -38,7 +38,7 @@
                             <tr>
                                 {% if category_section_forum.active == 1 %}
                                 <td>
-                                    <li><a href="{{path('le_forum_category', {'id': category_section_forum.id })}}">
+                                    <li><a href="{{path('le_forum_category', {'slug': category_section_forum.slug })}}">
                                             {{category_section_forum.titlecategory}}</a></li>
                                 </td>
                                 {% endif %}
@@ -58,7 +58,7 @@
                 <ul>
                     {% for category_section_forum in home_section_forum.categoryHomeSectionforum %}
                     {% if category_section_forum.active == 1 %}
-                    <li><a href="{{path('le_forum_category', {'id': category_section_forum.id })}}">
+                    <li><a href="{{path('le_forum_category', {'slug': category_section_forum.slug })}}">
                             {{category_section_forum.titlecategory}}</a></li>
                     <li></li>
                     {% endif %}

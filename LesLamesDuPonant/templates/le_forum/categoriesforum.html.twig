@@ -9,7 +9,7 @@
             <ul class="pagination">
                 <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
                 <li class="active blue"><a href="{{path('le_forum')}}">Page d'accueil</a></li>
-                <li class="active blue"><a href="{{path('le_forum_category', {'id': category_forum.id})}}">{{category_forum.titlecategory}}</a></li>
+                <li class="active blue"><a href="{{path('le_forum_category', {'slug': category_forum.slug})}}">{{category_forum.titlecategory}}</a></li>
                 
                 <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
             </ul>
@@ -18,6 +18,11 @@
             <div class="row">
                 <table>
                     <thead>
+{{category_forum.titleCategory}}
+{% for subject_category in category_forum.subjectCategory %}
+{{subject_category.titleSubjectForum}}
+
+{% endfor %}
                     <h5 class="center-align">{{category_forum.titlecategory}}</h5>
                      <a class=" btn-floating modal-trigger red" href="#modal-create" data-id="{{message_forum.id}}"
                             data-titre ="{{message_forum.id }}" data-target="modal-create"><i
@@ -62,7 +67,7 @@
 <ul>
 {% for category_section_forum in home_section_forum.categoryHomeSectionforum %}
     {% if category_section_forum.active == 1 %}
-<li><a href="{{path('le_forum_category', {'id': category_section_forum.id })}}">    {{category_section_forum.titlecategory}}</a></li>
+<li><a href="{{path('le_forum_category', {'slug': category_section_forum.slug})}}">    {{category_section_forum.titlecategory}}</a></li>
 <li></li>
 {% endif %}
 </ul>
