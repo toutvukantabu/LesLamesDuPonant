@@ -37,7 +37,7 @@ class CategoryForum
     private $user;
 
     /**
-     * @ORM\OneToMany(targetEntity=SubjectForum::class, mappedBy="CategorySubjectForum")
+     * @ORM\OneToMany(targetEntity=SubjectForum::class, mappedBy="categorySubjectForum")
      */
     private $subjectCategory;
 

@@ -18,16 +18,12 @@
             <div class="row">
                 <table>
                     <thead>
-{{category_forum.titleCategory}}
-{% for subject_category in category_forum.subjectCategory %}
-{{subject_category.titleSubjectForum}}
 
-{% endfor %}
                     <h5 class="center-align">{{category_forum.titlecategory}}</h5>
-                     <a class=" btn-floating modal-trigger red" href="#modal-create" data-id="{{message_forum.id}}"
+                     {# <a class=" btn-floating modal-trigger red" href="#modal-create" data-id="{{message_forum.id}}"
                             data-titre ="{{message_forum.id }}" data-target="modal-create"><i
                                 class="material-icons">delete</i></a>
-                         <tr>
+                         <tr> #}
                             <th>    
                               Sujets 
                             </th>
@@ -40,50 +36,32 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>  
+                    {% for subject_category  in category_forum.subjectCategory %}
+                        
+                   
                             <td>  
-                          <a href="{{path('le_forum_subject', {'id': subject_forum.id})}} ">{{subject_forum.titleSubjectForum}}</a> 
+                           <a href=" ">{{subject_category.titleSubjectForum}}</a>  
                             </td>
 
                             <td>     
-                            {{subject_forum|length}}       
+                            {{subject_category.id|length}}       
                             </td>
                              <td>     
-                            {{message_forum|length}}
+                      
                                    
                             </td>
                         </tr>
+                         {% endfor %}
                     </tbody>                 
                 </table>
 
             </div>
         </div>
+        {{ form_start(form) }}
+        {{form(form)}}
+        
+        {{ form_end(form) }}
         <div class="col xl4">
         <h5 class="center-align">Liste</h5> 
-   {% for home_section_forum in home_section_forums%}
-  {% if home_section_forum.active == 1 %}
-<h5>{{home_section_forum.SectionTitleForum}}</h5>
-{% endif %}
-<ul>
-{% for category_section_forum in home_section_forum.categoryHomeSectionforum %}
-    {% if category_section_forum.active == 1 %}
-<li><a href="{{path('le_forum_category', {'slug': category_section_forum.slug})}}">    {{category_section_forum.titlecategory}}</a></li>
-<li></li>
-{% endif %}
-</ul>
-    {% endfor %}    
-       {% endfor %}                               
-     </div>
-    </div>
-</div> 
-<div class="col xl12">
-  {# PAGINATION #}
-           <ul class="pagination">
-                <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
-                <li class="active blue"><a href="{{path('le_forum')}}">Page d'accueil</a></li>
-                <li class="active blue"><a href="{{path('le_forum_category', {'id': category_forum.id})}}">{{category_forum.titlecategory}}</a></li>
-                <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
-            </ul>
-
-</div>
+   
 {% endblock %}

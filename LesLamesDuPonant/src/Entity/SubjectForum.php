@@ -43,8 +43,9 @@ class SubjectForum
 
     /**
      * @ORM\ManyToOne(targetEntity=CategoryForum::class, inversedBy="subjectCategory")
+     * @ORM\JoinColumn(nullable=false)
      */
-    private $CategorySubjectForum;
+    private $categorySubjectForum;
 
     /**
      * @ORM\OneToMany(targetEntity=MessageForum::class, mappedBy="subjectMessageForum")
@@ -116,12 +117,12 @@ class SubjectForum
 
     public function getCategorySubjectForum(): ?CategoryForum
     {
-        return $this->CategorySubjectForum;
+        return $this->categorySubjectForum;
     }
 
-    public function setCategorySubjectForum(?CategoryForum $CategorySubjectForum): self
+    public function setCategorySubjectForum(?CategoryForum $categorySubjectForum): self
     {
-        $this->CategorySubjectForum = $CategorySubjectForum;
+        $this->categorySubjectForum = $categorySubjectForum;
 
         return $this;
     }

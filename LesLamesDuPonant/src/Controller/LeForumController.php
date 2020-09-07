@@ -42,12 +42,12 @@ class LeForumController extends AbstractController
     /**
      * @Route("/categories/{slug}", name="le_forum_category")
      */
-    public function showCategory( $slug ,CategoryForum $categoryForum, SubjectForumRepository $subjectForumRepository, Request $request){
+    public function showCategory( $slug ,CategoryForum $categoryForum, SubjectForumRepository $subjectForumRepository,CategoryForum $categorySubjectForum, Request $request){
         $categoryForum = $this->getDoctrine()->getRepository(CategoryForum::class)->findOneBy(['slug' => $slug]);
         $subjectForum = $this->getDoctrine()->getRepository(SubjectForum::class)->findBy([
-            
-     
-        ]);
+        'categorySubjectForum'=> $categoryForum,
+        'active'=> 1 ,
+        ],['dateSubjectForum'=>'DESC']);
         if(!$categoryForum){
 
             throw $this->createNotFoundException('La categorie n\'existe pas');
@@ -59,6 +59,8 @@ class LeForumController extends AbstractController
         }
         $subjectForum = new SubjectForum();
         $subjectForum->setUser($this->getUser());
+        $subjectForum->setActive('1');
+        $subjectForum->setCategorySubjectForum( $this->categorySubjectForum = $categorySubjectForum);
         $form = $this->createForm(SubjectForumType::class, $subjectForum);
         $form->handleRequest($request);
 
@@ -73,7 +75,7 @@ class LeForumController extends AbstractController
     return $this->render('le_forum/categoriesforum.html.twig', [
         'form' => $form->createView(),
         'category_forum' => $categoryForum,
-        'subject_forums' => $subjectForumRepository->findAll(),
+        'subject_forum' => $subjectForum,
     ]);
 
 }
