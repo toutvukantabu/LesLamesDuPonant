@@ -6,6 +6,7 @@ use App\Repository\CategoryForumRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
  * @ORM\Entity(repositoryClass=CategoryForumRepository::class)
@@ -25,6 +26,7 @@ class CategoryForum
     private $titleCategory;
 
     /**
+     * @Gedmo\Timestampable(on="create")
      * @ORM\Column(type="datetime", nullable=true)
      */
     private $dateCategoryForum;
@@ -35,7 +37,7 @@ class CategoryForum
     private $user;
 
     /**
-     * @ORM\OneToMany(targetEntity=SubjectForum::class, mappedBy="CategorySubjectForum")
+     * @ORM\OneToMany(targetEntity=SubjectForum::class, mappedBy="categorySubjectForum")
      */
     private $subjectCategory;
 
@@ -48,6 +50,12 @@ class CategoryForum
      * @ORM\Column(type="boolean")
      */
     private $active;
+
+    /**
+     * @Gedmo\Slug(fields={"titleCategory"})
+     * @ORM\Column(type="string", length=60)
+     */
+    private $slug;
 
     public function __construct()
     {
@@ -75,14 +83,7 @@ class CategoryForum
     {
         return $this->dateCategoryForum;
     }
-
-    public function setDateCategoryForum(?\DateTimeInterface $dateCategoryForum): self
-    {
-        $this->dateCategoryForum = $dateCategoryForum;
-
-        return $this;
-    }
-
+    
     public function getUser(): ?User
     {
         return $this->user;
@@ -149,4 +150,10 @@ class CategoryForum
 
         return $this;
     }
+
+    public function getSlug(): ?string
+    {
+        return $this->slug;
+    }
+
 }

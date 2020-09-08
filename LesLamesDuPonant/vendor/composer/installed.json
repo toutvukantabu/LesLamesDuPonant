@@ -1,5 +1,127 @@
 [
     {
+        "name": "antishov/doctrine-extensions-bundle",
+        "version": "v1.4.2",
+        "version_normalized": "1.4.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/antishov/StofDoctrineExtensionsBundle.git",
+            "reference": "19c8d45e7ceb6477ef490f21ab4279e549c1e828"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/antishov/StofDoctrineExtensionsBundle/zipball/19c8d45e7ceb6477ef490f21ab4279e549c1e828",
+            "reference": "19c8d45e7ceb6477ef490f21ab4279e549c1e828",
+            "shasum": ""
+        },
+        "require": {
+            "gedmo/doctrine-extensions": "^2.3.4",
+            "php": ">=7.1",
+            "symfony/framework-bundle": "^4.3|^5.0"
+        },
+        "conflict": {
+            "stof/doctrine-extensions-bundle": "*"
+        },
+        "require-dev": {
+            "symfony/phpunit-bridge": "^4.3|^5.0",
+            "symfony/security-bundle": "^4.3|^5.0"
+        },
+        "suggest": {
+            "doctrine/doctrine-bundle": "to use the ORM extensions",
+            "doctrine/mongodb-odm-bundle": "to use the MongoDB ODM extensions"
+        },
+        "time": "2019-12-03T19:50:27+00:00",
+        "type": "symfony-bundle",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.0-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Stof\\DoctrineExtensionsBundle\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Antishov Viktor",
+                "email": "antishov.viktor@gmail.com"
+            },
+            {
+                "name": "Christophe Coevoet",
+                "email": "stof@notk.org"
+            }
+        ],
+        "description": "Forked from stof/doctrine-extensions-bundle integration of the gedmo/doctrine-extensions with Symfony 4",
+        "homepage": "https://github.com/antishov/StofDoctrineExtensionsBundle",
+        "keywords": [
+            "behaviors",
+            "doctrine2",
+            "extensions",
+            "gedmo",
+            "loggable",
+            "nestedset",
+            "sluggable",
+            "sortable",
+            "stof",
+            "timestampable",
+            "translatable",
+            "tree"
+        ]
+    },
+    {
+        "name": "behat/transliterator",
+        "version": "v1.3.0",
+        "version_normalized": "1.3.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/Behat/Transliterator.git",
+            "reference": "3c4ec1d77c3d05caa1f0bf8fb3aae4845005c7fc"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/Behat/Transliterator/zipball/3c4ec1d77c3d05caa1f0bf8fb3aae4845005c7fc",
+            "reference": "3c4ec1d77c3d05caa1f0bf8fb3aae4845005c7fc",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3"
+        },
+        "require-dev": {
+            "chuyskywalker/rolling-curl": "^3.1",
+            "php-yaoi/php-yaoi": "^1.0",
+            "phpunit/phpunit": "^4.8.36|^6.3"
+        },
+        "time": "2020-01-14T16:39:13+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.2-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Behat\\Transliterator\\": "src/Behat/Transliterator"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "Artistic-1.0"
+        ],
+        "description": "String transliterator",
+        "keywords": [
+            "i18n",
+            "slug",
+            "transliterator"
+        ]
+    },
+    {
         "name": "composer/package-versions-deprecated",
         "version": "1.11.99",
         "version_normalized": "1.11.99.0",
@@ -1489,17 +1611,17 @@
     },
     {
         "name": "egulias/email-validator",
-        "version": "2.1.19",
-        "version_normalized": "2.1.19.0",
+        "version": "2.1.20",
+        "version_normalized": "2.1.20.0",
         "source": {
             "type": "git",
             "url": "https://github.com/egulias/EmailValidator.git",
-            "reference": "840d5603eb84cc81a6a0382adac3293e57c1c64c"
+            "reference": "f46887bc48db66c7f38f668eb7d6ae54583617ff"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/egulias/EmailValidator/zipball/840d5603eb84cc81a6a0382adac3293e57c1c64c",
-            "reference": "840d5603eb84cc81a6a0382adac3293e57c1c64c",
+            "url": "https://api.github.com/repos/egulias/EmailValidator/zipball/f46887bc48db66c7f38f668eb7d6ae54583617ff",
+            "reference": "f46887bc48db66c7f38f668eb7d6ae54583617ff",
             "shasum": ""
         },
         "require": {
@@ -1515,7 +1637,7 @@
         "suggest": {
             "ext-intl": "PHP Internationalization Libraries are required to use the SpoofChecking validation"
         },
-        "time": "2020-08-08T21:28:19+00:00",
+        "time": "2020-09-06T13:44:32+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -1625,6 +1747,90 @@
         "description": "Provides a CKEditor integration for your Symfony project.",
         "keywords": [
             "CKEditor"
+        ]
+    },
+    {
+        "name": "gedmo/doctrine-extensions",
+        "version": "v2.4.42",
+        "version_normalized": "2.4.42.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/Atlantic18/DoctrineExtensions.git",
+            "reference": "b6c4442b4f32ce05673fbdf1fa4a2d5e315cc0a4"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/Atlantic18/DoctrineExtensions/zipball/b6c4442b4f32ce05673fbdf1fa4a2d5e315cc0a4",
+            "reference": "b6c4442b4f32ce05673fbdf1fa4a2d5e315cc0a4",
+            "shasum": ""
+        },
+        "require": {
+            "behat/transliterator": "~1.2",
+            "doctrine/common": "~2.4",
+            "php": ">=5.3.2"
+        },
+        "conflict": {
+            "doctrine/annotations": "<1.2",
+            "doctrine/mongodb-odm": ">=2.0"
+        },
+        "require-dev": {
+            "doctrine/common": ">=2.5.0",
+            "doctrine/mongodb-odm": ">=1.0.2 <2.0",
+            "doctrine/orm": ">=2.5.0",
+            "phpunit/phpunit": "^4.8.35 || ^5.7 || ^6.5",
+            "symfony/yaml": "^2.6 || ^3.0 || ^4.0 || ^5.0"
+        },
+        "suggest": {
+            "doctrine/mongodb-odm": "to use the extensions with the MongoDB ODM",
+            "doctrine/orm": "to use the extensions with the ORM"
+        },
+        "time": "2020-08-21T01:27:20+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.4.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Gedmo\\": "lib/Gedmo"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Gediminas Morkevicius",
+                "email": "gediminas.morkevicius@gmail.com"
+            },
+            {
+                "name": "Gustavo Falco",
+                "email": "comfortablynumb84@gmail.com"
+            },
+            {
+                "name": "David Buchmann",
+                "email": "david@liip.ch"
+            }
+        ],
+        "description": "Doctrine2 behavioral extensions",
+        "homepage": "http://gediminasm.org/",
+        "keywords": [
+            "Blameable",
+            "behaviors",
+            "doctrine2",
+            "extensions",
+            "gedmo",
+            "loggable",
+            "nestedset",
+            "sluggable",
+            "sortable",
+            "timestampable",
+            "translatable",
+            "tree",
+            "uploadable"
         ]
     },
     {

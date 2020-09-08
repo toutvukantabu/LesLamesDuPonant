@@ -21,6 +21,7 @@
       <parameter key="SymfonyCastsVerifyEmailBundle">SymfonyCasts\Bundle\VerifyEmail\SymfonyCastsVerifyEmailBundle</parameter>
       <parameter key="SymfonyCastsResetPasswordBundle">SymfonyCasts\Bundle\ResetPassword\SymfonyCastsResetPasswordBundle</parameter>
       <parameter key="FOSCKEditorBundle">FOS\CKEditorBundle\FOSCKEditorBundle</parameter>
+      <parameter key="StofDoctrineExtensionsBundle">Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle</parameter>
     </parameter>
     <parameter key="kernel.bundles_metadata" type="collection">
       <parameter key="FrameworkBundle" type="collection">
@@ -78,6 +79,10 @@
       <parameter key="FOSCKEditorBundle" type="collection">
         <parameter key="path">C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\friendsofsymfony\ckeditor-bundle\src</parameter>
         <parameter key="namespace">FOS\CKEditorBundle</parameter>
+      </parameter>
+      <parameter key="StofDoctrineExtensionsBundle" type="collection">
+        <parameter key="path">C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\antishov\doctrine-extensions-bundle</parameter>
+        <parameter key="namespace">Stof\DoctrineExtensionsBundle</parameter>
       </parameter>
     </parameter>
     <parameter key="kernel.charset">UTF-8</parameter>
@@ -274,6 +279,20 @@
       </parameter>
     </parameter>
     <parameter key="env(VAR_DUMPER_SERVER)">127.0.0.1:9912</parameter>
+    <parameter key="stof_doctrine_extensions.listener.sluggable.class">Gedmo\Sluggable\SluggableListener</parameter>
+    <parameter key="stof_doctrine_extensions.listener.timestampable.class">Gedmo\Timestampable\TimestampableListener</parameter>
+    <parameter key="stof_doctrine_extensions.default_locale">fr_FR</parameter>
+    <parameter key="stof_doctrine_extensions.translation_fallback">false</parameter>
+    <parameter key="stof_doctrine_extensions.persist_default_translation">false</parameter>
+    <parameter key="stof_doctrine_extensions.skip_translation_on_load">false</parameter>
+    <parameter key="stof_doctrine_extensions.listener.translatable.class">Gedmo\Translatable\TranslatableListener</parameter>
+    <parameter key="stof_doctrine_extensions.listener.blameable.class">Gedmo\Blameable\BlameableListener</parameter>
+    <parameter key="stof_doctrine_extensions.listener.tree.class">Gedmo\Tree\TreeListener</parameter>
+    <parameter key="stof_doctrine_extensions.listener.loggable.class">Gedmo\Loggable\LoggableListener</parameter>
+    <parameter key="stof_doctrine_extensions.listener.sortable.class">Gedmo\Sortable\SortableListener</parameter>
+    <parameter key="stof_doctrine_extensions.listener.softdeleteable.class">Gedmo\SoftDeleteable\SoftDeleteableListener</parameter>
+    <parameter key="stof_doctrine_extensions.listener.uploadable.class">Gedmo\Uploadable\UploadableListener</parameter>
+    <parameter key="stof_doctrine_extensions.listener.reference_integrity.class">Gedmo\ReferenceIntegrity\ReferenceIntegrityListener</parameter>
     <parameter key="data_collector.templates" type="collection">
       <parameter key="data_collector.request" type="collection">
         <parameter>request</parameter>
@@ -442,6 +461,13 @@
       <tag name="container.service_subscriber"/>
       <call method="setContainer">
         <argument type="service" id=".service_locator.g9CqTPp.App\Controller\HowWeAreController"/>
+      </call>
+    </service>
+    <service id="App\Controller\LeForumController" class="App\Controller\LeForumController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.g9CqTPp.App\Controller\LeForumController"/>
       </call>
     </service>
     <service id="App\Controller\LesAMHEController" class="App\Controller\LesAMHEController" public="true" autowire="true" autoconfigure="true">
@@ -2134,6 +2160,7 @@
           <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfonycasts\verify-email-bundle\src/translations</argument>
           <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfonycasts\reset-password-bundle\src/translations</argument>
           <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\friendsofsymfony\ckeditor-bundle\src/translations</argument>
+          <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\antishov\doctrine-extensions-bundle/translations</argument>
         </argument>
         <argument key="cache_vary" type="collection">
           <argument key="scanned_directories" type="collection">
@@ -2155,6 +2182,7 @@
             <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfonycasts\verify-email-bundle\src/translations</argument>
             <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\symfonycasts\reset-password-bundle\src/translations</argument>
             <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\friendsofsymfony\ckeditor-bundle\src/translations</argument>
+            <argument>C:\wamp64\www\LesLamesDuPonant\LesLamesDuPonant\vendor\antishov\doctrine-extensions-bundle/translations</argument>
           </argument>
         </argument>
       </argument>
@@ -3069,6 +3097,15 @@
         <argument type="service" id="routing.loader.container"/>
       </call>
       <call method="addLoader">
+        <argument type="service" id="sensio_framework_extra.routing.loader.annot_class"/>
+      </call>
+      <call method="addLoader">
+        <argument type="service" id="sensio_framework_extra.routing.loader.annot_dir"/>
+      </call>
+      <call method="addLoader">
+        <argument type="service" id="sensio_framework_extra.routing.loader.annot_file"/>
+      </call>
+      <call method="addLoader">
         <argument type="service" id="routing.loader.annotation"/>
       </call>
       <call method="addLoader">
@@ -3734,6 +3771,23 @@
       <tag name="container.hot_path"/>
       <argument type="service" id="annotations.cached_reader"/>
     </service>
+    <service id="sensio_framework_extra.routing.loader.annot_class" class="Sensio\Bundle\FrameworkExtraBundle\Routing\AnnotatedRouteControllerLoader">
+      <tag name="routing.loader"/>
+      <argument type="service" id="annotations.cached_reader"/>
+      <deprecated package="" version="">The "%service_id%" service is deprecated since version 5.2</deprecated>
+    </service>
+    <service id="sensio_framework_extra.routing.loader.annot_dir" class="Symfony\Component\Routing\Loader\AnnotationDirectoryLoader">
+      <tag name="routing.loader"/>
+      <argument type="service" id="file_locator"/>
+      <argument type="service" id="sensio_framework_extra.routing.loader.annot_class"/>
+      <deprecated package="" version="">The "%service_id%" service is deprecated since version 5.2</deprecated>
+    </service>
+    <service id="sensio_framework_extra.routing.loader.annot_file" class="Symfony\Component\Routing\Loader\AnnotationFileLoader">
+      <tag name="routing.loader"/>
+      <argument type="service" id="file_locator"/>
+      <argument type="service" id="sensio_framework_extra.routing.loader.annot_class"/>
+      <deprecated package="" version="">The "%service_id%" service is deprecated since version 5.2</deprecated>
+    </service>
     <service id="sensio_framework_extra.converter.listener" class="Sensio\Bundle\FrameworkExtraBundle\EventListener\ParamConverterListener">
       <tag name="kernel.event_subscriber"/>
       <tag name="container.hot_path"/>
@@ -3893,6 +3947,12 @@
       <argument type="service" id=".service_locator.xxFfgCP"/>
       <call method="addEventSubscriber">
         <argument type="service" id="doctrine.orm.listeners.pdo_cache_adapter_doctrine_schema_subscriber"/>
+      </call>
+      <call method="addEventSubscriber">
+        <argument type="service" id="stof_doctrine_extensions.listener.sluggable"/>
+      </call>
+      <call method="addEventSubscriber">
+        <argument type="service" id="stof_doctrine_extensions.listener.timestampable"/>
       </call>
       <call method="addEventListener">
         <argument type="collection">
@@ -5469,6 +5529,18 @@
       <tag name="twig.extension"/>
       <argument type="service" id="fos_ck_editor.renderer"/>
     </service>
+    <service id="stof_doctrine_extensions.listener.sluggable" class="Gedmo\Sluggable\SluggableListener" public="false">
+      <tag name="doctrine.event_subscriber" connection="default"/>
+      <call method="setAnnotationReader">
+        <argument type="service" id="annotations.cached_reader"/>
+      </call>
+    </service>
+    <service id="stof_doctrine_extensions.listener.timestampable" class="Gedmo\Timestampable\TimestampableListener" public="false">
+      <tag name="doctrine.event_subscriber" connection="default"/>
+      <call method="setAnnotationReader">
+        <argument type="service" id="annotations.cached_reader"/>
+      </call>
+    </service>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\AMHEController" class="App\Controller\AMHEController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\AMHEController" class="App\Controller\AMHEController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\AMHEController" class="App\Controller\AMHEController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -5505,6 +5577,9 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\HowWeAreController" class="App\Controller\HowWeAreController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\HowWeAreController" class="App\Controller\HowWeAreController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\HowWeAreController" class="App\Controller\HowWeAreController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\LeForumController" class="App\Controller\LeForumController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\LeForumController" class="App\Controller\LeForumController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\LeForumController" class="App\Controller\LeForumController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\LesAMHEController" class="App\Controller\LesAMHEController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\LesAMHEController" class="App\Controller\LesAMHEController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\LesAMHEController" class="App\Controller\LesAMHEController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -6050,6 +6125,21 @@
         <argument key="howWeAre" type="service" id=".errored..service_locator.8iRGIK4.App\Entity\HowWeAre"/>
       </argument>
     </service>
+    <service id=".service_locator.Kh8p6b9" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="categoryForum" type="service" id=".errored..service_locator.Kh8p6b9.App\Entity\CategoryForum"/>
+        <argument key="categorySubjectForum" type="service" id=".errored..service_locator.Kh8p6b9.App\Entity\CategoryForum"/>
+      </argument>
+    </service>
+    <service id=".service_locator.jF7_QpW" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="categoryForumRepository" type="service" id="App\Repository\CategoryForumRepository"/>
+        <argument key="subjectForum" type="service" id=".errored..service_locator.jF7_QpW.App\Entity\SubjectForum"/>
+        <argument key="subjectMessageForum" type="service" id=".errored..service_locator.jF7_QpW.App\Entity\SubjectForum"/>
+      </argument>
+    </service>
     <service id=".service_locator.IM1ypip" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -6171,7 +6261,7 @@
         <argument key="user" type="service" id=".errored..service_locator.ikUdgSe.App\Entity\User"/>
       </argument>
     </service>
-    <service id=".service_locator.IFJkd0M" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.b_G7aZm" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\AMHEController::activerAMHE" type="service" id=".service_locator.Yu9Pcj8"/>
@@ -6241,6 +6331,9 @@
         <argument key="App\Controller\HowWeAreController::index" type="service" id=".service_locator.lZ8SM6f"/>
         <argument key="App\Controller\HowWeAreController::show" type="service" id=".service_locator.8iRGIK4"/>
         <argument key="App\Controller\HowWeAreController::supprimer" type="service" id=".service_locator.8iRGIK4"/>
+        <argument key="App\Controller\LeForumController::index" type="service" id=".service_locator.sKzeMVn"/>
+        <argument key="App\Controller\LeForumController::showCategory" type="service" id=".service_locator.Kh8p6b9"/>
+        <argument key="App\Controller\LeForumController::showMessage" type="service" id=".service_locator.jF7_QpW"/>
         <argument key="App\Controller\LesAMHEController::index" type="service" id=".service_locator.IM1ypip"/>
         <argument key="App\Controller\LesDisciplinesController::index" type="service" id=".service_locator.G2t7sZQ"/>
         <argument key="App\Controller\LesInfosController::index" type="service" id=".service_locator.0_dT2PR"/>
@@ -6356,6 +6449,9 @@
         <argument key="App\Controller\HowWeAreController:index" type="service" id=".service_locator.lZ8SM6f"/>
         <argument key="App\Controller\HowWeAreController:show" type="service" id=".service_locator.8iRGIK4"/>
         <argument key="App\Controller\HowWeAreController:supprimer" type="service" id=".service_locator.8iRGIK4"/>
+        <argument key="App\Controller\LeForumController:index" type="service" id=".service_locator.sKzeMVn"/>
+        <argument key="App\Controller\LeForumController:showCategory" type="service" id=".service_locator.Kh8p6b9"/>
+        <argument key="App\Controller\LeForumController:showMessage" type="service" id=".service_locator.jF7_QpW"/>
         <argument key="App\Controller\LesAMHEController:index" type="service" id=".service_locator.IM1ypip"/>
         <argument key="App\Controller\LesDisciplinesController:index" type="service" id=".service_locator.G2t7sZQ"/>
         <argument key="App\Controller\LesInfosController:index" type="service" id=".service_locator.0_dT2PR"/>
@@ -6797,6 +6893,12 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.g9CqTPp" method="withContext"/>
     </service>
+    <service id=".service_locator.g9CqTPp.App\Controller\LeForumController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\LeForumController"/>
+      <argument>App\Controller\LeForumController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.g9CqTPp" method="withContext"/>
+    </service>
     <service id=".service_locator.g9CqTPp.App\Controller\LesAMHEController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator_context" id="App\Controller\LesAMHEController"/>
       <argument>App\Controller\LesAMHEController</argument>
@@ -7030,12 +7132,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
-      <argument type="service" id=".service_locator.IFJkd0M"/>
+      <argument type="service" id=".service_locator.b_G7aZm"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver" public="false"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver" public="false">
-      <argument type="service" id=".service_locator.IFJkd0M"/>
+      <argument type="service" id=".service_locator.b_G7aZm"/>
     </service>
     <service id=".debug.http_client.inner" class="Symfony\Contracts\HttpClient\HttpClientInterface" public="false">
       <argument type="collection"/>
@@ -7062,6 +7164,8 @@
     <service id=".errored..service_locator.c0WwyLC.App\Entity\HomePictures" class="App\Entity\HomePictures"/>
     <service id=".errored..service_locator.ahw4_vS.App\Entity\HomeSectionForum" class="App\Entity\HomeSectionForum"/>
     <service id=".errored..service_locator.8iRGIK4.App\Entity\HowWeAre" class="App\Entity\HowWeAre"/>
+    <service id=".errored..service_locator.Kh8p6b9.App\Entity\CategoryForum" class="App\Entity\CategoryForum"/>
+    <service id=".errored..service_locator.jF7_QpW.App\Entity\SubjectForum" class="App\Entity\SubjectForum"/>
     <service id=".errored..service_locator.6WWz9RI.App\Entity\LesLamesDuPonant" class="App\Entity\LesLamesDuPonant"/>
     <service id=".errored..service_locator.qFXpODI.App\Entity\LesLamesDuPonant" class="App\Entity\LesLamesDuPonant"/>
     <service id=".errored..service_locator.F0JKktY.App\Entity\MedievalFamily" class="App\Entity\MedievalFamily"/>
@@ -7462,7 +7566,7 @@
     <service id="SymfonyCasts\Bundle\ResetPassword\ResetPasswordHelperInterface" alias="symfonycasts.reset_password.helper"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.WaGDpDt" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem" public="false"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.IFJkd0M"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.b_G7aZm"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
     <service id="Psr\Log\LoggerInterface $consoleLogger" alias="monolog.logger.console"/>

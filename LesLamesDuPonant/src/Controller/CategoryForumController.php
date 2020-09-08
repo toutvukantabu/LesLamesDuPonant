@@ -33,7 +33,6 @@ class CategoryForumController extends AbstractController
     {
         $categoryForum = new CategoryForum();
         $categoryForum->setUser($this->getUser());
-        $categoryForum->setDateCategoryForum(new \DateTime());
         $form = $this->createForm(CategoryForumType::class, $categoryForum);
         $form->handleRequest($request);
 

@@ -6,6 +6,7 @@ use App\Repository\HomeSectionForumRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
  * @ORM\Entity(repositoryClass=HomeSectionForumRepository::class)
@@ -25,6 +26,7 @@ class HomeSectionForum
     private $sectionTitleForum;
 
     /**
+     * @Gedmo\Timestampable(on="create")
      * @ORM\Column(type="datetime", nullable=true)
      */
     private $sectionDateForum;
@@ -38,6 +40,12 @@ class HomeSectionForum
      * @ORM\Column(type="boolean", nullable=true)
      */
     private $active;
+
+    /**
+     * @Gedmo\Slug(fields={"sectionTitleForum"})
+     * @ORM\Column(type="string", length=60)
+     */
+    private $slug;
 
     public function __construct()
     {
@@ -64,13 +72,6 @@ class HomeSectionForum
     public function getSectionDateForum(): ?\DateTimeInterface
     {
         return $this->sectionDateForum;
-    }
-
-    public function setSectionDateForum(?\DateTimeInterface $sectionDateForum): self
-    {
-        $this->sectionDateForum = $sectionDateForum;
-
-        return $this;
     }
 
     /**
@@ -115,4 +116,11 @@ class HomeSectionForum
 
         return $this;
     }
+
+    public function getSlug(): ?string
+    {
+        return $this->slug;
+    }
+
+   
 }
