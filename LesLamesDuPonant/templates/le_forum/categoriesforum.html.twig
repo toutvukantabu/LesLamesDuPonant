@@ -4,64 +4,91 @@
 
 {% block body %}
 <div class="container">
-<div class="col xl12">
-  {# PAGINATION #}
-            <ul class="pagination">
-                <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
-                <li class="active blue"><a href="{{path('le_forum')}}">Page d'accueil</a></li>
-                <li class="active blue"><a href="{{path('le_forum_category', {'slug': category_forum.slug})}}">{{category_forum.titlecategory}}</a></li>
-                
-                <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
-            </ul>
-    <div class="row">
-        <div class="col xl8"> 
-            <div class="row">
-                <table>
-                    <thead>
+    <div class="col xl12">
+        {# PAGINATION #}
+        <ul class="pagination">
+            <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+            <li class="active blue"><a href="{{path('le_forum')}}">Page d'accueil</a></li>
+            <li class="active blue"><a
+                    href="{{path('le_forum_category', {'slug': category_forum.slug})}}">{{category_forum.titlecategory}}</a>
+            </li>
 
-                    <h5 class="center-align">{{category_forum.titlecategory}}</h5>
-                     {# <a class=" btn-floating modal-trigger red" href="#modal-create" data-id="{{message_forum.id}}"
-                            data-titre ="{{message_forum.id }}" data-target="modal-create"><i
-                                class="material-icons">delete</i></a>
-                         <tr> #}
-                            <th>    
-                              Sujets 
-                            </th>
-                            <th>
-                           nombre messages
-                            </th>
-                            <th>
-                         dernier message
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    {% for subject_category  in category_forum.subjectCategory %}
-                        
-                   
-                            <td>  
-                           <a href=" ">{{subject_category.titleSubjectForum}}</a>  
+            <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+        </ul>
+        <div class="row">
+            <div class="col xl8">
+                <div class="row">
+                    <table>
+                        <thead>
+                          
+                           
+                            <tr>
+                                <th>
+                      <h5 >{{category_forum.titlecategory}}</h5>
+                                </th>
+                                <th>
+                                    nombre de réponses
+                                </th>
+                                <th>
+                                    dernier message
+                                </th>
+                                <th>
+                                
+                            <a class=" btn-floating modal-trigger blue" href="#modal-forum"
+                                    data-id="{{category_forum.id}}" data-titre="{{category_forum.titlecategory}}"
+                                    data-target="modal-create"><i class="material-icons">add</i></a></div>
+                                </th>
+                            </tr>
+                        </thead>
+                        {% for subject_category  in category_forum.subjectCategory %}
+                        <tbody>
+                            
+                            <td>
+                                <a
+                                 href=" {{path('le_forum_subject', {'slug': subject_category.slug})}}">{{subject_category.titleSubjectForum}}
+                                 </a>
                             </td>
+                            <td>
+                                {{subject_category.messageSubjectForum|length}}
+                            </td>
+                            <td>
+                            </td>
+                            </tr>
+                            {% else %}
 
-                            <td>     
-                            {{subject_category.id|length}}       
-                            </td>
-                             <td>     
-                      
-                                   
-                            </td>
-                        </tr>
-                         {% endfor %}
-                    </tbody>                 
-                </table>
+                            il n'y a aucun sujet dans cette catégorie
+                            
+                        </tbody>
+                        {% endfor %}
+                    </table>
 
+                </div>
+            </div>
+
+
+            <!-- Modal Structure -->
+            <div id="modal-forum" class="modal bottom-sheet">
+                <div class="modal-content">
+                    {{ form_start(form) }}
+                    {# {{ form_errors(form) }} #}
+
+                    {{ form_row(form.titleSubjectForum) }}
+                    {{ form_row(form.contentSubjectForum) }}
+                    {{ form_row(form.submit)}}
+                    {{ form_end(form) }}
+                </div>
+            </div>
+
+
+
+
+
+
+            <div class="col xl4">
+                <h5 class="center-align">Liste</h5>
             </div>
         </div>
-        {{ form_start(form) }}
-        {{form(form)}}
-        
-        {{ form_end(form) }}
-        <div class="col xl4">
-        <h5 class="center-align">Liste</h5> 
-   
+    </div>
+</div>
+
 {% endblock %}

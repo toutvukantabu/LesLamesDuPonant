@@ -14,16 +14,16 @@
         <div class="row">
             <div class="col xl8">
                 <div class="row">
-                    {% for home_section_forum in home_section_forums%}
-
+                
                     <table>
-
-                        <thead>{% if home_section_forum.active == 1 %}
-                            <h5 class="center-align">{{home_section_forum.SectionTitleForum}}</h5>
-                            {% endif %}
+                       {% for home_section_forum in home_section_forums%}
+                        <thead>
                             <tr>
                                 <th>
-                                    titre de la catégorie
+                               
+                         {% if home_section_forum.active == 1 %}
+                            <h5>{{home_section_forum.SectionTitleForum}}</h5>
+                            {% endif %}
                                 </th>
                                 <th>
                                     nombre de sujet
@@ -38,18 +38,24 @@
                             <tr>
                                 {% if category_section_forum.active == 1 %}
                                 <td>
-                                    <li><a href="{{path('le_forum_category', {'slug': category_section_forum.slug })}}">
-                                            {{category_section_forum.titlecategory}}</a></li>
+                                    <a href="{{path('le_forum_category', {'slug': category_section_forum.slug })}}">
+                                        {{category_section_forum.titlecategory}}</a>
                                 </td>
-                                {% endif %}
+                                <td>{{category_section_forum.subjectCategory|length}}</td>
                             </tr>
+                                {% endif %}
+
+                             
                         </tbody>
+                        {% endfor %}
+                           {% endfor %}
                     </table>
-                    {% endfor %}
-                    {% endfor %}
+  
+               
                 </div>
+
             </div>
-            <div class="col xl4">
+            {# <div class="col xl4">
                 <h5 class="center-align">Liste</h5>
                 {% for home_section_forum in home_section_forums%}
                 {% if home_section_forum.active == 1 %}
@@ -64,16 +70,9 @@
                     {% endif %}
                 </ul>
                 {% endfor %}
-                {% endfor %}
-            </div>
+                {% endfor %} #}
         </div>
     </div>
-    <div class="col xl12">
-        {# PAGINATION #}
-        <ul class="pagination">
-            <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
-            <li class=" blue active"><a href="#!">Accueil forum</a></li>
-            <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
-        </ul>
-    </div>
-    {% endblock %}
+</div>
+
+{% endblock %}

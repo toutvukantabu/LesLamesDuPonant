@@ -4,12 +4,13 @@ namespace App\Form;
 
 use App\Entity\SubjectForum;
 use App\Entity\CategoryForum;
-use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Component\Form\AbstractType;
+use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 class SubjectForumType extends AbstractType
 {
@@ -28,6 +29,7 @@ class SubjectForumType extends AbstractType
             ->add('contentSubjectForum',CKEditorType::class,[
                 'label'=>' ',
             ])
+
            ;
     }
 

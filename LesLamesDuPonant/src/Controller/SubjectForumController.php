@@ -106,7 +106,7 @@ class SubjectForumController extends AbstractController
         $this->addFlash(
             'how we are',
             'supprimé avec succes!');
-        return $this->redirectToRoute('home_pictures_index');
+        return $this->redirectToRoute('subject_forum_index');
     }
     
          /**

@@ -85,6 +85,7 @@ return [
     'activer_how_we_are' => [['id'], ['_controller' => 'App\\Controller\\HowWeAreController::activerHowWeAre'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/how/we/are/activer']], [], []],
     'le_forum' => [[], ['_controller' => 'App\\Controller\\LeForumController::index'], [], [['text', '/forum/section']], [], []],
     'le_forum_category' => [['slug'], ['_controller' => 'App\\Controller\\LeForumController::showCategory'], [], [['variable', '/', '[^/]++', 'slug', true], ['text', '/forum/categories']], [], []],
+    'le_forum_subject' => [['slug'], ['_controller' => 'App\\Controller\\LeForumController::showMessage'], [], [['variable', '/', '[^/]++', 'slug', true], ['text', '/forum/categories/sujet']], [], []],
     'les_amhe' => [[], ['_controller' => 'App\\Controller\\LesAMHEController::index'], [], [['text', '/lesamhe']], [], []],
     'les_disciplines' => [[], ['_controller' => 'App\\Controller\\LesDisciplinesController::index'], [], [['text', '/les/disciplines']], [], []],
     'les_infos' => [[], ['_controller' => 'App\\Controller\\LesInfosController::index'], [], [['text', '/les/infos']], [], []],

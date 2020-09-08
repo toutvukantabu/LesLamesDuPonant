@@ -8,94 +8,75 @@
         {# PAGINATION #}
         <ul class="pagination">
             <li class="active blue"><a href="{{path('le_forum')}}">Page d'accueil</a></li>
+
             <li class="active blue"><a
-                    href="{{path('le_forum_category', {'id': category_forum.id})}}">{{category_forum.titlecategory}}</a>
+                    href="{{path('le_forum_category' ,{'slug': subject_forum.categorySubjectForum.slug })}}">{{subject_forum.categorySubjectForum.titleCategory}}</a>
             </li>
             <li class="active blue"><a
-                    href="{{path('le_forum_subject', {'id': subject_forum.id})}}">{{subject_forum.titleSubjectForum}}</a>
-            </li>
+                    href="{{path('le_forum_subject' ,{'slug': subject_forum.slug })}}">{{subject_forum.titleSubjectForum}}</a>
         </ul>
         <div class="row">
             <div class="col xl8">
                 <div class="row">
                     <table>
-                        <h5 class="center-align">{{subject_forum.contentSubjectForum|striptags|u.truncate(20)|raw }}
-                        </h5>
+                        <h5 class="center-align">{{subject_forum.titleSubjectForum}}</h5>
                         <thead>
                             <tr>
                                 <th>
                                     <div class="chip">
-                                        <img src="{{ asset('uploads/avatar/' ~ subject_forum.user.photoAvatarUser )}}"
-                                            alt="" class="circle responsive-img">
-                                        <span>{{subject_forum.user.pseudoUser|raw}}</span>
-                                    </div>
-                                </th>
+                                        {% if  subject_forum.user.photoAvatarUser  != NULL %}
+                                        <img class="circle"
+                                            src="{{ asset('uploads/avatar/' ~ app.user.photoAvatarUser )}}">
+                                        {% else %}
+                                        <img class="circle" src="{{asset('uploads/avatar.jpg')}}">
+                                        {% endif %}
+                                        {% if  subject_forum.user.pseudoUser != NULL %}
+                                        <span class="name">
+                                            {{subject_forum.user.pseudoUser}}</span>
+                                        {% else %}
+                                        <span class=" name"> "Illustre inconnu n°{{subject_forum.user.id}}"
+                                        </span>
+                                        {% endif %}
+                                        </div>
+                                     </th>
+                
+                </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{subject_forum.contentSubjectForum|raw}}</td>
+                        {% for message_subject_forum  in subject_forum.messageSubjectForum %}
+                        <td>
+                            {{message_subject_forum.contentMessageForum}}
+                        </td>
 
-                            </tr>
+                        <td>
 
-
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    {{subject_forum.contentSubjectForum|raw}}
-                                </td>
-                                <td>
-                             {% for subject_forum in subject_forums%}
-                               <pre>
-                                   {{ dump(subject_forum) }}
-                               </pre>
-                             {% endfor %}
-                                </td>
-                            </tr>
-
-
-
-                        </tbody>
-                    </table>
-                   <div class="container">
-<div class="row formRegister z-depth-5">
-{{ form_start(form) }}
-    {{ form_widget(form) }}
-    <div class="btnEdit">
-    <button class="btn">{{ button_label|default('envoyer') }}</button>
-</div>
-{{ form_end(form) }}
-</div>
-</div>
-                </div>
-            </div>
-            <div class="col xl4">
-                <h5 class="center-align">Liste</h5>
-                {% for home_section_forum in home_section_forums%}
-                {% if home_section_forum.active == 1 %}
-                <h5>{{home_section_forum.SectionTitleForum}}</h5>
-                {% endif %}
-                <ul>
-                    {% for category_section_forum in home_section_forum.categoryHomeSectionforum %}
-                    {% if category_section_forum.active == 1 %}
-                    <li><a href="{{path('le_forum_category', {'id': category_section_forum.id })}}">
-                            {{category_section_forum.titlecategory}}</a></li>
-                    <li></li>
-                    {% endif %}
-                </ul>
+                        </td>
+                    </tr>
+                </tbody>
                 {% endfor %}
-                {% endfor %}
+
+                <a class=" btn-floating modal-trigger blue" href="#modal-forum" data-id="{{subject_forum.id}}"
+                    data-titre="{{subject_forum.titleSubjectForum}}" data-target="modal-create"><i
+                        class="material-icons">add</i></a>
+                </table>
+
             </div>
         </div>
-    </div>
-    <div class="col xl12">
-        {# PAGINATION #}
-        <ul class="pagination">
-            <li class="active blue"><a href="{{path('le_forum')}}">Page d'accueil</a></li>
-            <li class="active blue"><a
-                    href="{{path('le_forum_category', {'id': category_forum.id})}}">{{category_forum.titlecategory}}</a>
-            </li>
-            <li class="active blue"><a
-                    href="{{path('le_forum_subject', {'id': subject_forum.id})}}">{{subject_forum.titleSubjectForum}}</a>
-            </li>
 
-        </ul>
 
+        <!-- Modal Structure -->
+        <div id="modal-forum" class="modal bottom-sheet">
+            <div class="modal-content">
+
+            </div>
+        </div>
+
+        <div class="col xl4">
+            <h5 class="center-align">Liste</h5>
+        </div>
     </div>
-    {% endblock %}
+</div>
+</div>
+{% endblock %}

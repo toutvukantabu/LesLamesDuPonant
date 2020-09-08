@@ -38,11 +38,6 @@ class UserType extends AbstractType
             ],
             TextType::class,
             ['label' => 'Rôle'])
-            ->add('password' , PasswordType::class,[ 
-                'label'=> 'mot de passe',
-                
-                ])
-            ->add('isVerified', CheckboxType::class,['label' => 'email Verifié ?'])
             ->add('firstNameUser', TextType::class,['label' => 'Nom','required' => false,])
             ->add('lastNameUser', TextType::class,['label' => 'Prénom','required' => false,])
             ->add('pseudoUser', TextType::class,['label' => 'Pseudo','required' => false,])
