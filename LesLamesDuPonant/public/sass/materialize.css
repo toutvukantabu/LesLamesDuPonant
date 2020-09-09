@@ -9722,6 +9722,7 @@ ul.tl li .timestamp {
 }
 
 .page-footer {
+  margin-top: 50px;
   background-color: #3D5695;
 }
 
@@ -9793,6 +9794,26 @@ ul.tl li .timestamp {
 .loginResetPassword,
 .smallResetPassword {
   margin-bottom: 40px;
+}
+
+.disciplineFull {
+  margin-top: 80px;
+  margin-bottom: 20px;
+  padding: 0 50px;
+}
+
+.disciplineFull p {
+  padding-top: 8px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.disciplinecarousel {
+  margin-top: 80px;
+}
+
+.disciplineRow {
+  padding: 50px;
 }
 
 #mapid {
