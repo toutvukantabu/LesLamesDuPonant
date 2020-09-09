@@ -1,5 +1,7 @@
 @charset "UTF-8";
 
+
+
 // Colors
 @import "components/color";
 
@@ -40,63 +42,75 @@
 @import "components/date_picker/default";
 @import "components/date_picker/default.date";
 @import "components/date_picker/default.time";
+@import "parametre";
+
+
+//  Document Infomation
+// - Website:LLames Du Ponant
+// -version 1 ( version).0( maj majeur). 0 (patch)
+// author:Gwendal Bescont
 
 
 
-/* Document Infomation
-- Website:LLames Du Ponant
--version 1 ( version).0( maj majeur). 0 (patch)
-author:Gwendal Bescont
-*/
+//  COLORS
+// defaut body text    
+// -h1   color:#fff;              
+// -h2   color:#fff              
+// -h3   color:#fff
+// -h4   color:#eee
+// -button
+// -button:hover
+// button:waves
 
+// -icon               
 
-/* COLORS
-defaut body text    
--h1   color:#fff;              
--h2   color:#fff              
--h3   color:#fff
--h4   color:#eee
--button
--button:hover
-button:waves
+//  FONTS
 
--icon               
-*/
-/* FONTS
-
- H1 font-family: 'Ubuntu',cursive, sans-serif;
- H2 font-family: 'Rochester', cursive;   
+//  H1 font-family: 'Ubuntu',cursive, sans-serif;
+//  H2 font-family: 'Rochester', cursive;   
     
-*/
 
-/* CSS DIRECTORY
 
-1. =GLOBAL
-***********
--fonts
--button effect
-2. =NAVBAR
-***********
--user-nav Profil Left
-3. =HOMEPAGE
-***********
--Home Banner
--Home image
--Home Présentation (qui sommes nous)
--Home Parallax
--Home Dicipline/Activity
--Home timeline/Agenda/Info
+//  CSS DIRECTORY
 
-4. =
-5. =
-6. =
-7. =
-8. =
-*/
+// 1. =GLOBAL
+// ***********
+// -fonts
+// -button effect
+// 2. =NAVBAR
+// ***********
+// -user-nav Profil Left
+// 3. =HOMEPAGE
+// ***********
+// -Home Banner
+// -Home image
+// -Home Présentation (qui sommes nous)
+// -Home Parallax
+// -Home Dicipline/Activity
+// -Home timeline/Agenda/Info
+
+// 4. =
+// 5. =
+// 6. =
+// 7. =
+// 8. =
+
 
 
 //GLOBAL
 //******************************************
+// Font size rem function
+$base-font-size: 20px;
+@function trim-unit($value){
+  @return $value/($value * 0 +1);
+}
+@function rem-calc($value){
+@return $value/trim-unit($base-font-size) * 1rem
+
+};
+
+// global
+
 body {
   display: flex;
   min-height: 100vh;
@@ -122,20 +136,13 @@ font-weight: 500;
 h1,
 h2,
 h4 {
-  &:after {
-    display: block;
-    height: 2px;
-    background-color: rgba(29, 26, 228, 0.568);
-    width: 150px;
-    content: " ";
-    margin: 0 auto;
-    margin-top: 10px;
+  &:after{
+    @include after-title($width:150px);
   }
 }
 
 p{
-line-height: 35px;
-
+@include line-height;
 }
 
 //Button effect
@@ -144,29 +151,28 @@ line-height: 35px;
 // waves effect
 // ===============
 .waves-effect.waves-brown .waves-ripple {
-   background-color: rgba(121, 119, 235, 0.274);
+@include color-waves;
  }
-
-
 
 //NAVBAR
 //*****************************************
 
 .sticky-nav {
-  background-color: #0080ff7e;
+  background-color:#05053b;
   position: fixed;
   top: 0;
   z-index: 1000;
 }
 
-#navbarHome, #navbarAdmin{
+#navbarHome, 
+#navbarAdmin{
   transition: top 0.2s linear;
   -webkit-transition: 0.2s;
-  background-color:#3d5695d2;
+  background-color:#05053bd3;
   z-index: 1000;
 
   li a:hover {
-    background-color:#032b53a6;
+    background-color:#40416ee5;
     transition-duration: 420ms;
   }
 }
@@ -176,6 +182,7 @@ line-height: 35px;
   z-index: 10000;
 
 }
+
 
 /* User-Nav Profil left
   *================
@@ -249,9 +256,7 @@ line-height: 35px;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  -webkit-box-shadow: inset 0px 0px 50px 12px rgba(176, 167, 176, 0.94);
-  -moz-box-shadow: inset 0px 0px 50px 12px rgba(176, 167, 176, 0.94);
-  box-shadow: inset 0px 0px 50px 12px rgba(14, 13, 14, 0.94);
+ @include webkit-shadow($inset:inset);
 }
 
 .homeSectionCalendar {
@@ -278,18 +283,13 @@ line-height: 35px;
   margin-bottom: -15px;
 
   &:after {
-    display: block;
-    height: 2px;
-    background-color: rgba(0, 0, 7, 0.568);
-    width: 50px;
-    content: " ";
-    margin: 0 auto;
-    margin-top: 10px;
+    @include after-title($color:#00000791);
     margin-bottom: 15px;
   }
 }
 
 .card-rounded {
+  @include general;
   padding: 1px;
   min-width: 318px;
   max-height: 318px;
@@ -298,7 +298,7 @@ line-height: 35px;
   margin: 0.2rem 0 2rem 0;
   box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.2);
   border-radius: 100%;
-  background-color: rgba(30, 49, 221, 0.582);
+ 
   transform: scale(0.85, 0.85);
   margin-left: -60px;
   margin-bottom: -20px;
@@ -307,9 +307,8 @@ line-height: 35px;
   filter: grayscale(0);
 
   &:hover {
-    -webkit-box-shadow: 0px 0px 50px 12px rgba(176, 167, 176, 0.94);
-    -moz-box-shadow: 0px 0px 50px 12px rgba(176, 167, 176, 0.94);
-    box-shadow: 0px 0px 50px 12px rgba(176, 167, 176, 0.94);
+   
+   @include webkit-shadow($hadow:#b0a7b0f0);
     filter: blur(1px);
     -webkit-filter: grayscale(100%);
     filter: grayscale(100%);
@@ -432,7 +431,7 @@ ul.tl li .timestamp {
 //************************
 .page-footer{
   margin-top: 50px;
-  background-color: #3D5695;
+@include general;
 
 
 .footerLameDuPonantCenter,.footerLameDuPonantLeft,.footerLameDuPonantRight{
@@ -533,6 +532,17 @@ p{
 }
 .disciplineRow{
 padding:50px
+}
+
+.disciplineInstructor {
+
+
+  img{
+   margin-top:20px ;
+
+   margin-bottom: 30px;
+  }
+
 
 }
 

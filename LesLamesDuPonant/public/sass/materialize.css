@@ -4337,7 +4337,7 @@ nav ul li.active {
 nav ul a {
   -webkit-transition: background-color .3s;
   transition: background-color .3s;
-  font-size: 1rem;
+  font-size: 1.2rem;
   color: #fff;
   display: block;
   padding: 0 15px;
@@ -4412,14 +4412,14 @@ nav .input-field label.active i {
 
 @media only screen and (min-width: 601px) {
   nav.nav-extended .nav-wrapper {
-    min-height: 64px;
+    min-height: 70px;
   }
   nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i {
-    height: 64px;
-    line-height: 64px;
+    height: 70px;
+    line-height: 70px;
   }
   .navbar-fixed {
-    height: 64px;
+    height: 70px;
   }
 }
 
@@ -9372,53 +9372,6 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
   /*shape-rendering: crispEdges;*/
 }
 
-/* Document Infomation
-- Website:LLames Du Ponant
--version 1 ( version).0( maj majeur). 0 (patch)
-author:Gwendal Bescont
-*/
-/* COLORS
-defaut body text    
--h1   color:#fff;              
--h2   color:#fff              
--h3   color:#fff
--h4   color:#eee
--button
--button:hover
-button:waves
-
--icon               
-*/
-/* FONTS
-
- H1 font-family: 'Ubuntu',cursive, sans-serif;
- H2 font-family: 'Rochester', cursive;   
-    
-*/
-/* CSS DIRECTORY
-
-1. =GLOBAL
-***********
--fonts
--button effect
-2. =NAVBAR
-***********
--user-nav Profil Left
-3. =HOMEPAGE
-***********
--Home Banner
--Home image
--Home Présentation (qui sommes nous)
--Home Parallax
--Home Dicipline/Activity
--Home timeline/Agenda/Info
-
-4. =
-5. =
-6. =
-7. =
-8. =
-*/
 body {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -9446,8 +9399,8 @@ h2:after,
 h4:after {
   display: block;
   height: 2px;
-  background-color: rgba(29, 26, 228, 0.568);
   width: 150px;
+  background-color: #2b2bc4c5;
   content: " ";
   margin: 0 auto;
   margin-top: 10px;
@@ -9458,26 +9411,28 @@ p {
 }
 
 .waves-effect.waves-brown .waves-ripple {
-  background-color: rgba(121, 119, 235, 0.274);
+  background-color: #05053b93;
 }
 
 .sticky-nav {
-  background-color: #0080ff7e;
+  background-color: #05053b;
   position: fixed;
   top: 0;
   z-index: 1000;
 }
 
-#navbarHome, #navbarAdmin {
+#navbarHome,
+#navbarAdmin {
   -webkit-transition: top 0.2s linear;
   transition: top 0.2s linear;
   -webkit-transition: 0.2s;
-  background-color: #3d5695d2;
+  background-color: #05053bd3;
   z-index: 1000;
 }
 
-#navbarHome li a:hover, #navbarAdmin li a:hover {
-  background-color: #032b53a6;
+#navbarHome li a:hover,
+#navbarAdmin li a:hover {
+  background-color: #40416ee5;
   -webkit-transition-duration: 420ms;
           transition-duration: 420ms;
 }
@@ -9552,8 +9507,8 @@ p {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  -webkit-box-shadow: inset 0px 0px 50px 12px rgba(176, 167, 176, 0.94);
-  box-shadow: inset 0px 0px 50px 12px rgba(14, 13, 14, 0.94);
+  -webkit-box-shadow: inset 0px 0px 50px 12px #b0a7b0f0;
+  box-shadow: inset 0px 0px 50px 12px #0e0d0ef0;
 }
 
 .homeSectionCalendar {
@@ -9583,8 +9538,8 @@ p {
 .disciplineHomeTitle:after {
   display: block;
   height: 2px;
-  background-color: rgba(0, 0, 7, 0.568);
   width: 50px;
+  background-color: #00000791;
   content: " ";
   margin: 0 auto;
   margin-top: 10px;
@@ -9592,6 +9547,7 @@ p {
 }
 
 .card-rounded {
+  background-color: #05053bc5;
   padding: 1px;
   min-width: 318px;
   max-height: 318px;
@@ -9601,7 +9557,6 @@ p {
   -webkit-box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.2);
           box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.2);
   border-radius: 100%;
-  background-color: rgba(30, 49, 221, 0.582);
   -webkit-transform: scale(0.85, 0.85);
           transform: scale(0.85, 0.85);
   margin-left: -60px;
@@ -9612,8 +9567,8 @@ p {
 }
 
 .card-rounded:hover {
-  -webkit-box-shadow: 0px 0px 50px 12px rgba(176, 167, 176, 0.94);
-  box-shadow: 0px 0px 50px 12px rgba(176, 167, 176, 0.94);
+  -webkit-box-shadow: 0px 0px 50px 12px #b0a7b0f0;
+  box-shadow: 0px 0px 50px 12px #b0a7b0f0;
   filter: blur(1px);
   -webkit-filter: grayscale(100%);
   filter: grayscale(100%);
@@ -9723,7 +9678,7 @@ ul.tl li .timestamp {
 
 .page-footer {
   margin-top: 50px;
-  background-color: #3D5695;
+  background-color: #05053bc5;
 }
 
 .page-footer .footerLameDuPonantCenter h5, .page-footer .footerLameDuPonantLeft h5, .page-footer .footerLameDuPonantRight h5 {
@@ -9814,6 +9769,11 @@ ul.tl li .timestamp {
 
 .disciplineRow {
   padding: 50px;
+}
+
+.disciplineInstructor img {
+  margin-top: 20px;
+  margin-bottom: 30px;
 }
 
 #mapid {

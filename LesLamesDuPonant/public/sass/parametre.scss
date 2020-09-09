@@ -1,0 +1,38 @@
+//font Mixin
+  @mixin after-title($color:#2b2bc4c5, $width:50px){
+    
+        display: block;
+        height: 2px;
+        width: $width;
+        background-color: $color;
+        content: " ";
+        margin: 0 auto;
+        margin-top: 10px;
+      
+}
+
+//Paragraph
+
+@mixin line-height($line:35px){
+line-height: $line;
+}
+
+//wave effect menu mobile + img rounded carousel home
+
+@mixin color-waves($color-waves:#05053b93){
+
+  background-color: $color-waves
+}
+
+@mixin general (){
+
+  background-color:#05053bc5;
+}
+
+//webkitShadow
+
+@mixin webkit-shadow ($webkit:#b0a7b0f0,$box:#b0a7b0f0,$shadow:#0e0d0ef0 ){
+-webkit-box-shadow: $inset 0px 0px 50px 12px $webkit;
+-moz-box-shadow: $inset 0px 0px 50px 12px $box;
+ box-shadow: $inset 0px 0px 50px 12px $shadow ;
+}
