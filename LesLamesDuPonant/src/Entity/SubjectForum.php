@@ -48,7 +48,7 @@ class SubjectForum
     private $categorySubjectForum;
 
     /**
-     * @ORM\OneToMany(targetEntity=MessageForum::class, mappedBy="subjectMessageForum")
+     * @ORM\OneToMany(targetEntity=MessageForum::class, mappedBy="subjectMessageForum",  orphanRemoval=true)
      */
     private $messageSubjectForum;
 

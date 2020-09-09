@@ -29,6 +29,10 @@ class SubjectForumType extends AbstractType
             ->add('contentSubjectForum',CKEditorType::class,[
                 'label'=>' ',
             ])
+            ->add('submit', SubmitType::class, [
+                'label' => 'envoyer',
+                'attr' => ['class' => 'btn btn-default pull-right'],
+            ])
 
            ;
     }

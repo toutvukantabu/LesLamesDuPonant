@@ -32,7 +32,6 @@ class MessageForumController extends AbstractController
     {
         $messageForum = new MessageForum();
         $messageForum->setUser($this->getUser());
-        $messageForum->setDatePublicationMessageForum(new \DateTime());
         $form = $this->createForm(MessageForumType::class, $messageForum);
         $form->handleRequest($request);
 
@@ -105,7 +104,7 @@ class MessageForumController extends AbstractController
         $this->addFlash(
             'how we are',
             'supprimé avec succes!');
-        return $this->redirectToRoute('home_pictures_index');
+        return $this->redirectToRoute('message_forum_index');
     }
     
          /**
