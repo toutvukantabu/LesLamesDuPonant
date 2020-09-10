@@ -9,8 +9,7 @@
 		<div class="row">
 			<div class="  col m12 s12 l12 xl12">
 				{{ render(controller(
-        'App\\Controller\\HomePicturesController::displayLogo',
-    )) }}
+        'App\\Controller\\HomePicturesController::displayLogo',)) }}
 			</div>
 		</div>
 	</div>
@@ -179,8 +178,6 @@
 ============================= #}
 
 	{% block body %}{% endblock %}
-
-
 	{% block footer%}
 	{% if app.request.get('_route') == 'home' %}
 	<div class="section white homeSectionPresentation">

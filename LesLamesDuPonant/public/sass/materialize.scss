@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 
-
+@import "parametre";
 // Colors
 @import "components/color";
 
@@ -42,7 +42,7 @@
 @import "components/date_picker/default";
 @import "components/date_picker/default.date";
 @import "components/date_picker/default.time";
-@import "parametre";
+
 
 
 //  Document Infomation
@@ -68,7 +68,7 @@
 
 //  H1 font-family: 'Ubuntu',cursive, sans-serif;
 //  H2 font-family: 'Rochester', cursive;   
-    
+
 
 
 //  CSS DIRECTORY
@@ -101,13 +101,16 @@
 //******************************************
 // Font size rem function
 $base-font-size: 20px;
-@function trim-unit($value){
+
+@function trim-unit($value) {
   @return $value/($value * 0 +1);
 }
-@function rem-calc($value){
-@return $value/trim-unit($base-font-size) * 1rem
 
-};
+@function rem-calc($value) {
+  @return $value/trim-unit($base-font-size) * 1rem
+}
+
+;
 
 // global
 
@@ -116,6 +119,7 @@ body {
   min-height: 100vh;
   flex-direction: column;
 }
+
 main {
   flex: 1 0 auto;
 }
@@ -130,19 +134,20 @@ h4,
 h5,
 h6 {
   font-family: 'Maven Pro', sans-serif;
-font-weight: 500;
+  font-weight: 500;
 }
 
 h1,
 h2,
 h4 {
-  &:after{
+  &:after {
     @include after-title($width:150px);
   }
 }
 
-p{
-@include line-height;
+p {
+  font-size: 1.1rem;
+  @include line-height;
 }
 
 //Button effect
@@ -151,28 +156,28 @@ p{
 // waves effect
 // ===============
 .waves-effect.waves-brown .waves-ripple {
-@include color-waves;
- }
+  @include color-waves;
+}
 
 //NAVBAR
 //*****************************************
 
 .sticky-nav {
-  background-color:#05053b;
+  background-color: #05053b;
   position: fixed;
   top: 0;
   z-index: 1000;
 }
 
-#navbarHome, 
-#navbarAdmin{
+#navbarHome,
+#navbarAdmin {
   transition: top 0.2s linear;
   -webkit-transition: 0.2s;
-  background-color:#05053bd3;
+  background-color: #05053bd3;
   z-index: 1000;
 
   li a:hover {
-    background-color:#40416ee5;
+    background-color: #40416ee5;
     transition-duration: 420ms;
   }
 }
@@ -225,6 +230,7 @@ p{
   */
 .homeSectionPresentation {
   min-height: 700px;
+
   h2 {
     margin-top: 50px;
     margin-bottom: 50px;
@@ -238,7 +244,7 @@ p{
   margin-bottom: 10px;
   max-width: 700px;
   margin: 0 auto;
-  
+
   p {
     text-align: justify;
 
@@ -257,11 +263,17 @@ p{
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
- 
+
 }
 
 .homeSectionCalendar {
-  max-height: 490px;
+  min-height: 490px;
+  @include webkit-shadow();
+  background-image: url(../uploads/Background/sectionHome.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
 }
 
 /* Home Dicipline/Activity
@@ -294,12 +306,12 @@ p{
   padding: 1px;
   min-width: 318px;
   max-height: 318px;
-  max-width:318px ;
+  max-width: 318px;
   min-height: 318px;
   margin: 0.2rem 0 2rem 0;
   box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.2);
   border-radius: 100%;
- 
+
   transform: scale(0.85, 0.85);
   margin-left: -60px;
   margin-bottom: -20px;
@@ -308,8 +320,8 @@ p{
   filter: grayscale(0);
 
   &:hover {
-   
-   @include webkit-shadow2($shadow:#b0a7b0f0);
+
+    @include webkit-shadow2($shadow:#b0a7b0f0);
     filter: blur(1px);
     -webkit-filter: grayscale(100%);
     filter: grayscale(100%);
@@ -353,7 +365,7 @@ p{
 .history-tl-container ul.tl li {
   list-style: none;
   margin: auto;
-  margin-left: 130px;
+  margin-left: 93px;
   min-height: 50px;
   max-height: 140px;
   border-left: 1px dashed #86D6FF;
@@ -427,67 +439,70 @@ ul.tl li .timestamp {
 
 //PAGE FOOTER
 //************************
-.page-footer{
-  margin-top: 50px;
-@include general;
+.page-footer {
+  @include general;
+
+  .footerLameDuPonantCenter,
+  .footerLameDuPonantLeft,
+  .footerLameDuPonantRight {
+    h5 {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+  }
+
+  .footerLameDuPonantLeft {
+
+    i {
+      display: block;
+      margin-top: 25px;
+      text-align: left;
+      margin-left: 38px;
+      color:darkgray;
+    }
+
+    i:hover {
+      color: #fff;
+    }
+
+    p {
+      margin-left: 27%;
+      margin-top: 20px;
+      min-width: 130px;
+      font-size: 19px;
+    }
+  }
+
+  .footerLameDuPonantCenter {
+    @include border-white;
+
+    img {
+      display: block;
+      height: 130px;
+      width: 130px;
+      border-radius: 500%;
+      text-align: center;
+      margin: 44px auto 21px auto;
+    }
+  }
+
+  .footerLameDuPonantRight {
+    span {
+      display: block;
+      color: #fff;
+      font-size: 19px;
+      margin-left: 48px;
+      margin-top: 20px;
+      padding-top: 16px;
+    }
+  }
+}
+
+.footerCopyright {
+  background-color: #242222;
+}
 
 
-.footerLameDuPonantCenter,.footerLameDuPonantLeft,.footerLameDuPonantRight{
-  h5{
-    text-align: center;
-  } 
-
-}
-.footerLameDuPonantLeft{
-  border-right: 1px solid #fff;
-  border-right-width: unset;
-  i{
-  display: block;
-margin-top: 20px;
-text-align: left;
-margin-left: 11px;
-}
-i:hover{
-  color: #fff;
-}
-p{
-margin-left: 27%;
-margin-top: 20px;
-min-width: 130px;
-font-size: 19px;
-
-}
-}
-
-.footerLameDuPonantCenter{
-  border-right: 1px solid #fff;
-  border-right-width: unset;
-
-img{
-  display: block;
-  height: 130px;
-  width: 130px;
-  border-radius: 500%;
-  text-align: center;
-  margin: 44px auto 21px auto;
- 
-}
-}
-
-.footerLameDuPonantRight {
-   span{
-display: block;
-color: #fff;
-font-size: 19px;
-margin-left: 125px;
-margin-top: 20px;
-   }
-}
-}
-.footerCopyright{
-
- background-color: #242222;
-}
 /* Form login, register, password,
   *===============================
   */
@@ -513,35 +528,34 @@ margin-top: 20px;
 //LES DISCIPLINES
 //===============
 
-.disciplineFull{
+.disciplineFull {
 
-margin-top: 80px;
-margin-bottom: 20px;
-padding:  0 50px;
-p{
- padding-top: 8px;
- padding-right: 10px;
- padding-left: 10px;
+  margin-top: 80px;
+  margin-bottom: 20px;
+  padding: 0 50px;
+
+  p {
+    padding-top: 8px;
+    padding-right: 10px;
+    padding-left: 10px;
+  }
 }
-}
-.disciplinecarousel{
+
+.disciplinecarousel {
 
   margin-top: 80px;
 }
-.disciplineRow{
-padding:50px
+
+.disciplineRow {
+  padding: 50px
 }
 
 .disciplineInstructor {
+  img {
+    margin-top: 20px;
 
-
-  img{
-   margin-top:20px ;
-
-   margin-bottom: 30px;
+    margin-bottom: 30px;
   }
-
-
 }
 
 //Les Infos
@@ -555,35 +569,39 @@ padding:50px
   margin: 0 auto;
 }
 
-
 //carousel
 //********
-.middle-indicator{
-  position:absolute;
-  top:50%;
-  }
- .middle-indicator-text{
+.middle-indicator {
+  position: absolute;
+  top: 50%;
+}
+
+.middle-indicator-text {
   font-size: 4.2rem;
- }
- a.middle-indicator-text{
-   color:white !important;
- }
-.content-indicator{
-   width: 64px;
-   height: 64px;
-   background: none;
-   -moz-border-radius: 50px;
-   -webkit-border-radius: 50px;
-   border-radius: 50px; 
- }
-   .indicators{
-   visibility: hidden;
- }
- .img-discipline{
-height: 20vh;
+}
+
+a.middle-indicator-text {
+  color: white !important;
+}
+
+.content-indicator {
+  width: 64px;
+  height: 64px;
+  background: none;
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border-radius: 50px;
+}
+
+.indicators {
+  visibility: hidden;
+}
+
+.img-discipline {
+  height: 20vh;
 
 
- }
+}
 
 //BOUTIQUE
 //===============
@@ -594,12 +612,105 @@ height: 20vh;
 //*******************************
 // table Gestion
 
-.imgTableAdmin{
-height: 50px;
-width: 50px;
+.imgTableAdmin {
+  height: 50px;
+  width: 50px;
 }
 
 
 //Jqwery Table
 //==================
 
+
+//Responsive
+//================================
+// Small screens are defined as having a max-width of 600px
+// Medium screens are defined as having a max-width of 992px
+// Large screen are defined as having a min-width of 993px
+// Extra Large screen are defined as having a min-width of 1200px
+
+@media #{$small-and-down} {
+  h6{
+font-size: 1.9rem;
+
+  }
+  p{
+font-size: 1.4rem;
+
+  }
+  .page-footer {
+    .footerLameDuPonantCenter {
+      @include border-white($border:none, $height:none);
+      border-bottom: 2px solid #ffffff;
+      border-top: 2px solid #ffffff;
+      margin-top: 20px;
+    }
+
+    .footerLameDuPonantCenter,
+    .footerLameDuPonantLeft,
+    .footerLameDuPonantRight {
+      h5 {
+        margin-top: 35px;
+      }
+
+
+    }
+    .footerLameDuPonantRight {
+      span {
+        text-align: center;
+        margin-left: 0px;
+
+      }
+    }
+  }
+
+  .disciplineRow {
+    padding: 5px
+  }
+}
+
+@media #{$medium-and-up} {
+  .page-footer {
+    .footerLameDuPonantCenter {
+      @include border-white();
+      margin-top: 25px;
+     
+    }
+
+    .footerLameDuPonantCenter,
+    .footerLameDuPonantLeft,
+    .footerLameDuPonantRight {
+      h5 {
+        margin-top: 35px;
+      }
+
+
+    }
+    .footerLameDuPonantRight {
+      span {
+        text-align: center;
+        margin-left: none;
+
+      }
+    }
+  }
+}
+
+
+
+@media #{$medium-and-down} {
+  
+
+  .disciplineRow {
+    padding: 5px
+  }
+
+}
+
+@media #{$large-and-up} {
+  // styles for large screens and up
+}
+
+@media #{$extra-large-and-up} {
+  // styles for extra large screens and up
+}

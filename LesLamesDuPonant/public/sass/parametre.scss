@@ -47,3 +47,21 @@ background:$color-stamp;
   -moz-box-shadow:  0px 0px 50px 12px $box;
    box-shadow:  0px 0px 50px 12px $shadow ;
   }
+
+  //border white footer
+
+  @mixin border-white($border:2px solid #fff,$height:250px){
+    border-left:$border ;
+    max-height:$height;
+    border-right: $border;
+    
+  
+
+  }
+  @mixin border-white-responsive($border:2px solid #fff,$height:150px){
+
+    border-width: unset;
+    border-bottom:$border;
+    border-top:$border;
+    max-height:$height;
+  }
