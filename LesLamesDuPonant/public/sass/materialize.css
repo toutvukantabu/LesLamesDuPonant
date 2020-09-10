@@ -9643,13 +9643,13 @@ p {
 
 ul.tl li .item-detail {
   color: rgba(0, 0, 0, 0.5);
-  font-size: 14px;
+  font-size: 17px;
   text-align: left;
 }
 
 ul.tl li .item-title {
   text-align: left;
-  font-size: 15px;
+  font-size: 19px;
   max-width: 150px;
 }
 
@@ -9659,7 +9659,7 @@ ul.tl li .timestamp {
   width: 150px;
   left: -125%;
   text-align: right;
-  font-size: 14px;
+  font-size: 17px;
 }
 
 .informationFooterLeft {
@@ -9851,12 +9851,14 @@ a.middle-indicator-text {
   }
 }
 
-@media only screen and (min-width: 601px) {
+@media only screen and (max-width: 992px) {
   .page-footer .footerLameDuPonantCenter {
-    border-left: 2px solid #fff;
-    max-height: 250px;
-    border-right: 2px solid #fff;
-    margin-top: 25px;
+    border-left: none;
+    max-height: none;
+    border-right: none;
+    border-bottom: 2px solid #ffffff;
+    border-top: 2px solid #ffffff;
+    margin-top: 20px;
   }
   .page-footer .footerLameDuPonantCenter h5,
   .page-footer .footerLameDuPonantLeft h5,
@@ -9865,11 +9867,14 @@ a.middle-indicator-text {
   }
   .page-footer .footerLameDuPonantRight span {
     text-align: center;
-    margin-left: none;
+    margin-left: 0px;
+  }
+  .disciplineRow {
+    padding: 5px;
   }
 }
 
-@media only screen and (max-width: 992px) {
+@media only screen and (min-width: 601px) {
   .disciplineRow {
     padding: 5px;
   }

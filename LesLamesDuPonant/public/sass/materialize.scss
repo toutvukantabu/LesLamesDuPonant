@@ -395,13 +395,13 @@ p {
 
 ul.tl li .item-detail {
   color: rgba(0, 0, 0, 0.5);
-  font-size: 14px;
+  font-size: 17px;
   text-align: left;
 }
 
 ul.tl li .item-title {
   text-align: left;
-  font-size: 15px;
+  font-size: 19px;
   max-width: 150px;
 }
 
@@ -411,7 +411,7 @@ ul.tl li .timestamp {
   width: 150px;
   left: -125%;
   text-align: right;
-  font-size: 14px;
+  font-size: 17px;
 }
 
 // Information
@@ -669,11 +669,14 @@ font-size: 1.4rem;
   }
 }
 
-@media #{$medium-and-up} {
+
+@media #{$medium-and-down} {
   .page-footer {
     .footerLameDuPonantCenter {
-      @include border-white();
-      margin-top: 25px;
+      @include border-white($border:none, $height:none);
+      border-bottom: 2px solid #ffffff;
+      border-top: 2px solid #ffffff;
+      margin-top: 20px;
      
     }
 
@@ -689,17 +692,19 @@ font-size: 1.4rem;
     .footerLameDuPonantRight {
       span {
         text-align: center;
-        margin-left: none;
+        margin-left: 0px;
 
       }
     }
   }
+
+  .disciplineRow {
+    padding: 5px
+  }
 }
 
+@media #{$medium-and-up} {
 
-
-@media #{$medium-and-down} {
-  
 
   .disciplineRow {
     padding: 5px
