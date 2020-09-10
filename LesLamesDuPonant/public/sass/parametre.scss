@@ -17,11 +17,16 @@
 line-height: $line;
 }
 
-//wave effect menu mobile + img rounded carousel home
+// Color wave effect menu mobile + img rounded carousel home + timestamp
 
 @mixin color-waves($color-waves:#05053b93){
 
   background-color: $color-waves
+}
+
+@mixin time-stamp($color-stamp:#05053b93){
+background:$color-stamp;
+
 }
 
 @mixin general (){
@@ -31,8 +36,14 @@ line-height: $line;
 
 //webkitShadow
 
-@mixin webkit-shadow ($webkit:#b0a7b0f0,$box:#b0a7b0f0,$shadow:#0e0d0ef0 ){
+@mixin webkit-shadow ($webkit:#b0a7b0f0,$box:#b0a7b0f0,$shadow:#0e0d0ef0, $inset:inset ){
 -webkit-box-shadow: $inset 0px 0px 50px 12px $webkit;
 -moz-box-shadow: $inset 0px 0px 50px 12px $box;
  box-shadow: $inset 0px 0px 50px 12px $shadow ;
 }
+
+@mixin webkit-shadow2 ($webkit:#b0a7b0f0,$box:#b0a7b0f0,$shadow:#0e0d0ef0 ){
+  -webkit-box-shadow:  0px 0px 50px 12px $webkit;
+  -moz-box-shadow:  0px 0px 50px 12px $box;
+   box-shadow:  0px 0px 50px 12px $shadow ;
+  }

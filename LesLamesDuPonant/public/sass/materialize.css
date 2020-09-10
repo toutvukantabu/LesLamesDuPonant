@@ -9502,13 +9502,13 @@ p {
   */
 .homeSectionPresentation,
 .homeSectionActivity {
+  -webkit-box-shadow: inset 0px 0px 50px 12px #b0a7b0f0;
+  box-shadow: inset 0px 0px 50px 12px #0e0d0ef0;
   min-height: 700px;
   background-image: url(../uploads/Background/sectionHome.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  -webkit-box-shadow: inset 0px 0px 50px 12px #b0a7b0f0;
-  box-shadow: inset 0px 0px 50px 12px #0e0d0ef0;
 }
 
 .homeSectionCalendar {
@@ -9615,13 +9615,13 @@ p {
 }
 
 .history-tl-container ul.tl li::before {
+  background: #05053b93;
   position: absolute;
   left: -11px;
   top: -5px;
   content: " ";
   border: 8px solid rgba(255, 255, 255, 0.74);
   border-radius: 500%;
-  background: #258CC7;
   height: 21px;
   width: 21px;
   -webkit-transition: all 500ms ease-in-out;
@@ -9650,7 +9650,7 @@ ul.tl li .timestamp {
   color: #7e7979;
   position: absolute;
   width: 150px;
-  left: -95%;
+  left: -125%;
   text-align: right;
   font-size: 14px;
 }
@@ -9672,8 +9672,8 @@ ul.tl li .timestamp {
 
 .informationFooterRight img {
   border-radius: 10px;
-  -webkit-box-shadow: 0px 0px 50px 6px rgba(176, 167, 176, 0.94);
-  box-shadow: 0px 0px 50px 6px rgba(176, 167, 176, 0.94);
+  -webkit-box-shadow: inset 0px 0px 50px 12px #b0a7b0f0;
+  box-shadow: inset 0px 0px 50px 12px #b0a7b0f0;
 }
 
 .page-footer {
