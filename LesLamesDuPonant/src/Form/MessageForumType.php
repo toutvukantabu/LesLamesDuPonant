@@ -4,11 +4,12 @@ namespace App\Form;
 
 use App\Entity\MessageForum;
 use App\Entity\SubjectForum;
-use FOS\CKEditorBundle\Form\Type\CKEditorType;
-use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
+use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 class MessageForumType extends AbstractType
 {
@@ -24,8 +25,6 @@ class MessageForumType extends AbstractType
             ->add('ContentMessageForum',CKEditorType::class,[
                 'label'=> ' ',
                 ])
-            // ->add('photoMessageForum')
-           
         ;
     }
 

@@ -1,22 +1,23 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello LesDisciplinesController!{% endblock %}
+{% block title 'Les disciplines' %}
 
 {% block body %}
-
+<h4 class="center-align disciplineFull">Les disciplines des Lames Du Ponant</h3>
 {% for discipline in disciplines %}
-
 {% if discipline.active == 1  and   discipline.orderDiscipline is divisible by(2)  %}
+{# Carousel discipline#}
+<div class="container ">
 
-<div class="container">
-    <div class="carousel carousel-slider center " data-indicators="true">
+
+<div class="z-depth-5 disciplinecarousel">
+    <div class="carousel carousel-slider center carouselDiscipline " data-indicators="true">
         <div class="carousel-fixed-item center middle-indicator">
             <div class="left">
                 <a href="Previo"
                     class="movePrevCarousel middle-indicator-text waves-effect waves-light content-indicator"><i
                         class="material-icons left  middle-indicator-text">chevron_left</i></a>
             </div>
-
             <div class="right">
                 <a href="Siguiente"
                     class=" moveNextCarousel middle-indicator-text waves-effect waves-light content-indicator"><i
@@ -26,7 +27,6 @@
         <div class="carousel-item white-text" href="#one!">
             <img src="{{asset('/uploads/discipline/') ~ discipline.imageOneDiscipline }}" alt=""
                 class="responsive-image ">
-
         </div>
         <div class="carousel-item white-text" href="#two!">
             <img src="{{asset('/uploads/discipline/') ~ discipline.photoInstructor }}" alt="" class="responsive-image ">
@@ -36,24 +36,29 @@
                 class="responsive-image ">
         </div>
     </div>
-    <h4 class="center-align">{{ discipline.disciplinetitle}}</h4>
-    <div class="row">
-        <div class="col l8">
-
-            {{ discipline.disciplineDescription|raw}}
-
+    
+    </div>
+ {# Titre discipline#}
+    <h4 class="center-align disciplineFull">{{ discipline.disciplinetitle}}</h4>
+    <div class="row z-depth-5 disciplineFull disciplineRow ">
+    {# description discipline#}
+        <div class="col l8 disciplineDescription ">
+           <p> {{ discipline.disciplineDescription|raw}}</p>
         </div>
-        <div class="col l4">
+ {# Instructeur discipline#}
+        <div class="col l4 disciplineInstructor ">
             <h5 class="center-align">Votre instructeur:</h5>
-            <img src="{{asset('/uploads/discipline/') ~ discipline.photoInstructor }}" alt=""
+            <img class="responsive-img z-depth-5" src="{{asset('/uploads/discipline/') ~ discipline.photoInstructor }}" alt=""
                 class="responsive-image img-discipline">
-            <h5>{{ discipline.nameInstructor}}</h5>
+            <h5 class="center-align">{{ discipline.nameInstructor}}</h5>
         </div>
     </div>
 
 </div>
 {% else %}
+     {# Carousel 2  discipline#}
 <div class="container">
+<div class="z-depth-5 disciplinecarousel">
     <div class="carousel carousel-slider center " data-indicators="true">
         <div class="carousel-fixed-item center middle-indicator">
             <div class="left">
@@ -81,22 +86,24 @@
                 class="responsive-image ">
         </div>
     </div>
-    <h4 class="center-align">{{ discipline.disciplinetitle}}</h4>
-    <div class="row">
-
-        <div class="col l4">
+    </div>
+  {# Titre discipline#}
+    <h4 class="center-align disciplineFull">{{ discipline.disciplinetitle}}</h4>
+    <div class="row z-depth-5 disciplineFull disciplineRow">
+ {# Instructeur discipline#}
+        <div class="col xl4 disciplineInstructor">
             <h5 class="center-align">Votre instructeur:</h5>
-            <img src="{{asset('/uploads/discipline/') ~ discipline.photoInstructor }}" alt=""
+            <img class="responsive-img z-depth-5 " src="{{asset('/uploads/discipline/') ~ discipline.photoInstructor }}" alt=""
                 class="responsive-image img-discipline">
-            <h5>{{ discipline.nameInstructor}}</h5>
+            <h5 class="center-align">{{ discipline.nameInstructor}}</h5>
         </div>
-        <div class="col l8">
-
-            {{ discipline.disciplineDescription|raw}}
-
+        {# description discipline#}
+        <div class="col xl8 disciplineDescription">
+            <p >{{ discipline.disciplineDescription|raw}}</p>
         </div>
-    </div></div>
-    {% endif %}
-    {% endfor %}
-
-    {% endblock %}
+    </div>
+      
+</div>
+{% endif %}
+{% endfor %}
+{% endblock %}

@@ -18,7 +18,7 @@
         <div class="row">
             <div class="col xl8">
                 <div class="row">
-                    <table>
+                    <table class="highlight  ">
                         <thead>
                           
                            
@@ -31,35 +31,34 @@
                                 </th>
                                 <th>
                                     dernier message
-                                </th>
-                                <th>
-                                
-                            <a class=" btn-floating modal-trigger blue" href="#modal-forum"
-                                    data-id="{{category_forum.id}}" data-titre="{{category_forum.titlecategory}}"
-                                    data-target="modal-create"><i class="material-icons">add</i></a></div>
-                                </th>
+                                </th> 
                             </tr>
+                             <a class=" btn-floating modal-trigger blue" href="#modal-forum"
+                                    data-id="{{category_forum.id}}" data-titre="{{category_forum.titlecategory}}"
+                                    data-target="modal-create"><i class="material-icons">add</i></a>
                         </thead>
-                        {% for subject_category  in category_forum.subjectCategory %}
+                      
                         <tbody>
-                            
+                             {% for subject_category  in category_forum.subjectCategory %}
+                            <tr>
+                         
                             <td>
                                 <a
                                  href=" {{path('le_forum_subject', {'slug': subject_category.slug})}}">{{subject_category.titleSubjectForum}}
                                  </a>
                             </td>
                             <td>
-                                {{subject_category.messageSubjectForum|length}}
+                <span class=" new badge blue"data-badge-caption="réponse(s)">{{subject_category.messageSubjectForum|length}}</span>
                             </td>
-                            <td>
-                            </td>
-                            </tr>
-                            {% else %}
 
-                            il n'y a aucun sujet dans cette catégorie
-                            
+                              {% else %}
+
+                            <td>il n'y a aucun sujet dans cette catégorie</td>
+                              
+                            </tr>
+                           {% endfor %}
                         </tbody>
-                        {% endfor %}
+                     
                     </table>
 
                 </div>

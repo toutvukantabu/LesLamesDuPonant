@@ -1,5 +1,7 @@
 @charset "UTF-8";
 
+
+@import "parametre";
 // Colors
 @import "components/color";
 
@@ -43,65 +45,81 @@
 
 
 
-/* Document Infomation
-- Website:LLames Du Ponant
--version 1 ( version).0( maj majeur). 0 (patch)
-author:Gwendal Bescont
-*/
+//  Document Infomation
+// - Website:LLames Du Ponant
+// -version 1 ( version).0( maj majeur). 0 (patch)
+// author:Gwendal Bescont
 
 
-/* COLORS
-defaut body text    
--h1   color:#fff;              
--h2   color:#fff              
--h3   color:#fff
--h4   color:#eee
--button
--button:hover
-button:waves
 
--icon               
-*/
-/* FONTS
+//  COLORS
+// defaut body text    
+// -h1   color:#fff;              
+// -h2   color:#fff              
+// -h3   color:#fff
+// -h4   color:#eee
+// -button
+// -button:hover
+// button:waves
 
- H1 font-family: 'Ubuntu',cursive, sans-serif;
- H2 font-family: 'Rochester', cursive;   
-    
-*/
+// -icon               
 
-/* CSS DIRECTORY
+//  FONTS
 
-1. =GLOBAL
-***********
--fonts
--button effect
-2. =NAVBAR
-***********
--user-nav Profil Left
-3. =HOMEPAGE
-***********
--Home Banner
--Home image
--Home Présentation (qui sommes nous)
--Home Parallax
--Home Dicipline/Activity
--Home timeline/Agenda/Info
+//  H1 font-family: 'Ubuntu',cursive, sans-serif;
+//  H2 font-family: 'Rochester', cursive;   
 
-4. =
-5. =
-6. =
-7. =
-8. =
-*/
+
+
+//  CSS DIRECTORY
+
+// 1. =GLOBAL
+// ***********
+// -fonts
+// -button effect
+// 2. =NAVBAR
+// ***********
+// -user-nav Profil Left
+// 3. =HOMEPAGE
+// ***********
+// -Home Banner
+// -Home image
+// -Home Présentation (qui sommes nous)
+// -Home Parallax
+// -Home Dicipline/Activity
+// -Home timeline/Agenda/Info
+
+// 4. =
+// 5. =
+// 6. =
+// 7. =
+// 8. =
+
 
 
 //GLOBAL
 //******************************************
+// Font size rem function
+$base-font-size: 20px;
+
+@function trim-unit($value) {
+  @return $value/($value * 0 +1);
+}
+
+@function rem-calc($value) {
+  @return $value/trim-unit($base-font-size) * 1rem
+}
+
+;
+
+// global
+
 body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
 }
+
 main {
   flex: 1 0 auto;
 }
@@ -116,26 +134,20 @@ h4,
 h5,
 h6 {
   font-family: 'Maven Pro', sans-serif;
-font-weight: 500;
+  font-weight: 500;
 }
 
 h1,
 h2,
 h4 {
   &:after {
-    display: block;
-    height: 2px;
-    background-color: rgba(29, 26, 228, 0.568);
-    width: 150px;
-    content: " ";
-    margin: 0 auto;
-    margin-top: 10px;
+    @include after-title($width:150px);
   }
 }
 
-p{
-line-height: 35px;
-
+p {
+  font-size: 1.1rem;
+  @include line-height;
 }
 
 //Button effect
@@ -144,29 +156,28 @@ line-height: 35px;
 // waves effect
 // ===============
 .waves-effect.waves-brown .waves-ripple {
-   background-color: rgba(121, 119, 235, 0.274);
- }
-
-
+  @include color-waves;
+}
 
 //NAVBAR
 //*****************************************
 
 .sticky-nav {
-  background-color: #0080ff7e;
+  background-color: #05053b;
   position: fixed;
   top: 0;
   z-index: 1000;
 }
 
-#navbarHome, #navbarAdmin{
+#navbarHome,
+#navbarAdmin {
   transition: top 0.2s linear;
   -webkit-transition: 0.2s;
-  background-color:#3d5695d2;
+  background-color: #05053bd3;
   z-index: 1000;
 
   li a:hover {
-    background-color:#032b53a6;
+    background-color: #40416ee5;
     transition-duration: 420ms;
   }
 }
@@ -176,6 +187,7 @@ line-height: 35px;
   z-index: 10000;
 
 }
+
 
 /* User-Nav Profil left
   *================
@@ -218,6 +230,7 @@ line-height: 35px;
   */
 .homeSectionPresentation {
   min-height: 700px;
+
   h2 {
     margin-top: 50px;
     margin-bottom: 50px;
@@ -231,7 +244,7 @@ line-height: 35px;
   margin-bottom: 10px;
   max-width: 700px;
   margin: 0 auto;
-  
+
   p {
     text-align: justify;
 
@@ -244,18 +257,23 @@ line-height: 35px;
 
 .homeSectionPresentation,
 .homeSectionActivity {
+  @include webkit-shadow();
   min-height: 700px;
   background-image: url(../uploads/Background/sectionHome.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  -webkit-box-shadow: inset 0px 0px 50px 12px rgba(176, 167, 176, 0.94);
-  -moz-box-shadow: inset 0px 0px 50px 12px rgba(176, 167, 176, 0.94);
-  box-shadow: inset 0px 0px 50px 12px rgba(14, 13, 14, 0.94);
+
 }
 
 .homeSectionCalendar {
-  max-height: 490px;
+  min-height: 490px;
+  @include webkit-shadow();
+  background-image: url(../uploads/Background/sectionHome.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
 }
 
 /* Home Dicipline/Activity
@@ -278,27 +296,22 @@ line-height: 35px;
   margin-bottom: -15px;
 
   &:after {
-    display: block;
-    height: 2px;
-    background-color: rgba(0, 0, 7, 0.568);
-    width: 50px;
-    content: " ";
-    margin: 0 auto;
-    margin-top: 10px;
+    @include after-title($color:#00000791);
     margin-bottom: 15px;
   }
 }
 
 .card-rounded {
+  @include general;
   padding: 1px;
   min-width: 318px;
   max-height: 318px;
-  max-width:318px ;
+  max-width: 318px;
   min-height: 318px;
   margin: 0.2rem 0 2rem 0;
   box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.2);
   border-radius: 100%;
-  background-color: rgba(30, 49, 221, 0.582);
+
   transform: scale(0.85, 0.85);
   margin-left: -60px;
   margin-bottom: -20px;
@@ -307,9 +320,8 @@ line-height: 35px;
   filter: grayscale(0);
 
   &:hover {
-    -webkit-box-shadow: 0px 0px 50px 12px rgba(176, 167, 176, 0.94);
-    -moz-box-shadow: 0px 0px 50px 12px rgba(176, 167, 176, 0.94);
-    box-shadow: 0px 0px 50px 12px rgba(176, 167, 176, 0.94);
+
+    @include webkit-shadow2($shadow:#b0a7b0f0);
     filter: blur(1px);
     -webkit-filter: grayscale(100%);
     filter: grayscale(100%);
@@ -353,7 +365,7 @@ line-height: 35px;
 .history-tl-container ul.tl li {
   list-style: none;
   margin: auto;
-  margin-left: 130px;
+  margin-left: 93px;
   min-height: 50px;
   max-height: 140px;
   border-left: 1px dashed #86D6FF;
@@ -364,13 +376,13 @@ line-height: 35px;
 
 
 .history-tl-container ul.tl li::before {
+  @include time-stamp;
   position: absolute;
   left: -11px;
   top: -5px;
   content: " ";
   border: 8px solid rgba(255, 255, 255, 0.74);
   border-radius: 500%;
-  background: #258CC7;
   height: 21px;
   width: 21px;
   transition: all 500ms ease-in-out;
@@ -383,13 +395,13 @@ line-height: 35px;
 
 ul.tl li .item-detail {
   color: rgba(0, 0, 0, 0.5);
-  font-size: 14px;
+  font-size: 17px;
   text-align: left;
 }
 
 ul.tl li .item-title {
   text-align: left;
-  font-size: 15px;
+  font-size: 19px;
   max-width: 150px;
 }
 
@@ -397,9 +409,9 @@ ul.tl li .timestamp {
   color: #7e7979;
   position: absolute;
   width: 150px;
-  left: -95%;
+  left: -125%;
   text-align: right;
-  font-size: 14px;
+  font-size: 17px;
 }
 
 // Information
@@ -421,75 +433,76 @@ ul.tl li .timestamp {
 
   img {
     border-radius: 10px;
-    -webkit-box-shadow: 0px 0px 50px 6px rgba(176, 167, 176, 0.94);
-    -moz-box-shadow: 0px 0px 50px 6px rgba(176, 167, 176, 0.94);
-    box-shadow: 0px 0px 50px 6px rgba(176, 167, 176, 0.94);
-
+    @include webkit-shadow($shadow:#b0a7b0f0);
   }
 }
 
 //PAGE FOOTER
 //************************
-.page-footer{
-  background-color: #3D5695;
+.page-footer {
+  @include general;
+
+  .footerLameDuPonantCenter,
+  .footerLameDuPonantLeft,
+  .footerLameDuPonantRight {
+    h5 {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+  }
+
+  .footerLameDuPonantLeft {
+
+    i {
+      display: block;
+      margin-top: 25px;
+      text-align: left;
+      margin-left: 38px;
+      color:darkgray;
+    }
+
+    i:hover {
+      color: #fff;
+    }
+
+    p {
+      margin-left: 27%;
+      margin-top: 20px;
+      min-width: 130px;
+      font-size: 19px;
+    }
+  }
+
+  .footerLameDuPonantCenter {
+    @include border-white;
+
+    img {
+      display: block;
+      height: 130px;
+      width: 130px;
+      border-radius: 500%;
+      text-align: center;
+      margin: 44px auto 21px auto;
+    }
+  }
+
+  .footerLameDuPonantRight {
+    span {
+      display: block;
+      color: #fff;
+      font-size: 19px;
+      margin-left: 48px;
+      margin-top: 20px;
+      padding-top: 16px;
+    }
+  }
+}
+
+.footerCopyright {
+  background-color: #242222;
+}
 
 
-.footerLameDuPonantCenter,.footerLameDuPonantLeft,.footerLameDuPonantRight{
-  h5{
-    text-align: center;
-  } 
-
-}
-.footerLameDuPonantLeft{
-  border-right: 1px solid #fff;
-  border-right-width: unset;
-  i{
-  display: block;
-margin-top: 20px;
-text-align: left;
-margin-left: 11px;
-}
-i:hover{
-  color: #fff;
-}
-p{
-margin-left: 27%;
-margin-top: 20px;
-min-width: 130px;
-font-size: 19px;
-
-}
-}
-
-.footerLameDuPonantCenter{
-  border-right: 1px solid #fff;
-  border-right-width: unset;
-
-img{
-  display: block;
-  height: 130px;
-  width: 130px;
-  border-radius: 500%;
-  text-align: center;
-  margin: 44px auto 21px auto;
- 
-}
-}
-
-.footerLameDuPonantRight {
-   span{
-display: block;
-color: #fff;
-font-size: 19px;
-margin-left: 125px;
-margin-top: 20px;
-   }
-}
-}
-.footerCopyright{
-
- background-color: #242222;
-}
 /* Form login, register, password,
   *===============================
   */
@@ -515,7 +528,35 @@ margin-top: 20px;
 //LES DISCIPLINES
 //===============
 
+.disciplineFull {
 
+  margin-top: 80px;
+  margin-bottom: 20px;
+  padding: 0 50px;
+
+  p {
+    padding-top: 8px;
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+}
+
+.disciplinecarousel {
+
+  margin-top: 80px;
+}
+
+.disciplineRow {
+  padding: 50px
+}
+
+.disciplineInstructor {
+  img {
+    margin-top: 20px;
+
+    margin-bottom: 30px;
+  }
+}
 
 //Les Infos
 //====================
@@ -528,35 +569,39 @@ margin-top: 20px;
   margin: 0 auto;
 }
 
-
 //carousel
 //********
-.middle-indicator{
-  position:absolute;
-  top:50%;
-  }
- .middle-indicator-text{
+.middle-indicator {
+  position: absolute;
+  top: 50%;
+}
+
+.middle-indicator-text {
   font-size: 4.2rem;
- }
- a.middle-indicator-text{
-   color:white !important;
- }
-.content-indicator{
-   width: 64px;
-   height: 64px;
-   background: none;
-   -moz-border-radius: 50px;
-   -webkit-border-radius: 50px;
-   border-radius: 50px; 
- }
-   .indicators{
-   visibility: hidden;
- }
- .img-discipline{
-height: 20vh;
+}
+
+a.middle-indicator-text {
+  color: white !important;
+}
+
+.content-indicator {
+  width: 64px;
+  height: 64px;
+  background: none;
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border-radius: 50px;
+}
+
+.indicators {
+  visibility: hidden;
+}
+
+.img-discipline {
+  height: 20vh;
 
 
- }
+}
 
 //BOUTIQUE
 //===============
@@ -567,12 +612,110 @@ height: 20vh;
 //*******************************
 // table Gestion
 
-.imgTableAdmin{
-height: 50px;
-width: 50px;
+.imgTableAdmin {
+  height: 50px;
+  width: 50px;
 }
 
 
 //Jqwery Table
 //==================
 
+
+//Responsive
+//================================
+// Small screens are defined as having a max-width of 600px
+// Medium screens are defined as having a max-width of 992px
+// Large screen are defined as having a min-width of 993px
+// Extra Large screen are defined as having a min-width of 1200px
+
+@media #{$small-and-down} {
+  h6{
+font-size: 1.9rem;
+
+  }
+  p{
+font-size: 1.4rem;
+
+  }
+  .page-footer {
+    .footerLameDuPonantCenter {
+      @include border-white($border:none, $height:none);
+      border-bottom: 2px solid #ffffff;
+      border-top: 2px solid #ffffff;
+      margin-top: 20px;
+    }
+
+    .footerLameDuPonantCenter,
+    .footerLameDuPonantLeft,
+    .footerLameDuPonantRight {
+      h5 {
+        margin-top: 35px;
+      }
+
+
+    }
+    .footerLameDuPonantRight {
+      span {
+        text-align: center;
+        margin-left: 0px;
+
+      }
+    }
+  }
+
+  .disciplineRow {
+    padding: 5px
+  }
+}
+
+
+@media #{$medium-and-down} {
+  .page-footer {
+    .footerLameDuPonantCenter {
+      @include border-white($border:none, $height:none);
+      border-bottom: 2px solid #ffffff;
+      border-top: 2px solid #ffffff;
+      margin-top: 20px;
+     
+    }
+
+    .footerLameDuPonantCenter,
+    .footerLameDuPonantLeft,
+    .footerLameDuPonantRight {
+      h5 {
+        margin-top: 35px;
+      }
+
+
+    }
+    .footerLameDuPonantRight {
+      span {
+        text-align: center;
+        margin-left: 0px;
+
+      }
+    }
+  }
+
+  .disciplineRow {
+    padding: 5px
+  }
+}
+
+@media #{$medium-and-up} {
+
+
+  .disciplineRow {
+    padding: 5px
+  }
+
+}
+
+@media #{$large-and-up} {
+  // styles for large screens and up
+}
+
+@media #{$extra-large-and-up} {
+  // styles for extra large screens and up
+}

@@ -36,7 +36,7 @@ class SubjectForumRepository extends ServiceEntityRepository
     }
     */
 
-    /*
+    
     public function findOneBySomeField($value): ?SubjectForum
     {
         return $this->createQueryBuilder('s')
@@ -46,5 +46,14 @@ class SubjectForumRepository extends ServiceEntityRepository
             ->getOneOrNullResult()
         ;
     }
-    */
+    
+    public function findOrderedByDate()
+    {
+        return $this->getEntityManager()
+            ->createQuery(
+                'SELECT s FROM App:SubjectForum s ORDER BY s.dateSubjectForum DESC '
+            )
+            ->setMaxResults(1)
+            ->getResult();
+    }
 }
