@@ -4,90 +4,99 @@
 
 {% block body %}
 <div class="container">
-    <div class="col xl12">
+    <div class="col xl12 ">
         {# PAGINATION #}
         <ul class="pagination">
-            <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
             <li class="active blue"><a href="{{path('le_forum')}}">Page d'accueil</a></li>
             <li class="active blue"><a
                     href="{{path('le_forum_category', {'slug': category_forum.slug})}}">{{category_forum.titlecategory}}</a>
             </li>
-
-            <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
         </ul>
-        <div class="row">
-            <div class="col xl8">
+        <div class="row ">
+            <div class="col xl8 l8 m12 s12 ">
                 <div class="row">
-                    <table class="highlight  ">
+                    <table class="highlight z-depth-5">
                         <thead>
-                          
-                           
                             <tr>
                                 <th>
-                      <h5 >{{category_forum.titlecategory}}</h5>
+                                    <h5>{{category_forum.titlecategory}}</h5>
                                 </th>
                                 <th>
                                     nombre de réponses
                                 </th>
                                 <th>
                                     dernier message
-                                </th> 
+                                </th>
                             </tr>
-                             <a class=" btn-floating modal-trigger blue" href="#modal-forum"
-                                    data-id="{{category_forum.id}}" data-titre="{{category_forum.titlecategory}}"
-                                    data-target="modal-create"><i class="material-icons">add</i></a>
+                            {% if  is_granted('IS_AUTHENTICATED_FULLY') %}
+                            <a class=" btn-floating modal-trigger blue" href="#modal-forum"
+                                data-id="{{category_forum.id}}" data-titre="{{category_forum.titlecategory}}"
+                                data-target="modal-create"><i class="material-icons">add</i></a>
+                            {% else %}
+                            <td>
+                                veuillez vous <a href="{{'app.login'}}">connecter</a> pour créer un nouveau sujet
+                            </td>
+                            {% endif %}
                         </thead>
-                      
                         <tbody>
-                             {% for subject_category  in category_forum.subjectCategory %}
+                            {% for subject_category  in category_forum.subjectCategory %}
                             <tr>
+                            {% if subject_category.active == 1 %}
+                                <td>
+                                    <a href=" {{path('le_forum_subject', {'slug': subject_category.slug})}}">{{subject_category.titleSubjectForum}}
+                                    </a>
+                                </td>
+                                <td>
+                                    <span class=" new badge blue"
+                                    data-badge-caption="réponse(s)">{{subject_category.messageSubjectForum|length}}</span>
+                                </td>
+                                {% set response = "" %}
+                                {% for content in subject_category.messageSubjectForum%}
+                                {% set response = content.contentMessageForum %}
+       {% endfor %}
+                                <td>{{response|striptags|u.truncate(20)|raw }}</td>
                          
-                            <td>
-                                <a
-                                 href=" {{path('le_forum_subject', {'slug': subject_category.slug})}}">{{subject_category.titleSubjectForum}}
-                                 </a>
-                            </td>
-                            <td>
-                <span class=" new badge blue"data-badge-caption="réponse(s)">{{subject_category.messageSubjectForum|length}}</span>
-                            </td>
-
-                              {% else %}
-
-                            <td>il n'y a aucun sujet dans cette catégorie</td>
-                              
                             </tr>
-                           {% endfor %}
+                        {% endif %}
                         </tbody>
-                     
+                            {% endfor %}
                     </table>
-
                 </div>
             </div>
-
-
             <!-- Modal Structure -->
-            <div id="modal-forum" class="modal bottom-sheet">
-                <div class="modal-content">
-                    {{ form_start(form) }}
-                    {# {{ form_errors(form) }} #}
+            <div id="modal-forum" class="formRegister z-depth-5 modal">
 
-                    {{ form_row(form.titleSubjectForum) }}
-                    {{ form_row(form.contentSubjectForum) }}
-                    {{ form_row(form.submit)}}
-                    {{ form_end(form) }}
-                </div>
+                {{ form_start(form) }}
+                {{ form_row(form.categorySubjectForum)}}
+                {{ form_row(form.titleSubjectForum) }}
+                {{ form_row(form.contentSubjectForum) }}
+                {{ form_row(form.submit)}}
+                {{ form_end(form) }}
             </div>
 
+            {# Affichage de la liset des catégories et des sections #}
+            <div class="col xl4 l4 m12 s12 z-depth-5">
+                <h4 class="center-align">Liste</h4>
+                <div class="container ">
+                    {% for home_section_forum in home_section_forums%}
+                    {% if home_section_forum.active == 1 %}
+                    <h5>{{home_section_forum.SectionTitleForum}}</h5>
+                    {% endif %}
+                    <ul>
+                        {% for category_section_forum in home_section_forum.categoryHomeSectionforum %}
+                        {% if category_section_forum.active == 1 %}
+                        <a href="{{path('le_forum_category', {'slug': category_section_forum.slug })}}">
+                            {{category_section_forum.titlecategory}}</a>
 
-
-
-
-
-            <div class="col xl4">
-                <h5 class="center-align">Liste</h5>
+                        {% endif %}
+                    </ul>
+                    {% endfor %}
+                    {% endfor %}
+                </div>
             </div>
         </div>
     </div>
+</div>
 </div>
 
 {% endblock %}

@@ -44,12 +44,13 @@
 	</li>
 	<div class="divider"></div>
 	{% if is_granted('IS_AUTHENTICATED_FULLY')%}
-	{# <li>
-		<a href="{{path('home')}}">
+
+	{% if is_granted('ROLE_ADMIN') or is_granted('Role_Super_Administrateur') %}
+	<li>
+		<a href="{{path('message_forum_index')}}">
 			<span>Messagerie</span>
 		</a>
-	</li> #}
-	{% if is_granted('ROLE_ADMIN') or is_granted('Role_Super_Administrateur') %}
+	</li> 
 	<li>
 		<a class="waves-effect waves-brown"href="{{path('admin')}}">Administration</a>
 	</li>
@@ -80,7 +81,7 @@
 		<a class="waves-effect waves-brown" href="{{path('app_login')}}">Connexion</a>
 	</li>
 	<li>
-		<aclass="waves-effect waves-brown" href="{{path('app_register')}}">S'enregistrer</a>
+		<a class="waves-effect waves-brown" href="{{path('app_register')}}">S'enregistrer</a>
 	</li>
 	{% endif %}
 	<div class="divider"></div>
@@ -336,11 +337,11 @@
 		</div>
 	</div>
 	<div class="footer-copyright footerCopyright">
-		<div class="container">
-		<div class="col xl8 l8 m12 s12"><span>2020 Les Lames Du Ponant. Tous droits réservés.</span></div>
-		<div class="col xl4 l4 m12 s12"><span><a class="grey-text text-lighten-4 right" href="">Crée
+		<div class="container"><div class="row">
+		<div class="col xl8 l8 m12 s12"><span >2020 Les Lames Du Ponant. Tous droits réservés.</span></div>
+		<div class="col xl4 l4 m12 s12"><span ><a class="grey-text text-lighten-4 right" href="">Crée
 				par un p'tit Breton</a></span></div>
-			
+			</div>
 		</div>
 	</div>
 </footer>

@@ -45,7 +45,7 @@ class LeForumController extends AbstractController
     /**
      * @Route("/categories/{slug}", name="le_forum_category", methods={"GET","POST"})
      */
-    public function showCategory( $slug ,CategoryForum $categoryForum,CategoryForum $categorySubjectForum, Request $request){
+    public function showCategory( $slug ,CategoryForum $categoryForum,CategoryForum $categorySubjectForum, Request $request,HomeSectionForumRepository $homeSectionForumRepository){
         $categoryForum = $this->getDoctrine()->getRepository(CategoryForum::class)->findOneBy(['slug' => $slug]);
         $subjectForum = $this->getDoctrine()->getRepository(SubjectForum::class)->findBy([
         'categorySubjectForum'=> $categoryForum,
@@ -74,7 +74,7 @@ class LeForumController extends AbstractController
         'form' => $form->createView(),
         'category_forum' => $categoryForum,
         'subject_forum' => $subjectForum,
-        
+        'home_section_forums' => $homeSectionForumRepository->findAll(),
     ]);
 
 }
@@ -85,7 +85,8 @@ class LeForumController extends AbstractController
     Request $request,
     SubjectForum $subjectForum,
     SubjectForum $subjectMessageForum, 
-    CategoryForumRepository $categoryForumRepository){
+    CategoryForumRepository $categoryForumRepository
+    ,HomeSectionForumRepository $homeSectionForumRepository){
         $subjectForum = $this->getDoctrine()->getRepository(SubjectForum::class)->findOneBy(['slug' => $slug]);
         $messageForum= $this->getDoctrine()->getRepository(MessageForum::class)->findBy([
         'subjectMessageForum'=> $subjectForum,
@@ -118,6 +119,7 @@ class LeForumController extends AbstractController
             "message_forum"=>$messageForum,
             'form' => $form->createView(),
             'category_forums' => $categoryForumRepository->findAll(),
+            'home_section_forums' => $homeSectionForumRepository->findAll(),
             "subject_forum"=>$subjectForum,
 
             ]

@@ -18,7 +18,7 @@
         {# affichage des sujets dans les catégories du forum#}
         <div class="row">
             <div class="col xl8">
-                <table>
+                <table class="highlight  z-depth-5">
                     <h5 class="center-align">{{subject_forum.titleSubjectForum}}</h5>
                     <thead>
                         <tr>
@@ -46,19 +46,19 @@
                         </tr>
                     </thead>
  {# affichage des messages#}                   
-                    {% for message_subject_forum  in subject_forum.messageSubjectForum %}
+                    {% for message  in subject_forum.messageSubjectForum %}
                     <thead>
                         <tr>
                             <th>
                                 <div class="chip">
-                                    {% if  message_subject_forum .user.photoAvatarUser  != NULL %}
-                                    <img class="circle" src="{{ asset('uploads/avatar/' ~ app.user.photoAvatarUser )}}">
+                                    {% if  message.user.photoAvatarUser  != NULL %}
+                                    <img class="circle" src="{{ asset('uploads/avatar/' ~ message.user.photoAvatarUser )}}">
                                     {% else %}
                                     <img class="circle" src="{{asset('uploads/avatar.jpg')}}">
                                     {% endif %}
-                                    {% if  message_subject_forum .user.pseudoUser != NULL %}
+                                    {% if  message.user.pseudoUser != NULL %}
                                     <span class="name">
-                                        {{message_subject_forum .user.pseudoUser}}</span>
+                                        {{message.user.pseudoUser}}</span>
                                     {% else %}
                                     <span class=" name"> "Illustre inconnu n°{{subject_forum.user.id}}"
                                     </span>
@@ -70,7 +70,7 @@
                     <thead>
                         <tr>
                             <td>
-                                {{message_subject_forum.contentMessageForum|raw}}
+                                {{message.contentMessageForum|raw}}
                             </td>
                         </tr>
                     </thead>
@@ -97,9 +97,25 @@
                             {{ form_end(form) }}
 {# liste des catégories et des sujet du forum#}
                 </div>
-            <div class="col xl4">
-                <h5 class="center-align">Liste</h5>
-            </div>
+            <div class="col xl4 l4 m12 s12 z-depth-5">
+                <h4 class="center-align">Liste</h4>
+                <div class="container ">
+           {% for home_section_forum in home_section_forums%}
+                {% if home_section_forum.active == 1 %}
+                <h5>{{home_section_forum.SectionTitleForum}}</h5>
+                {% endif %}
+                <ul>
+                    {% for category_section_forum in home_section_forum.categoryHomeSectionforum %}
+                    {% if category_section_forum.active == 1 %}
+                    <a href="{{path('le_forum_category', {'slug': category_section_forum.slug })}}">
+                    {{category_section_forum.titlecategory}}</a>
+               
+                    {% endif %}
+                </ul>
+                {% endfor %}
+                {% endfor %}
+              </div> 
+        </div>
         </div>
     </div>
 </div>
