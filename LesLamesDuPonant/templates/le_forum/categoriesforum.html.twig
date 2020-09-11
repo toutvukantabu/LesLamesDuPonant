@@ -41,25 +41,25 @@
                         <tbody>
                             {% for subject_category  in category_forum.subjectCategory %}
                             <tr>
-                            {% if subject_category.active == 1 %}
+                                {% if subject_category.active == 1 %}
                                 <td>
                                     <a href=" {{path('le_forum_subject', {'slug': subject_category.slug})}}">{{subject_category.titleSubjectForum}}
                                     </a>
                                 </td>
                                 <td>
                                     <span class=" new badge blue"
-                                    data-badge-caption="réponse(s)">{{subject_category.messageSubjectForum|length}}</span>
+                                        data-badge-caption="réponse(s)">{{subject_category.messageSubjectForum|length}}</span>
                                 </td>
                                 {% set response = "" %}
                                 {% for content in subject_category.messageSubjectForum%}
                                 {% set response = content.contentMessageForum %}
-       {% endfor %}
+                                {% endfor %}
                                 <td>{{response|striptags|u.truncate(20)|raw }}</td>
-                         
+
                             </tr>
-                        {% endif %}
+                            {% endif %}
                         </tbody>
-                            {% endfor %}
+                        {% endfor %}
                     </table>
                 </div>
             </div>
@@ -77,22 +77,27 @@
             {# Affichage de la liset des catégories et des sections #}
             <div class="col xl3 offset-xl1 l3 offset-l1 m12 s12  z-depth-5">
                 <h4 class="center-align">Liste</h4>
-                <div class="container ">
-                    {% for home_section_forum in home_section_forums%}
-                    {% if home_section_forum.active == 1 %}
-                    <h5>{{home_section_forum.SectionTitleForum}}</h5>
-                    {% endif %}
-                    <ul>
-                        {% for category_section_forum in home_section_forum.categoryHomeSectionforum %}
-                        {% if category_section_forum.active == 1 %}
-                        <a href="{{path('le_forum_category', {'slug': category_section_forum.slug })}}">
-                            {{category_section_forum.titlecategory}}</a>
 
-                        {% endif %}
-                    </ul>
-                    {% endfor %}
+                {% for home_section_forum in home_section_forums%}
+                {% if home_section_forum.active == 1 %}
+                <div class="collection with-header ">
+                    <div class="collection-header">
+                        <h5>{{home_section_forum.SectionTitleForum}}</h5>
+                    </div>
+                    {% endif %}
+
+                    {% for category_section_forum in home_section_forum.categoryHomeSectionforum %}
+                    {% if category_section_forum.active == 1 %}
+                    <a class="collection-item "
+                        href="{{path('le_forum_category', {'slug': category_section_forum.slug })}}">
+                        {{category_section_forum.titlecategory}}</a>
+
+                    {% endif %}
+
                     {% endfor %}
                 </div>
+                {% endfor %}
+
             </div>
         </div>
     </div>
