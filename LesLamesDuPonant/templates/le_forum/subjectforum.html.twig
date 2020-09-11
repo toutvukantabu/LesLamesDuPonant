@@ -55,7 +55,6 @@
                         <table class="highlight  z-depth-2">
 
  {# affichage des messages#}                   
-                   
                     <thead>
                         <tr>
                             <th class="userForumBackground">
@@ -73,7 +72,6 @@
                                     </span>
                                 </div>
                             </th>
-                            <th></th>
                         </tr>
                         {% endif %}
                     </thead>
@@ -83,9 +81,10 @@
                                 {{message.contentMessageForum|raw}}
                             </td>
                         </tr>
+                        <tr>
+                        <td><small class="dateSmallForum">date de publication  {{message.datePublicationMessageForum|format_datetime(locale='fr')}}</small></td>
+                        </tr>
                     </thead>
-               
-                    
                 </table>
             {% endfor %}
             <table class="z-depth-2">
@@ -93,16 +92,15 @@
                         <tr>
                             <th>
                             <div class="btnForum"><a
-                                        class=" btn-floating modal-trigger blue" href="#modal-forum" data-id=""
-                                        data-titre="" data-target="modal-create"><i
-                                            class="material-icons" title="ajouter un commentaire">add</i></a></div> 
+                                   class=" btn-floating modal-trigger blue" href="#modal-forum" data-id=""
+                                  data-titre="" data-target="modal-create"><i
+                                 class="material-icons" title="ajouter un commentaire">add</i></a></div> 
                             </th>
                         </tr>
                     </thead>
                     </table>
             </div>
 {# Modal pour affichage du ckeditor#}
-
                    <div id="modal-forum"class="formRegister z-depth-5 modal">
                             {{ form_start(form)}}
                             <div style="display:none">{{ form_row(form.SubjectMessageForum) }}</div>

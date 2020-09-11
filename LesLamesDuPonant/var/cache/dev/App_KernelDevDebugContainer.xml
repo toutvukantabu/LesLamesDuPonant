@@ -3526,6 +3526,9 @@
         <argument type="service" id="twig.extension.dump"/>
       </call>
       <call method="addExtension">
+        <argument type="service" id="twig.extension.intl"/>
+      </call>
+      <call method="addExtension">
         <argument type="service" id="twig.extension.string"/>
       </call>
       <call method="addExtension">
@@ -3763,6 +3766,9 @@
       <argument type="service" id="twig"/>
     </service>
     <service id="twig.missing_extension_suggestor" class="Twig\Extra\TwigExtraBundle\MissingExtensionSuggestor" public="false"/>
+    <service id="twig.extension.intl" class="Twig\Extra\Intl\IntlExtension" public="false">
+      <tag name="twig.extension"/>
+    </service>
     <service id="twig.extension.string" class="Twig\Extra\String\StringExtension" public="false">
       <tag name="twig.extension"/>
     </service>
