@@ -25,7 +25,7 @@
                 <table class="highlight  z-depth-2">
                     <thead>
                         <tr>
-                            <th>
+                            <th class="userForumBackground">
                                 <div class="chip">
                                     {% if  subject_forum.user.photoAvatarUser  != NULL %}
                                     <img class="circle" src="{{ asset('uploads/avatar/' ~ app.user.photoAvatarUser )}}">
@@ -58,7 +58,7 @@
                    
                     <thead>
                         <tr>
-                            <th>
+                            <th class="userForumBackground">
                                 <div class="chip">
                                     {% if  message.user.photoAvatarUser  != NULL %}
                                     <img class="circle" src="{{ asset('uploads/avatar/' ~ message.user.photoAvatarUser )}}">
@@ -73,6 +73,7 @@
                                     </span>
                                 </div>
                             </th>
+                            <th></th>
                         </tr>
                         {% endif %}
                     </thead>
@@ -91,10 +92,10 @@
             <thead>
                         <tr>
                             <th>
-                                <span><a
+                            <div class="btnForum"><a
                                         class=" btn-floating modal-trigger blue" href="#modal-forum" data-id=""
                                         data-titre="" data-target="modal-create"><i
-                                            class="material-icons">add</i></a>   Répondre  </span>
+                                            class="material-icons" title="ajouter un commentaire">add</i></a></div> 
                             </th>
                         </tr>
                     </thead>

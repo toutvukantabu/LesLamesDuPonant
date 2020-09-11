@@ -65,21 +65,23 @@
 // -icon               
 
 //  FONTS
-
-//  H1 font-family: 'Ubuntu',cursive, sans-serif;
-//  H2 font-family: 'Rochester', cursive;   
-
+//===========
+//  H1,H2,H3,H4 font-family: font-family: 'Maven Pro', sans-serif;
+  //font-weight: 500;
 
 
 //  CSS DIRECTORY
+//**************************************************************************************
 
 // 1. =GLOBAL
 // ***********
 // -fonts
 // -button effect
+
 // 2. =NAVBAR
 // ***********
 // -user-nav Profil Left
+
 // 3. =HOMEPAGE
 // ***********
 // -Home Banner
@@ -87,15 +89,37 @@
 // -Home Présentation (qui sommes nous)
 // -Home Parallax
 // -Home Dicipline/Activity
-// -Home timeline/Agenda/Info
 
-// 4. =
-// 5. =
-// 6. =
-// 7. =
-// 8. =
+// 4.=FOOTER
+// ***********
+//Home timeline/Agenda/Info
+// Information
+//PAGE FOOTER
 
+// 5. =LES AMHE
+// *************
 
+// 6.=LES DISCIPILINES
+// *******************
+
+// 7. =Les Infos*
+// ******************
+//open street map
+//carousel
+
+//8. =FORUM
+//*******************
+//index
+//category
+//subject
+
+// 9. =//ADMIN
+//*************
+// table Gestion
+//Jqwery Table
+
+//RESPONSIVE
+//******************
 
 //GLOBAL
 //******************************************
@@ -108,9 +132,7 @@ $base-font-size: 20px;
 
 @function rem-calc($value) {
   @return $value/trim-unit($base-font-size) * 1rem
-}
-
-;
+};
 
 // global
 
@@ -154,8 +176,28 @@ p {
 //=============
 
 
+//FORMULAIRE
+//=====================================================
+/* Form login, register, password,
+  *===============================
+  */
+  .formRegister,
+  .formLogin,
+  .formReset {
+    margin-top: 70px;
+    margin-bottom: 150px;
+    border-radius: 10px;
+    padding: 20px;
+  
+  }
+  
+  .loginResetPassword,
+  .smallResetPassword {
+    margin-bottom: 40px;
+  
+  }
 
-// waves effect
+// waves effect (menu mobile onclick)
 // ===============
 .waves-effect.waves-brown .waves-ripple {
   @include color-waves;
@@ -185,11 +227,8 @@ p {
 }
 
 .side-nav {
-
   z-index: 10000;
-
 }
-
 
 /* User-Nav Profil left
   *================
@@ -218,6 +257,7 @@ p {
 /* Home Image
   *================
   */
+
 #HomeImg {
   margin-bottom: -7px;
 
@@ -249,7 +289,6 @@ p {
 
   p {
     text-align: justify;
-
   }
 }
 
@@ -302,7 +341,8 @@ p {
     margin-bottom: 15px;
   }
 }
-
+//image carousel
+//================
 .card-rounded {
   @include general;
   padding: 1px;
@@ -334,7 +374,6 @@ p {
 }
 
 .disciplineHomeDescription {
-
   word-wrap: break-word;
   margin-left: -73px;
   width: 345px;
@@ -505,24 +544,7 @@ ul.tl li .timestamp {
 }
 
 
-/* Form login, register, password,
-  *===============================
-  */
-.formRegister,
-.formLogin,
-.formReset {
-  margin-top: 70px;
-  margin-bottom: 150px;
-  border-radius: 10px;
-  padding: 20px;
 
-}
-
-.loginResetPassword,
-.smallResetPassword {
-  margin-bottom: 40px;
-
-}
 
 // LES AMHE
 //===============
@@ -604,9 +626,33 @@ a.middle-indicator-text {
 
 
 }
+//FORUM
+//**********************************
 
-//BOUTIQUE
-//===============
+//INDEX
+//========
+
+//CATEGORY
+//==========
+
+//SUBJECT
+//============
+.userForumBackground{
+
+  background-color: #cecee78f;
+}
+table{
+margin-top: 10px;
+
+}
+.btnForum{
+margin: 0 auto;
+width : 50px;
+}
+
+
+
+
 
 
 
@@ -630,6 +676,11 @@ a.middle-indicator-text {
 // Medium screens are defined as having a max-width of 992px
 // Large screen are defined as having a min-width of 993px
 // Extra Large screen are defined as having a min-width of 1200px
+
+
+
+//SMALL AN DOWN
+//*********************************************************************
 
 @media #{$small-and-down} {
   h6{
@@ -671,6 +722,9 @@ font-size: 1.4rem;
   }
 }
 
+//MEDIUM AND DOWN
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 
 @media #{$medium-and-down} {
   .page-footer {
@@ -705,6 +759,9 @@ font-size: 1.4rem;
   }
 }
 
+//MEDOIUM AN UP
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 @media #{$medium-and-up} {
 
 
@@ -714,10 +771,14 @@ font-size: 1.4rem;
 
 }
 
+//LARGE AND UP
+//*********************************************************************
 @media #{$large-and-up} {
   // styles for large screens and up
 }
 
+//EXTRA LARGE AND UP
+//***********************************************************************
 @media #{$extra-large-and-up} {
   // styles for extra large screens and up
 }

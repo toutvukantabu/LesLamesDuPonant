@@ -9411,6 +9411,23 @@ p {
   line-height: 35px;
 }
 
+/* Form login, register, password,
+  *===============================
+  */
+.formRegister,
+.formLogin,
+.formReset {
+  margin-top: 70px;
+  margin-bottom: 150px;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.loginResetPassword,
+.smallResetPassword {
+  margin-bottom: 40px;
+}
+
 .waves-effect.waves-brown .waves-ripple {
   background-color: #05053b93;
 }
@@ -9741,23 +9758,6 @@ ul.tl li .timestamp {
   background-color: #242222;
 }
 
-/* Form login, register, password,
-  *===============================
-  */
-.formRegister,
-.formLogin,
-.formReset {
-  margin-top: 70px;
-  margin-bottom: 150px;
-  border-radius: 10px;
-  padding: 20px;
-}
-
-.loginResetPassword,
-.smallResetPassword {
-  margin-bottom: 40px;
-}
-
 .disciplineFull {
   margin-top: 80px;
   margin-bottom: 20px;
@@ -9815,6 +9815,19 @@ a.middle-indicator-text {
 
 .img-discipline {
   height: 20vh;
+}
+
+.userForumBackground {
+  background-color: #cecee78f;
+}
+
+table {
+  margin-top: 10px;
+}
+
+.btnForum {
+  margin: 0 auto;
+  width: 50px;
 }
 
 .imgTableAdmin {
