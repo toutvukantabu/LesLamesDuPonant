@@ -9830,6 +9830,10 @@ table {
   width: 50px;
 }
 
+.dateSmallForum {
+  float: right;
+}
+
 .imgTableAdmin {
   height: 50px;
   width: 50px;
