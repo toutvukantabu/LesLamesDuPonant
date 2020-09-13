@@ -77,8 +77,8 @@
 	</div>
 	<script>
 		window.onload = () => {
-			let activer_ho_we_are = document.querySelectorAll("[type=checkbox]")
-			for (let bouton of activer_ho_we_are) {
+			let activer_home_pictures = document.querySelectorAll("[type=checkbox]")
+			for (let bouton of activer_home_pictures) {
 				bouton.addEventListener("click", function () {
 					let xmlhttp = new XMLHttpRequest;
 					xmlhttp.open("get", `/home/pictures/activer/${this.dataset.id}`)

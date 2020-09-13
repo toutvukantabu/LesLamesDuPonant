@@ -103,13 +103,13 @@ class TimeStampController extends AbstractController
         $this->addFlash(
             'how we are',
             'supprimé avec succes!');
-        return $this->redirectToRoute('home_pictures_index');
+        return $this->redirectToRoute('time_stamp_index');
     }
     
          /**
          * @Route("/activer/{id}", name="activer_time_stamp")
          */
-        public function activer(  TimeStamp $timeStamp){
+        public function activer( TimeStamp $timeStamp){
     
               $timeStamp->setActive((  $timeStamp->getActive())? false : true);
             $entityManager = $this->getDoctrine()->getManager();

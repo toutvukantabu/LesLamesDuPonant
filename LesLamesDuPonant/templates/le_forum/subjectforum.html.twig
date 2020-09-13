@@ -3,6 +3,7 @@
 
 
 {% block body %}
+<main class="backgroundForum">
 <div class="container">
     <div class="col xl12 l12 m12 s12">
         {# PAGINATION du forum#}
@@ -16,13 +17,13 @@
                     href="{{path('le_forum_subject' ,{'slug': subject_forum.slug })}}">{{subject_forum.titleSubjectForum}}</a>
         </ul>
         {# affichage des sujets dans les catégories du forum#}
-        <div class="row">
+        <div class="row ">
             <div class="col xl12 l12 m12 s12">
-                <h1 class="center-align">{{subject_forum.titleSubjectForum}}</h1>
+                <h1 class="center-align titleForum">{{subject_forum.titleSubjectForum}}</h1>
             </div>
             <div class="col xl8 l8 m12 s12">
 
-                <table class="highlight  z-depth-2">
+                <table class="highlight z-depth-2 " id="tableForum">
                     <thead>
                         <tr>
                             <th class="userForumBackground">
@@ -33,7 +34,7 @@
                                     <img class="circle" src="{{asset('uploads/avatar.jpg')}}">
                                     {% endif %}
                                     {% if  subject_forum.user.pseudoUser != NULL %}
-                                    <span class="name">
+                                    <span class="name ">
                                         {{subject_forum.user.pseudoUser}}</span>
                                     {% else %}
                                     <span class=" name"> "Illustre inconnu n°{{subject_forum.user.id}}"
@@ -45,14 +46,17 @@
                     </thead>
                     <thead>
                         <tr>
-                            <td>{{subject_forum.contentSubjectForum|raw}}</td>
+                            <td class="messageForum">{{subject_forum.contentSubjectForum|raw}}</td>
                         </tr>
-
+                        <tr>
+                            <td><small class="dateSmallForum">date de publication
+                                    {{subject_forum.dateSubjectForum|format_datetime(locale='fr')}}</small></td>
+                        </tr>
                     </thead>
                 </table>
                 <div class="divider"></div>
                 {% for message  in subject_forum.messageSubjectForum %}
-                <table class="highlight  z-depth-2">
+                <table class="highlight  z-depth-2 " id="tableForum">
 
                     {# affichage des messages#}
                     <thead>
@@ -78,7 +82,7 @@
                     </thead>
                     <thead>
                         <tr>
-                            <td>
+                            <td class="messageForum">
                                 {{message.contentMessageForum|raw}}
                             </td>
                         </tr>
@@ -93,9 +97,11 @@
                     <thead>
                         <tr>
                             <th>
-                                <div class="btnForum"><a class=" btn-floating modal-trigger blue" href="#modal-forum"
-                                        data-id="" data-titre="" data-target="modal-create"><i class="material-icons"
-                                            title="ajouter un commentaire">add</i></a></div>
+                                <div class="btnForum"><a class=" btn-large bt more-bt modal-trigger" href="#modal-forum"
+                                        data-target="modal-create">
+                                        <span class="fl"></span><span class="sfl"></span><span class="cross"></span>
+                                        <p class="btnForumMessage">Répondre</p><i></i>
+                                    </a></div>
                             </th>
                         </tr>
                     </thead>
@@ -110,14 +116,14 @@
                 {{ form_end(form) }}
                 {# liste des catégories et des sujet du forum#}
             </div>
-            <div class="col xl3 offset-xl1 l3 offset-l1 m12 s12  z-depth-5">
+            <div class="col xl3 offset-xl1 l3 offset-l1 m12 s12 z-depth-5 liste-forum">
                 <h4 class="center-align">Liste</h4>
 
                 {% for home_section_forum in home_section_forums%}
                 {% if home_section_forum.active == 1 %}
                 <div class="collection with-header ">
                     <div class="collection-header">
-                        <h5>{{home_section_forum.SectionTitleForum}}</h5>
+                        <h6>{{home_section_forum.SectionTitleForum}}</h6>
                     </div>
                     {% endif %}
 
@@ -137,4 +143,5 @@
         </div>
     </div>
 </div>
+</main>
 {% endblock %}

@@ -1,4 +1,4 @@
-{% extends 'default.html.twig' %}
+{% extends 'admin.html.twig' %}
 
 {% block title %}TimeStamp index{% endblock %}
 
@@ -21,6 +21,7 @@
                 <th>DateTimeStamp</th>
                 <th>HourTimeStamp</th>
                 <th>action</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -76,7 +77,7 @@
         for (let bouton of activer_time_stamp) {
             bouton.addEventListener("click", function () {
                 let xmlhttp = new XMLHttpRequest;
-                xmlhttp.open("get", `/time/stamp/activer/${this.dataset.id}`)
+                xmlhttp.open("get", `/timestamp/activer/${this.dataset.id}`)
                 xmlhttp.send()
 
             })

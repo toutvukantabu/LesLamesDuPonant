@@ -7,10 +7,10 @@
 <header>
 	<div class="container " id="HomeTitle">
 		<div class="row">
-			<div class="  col m12 s12 l12 xl12">
+		<div class="  col m12 s12 l12 xl12">	<a href="{{path('home')}}">
 				{{ render(controller(
         'App\\Controller\\HomePicturesController::displayLogo',)) }}
-			</div>
+			</a></div>
 		</div>
 	</div>
 </header>
@@ -173,7 +173,7 @@
 	{% endfor %}
 </div>
 {% endif %}
-<main>
+
 	{% endblock %}
 	{# PRESENTATION leslamesduponant
 ============================= #}
@@ -190,7 +190,8 @@
 						{{ how_we_are.descriptionHowWeAre|raw}}
 					</p>
 					{% endfor %}
-					<a href="{{path('les_amhe')}}#les-lames-du-ponant">en savoir plus</a>
+				<div class="btnHome" align="center"><a class="hrefHome" href="{{path('les_amhe')}}#les-lames-du-ponant"target="_blank" rel="nofollow"><span>En savoir plus</span></a></div>
+				
 				</div>
 		</div>
 	</div>

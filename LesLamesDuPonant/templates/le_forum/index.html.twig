@@ -3,81 +3,65 @@
 {% block title 'Forum index'%}
 
 {% block body %}
-<div class="container">
-    <div class="col xl12">
-{# PAGINATION  de la page index#}
-        <ul class="pagination">
-            <li class=" blue active"><a href="#!">Accueil forum</a></li>
-        </ul>
-{# affichage des catégories dans la section du forum#}
-        <div class="row">
-            <div class="col xl8">
-                <div class="row">
-                    <table class="z-depth-5 highlight">
-                  
+<main class="backgroundForum">
+    <div class="container">
+        <div class="col xl12">
+            {# PAGINATION  de la page index#}
+            <ul class="pagination">
+                <li class=" blue active"><a href="#!">Accueil forum</a></li>
+            </ul>
+            {# affichage des catégories dans la section du forum#}
+            <div class="row">
+                <div class="col xl12 l12 m12 s12">
+                 <h1 class="center-align titleForum">Bienvenue sur le Forum Des lames Du Ponant</h1>
+                    <div class="row">
                         {% for home_section_forum in home_section_forums%}
-                
-                        <thead>
-                     
-                        <tr>  
-                                <th>
-                                    {% if home_section_forum.active == 1 %}
-                                    <h5>{{home_section_forum.SectionTitleForum}}</h5>
-                                    {% endif %}
-                                </th>
-                                <th>
-                                    nombre de sujet(s)
-                                </th>
-                                <th>
-                                    dernier sujet
-                                </th>
-                            </tr>
-                        </thead>
-                        {% for category_section_forum in home_section_forum.categoryHomeSectionforum %}
-                        <tbody>
-                            <tr>
-                                {% if category_section_forum.active == 1 %}
-                                <td>
-                                    <a href="{{path('le_forum_category', {'slug': category_section_forum.slug })}}">
-                                        {{category_section_forum.titlecategory}}</a>
-                                </td>
-                                <td>{{category_section_forum.subjectCategory|length}}</td>
-                                   {% set numbersubject = "" %}
-                                {% for subject in category_section_forum.subjectCategory %}
-                                    {% set numbersubject = subject.titleSubjectForum %}
-                                {% endfor %}
-                                <td>{{numbersubject}}</td> 
-                            </tr>
-                            {% endif %}
-                        </tbody>
-                        {% endfor %}
-                        {% endfor %}
-                    </table>
+                        <table class="z-depth-2 highlight tableForum">
+                            <thead>
+                                <tr class="userForumBackground">
+                                    <th>
+                                        {% if home_section_forum.active == 1 %}
+                                        <h5>{{home_section_forum.SectionTitleForum}}</h5>
+                                        {% endif %}
+                                    </th>
+                                    <th>
+                                        nombre de sujet(s)
+                                    </th>
+                                    <th>
+                                        dernier sujet
+                                    </th>
+                                    <th>date</th>
+                                </tr>
+                            </thead>
+                            {% for category_section_forum in home_section_forum.categoryHomeSectionforum %}
+                            <thead>
+                                <tr>
+                                    {% if category_section_forum.active == 1 %}
+                                    <th>
+                                        <a href="{{path('le_forum_category', {'slug': category_section_forum.slug })}}">
+                                            {{category_section_forum.titlecategory}}</a>
+                                    </th>
+                                    <th>{{category_section_forum.subjectCategory|length}}</th>
+                                    {% set numbersubject = "" %}
+                                    {% set datesubject = "" %}
+                                    {% for subject in category_section_forum.subjectCategory %}
+                                    {% set numbersubject = subject.active %}
+                                    {% set datesubject = subject.dateSubjectForum%}
+                                    {% endfor %}
+                                    <th>{{numbersubject}}</th>
+                                    <td>
+                                        Le {{datesubject|format_datetime(locale='fr')}}</td>
+                                </tr>
+                                {% endif %}
+                            </thead>
+                            {% endfor %}
 
+                        </table>
+                        {% endfor %}
+                    </div>
                 </div>
             </div>
-{# affichage des catégories et sujets du forum du forum#} 
-
-            <div class=" col xl3 offset-xl1 l3 offset-l1 m12 s12  z-depth-5">
-                <h5 class="center-align">Liste</h5>
-                <div class="container ">
-           {% for home_section_forum in home_section_forums%}
-                {% if home_section_forum.active == 1 %}
-                <h5>{{home_section_forum.SectionTitleForum}}</h5>
-                {% endif %}
-                <ul>
-                    {% for category_section_forum in home_section_forum.categoryHomeSectionforum %}
-                    {% if category_section_forum.active == 1 %}
-                    <a href="{{path('le_forum_category', {'slug': category_section_forum.slug })}}">
-                    {{category_section_forum.titlecategory}}</a>
-               
-                    {% endif %}
-                </ul>
-                {% endfor %}
-                {% endfor %}
-              </div> 
         </div>
     </div>
-</div>
-
+</main>
 {% endblock %}

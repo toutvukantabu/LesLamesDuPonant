@@ -3,6 +3,7 @@
 {% block title 'catégories'%}
 
 {% block body %}
+<main class="backgroundForum">
 <div class="container">
     <div class="col xl12 ">
         {# PAGINATION #}
@@ -12,14 +13,44 @@
                     href="{{path('le_forum_category', {'slug': category_forum.slug})}}">{{category_forum.titlecategory}}</a>
             </li>
         </ul>
-        <div class="row ">
-            <div class="col xl8 l8 m12 s12 ">
-                <div class="row">
-                    <table class="highlight z-depth-5">
+        <div class="row flex-forum">
+            <div class="col xl12 l12 m12 s12 flex-title-forum">
+                <h1 class="center-align">{{category_forum.titlecategory}}</h1>
+            </div>
+            <div class="row">
+                <div class="col xl8 l8 s12 m12">
+                    <table class="z-depth-2 " >
                         <thead>
                             <tr>
+                                {% if  is_granted('IS_AUTHENTICATED_FULLY') %}
                                 <th>
-                                    <h5>{{category_forum.titlecategory}}</h5>
+                                    <div class="btnForum"><a class=" btn-large bt more-bt modal-trigger btSubject"
+                                            href="#modal-forum" data-id="{{category_forum.id}}"
+                                            data-titre="{{category_forum.titlecategory}}" data-target="modal-create">
+                                            <span class="fl"></span><span class="sfl"></span><span class="cross"></span>
+                                            <p class="btnForumSubject">ajouter un sujet</p><i></i>
+                                        </a></div>
+                                    <p class="center-align"> dans "{{category_forum.titlecategory}}"</p>
+                                </th>
+
+                                {% else %}
+                                <th>
+                                    veuillez vous <a href="{{path('app_login')}}">connecter</a> pour créer un nouveau
+                                    sujet
+                                </th>
+                                {% endif %}
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+            <div class="col xl8 l8 m12 s12">
+                <div class="row">
+                    <table class="highlight z-depth-5" id="tableForum">
+                        <thead>
+                            <tr class="userForumBackground">
+                                <th>
+                                    Derniers sujets
                                 </th>
                                 <th>
                                     nombre de réponses
@@ -27,38 +58,34 @@
                                 <th>
                                     dernier message
                                 </th>
+                                <th>date</th>
                             </tr>
-                            {% if  is_granted('IS_AUTHENTICATED_FULLY') %}
-                            <a class=" btn-floating modal-trigger blue" href="#modal-forum"
-                                data-id="{{category_forum.id}}" data-titre="{{category_forum.titlecategory}}"
-                                data-target="modal-create"><i class="material-icons">add</i></a>
-                            {% else %}
-                            <td>
-                                veuillez vous <a href="{{'app.login'}}">connecter</a> pour créer un nouveau sujet
-                            </td>
-                            {% endif %}
                         </thead>
-                        <tbody>
-                            {% for subject_category  in category_forum.subjectCategory %}
+                        {% for subject_category  in category_forum.subjectCategory %}
+                        <thead>
+
                             <tr>
                                 {% if subject_category.active == 1 %}
-                                <td>
-                                    <a href=" {{path('le_forum_subject', {'slug': subject_category.slug})}}">{{subject_category.titleSubjectForum}}
-                                    </a>
-                                </td>
-                                <td>
+                                <th>
+                                    <a
+                                        href=" {{path('le_forum_subject', {'slug': subject_category.slug})}}">{{subject_category.titleSubjectForum}}</a>
+                                    <small>, de {{subject_category.user.pseudoUser}} </small>
+                                </th>
+                                <th>
                                     <span class=" new badge blue"
                                         data-badge-caption="réponse(s)">{{subject_category.messageSubjectForum|length}}</span>
-                                </td>
+                                </th>
                                 {% set response = "" %}
+                                {% set response2 = "" %}
                                 {% for content in subject_category.messageSubjectForum%}
                                 {% set response = content.contentMessageForum %}
+                                {% set response2 = content.datePublicationMessageForum %}
                                 {% endfor %}
                                 <td>{{response|striptags|u.truncate(20)|raw }}</td>
-
+                                <td> {{response2|format_datetime('short', locale='fr')}}</td>
                             </tr>
                             {% endif %}
-                        </tbody>
+                        </thead>
                         {% endfor %}
                     </table>
                 </div>
@@ -67,7 +94,7 @@
             <div id="modal-forum" class="formRegister z-depth-5 modal">
 
                 {{ form_start(form) }}
-                {{ form_row(form.categorySubjectForum)}}
+                <div style="display:none">{{ form_row(form.categorySubjectForum)}}</div>
                 {{ form_row(form.titleSubjectForum) }}
                 {{ form_row(form.contentSubjectForum) }}
                 {{ form_row(form.submit)}}
@@ -75,14 +102,14 @@
             </div>
 
             {# Affichage de la liset des catégories et des sections #}
-            <div class="col xl3 offset-xl1 l3 offset-l1 m12 s12  z-depth-5">
+            <div class="col xl3 offset-xl1 l3 offset-l1 m12 s12  z-depth-5 liste-forum">
                 <h4 class="center-align">Liste</h4>
 
                 {% for home_section_forum in home_section_forums%}
                 {% if home_section_forum.active == 1 %}
                 <div class="collection with-header ">
                     <div class="collection-header">
-                        <h5>{{home_section_forum.SectionTitleForum}}</h5>
+                        <h6>{{home_section_forum.SectionTitleForum}}</h6>
                     </div>
                     {% endif %}
 
@@ -91,17 +118,15 @@
                     <a class="collection-item "
                         href="{{path('le_forum_category', {'slug': category_section_forum.slug })}}">
                         {{category_section_forum.titlecategory}}</a>
-
                     {% endif %}
-
                     {% endfor %}
                 </div>
                 {% endfor %}
-
             </div>
         </div>
     </div>
 </div>
 </div>
+ </main>
 
 {% endblock %}

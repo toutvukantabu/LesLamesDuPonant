@@ -24,7 +24,7 @@ class MessageForum
 
     /**
      * @Gedmo\Timestampable(on="create")
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="datetime_immutable")
      */
     private $datePublicationMessageForum;
 
