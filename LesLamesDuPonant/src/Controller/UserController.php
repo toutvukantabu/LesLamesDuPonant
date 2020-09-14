@@ -99,7 +99,7 @@ class UserController extends AbstractController
             $entityManager->persist($user);
             $entityManager->flush();
         
-            return $this->redirectToRoute('home');
+            return $this->redirectToRoute('user_edit',['id'=> $user->getId()]); 
         }
 
 

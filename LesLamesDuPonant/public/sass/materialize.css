@@ -9852,7 +9852,7 @@ p {
   transition-duration: .6s;
 }
 
-/* Form login, register, password,
+/* Form login, register, password,Edit
   *===============================
   */
 .formRegister,
@@ -9867,6 +9867,18 @@ p {
 .loginResetPassword,
 .smallResetPassword {
   margin-bottom: 40px;
+}
+
+.userEditFull {
+  margin-top: 100px;
+}
+
+.imgUser {
+  margin-top: 50px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-height: 130px;
 }
 
 .waves-effect.waves-brown .waves-ripple {
@@ -10205,6 +10217,23 @@ ul.tl li .timestamp {
 
 .footerCopyright {
   background-color: #242222;
+}
+
+.video-container {
+  margin-top: 50px;
+}
+
+.amheTitle {
+  margin: 100px;
+}
+
+.amheFull {
+  padding: 20px 40px;
+}
+
+.amheFull img {
+  border-radius: 10px;
+  margin: 25px 0 25px 0;
 }
 
 .disciplineFull {

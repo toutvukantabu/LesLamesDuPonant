@@ -21,7 +21,8 @@
                 <th>Pseudo</th>
                 <th>Code postal</th>
                 <th>action</th>
-                <th>supprimer</th>
+                <th>modifier</th>
+
             </tr>
         </thead>
         <tbody>
@@ -43,6 +44,8 @@
                 </td>
                 <td>
                     <div>
+                        <a href="{{ path('user_edit', {'id': user.id}) }}" class="btn-floating green"><i
+                                class="material-icons">create</i></a>
                         <a class=" btn-floating modal-trigger red" href="#modal-delete" data-id="{{user.id}}"
                             data-titre ="{{user.pseudoUser }}" data-target="modal-delete"><i
                                 class="material-icons">delete</i></a>

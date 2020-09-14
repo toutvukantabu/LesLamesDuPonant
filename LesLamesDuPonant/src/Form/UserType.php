@@ -42,6 +42,7 @@ class UserType extends AbstractType
             ->add('lastNameUser', TextType::class,['label' => 'Prénom','required' => false,])
             ->add('pseudoUser', TextType::class,['label' => 'Pseudo','required' => false,])
         ->add('photoAvatarUser', FileType::class, [
+            'label'=>' ',
             'mapped' => false,
             'required' => false,
             'constraints' => [
