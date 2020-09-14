@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/medieval/family")
+ * @Route("admin/famille-medievale")
  */
 class MedievalFamilyController extends AbstractController
 {

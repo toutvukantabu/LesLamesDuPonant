@@ -10330,7 +10330,7 @@ table {
 
 @media only screen and (max-width: 600px) {
   h6 {
-    font-size: 1.9rem;
+    font-size: 1.4rem;
   }
   p {
     font-size: 1.4rem;
@@ -10408,6 +10408,12 @@ table {
     -webkit-box-ordinal-group: 2;
         -ms-flex-order: 1;
             order: 1;
+  }
+  .flex-title-forum h1 {
+    font-size: 2.5rem;
+  }
+  #tableForum td, #tableForum th {
+    padding: 0px;
   }
 }
 

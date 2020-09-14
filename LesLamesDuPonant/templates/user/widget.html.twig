@@ -1,42 +1,36 @@
-{% extends 'admin.html.twig' %}
 
-{% block title %}TimeStamp index{% endblock %}
+
+
 
 {% block body %}
-     {% for message in app.flashes('how we are') %}
+        {% for message in app.flashes('how we are') %}
 <div class="flash-notice">
     {{ message }}
 </div>
 {% endfor %}
- <h4 class="center-align">Agenda index</h4>
+ <h4 class="center-align">Gestion des utilisateurs</h4>
 <div class="container">
-    <a href="{{ path('time_stamp_new') }}" class="btn-floating btn-large waves-effect waves-light blue"><i
-            class="material-icons">add</i></a>
-    <table class="striped centered responsive-table">
+    
+
+    <table class="table responsive-table" id="myTable2" class="display">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Titre</th>
-                <th>Description</th>
-                <th>Date</th>
-                <th>Heure</th>
+                <th>Email</th>
+                <th>Pseudo</th>
                 <th>action</th>
-                <th>Modifier</th>
+                <th>supprimer</th>
             </tr>
         </thead>
         <tbody>
-        {% for time_stamp in time_stamps %}
+        {% for user in users %}
             <tr>
-                <td>{{ time_stamp.id }}</td>
-                <td>{{ time_stamp.titleTimeStamp }}</td>
-                <td>{{ time_stamp.descriptionTimeStamp }}</td>
-                <td>{{ time_stamp.dateTimeStamp ? time_stamp.dateTimeStamp|date('Y-m-d') : '' }}</td>
-                <td>{{ time_stamp.hourTimeStamp ? time_stamp.hourTimeStamp|date('H:i:s') : '' }}</td>
-               <td>
+                <td>{{ user.email|striptags|u.truncate(20)|raw }}</td>
+                <td>{{ user.pseudoUser }}</td>
+                <td>
                     <div class="switch">
                         <label>
                             desactiver
-                            <input type="checkbox" {{(time_stamp.active) ? 'checked' : ''}} data-id="{{time_stamp.id}}">
+                            <input type="checkbox" {{(user.active) ? 'checked' : ''}} data-id="{{user.id}}">
                             <span class="lever"></span>
                             activer
                         </label>
@@ -44,10 +38,8 @@
                 </td>
                 <td>
                     <div>
-                        <a href="{{ path('time_stamp_edit', {'id': time_stamp.id}) }}" class="btn-floating green"><i
-                                class="material-icons">create</i></a>
-                        <a class=" btn-floating modal-trigger red" href="#modal-delete" data-id="{{time_stamp.id}}"
-                            data-titre ="{{time_stamp.titleTimeStamp }}" data-target="modal-delete"><i
+                        <a class=" btn-floating modal-trigger red" href="#modal-delete" data-id="{{user.id}}"
+                            data-titre ="{{user.pseudoUser }}" data-target="modal-delete"><i
                                 class="material-icons">delete</i></a>
                     </div>
                 </td>
@@ -73,11 +65,11 @@
 </div>
 <script>
     window.onload = () => {
-        let activer_time_stamp= document.querySelectorAll("[type=checkbox]")
-        for (let bouton of activer_time_stamp) {
+        let activer_user= document.querySelectorAll("[type=checkbox]")
+        for (let bouton of activer_user) {
             bouton.addEventListener("click", function () {
                 let xmlhttp = new XMLHttpRequest;
-                xmlhttp.open("get", `/timestamp/activer/${this.dataset.id}`)
+                xmlhttp.open("get", `/user/activer/${this.dataset.id}`)
                 xmlhttp.send()
 
             })
@@ -85,7 +77,7 @@
         let supprimer = document.querySelectorAll(".modal-trigger")
 			for(let bouton of supprimer){
 				bouton.addEventListener("click", function () {
-					document.querySelector(".modal-footer a").href = `/time/stamp/supprimer/${this.dataset.id}`
+					document.querySelector(".modal-footer a").href = `/user/supprimer/${this.dataset.id}`
 					document.querySelector(".modal-content").innerText = `Êtes-vous sûr(e) de vouloir supprimer  "${this.dataset.titre}"`
 
             })

@@ -23,7 +23,7 @@ class AdminController extends AbstractController
         return $this->render('admin.html.twig', [
             'controller_name' => 'AdminController',
             'time_stamps' => $timeStampRepository->findAll(),
-            'user' => $userRepository->findAll(),
+            'users' => $userRepository->findAll(),
             'contact_messages' => $contactMessageRepository->findAll(),
             'home_disciplines' => $homeDisciplineRepository->findAll(),
             'medieval_families' => $medievalFamilyRepository->findAll(),
