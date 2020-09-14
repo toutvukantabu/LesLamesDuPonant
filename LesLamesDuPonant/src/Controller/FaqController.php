@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/faq")
+ * @Route("admin/faq")
  */
 class FaqController extends AbstractController
 {

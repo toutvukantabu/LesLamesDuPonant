@@ -13,7 +13,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\File\Exception\FileException;
 
 /**
- * @Route("/home/info")
+ * @Route("admin/info")
  */
 class HomeInfoController extends AbstractController
 {

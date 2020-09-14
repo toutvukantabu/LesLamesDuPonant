@@ -10124,28 +10124,13 @@ $('.movePrevCarousel').click(function(e){
   //Datatable
   $(document).ready( function () {
     $('#myTable').dataTable({
-      responsive: true
+      retrieve: true,
+      
     });
     $('#myTable2').dataTable({
+      retrieve: true,
       responsive: true
-    });
-    $('#myTable3').dataTable({    
-      responsive: true
-    });
-    $('#myTable4').dataTable({    
-      responsive: true
-    });
-    $('#myTable5').dataTable({    
-      responsive: true
-    });
-    $('#myTable6').dataTable({    
-      responsive: true
-    });
-    $('#myTable7').dataTable({    
-      responsive: true
-    });
-    $('#myTable8').dataTable({    
-      responsive: true
+      
     });
 
 } );

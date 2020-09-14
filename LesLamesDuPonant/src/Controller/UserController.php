@@ -123,4 +123,33 @@ class UserController extends AbstractController
 
         return $this->redirectToRoute('admin');
     }
+     /**
+     * @Route("/supprimer/{id}", name="supprimer_user")
+     */
+    public function supprimer( User $user){
+
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->remove(  $user);
+        $entityManager->flush();
+        
+        $this->addFlash(
+            'how we are',
+            'supprimé avec succes!');
+        return $this->redirectToRoute('user_index');
+    }
+    
+        /**
+         * @Route("/activer/{id}", name="activer_user")
+         */
+        public function activerAMHE ( User $user){
+    
+              $user->setActive((  $user->getActive())? false : true);
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist(  $user);
+            $entityManager->flush();
+            return new Response ('true');
+           
+
+        }
+
 }

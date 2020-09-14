@@ -118,5 +118,9 @@
 		</div>
 	</nav>
 </div>
+
 {% endblock %}
-{% block body %}{% endblock %}
+{% block body %}
+{% include "time_stamp/widget.html.twig" %}
+{% include "user/widget.html.twig" %}
+{% endblock %}

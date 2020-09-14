@@ -16,7 +16,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
 /**
- * @Route("/home/discipline")
+ * @Route("admin/home/discipline")
  */
 class HomeDisciplineController extends AbstractController
 {

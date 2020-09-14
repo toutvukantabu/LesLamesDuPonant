@@ -6269,7 +6269,7 @@
         <argument key="user" type="service" id=".errored..service_locator.ikUdgSe.App\Entity\User"/>
       </argument>
     </service>
-    <service id=".service_locator.BdJ9M7W" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.L67ShnO" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\AMHEController::activerAMHE" type="service" id=".service_locator.Yu9Pcj8"/>
@@ -6380,10 +6380,12 @@
         <argument key="App\Controller\TimeStampController::index" type="service" id=".service_locator.9DTT7Ee"/>
         <argument key="App\Controller\TimeStampController::show" type="service" id=".service_locator.bAyv6wa"/>
         <argument key="App\Controller\TimeStampController::supprimer" type="service" id=".service_locator.bAyv6wa"/>
+        <argument key="App\Controller\UserController::activerAMHE" type="service" id=".service_locator.hEwcf7A"/>
         <argument key="App\Controller\UserController::delete" type="service" id=".service_locator.hEwcf7A"/>
         <argument key="App\Controller\UserController::edit" type="service" id=".service_locator.ikUdgSe"/>
         <argument key="App\Controller\UserController::index" type="service" id=".service_locator.FXD6KYr"/>
         <argument key="App\Controller\UserController::show" type="service" id=".service_locator.hEwcf7A"/>
+        <argument key="App\Controller\UserController::supprimer" type="service" id=".service_locator.hEwcf7A"/>
         <argument key="App\Kernel::loadRoutes" type="service" id=".service_locator.C9JCBPC"/>
         <argument key="App\Kernel::registerContainerConfiguration" type="service" id=".service_locator.C9JCBPC"/>
         <argument key="App\Kernel::terminate" type="service" id=".service_locator.beq5mCo"/>
@@ -6498,10 +6500,12 @@
         <argument key="App\Controller\TimeStampController:index" type="service" id=".service_locator.9DTT7Ee"/>
         <argument key="App\Controller\TimeStampController:show" type="service" id=".service_locator.bAyv6wa"/>
         <argument key="App\Controller\TimeStampController:supprimer" type="service" id=".service_locator.bAyv6wa"/>
+        <argument key="App\Controller\UserController:activerAMHE" type="service" id=".service_locator.hEwcf7A"/>
         <argument key="App\Controller\UserController:delete" type="service" id=".service_locator.hEwcf7A"/>
         <argument key="App\Controller\UserController:edit" type="service" id=".service_locator.ikUdgSe"/>
         <argument key="App\Controller\UserController:index" type="service" id=".service_locator.FXD6KYr"/>
         <argument key="App\Controller\UserController:show" type="service" id=".service_locator.hEwcf7A"/>
+        <argument key="App\Controller\UserController:supprimer" type="service" id=".service_locator.hEwcf7A"/>
         <argument key="kernel:loadRoutes" type="service" id=".service_locator.C9JCBPC"/>
         <argument key="kernel:registerContainerConfiguration" type="service" id=".service_locator.C9JCBPC"/>
         <argument key="kernel:terminate" type="service" id=".service_locator.beq5mCo"/>
@@ -7140,12 +7144,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
-      <argument type="service" id=".service_locator.BdJ9M7W"/>
+      <argument type="service" id=".service_locator.L67ShnO"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver" public="false"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver" public="false">
-      <argument type="service" id=".service_locator.BdJ9M7W"/>
+      <argument type="service" id=".service_locator.L67ShnO"/>
     </service>
     <service id=".debug.http_client.inner" class="Symfony\Contracts\HttpClient\HttpClientInterface" public="false">
       <argument type="collection"/>
@@ -7574,7 +7578,7 @@
     <service id="SymfonyCasts\Bundle\ResetPassword\ResetPasswordHelperInterface" alias="symfonycasts.reset_password.helper"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.WaGDpDt" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem" public="false"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.BdJ9M7W"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.L67ShnO"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
     <service id="Psr\Log\LoggerInterface $consoleLogger" alias="monolog.logger.console"/>

@@ -9,7 +9,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class LesInfosController extends AbstractController
 {
     /**
-     * @Route("/les/infos", name="les_infos")
+     * @Route("/infos", name="les_infos")
      */
     public function index(HomeInfoRepository $homeInfoRepository)
     {

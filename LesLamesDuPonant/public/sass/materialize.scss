@@ -1183,7 +1183,7 @@ padding-left:5vw;
 
 @media #{$small-and-down} {
   h6{
-font-size: 1.9rem;
+font-size: 1.4rem;
 
   }
   p{
@@ -1230,6 +1230,10 @@ font-size: 1.4rem;
     padding: 5px
   }
 }
+//table forum
+//=============
+
+
 
 //MEDIUM AND DOWN
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -1279,7 +1283,15 @@ margin-top: 20px;
 }
 .flex-title-forum{
   order:1;
+h1{
+  font-size: 2.5rem;
 }
+}
+#tableForum td , #tableForum th {
+  padding: 0px;
+
+}
+
 }
 
 //MEDOIUM AN UP
