@@ -623,7 +623,7 @@ width: 138px;
  
 //FORMULAIRE
 //=====================================================
-/* Form login, register, password,
+/* Form login, register, password,Edit
   *===============================
   */
   .formRegister,
@@ -641,6 +641,19 @@ width: 138px;
     margin-bottom: 40px;
   
   }
+  //Edit user
+  //============
+  
+  .userEditFull{
+    margin-top: 100px;
+  }
+.imgUser{
+margin-top: 50px;
+  display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-height: 130px;
+}
 
 // waves effect (menu mobile onclick)
 // ===============
@@ -1002,6 +1015,22 @@ ul.tl li .timestamp {
 
 // AMHE
 //===============
+.video-container{
+  margin-top: 50px;
+}
+.amheTitle{
+  margin:100px
+}
+.amheFull{
+
+  padding: 20px 40px;
+ 
+img{
+
+  border-radius: 10px;
+  margin: 25px 0 25px 0;
+}
+}
 
 //DISCIPLINES
 //===============
@@ -1191,7 +1220,9 @@ font-size: 1.4rem;
 
   }
   //footer
-  .page-footer {
+.page-footer {
+
+
     .footerLameDuPonantCenter {
       @include border-white($border:none, $height:none);
       border-bottom: 2px solid #ffffff;
