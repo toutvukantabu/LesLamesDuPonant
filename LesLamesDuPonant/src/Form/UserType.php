@@ -24,20 +24,6 @@ class UserType extends AbstractType
                 'label' => 'E-mail',
                 'required' => false,
                 ])
-            ->add('roles',
-            ChoiceType::class,
-            [
-                'choices' => [
-                    'Super Administrateur' => User::ROLE_SUPER_ADMIN,
-                    'Administrateur' => User::ROLE_ADMIN,
-                    'Utilisateur' => User::ROLE_USER,
-                ],
-                'multiple' => true,
-                'expanded' => false,
-                'required' => true,
-            ],
-            TextType::class,
-            ['label' => 'Rôle'])
             ->add('firstNameUser', TextType::class,['label' => 'Nom','required' => false,])
             ->add('lastNameUser', TextType::class,['label' => 'Prénom','required' => false,])
             ->add('pseudoUser', TextType::class,['label' => 'Pseudo','required' => false,])

@@ -218,10 +218,10 @@
 				<h5 class="center-align disciplineHomeTitle">{{ home_discipline.nameDiscipline }}</h5>
 				{% if home_discipline.imageHomeDiscipline != NULL %}
 				<a href="{{ path('les_disciplines')}}#{{home_discipline.id}}"><img
-						class="card-rounded hoverable"
+						class="card-rounded "
 						src="{{ asset('uploads/discipline/') ~ home_discipline.imageHomeDiscipline }}"></a>
 				{% else %}
-				<a href="/"><img class="card-rounded hoverable" src="{{asset('uploads/avatar.jpg')}}"></a>
+				<a href="/"><img class="card-rounded" src="{{asset('uploads/avatar.jpg')}}"></a>
 				{% endif %}
 				<p class="disciplineHomeDescription ">
 					{{home_discipline.descriptionDiscipline}}</p>

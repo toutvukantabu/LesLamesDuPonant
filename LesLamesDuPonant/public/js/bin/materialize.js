@@ -10085,6 +10085,7 @@ $('.timepicker').pickatime({
     padding:1000,
     indicators: false,
     numVisible: 4,
+    pressed:true
   });
   window.setInterval(function () { $('.carouselHome').carousel('next') }, 9000);
   

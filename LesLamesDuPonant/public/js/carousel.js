@@ -123,15 +123,15 @@
 
         function setupEvents() {
           if (typeof window.ontouchstart !== 'undefined') {
-            view.on('touchstart.carousel', tap);
-            view.on('touchmove.carousel', drag);
-            view.on('touchend.carousel', release);
-          }
-          view.on('mousedown.carousel', tap);
-          view.on('mousemove.carousel', drag);
-          view.on('mouseup.carousel', release);
-          view.on('mouseleave.carousel', release);
-          view.on('click.carousel', click);
+            view[0].addEventListener('touchstart', tap);
+            view[0].addEventListener('touchmove', drag);
+            view[0].addEventListener('touchend', release);
+         }
+         view[0].addEventListener('mousedown', tap);
+         view[0].addEventListener('mousemove', drag);
+         view[0].addEventListener('mouseup', release);
+         view[0].addEventListener('mouseleave', release);
+         view[0].addEventListener('click', click);
         }
 
         function xpos(e) {
