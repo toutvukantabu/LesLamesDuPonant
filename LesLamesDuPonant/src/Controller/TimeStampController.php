@@ -111,7 +111,7 @@ class TimeStampController extends AbstractController
          */
         public function activer( TimeStamp $timeStamp){
     
-              $timeStamp->setActive((  $timeStamp->getActive())? false : true);
+            $timeStamp->setActive((  $timeStamp->getActive())? false : true);
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist(  $timeStamp);
             $entityManager->flush();

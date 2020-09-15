@@ -16,10 +16,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  */
 class User implements UserInterface
 {
-    public const ROLE_USER = 'ROLE_USER';
-    public const ROLE_ADMIN = 'ROLE_ADMIN';
-    public const ROLE_SUPER_ADMIN = 'ROLE_SUPER_ADMIN';
-
+    
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()
@@ -111,7 +108,6 @@ class User implements UserInterface
 
     public function __construct()
     {
-    $this->roles = [self::ROLE_USER];
     $this->messageForum = new ArrayCollection();
     $this->subjectForum = new ArrayCollection();
     $this->categoryForum = new ArrayCollection();
@@ -148,13 +144,11 @@ class User implements UserInterface
     /**
      * @see UserInterface
      */
-    public function getRoles(): array
-    {
-        $roles = $this->roles;
-        // guarantee every user at least has ROLE_USER
-        $roles[] = 'ROLE_USER';
-
-        return array_unique($roles);
+    public function getRoles() {
+        if (empty($this->roles)) {
+            return ['ROLE_USER'];
+        }
+        return $this->roles;
     }
 
     public function setRoles(array $roles): self
@@ -162,6 +156,9 @@ class User implements UserInterface
         $this->roles = $roles;
 
         return $this;
+    }
+    function addRole($role) {
+        $this->roles[] = $role;
     }
 
     /**

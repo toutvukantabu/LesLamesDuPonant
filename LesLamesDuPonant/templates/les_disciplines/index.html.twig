@@ -8,14 +8,12 @@
 {% if discipline.active == 1  and   discipline.orderDiscipline is divisible by(2)  %}
 {# Carousel discipline#}
 <div class="container ">
-
-
 <div class="z-depth-5 disciplinecarousel">
     <div class="carousel carousel-slider center carouselDiscipline " data-indicators="true">
         <div class="carousel-fixed-item center middle-indicator">
             <div class="left">
                 <a href="Previo"
-                    class="movePrevCarousel middle-indicator-text waves-effect waves-light content-indicator"><i
+                    class="movePrevCarousel middle-indicator-text waves-effect  content-indicator"><i
                         class="material-icons left  middle-indicator-text">chevron_left</i></a>
             </div>
             <div class="right">
@@ -37,9 +35,9 @@
         </div>
     </div>
     
-    </div>
+    </div >
  {# Titre discipline#}
-    <h4 class="center-align disciplineFull">{{ discipline.disciplinetitle}}</h4>
+    <h4 id="{{discipline.relationHomeDiscipline.id}}" class="center-align disciplineFull">{{ discipline.disciplinetitle}}</h4>
     <div class="row z-depth-5 disciplineFull disciplineRow ">
     {# description discipline#}
         <div class="col l8 disciplineDescription ">
@@ -86,9 +84,9 @@
                 class="responsive-image ">
         </div>
     </div>
-    </div>
+    </div >
   {# Titre discipline#}
-    <h4 class="center-align disciplineFull">{{ discipline.disciplinetitle}}</h4>
+    <h4 id="{{discipline.relationHomeDiscipline.id}}" class="center-align disciplineFull">{{ discipline.disciplinetitle}}</h4>
     <div class="row z-depth-5 disciplineFull disciplineRow">
  {# Instructeur discipline#}
         <div class="col xl4 disciplineInstructor">

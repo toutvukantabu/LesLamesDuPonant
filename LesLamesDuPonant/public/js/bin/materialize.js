@@ -10022,9 +10022,11 @@ if (Vel) {
 
  
 //Birtyhday date pîcker
+
   $('.datepicker').on('mousedown', function (event) {
     event.preventDefault();
   });
+
  $('.datepicker').pickadate({
    format: 'dd-mm-yyyy',
    selectMonths: true, // Creates a dropdown to control month
@@ -10036,10 +10038,13 @@ if (Vel) {
    container: 'form', // ex. 'body' will append picker to body
    
  });
+
 //Time Picker
+
 $('.timepicker').on('mousedown', function (event) {
   event.preventDefault();
 });
+
 $('.timepicker').pickatime({
   default: 'now', // Set default time: 'now', '1:30AM', '16:30'
   fromnow: 0,       // set default time to * milliseconds from now (using with default = 'now')
@@ -10056,7 +10061,7 @@ $('.timepicker').pickatime({
 
       
  //navbar transparent
-$(document).ready(function () {
+
 
   $(window).scroll(function () {
     if ($(window).scrollTop() >250) {
@@ -10065,21 +10070,15 @@ $(document).ready(function () {
       $('#navbarHome, #navbarAdmin').removeClass('sticky-nav');
     }
   });
-});
 
-$(document).ready(function(){
-  $('.parallax').parallax();
-  $(".monProfilBtn").sideNav();
+
+ $('.parallax').parallax();
+
+ $(".monProfilBtn").sideNav();
+
  $('select').material_select();
 
-});
-
-
  //Carousel Home
- $('.carousel.carousel-slider').carousel({
-  fullWidth: true
-});
-$(document).ready(function () {
 
   $(".carouselHome").carousel({
     dist: 0,
@@ -10087,15 +10086,14 @@ $(document).ready(function () {
     indicators: false,
     numVisible: 4,
   });
-  window.setInterval(function () { $('.carouselHome').carousel('next') }, 9000)
+  window.setInterval(function () { $('.carouselHome').carousel('next') }, 9000);
   
-});
+
 //Carousel Discipline
 $('.carousel.carousel-slider').carousel({
   fullWidth: true,
   indicators: false
 });
-
 
 // move next carousel
 $('.moveNextCarousel').click(function(e){
@@ -10111,38 +10109,19 @@ $('.movePrevCarousel').click(function(e){
   $('.carousel').carousel('prev');
 });
 
-//classBody
-
-// window.location.href1 = 'http://127.0.0.1:8000/admin';
-// if (window.location.href1 == 'http://127.0.0.1:8000/admin') {
-//   document.querySelectorAll('#Body').forEach(function(ele, idx) {
-//     ele.classList.add('adminSideNav');
-//   });
-// };
-
-
   //Datatable
   $(document).ready( function () {
-    $('#myTable').dataTable({
-      retrieve: true,
-      
-    });
     $('#myTable2').dataTable({
       retrieve: true,
       responsive: true
-      
-    });
-
-} );
+ });
+});
 
 //SIDENAV
-$(document).ready( function () {
+
   $(".button-collapse").sideNav();
   $('.collapsible').collapsible();
 
-});
- $(document).ready(function() {
-    
    $('.dropdown-button').dropdown({
       inDuration: 300,
       outDuration: 225,
@@ -10153,8 +10132,7 @@ $(document).ready( function () {
       alignment: 'left', // Displays dropdown with edge aligned to the left of button
       stopPropagation: false // Stops event propagation
     }
-  );
-   
+  ); 
    $('.collapsible').collapsible({
     accordion: true, // A setting that changes the collapsible behavior to expandable instead of the default accordion style
     onOpen: function(el) {  }, // Callback for Collapsible open
@@ -10182,9 +10160,6 @@ $(document).ready( function () {
         .toggleClass('fa-angle-right');
     });
 
-   
- });
-
 //  MODAL Delete
 $('#modal-delete').modal({
   dismissible: true, // Modal can be dismissed by clicking outside of the modal
@@ -10209,36 +10184,6 @@ $('#modal-forum').modal({
  
 );
 
-///Open Street Map
-
-//Initialisation de la carte//
-var mymap = L.map('mapid').setView([47.273905, -2.213766], 14);
-
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-    maxZoom: 18,
-    id: 'mapbox/streets-v11',
-
-
-}).addTo(mymap);
-
-//Pour faire des marqueurs plus classiques
-var marker = L.marker([47.354449, -2.179194]).addTo(mymap);
-
-//Création de pop up
-marker.bindPopup("<b>Salle d'entrainement Lames Du Ponant</b>").openPopup();
-
-
-var popup = L.popup();
-
-function onMapClick(e) {
-    popup
-        .setLatLng(e.latlng)
-        .setContent("Ton click correspond à la " + e.latlng.toString())
-        .openOn(mymap);
-}
-
-mymap.on('click', onMapClick);
 
 //butonn home
 //==============
