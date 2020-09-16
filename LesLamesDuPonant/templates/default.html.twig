@@ -17,6 +17,35 @@
 		<!--Import materialize.css-->
 	<link type="text/css" rel="stylesheet" href="{{ asset('sass/materialize.css') }}" media="screen,projection" />
 {% endblock %}
+{% block Cookies %}
+	     <script type="text/javascript" src="{{ asset('js/bin//tarteaucitron.js/tarteaucitron.js')}}"></script>
+
+        <script type="text/javascript">
+        tarteaucitron.init({
+    	   "privacyUrl": "", /* URL de la page de la politique de vie privée */
+
+            "hashtag": "#tarteaucitron", /* Ouvrir le panneau contenant ce hashtag */
+            "cookieName": "tarteaucitron", /* Nom du Cookie */
+
+            "orientation": "bottom", /* Position de la bannière (top - bottom) */
+            "showAlertSmall": false, /* Voir la bannière réduite en bas à droite */
+            "cookieslist": true, /* Voir la liste des cookies */
+
+            "adblocker": false, /* Voir une alerte si un bloqueur de publicités est détecté */
+            "AcceptAllCta": true, /* Voir le bouton accepter tout (quand highPrivacy est à true) */
+            "highPrivacy": true, /* Désactiver le consentement automatique */
+            "handleBrowserDNTRequest": false, /* Si la protection du suivi du navigateur est activée, tout interdire */
+
+            "removeCredit": false, /* Retirer le lien vers tarteaucitron.js */
+            "moreInfoLink": true, /* Afficher le lien "voir plus d'infos" */
+            "useExternalCss": false, /* Si false, tarteaucitron.css sera chargé */
+
+            //"cookieDomain": ".my-multisite-domaine.fr", /* Cookie multisite */
+
+            "readmoreLink": "/cookiespolicy" /* Lien vers la page "Lire plus" */
+        });
+        </script>
+{% endblock %}
 </head>
 <body id="Body" class="">
 {% block logo %}{% endblock %}
@@ -37,6 +66,16 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
 	<script type="text/javascript" src="{{ asset('js/bin/materialize.js') }}"></script>
 	{% endblock %}
+
+{% block analytics %}
+ <script type="text/javascript">
+        tarteaucitron.user.gajsUa = 'UA-XXXXXXXX-X';
+        tarteaucitron.user.gajsMore = function () { /* add here your optionnal _ga.push() */ };
+        (tarteaucitron.job = tarteaucitron.job || []).push('gajs');
+        </script>
+
+{% endblock %}
+
 </body>
 
 </html>
