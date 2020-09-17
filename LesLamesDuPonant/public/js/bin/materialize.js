@@ -10125,6 +10125,7 @@ $(document).ready(function(){
         .toggleClass('fa-angle-down')
         .toggleClass('fa-angle-right');
     });
+
   });
 
 //  MODAL Delete

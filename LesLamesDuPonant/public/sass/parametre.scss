@@ -19,7 +19,7 @@ line-height: $line;
 
 // Color wave effect menu mobile + img rounded carousel home + timestamp
 
-@mixin color-waves($color-waves:#05053b93){
+@mixin color-waves($color-waves:rgba(5, 5, 59, 0.129)){
 
   background-color: $color-waves
 }
