@@ -9410,15 +9410,15 @@ if (Vel) {
 
         function setupEvents() {
           if (typeof window.ontouchstart !== 'undefined') {
-            view.on('touchstart.carousel', tap);
-            view.on('touchmove.carousel', drag);
-            view.on('touchend.carousel', release);
+            view[0].addEventListener('touchstart', tap);
+            view[0].addEventListener('touchmove', drag);
+            view[0].addEventListener('touchend', release);
           }
-          view.on('mousedown.carousel', tap);
-          view.on('mousemove.carousel', drag);
-          view.on('mouseup.carousel', release);
-          view.on('mouseleave.carousel', release);
-          view.on('click.carousel', click);
+          view[0].addEventListener('mousedown', tap);
+          view[0].addEventListener('mousemove', drag);
+          view[0].addEventListener('mouseup', release);
+          view[0].addEventListener('mouseleave', release);
+          view[0].addEventListener('click', click);
         }
 
         function xpos(e) {
@@ -10018,50 +10018,10 @@ if (Vel) {
 
     $.error('Method ' + methodOrOptions + ' does not exist on jQuery.tap-target');
   };
-})
-
- 
-//Birtyhday date pîcker
-
-  $('.datepicker').on('mousedown', function (event) {
-    event.preventDefault();
-  });
-
- $('.datepicker').pickadate({
-   format: 'dd-mm-yyyy',
-   selectMonths: true, // Creates a dropdown to control month
-   selectYears: 100, // Creates a dropdown of 15 years to control year,
-   today: 'Today',
-   clear: 'Clear',
-   close: 'Ok',
-   closeOnSelect: false, // Close upon selecting a date,
-   container: 'form', // ex. 'body' will append picker to body
-   
- });
-
-//Time Picker
-
-$('.timepicker').on('mousedown', function (event) {
-  event.preventDefault();
 });
-
-$('.timepicker').pickatime({
-  default: 'now', // Set default time: 'now', '1:30AM', '16:30'
-  fromnow: 0,       // set default time to * milliseconds from now (using with default = 'now')
-  twelvehour: false, // Use AM/PM or 24-hour format
-  donetext: 'valider', // text for done-button
-  cleartext: 'supprimer', // text for clear-button
-  canceltext: 'annuler', // Text for cancel-button,
-  container: undefined, // ex. 'body' will append picker to body
-  autoclose: false, // automatic close timepicker
-  ampmclickable: false, // make AM PM clickable
-  aftershow: function(){} //Function for after opening timepicker
-});
-      
-
-      
+     
  //navbar transparent
-
+ $(document).ready(function(){
 
   $(window).scroll(function () {
     if ($(window).scrollTop() >250) {
@@ -10070,14 +10030,14 @@ $('.timepicker').pickatime({
       $('#navbarHome, #navbarAdmin').removeClass('sticky-nav');
     }
   });
+});
+$(document).ready(function(){
+  $('.parallax').parallax();
+  $('select').material_select();
 
-
- $('.parallax').parallax();
-
- $(".monProfilBtn").sideNav();
-
- $('select').material_select();
-
+ 
+});
+ 
  //Carousel Home
 
   $(".carouselHome").carousel({
@@ -10087,28 +10047,30 @@ $('.timepicker').pickatime({
     numVisible: 4,
     pressed:true
   });
-  window.setInterval(function () { $('.carouselHome').carousel('next') }, 9000);
+  window.setInterval(function () { $('.carouselHome').carousel('next') },9000);
+
+  //Carousel Discipline
+  $('.carousel.carousel-slider').carousel({
+    fullWidth: true,
+    indicators: false
+  });
   
+  // move next carousel
+  $('.moveNextCarousel').click(function(e){
+    e.preventDefault();
+    e.stopPropagation();
+    $('.carousel').carousel('next');
+  });
+  
+  // move prev carousel
 
-//Carousel Discipline
-$('.carousel.carousel-slider').carousel({
-  fullWidth: true,
-  indicators: false
-});
+  $('.movePrevCarousel').click(function(e){
+    e.preventDefault();
+    e.stopPropagation();
+    $('.carousel').carousel('prev');
+  });
 
-// move next carousel
-$('.moveNextCarousel').click(function(e){
-  e.preventDefault();
-  e.stopPropagation();
-  $('.carousel').carousel('next');
-});
 
-// move prev carousel
-$('.movePrevCarousel').click(function(e){
-  e.preventDefault();
-  e.stopPropagation();
-  $('.carousel').carousel('prev');
-});
 
   //Datatable
   $(document).ready( function () {
@@ -10116,10 +10078,13 @@ $('.movePrevCarousel').click(function(e){
       retrieve: true,
       responsive: true
  });
+ 
 });
 
-//SIDENAV
 
+
+//SIDENAV
+  $(document).ready( function () {
   $(".button-collapse").sideNav();
   $('.collapsible').collapsible();
 
@@ -10160,6 +10125,7 @@ $('.movePrevCarousel').click(function(e){
         .toggleClass('fa-angle-down')
         .toggleClass('fa-angle-right');
     });
+  });
 
 //  MODAL Delete
 $('#modal-delete').modal({
@@ -10185,6 +10151,43 @@ $('#modal-forum').modal({
  
 );
 
+//Birtyhday date pîcker
+
+$('.datepicker').on('mousedown', function (event) {
+  event.preventDefault();
+});
+
+$('.datepicker').pickadate({
+ format: 'dd-mm-yyyy',
+ selectMonths: true, // Creates a dropdown to control month
+ selectYears: 100, // Creates a dropdown of 15 years to control year,
+ today: 'Today',
+ clear: 'Clear',
+ close: 'Ok',
+ closeOnSelect: false, // Close upon selecting a date,
+ container: 'form', // ex. 'body' will append picker to body
+ 
+});
+
+//Time Picker
+
+$('.timepicker').on('mousedown', function (event) {
+event.preventDefault();
+});
+
+$('.timepicker').pickatime({
+default: 'now', // Set default time: 'now', '1:30AM', '16:30'
+fromnow: 0,       // set default time to * milliseconds from now (using with default = 'now')
+twelvehour: false, // Use AM/PM or 24-hour format
+donetext: 'valider', // text for done-button
+cleartext: 'supprimer', // text for clear-button
+canceltext: 'annuler', // Text for cancel-button,
+container: undefined, // ex. 'body' will append picker to body
+autoclose: false, // automatic close timepicker
+ampmclickable: false, // make AM PM clickable
+aftershow: function(){} //Function for after opening timepicker
+});
+    
 
 //butonn home
 //==============
