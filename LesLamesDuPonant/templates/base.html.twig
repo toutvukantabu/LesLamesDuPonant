@@ -52,53 +52,53 @@
 		</a>
 	</li> 
 	<li>
-		<a class="waves-effect waves-brown"href="{{path('admin')}}">Administration</a>
+		<a class=" waves-light waves-effect  "href="{{path('admin')}}">Administration</a>
 	</li>
 	{% endif %}
 	<li>
-		<a class="waves-effect waves-brown"href="{{path('user_edit',{'id': app.user.id })}}">
+		<a class="waves-light waves-effect  "href="{{path('user_edit',{'id': app.user.id })}}">
 
 			<span>Mon Profil</span>
 		</a>
 	</li>
 	<li>
-		<a class="waves-effect waves-brown"href="{{path('les_infos')}}">Infos</a>
+		<a class="waves-light waves-effect  "href="{{path('les_infos')}}">Infos</a>
 	</li>
 	<li>
-		<a class="waves-effect waves-brown"href="{{path('contact_message_new')}}">Contact</a>
+		<a class="waves-light waves-effect "href="{{path('contact_message_new')}}">Contact</a>
 	</li>
 	<li>
-		<a class="waves-effect waves-brown"href="{{path('app_logout')}}">Déconnexion</a>
+		<a class="waves-light waves-effect "href="{{path('app_logout')}}">Déconnexion</a>
 	</li>
 	{% else %}
 	<li>
-		<a class="waves-effect waves-brown" href="{{path('les_infos')}}">Infos</a>
+		<a class="waves-light waves-effect " href="{{path('les_infos')}}">Infos</a>
 	</li>
 	<li>
-		<a class="waves-effect waves-brown"href="{{path('app_login')}}">Contact</a>
+		<a class="waves-light waves-effect "href="{{path('app_login')}}">Contact</a>
 	</li>
 	<li>
-		<a class="waves-effect waves-brown" href="{{path('app_login')}}">Connexion</a>
+		<a class="waves-light waves-effect " href="{{path('app_login')}}">Connexion</a>
 	</li>
 	<li>
-		<a class="waves-effect waves-brown" href="{{path('app_register')}}">S'enregistrer</a>
+		<a class="waves-light waves-effect " href="{{path('app_register')}}">S'enregistrer</a>
 	</li>
 	{% endif %}
 	<div class="divider"></div>
 	<li>
-		<a class="waves-effect waves-brown"href="{{path('les_disciplines')}}">
+		<a class="waves-light waves-effect "href="{{path('les_disciplines')}}">
 			Disciplines</a>
 	</li>
 	<li>
-		<a class="waves-effect waves-brown" href="{{path('les_amhe')}}">
+		<a class="waves-light waves-effect " href="{{path('les_amhe')}}">
 			AMHE</a>
 	</li>
 	<li>
-		<a class="waves-effect waves-brown"href="{{path('home')}}">
+		<a class="waves-light waves-effect "href="{{path('home')}}">
 			Boutique</a>
 	</li>
 	<li>
-		<a class="waves-effect waves-brown"href="{{path('le_forum')}}">Forum</a>
+		<a class="waves-effect waves-light  "href="{{path('le_forum')}}">Forum</a>
 	</li>
 </ul>
 <div class="menu">

@@ -657,9 +657,7 @@ margin-top: 50px;
 
 // waves effect (menu mobile onclick)
 // ===============
-// .waves-effect.waves-brown .waves-ripple {
-//   @include color-waves;
-// }
+
 
 //NAVBAR
 //*****************************************
@@ -767,7 +765,7 @@ margin-top: 50px;
 .homeSectionActivity {
   @include webkit-shadow();
   min-height: 700px;
-  background-image: url(../uploads/Background/sectionHome.jpg);
+  background-image: url(../uploads/Background/sectionHome.png);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -777,7 +775,7 @@ margin-top: 50px;
 .homeSectionCalendar {
   min-height: 490px;
   @include webkit-shadow();
-  background-image: url(../uploads/Background/sectionHome.jpg);
+  background-image: url(../uploads/Background/sectionHome.png);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
