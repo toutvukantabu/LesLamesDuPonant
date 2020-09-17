@@ -87,17 +87,17 @@ class User implements UserInterface
     private $cityUser;
 
     /**
-     * @ORM\OneToMany(targetEntity=MessageForum::class, mappedBy="user")
+     * @ORM\OneToMany(targetEntity=MessageForum::class, mappedBy="user", orphanRemoval=true)
      */
     private $messageForum;
 
     /**
-     * @ORM\OneToMany(targetEntity=SubjectForum::class, mappedBy="user")
+     * @ORM\OneToMany(targetEntity=SubjectForum::class, mappedBy="user",  orphanRemoval=true)
      */
     private $subjectForum;
 
     /**
-     * @ORM\OneToMany(targetEntity=CategoryForum::class, mappedBy="user")
+     * @ORM\OneToMany(targetEntity=CategoryForum::class, mappedBy="user",  orphanRemoval=true)
      */
     private $categoryForum;
 

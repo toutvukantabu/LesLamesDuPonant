@@ -32,7 +32,7 @@ class CategoryForum
     private $dateCategoryForum;
 
     /**
-     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="categoryForum")
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="categoryForum" )
      */
     private $user;
 

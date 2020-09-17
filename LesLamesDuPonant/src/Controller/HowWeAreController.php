@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
-//  * @Route("/how/we/are")
+//  * @Route("/admin/how/we/are")
  */
 class HowWeAreController extends AbstractController
 {
@@ -110,7 +110,7 @@ public function supprimer( HowWeAre $howWeAre){
 /**
      * @Route("/activer/{id}", name="activer_how_we_are")
      */
-    public function activerHowWeAre( HowWeAre $howWeAre){
+    public function activer( HowWeAre $howWeAre){
 
         $howWeAre->setActive(($howWeAre->getActive())? false : true);
         $entityManager = $this->getDoctrine()->getManager();
