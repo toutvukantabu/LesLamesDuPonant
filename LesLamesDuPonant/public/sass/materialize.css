@@ -10257,9 +10257,14 @@ ul.tl li .timestamp {
   margin-bottom: 30px;
 }
 
+.mapInfo a {
+  display: block;
+  text-align: center;
+}
+
 #mapid {
   height: 300px;
-  width: 600px;
+  width: 500px;
   margin: 0 auto;
 }
 
