@@ -1,45 +1,78 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}info Les lames Du Ponant{% endblock %}
+{% block title 'Infos Les lames Du Ponant'%}
 
 {% block body %}
 
 {% for home_info in home_infos %}
 {% if home_info.active == 1  %}
-    
+
+<h4 class="center-align titleInfo">Information Les Lames du Ponant</h4>
 
 <div class="container">
-<h4 class="center-align">Information Les Lames du Ponant</h4>
-
-<div class="row">
-<div class="col xl3 l3 m12 s12 ">
-<h5 class="center-align">{{ home_info.titleInfo}}</h5>
-<div class="row">
-<p class="center-align">{{ home_info.descriptionInfo|raw}}</p>
-</div>
-<a href="https://goo.gl/maps/7Fmo8wdAKEHxRXUF9"> y aller</a>
-</div>
-<div class="col xl9 l9 m112 s12">
-<h5 class="center-align">Ou nous trouver</h5>
-   <div id="mapid"></div>
-</div>
+        <div class="row z-depth-5">
+        
+ <img src="{{ asset('uploads/info/' ~ home_info.imageOneInfo)}}">
+                
+        </div>
 </div>
 
+{# Information Horaire + Maps #}
+<div class="container">
+        <div class="row">
+                <div class="col xl3 l3 m12 s12 z-depth-2">
+                        <h5 class="center-align">{{ home_info.titleInfo}}</h5>
+                        <div class="row">
+                                <p class="center-align">{{ home_info.descriptionInfo|raw}}</p>
+                        </div>
 
-
+                </div>
+                <div class="col xl7 l7 m12 s12 offset-xl2 offset-l2  z-depth-2">
+                        <h5 class="center-align">Ou nous trouver</h5>
+                        <div id="mapid"></div>
+                        <a href="https://goo.gl/maps/7Fmo8wdAKEHxRXUF9"> Ouvrir Map</a>
+                </div>
+        </div>
 </div>
-        <td>{{ home_info.id }}</td>
-                <td>{{ home_info.titleInfo|striptags|u.truncate(20)|raw }}</td>
-                <td></td>
-                <td>{{ home_info.titleCost|striptags|u.truncate(20)|raw }}</td>
-                <td>{{ home_info.descriptionCost|striptags|u.truncate(20)|raw }}</td>
-                <td>{{ home_info.titleFaqInfo|striptags|u.truncate(20)|raw }}</td>
-                <td>{{ home_info.descriptionFaqInfo|striptags|u.truncate(20)|raw }}</td>
-                {% endif %}
+<div class="container">
+        <div class="row z-depth-5">
+                <div class="parallax-container">
+                        <div class="parallax"><img src="{{ asset('uploads/info/' ~ home_info.imageOneInfo)}}"></div>
+                </div>
+        </div>
+</div>
 
+<h4 class="center-align titleInfo">{{ home_info.titleCost}}</h4>
+<div class="container">
+        <div class="row z-depth-2 CostDescription">
+                <p>{{ home_info.descriptionCost|raw }}</p>
+        </div>
+</div>
+<h4 class="center-align titleInfo">{{ home_info.titleFaqInfo}}</h4>
+<div class="container">
+        <div class="row z-depth-2 CostDescription">
+                <p>{{ home_info.descriptionFaqInfo|raw }}</p>
+        </div>
+</div>
+
+<div class="container">
+        <div class="row">
+
+                <div class="container">
+                        <div class="row z-depth-5">
+                                        <img src="{{ asset('uploads/info/' ~ home_info.imageTwoInfo)}}">
+
+
+                        </div>
+                </div>
+
+        </div>
+</div>
+
+{% endif %}
 {% endfor %}
-<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
+<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+        integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+        crossorigin=""></script>
 <script type="text/javascript" src="{{ asset('js/bin/map.js') }}"></script>
 {% endblock %}
-            
-              
