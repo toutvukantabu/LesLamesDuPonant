@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'admin.html.twig' %}
 
 {% block title %}Nouvelle discipline {% endblock %}
 
@@ -8,4 +8,7 @@
     {{ include('discipline/_form.html.twig') }}
 
   <a href="{{ path('discipline_index')}}"><button class="btn orange">liste</button></a>
+  </div></div>
+  </div>
+
 {% endblock %}

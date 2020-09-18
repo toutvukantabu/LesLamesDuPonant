@@ -1067,12 +1067,21 @@ img{
 
 //Les Infos/ Information
 //====================
+.mapInfo{
+
+a{
+  display: block;
+  text-align: center;
+}
+
+}
+
 
 //open street map
 //***************
 #mapid {
   height: 300px;
-  width: 600px;
+  width: 500px;
   margin: 0 auto;
 }
 

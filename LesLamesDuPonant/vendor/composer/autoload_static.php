@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitc4ce61fc1f6b9eb4f6512ca2fab67a81
+class ComposerStaticInit77193c8e06f405f352e7de873443352b
 {
     public static $files = array (
         'a4a119a56e50fbb293281d9a48007e0e' => __DIR__ . '/..' . '/symfony/polyfill-php80/bootstrap.php',
@@ -971,9 +971,6 @@ class ComposerStaticInitc4ce61fc1f6b9eb4f6512ca2fab67a81
         'Doctrine\\DBAL\\FetchMode' => __DIR__ . '/..' . '/doctrine/dbal/lib/Doctrine/DBAL/FetchMode.php',
         'Doctrine\\DBAL\\Id\\TableGenerator' => __DIR__ . '/..' . '/doctrine/dbal/lib/Doctrine/DBAL/Id/TableGenerator.php',
         'Doctrine\\DBAL\\Id\\TableGeneratorSchemaVisitor' => __DIR__ . '/..' . '/doctrine/dbal/lib/Doctrine/DBAL/Id/TableGeneratorSchemaVisitor.php',
-        'Doctrine\\DBAL\\Internal\\DependencyOrderCalculator' => __DIR__ . '/..' . '/doctrine/dbal/lib/Doctrine/DBAL/Internal/DependencyOrderCalculator.php',
-        'Doctrine\\DBAL\\Internal\\DependencyOrderEdge' => __DIR__ . '/..' . '/doctrine/dbal/lib/Doctrine/DBAL/Internal/DependencyOrderEdge.php',
-        'Doctrine\\DBAL\\Internal\\DependencyOrderNode' => __DIR__ . '/..' . '/doctrine/dbal/lib/Doctrine/DBAL/Internal/DependencyOrderNode.php',
         'Doctrine\\DBAL\\LockMode' => __DIR__ . '/..' . '/doctrine/dbal/lib/Doctrine/DBAL/LockMode.php',
         'Doctrine\\DBAL\\Logging\\DebugStack' => __DIR__ . '/..' . '/doctrine/dbal/lib/Doctrine/DBAL/Logging/DebugStack.php',
         'Doctrine\\DBAL\\Logging\\EchoSQLLogger' => __DIR__ . '/..' . '/doctrine/dbal/lib/Doctrine/DBAL/Logging/EchoSQLLogger.php',
@@ -5154,6 +5151,7 @@ class ComposerStaticInitc4ce61fc1f6b9eb4f6512ca2fab67a81
         'Symfony\\Contracts\\HttpClient\\ResponseStreamInterface' => __DIR__ . '/..' . '/symfony/http-client-contracts/ResponseStreamInterface.php',
         'Symfony\\Contracts\\HttpClient\\Test\\HttpClientTestCase' => __DIR__ . '/..' . '/symfony/http-client-contracts/Test/HttpClientTestCase.php',
         'Symfony\\Contracts\\HttpClient\\Test\\TestHttpServer' => __DIR__ . '/..' . '/symfony/http-client-contracts/Test/TestHttpServer.php',
+        'Symfony\\Contracts\\Service\\Attribute\\Required' => __DIR__ . '/..' . '/symfony/service-contracts/Attribute/Required.php',
         'Symfony\\Contracts\\Service\\ResetInterface' => __DIR__ . '/..' . '/symfony/service-contracts/ResetInterface.php',
         'Symfony\\Contracts\\Service\\ServiceLocatorTrait' => __DIR__ . '/..' . '/symfony/service-contracts/ServiceLocatorTrait.php',
         'Symfony\\Contracts\\Service\\ServiceProviderInterface' => __DIR__ . '/..' . '/symfony/service-contracts/ServiceProviderInterface.php',
@@ -5600,10 +5598,10 @@ class ComposerStaticInitc4ce61fc1f6b9eb4f6512ca2fab67a81
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitc4ce61fc1f6b9eb4f6512ca2fab67a81::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitc4ce61fc1f6b9eb4f6512ca2fab67a81::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInitc4ce61fc1f6b9eb4f6512ca2fab67a81::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInitc4ce61fc1f6b9eb4f6512ca2fab67a81::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit77193c8e06f405f352e7de873443352b::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit77193c8e06f405f352e7de873443352b::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit77193c8e06f405f352e7de873443352b::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit77193c8e06f405f352e7de873443352b::$classMap;
 
         }, null, ClassLoader::class);
     }
