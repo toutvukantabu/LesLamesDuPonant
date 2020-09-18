@@ -32,7 +32,7 @@
                     <div class="switch">
                         <label>
                             desactiver
-                            <input type="checkbox" {{(time_stamp.active) ? 'checked' : ''}} data-id="{{time_stamp.id}}">
+                            <input type="checkbox" class="timeStampCheck"{{(time_stamp.active) ? 'checked' : ''}} data-id="{{time_stamp.id}}">
                             <span class="lever"></span>
                             activer
                         </label>
@@ -42,7 +42,7 @@
                     <div>
                         <a href="{{ path('time_stamp_edit', {'id': time_stamp.id}) }}" class="btn-floating green"><i
                                 class="material-icons">create</i></a>
-                        <a class=" btn-floating modal-trigger red" href="#modal-delete" data-id="{{time_stamp.id}}"
+                        <a class=" btn-floating modal-trigger red modal-trigger2" href="#modal-delete" data-id="{{time_stamp.id}}"
                             data-titre ="{{time_stamp.titleTimeStamp }}" data-target="modal-delete"><i
                                 class="material-icons">delete</i></a>
                     </div>
@@ -69,19 +69,19 @@
 </div>
 <script>
     window.onload = () => {
-        let activer_time_stamp= document.querySelectorAll("[type=checkbox]")
+        let activer_time_stamp= document.querySelectorAll(".timeStampCheck ")
         for (let bouton of activer_time_stamp) {
             bouton.addEventListener("click", function () {
                 let xmlhttp = new XMLHttpRequest;
-                xmlhttp.open("get", `/timestamp/activer/${this.dataset.id}`)
+                xmlhttp.open("get", `/admin/timestamp/activer/${this.dataset.id}`)
                 xmlhttp.send()
 
             })
         }
-        let supprimer = document.querySelectorAll(".modal-trigger")
+        let supprimer = document.querySelectorAll(".modal-trigger2")
 			for(let bouton of supprimer){
 				bouton.addEventListener("click", function () {
-					document.querySelector(".modal-footer a").href = `/time/stamp/supprimer/${this.dataset.id}`
+					document.querySelector(".modal-footer a").href = `/admin/time/stamp/supprimer/${this.dataset.id}`
 					document.querySelector(".modal-content").innerText = `Êtes-vous sûr(e) de vouloir supprimer  "${this.dataset.titre}"`
 
             })

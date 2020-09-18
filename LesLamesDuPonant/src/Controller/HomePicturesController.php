@@ -13,7 +13,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\File\Exception\FileException;
 
 /**
- * @Route("admin/pictures")
+ * @Route("admin/photo-accueil")
  */
 class HomePicturesController extends AbstractController
 {
@@ -228,46 +228,34 @@ class HomePicturesController extends AbstractController
         ]);
     }
 
-    /**
-     * @Route("/{id}", name="home_pictures_deletes", methods={"DELETE"})
-     */
-    public function delete(Request $request, HomePictures $homePicture): Response
-    {
-        if ($this->isCsrfTokenValid('delete'.$homePicture->getId(), $request->request->get('_token'))) {
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->remove($homePicture);
-            $entityManager->flush();
-        }
-
-        return $this->redirectToRoute('admin');
-    }
-     /**
+   
+      /**
      * @Route("/supprimer/{id}", name="supprimer_home_pictures")
      */
-    public function supprimer(  HomePictures $homePicture){
+public function supprimer( HomePictures $homePicture){
 
+    $entityManager = $this->getDoctrine()->getManager();
+    $entityManager->remove($homePicture);
+    $entityManager->flush();
+    
+    $this->addFlash(
+        'how we are',
+        'supprimé avec succes!');
+    return $this->redirectToRoute('home_pictures_index');
+}
+
+/**
+     * @Route("/activer/{id}", name="activer_home_pictures")
+     */
+    public function activerHomePictures( HomePictures $homePicture){
+
+        $homePicture->setActive(($homePicture->getActive())? false : true);
         $entityManager = $this->getDoctrine()->getManager();
-        $entityManager->remove($homePicture);
+        $entityManager->persist($homePicture);
         $entityManager->flush();
-        
-        $this->addFlash(
-            'how we are',
-            'supprimé avec succes!');
-        return $this->redirectToRoute('home_pictures_index');
+        return new Response ('true');
+       
     }
-    
-         /**
-         * @Route("/activer/{id}", name="activer_home_pictures")
-         */
-        public function activer(  HomePictures $homePicture){
-    
-            $homePicture->setActive(($homePicture->getActive())? false : true);
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($homePicture);
-            $entityManager->flush();
-            return new Response ('true');
-           
-        }
 
         public function displayLogo(HomePicturesRepository $homePicturesRepository): Response
     {

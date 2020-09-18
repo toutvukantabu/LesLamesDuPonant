@@ -74,14 +74,14 @@
         for (let bouton of activer_home_section_forum) {
             bouton.addEventListener("click", function () {
                 let xmlhttp = new XMLHttpRequest;
-                xmlhttp.open("get", `/home/section/forum/activer/${this.dataset.id}`)
+                xmlhttp.open("get", `/admin/home/section/forum/activer/${this.dataset.id}`)
                 xmlhttp.send()
             })
         }
         let supprimer = document.querySelectorAll(".modal-trigger")
 			for(let bouton of supprimer){
 				bouton.addEventListener("click", function () {
-					document.querySelector(".modal-footer a").href = `/home/section/forum/supprimer/${this.dataset.id}`
+					document.querySelector(".modal-footer a").href = `/admin/home/section/forum/supprimer/${this.dataset.id}`
 					document.querySelector(".modal-content").innerText = `Êtes-vous sûr(e) de vouloir supprimer  "${this.dataset.titre}"`
 
             })

@@ -6269,7 +6269,7 @@
         <argument key="user" type="service" id=".errored..service_locator.ikUdgSe.App\Entity\User"/>
       </argument>
     </service>
-    <service id=".service_locator.ybFwhT." class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.k0IQi0z" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\AMHEController::activerAMHE" type="service" id=".service_locator.Yu9Pcj8"/>
@@ -6319,8 +6319,7 @@
         <argument key="App\Controller\HomeInfoController::new" type="service" id=".service_locator.1cFtlgg"/>
         <argument key="App\Controller\HomeInfoController::show" type="service" id=".service_locator..1y3WyX"/>
         <argument key="App\Controller\HomeInfoController::supprimer" type="service" id=".service_locator..1y3WyX"/>
-        <argument key="App\Controller\HomePicturesController::activer" type="service" id=".service_locator.6OdiqlJ"/>
-        <argument key="App\Controller\HomePicturesController::delete" type="service" id=".service_locator.6OdiqlJ"/>
+        <argument key="App\Controller\HomePicturesController::activerHomePictures" type="service" id=".service_locator.6OdiqlJ"/>
         <argument key="App\Controller\HomePicturesController::displayLogo" type="service" id=".service_locator..dCZRUn"/>
         <argument key="App\Controller\HomePicturesController::edit" type="service" id=".service_locator.c0WwyLC"/>
         <argument key="App\Controller\HomePicturesController::index" type="service" id=".service_locator..dCZRUn"/>
@@ -6333,12 +6332,12 @@
         <argument key="App\Controller\HomeSectionForumController::index" type="service" id=".service_locator.sKzeMVn"/>
         <argument key="App\Controller\HomeSectionForumController::show" type="service" id=".service_locator.ahw4_vS"/>
         <argument key="App\Controller\HomeSectionForumController::supprimer" type="service" id=".service_locator.ahw4_vS"/>
-        <argument key="App\Controller\HowWeAreController::activer" type="service" id=".service_locator.8iRGIK4"/>
+        <argument key="App\Controller\HowWeAreController::activerHowWeAre" type="service" id=".service_locator.8iRGIK4"/>
         <argument key="App\Controller\HowWeAreController::delete" type="service" id=".service_locator.8iRGIK4"/>
         <argument key="App\Controller\HowWeAreController::edit" type="service" id=".service_locator.8iRGIK4"/>
         <argument key="App\Controller\HowWeAreController::index" type="service" id=".service_locator.lZ8SM6f"/>
         <argument key="App\Controller\HowWeAreController::show" type="service" id=".service_locator.8iRGIK4"/>
-        <argument key="App\Controller\HowWeAreController::supprimer" type="service" id=".service_locator.8iRGIK4"/>
+        <argument key="App\Controller\HowWeAreController::supprimerHowWeAre" type="service" id=".service_locator.8iRGIK4"/>
         <argument key="App\Controller\LeForumController::index" type="service" id=".service_locator.sKzeMVn"/>
         <argument key="App\Controller\LeForumController::showCategory" type="service" id=".service_locator.HIYvYz2"/>
         <argument key="App\Controller\LeForumController::showMessage" type="service" id=".service_locator.iQJOfXE"/>
@@ -6439,8 +6438,7 @@
         <argument key="App\Controller\HomeInfoController:new" type="service" id=".service_locator.1cFtlgg"/>
         <argument key="App\Controller\HomeInfoController:show" type="service" id=".service_locator..1y3WyX"/>
         <argument key="App\Controller\HomeInfoController:supprimer" type="service" id=".service_locator..1y3WyX"/>
-        <argument key="App\Controller\HomePicturesController:activer" type="service" id=".service_locator.6OdiqlJ"/>
-        <argument key="App\Controller\HomePicturesController:delete" type="service" id=".service_locator.6OdiqlJ"/>
+        <argument key="App\Controller\HomePicturesController:activerHomePictures" type="service" id=".service_locator.6OdiqlJ"/>
         <argument key="App\Controller\HomePicturesController:displayLogo" type="service" id=".service_locator..dCZRUn"/>
         <argument key="App\Controller\HomePicturesController:edit" type="service" id=".service_locator.c0WwyLC"/>
         <argument key="App\Controller\HomePicturesController:index" type="service" id=".service_locator..dCZRUn"/>
@@ -6453,12 +6451,12 @@
         <argument key="App\Controller\HomeSectionForumController:index" type="service" id=".service_locator.sKzeMVn"/>
         <argument key="App\Controller\HomeSectionForumController:show" type="service" id=".service_locator.ahw4_vS"/>
         <argument key="App\Controller\HomeSectionForumController:supprimer" type="service" id=".service_locator.ahw4_vS"/>
-        <argument key="App\Controller\HowWeAreController:activer" type="service" id=".service_locator.8iRGIK4"/>
+        <argument key="App\Controller\HowWeAreController:activerHowWeAre" type="service" id=".service_locator.8iRGIK4"/>
         <argument key="App\Controller\HowWeAreController:delete" type="service" id=".service_locator.8iRGIK4"/>
         <argument key="App\Controller\HowWeAreController:edit" type="service" id=".service_locator.8iRGIK4"/>
         <argument key="App\Controller\HowWeAreController:index" type="service" id=".service_locator.lZ8SM6f"/>
         <argument key="App\Controller\HowWeAreController:show" type="service" id=".service_locator.8iRGIK4"/>
-        <argument key="App\Controller\HowWeAreController:supprimer" type="service" id=".service_locator.8iRGIK4"/>
+        <argument key="App\Controller\HowWeAreController:supprimerHowWeAre" type="service" id=".service_locator.8iRGIK4"/>
         <argument key="App\Controller\LeForumController:index" type="service" id=".service_locator.sKzeMVn"/>
         <argument key="App\Controller\LeForumController:showCategory" type="service" id=".service_locator.HIYvYz2"/>
         <argument key="App\Controller\LeForumController:showMessage" type="service" id=".service_locator.iQJOfXE"/>
@@ -7144,12 +7142,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
-      <argument type="service" id=".service_locator.ybFwhT."/>
+      <argument type="service" id=".service_locator.k0IQi0z"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver" public="false"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver" public="false">
-      <argument type="service" id=".service_locator.ybFwhT."/>
+      <argument type="service" id=".service_locator.k0IQi0z"/>
     </service>
     <service id=".debug.http_client.inner" class="Symfony\Contracts\HttpClient\HttpClientInterface" public="false">
       <argument type="collection"/>
@@ -7578,7 +7576,7 @@
     <service id="SymfonyCasts\Bundle\ResetPassword\ResetPasswordHelperInterface" alias="symfonycasts.reset_password.helper"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.WaGDpDt" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem" public="false"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.ybFwhT."/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.k0IQi0z"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
     <service id="Psr\Log\LoggerInterface $consoleLogger" alias="monolog.logger.console"/>

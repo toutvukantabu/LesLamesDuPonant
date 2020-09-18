@@ -92,7 +92,7 @@ class HomeSectionForumController extends AbstractController
         return $this->redirectToRoute('home_section_forum_index');
     }
     /**
-     * @Route("/supprimer/{id}", name="supprimer_home_pictures")
+     * @Route("/supprimer/{id}", name="supprimer_Section")
      */
     public function supprimer(   HomeSectionForum $homeSectionForum){
 
@@ -107,7 +107,7 @@ class HomeSectionForumController extends AbstractController
     }
     
          /**
-         * @Route("/activer/{id}", name="activer_home_pictures")
+         * @Route("/activer/{id}", name="activer_Section")
          */
         public function activer(  HomeSectionForum $homeSectionForum){
     

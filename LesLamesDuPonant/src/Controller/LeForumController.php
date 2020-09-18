@@ -21,7 +21,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 
 
 /**
- * @Route("/forum" )
+ * @Route("forum" )
  */
 class LeForumController extends AbstractController
 {

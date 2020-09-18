@@ -94,10 +94,6 @@
 			AMHE</a>
 	</li>
 	<li>
-		<a class="waves-light waves-effect "href="{{path('home')}}">
-			Boutique</a>
-	</li>
-	<li>
 		<a class="waves-effect waves-light  "href="{{path('le_forum')}}">Forum</a>
 	</li>
 </ul>
@@ -114,11 +110,6 @@
 				</li>
 				<li>
 					<a href="{{path('les_disciplines')}}">Disciplines</a>
-				</li>
-
-				<li>
-					<a href="{{path('home')}}">
-						Boutique</a>
 				</li>
 				<li>
 					<a href="{{path('le_forum')}}">Forum</a>
@@ -173,8 +164,7 @@
 	{% endfor %}
 </div>
 {% endif %}
-
-	{% endblock %}
+{% endblock %}
 	{# PRESENTATION leslamesduponant
 ============================= #}
 
@@ -190,11 +180,12 @@
 						{{ how_we_are.descriptionHowWeAre|raw}}
 					</p>
 					{% endfor %}
-				<div class="btnHome" align="center"><a class="hrefHome" href="{{path('les_amhe')}}#les-lames-du-ponant"target="_blank" rel="nofollow"><span>En savoir plus</span></a></div>
-				
+				<div class="btnHome" align="center"><a class="hrefHome" href="{{path('les_amhe')}}#les-lames-du-ponant"target="_blank" rel="nofollow"><span>En savoir plus</span></a>
+				</div>
 				</div>
 		</div>
 	</div>
+
 
 	{# PARALLAX1	
 =================== #}
@@ -338,9 +329,9 @@
 		</div>
 	</div>
 	<div class="footer-copyright footerCopyright">
-		<div class="container"><div class="row">
-		<div class="col xl8 l8 m12 s12"><span >2020 Les Lames Du Ponant. Tous droits réservés.</span></div>
-		<div class="col xl4 l4 m12 s12"><span ><a class="grey-text text-lighten-4 right" href="">Crée
+		<div class="container"><div class="row ">
+		<div class="col xl8 l8 m12 s12 footerOutside "><span >2020 Les Lames Du Ponant. Tous droits réservés.</span></div>
+		<div class="col xl4 l4 m12 s12 footerOutside"><span><a class="grey-text text-lighten-4 right" href="">Crée
 				par un p'tit Breton</a></span></div>
 			</div>
 		</div>

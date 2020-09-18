@@ -3,14 +3,16 @@
 namespace App\Form;
 
 use App\Entity\ContactMessage;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
-use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
-use Symfony\Component\Form\Extension\Core\Type\EmailType;
-use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\Validator\Constraints\IsTrue;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
 class ContactMessageType extends AbstractType
 {
@@ -31,20 +33,32 @@ class ContactMessageType extends AbstractType
                              ])
 
             ->add('categoryContactMessage', ChoiceType::class, [
-        'label'=> 'sujet de votre message',
+                'label'=>' ',
+                'multiple' => false,
+                'expanded' => false,
+                'required' => true,
                 'choices' => [
+                    'Sujet de votre message' =>[
                     'Renseignement sur les AMHE' => 1,
                     'Renseignement sur les inscriptions' => 2,
                     'Autres Questions' => 3,
                     'Bug du site' => 4,
-                ],
-                'multiple' => false,
-                'expanded' => false,
-                'required' => true,
-            ])
+                ]  
+              
+                    ],])
+                    ->add('ValiderRgpd', CheckboxType::class, [
+
+                        'label' => 'Accepter La RGPD',
+                        'mapped' => false,
+                        'constraints' => [
+                            new IsTrue([
+                                'message' => 'Accepter la RGPD',
+                            ]),
+                        ],
+                    ])
             ->add('contentContactMessage', TextareaType::class,[
                 
-                    'label'=>'contenu de votre message',
+                    'label'=>'Contenu de votre message',
                     'required'=>true,
                 
             ])

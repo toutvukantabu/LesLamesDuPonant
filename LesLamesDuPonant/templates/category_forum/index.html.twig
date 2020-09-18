@@ -81,7 +81,7 @@
         for (let bouton of activer) {
             bouton.addEventListener("click", function () {
                 let xmlhttp = new XMLHttpRequest;
-                xmlhttp.open("get", `/category/forum/activer/${this.dataset.id}`)
+                xmlhttp.open("get", `/admin/category/forum/activer/${this.dataset.id}`)
                 xmlhttp.send()
 
             })
@@ -89,7 +89,7 @@
         let supprimer = document.querySelectorAll(".modal-trigger")
 			for(let bouton of supprimer){
 				bouton.addEventListener("click", function () {
-					document.querySelector(".modal-footer a").href = `/category/forum/supprimer/${this.dataset.id}`
+					document.querySelector(".modal-footer a").href = `/admin/category/forum/supprimer/${this.dataset.id}`
 					document.querySelector(".modal-content").innerText = `Êtes-vous sûr(e) de vouloir supprimer  "${this.dataset.titre}"`
 
             })

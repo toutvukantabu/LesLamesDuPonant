@@ -22,6 +22,7 @@ class MessageForumType extends AbstractType
              'choice_label'=>'titleSubjectForum',
 
             ])
+            
             ->add('ContentMessageForum',CKEditorType::class,[
                 'label'=> ' ',
                 ])

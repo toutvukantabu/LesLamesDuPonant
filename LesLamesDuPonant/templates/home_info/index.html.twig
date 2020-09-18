@@ -90,7 +90,7 @@
         for (let bouton of activer_ho_we_are) {
             bouton.addEventListener("click", function () {
                 let xmlhttp = new XMLHttpRequest;
-                xmlhttp.open("get", `/home/info/activer/${this.dataset.id}`)
+                xmlhttp.open("get", `/admin/home/info/activer/${this.dataset.id}`)
                 xmlhttp.send()
 
             })
@@ -98,7 +98,7 @@
         let supprimer = document.querySelectorAll(".modal-trigger")
 			for(let bouton of supprimer){
 				bouton.addEventListener("click", function () {
-					document.querySelector(".modal-footer a").href = `/home/info/supprimer/${this.dataset.id}`
+					document.querySelector(".modal-footer a").href = `/admin/home/info/supprimer/${this.dataset.id}`
 					document.querySelector(".modal-content").innerText = `Êtes-vous sûr(e) de vouloir supprimer  "${this.dataset.titre}"`
 
             })

@@ -261,7 +261,7 @@ public function supprimer( Discipline $discipline){
     $this->addFlash(
         'how we are',
         'supprimé avec succes!');
-    return $this->redirectToRoute('how_we_are_index');
+    return $this->redirectToRoute('discipline_index');
 }
 
     /**

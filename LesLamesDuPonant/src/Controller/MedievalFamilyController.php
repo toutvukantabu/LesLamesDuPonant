@@ -103,7 +103,7 @@ class MedievalFamilyController extends AbstractController
         $this->addFlash(
             'how we are',
             'supprimé avec succes!');
-        return $this->redirectToRoute('home_pictures_index');
+        return $this->redirectToRoute('medieval_family_index');
     }
     
          /**

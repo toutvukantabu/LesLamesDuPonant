@@ -30,7 +30,7 @@
                     <div class="switch">
                         <label>
                             desactiver
-                            <input type="checkbox" {{(user.active) ? 'checked' : ''}} data-id="{{user.id}}">
+                            <input type="checkbox" class="userCheckbox"{{(user.active) ? 'checked' : ''}} data-id="{{user.id}}">
                             <span class="lever"></span>
                             activer
                         </label>
@@ -65,7 +65,7 @@
 </div>
 <script>
     window.onload = () => {
-        let activer_user= document.querySelectorAll("[type=checkbox]")
+        let activer_user= document.querySelectorAll(".userCheckbox")
         for (let bouton of activer_user) {
             bouton.addEventListener("click", function () {
                 let xmlhttp = new XMLHttpRequest;

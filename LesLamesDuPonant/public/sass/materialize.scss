@@ -118,6 +118,8 @@
 // table Gestion
 //Jqwery Table
 
+//10. CONTACT
+
 //RESPONSIVE
 //******************
 
@@ -1179,7 +1181,6 @@ width : 50px;
 //============
 .messageForum{
 padding-left:5vw;
-
 }
 
 //ADMIN
@@ -1191,9 +1192,17 @@ padding-left:5vw;
   width: 50px;
 }
 
-
 //Jqwery Table
 //==================
+
+
+//CONTACT
+//*******************************
+
+.TitleMessageNew{
+  margin-top: 100px;
+}
+
 
 
 //Responsive
@@ -1269,8 +1278,18 @@ font-size: 1.4rem;
 
 
 @media #{$medium-and-down} {
+  h2{
+    font-size: 2.5rem;
+  }
+  h4{
+    font-size:1.8rem ;
+  }
 
   //footer
+  h6{
+    font-size:1.6rem ;
+   
+  }
   .page-footer {
     .footerLameDuPonantCenter {
       @include border-white($border:none, $height:none);
@@ -1297,6 +1316,18 @@ font-size: 1.4rem;
       }
     }
   }
+  .footerOutside{
+    padding: 0 10px;
+    span  {
+      display: block;
+      text-align: center;
+
+    }
+  .right{
+    float:none!important;
+  }
+   
+  }
 // Discipline Page
   .disciplineRow {
     padding: 5px
@@ -1320,7 +1351,23 @@ h1{
   padding: 0px;
 
 }
+.userForumBackground{
+  h5{
+    font-size: 1rem;
+  }
+}
+.titleForum{
+  font-size: 2.2rem;
+}
+}
+//USer .userEditFull
+.userEditFull{
 
+  img{
+    max-height: 100px;
+    margin: 0 auto;
+    display: block;
+  }
 }
 
 //MEDOIUM AN UP
