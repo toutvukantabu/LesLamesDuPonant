@@ -8,7 +8,10 @@
 		{% block title 'Lame Du Ponant ' %}
 	</title>
 {% block stylesheets %}
-	<!--Import Google Icon Font-->
+{# Captcha #}
+<scriptsrc="https://www.google.com/recaptcha/api.js?render=6Lcohs4ZAAAAAGuKgpzN5kF9_oSZ1BLir6O2vKYV
+"></script>
+<!--Import Google Icon Font-->
 <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;446;500;600;700;800;900&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css">
@@ -72,8 +75,19 @@
         tarteaucitron.user.gajsUa = 'UA-XXXXXXXX-X';
         tarteaucitron.user.gajsMore = function () { /* add here your optionnal _ga.push() */ };
         (tarteaucitron.job = tarteaucitron.job || []).push('gajs');
+        
         </script>
 
+{% endblock %}
+{% block Captcha %}
+<script>function onClick(e) {
+  e.preventDefault();
+  grecaptcha.ready(function() {
+  grecaptcha.execute('CLE DU SITE', {action: 'submit'}).then(function(token) {
+  console.log('captacha');
+  });
+  });
+  }</script>
 {% endblock %}
 
 </body>

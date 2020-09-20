@@ -3,105 +3,106 @@
 {% block title 'Les disciplines' %}
 
 {% block body %}
-<h4 class="center-align disciplineFull">Les disciplines des Lames Du Ponant</h3>
-{% for discipline in disciplines %}
-{% if discipline.active == 1  and   discipline.orderDiscipline is divisible by(2)  %}
-{# Carousel discipline#}
-<div class="container ">
-<div class="z-depth-5 disciplinecarousel">
-    <div class="carousel carousel-slider center carouselDiscipline " data-indicators="true">
-        <div class="carousel-fixed-item center middle-indicator">
-            <div class="left">
-                <a href="Previo"
-                    class="movePrevCarousel middle-indicator-text  content-indicator"><i
-                        class="material-icons left  middle-indicator-text">chevron_left</i></a>
-            </div>
-            <div class="right">
-                <a href="Siguiente"
-                    class=" moveNextCarousel middle-indicator-text waves-light content-indicator"><i
-                        class="material-icons right middle-indicator-text">chevron_right</i></a>
-            </div>
-        </div>
-        <div class="carousel-item white-text" href="#one!">
-            <img src="{{asset('/uploads/discipline/') ~ discipline.imageOneDiscipline }}" alt=""
-                class="responsive-image ">
-        </div>
-        <div class="carousel-item white-text" href="#two!">
-            <img src="{{asset('/uploads/discipline/') ~ discipline.photoInstructor }}" alt="" class="responsive-image ">
-        </div>
-        <div class="carousel-item  white-text" href="#three!">
-            <img src="{{asset('/uploads/discipline/') ~  discipline.imageThreeDiscipline }}" alt=""
-                class="responsive-image ">
-        </div>
-    </div>
-    
-    </div >
- {# Titre discipline#}
-    <h4 id="{{discipline.relationHomeDiscipline.id}}" class="center-align disciplineFull">{{ discipline.disciplinetitle}}</h4>
-    <div class="row z-depth-5 disciplineFull disciplineRow ">
-    {# description discipline#}
-        <div class="col l8 disciplineDescription ">
-           <p> {{ discipline.disciplineDescription|raw}}</p>
-        </div>
- {# Instructeur discipline#}
-        <div class="col l4 disciplineInstructor ">
-            <h5 class="center-align">Votre instructeur:</h5>
-            <img class="responsive-img z-depth-5" src="{{asset('/uploads/discipline/') ~ discipline.photoInstructor }}" alt=""
-                class="responsive-image img-discipline">
-            <h5 class="center-align">{{ discipline.nameInstructor}}</h5>
-        </div>
-    </div>
+<h4 class="center-align disciplineTitle">Les disciplines des Lames Du Ponant</h3>
+    {% for discipline in disciplines %}
+    {% if discipline.active == 1  and   discipline.orderDiscipline is divisible by(2)  %}
+    {# Carousel discipline#}
+ <div class="container">
+        <div class="z-depth-5 disciplinecarousel">
+            <div class="carousel carousel-slider center DisciplineCarouselFull "data-indicators="true">
+                <div class="carousel-fixed-item center middle-indicator">
+                    <div class="left">
+                        <a href="Previo" class="movePrevCarousel middle-indicator-text waves-light content-indicator"><i
+                                class="material-icons left  middle-indicator-text">chevron_left</i></a>
+                    </div>
+                    <div class="right">
+                        <a href="Siguiente"
+                            class=" moveNextCarousel middle-indicator-text waves-light content-indicator"><i
+                                class="material-icons right middle-indicator-text">chevron_right</i></a>
+                    </div>
+                </div>
+                <div class="carousel-item white-text" href="#one!">
+                    <img src="{{asset('/uploads/discipline/') ~ discipline.imageOneDiscipline }}" alt=""
+                        class=" ">
 
-</div>
-{% else %}
-     {# Carousel 2  discipline#}
-<div class="container">
-<div class="z-depth-5 disciplinecarousel">
-    <div class="carousel carousel-slider center " data-indicators="true">
-        <div class="carousel-fixed-item center middle-indicator">
-            <div class="left">
-                <a href="Previo"
-                    class="movePrevCarousel middle-indicator-text waves-light content-indicator"><i
-                        class="material-icons left  middle-indicator-text">chevron_left</i></a>
-            </div>
-
-            <div class="right">
-                <a href="Siguiente"
-                    class=" moveNextCarousel middle-indicator-text waves-light content-indicator"><i
-                        class="material-icons right middle-indicator-text">chevron_right</i></a>
+                </div>
+                <div class="carousel-item white-text" href="#two!">
+                    <img src="{{asset('/uploads/discipline/') ~ discipline.imageTwoDiscipline }}" alt=""
+                        class=" ">
+                </div>
+                <div class="carousel-item  white-text" href="#three!">
+                    <img src="{{asset('/uploads/discipline/') ~  discipline.imageThreeDiscipline }}" alt=""
+                        class=" ">
+                </div>
             </div>
         </div>
-        <div class="carousel-item white-text" href="#one!">
-            <img src="{{asset('/uploads/discipline/') ~ discipline.imageOneDiscipline }}" alt=""
-                class="responsive-image ">
+        {# Titre discipline#}
+        <h4 id="{{discipline.relationHomeDiscipline.id}}" class="center-align disciplineTitle">
+            {{ discipline.disciplinetitle}}</h4>
+        <div class="row z-depth-5 disciplineFull disciplineRow ">
+            {# description discipline#}
+            <div class="col l8 disciplineDescription ">
+                <p> {{ discipline.disciplineDescription|raw}}</p>
+            </div>
+            {# Instructeur discipline#}
+            <div class="col l4 disciplineInstructor ">
+                <h5 class="center-align">Votre instructeur:</h5>
+                <img class="responsive-img z-depth-5 img-discipline"
+                    src="{{asset('/uploads/discipline/') ~ discipline.photoInstructor }}" alt=""
+               >
+                <h5 class="center-align">{{ discipline.nameInstructor}}</h5>
+            </div>
+        </div>
 
+    </div>
+    {% else %}
+    {# Carousel 2  discipline#}
+    <div class="container">
+        <div class="z-depth-5 disciplinecarousel">
+            <div class="carousel carousel-slider center DisciplineCarouselFull "data-indicators="true">
+                <div class="carousel-fixed-item center middle-indicator">
+                    <div class="left">
+                        <a href="Previo" class="movePrevCarousel middle-indicator-text waves-light content-indicator"><i
+                                class="material-icons left  middle-indicator-text">chevron_left</i></a>
+                    </div>
+                    <div class="right">
+                        <a href="Siguiente"
+                            class=" moveNextCarousel middle-indicator-text waves-light content-indicator"><i
+                                class="material-icons right middle-indicator-text">chevron_right</i></a>
+                    </div>
+                </div>
+                <div class="carousel-item white-text" href="#one!">
+                    <img src="{{asset('/uploads/discipline/') ~ discipline.imageOneDiscipline }}" alt=""
+                        class=" ">
+
+                </div>
+                <div class="carousel-item white-text" href="#two!">
+                    <img src="{{asset('/uploads/discipline/') ~ discipline.imageTwoDiscipline }}" alt=""
+                        class=" ">
+                </div>
+                <div class="carousel-item  white-text" href="#three!">
+                    <img src="{{asset('/uploads/discipline/') ~  discipline.imageThreeDiscipline }}" alt=""
+                        class=" ">
+                </div>
+            </div>
         </div>
-        <div class="carousel-item white-text" href="#two!">
-            <img src="{{asset('/uploads/discipline/') ~ discipline.photoInstructor }}" alt="" class="responsive-image ">
-        </div>
-        <div class="carousel-item  white-text" href="#three!">
-            <img src="{{asset('/uploads/discipline/') ~  discipline.imageThreeDiscipline }}" alt=""
-                class="responsive-image ">
+        {# Titre discipline#}
+        <h4 id="{{discipline.relationHomeDiscipline.id}}" class="center-align disciplineFull">
+            {{ discipline.disciplinetitle}}</h4>
+        <div class="row z-depth-5 disciplineFull disciplineRow">
+            {# Instructeur discipline#}
+            <div class="col xl4 disciplineInstructor">
+                <h5 class="center-align">Votre instructeur:</h5>
+                <img class="responsive-img z-depth-5 img-discipline"
+                    src="{{asset('/uploads/discipline/') ~ discipline.photoInstructor }}" alt="">
+                <h5 class="center-align">{{ discipline.nameInstructor}}</h5>
+            </div>
+            {# description discipline#}
+            <div class="col xl8 disciplineDescription">
+                <p>{{ discipline.disciplineDescription|raw}}</p>
+            </div>
         </div>
     </div>
-    </div >
-  {# Titre discipline#}
-    <h4 id="{{discipline.relationHomeDiscipline.id}}" class="center-align disciplineFull">{{ discipline.disciplinetitle}}</h4>
-    <div class="row z-depth-5 disciplineFull disciplineRow">
- {# Instructeur discipline#}
-        <div class="col xl4 disciplineInstructor">
-            <h5 class="center-align">Votre instructeur:</h5>
-            <img class="responsive-img z-depth-5 " src="{{asset('/uploads/discipline/') ~ discipline.photoInstructor }}" alt=""
-                class="responsive-image img-discipline">
-            <h5 class="center-align">{{ discipline.nameInstructor}}</h5>
-        </div>
-        {# description discipline#}
-        <div class="col xl8 disciplineDescription">
-            <p >{{ discipline.disciplineDescription|raw}}</p>
-        </div>
-    </div>
-      
-</div>
-{% endif %}
-{% endfor %}
-{% endblock %}
+    {% endif %}
+    {% endfor %}
+    {% endblock %}

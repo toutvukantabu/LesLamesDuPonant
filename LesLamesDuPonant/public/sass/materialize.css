@@ -10232,9 +10232,15 @@ ul.tl li .timestamp {
   margin: 25px 0 25px 0;
 }
 
-.disciplineFull {
+.disciplineTitle {
   margin-top: 80px;
   margin-bottom: 20px;
+  padding: 0 50px;
+}
+
+.disciplineFull {
+  margin-top: 80px;
+  margin-bottom: 100px;
   padding: 0 50px;
 }
 

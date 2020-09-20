@@ -10052,7 +10052,9 @@ $(document).ready(function(){
   //Carousel Discipline
   $('.carousel.carousel-slider').carousel({
     fullWidth: true,
-    indicators: false
+    indicators: false,
+    
+
   });
   
   // move next carousel

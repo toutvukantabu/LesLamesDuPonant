@@ -1034,11 +1034,15 @@ img{
 
 //DISCIPLINES
 //===============
-
+.disciplineTitle{
+  margin-top: 80px;
+  margin-bottom: 20px;
+  padding: 0 50px;
+}
 .disciplineFull {
 
   margin-top: 80px;
-  margin-bottom: 20px;
+  margin-bottom: 100px;
   padding: 0 50px;
 
   p {
@@ -1236,6 +1240,7 @@ font-size: 1.4rem;
 
   }
   //footer
+
 .page-footer {
 
 
