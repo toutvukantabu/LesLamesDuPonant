@@ -22,7 +22,7 @@
 </div>
 {# AMHE
 ================ #}
-<h4 class="center-align amheTitle">{{ amhe.titleAMHE }}</h4>
+<h1 class="center-align amheTitle">{{ amhe.titleAMHE }}</h1>
 <div class="container white ">
 	<div class="row  z-depth-5 amheFull">
 		<div class="col xl12 l12 m12 s12">
@@ -42,7 +42,7 @@
 <div class="container white">
 	{% for medieval_family in medieval_families %}
 	{% if medieval_family.active == 1 %}
-	<h4 class="center-align amheTitle"> {{ medieval_family.titleMedievalFamily }}</h4>
+	<h1 class="center-align amheTitle"> {{ medieval_family.titleMedievalFamily }}</h1>
 	<div class="row z-depth-5 amheFull">
 		<p>{{ medieval_family.descriptionMedievalFamily|raw}}</p>
 
@@ -54,7 +54,7 @@
 ======================================= #}
 {% for les_lames_du_ponant in les_lames_du_ponants %}
 {% if les_lames_du_ponant.active == 1 %}
-<h4 class="center-align amheTitle">{{ les_lames_du_ponant.titleLLDP }}</h4>
+<h1 class="center-align amheTitle">{{ les_lames_du_ponant.titleLLDP }}</h1>
 <div class="container white">
 	<div class="row   z-depth-5 amheFull">
 		<img class="responsive-img" src="{{asset('/uploads/lldp/') ~ les_lames_du_ponant.pictureLesLamesDuponant  }} "

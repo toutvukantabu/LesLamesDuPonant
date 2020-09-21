@@ -3,7 +3,7 @@
 {% block title 'Les disciplines' %}
 
 {% block body %}
-<h4 class="center-align disciplineTitle">Les disciplines des Lames Du Ponant</h3>
+<h1 class="center-align disciplineTitle">Les disciplines des Lames Du Ponant</h3>
     {% for discipline in disciplines %}
     {% if discipline.active == 1  and   discipline.orderDiscipline is divisible by(2)  %}
     {# Carousel discipline#}
@@ -37,8 +37,8 @@
             </div>
         </div>
         {# Titre discipline#}
-        <h4 id="{{discipline.relationHomeDiscipline.id}}" class="center-align disciplineTitle">
-            {{ discipline.disciplinetitle}}</h4>
+        <h1 id="{{discipline.relationHomeDiscipline.id}}" class="center-align disciplineTitle">
+            {{ discipline.disciplinetitle}}</h1>
         <div class="row z-depth-5 disciplineFull disciplineRow ">
             {# description discipline#}
             <div class="col l8 disciplineDescription ">
@@ -87,8 +87,8 @@
             </div>
         </div>
         {# Titre discipline#}
-        <h4 id="{{discipline.relationHomeDiscipline.id}}" class="center-align disciplineFull">
-            {{ discipline.disciplinetitle}}</h4>
+        <h1 id="{{discipline.relationHomeDiscipline.id}}" class="center-align disciplineFull">
+            {{ discipline.disciplinetitle}}</h1>
         <div class="row z-depth-5 disciplineFull disciplineRow">
             {# Instructeur discipline#}
             <div class="col xl4 disciplineInstructor">
