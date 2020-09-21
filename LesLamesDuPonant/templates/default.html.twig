@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="fr">
 <head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>
 		{% block title 'Lame Du Ponant ' %}
 	</title>
 {% block stylesheets %}
-	<!--Import Google Icon Font-->
+
+<!--Import Google Icon Font-->
 <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;446;500;600;700;800;900&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css">
@@ -16,17 +16,18 @@
 	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="" />
 		<!--Import materialize.css-->
 	<link type="text/css" rel="stylesheet" href="{{ asset('sass/materialize.css') }}" media="screen,projection" />
+  {# Captcha #}
+<script src="https://www.google.com/recaptcha/api.js?render=6Lcohs4ZAAAAAGuKgpzN5kF9_oSZ1BLir6O2vKYV
+"></script>
 {% endblock %}
 {% block Cookies %}
 	     <script type="text/javascript" src="{{ asset('js/bin//tarteaucitron.js/tarteaucitron.js')}}"></script>
-
         <script type="text/javascript">
         tarteaucitron.init({
     	   "privacyUrl": "", /* URL de la page de la politique de vie privée */
 
             "hashtag": "#tarteaucitron", /* Ouvrir le panneau contenant ce hashtag */
             "cookieName": "tarteaucitron", /* Nom du Cookie */
-
             "orientation": "bottom", /* Position de la bannière (top - bottom) */
             "showAlertSmall": false, /* Voir la bannière réduite en bas à droite */
             "cookieslist": true, /* Voir la liste des cookies */
@@ -39,42 +40,45 @@
             "removeCredit": false, /* Retirer le lien vers tarteaucitron.js */
             "moreInfoLink": true, /* Afficher le lien "voir plus d'infos" */
             "useExternalCss": false, /* Si false, tarteaucitron.css sera chargé */
-
             //"cookieDomain": ".my-multisite-domaine.fr", /* Cookie multisite */
-
             "readmoreLink": "/cookiespolicy" /* Lien vers la page "Lire plus" */
         });
         </script>
 {% endblock %}
 </head>
-<body id="Body" class="">
+<body>
 {% block logo %}{% endblock %}
 {% block navbar %}{% endblock %}
 {% block admin %}{% endblock %}
 {% block body %}{% endblock %}
 {% block footer %}{% endblock %}
-
-
-
-
 	{% block javascripts %}
-	<!--Import jQuery before materialize.js-->
-	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-	<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js">
-	</script>
-	
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
-	<script type="text/javascript" src="{{ asset('js/bin/materialize.js') }}"></script>
-	{% endblock %}
+  <script>function onClick(e) {
+  e.preventDefault();
+  grecaptcha.ready(function() {
+  grecaptcha.execute('6Lcohs4ZAAAAAGuKgpzN5kF9_oSZ1BLir6O2vKYV', {action: 'submit'}).then(function(token) {
+  console.log('captacha');
+  });
+  });
+  }</script>
 
-{% block analytics %}
- <script type="text/javascript">
+   <script type="text/javascript">
         tarteaucitron.user.gajsUa = 'UA-XXXXXXXX-X';
         tarteaucitron.user.gajsMore = function () { /* add here your optionnal _ga.push() */ };
         (tarteaucitron.job = tarteaucitron.job || []).push('gajs');
         </script>
+	<!--Import jQuery before materialize.js-->
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js">
+	</script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+	<script type="text/javascript" src="{{ asset('js/bin/materialize.js') }}"></script>
 
-{% endblock %}
+	{% endblock %}
+
+
+
+
 
 </body>
 
