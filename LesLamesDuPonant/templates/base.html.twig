@@ -23,9 +23,9 @@
 	<li>
 		<div class="user-view">
 			{% if is_granted('IS_AUTHENTICATED_FULLY') and app.user.photoAvatarUser  != NULL %}
-			<img class="circle" src="{{ asset('uploads/avatar/' ~ app.user.photoAvatarUser )}}">
+			<img class="circle" src="{{ asset('uploads/avatar/' ~ app.user.photoAvatarUser )}}" alt="avatar lame du Ponant amhe membre escrime médiévale">
 			{% else %}
-			<img class="circle" src="{{asset('uploads/avatar.jpg')}}">
+			<img class="circle" src="{{asset('uploads/avatar.jpg')}}" alt="avatar lame du Ponant amhe">
 			{% endif %}
 			{% if is_granted('IS_AUTHENTICATED_FULLY') and app.user.pseudoUser != NULL %}
 			<span class="name">Bonjour
@@ -160,7 +160,7 @@
 {% if app.request.get('_route') == 'home' %}
 <div id="HomeImg">
 	{% for home_picture in home_pictures %}
-	<img src="{{ asset('uploads/parallax/'~ home_picture.homeTitlePicture)}}">
+	<img src="{{ asset('uploads/parallax/'~ home_picture.homeTitlePicture)}}" alt="parallax lame Du Ponant escrime mediévale amhe iùage background one">
 	{% endfor %}
 </div>
 {% endif %}
@@ -193,7 +193,7 @@
 
 	<div class="parallax-container">
 		{% for home_picture in home_pictures %}
-		<div class="parallax"><img src="{{ asset('uploads/parallax/'~ home_picture.homeParallax1)}}"></div>
+		<div class="parallax"><img src="{{ asset('uploads/parallax/'~ home_picture.homeParallax1)}}" alt="parallax lame Du Ponant escrime mediévale amhe image background two"></div>
 		{% endfor %}
 	</div>
 	{# 
@@ -224,7 +224,7 @@
 ================== #}
 	<div class="parallax-container">
 		{% for home_picture in home_pictures %}
-		<div class="parallax"><img src="{{ asset('uploads/parallax/'~ home_picture.homeParallax2)}}"></div>
+		<div class="parallax"><img src="{{ asset('uploads/parallax/'~ home_picture.homeParallax2)}}" alt="parallax lame Du Ponant escrime mediévale amhe image background three"></div>
 		{% endfor %}
 	</div>
 
@@ -237,6 +237,9 @@
 					<div class="history-tl-container">
 						<ul class="tl">
 							{% for time_stamp in time_stamp %}
+							{% if time_stamp.active == 1 %}
+								
+					
 							<li class="tl-item" ng-repeat="item in retailer_history">
 								<div class="timestamp">
 									{{ time_stamp.dateTimeStamp ? time_stamp.dateTimeStamp|date('d-m-Y') : '' }}<br>
@@ -247,6 +250,7 @@
 								<div class="item-detail">{{ time_stamp.descriptionTimeStamp }}
 								</div>
 							</li>
+									{% endif %}
 							{% endfor %}
 						</ul>
 					</div>
@@ -274,7 +278,7 @@
 							</div>
 						</div>
 						<div class="col xl6 l5 m5 s12 informationFooterRight ">
-							<img src="{{ asset('uploads/complexeSaintMaloGuerssac.jpg')}}" alt="">
+							<img src="{{ asset('uploads/complexeSaintMaloGuerssac.jpg')}}" alt="Lame Du Ponant escrime mediévale amhe saint Malo de Guerssac Saint-Nazaire">
 						</div>
 					</div>
 				</div>
@@ -311,7 +315,7 @@
 			<div class="col  xl4 l4  s12  footerLameDuPonantCenter">
 				<h5>La Féderation Française des AMHE</h5>
 				<a href="https://www.ffamhe.fr"><img class="rounded" src="{{ asset('uploads/logo_FFAMHE.png')}}"
-						alt=""></a>
+						alt="Logo Amhe féderation Française lame Du Ponant"></a>
 
 			</div>
 			<div class="col  xl4 l4  s12  footerLameDuPonantRight">

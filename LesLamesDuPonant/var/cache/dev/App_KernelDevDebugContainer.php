@@ -16,6 +16,6 @@ if (!\class_exists(App_KernelDevDebugContainer::class, false)) {
 
 return new \ContainerXgxvAGP\App_KernelDevDebugContainer([
     'container.build_hash' => 'XgxvAGP',
-    'container.build_id' => '3c8c8d11',
-    'container.build_time' => 1600683857,
+    'container.build_id' => 'b3ec5b8f',
+    'container.build_time' => 1600697176,
 ], __DIR__.\DIRECTORY_SEPARATOR.'ContainerXgxvAGP');

@@ -1,0 +1,473 @@
+# Query: <h4
+# Including: ./LesLamesDuPonant/templates
+# ContextLines: 1
+
+101 résultats - Fichiers 69
+
+LesLamesDuPonant\templates\base.html.twig:
+  234  				<div class="col xl4 l5 s12 ">
+  235: 					<h1 class="HomeInfoTitle center-align">
+  236  						Actualités</h1>
+
+  258  				<div class="col xl8 l7 s12">
+  259: 					<h1 class="HomeInfoTitle center-align">
+  260  						Informations pratiques</h1>
+
+LesLamesDuPonant\templates\amhe\edit.html.twig:
+  5  {% block body %}
+  6: <h1 class="center-align"> editer amhe</h1>
+  7  
+
+LesLamesDuPonant\templates\amhe\index.html.twig:
+   5  {% block body %}
+   6: <h1 class="center-align">AMHE index</h1>
+   7  <div class="container">
+
+  64          <div>
+  65:             <h1 class="center-align">Suppression </h1>
+  66              <p class="modal-content center-align">êtes vous sûre de vouloir supprimer</p>
+
+LesLamesDuPonant\templates\amhe\new.html.twig:
+  5  {% block body %}
+  6: <h1 class="center-align">Création de la page AMHE</h1>
+  7      {{ include('amhe/_form.html.twig') }}
+
+LesLamesDuPonant\templates\amhe\show.html.twig:
+  5  {% block body %}
+  6:     <h1 class="center-align">AMHE</h1>
+  7  
+
+LesLamesDuPonant\templates\category_forum\edit.html.twig:
+  5  {% block body %}
+  6:     <h1 class="center-align">éditer CategoryForum</h1>
+  7  
+
+LesLamesDuPonant\templates\category_forum\index.html.twig:
+   7  
+   8: <h1 class="center-align">CategoryForum index</h1>
+   9  
+
+  69      <div>
+  70:         <h1 class="center-align">Suppression </h1>
+  71          <p class="modal-content center-align">êtes vous sûre de vouloir supprimer</p>
+
+LesLamesDuPonant\templates\category_forum\new.html.twig:
+  5  {% block body %}
+  6:     <h1 class="center-align">Create new CategoryForum</h1>
+  7  
+
+LesLamesDuPonant\templates\category_forum\show.html.twig:
+  5  {% block body %}
+  6:     <h1 class="center-align">CategoryForum</h1>
+  7  
+
+LesLamesDuPonant\templates\contact_message\edit.html.twig:
+  5  {% block body %}
+  6:     <h1 class="center-align">édition des messages</h1>
+  7  
+
+LesLamesDuPonant\templates\contact_message\index.html.twig:
+   5  {% block body %}
+   6: <h1 class="center-align"> Index des messages</h1>
+   7  {% for message in app.flashes('how we are') %}
+
+  15          {% if contact_message.categoryContactMessage == 1%}
+  16:         <h1 class="center-align">Messages Renseignement Amhe</h1>
+  17          {{ include('contact_message/tableIndex.html.twig')}}
+  18          {% elseif  contact_message.categoryContactMessage == 2 %}
+  19:         <h1 class="center-align">Renseignement sur les inscriptions</h1>
+  20          {{ include('contact_message/tableIndex.html.twig')}}
+  21          {% elseif contact_message.categoryContactMessage == 3 %}
+  22:         <h1 class="center-align">Autres Questions</h1>
+  23          {{ include('contact_message/tableIndex.html.twig')}}
+  24          {% elseif contact_message.categoryContactMessage == 4 and is_granted('ROLE_SUPER_ADMIN') %}
+  25:         <h1 class="center-align">Bug du site</h1>
+  26          {{ include('contact_message/tableIndex.html.twig')}}
+
+  33      <div>
+  34:         <h1 class="center-align">Suppression </h1>
+  35          <p class="modal-content center-align"></p>
+
+LesLamesDuPonant\templates\contact_message\new.html.twig:
+  5  {% block body %}
+  6:   <h1 class="center-align TitleMessageNew" > Contactez-nous pour toutes informations</h1>
+  7        {{ include('contact_message/_form.html.twig') }} 
+
+LesLamesDuPonant\templates\contact_message\show.html.twig:
+  6  {% block body %}
+  7: <h1 class="center-align">
+  8    contenu du message</h1>
+
+LesLamesDuPonant\templates\discipline\edit.html.twig:
+  5  {% block body %}
+  6: <h1 class="center-align">éditer la discipline</h1>
+  7      {{ include('discipline/_form.html.twig', {'button_label': 'Maj'})}}
+
+LesLamesDuPonant\templates\discipline\index.html.twig:
+   7  <div class="container">
+   8: <h1 class="center-align">Discipline index</h1>
+   9      <a href="{{ path('discipline_new') }}" class="btn-floating btn-large waves-effect waves-light blue"><i
+
+  69      <div>
+  70:         <h1 class="center-align">Suppression </h1>
+  71          <p class="modal-content center-align">êtes vous sûre de vouloir supprimer</p>
+
+LesLamesDuPonant\templates\discipline\new.html.twig:
+  6      
+  7:    <h1 class="center-align">Créer Nouvelle discipline</h1>
+  8      {{ include('discipline/_form.html.twig') }}
+
+LesLamesDuPonant\templates\faq\edit.html.twig:
+  5  {% block body %}
+  6: <h1 class="center-align">Faq Info</h1>
+  7  
+
+LesLamesDuPonant\templates\faq\index.html.twig:
+  10  {% endfor %}
+  11: <h1 class="center-align">FAQ</h1>
+  12  <div class="container">
+
+  50      <div>
+  51:         <h1 class="center-align">Suppression </h1>
+  52          <p class="modal-content center-align"></p>
+
+LesLamesDuPonant\templates\faq\new.html.twig:
+  5  {% block body %}
+  6:   <h1 class="center-align">Créer FAQ</h1>
+  7  
+
+LesLamesDuPonant\templates\home_discipline\edit.html.twig:
+  5  {% block body %}
+  6:     <h1 class="center-align">éditer Discipline Accueil</h1>
+  7  
+
+LesLamesDuPonant\templates\home_discipline\index.html.twig:
+  10  {% endfor %}
+  11: <h1 class="center-align">Discipline page d'accueil</h1>
+  12  <div class="container">
+
+  63      <div>
+  64:         <h1 class="center-align">Suppression </h1>
+  65          <p class="modal-content center-align">êtes vous sûre de vouloir supprimer</p>
+
+LesLamesDuPonant\templates\home_discipline\new.html.twig:
+  5  {% block body %}
+  6:     <h1 class="center-align">Créer nouvelle discipline</h1>
+  7  
+
+LesLamesDuPonant\templates\home_discipline\show.html.twig:
+  5  {% block body %}
+  6:     <h1 class="center-align">HomeDiscipline</h1>
+  7  
+
+LesLamesDuPonant\templates\home_info\edit.html.twig:
+  6  
+  7: <h1 class="center-align">Éditer Les infos</h1>
+  8      {{ include('home_info/_form.html.twig', {'button_label': 'Maj'}) }}
+
+LesLamesDuPonant\templates\home_info\index.html.twig:
+  10  {% endfor %}
+  11: <h1 class="center-align">Info </h1>
+  12  <div class="container">
+
+  78      <div>
+  79:         <h1 class="center-align">Suppression </h1>
+  80          <p class="modal-content center-align">êtes vous sûre de vouloir supprimer</p>
+
+LesLamesDuPonant\templates\home_info\new.html.twig:
+  5  {% block body %}
+  6:     <h1 class="center-align">Créer Info</h1>
+  7  
+
+LesLamesDuPonant\templates\home_pictures\edit.html.twig:
+  5  {% block body %}
+  6:     <h1 class="center-align">édition des images de la page d'accueil</h1>
+  7  
+
+LesLamesDuPonant\templates\home_pictures\index.html.twig:
+   9  	{% endfor %}
+  10: 	<h1 class="center-align">Images page d'accueil</h1>
+  11  	<div class="container">
+
+  69  		<div>
+  70: 			<h1 class="center-align">Suppression </h1>
+  71  			<p class="modal-content center-align">êtes vous sûre de vouloir supprimer</p>
+
+LesLamesDuPonant\templates\home_pictures\new.html.twig:
+  5  {% block body %}
+  6:    <h1 class="center-align">Image page d'accueil</h1>
+  7  
+
+LesLamesDuPonant\templates\home_section_forum\edit.html.twig:
+  5  {% block body %}
+  6:     <h1 class="center-align">éditer HomeSectionForum</h1>
+  7  
+
+LesLamesDuPonant\templates\home_section_forum\index.html.twig:
+  10  {% endfor %}
+  11: <h1 class="center-align">Section Forum index</h1>
+  12  <div class="container">
+
+  62      <div>
+  63:         <h1 class="center-align">Suppression </h1>
+  64          <p class="modal-content center-align">êtes vous sûre de vouloir supprimer</p>
+
+LesLamesDuPonant\templates\home_section_forum\new.html.twig:
+  5  {% block body %}
+  6:     <h1 class="center-align">Créer nouvelle Section</h1>
+  7  
+
+LesLamesDuPonant\templates\home_section_forum\show.html.twig:
+  5  {% block body %}
+  6:     <h1 class="center-align">HomeSectionForum</h1>
+  7  
+
+LesLamesDuPonant\templates\how_we_are\edit.html.twig:
+  5  {% block body %}
+  6: <h1 class="center-align">Qui sommes nous?</h1>
+  7  
+
+LesLamesDuPonant\templates\how_we_are\index.html.twig:
+  10  {% endfor %}
+  11: <h1 class="center-align">Qui sommes nous?</h1>
+  12  <div class="container">
+
+  61      <div>
+  62:         <h1 class="center-align">Suppression </h1>
+  63          <p class="modal-content center-align">êtes vous sûre de vouloir supprimer</p>
+
+LesLamesDuPonant\templates\how_we_are\new.html.twig:
+  5  {% block body %}
+  6:     <h1 class="center-align">Créer qui sommes nous?</h1>
+  7  
+
+LesLamesDuPonant\templates\how_we_are\show.html.twig:
+  5  {% block body %}
+  6: <h1 class="center-align">Qui Sommes nous?</h1>
+  7  
+
+LesLamesDuPonant\templates\le_forum\categoriesforum.html.twig:
+  115                  <div class="col xl3 offset-xl1 l3 offset-l1 m12 s12  z-depth-5 liste-forum">
+  116:                     <h1 class="center-align">Liste</h1>
+  117  
+
+LesLamesDuPonant\templates\le_forum\subjectforum.html.twig:
+  119              <div class="col xl3 offset-xl1 l3 offset-l1 m12 s12 z-depth-5 liste-forum">
+  120:                 <h1 class="center-align">Liste</h1>
+  121  
+
+LesLamesDuPonant\templates\les_amhe\index.html.twig:
+  24  ================ #}
+  25: <h1 class="center-align amheTitle">{{ amhe.titleAMHE }}</h1>
+  26  <div class="container white ">
+
+  44  	{% if medieval_family.active == 1 %}
+  45: 	<h1 class="center-align amheTitle"> {{ medieval_family.titleMedievalFamily }}</h1>
+  46  	<div class="row z-depth-5 amheFull">
+
+  56  {% if les_lames_du_ponant.active == 1 %}
+  57: <h1 class="center-align amheTitle">{{ les_lames_du_ponant.titleLLDP }}</h1>
+  58  <div class="container white">
+
+LesLamesDuPonant\templates\les_disciplines\index.html.twig:
+   5  {% block body %}
+   6: <h1 class="center-align disciplineTitle">Les disciplines des Lames Du Ponant</h3>
+   7      {% for discipline in disciplines %}
+
+  39          {# Titre discipline#}
+  40:         <h1 id="{{discipline.relationHomeDiscipline.id}}" class="center-align disciplineTitle">
+  41              {{ discipline.disciplinetitle}}</h1>
+
+  89          {# Titre discipline#}
+  90:         <h1 id="{{discipline.relationHomeDiscipline.id}}" class="center-align disciplineFull">
+  91              {{ discipline.disciplinetitle}}</h1>
+
+LesLamesDuPonant\templates\les_infos\index.html.twig:
+  11  
+  12:         <h1 class="center-align titleInfo">Information Les Lames du Ponant</h1>
+  13  
+
+  27                          <div class="col xl3 l3 m12 s12 ">
+  28:                                  <h1 class="center-align">{{ home_info.titleInfo}}</h1>
+  29                                  <div class="row z-depth-2 ">
+
+  34                          <div class="col xl7 l7 m12 s12 offset-xl2 offset-l2  ">
+  35:                                 <h1 class="center-align">Pour nous situer </h1>
+  36                                  <div id="mapid"></div>
+
+  60  
+  61:         <h1 class="center-align titleInfo">{{ home_info.titleCost}}</h1>
+  62          <div class="container">
+
+  66          </div>
+  67:         <h1 id="faq"class="center-align titleInfo">{{ home_info.titleFaqInfo}}</h1>
+  68          <div class="container">
+
+LesLamesDuPonant\templates\les_lames_du_ponant\edit.html.twig:
+  5  {% block body %}
+  6:       <h1 class="center-align">éditer Les Lames Du Ponant</h1>
+  7  
+
+LesLamesDuPonant\templates\les_lames_du_ponant\index.html.twig:
+  10  {% endfor %}
+  11: <h1 class="center-align">Les Lames DuPonant </h1>
+  12  <div class="container">
+
+  64      <div>
+  65:         <h1 class="center-align">Suppression </h1>
+  66          <p class="modal-content center-align">êtes vous sûre de vouloir supprimer</p>
+
+LesLamesDuPonant\templates\les_lames_du_ponant\new.html.twig:
+  5  {% block body %}
+  6:         <h1 class="center-align">nouveau Les Lames Du Ponant</h1>
+  7  
+
+LesLamesDuPonant\templates\medieval_family\edit.html.twig:
+  5  {% block body %}
+  6:     <h1 class="center-align">Éditer Famille médévale</h1>
+  7  
+
+LesLamesDuPonant\templates\medieval_family\index.html.twig:
+  10  {% endfor %}
+  11: <h1 class="center-align">Famille médiévale index</h1>
+  12  <div class="container">
+
+  61      <div>
+  62:         <h1 class="center-align">Suppression </h1>
+  63          <p class="modal-content center-align">êtes vous sûre de vouloir supprimer</p>
+
+LesLamesDuPonant\templates\medieval_family\new.html.twig:
+  5  {% block body %}
+  6:     <h1 class="center-align">nouvelle famille medievale</h1>
+  7  
+
+LesLamesDuPonant\templates\medieval_family\show.html.twig:
+  5  {% block body %}
+  6:     <h1 class="center-align">MedievalFamily</h1>
+  7  
+
+LesLamesDuPonant\templates\message_forum\edit.html.twig:
+  5  {% block body %}
+  6:     <h1 class="center-align">éditer Message Forum</h1>
+  7  
+
+LesLamesDuPonant\templates\message_forum\index.html.twig:
+  10  {% endfor %}
+  11: <h1 class="center-align">Gestion message Forum</h1>
+  12  <div class="container">
+
+  62      <div>
+  63:         <h1 class="center-align">Suppression </h1>
+  64          <p class="modal-content center-align">êtes vous sûre de vouloir supprimer</p>
+
+LesLamesDuPonant\templates\message_forum\new.html.twig:
+  5  {% block body %}
+  6:     <h1 class="center-align">Nouveau Message Forum</h1>
+  7  
+
+LesLamesDuPonant\templates\message_forum\show.html.twig:
+  5  {% block body %}
+  6:     <h1 class="center-align">MessageForum</h1>
+  7  
+
+LesLamesDuPonant\templates\registration\confirmation_email.html.twig:
+  1: <h1 class="center-align">Bonjour et bienvenue sur le site des Lames du Ponant AMHE de Saint-Nazaire</h1>
+  2  
+
+LesLamesDuPonant\templates\reset_password\email.html.twig:
+  1: <h1 class="center-align">Bonjour</h1>
+  2  
+
+LesLamesDuPonant\templates\subject_forum\edit.html.twig:
+  5  {% block body %}
+  6:     <h1 class="center-align">éditer SubjectForum</h1>
+  7  
+
+LesLamesDuPonant\templates\subject_forum\index.html.twig:
+  12  
+  13: <h1 class="center-align">Sujets Du Forum</h1>
+  14  <div class="container">
+
+  18  		{% for category_forum in category_forums %}
+  19: 		<h1 class="center-align">{{ category_forum.titleCategory}}</h1>
+  20  
+
+  71  	<div>
+  72: 		<h1 class="center-align">Suppression </h1>
+  73  		<p class="modal-content center-align">êtes vous sûre de vouloir supprimer</p>
+
+LesLamesDuPonant\templates\subject_forum\new.html.twig:
+  5  {% block body %}
+  6:     <h1 class="center-align">Créer un nouveau sujet </h1>
+  7  
+
+LesLamesDuPonant\templates\subject_forum\show.html.twig:
+  5  {% block body %}
+  6:     <h1 class="center-align">SubjectForum</h1>
+  7  
+
+LesLamesDuPonant\templates\time_stamp\edit.html.twig:
+  5  {% block body %}
+  6:     <h1 class="center-align">Editer Agendal</h1>
+  7      {{ include('time_stamp/_form.html.twig', {'button_label': 'maj'}) }}
+
+LesLamesDuPonant\templates\time_stamp\index.html.twig:
+  10  {% endfor %}
+  11:  <h1 class="center-align">Agenda index</h1>
+  12  <div class="container">
+
+  65      <div>
+  66:         <h1 class="center-align">Suppression </h1>
+  67          <p class="modal-content center-align">êtes vous sûre de vouloir supprimer</p>
+
+LesLamesDuPonant\templates\time_stamp\new.html.twig:
+  5  {% block body %}
+  6:     <h1 class="center-align">Créer nouvel évenement</h1>
+  7  
+
+LesLamesDuPonant\templates\time_stamp\show.html.twig:
+  5  {% block body %}
+  6:     <h1 class="center-align">TimeStamp</h1>
+  7  
+
+LesLamesDuPonant\templates\time_stamp\widget.html.twig:
+   6  {% endfor %}
+   7:  <h1 class="center-align">Agenda index</h1>
+   8  <div class="container">
+
+  61      <div>
+  62:         <h1 class="center-align">Suppression </h1>
+  63          <p class="modal-content center-align">êtes vous sûre de vouloir supprimer</p>
+
+LesLamesDuPonant\templates\user\_form.html.twig:
+  5  <div class="row formRegister z-depth-5 liste-forum">
+  6: <h1 class="center-align">Edition du profil de
+  7  {% if is_granted('IS_AUTHENTICATED_FULLY') and app.user.pseudoUser != NULL %}
+
+LesLamesDuPonant\templates\user\index.html.twig:
+  10  {% endfor %}
+  11:  <h1 class="center-align">Gestion des utilisateurs</h1>
+  12  <div class="container">
+
+  65      <div>
+  66:         <h1 class="center-align">Suppression </h1>
+  67          <p class="modal-content center-align">êtes vous sûre de vouloir supprimer</p>
+
+LesLamesDuPonant\templates\user\new.html.twig:
+  5  {% block body %}
+  6:     <h1 class="center-align">Create new User</h1>
+  7  
+
+LesLamesDuPonant\templates\user\show.html.twig:
+  5  {% block body %}
+  6:     <h1 class="center-align">User</h1>
+  7  
+
+LesLamesDuPonant\templates\user\widget.html.twig:
+  10  {% endfor %}
+  11:  <h1 class="center-align">Gestion des utilisateurs</h1>
+  12  <div class="container">
+
+  57      <div>
+  58:         <h1 class="center-align">Suppression </h1>
+  59          <p class="modal-content center-align">êtes vous sûre de vouloir supprimer</p>

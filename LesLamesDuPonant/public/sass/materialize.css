@@ -10087,16 +10087,16 @@ p {
 .history-tl-container ul.tl li {
   list-style: none;
   margin: auto;
-  margin-left: 93px;
+  margin-left: 0px;
   min-height: 50px;
   max-height: 140px;
-  border-left: 1px dashed #86D6FF;
+  border-left: 1px dashed #142dbb;
   padding: 0 0 50px 30px;
   position: relative;
 }
 
 .history-tl-container ul.tl li::before {
-  background: #05053b93;
+  color: #05053b;
   position: absolute;
   left: -11px;
   top: -5px;
@@ -10128,10 +10128,10 @@ ul.tl li .item-title {
 }
 
 ul.tl li .timestamp {
-  color: #7e7979;
+  color: #05053b;
   position: absolute;
   width: 150px;
-  left: -125%;
+  left: -250%;
   text-align: right;
   font-size: 17px;
 }

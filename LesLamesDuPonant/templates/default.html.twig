@@ -2,9 +2,11 @@
 <html lang="fr">
 <head>
  <meta charset="UTF-8">
+ <meta namme="description" content="amhe, Les Lames du Ponant association d'escrime médiévale à Saint Malo de Guersac, proche de Saint Nazaire">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 	<title>
-		{% block title 'Lame Du Ponant ' %}
+		{% block title 'AMHE |Lame Du Ponant|escrime médievale ' %}
 	</title>
 {% block stylesheets %}
 
@@ -14,6 +16,8 @@
 	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css">
 	<!--open street map.css-->
 	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="" />
+  {# FAVICO #}
+  <link rel="shortcut icon" type="image/png" href="{{ asset('uploads/favico_ldp.png')}}"/>
 		<!--Import materialize.css-->
 	<link type="text/css" rel="stylesheet" href="{{ asset('sass/materialize.css') }}" media="screen,projection" />
   {# Captcha #}

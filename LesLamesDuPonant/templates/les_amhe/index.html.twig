@@ -1,22 +1,23 @@
 {% extends 'base.html.twig' %}
 
-{% block title 'Les AMHE'%}
+{% block title ' Les AMHE | Les Lames Du Ponant |Escrime médiévale'%}
 
 {% block body %}
 {% for amhe in amhes %}
-{% if amhe.active ==1 %}
-
-
+{% if amhe.active == 1 %}
 <div class="carousel carousel-slider center amheCarousel">
 	<div class="carousel-item  white-text" href="#one!">
-		<img src="{{asset('uploads/amhe/') ~ amhe.photoOneAMHE }}" alt="">
+		<img src="{{asset('uploads/amhe/') ~ amhe.photoOneAMHE }}"
+			alt="escrime médiévale Lames Du Ponant photo une  {{amhe.photoOneAMHE}} amhe Saint-Nazaire Saint Malo de Guersac 44176 44600">
 	</div>
 	<div class="carousel-item  white-text" href="#one!">
-		<img src="{{asset('uploads/amhe/') ~ amhe.photoTwoAMHE }}" alt="">
+		<img src="{{asset('uploads/amhe/') ~ amhe.photoTwoAMHE }}"
+			alt="escrime médiévale Lames Du Ponant photo deux  {{amhe.photoTwoAMHE }}  amhe Saint-Nazaire Saint Malo de Guersac 44176 44600">
 	</div>
 	<div class="carousel-item  white-text" href="#one!">
-		<img src="{{asset('uploads/amhe/') ~ amhe.photoThreeAMHE }}" alt=""><img
-			src="{{asset('uploads/Parallax3.jpg')}}" alt="">
+		<img src="{{asset('uploads/amhe/') ~ amhe.photoThreeAMHE }}"
+			alt="escrime médiévale Lames Du Ponant photo une {{amhe.photoThreeAMHE }}   amhe Saint-Nazaire Saint Malo de Guersac 44176 44600">
+
 	</div>
 </div>
 {# AMHE
@@ -52,18 +53,18 @@
 {# LES LAMES DU PONANT
 ======================================= #}
 {% for les_lames_du_ponant in les_lames_du_ponants %}
-	{% if les_lames_du_ponant.active == 1 %}
-	<h4 class="center-align amheTitle">{{ les_lames_du_ponant.titleLLDP }}</h4>
-<div class="container white">	
+{% if les_lames_du_ponant.active == 1 %}
+<h4 class="center-align amheTitle">{{ les_lames_du_ponant.titleLLDP }}</h4>
+<div class="container white">
 	<div class="row   z-depth-5 amheFull">
 		<img class="responsive-img" src="{{asset('/uploads/lldp/') ~ les_lames_du_ponant.pictureLesLamesDuponant  }} "
-			alt="">
+			alt="Association escrime médiévale saint-Malo de Guersac 44176 44600 Saint-Nazaire Saint-Malo-de-Guersac ">
 		<p>{{ les_lames_du_ponant.desciptionLLDP|raw}}</p>
 	</div>
-	
+
 </div>
 {% endif %}
-	{% endfor %}
+{% endfor %}
 
 
 {% endblock %}

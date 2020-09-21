@@ -116,7 +116,7 @@ return [
     'app_forgot_password_request' => [[], ['_controller' => 'App\\Controller\\ResetPasswordController::request'], [], [['text', '/reset-password']], [], []],
     'app_check_email' => [[], ['_controller' => 'App\\Controller\\ResetPasswordController::checkEmail'], [], [['text', '/reset-password/check-email']], [], []],
     'app_reset_password' => [['token'], ['token' => null, '_controller' => 'App\\Controller\\ResetPasswordController::reset'], [], [['variable', '/', '[^/]++', 'token', true], ['text', '/reset-password/reset']], [], []],
-    'rgpd' => [[], ['_controller' => 'App\\Controller\\RgpdController::index'], [], [['text', '/rgpd']], [], []],
+    'rgpd' => [[], ['_controller' => 'App\\Controller\\RgpdController::rgpd'], [], [['text', '/rgpd']], [], []],
     'mentions_legale' => [[], ['_controller' => 'App\\Controller\\RgpdController::politiquedeconf'], [], [['text', '/mentions-legales']], [], []],
     'app_login' => [[], ['_controller' => 'App\\Controller\\SecurityController::login'], [], [['text', '/login']], [], []],
     'app_logout' => [[], ['_controller' => 'App\\Controller\\SecurityController::logout'], [], [['text', '/logout']], [], []],

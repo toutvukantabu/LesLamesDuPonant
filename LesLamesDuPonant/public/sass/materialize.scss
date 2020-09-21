@@ -873,10 +873,10 @@ margin-top: 50px;
 .history-tl-container ul.tl li {
   list-style: none;
   margin: auto;
-  margin-left: 93px;
+  margin-left: 0px;
   min-height: 50px;
   max-height: 140px;
-  border-left: 1px dashed #86D6FF;
+  border-left: 1px dashed #142dbb;
   padding: 0 0 50px 30px;
   position: relative;
 }
@@ -914,10 +914,10 @@ ul.tl li .item-title {
 }
 
 ul.tl li .timestamp {
-  color: #7e7979;
+  @include time-stamp;
   position: absolute;
   width: 150px;
-  left: -125%;
+  left: -250%;
   text-align: right;
   font-size: 17px;
 }
