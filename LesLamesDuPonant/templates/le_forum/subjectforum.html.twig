@@ -28,10 +28,10 @@
                         <tr>
                             <th class="userForumBackground">
                                 <div class="chip">
-                                    {% if  subject_forum.user.photoAvatarUser  != NULL %}
-                                    <img class="circle" src="{{ asset('uploads/avatar/' ~ app.user.photoAvatarUser )}}">
-                                    {% else %}
+                                    {% if  subject_forum.user.photoAvatarUser  == NULL %}
                                     <img class="circle" src="{{asset('uploads/avatar.jpg')}}">
+                                    {% else %}
+                                    <img class="circle" src="{{ asset('uploads/avatar/' ~  subject_forum.user.photoAvatarUser )}}">
                                     {% endif %}
                                     {% if  subject_forum.user.pseudoUser != NULL %}
                                     <span class="name ">

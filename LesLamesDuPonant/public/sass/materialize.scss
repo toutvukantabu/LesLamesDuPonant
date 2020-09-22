@@ -625,7 +625,7 @@ width: 138px;
  
 //FORMULAIRE
 //=====================================================
-/* Form login, register, password,Edit
+/* Form login, register, password,Edit, message
   *===============================
   */
   .formRegister,
@@ -641,8 +641,19 @@ width: 138px;
   .loginResetPassword,
   .smallResetPassword {
     margin-bottom: 40px;
+  } 
   
+  /* label focus color */
+  .input-field input[type=text]:focus + label {
+    color: #000;
+}
+/* label underline focus color */
+  .input-field input[type=text]:focus {
+    border-bottom: 1px solid #051972!important;
+    box-shadow: 0 1px 0 0 #000;
   }
+
+
   //Edit user
   //============
   
@@ -655,11 +666,36 @@ margin-top: 50px;
     margin-left: auto;
     margin-right: auto;
     max-height: 130px;
+  
 }
 
 // waves effect (menu mobile onclick)
 // ===============
 
+//Header
+.userAvatarHeader{
+  @include webkit-shadow2;
+  padding: 10px;
+  border-radius: 5px;
+  float: right;
+  height: 377px;
+  width: 160px;
+  height: 200px;
+  position: relative;
+  top: 24px;
+  right: 24px;
+  background-color: #03039352;
+  img{
+    margin: 0 auto;
+    display: block;
+    height:90px;
+    width:90px;
+  }
+  p{
+color:#46454cf0;
+    text-align: center;
+  }
+}
 
 //NAVBAR
 //*****************************************
@@ -798,7 +834,7 @@ margin-top: 50px;
 }
 
 .disciplineHomeTitle {
-  margin-top: -100px;
+  margin-top: -145px;
   width: 300px;
   margin-left: -50px;
   margin-bottom: -15px;
@@ -873,10 +909,10 @@ margin-top: 50px;
 .history-tl-container ul.tl li {
   list-style: none;
   margin: auto;
-  margin-left: 93px;
+  margin-left: 111px;
   min-height: 50px;
   max-height: 140px;
-  border-left: 1px dashed #86D6FF;
+  border-left: 1px dashed #142dbb;
   padding: 0 0 50px 30px;
   position: relative;
 }
@@ -889,7 +925,7 @@ margin-top: 50px;
   left: -11px;
   top: -5px;
   content: " ";
-  border: 8px solid rgba(255, 255, 255, 0.74);
+  border: 8px solid #142dbb;
   border-radius: 500%;
   height: 21px;
   width: 21px;
@@ -914,10 +950,10 @@ ul.tl li .item-title {
 }
 
 ul.tl li .timestamp {
-  color: #7e7979;
+  @include time-stamp;
   position: absolute;
   width: 150px;
-  left: -125%;
+  left: -105%;
   text-align: right;
   font-size: 17px;
 }
@@ -1292,18 +1328,25 @@ font-size: 1.4rem;
 
 
 @media #{$medium-and-down} {
-  h2{
+//font
+  h2,h1{
     font-size: 2.5rem;
   }
   h4{
     font-size:1.8rem ;
   }
-
-  //footer
   h6{
     font-size:1.6rem ;
-   
   }
+  //Display Avatar .collection-header
+  .userAvatarHeader{
+    display: none;
+  }
+//CarouselHome
+.disciplineHomeTitle {
+  margin-top: -170px;
+}
+  //footer
   .page-footer {
     .footerLameDuPonantCenter {
       @include border-white($border:none, $height:none);
@@ -1355,12 +1398,12 @@ margin-top: 20px;
   display: flex;
   flex-direction: column-reverse;
 }
-.flex-title-forum{
-  order:1;
-h1{
-  font-size: 2.5rem;
-}
-}
+// .flex-title-forum{
+//   order:1;
+// h4{
+//   font-size: 2.5rem;
+// }
+// }
 #tableForum td , #tableForum th {
   padding: 0px;
 
@@ -1378,7 +1421,8 @@ h1{
 .userEditFull{
 
   img{
-    max-height: 100px;
+    height: 150px;
+    width: 130px;
     margin: 0 auto;
     display: block;
   }

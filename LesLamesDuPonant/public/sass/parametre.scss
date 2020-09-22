@@ -24,8 +24,8 @@ line-height: $line;
   background-color: $color-waves
 }
 
-@mixin time-stamp($color-stamp:#05053b93){
-background:$color-stamp;
+@mixin time-stamp($color-stamp:#05053b){
+color:$color-stamp;
 
 }
 

@@ -15,7 +15,7 @@
 					<li><a href="{{path('time_stamp_index')}}">Agenda</a></li>
 				</ul>
 			</div>
-		</li>
+		</li>	
 		<li>
 			<div class="collapsible-header"><i class="material-icons">security</i>AMHE</div>
 			<div class="collapsible-body">
@@ -90,8 +90,13 @@
 		<li><a href="{{path('contact_message_index')}}">Message</a></li>
 	</ul>
 	<nav id="navbarHome">
+	{% if app.request.get('_route') == 'admin' %}
 		<div class="nav-wrapper">
 			<a href="{{path('home')}} " class="brand-logo center">Accueil</a>
+			{% else %}
+			<div class="nav-wrapper">
+			<a href="{{path('admin')}} " class="brand-logo center">Accueil Administration</a>
+			{% endif %}
 			<a href="#" data-activates="mobile-demo" class="button-collapse">
 				<i class="material-icons">menu</i>
 			</a>

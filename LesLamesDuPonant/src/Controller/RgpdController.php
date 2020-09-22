@@ -6,24 +6,25 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
 class RgpdController extends AbstractController
+
 {
     /**
      * @Route("/rgpd", name="rgpd")
      */
-    public function index()
+    public function rgpd()
     {
-        return $this->render('rgpd/index.html.twig', [
-            'controller_name' => 'RgpdController',
+        return $this->render('rgpd/rgpd.html.twig', [
+            'rgpd' => 'rgpd',
         ]);
     }
 
 /**
  * @route ("/mentions-legales", name="mentions_legale")
  */
-public function politiquedeconf()
+      public function politiquedeconf()
     {
         return $this->render('rgpd/mentions_legales.html.twig', [
-            'controller_name' => 'RgpdController',
+            'politique_de_confidentialité' => 'Politique de confidentialité',
         ]);
     }
 
