@@ -31,6 +31,7 @@ class AMHEController extends AbstractController
     }
 
     /**
+     *  @IsGranted("ROLE_ADMIN")
      * @Route("/new", name="amhe_new", methods={"GET","POST"})
      */
     public function new(Request $request, SluggerInterface $slugger): Response
@@ -118,6 +119,7 @@ class AMHEController extends AbstractController
     }
 
     /**
+     *  @IsGranted("ROLE_ADMIN")
      * @Route("/{id}/edit", name="amhe_edit", methods={"GET","POST"})
      */
     public function edit(Request $request, AMHE $aMHE, SluggerInterface $slugger): Response
@@ -192,6 +194,7 @@ class AMHEController extends AbstractController
     }
 
     /**
+     *  @IsGranted("ROLE_ADMIN")
      * @Route("/{id}", name="amhe_delete", methods={"DELETE"})
      */
     public function delete(Request $request, AMHE $aMHE): Response
@@ -205,6 +208,7 @@ class AMHEController extends AbstractController
         return $this->redirectToRoute('amhe_index');
     }
   /**
+   * @IsGranted("ROLE_ADMIN")
      * @Route("/supprimer/{id}", name="supprimer_amhe")
      */
     public function supprimer( AMHE  $aMHE){
@@ -219,7 +223,8 @@ class AMHEController extends AbstractController
         return $this->redirectToRoute('how_we_are_index');
     }
     
-    /**
+         /**
+          * @IsGranted("ROLE_ADMIN")
          * @Route("/activer/{id}", name="activer_amhe")
          */
         public function activerAMHE ( AMHE  $aMHE){

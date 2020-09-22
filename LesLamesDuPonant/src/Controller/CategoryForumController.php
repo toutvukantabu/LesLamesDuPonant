@@ -10,6 +10,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
 /**
  * @Route("admin/category/forum")
@@ -17,6 +19,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class CategoryForumController extends AbstractController
 {
     /**
+     * @IsGranted("ROLE_USER")
      * @Route("/", name="category_forum_index", methods={"GET"})
      */
     public function index(CategoryForumRepository $categoryForumRepository ): Response
@@ -27,6 +30,7 @@ class CategoryForumController extends AbstractController
     }
 
     /**
+     * @IsGranted("ROLE_ADMIN")
      * @Route("/new", name="category_forum_new", methods={"GET","POST"})
      */
     public function new(Request $request, SluggerInterface $slugger): Response
@@ -51,6 +55,7 @@ class CategoryForumController extends AbstractController
     }
 
     /**
+     * @IsGranted("ROLE_ADMIN")
      * @Route("/{id}", name="category_forum_show", methods={"GET"})
      */
     public function show(CategoryForum $categoryForum): Response
@@ -61,6 +66,7 @@ class CategoryForumController extends AbstractController
     }
 
     /**
+     * @IsGranted("ROLE_ADMIN")
      * @Route("/{id}/edit", name="category_forum_edit", methods={"GET","POST"})
      */
     public function edit(Request $request, CategoryForum $categoryForum): Response
@@ -81,6 +87,7 @@ class CategoryForumController extends AbstractController
     }
 
     /**
+     * @IsGranted("ROLE_ADMIN")
      * @Route("/{id}", name="category_forum_delete", methods={"DELETE"})
      */
     public function delete(Request $request, CategoryForum $categoryForum): Response
@@ -94,6 +101,7 @@ class CategoryForumController extends AbstractController
         return $this->redirectToRoute('category_forum_index');
     }
      /**
+      * @IsGranted("ROLE_ADMIN")
      * @Route("/supprimer/{id}", name="supprimer_category_forum")
      */
          public function supprimer( CategoryForum $categoryForum){
@@ -109,6 +117,7 @@ class CategoryForumController extends AbstractController
     }
     
         /**
+         * @IsGranted("ROLE_ADMIN")
          * @Route("/activer/{id}", name="activer_category_forum")
          */
         public function activerAMHE ( CategoryForum $categoryForum){

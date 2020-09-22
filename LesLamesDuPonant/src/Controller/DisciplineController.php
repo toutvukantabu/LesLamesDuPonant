@@ -11,13 +11,15 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\String\Slugger\SluggerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\File\Exception\FileException;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
 /**
  * @Route("admin/discipline")
  */
 class DisciplineController extends AbstractController
 {
-    /**
+    /**@IsGranted("ROLE_USER")
      * @Route("/", name="discipline_index", methods={"GET"})
      */
     public function index(DisciplineRepository $disciplineRepository): Response
@@ -28,6 +30,7 @@ class DisciplineController extends AbstractController
     }
 
     /**
+     * @IsGranted("ROLE_ADMIN")
      * @Route("/new", name="discipline_new", methods={"GET","POST"})
      */
     public function new(Request $request , SluggerInterface $slugger): Response
@@ -126,6 +129,7 @@ class DisciplineController extends AbstractController
     }
 
     /**
+     * @IsGranted("ROLE_ADMIN")
      * @Route("/{id}", name="discipline_show", methods={"GET"})
      */
     public function show(Discipline $discipline): Response
@@ -136,6 +140,7 @@ class DisciplineController extends AbstractController
     }
 
     /**
+     * @IsGranted("ROLE_ADMIN")
      * @Route("/{id}/edit", name="discipline_edit", methods={"GET","POST"})
      */
     public function edit(Request $request, Discipline $discipline , SluggerInterface $slugger): Response
@@ -236,6 +241,7 @@ class DisciplineController extends AbstractController
     }
 
     /**
+     * @IsGranted("ROLE_ADMIN")
      * @Route("/{id}", name="discipline_delete", methods={"DELETE"})
      */
     public function delete(Request $request, Discipline $discipline): Response
@@ -250,6 +256,7 @@ class DisciplineController extends AbstractController
     }
 
     /**
+     * @IsGranted("ROLE_ADMIN")
      * @Route("/supprimer/{id}", name="supprimer_discipline")
      */
 public function supprimer( Discipline $discipline){
@@ -265,6 +272,7 @@ public function supprimer( Discipline $discipline){
 }
 
     /**
+     * @IsGranted("ROLE_ADMIN")
      * @Route("/activer/{id}", name="activer_discipline")
      */
     public function activerdiscipline( Discipline $discipline){
