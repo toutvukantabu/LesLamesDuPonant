@@ -8,6 +8,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
 /**
  * @Route("contact/message")
@@ -15,6 +17,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class ContactMessageController extends AbstractController
 {
     /**
+     * @IsGranted("ROLE_ADMIN")
      * @Route("/", name="contact_message_index", methods={"GET"})
      */
     public function index(ContactMessageRepository $contactMessageRepository): Response
@@ -48,7 +51,7 @@ class ContactMessageController extends AbstractController
         ]);
     }
 
-    /**
+    /**@IsGranted("ROLE_ADMIN")
      * @Route("/{id}", name="contact_message_show", methods={"GET"})
      */
     public function show(ContactMessage $contactMessage): Response
@@ -58,7 +61,7 @@ class ContactMessageController extends AbstractController
         ]);
     }
 
-    /**
+    /**@IsGranted("ROLE_ADMIN")
      * @Route("/{id}/edit", name="contact_message_edit", methods={"GET","POST"})
      */
     public function edit(Request $request, ContactMessage $contactMessage): Response
@@ -78,7 +81,7 @@ class ContactMessageController extends AbstractController
         ]);
     }
 
-    /**
+    /**@IsGranted("ROLE_ADMIN")
      * @Route("/{id}", name="contact_message_delete", methods={"DELETE"})
      */
     public function delete(Request $request, ContactMessage $contactMessage): Response
@@ -91,7 +94,7 @@ class ContactMessageController extends AbstractController
 
         return $this->redirectToRoute('admin');
     }
-    /**
+    /**@IsGranted("ROLE_ADMIN")
      * @Route("/supprimer/{id}", name="supprimer_contact_message")
      */
     public function supprimer( ContactMessage $contactMessage){
