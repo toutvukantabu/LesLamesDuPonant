@@ -5,24 +5,26 @@
 
 {% block logo %}
 <header>
-	{% if is_granted('IS_AUTHENTICATED_FULLY') and app.user.photoAvatarUser  != NULL %}
-	<div class="userAvatarHeader z-depth-2">	
+	<div class="userAvatarHeader">
+					{% if is_granted('IS_AUTHENTICATED_FULLY') and app.user.photoAvatarUser  != NULL %}
 			<img class="circle" src="{{ asset('uploads/avatar/' ~ app.user.photoAvatarUser )}}"
 				alt="avatar lame du Ponant amhe membre escrime médiévale">
-			{% elseif  is_granted('IS_AUTHENTICATED_FULLY')%}
-			<img class="circle responsive-img" src="{{asset('uploads/avatar.jpg')}}" alt="avatar lame du Ponant amhe">
 			{% else %}
-
+			<img class="circle responsive-img" src="{{asset('uploads/avatar.jpg')}}" alt="avatar lame du Ponant amhe">
 			{% endif %}
 			{% if is_granted('IS_AUTHENTICATED_FULLY') and app.user.pseudoUser != NULL %}
+			<p>Bonjour</p>
 			<p class="name">
-				{{app.user.pseudoUser}}</p>		</div>
+				{{app.user.pseudoUser}}</p>
 			{% elseif is_granted('IS_AUTHENTICATED_FULLY') and app.user.pseudoUser == NULL%}
-			<p class=" name">"Illustre inconnu n°{{app.user.id}}"</p>		</div>
-			{% else %}
-				
-					{% endif %}
-				
+			<p>Bonjour</p>
+			<p class=" name">"Illustre inconnu n°{{app.user.id}}"</p>
+				{% else %}
+				<p>Bonjour </p>
+				<p class=" name">"Illustre inconnu "
+				</p>
+				{% endif %}
+				</div>
 	<div class="container " id="HomeTitle">
 	
 		<div class="row">
@@ -49,12 +51,12 @@
 			<img class="circle" src="{{asset('uploads/avatar.jpg')}}" alt="avatar lame du Ponant amhe">
 			{% endif %}
 			{% if is_granted('IS_AUTHENTICATED_FULLY') and app.user.pseudoUser != NULL %}
-			<span class="name">
-				"{{app.user.pseudoUser}}"</span>
+			<span class="name">Bonjour
+				{{app.user.pseudoUser}}</span>
 			{% elseif is_granted('IS_AUTHENTICATED_FULLY') and app.user.pseudoUser == NULL%}
-			<span class=" name"> "Illustre inconnu n°{{app.user.id}}"
+			<span class=" name">Bonjour "Illustre inconnu n°{{app.user.id}}"
 				{% else %}
-				<span class=" name">"Illustre inconnu "
+				<span class=" name">Bonjour "Illustre inconnu "
 				</span>
 				{% endif %}
 		</div>
