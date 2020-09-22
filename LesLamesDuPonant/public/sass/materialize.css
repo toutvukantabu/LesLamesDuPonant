@@ -9852,7 +9852,7 @@ p {
   transition-duration: .6s;
 }
 
-/* Form login, register, password,Edit
+/* Form login, register, password,Edit, message
   *===============================
   */
 .formRegister,
@@ -9879,6 +9879,33 @@ p {
   margin-left: auto;
   margin-right: auto;
   max-height: 130px;
+}
+
+.userAvatarHeader {
+  -webkit-box-shadow: 0px 0px 50px 12px #b0a7b0f0;
+  box-shadow: 0px 0px 50px 12px #0e0d0ef0;
+  padding: 10px;
+  border-radius: 5px;
+  float: right;
+  height: 377px;
+  width: 160px;
+  height: 200px;
+  position: relative;
+  top: 24px;
+  right: 24px;
+  background-color: #03039352;
+}
+
+.userAvatarHeader img {
+  margin: 0 auto;
+  display: block;
+  height: 90px;
+  width: 90px;
+}
+
+.userAvatarHeader p {
+  color: #46454cf0;
+  text-align: center;
 }
 
 .sticky-nav {
@@ -10010,7 +10037,7 @@ p {
 }
 
 .disciplineHomeTitle {
-  margin-top: -100px;
+  margin-top: -145px;
   width: 300px;
   margin-left: -50px;
   margin-bottom: -15px;
@@ -10087,7 +10114,7 @@ p {
 .history-tl-container ul.tl li {
   list-style: none;
   margin: auto;
-  margin-left: 0px;
+  margin-left: 111px;
   min-height: 50px;
   max-height: 140px;
   border-left: 1px dashed #142dbb;
@@ -10101,7 +10128,7 @@ p {
   left: -11px;
   top: -5px;
   content: " ";
-  border: 8px solid rgba(255, 255, 255, 0.74);
+  border: 8px solid #142dbb;
   border-radius: 500%;
   height: 21px;
   width: 21px;
@@ -10131,7 +10158,7 @@ ul.tl li .timestamp {
   color: #05053b;
   position: absolute;
   width: 150px;
-  left: -250%;
+  left: -105%;
   text-align: right;
   font-size: 17px;
 }
@@ -10412,7 +10439,7 @@ table {
 }
 
 @media only screen and (max-width: 992px) {
-  h2 {
+  h2, h1 {
     font-size: 2.5rem;
   }
   h4 {
@@ -10420,6 +10447,12 @@ table {
   }
   h6 {
     font-size: 1.6rem;
+  }
+  .userAvatarHeader {
+    display: none;
+  }
+  .disciplineHomeTitle {
+    margin-top: -170px;
   }
   .page-footer .footerLameDuPonantCenter {
     border-left: none;
@@ -10463,14 +10496,6 @@ table {
         -ms-flex-direction: column-reverse;
             flex-direction: column-reverse;
   }
-  .flex-title-forum {
-    -webkit-box-ordinal-group: 2;
-        -ms-flex-order: 1;
-            order: 1;
-  }
-  .flex-title-forum h1 {
-    font-size: 2.5rem;
-  }
   #tableForum td, #tableForum th {
     padding: 0px;
   }
@@ -10483,7 +10508,8 @@ table {
 }
 
 .userEditFull img {
-  max-height: 100px;
+  height: 150px;
+  width: 130px;
   margin: 0 auto;
   display: block;
 }

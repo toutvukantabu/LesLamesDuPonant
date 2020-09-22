@@ -3,7 +3,7 @@
 {% block title 'Les disciplines' %}
 
 {% block body %}
-<h1 class="center-align disciplineTitle">Les disciplines des Lames Du Ponant</h3>
+<h1 class="center-align disciplineTitle">Les disciplines des Lames Du Ponant</h1>
     {% for discipline in disciplines %}
     {% if discipline.active == 1  and   discipline.orderDiscipline is divisible by(2)  %}
     {# Carousel discipline#}
@@ -21,16 +21,16 @@
                                 class="material-icons right middle-indicator-text">chevron_right</i></a>
                     </div>
                 </div>
-                <div class="carousel-item white-text" href="#one!">
+                <div class="carousel-item white-text" >
                     <img src="{{asset('/uploads/discipline/') ~ discipline.imageOneDiscipline }}"
                         alt="Discipline Lames Du Ponant {{ discipline.disciplinetitle}} " class=" ">
 
                 </div>
-                <div class="carousel-item white-text" href="#two!">
+                <div class="carousel-item white-text" >
                     <img src="{{asset('/uploads/discipline/') ~ discipline.imageTwoDiscipline }}"
                         alt="Discipline Lames Du Ponant {{ discipline.disciplinetitle}} " class=" ">
                 </div>
-                <div class="carousel-item  white-text" href="#three!">
+                <div class="carousel-item  white-text" >
                     <img src="{{asset('/uploads/discipline/') ~  discipline.imageThreeDiscipline }}"
                         alt="Discipline Lames Du Ponant {{ discipline.disciplinetitle}} " class=" ">
                 </div>
@@ -71,16 +71,16 @@
                                 class="material-icons right middle-indicator-text">chevron_right</i></a>
                     </div>
                 </div>
-                <div class="carousel-item white-text" href="#one!">
+                <div class="carousel-item white-text" >
                     <img src="{{asset('/uploads/discipline/') ~ discipline.imageOneDiscipline }}"
                         alt="Discipline Lames Du Ponant {{ discipline.disciplinetitle}} " class=" ">
 
                 </div>
-                <div class="carousel-item white-text" href="#two!">
+                <div class="carousel-item white-text" >
                     <img src="{{asset('/uploads/discipline/') ~ discipline.imageTwoDiscipline }}"
                         alt="Discipline Lames Du Ponant {{ discipline.disciplinetitle}} " class=" ">
                 </div>
-                <div class="carousel-item  white-text" href="#three!">
+                <div class="carousel-item  white-text" >
                     <img src="{{asset('/uploads/discipline/') ~  discipline.imageThreeDiscipline }}"
                         alt="Discipline Lames Du Ponant {{ discipline.disciplinetitle}} " class=" ">
                 </div>
