@@ -8,10 +8,14 @@
   <title>
     {% block title 'AMHE |Lame Du Ponant|escrime médievale'%}</title>
   {% block stylesheets %}
+  <link rel="preload" href="{{ asset('sass/materialize.css') }}" as="style">
   <!--Import Google Icon Font-->
+  <link   href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;446;500;600;700;800;900&display=swap"
     rel="stylesheet">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="{{ asset('sass/materialize.css') }}" media="screen" />
+  {# Captcha #}
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css">
   <!--open street map.css-->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
@@ -19,9 +23,6 @@
     crossorigin="" />
   {# FAVICO #}
   <link rel="shortcut icon" type="image/png" href="{{ asset('uploads/favico_ldp.png')}}" />
-  <!--Import materialize.css-->
-  <link type="text/css" rel="stylesheet" href="{{ asset('sass/materialize.css') }}" media="screen" />
-  {# Captcha #}
   <script src="https://www.google.com/recaptcha/api.js?render=6Lcohs4ZAAAAAGuKgpzN5kF9_oSZ1BLir6O2vKYV
 "></script>
   {% endblock %}
@@ -91,8 +92,7 @@
   </script>
   <!--Import jQuery before materialize.js-->
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-  <script  src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js">
-  </script>
+ 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
   <script src="{{ asset('js/bin/materialize.js') }}"></script>
   {% endblock %}

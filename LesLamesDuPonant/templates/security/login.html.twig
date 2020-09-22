@@ -8,30 +8,31 @@
 	<div class="row formRegister z-depth-5 ">
 		<form method="post">
 			{% if error %}
-				<div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+			<div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
 			{% endif %}
 
 			{% if app.user %}
-				<div class="mb-3">
-					You are logged in as
-					{{ app.user.username }},
-					<a href="{{ path('app_logout') }}">Logout</a>
-				</div>
+			<div class="mb-3">
+				You are logged in as
+				{{ app.user.username }},
+				<a href="{{ path('app_logout') }}">Logout</a>
+			</div>
 			{% endif %}
 
 			<h5 class="center-align ">Connexion "Lames Du Ponant"</h5>
 			<div class="input-field col s12 l12 m12 ">
 				<label for="inputEmail">Email</label>
-				<input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" required autofocus>
+				<input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control"
+					required autofocus>
 			</div>
 			<div class="input-field col s12 l12 m12">
 				<label for="inputPassword">Password</label>
 				<input type="password" name="password" id="inputPassword" class="form-control" required>
 			</div>
 			<div class=" col s12 l12 m12 loginResetPassword">
-					<a href="{{path('app_forgot_password_request')}} ">
+				<a href="{{path('app_forgot_password_request')}} ">
 					Mot de passe oublié ?</a>
-               
+
 			</div class="row">
 			<div class="col s6 l6 m6">
 				<button class="btn btn-lg btn-primary btnLogin" type="submit">
@@ -39,16 +40,16 @@
 				</button>
 			</div>
 			<div class="col s6 l6 m6">
-           <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
-				 <p>
+				<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+				<p>
 					<input type="checkbox" name="_remember_me" id="test5">
-				<label for="test5">	se souvenir de moi
-				</label> 
-                </p>
+					<label for="test5"> se souvenir de moi
+					</label>
+				</p>
 			</div>
-		</div>
+	</div>
 	</form>
 </div>
-</div 
+
 
 {% endblock %}

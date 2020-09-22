@@ -46,18 +46,12 @@
 
 
 //  Document Infomation
-// - Website:LLames Du Ponant
+// - Website:Lames Du Ponant
 // -version 1 ( version).0( maj majeur). 0 (patch)
 // author:Gwendal Bescont
 
-
-
 //  COLORS
 // defaut body text    
-// -h1   color:#fff;              
-// -h2   color:#fff              
-// -h3   color:#fff
-// -h4   color:#eee
 // -button
 // -button:hover
 // button:waves
@@ -126,15 +120,13 @@
 //GLOBAL
 //******************************************
 // Font size rem function
-$base-font-size: 20px;
-
-@function trim-unit($value) {
-  @return $value/($value * 0 +1);
-}
-
-@function rem-calc($value) {
-  @return $value/trim-unit($base-font-size) * 1rem
-};
+// $base-font-size: 20px;
+// @function trim-unit($value) {
+//   @return $value/($value * 0 +1);
+// }
+// @function rem-calc($value) {
+//   @return $value/trim-unit($base-font-size) * 1rem
+// };
 
 // global
 
@@ -674,17 +666,15 @@ margin-top: 50px;
 
 //Header
 .userAvatarHeader{
-  @include webkit-shadow2;
-  padding: 10px;
-  border-radius: 5px;
+  padding: 20px;
+  border-radius: 10px;
   float: right;
   height: 377px;
   width: 160px;
-  height: 200px;
+  height: 160px;
   position: relative;
   top: 24px;
   right: 24px;
-  background-color: #03039352;
   img{
     margin: 0 auto;
     display: block;
@@ -694,6 +684,8 @@ margin-top: 50px;
   p{
 color:#46454cf0;
     text-align: center;
+    line-height:10px;
+
   }
 }
 
