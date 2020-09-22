@@ -10,6 +10,8 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
 /**
  * @Route("admin/subject/forum")
@@ -17,9 +19,10 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class SubjectForumController extends AbstractController
 {
     /**
+     * @IsGranted("ROLE_ADMIN")
      * @Route("/", name="subject_forum_index", methods={"GET"})
      */
-    public function index(SubjectForumRepository $subjectForumRepository,CategoryForumRepository $categoryForumRepository): Response
+    public function index(SubjectForumRepository $subjectForumRepository, CategoryForumRepository $categoryForumRepository): Response
     {
         return $this->render('subject_forum/index.html.twig', [
             'subject_forums' => $subjectForumRepository->findAll(),
@@ -28,6 +31,7 @@ class SubjectForumController extends AbstractController
     }
 
     /**
+     * @IsGranted("ROLE_ADMIN")
      * @Route("/new", name="subject_forum_new", methods={"GET","POST"})
      */
     public function new(Request $request): Response
@@ -52,6 +56,7 @@ class SubjectForumController extends AbstractController
     }
 
     /**
+     * @IsGranted("ROLE_ADMIN")
      * @Route("/{id}", name="subject_forum_show", methods={"GET"})
      */
     public function show(SubjectForum $subjectForum): Response
@@ -62,6 +67,7 @@ class SubjectForumController extends AbstractController
     }
 
     /**
+     * @IsGranted("ROLE_ADMIN")
      * @Route("/{id}/edit", name="subject_forum_edit", methods={"GET","POST"})
      */
     public function edit(Request $request, SubjectForum $subjectForum): Response
@@ -82,11 +88,12 @@ class SubjectForumController extends AbstractController
     }
 
     /**
+     * @IsGranted("ROLE_ADMIN")
      * @Route("/{id}", name="subject_forum_delete", methods={"DELETE"})
      */
     public function delete(Request $request, SubjectForum $subjectForum): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$subjectForum->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $subjectForum->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($subjectForum);
             $entityManager->flush();
@@ -94,31 +101,34 @@ class SubjectForumController extends AbstractController
 
         return $this->redirectToRoute('subject_forum_index');
     }
-        /**
+    /**
+     * @IsGranted("ROLE_ADMIN")
      * @Route("/supprimer/{id}", name="supprimer_subject_forum")
      */
-    public function supprimer(  SubjectForum $subjectForum){
+    public function supprimer(SubjectForum $subjectForum)
+    {
 
         $entityManager = $this->getDoctrine()->getManager();
-        $entityManager->remove( $subjectForum);
+        $entityManager->remove($subjectForum);
         $entityManager->flush();
-        
+
         $this->addFlash(
             'how we are',
-            'supprimé avec succes!');
+            'supprimé avec succes!'
+        );
         return $this->redirectToRoute('subject_forum_index');
     }
-    
-         /**
-         * @Route("/activer/{id}", name="activer_subject_forum")
-         */
-        public function activer(  SubjectForum $subjectForum){
-    
-             $subjectForum->setActive(( $subjectForum->getActive())? false : true);
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist( $subjectForum);
-            $entityManager->flush();
-            return new Response ('true');
-           
-        }
+
+    /**
+     * @Route("/activer/{id}", name="activer_subject_forum")
+     */
+    public function activer(SubjectForum $subjectForum)
+    {
+
+        $subjectForum->setActive(($subjectForum->getActive()) ? false : true);
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->persist($subjectForum);
+        $entityManager->flush();
+        return new Response('true');
+    }
 }

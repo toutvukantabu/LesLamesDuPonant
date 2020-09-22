@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Controller;
+
 use App\Entity\ContactMessage;
 use App\Form\ContactMessageType;
 use App\Repository\ContactMessageRepository;
@@ -33,7 +34,7 @@ class ContactMessageController extends AbstractController
     public function new(Request $request): Response
     {
         $contactMessage = new ContactMessage();
-        $contactMessage ->setDateContactMessage(new \DateTime());
+        $contactMessage->setDateContactMessage(new \DateTime());
         $form = $this->createForm(ContactMessageType::class, $contactMessage);
         $form->handleRequest($request);
 
@@ -86,7 +87,7 @@ class ContactMessageController extends AbstractController
      */
     public function delete(Request $request, ContactMessage $contactMessage): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$contactMessage->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $contactMessage->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($contactMessage);
             $entityManager->flush();
@@ -97,15 +98,17 @@ class ContactMessageController extends AbstractController
     /**@IsGranted("ROLE_ADMIN")
      * @Route("/supprimer/{id}", name="supprimer_contact_message")
      */
-    public function supprimer( ContactMessage $contactMessage){
+    public function supprimer(ContactMessage $contactMessage)
+    {
 
         $entityManager = $this->getDoctrine()->getManager();
-        $entityManager->remove( $contactMessage);
+        $entityManager->remove($contactMessage);
         $entityManager->flush();
-        
+
         $this->addFlash(
             'how we are',
-            'supprimé avec succes!');
+            'supprimé avec succes!'
+        );
         return $this->redirectToRoute('contact_message_index');
     }
 }

@@ -10046,6 +10046,7 @@ $(document).ready(function(){
 
   $(".carouselHome").carousel({
     dist: 0,
+    
     padding:1000,
     indicators: false,
     numVisible: 4,

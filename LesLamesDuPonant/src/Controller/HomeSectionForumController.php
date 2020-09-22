@@ -9,6 +9,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
 /**
  * @Route("admin/section-forum")
@@ -16,6 +18,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class HomeSectionForumController extends AbstractController
 {
     /**
+     * @IsGranted("ROLE_ADMIN")
      * @Route("admin/", name="home_section_forum_index", methods={"GET"})
      */
     public function index(HomeSectionForumRepository $homeSectionForumRepository): Response
@@ -26,6 +29,7 @@ class HomeSectionForumController extends AbstractController
     }
 
     /**
+     * @IsGranted("ROLE_ADMIN")
      * @Route("/new", name="home_section_forum_new", methods={"GET","POST"})
      */
     public function new(Request $request): Response
@@ -49,6 +53,7 @@ class HomeSectionForumController extends AbstractController
     }
 
     /**
+     * @IsGranted("ROLE_ADMIN")
      * @Route("/{id}", name="home_section_forum_show", methods={"GET"})
      */
     public function show(HomeSectionForum $homeSectionForum): Response
@@ -59,6 +64,7 @@ class HomeSectionForumController extends AbstractController
     }
 
     /**
+     * @IsGranted("ROLE_ADMIN")
      * @Route("/{id}/edit", name="home_section_forum_edit", methods={"GET","POST"})
      */
     public function edit(Request $request, HomeSectionForum $homeSectionForum): Response
@@ -79,11 +85,12 @@ class HomeSectionForumController extends AbstractController
     }
 
     /**
+     * @IsGranted("ROLE_ADMIN")
      * @Route("/{id}", name="home_section_forum_delete", methods={"DELETE"})
      */
     public function delete(Request $request, HomeSectionForum $homeSectionForum): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$homeSectionForum->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $homeSectionForum->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($homeSectionForum);
             $entityManager->flush();
@@ -92,30 +99,34 @@ class HomeSectionForumController extends AbstractController
         return $this->redirectToRoute('home_section_forum_index');
     }
     /**
+     * @IsGranted("ROLE_ADMIN")
      * @Route("/supprimer/{id}", name="supprimer_Section")
      */
-    public function supprimer(   HomeSectionForum $homeSectionForum){
+    public function supprimer(HomeSectionForum $homeSectionForum)
+    {
 
         $entityManager = $this->getDoctrine()->getManager();
         $entityManager->remove($homeSectionForum);
         $entityManager->flush();
-        
+
         $this->addFlash(
             'how we are',
-            'supprimé avec succes!');
+            'supprimé avec succes!'
+        );
         return $this->redirectToRoute('home_section_forum_index');
     }
-    
-         /**
-         * @Route("/activer/{id}", name="activer_Section")
-         */
-        public function activer(  HomeSectionForum $homeSectionForum){
-    
-            $homeSectionForum->setActive(($homeSectionForum->getActive())? false : true);
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($homeSectionForum);
-            $entityManager->flush();
-            return new Response ('true');
-           
-        }
+
+    /**
+     * @IsGranted("ROLE_ADMIN")
+     * @Route("/activer/{id}", name="activer_Section")
+     */
+    public function activer(HomeSectionForum $homeSectionForum)
+    {
+
+        $homeSectionForum->setActive(($homeSectionForum->getActive()) ? false : true);
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->persist($homeSectionForum);
+        $entityManager->flush();
+        return new Response('true');
+    }
 }

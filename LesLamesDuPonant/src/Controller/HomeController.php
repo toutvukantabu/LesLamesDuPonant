@@ -19,18 +19,16 @@ class HomeController extends AbstractController
     /**
      * @Route("/", name="home")
      */
-    public function index(HowWeAreRepository $howWeAreRepository,HomePicturesRepository $homePicturesRepository,HomeDisciplineRepository $homeDisciplineRepository,UserRepository $userRepository, TimeStampRepository $timeStampRepository)
+    public function index(HowWeAreRepository $howWeAreRepository, HomePicturesRepository $homePicturesRepository, HomeDisciplineRepository $homeDisciplineRepository, UserRepository $userRepository, TimeStampRepository $timeStampRepository)
     {
 
         return $this->render('home/index.html.twig', [
             'controller_name' => 'HomeController',
             'users' => $userRepository->findAll(),
             'how_we_ares' => $howWeAreRepository->findAll(),
-            'time_stamp'=> $timeStampRepository->findall(),
+            'time_stamp' => $timeStampRepository->findall(),
             'home_disciplines' => $homeDisciplineRepository->findAll(),
             'home_pictures' => $homePicturesRepository->findAll(),
         ]);
     }
-
-  
 }

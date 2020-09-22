@@ -11,13 +11,15 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\String\Slugger\SluggerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\File\Exception\FileException;
-
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 /**
  * @Route("admin/LLDP")
  */
 class LesLamesDuPonantController extends AbstractController
 {
     /**
+     * @IsGranted("ROLE_ADMIN")
      * @Route("/", name="les_lames_du_ponant_index", methods={"GET"})
      */
     public function index(LesLamesDuPonantRepository $lesLamesDuPonantRepository): Response
@@ -28,6 +30,7 @@ class LesLamesDuPonantController extends AbstractController
     }
 
     /**
+     * @IsGranted("ROLE_ADMIN")
      * @Route("/new", name="les_lames_du_ponant_new", methods={"GET","POST"})
      */
     public function new(Request $request, SluggerInterface $slugger): Response
@@ -67,6 +70,7 @@ class LesLamesDuPonantController extends AbstractController
     }
 
     /**
+     * @IsGranted("ROLE_ADMIN")
      * @Route("/{id}", name="les_lames_du_ponant_show", methods={"GET"})
      */
     public function show(LesLamesDuPonant $lesLamesDuPonant): Response
@@ -77,6 +81,7 @@ class LesLamesDuPonantController extends AbstractController
     }
 
     /**
+     * @IsGranted("ROLE_ADMIN")
      * @Route("/{id}/edit", name="les_lames_du_ponant_edit", methods={"GET","POST"})
      */
     public function edit(Request $request, LesLamesDuPonant $lesLamesDuPonant, SluggerInterface $slugger): Response
@@ -113,6 +118,7 @@ class LesLamesDuPonantController extends AbstractController
     }
 
     /**
+     * @IsGranted("ROLE_ADMIN")
      * @Route("/{id}", name="les_lames_du_ponant_delete", methods={"DELETE"})
      */
     public function delete(Request $request, LesLamesDuPonant $lesLamesDuPonant): Response
@@ -126,6 +132,7 @@ class LesLamesDuPonantController extends AbstractController
         return $this->redirectToRoute('les_lames_du_ponant_index');
     }
     /**
+     * @IsGranted("ROLE_ADMIN")
      * @Route("/supprimer/{id}", name="supprimer_les_lames_du_ponant")
      */
     public function supprimer(  LesLamesDuPonant $lesLamesDuPonant){
@@ -141,6 +148,7 @@ class LesLamesDuPonantController extends AbstractController
     }
     
          /**
+          * @IsGranted("ROLE_ADMIN")
          * @Route("/activer/{id}", name="activer_les_lames_du_ponant")
          */
         public function activer(  LesLamesDuPonant $lesLamesDuPonant){

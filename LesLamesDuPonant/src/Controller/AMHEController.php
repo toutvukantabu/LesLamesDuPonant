@@ -53,7 +53,8 @@ class AMHEController extends AbstractController
                         $this->getParameter('amhe_directory'),
                         $newFilename
                     );
-                } catch (FileException $e) {}
+                } catch (FileException $e) {
+                }
 
                 $aMHE->setphotoOneAMHE($newFilename);
             }
@@ -72,7 +73,8 @@ class AMHEController extends AbstractController
                         $this->getParameter('amhe_directory'),
                         $newFilename
                     );
-                } catch (FileException $e) {}
+                } catch (FileException $e) {
+                }
 
                 $aMHE->setphotoTwoAMHE($newFilename);
             }
@@ -91,7 +93,8 @@ class AMHEController extends AbstractController
                         $this->getParameter('amhe_directory'),
                         $newFilename
                     );
-                } catch (FileException $e) {}
+                } catch (FileException $e) {
+                }
 
                 $aMHE->setphotoThreeAMHE($newFilename);
             }
@@ -140,7 +143,8 @@ class AMHEController extends AbstractController
                         $this->getParameter('amhe_directory'),
                         $newFilename
                     );
-                } catch (FileException $e) {}
+                } catch (FileException $e) {
+                }
 
                 $aMHE->setphotoOneAMHE($newFilename);
             }
@@ -159,7 +163,8 @@ class AMHEController extends AbstractController
                         $this->getParameter('amhe_directory'),
                         $newFilename
                     );
-                } catch (FileException $e) {}
+                } catch (FileException $e) {
+                }
 
                 $aMHE->setphotoTwoAMHE($newFilename);
             }
@@ -178,7 +183,8 @@ class AMHEController extends AbstractController
                         $this->getParameter('amhe_directory'),
                         $newFilename
                     );
-                } catch (FileException $e) {}
+                } catch (FileException $e) {
+                }
 
                 $aMHE->setphotoThreeAMHE($newFilename);
             }
@@ -199,7 +205,7 @@ class AMHEController extends AbstractController
      */
     public function delete(Request $request, AMHE $aMHE): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$aMHE->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $aMHE->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($aMHE);
             $entityManager->flush();
@@ -207,35 +213,35 @@ class AMHEController extends AbstractController
 
         return $this->redirectToRoute('amhe_index');
     }
-  /**
-   * @IsGranted("ROLE_ADMIN")
+    /**
+     * @IsGranted("ROLE_ADMIN")
      * @Route("/supprimer/{id}", name="supprimer_amhe")
      */
-    public function supprimer( AMHE  $aMHE){
+    public function supprimer(AMHE  $aMHE)
+    {
 
         $entityManager = $this->getDoctrine()->getManager();
         $entityManager->remove($aMHE);
         $entityManager->flush();
-        
+
         $this->addFlash(
             'how we are',
-            'supprimé avec succes!');
+            'supprimé avec succes!'
+        );
         return $this->redirectToRoute('how_we_are_index');
     }
-    
-         /**
-          * @IsGranted("ROLE_ADMIN")
-         * @Route("/activer/{id}", name="activer_amhe")
-         */
-        public function activerAMHE ( AMHE  $aMHE){
-    
-            $aMHE->setActive(($aMHE->getActive())? false : true);
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($aMHE);
-            $entityManager->flush();
-            return new Response ('true');
-           
 
-        }
+    /**
+     * @IsGranted("ROLE_ADMIN")
+     * @Route("/activer/{id}", name="activer_amhe")
+     */
+    public function activerAMHE(AMHE  $aMHE)
+    {
 
+        $aMHE->setActive(($aMHE->getActive()) ? false : true);
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->persist($aMHE);
+        $entityManager->flush();
+        return new Response('true');
+    }
 }
