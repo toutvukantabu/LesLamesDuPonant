@@ -65,13 +65,14 @@
 	{% if is_granted('IS_AUTHENTICATED_FULLY')%}
 	{% if is_granted('ROLE_ADMIN') or is_granted('ROLE_SUPER_ADMINISTRATEUR') %}
 	<li>
-		<a href="{{path('message_forum_index')}}">
+		<a class=" waves-light waves-effect" href="{{path('admin')}}">Administration</a>
+	</li>
+	<li>
+		<a href="{{path('contact_message_index')}}">
 			<span>Messagerie</span>
 		</a>
 	</li>
-	<li>
-		<a class=" waves-light waves-effect" href="{{path('admin')}}">Administration</a>
-	</li>
+				<li><a href="{{ path('time_stamp_index') }}">Ajouter évènement</a></li>
 	{% endif %}
 	<li>
 		<a class="waves-light waves-effect" href="{{path('user_edit',{'id': app.user.id })}}">
@@ -149,6 +150,7 @@
 				<li>
 					<a href="{{path('admin')}}">Administration</a>
 				</li>
+	
 				{% endif %}
 			</ul>
 			<ul class="right hide-on-med-and-down">
@@ -361,8 +363,8 @@
 				<a href="{{ path('mentions_legale') }}">
 					<span>Mentions Légales</span>
 				</a>
-				<a href="{{path('les_infos')}}#faq">
-					<span>F.A.Q</span>
+				<a href="{{path('site_map')}}">
+					<span>Site-Map</span>
 				</a>
 			</div>
 		</div>

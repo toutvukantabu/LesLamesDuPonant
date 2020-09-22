@@ -19,7 +19,8 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
  */
 class DisciplineController extends AbstractController
 {
-    /**@IsGranted("ROLE_USER")
+    /**
+     * @IsGranted("ROLE_ADMIN")
      * @Route("/", name="discipline_index", methods={"GET"})
      */
     public function index(DisciplineRepository $disciplineRepository): Response

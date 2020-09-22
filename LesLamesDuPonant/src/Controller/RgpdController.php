@@ -18,17 +18,26 @@ class RgpdController extends AbstractController
             'rgpd' => 'rgpd',
         ]);
     }
-
-/**
- * @route ("/mentions-legales", name="mentions_legale")
- */
-      public function politiquedeconf()
-    {
-        return $this->render('rgpd/mentions_legales.html.twig', [
-            'politique_de_confidentialité' => 'Politique de confidentialité',
-        ]);
-    }
-
+    
+    /**
+     * @route ("/mentions-legales", name="mentions_legale")
+     */
+          public function politiquedeconf()
+        {
+            return $this->render('rgpd/mentions_legales.html.twig', [
+               
+            ]);
+        }
+    /**
+     * @route ("/site-map", name="site_map")
+     */
+          public function siteMap()
+        {
+            return $this->render('rgpd/site_map.html.twig', [
+              
+            ]);
+        }
+    
 }
 
 
