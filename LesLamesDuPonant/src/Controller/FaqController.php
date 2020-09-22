@@ -90,7 +90,7 @@ class FaqController extends AbstractController
      */
     public function delete(Request $request, Faq $faq): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$faq->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $faq->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($faq);
             $entityManager->flush();
@@ -102,15 +102,17 @@ class FaqController extends AbstractController
      * @IsGranted("ROLE_ADMIN")
      * @Route("/supprimer/{id}", name="supprimer_FAQ")
      */
-    public function supprimer( Faq $faq){
+    public function supprimer(Faq $faq)
+    {
 
         $entityManager = $this->getDoctrine()->getManager();
-        $entityManager->remove( $faq);
+        $entityManager->remove($faq);
         $entityManager->flush();
-        
+
         $this->addFlash(
             'how we are',
-            'supprimé avec succes!');
+            'supprimé avec succes!'
+        );
         return $this->redirectToRoute('faq_index');
     }
 }

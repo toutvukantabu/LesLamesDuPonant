@@ -11,6 +11,8 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\String\Slugger\SluggerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\File\Exception\FileException;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
 /**
  * @Route("admin/photo-accueil")
@@ -18,6 +20,7 @@ use Symfony\Component\HttpFoundation\File\Exception\FileException;
 class HomePicturesController extends AbstractController
 {
     /**
+     * @IsGranted("ROLE_ADMIN")
      * @Route("/", name="home_pictures_index", methods={"GET"})
      */
     public function index(HomePicturesRepository $homePicturesRepository): Response
@@ -28,15 +31,16 @@ class HomePicturesController extends AbstractController
     }
 
     /**
+     * @IsGranted("ROLE_ADMIN")
      * @Route("/new", name="home_pictures_new", methods={"GET","POST"})
      */
-    public function new(Request $request , SluggerInterface $slugger): Response
+    public function new(Request $request, SluggerInterface $slugger): Response
     {
         $homePicture = new HomePictures();
         $form = $this->createForm(HomePicturesType::class, $homePicture);
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {  
+        if ($form->isSubmitted() && $form->isValid()) {
             $homeLogoPicture = $form->get('homeLogoPicture')->getData();
 
             if ($homeLogoPicture) {
@@ -58,7 +62,8 @@ class HomePicturesController extends AbstractController
                 // met à jour la propriété 'homeLogoPicture' pour stocker le nom du fichier PDF
                 // au lieu de son contenu
                 $homePicture->sethomeLogoPicture($newFilename);
-            }    $homeTitlePicture = $form->get('homeTitlePicture')->getData();
+            }
+            $homeTitlePicture = $form->get('homeTitlePicture')->getData();
 
             if ($homeTitlePicture) {
                 $originalFilename = pathinfo($homeTitlePicture->getClientOriginalName(), PATHINFO_FILENAME);
@@ -93,7 +98,8 @@ class HomePicturesController extends AbstractController
                         $this->getParameter('homepicture_directory'),
                         $newFilename
                     );
-                } catch (FileException $e) {}
+                } catch (FileException $e) {
+                }
 
                 $homePicture->sethomeParallax1($newFilename);
             }
@@ -110,7 +116,8 @@ class HomePicturesController extends AbstractController
                         $this->getParameter('homepicture_directory'),
                         $newFilename
                     );
-                } catch (FileException $e) {}
+                } catch (FileException $e) {
+                }
 
                 $homePicture->sethomeParallax2($newFilename);
             }
@@ -128,6 +135,7 @@ class HomePicturesController extends AbstractController
     }
 
     /**
+     * @IsGranted("ROLE_ADMIN")
      * @Route("/{id}", name="home_pictures_show", methods={"GET"})
      */
     public function show(HomePictures $homePicture): Response
@@ -138,6 +146,7 @@ class HomePicturesController extends AbstractController
     }
 
     /**
+     * @IsGranted("ROLE_ADMIN")
      * @Route("/{id}/edit", name="home_pictures_edit", methods={"GET","POST"})
      */
     public function edit(Request $request, HomePictures $homePicture, SluggerInterface $slugger): Response
@@ -145,7 +154,8 @@ class HomePicturesController extends AbstractController
         $form = $this->createForm(HomePicturesType::class, $homePicture);
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {  $homeLogoPicture = $form->get('homeLogoPicture')->getData();
+        if ($form->isSubmitted() && $form->isValid()) {
+            $homeLogoPicture = $form->get('homeLogoPicture')->getData();
 
             if ($homeLogoPicture) {
                 $originalFilename = pathinfo($homeLogoPicture->getClientOriginalName(), PATHINFO_FILENAME);
@@ -196,7 +206,8 @@ class HomePicturesController extends AbstractController
                         $this->getParameter('homepicture_directory'),
                         $newFilename
                     );
-                } catch (FileException $e) {}
+                } catch (FileException $e) {
+                }
 
                 $homePicture->sethomeParallax1($newFilename);
             }
@@ -213,7 +224,8 @@ class HomePicturesController extends AbstractController
                         $this->getParameter('homepicture_directory'),
                         $newFilename
                     );
-                } catch (FileException $e) {}
+                } catch (FileException $e) {
+                }
 
                 $homePicture->sethomeParallax2($newFilename);
             }
@@ -228,40 +240,43 @@ class HomePicturesController extends AbstractController
         ]);
     }
 
-   
-      /**
+
+    /**
+     * @IsGranted("ROLE_ADMIN")
      * @Route("/supprimer/{id}", name="supprimer_home_pictures")
      */
-public function supprimer( HomePictures $homePicture){
+    public function supprimer(HomePictures $homePicture)
+    {
 
-    $entityManager = $this->getDoctrine()->getManager();
-    $entityManager->remove($homePicture);
-    $entityManager->flush();
-    
-    $this->addFlash(
-        'how we are',
-        'supprimé avec succes!');
-    return $this->redirectToRoute('home_pictures_index');
-}
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->remove($homePicture);
+        $entityManager->flush();
 
-/**
+        $this->addFlash(
+            'how we are',
+            'supprimé avec succes!'
+        );
+        return $this->redirectToRoute('home_pictures_index');
+    }
+
+    /**
+     * @IsGranted("ROLE_ADMIN")
      * @Route("/activer/{id}", name="activer_home_pictures")
      */
-    public function activerHomePictures( HomePictures $homePicture){
+    public function activerHomePictures(HomePictures $homePicture)
+    {
 
-        $homePicture->setActive(($homePicture->getActive())? false : true);
+        $homePicture->setActive(($homePicture->getActive()) ? false : true);
         $entityManager = $this->getDoctrine()->getManager();
         $entityManager->persist($homePicture);
         $entityManager->flush();
-        return new Response ('true');
-       
+        return new Response('true');
     }
 
-        public function displayLogo(HomePicturesRepository $homePicturesRepository): Response
+    public function displayLogo(HomePicturesRepository $homePicturesRepository): Response
     {
         return $this->render('home_pictures/logo.html.twig', [
             'logo' => $homePicturesRepository->findAll(),
         ]);
     }
-
 }

@@ -22,7 +22,7 @@ class AdminController extends AbstractController
      * @IsGranted("ROLE_ADMIN")
      * @Route("/admin", name="admin")
      */
-    public function index(LesLamesDuPonantRepository $lesLamesDuPonantRepository,HomePicturesRepository $homePicturesRepository,AMHERepository $aMHERepository,MedievalFamilyRepository $medievalFamilyRepository,HomeDisciplineRepository $homeDisciplineRepository,ContactMessageRepository $contactMessageRepository,TimeStampRepository $timeStampRepository,UserRepository $userRepository )
+    public function index(LesLamesDuPonantRepository $lesLamesDuPonantRepository, HomePicturesRepository $homePicturesRepository, AMHERepository $aMHERepository, MedievalFamilyRepository $medievalFamilyRepository, HomeDisciplineRepository $homeDisciplineRepository, ContactMessageRepository $contactMessageRepository, TimeStampRepository $timeStampRepository, UserRepository $userRepository)
     {
         return $this->render('admin.html.twig', [
             'controller_name' => 'AdminController',
@@ -31,10 +31,10 @@ class AdminController extends AbstractController
             'contact_messages' => $contactMessageRepository->findAll(),
             'home_disciplines' => $homeDisciplineRepository->findAll(),
             'medieval_families' => $medievalFamilyRepository->findAll(),
-            'amhes' => $aMHERepository->findAll(),  
+            'amhes' => $aMHERepository->findAll(),
             'home_pictures' => $homePicturesRepository->findAll(),
             'les_lames_du_ponants' => $lesLamesDuPonantRepository->findAll(),
-          
+
 
         ]);
     }

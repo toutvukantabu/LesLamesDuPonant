@@ -11,6 +11,8 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\String\Slugger\SluggerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\File\Exception\FileException;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
 /**
  * @Route("admin/info")
@@ -18,6 +20,7 @@ use Symfony\Component\HttpFoundation\File\Exception\FileException;
 class HomeInfoController extends AbstractController
 {
     /**
+     * @IsGranted("ROLE_ADMIN")
      * @Route("/", name="home_info_index", methods={"GET"})
      */
     public function index(HomeInfoRepository $homeInfoRepository): Response
@@ -28,6 +31,7 @@ class HomeInfoController extends AbstractController
     }
 
     /**
+     * @IsGranted("ROLE_ADMIN")
      * @Route("/new", name="home_info_new", methods={"GET","POST"})
      */
     public function new(Request $request, SluggerInterface $slugger): Response
@@ -37,7 +41,7 @@ class HomeInfoController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-          $imageOneInfo = $form->get('imageOneInfo')->getData();
+            $imageOneInfo = $form->get('imageOneInfo')->getData();
 
             if ($imageOneInfo) {
                 $originalFilename = pathinfo($imageOneInfo->getClientOriginalName(), PATHINFO_FILENAME);
@@ -45,30 +49,32 @@ class HomeInfoController extends AbstractController
                 $newFilename = $safeFilename . '-' . uniqid() . '.' . $imageOneInfo->guessExtension();
 
                 try {
-                  $imageOneInfo->move(
+                    $imageOneInfo->move(
                         $this->getParameter('info_directory'),
                         $newFilename
                     );
-                } catch (FileException $e) {}
+                } catch (FileException $e) {
+                }
 
                 $homeInfo->setImageOneInfo($newFilename);
             }
             /** Fin du code à ajouter **/
 
             /** Début du code à ajouter **/
-           $imageTwoInfo = $form->get('imageTwoInfo')->getData();
+            $imageTwoInfo = $form->get('imageTwoInfo')->getData();
 
             if ($imageTwoInfo) {
                 $originalFilename = pathinfo($imageTwoInfo->getClientOriginalName(), PATHINFO_FILENAME);
                 $safeFilename = $slugger->slug($originalFilename);
-                $newFilename = $safeFilename . '-' . uniqid() . '.' .$imageTwoInfo->guessExtension();
+                $newFilename = $safeFilename . '-' . uniqid() . '.' . $imageTwoInfo->guessExtension();
 
                 try {
-                   $imageTwoInfo->move(
+                    $imageTwoInfo->move(
                         $this->getParameter('info_directory'),
                         $newFilename
                     );
-                } catch (FileException $e) {}
+                } catch (FileException $e) {
+                }
 
                 $homeInfo->setImageTwoInfo($newFilename);
             }
@@ -87,7 +93,8 @@ class HomeInfoController extends AbstractController
                         $this->getParameter('info_directory'),
                         $newFilename
                     );
-                } catch (FileException $e) {}
+                } catch (FileException $e) {
+                }
 
                 $homeInfo->setImageThreeInfo($newFilename);
             }
@@ -105,6 +112,7 @@ class HomeInfoController extends AbstractController
     }
 
     /**
+     * @IsGranted("ROLE_ADMIN")
      * @Route("/{id}", name="home_info_show", methods={"GET"})
      */
     public function show(HomeInfo $homeInfo): Response
@@ -115,6 +123,7 @@ class HomeInfoController extends AbstractController
     }
 
     /**
+     * @IsGranted("ROLE_ADMIN")
      * @Route("/{id}/edit", name="home_info_edit", methods={"GET","POST"})
      */
     public function edit(Request $request, HomeInfo $homeInfo, SluggerInterface $slugger): Response
@@ -123,7 +132,7 @@ class HomeInfoController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-          $imageOneInfo = $form->get('imageOneInfo')->getData();
+            $imageOneInfo = $form->get('imageOneInfo')->getData();
 
             if ($imageOneInfo) {
                 $originalFilename = pathinfo($imageOneInfo->getClientOriginalName(), PATHINFO_FILENAME);
@@ -131,30 +140,32 @@ class HomeInfoController extends AbstractController
                 $newFilename = $safeFilename . '-' . uniqid() . '.' . $imageOneInfo->guessExtension();
 
                 try {
-                  $imageOneInfo->move(
+                    $imageOneInfo->move(
                         $this->getParameter('info_directory'),
                         $newFilename
                     );
-                } catch (FileException $e) {}
+                } catch (FileException $e) {
+                }
 
                 $homeInfo->setImageOneInfo($newFilename);
             }
             /** Fin du code à ajouter **/
 
             /** Début du code à ajouter **/
-           $imageTwoInfo = $form->get('imageTwoInfo')->getData();
+            $imageTwoInfo = $form->get('imageTwoInfo')->getData();
 
             if ($imageTwoInfo) {
                 $originalFilename = pathinfo($imageTwoInfo->getClientOriginalName(), PATHINFO_FILENAME);
                 $safeFilename = $slugger->slug($originalFilename);
-                $newFilename = $safeFilename . '-' . uniqid() . '.' .$imageTwoInfo->guessExtension();
+                $newFilename = $safeFilename . '-' . uniqid() . '.' . $imageTwoInfo->guessExtension();
 
                 try {
-                   $imageTwoInfo->move(
+                    $imageTwoInfo->move(
                         $this->getParameter('info_directory'),
                         $newFilename
                     );
-                } catch (FileException $e) {}
+                } catch (FileException $e) {
+                }
 
                 $homeInfo->setImageTwoInfo($newFilename);
             }
@@ -173,7 +184,8 @@ class HomeInfoController extends AbstractController
                         $this->getParameter('info_directory'),
                         $newFilename
                     );
-                } catch (FileException $e) {}
+                } catch (FileException $e) {
+                }
 
                 $homeInfo->setImageThreeInfo($newFilename);
             }
@@ -189,11 +201,12 @@ class HomeInfoController extends AbstractController
     }
 
     /**
+     * @IsGranted("ROLE_ADMIN")
      * @Route("/{id}", name="home_info_delete", methods={"DELETE"})
      */
     public function delete(Request $request, HomeInfo $homeInfo): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$homeInfo->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $homeInfo->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($homeInfo);
             $entityManager->flush();
@@ -201,33 +214,35 @@ class HomeInfoController extends AbstractController
 
         return $this->redirectToRoute('home_info_index');
     }
-     /**
+    /**
+     * @IsGranted("ROLE_ADMIN")
      * @Route("/supprimer/{id}", name="supprimer_home_info")
      */
-    public function supprimer(  HomeInfo $homeInfo){
+    public function supprimer(HomeInfo $homeInfo)
+    {
 
         $entityManager = $this->getDoctrine()->getManager();
         $entityManager->remove($homeInfo);
         $entityManager->flush();
-        
+
         $this->addFlash(
             'how we are',
-            'supprimé avec succes!');
+            'supprimé avec succes!'
+        );
         return $this->redirectToRoute('how_we_are_index');
     }
-    
-         /**
-         * @Route("/activer/{id}", name="activer_home_info")
-         */
-        public function activerdiscipline(  HomeInfo $homeInfo){
-    
-            $homeInfo->setActive(($homeInfo->getActive())? false : true);
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($homeInfo);
-            $entityManager->flush();
-            return new Response ('true');
-           
-        }
 
+    /**
+     * @IsGranted("ROLE_ADMIN")
+     * @Route("/activer/{id}", name="activer_home_info")
+     */
+    public function activerdiscipline(HomeInfo $homeInfo)
+    {
 
+        $homeInfo->setActive(($homeInfo->getActive()) ? false : true);
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->persist($homeInfo);
+        $entityManager->flush();
+        return new Response('true');
+    }
 }

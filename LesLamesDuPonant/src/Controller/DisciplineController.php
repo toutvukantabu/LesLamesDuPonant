@@ -33,23 +33,24 @@ class DisciplineController extends AbstractController
      * @IsGranted("ROLE_ADMIN")
      * @Route("/new", name="discipline_new", methods={"GET","POST"})
      */
-    public function new(Request $request , SluggerInterface $slugger): Response
+    public function new(Request $request, SluggerInterface $slugger): Response
     {
         $discipline = new Discipline();
         $form = $this->createForm(DisciplineType::class, $discipline);
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) { $photoInstructor = $form->get('photoInstructor')->getData();
+        if ($form->isSubmitted() && $form->isValid()) {
+            $photoInstructor = $form->get('photoInstructor')->getData();
 
             if ($photoInstructor) {
                 $originalFilename = pathinfo($photoInstructor->getClientOriginalName(), PATHINFO_FILENAME);
                 // ceci est nécessaire pour inclure en toute sécurité le nom de fichier dans l'URL
                 $safeFilename = $slugger->slug($originalFilename);
-                $newFilename = $safeFilename . '-' . uniqid() . '.' .$photoInstructor->guessExtension();
+                $newFilename = $safeFilename . '-' . uniqid() . '.' . $photoInstructor->guessExtension();
 
                 // Déplacez le fichier dans le répertoire où les brochures sont stockées
                 try {
-                   $photoInstructor->move(
+                    $photoInstructor->move(
                         $this->getParameter('discipline_directory'),
                         $newFilename
                     );
@@ -60,8 +61,8 @@ class DisciplineController extends AbstractController
                 // met à jour la propriété 'photoInstructor' pour stocker le nom du fichier PDF
                 // au lieu de son contenu
                 $discipline->setPhotoInstructor($newFilename);
-            }   
-             $imageTwoDiscipline = $form->get('imageTwoDiscipline')->getData();
+            }
+            $imageTwoDiscipline = $form->get('imageTwoDiscipline')->getData();
 
             if ($imageTwoDiscipline) {
                 $originalFilename = pathinfo($imageTwoDiscipline->getClientOriginalName(), PATHINFO_FILENAME);
@@ -76,12 +77,11 @@ class DisciplineController extends AbstractController
                         $newFilename
                     );
                 } catch (FileException $e) {
-                  
                 }
 
                 $discipline->setImageTwoDiscipline($newFilename);
             }
-     
+
             $imageOneDiscipline = $form->get('imageOneDiscipline')->getData();
 
             if ($imageOneDiscipline) {
@@ -94,7 +94,8 @@ class DisciplineController extends AbstractController
                         $this->getParameter('discipline_directory'),
                         $newFilename
                     );
-                } catch (FileException $e) {}
+                } catch (FileException $e) {
+                }
 
                 $discipline->setImageOneDiscipline($newFilename);
             }
@@ -111,7 +112,8 @@ class DisciplineController extends AbstractController
                         $this->getParameter('discipline_directory'),
                         $newFilename
                     );
-                } catch (FileException $e) {}
+                } catch (FileException $e) {
+                }
 
                 $discipline->setImageThreeDiscipline($newFilename);
             }
@@ -143,24 +145,24 @@ class DisciplineController extends AbstractController
      * @IsGranted("ROLE_ADMIN")
      * @Route("/{id}/edit", name="discipline_edit", methods={"GET","POST"})
      */
-    public function edit(Request $request, Discipline $discipline , SluggerInterface $slugger): Response
+    public function edit(Request $request, Discipline $discipline, SluggerInterface $slugger): Response
     {
         $form = $this->createForm(DisciplineType::class, $discipline);
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {  
-            
-           $photoInstructor = $form->get('photoInstructor')->getData();
+        if ($form->isSubmitted() && $form->isValid()) {
+
+            $photoInstructor = $form->get('photoInstructor')->getData();
 
             if ($photoInstructor) {
                 $originalFilename = pathinfo($photoInstructor->getClientOriginalName(), PATHINFO_FILENAME);
                 // ceci est nécessaire pour inclure en toute sécurité le nom de fichier dans l'URL
                 $safeFilename = $slugger->slug($originalFilename);
-                $newFilename = $safeFilename . '-' . uniqid() . '.' .$photoInstructor->guessExtension();
+                $newFilename = $safeFilename . '-' . uniqid() . '.' . $photoInstructor->guessExtension();
 
                 // Déplacez le fichier dans le répertoire où les brochures sont stockées
                 try {
-                   $photoInstructor->move(
+                    $photoInstructor->move(
                         $this->getParameter('discipline_directory'),
                         $newFilename
                     );
@@ -171,8 +173,8 @@ class DisciplineController extends AbstractController
                 // met à jour la propriété 'photoInstructor' pour stocker le nom du fichier PDF
                 // au lieu de son contenu
                 $discipline->setPhotoInstructor($newFilename);
-            }    
-            
+            }
+
             $imageTwoDiscipline = $form->get('imageTwoDiscipline')->getData();
 
             if ($imageTwoDiscipline) {
@@ -208,7 +210,8 @@ class DisciplineController extends AbstractController
                         $this->getParameter('discipline_directory'),
                         $newFilename
                     );
-                } catch (FileException $e) {}
+                } catch (FileException $e) {
+                }
 
                 $discipline->setImageOneDiscipline($newFilename);
             }
@@ -225,7 +228,8 @@ class DisciplineController extends AbstractController
                         $this->getParameter('discipline_directory'),
                         $newFilename
                     );
-                } catch (FileException $e) {}
+                } catch (FileException $e) {
+                }
 
                 $discipline->setImageThreeDiscipline($newFilename);
             }
@@ -246,7 +250,7 @@ class DisciplineController extends AbstractController
      */
     public function delete(Request $request, Discipline $discipline): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$discipline->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $discipline->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($discipline);
             $entityManager->flush();
@@ -259,29 +263,31 @@ class DisciplineController extends AbstractController
      * @IsGranted("ROLE_ADMIN")
      * @Route("/supprimer/{id}", name="supprimer_discipline")
      */
-public function supprimer( Discipline $discipline){
+    public function supprimer(Discipline $discipline)
+    {
 
-    $entityManager = $this->getDoctrine()->getManager();
-    $entityManager->remove($discipline);
-    $entityManager->flush();
-    
-    $this->addFlash(
-        'how we are',
-        'supprimé avec succes!');
-    return $this->redirectToRoute('discipline_index');
-}
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->remove($discipline);
+        $entityManager->flush();
+
+        $this->addFlash(
+            'how we are',
+            'supprimé avec succes!'
+        );
+        return $this->redirectToRoute('discipline_index');
+    }
 
     /**
      * @IsGranted("ROLE_ADMIN")
      * @Route("/activer/{id}", name="activer_discipline")
      */
-    public function activerdiscipline( Discipline $discipline){
+    public function activerdiscipline(Discipline $discipline)
+    {
 
-        $discipline->setActive(($discipline->getActive())? false : true);
+        $discipline->setActive(($discipline->getActive()) ? false : true);
         $entityManager = $this->getDoctrine()->getManager();
         $entityManager->persist($discipline);
         $entityManager->flush();
-        return new Response ('true');
-       
+        return new Response('true');
     }
 }

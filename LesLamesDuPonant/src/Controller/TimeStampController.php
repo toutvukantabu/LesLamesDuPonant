@@ -9,6 +9,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
 /**
  * @Route("admin/timestamp")
@@ -16,6 +18,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class TimeStampController extends AbstractController
 {
     /**
+     * @IsGranted("ROLE_ADMIN")
      * @Route("/", name="time_stamp_index", methods={"GET"})
      */
     public function index(TimeStampRepository $timeStampRepository): Response
@@ -26,6 +29,7 @@ class TimeStampController extends AbstractController
     }
 
     /**
+     * @IsGranted("ROLE_ADMIN")
      * @Route("/new", name="time_stamp_new", methods={"GET","POST"})
      */
     public function new(Request $request): Response
@@ -49,6 +53,7 @@ class TimeStampController extends AbstractController
     }
 
     /**
+     * @IsGranted("ROLE_ADMIN")
      * @Route("/{id}", name="time_stamp_show", methods={"GET"})
      */
     public function show(TimeStamp $timeStamp): Response
@@ -59,6 +64,7 @@ class TimeStampController extends AbstractController
     }
 
     /**
+     * @IsGranted("ROLE_ADMIN")
      * @Route("/{id}/edit", name="time_stamp_edit", methods={"GET","POST"})
      */
     public function edit(Request $request, TimeStamp $timeStamp): Response
@@ -79,11 +85,12 @@ class TimeStampController extends AbstractController
     }
 
     /**
+     * @IsGranted("ROLE_ADMIN")
      * @Route("/{id}", name="time_stamp_delete", methods={"DELETE"})
      */
     public function delete(Request $request, TimeStamp $timeStamp): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$timeStamp->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $timeStamp->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($timeStamp);
             $entityManager->flush();
@@ -91,31 +98,35 @@ class TimeStampController extends AbstractController
 
         return $this->redirectToRoute('time_stamp_index');
     }
-        /**
+    /**
+     * @IsGranted("ROLE_ADMIN")
      * @Route("/supprimer/{id}", name="supprimer_time_stamp")
      */
-    public function supprimer(  TimeStamp $timeStamp){
+    public function supprimer(TimeStamp $timeStamp)
+    {
 
         $entityManager = $this->getDoctrine()->getManager();
-        $entityManager->remove(  $timeStamp);
+        $entityManager->remove($timeStamp);
         $entityManager->flush();
-        
+
         $this->addFlash(
             'how we are',
-            'supprimé avec succes!');
+            'supprimé avec succes!'
+        );
         return $this->redirectToRoute('time_stamp_index');
     }
-    
-         /**
-         * @Route("/activer/{id}", name="activer_time_stamp")
-         */
-        public function activer( TimeStamp $timeStamp){
-    
-            $timeStamp->setActive((  $timeStamp->getActive())? false : true);
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist(  $timeStamp);
-            $entityManager->flush();
-            return new Response ('true');
-           
-        }
+
+    /**
+     * @IsGranted("ROLE_ADMIN")
+     * @Route("/activer/{id}", name="activer_time_stamp")
+     */
+    public function activer(TimeStamp $timeStamp)
+    {
+
+        $timeStamp->setActive(($timeStamp->getActive()) ? false : true);
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->persist($timeStamp);
+        $entityManager->flush();
+        return new Response('true');
+    }
 }

@@ -1,6 +1,7 @@
 {% extends 'default.html.twig' %}
 {# LOGO #}
 {# ======================= #}
+
 {% block logo %}
 <header>
 	{% if is_granted('IS_AUTHENTICATED_FULLY') and app.user.photoAvatarUser  != NULL %}
@@ -236,6 +237,7 @@
 <div class="section white homeSectionActivity">
 	<h4 class="header center-align">Les disciplines</h4>
 	<div class="col s12 carousel center carouselHome " style="height: 600px;">
+
 		{% for home_discipline in home_disciplines %}
 		<div class="carousel-item">
 			<h5 class="center-align disciplineHomeTitle">{{ home_discipline.nameDiscipline }}</h5>

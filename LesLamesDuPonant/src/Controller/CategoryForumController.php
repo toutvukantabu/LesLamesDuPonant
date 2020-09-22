@@ -22,7 +22,7 @@ class CategoryForumController extends AbstractController
      * @IsGranted("ROLE_USER")
      * @Route("/", name="category_forum_index", methods={"GET"})
      */
-    public function index(CategoryForumRepository $categoryForumRepository ): Response
+    public function index(CategoryForumRepository $categoryForumRepository): Response
     {
         return $this->render('category_forum/index.html.twig', [
             'category_forums' => $categoryForumRepository->findAll(),
@@ -92,7 +92,7 @@ class CategoryForumController extends AbstractController
      */
     public function delete(Request $request, CategoryForum $categoryForum): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$categoryForum->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $categoryForum->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($categoryForum);
             $entityManager->flush();
@@ -100,36 +100,35 @@ class CategoryForumController extends AbstractController
 
         return $this->redirectToRoute('category_forum_index');
     }
-     /**
-      * @IsGranted("ROLE_ADMIN")
+    /**
+     * @IsGranted("ROLE_ADMIN")
      * @Route("/supprimer/{id}", name="supprimer_category_forum")
      */
-         public function supprimer( CategoryForum $categoryForum){
+    public function supprimer(CategoryForum $categoryForum)
+    {
 
         $entityManager = $this->getDoctrine()->getManager();
-        $entityManager->remove( $categoryForum);
+        $entityManager->remove($categoryForum);
         $entityManager->flush();
-        
+
         $this->addFlash(
             'how we are',
-            'supprimé avec succes!');
+            'supprimé avec succes!'
+        );
         return $this->redirectToRoute('category_forum_index');
     }
-    
-        /**
-         * @IsGranted("ROLE_ADMIN")
-         * @Route("/activer/{id}", name="activer_category_forum")
-         */
-        public function activerAMHE ( CategoryForum $categoryForum){
-    
-             $categoryForum->setActive(( $categoryForum->getActive())? false : true);
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist( $categoryForum);
-            $entityManager->flush();
-            return new Response ('true');
-           
 
-        }
+    /**
+     * @IsGranted("ROLE_ADMIN")
+     * @Route("/activer/{id}", name="activer_category_forum")
+     */
+    public function activerAMHE(CategoryForum $categoryForum)
+    {
 
-   
+        $categoryForum->setActive(($categoryForum->getActive()) ? false : true);
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->persist($categoryForum);
+        $entityManager->flush();
+        return new Response('true');
+    }
 }

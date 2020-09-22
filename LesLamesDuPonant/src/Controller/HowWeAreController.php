@@ -9,6 +9,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
 /**
 //  * @Route("admin/how/we/are")
@@ -16,6 +18,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class HowWeAreController extends AbstractController
 {
     /**
+     * @IsGranted("ROLE_ADMIN")
      * @Route("/", name="how_we_are_index", methods={"GET"})
      */
     public function index(HowWeAreRepository $howWeAreRepository): Response
@@ -26,6 +29,7 @@ class HowWeAreController extends AbstractController
     }
 
     /**
+     * @IsGranted("ROLE_ADMIN")
      * @Route("/new", name="how_we_are_new", methods={"GET","POST"})
      */
     public function new(Request $request): Response
@@ -49,6 +53,7 @@ class HowWeAreController extends AbstractController
     }
 
     /**
+     * @IsGranted("ROLE_ADMIN")
      * @Route("/{id}", name="how_we_are_show", methods={"GET"})
      */
     public function show(HowWeAre $howWeAre): Response
@@ -59,6 +64,7 @@ class HowWeAreController extends AbstractController
     }
 
     /**
+     * @IsGranted("ROLE_ADMIN")
      * @Route("/{id}/edit", name="how_we_are_edit", methods={"GET","POST"})
      */
     public function edit(Request $request, HowWeAre $howWeAre): Response
@@ -79,11 +85,12 @@ class HowWeAreController extends AbstractController
     }
 
     /**
+     * @IsGranted("ROLE_ADMIN")
      * @Route("/{id}", name="how_we_are_delete", methods={"DELETE"})
      */
     public function delete(Request $request, HowWeAre $howWeAre): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$howWeAre->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $howWeAre->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($howWeAre);
             $entityManager->flush();
@@ -92,35 +99,35 @@ class HowWeAreController extends AbstractController
         return $this->redirectToRoute('how_we_are_index');
     }
 
-     /**
+    /**
+     * @IsGranted("ROLE_ADMIN")
      * @Route("/supprimer/{id}", name="supprimer_how_we_are")
      */
-public function supprimerHowWeAre( HowWeAre $howWeAre){
+    public function supprimerHowWeAre(HowWeAre $howWeAre)
+    {
 
-    $entityManager = $this->getDoctrine()->getManager();
-    $entityManager->remove($howWeAre);
-    $entityManager->flush();
-    
-    $this->addFlash(
-        'how we are',
-        'supprimé avec succes!');
-    return $this->redirectToRoute('how_we_are_index');
-}
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->remove($howWeAre);
+        $entityManager->flush();
 
-/**
+        $this->addFlash(
+            'how we are',
+            'supprimé avec succes!'
+        );
+        return $this->redirectToRoute('how_we_are_index');
+    }
+
+    /**    
+     * @IsGranted("ROLE_ADMIN")
      * @Route("/activer/{id}", name="activer_how_we_are")
      */
-    public function activerHowWeAre( HowWeAre $howWeAre){
+    public function activerHowWeAre(HowWeAre $howWeAre)
+    {
 
-        $howWeAre->setActive(($howWeAre->getActive())? false : true);
+        $howWeAre->setActive(($howWeAre->getActive()) ? false : true);
         $entityManager = $this->getDoctrine()->getManager();
         $entityManager->persist($howWeAre);
         $entityManager->flush();
-        return new Response ('true');
-       
+        return new Response('true');
     }
-
 }
-
-
-

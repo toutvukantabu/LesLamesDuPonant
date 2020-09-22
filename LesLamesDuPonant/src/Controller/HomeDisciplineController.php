@@ -21,6 +21,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 class HomeDisciplineController extends AbstractController
 {
     /**
+     * @IsGranted("ROLE_ADMIN")
      * @Route("/", name="home_discipline_index", methods={"GET"})
      */
     public function index(HomeDisciplineRepository $homeDisciplineRepository): Response
@@ -31,6 +32,7 @@ class HomeDisciplineController extends AbstractController
     }
 
     /**
+     * @IsGranted("ROLE_ADMIN")
      * @Route("/new", name="home_discipline_new", methods={"GET","POST"})
      */
     public function new(Request $request, SluggerInterface $slugger): Response
@@ -118,7 +120,7 @@ class HomeDisciplineController extends AbstractController
             }
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('home_discipline_index',array('id' => $homeDiscipline ->getId()));
+            return $this->redirectToRoute('home_discipline_index', array('id' => $homeDiscipline->getId()));
         }
 
         return $this->render('home_discipline/edit.html.twig', [
@@ -128,11 +130,12 @@ class HomeDisciplineController extends AbstractController
     }
 
     /**
+     * @IsGranted("ROLE_ADMIN")
      * @Route("/{id}", name="home_discipline_delete", methods={"DELETE"})
      */
     public function delete(Request $request, HomeDiscipline $homeDiscipline): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$homeDiscipline->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $homeDiscipline->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($homeDiscipline);
             $entityManager->flush();
@@ -140,32 +143,35 @@ class HomeDisciplineController extends AbstractController
 
         return $this->redirectToRoute('admin');
     }
-       /**
+    /**
+     * @IsGranted("ROLE_ADMIN")
      * @Route("/supprimer/{id}", name="supprimer_home_discipline")
      */
-public function supprimer( HomeDiscipline $homeDiscipline){
+    public function supprimer(HomeDiscipline $homeDiscipline)
+    {
 
-    $entityManager = $this->getDoctrine()->getManager();
-    $entityManager->remove($homeDiscipline);
-    $entityManager->flush();
-    
-    $this->addFlash(
-        'how we are',
-        'supprimé avec succes!');
-    return $this->redirectToRoute('home_discipline_index');
-}
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->remove($homeDiscipline);
+        $entityManager->flush();
 
-/**
+        $this->addFlash(
+            'how we are',
+            'supprimé avec succes!'
+        );
+        return $this->redirectToRoute('home_discipline_index');
+    }
+
+    /**
+     * @IsGranted("ROLE_ADMIN")
      * @Route("/activer/{id}", name="activer_home_discipline")
      */
-    public function activerhomeDiscipline( HomeDiscipline $homeDiscipline){
+    public function activerhomeDiscipline(HomeDiscipline $homeDiscipline)
+    {
 
-        $homeDiscipline->setActive(($homeDiscipline->getActive())? false : true);
+        $homeDiscipline->setActive(($homeDiscipline->getActive()) ? false : true);
         $entityManager = $this->getDoctrine()->getManager();
         $entityManager->persist($homeDiscipline);
         $entityManager->flush();
-        return new Response ('true');
-       
+        return new Response('true');
     }
-
 }

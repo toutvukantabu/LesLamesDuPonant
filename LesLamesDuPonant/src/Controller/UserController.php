@@ -21,6 +21,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 class UserController extends AbstractController
 {
     /**
+     * @IsGranted("ROLE_ADMIN")
      * @Route("/", name="user_index", methods={"GET"})
      */
     public function index(UserRepository $userRepository): Response
@@ -31,6 +32,7 @@ class UserController extends AbstractController
     }
 
     /**
+     * @IsGranted("ROLE_ADMIN")
      * @Route("/new", name="user_new", methods={"GET","POST"})
      */
     public function new(Request $request): Response
@@ -54,17 +56,19 @@ class UserController extends AbstractController
     }
 
     /**
+     * @IsGranted("ROLE_ADMIN")
      * @Route("/{id}", name="user_show", methods={"GET"})
      */
     public function show(User $user): Response
     {
         return $this->render('user/show.html.twig', [
             'user' => $user,
-            
+
         ]);
     }
 
     /**
+     * @IsGranted("ROLE_USER")
      * @Route("/{id}/edit", name="user_edit", methods={"GET","POST"})
      */
     public function edit(Request $request, User $user, SluggerInterface $slugger): Response
@@ -98,8 +102,8 @@ class UserController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($user);
             $entityManager->flush();
-        
-            return $this->redirectToRoute('user_edit',['id'=> $user->getId()]); 
+
+            return $this->redirectToRoute('user_edit', ['id' => $user->getId()]);
         }
 
 
@@ -115,7 +119,7 @@ class UserController extends AbstractController
      */
     public function delete(Request $request, User $user): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$user->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $user->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($user);
             $entityManager->flush();
@@ -123,33 +127,35 @@ class UserController extends AbstractController
 
         return $this->redirectToRoute('admin');
     }
-     /**
+    /**
+     * @IsGranted("ROLE_ADMIN")
      * @Route("/supprimer/{id}", name="supprimer_user")
      */
-    public function supprimer( User $user){
+    public function supprimer(User $user)
+    {
 
         $entityManager = $this->getDoctrine()->getManager();
-        $entityManager->remove(  $user);
+        $entityManager->remove($user);
         $entityManager->flush();
-        
+
         $this->addFlash(
             'how we are',
-            'supprimé avec succes!');
+            'supprimé avec succes!'
+        );
         return $this->redirectToRoute('user_index');
     }
-    
-        /**
-         * @Route("/activer/{id}", name="activer_user")
-         */
-        public function activerAMHE ( User $user){
-    
-              $user->setActive((  $user->getActive())? false : true);
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist(  $user);
-            $entityManager->flush();
-            return new Response ('true');
-           
 
-        }
+    /**
+     * @IsGranted("ROLE_ADMIN")
+     * @Route("/activer/{id}", name="activer_user")
+     */
+    public function activerAMHE(User $user)
+    {
 
+        $user->setActive(($user->getActive()) ? false : true);
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->persist($user);
+        $entityManager->flush();
+        return new Response('true');
+    }
 }
