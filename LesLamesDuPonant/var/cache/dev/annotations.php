@@ -145,6 +145,8 @@ return [[
 '%5B%5BC%5DApp%5CController%5CHomeController%5D%5B1%5D' => 2,
 '%5BApp%5CController%5CHomeController%23index%5D%5B1%5D' => 42,
 '%5B%5BC%5DApp%5CController%5CHomeController%23index%5D%5B1%5D' => 2,
+'%5BApp%5CController%5CHomeController%23cacheHome%5D%5B1%5D' => 1,
+'%5B%5BC%5DApp%5CController%5CHomeController%23cacheHome%5D%5B1%5D' => 2,
 '%5BApp%5CController%5CHomeDisciplineController%5D%5B1%5D' => 43,
 '%5B%5BC%5DApp%5CController%5CHomeDisciplineController%5D%5B1%5D' => 2,
 '%5BApp%5CController%5CHomeDisciplineController%23index%5D%5B1%5D' => 44,
@@ -2156,7 +2158,7 @@ return [[
 
 0 => 'N;',
 1 => [],
-2 => 1600683868,
+2 => 1600766429,
 3 => static function () {
     return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
         $o = [

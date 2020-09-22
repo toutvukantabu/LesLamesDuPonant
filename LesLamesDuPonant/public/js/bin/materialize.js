@@ -8505,26 +8505,30 @@ if (Vel) {
     return {
 
       // The title label to use for the month nav buttons
-      labelMonthNext: 'Next month',
-      labelMonthPrev: 'Previous month',
+      labelMonthNext: 'mois suivant',
+      labelMonthPrev: 'mois précedent',
 
       // The title label to use for the dropdown selectors
-      labelMonthSelect: 'Select a month',
-      labelYearSelect: 'Select a year',
+      labelMonthSelect: 'Selectionnez un mois',
+      labelYearSelect: 'Selectionnez une année',
 
       // Months and weekdays
-      monthsFull: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
-      monthsShort: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-      weekdaysFull: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
-      weekdaysShort: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+      // monthsFull: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+      // monthsShort: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+      // weekdaysFull: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+      // weekdaysShort: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+      monthsFull: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
+      monthsShort: ['Jan', 'Fev', 'Mar', 'Avr', 'Mai', 'Jui', 'Juil', 'Auo', 'Sept', 'Oct', 'Nov', 'Dec'],
+      weekdaysFull: ['Dimanche','Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi'],
+      weekdaysShort: ['Dim', 'Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam'],
 
       // Materialize modified
-      weekdaysLetter: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
+      weekdaysLetter: ['D', 'L', 'M', 'M', 'J', 'V', 'S'],
 
       // Today and clear
-      today: 'Today',
-      clear: 'Clear',
-      close: 'Ok',
+      today: 'Aujourd\'hui',
+      clear: 'effacer',
+      close: 'valider',
 
       // Picker close behavior (Prevent a change in behaviour for backwards compatibility)
       closeOnSelect: false,
@@ -10164,9 +10168,9 @@ $('.datepicker').pickadate({
  format: 'dd-mm-yyyy',
  selectMonths: true, // Creates a dropdown to control month
  selectYears: 100, // Creates a dropdown of 15 years to control year,
- today: 'Today',
- clear: 'Clear',
- close: 'Ok',
+//  today: 'Today',
+//  clear: 'Clear',
+//  close: 'Ok',
  closeOnSelect: false, // Close upon selecting a date,
  container: 'form', // ex. 'body' will append picker to body
  

@@ -11,6 +11,8 @@ use App\Repository\HomePicturesRepository;
 use App\Repository\HomeDisciplineRepository;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Contracts\Cache\CacheInterface;
+use Symfony\Contracts\Cache\ItemInterface;
 
 class HomeController extends AbstractController
 {
@@ -19,6 +21,7 @@ class HomeController extends AbstractController
      */
     public function index(HowWeAreRepository $howWeAreRepository,HomePicturesRepository $homePicturesRepository,HomeDisciplineRepository $homeDisciplineRepository,UserRepository $userRepository, TimeStampRepository $timeStampRepository)
     {
+
         return $this->render('home/index.html.twig', [
             'controller_name' => 'HomeController',
             'users' => $userRepository->findAll(),
@@ -28,4 +31,6 @@ class HomeController extends AbstractController
             'home_pictures' => $homePicturesRepository->findAll(),
         ]);
     }
+
+  
 }
