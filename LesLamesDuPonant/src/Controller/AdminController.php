@@ -12,10 +12,14 @@ use App\Repository\MedievalFamilyRepository;
 use App\Repository\LesLamesDuPonantRepository;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
+
 
 class AdminController extends AbstractController
 {
     /**
+     * @IsGranted("ROLE_ADMIN")
      * @Route("/admin", name="admin")
      */
     public function index(LesLamesDuPonantRepository $lesLamesDuPonantRepository,HomePicturesRepository $homePicturesRepository,AMHERepository $aMHERepository,MedievalFamilyRepository $medievalFamilyRepository,HomeDisciplineRepository $homeDisciplineRepository,ContactMessageRepository $contactMessageRepository,TimeStampRepository $timeStampRepository,UserRepository $userRepository )

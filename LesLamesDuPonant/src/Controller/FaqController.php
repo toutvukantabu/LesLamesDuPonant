@@ -9,6 +9,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
 /**
  * @Route("admin/faq")
@@ -16,6 +18,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class FaqController extends AbstractController
 {
     /**
+     * @IsGranted("ROLE_USER")
      * @Route("/", name="faq_index", methods={"GET"})
      */
     public function index(FaqRepository $faqRepository): Response
@@ -26,6 +29,7 @@ class FaqController extends AbstractController
     }
 
     /**
+     * @IsGranted("ROLE_ADMIN")
      * @Route("/new", name="faq_new", methods={"GET","POST"})
      */
     public function new(Request $request): Response
@@ -49,6 +53,7 @@ class FaqController extends AbstractController
     }
 
     /**
+     * @IsGranted("ROLE_ADMIN")
      * @Route("/{id}", name="faq_show", methods={"GET"})
      */
     public function show(Faq $faq): Response
@@ -59,6 +64,7 @@ class FaqController extends AbstractController
     }
 
     /**
+     * @IsGranted("ROLE_ADMIN")
      * @Route("/{id}/edit", name="faq_edit", methods={"GET","POST"})
      */
     public function edit(Request $request, Faq $faq): Response
@@ -79,6 +85,7 @@ class FaqController extends AbstractController
     }
 
     /**
+     * @IsGranted("ROLE_ADMIN")
      * @Route("/{id}", name="faq_delete", methods={"DELETE"})
      */
     public function delete(Request $request, Faq $faq): Response
@@ -92,6 +99,7 @@ class FaqController extends AbstractController
         return $this->redirectToRoute('faq_index');
     }
     /**
+     * @IsGranted("ROLE_ADMIN")
      * @Route("/supprimer/{id}", name="supprimer_FAQ")
      */
     public function supprimer( Faq $faq){
