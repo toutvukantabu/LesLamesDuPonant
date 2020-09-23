@@ -9899,7 +9899,7 @@ p {
   float: right;
   height: 377px;
   width: 160px;
-  height: 160px;
+  height: 185px;
   position: relative;
   top: 24px;
   right: 24px;
@@ -9915,7 +9915,7 @@ p {
 .userAvatarHeader p {
   color: #46454cf0;
   text-align: center;
-  line-height: 10px;
+  line-height: 18px;
 }
 
 .sticky-nav {

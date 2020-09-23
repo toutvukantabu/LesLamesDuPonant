@@ -9,6 +9,7 @@
 			<img class="circle" src="{{ asset('uploads/avatar/' ~ app.user.photoAvatarUser )}}"
 				alt="avatar lame du Ponant amhe membre escrime médiévale">
 			{% elseif  is_granted('IS_AUTHENTICATED_FULLY')%}
+			<div class="userAvatarHeader z-depth-2">
 			<img class="circle responsive-img" src="{{asset('uploads/avatar.jpg')}}" alt="avatar lame du Ponant amhe">
 			{% else %}
 
@@ -17,9 +18,9 @@
 			<p class="name">
 				{{app.user.pseudoUser}}</p>		</div>
 			{% elseif is_granted('IS_AUTHENTICATED_FULLY') and app.user.pseudoUser == NULL%}
-			<p class=" name">"Illustre inconnu n°{{app.user.id}}"</p>		</div>
+			<p class=" name">"Illustre inconnu n°{{app.user.id}}"</p></div>
 			{% else %}
-				
+			
 					{% endif %}
 				
 	<div class="container " id="HomeTitle">
@@ -215,7 +216,7 @@
 			</p>
 			{% endfor %}
 			<div class="btnHome" align="center"><a class="hrefHome" href="{{path('les_amhe')}}#les-lames-du-ponant"
-					target="_blank" rel="nofollow"><span>En savoir plus</span></a>
+			 rel="nofollow"><span>En savoir plus</span></a>
 			</div>
 		</div>
 	</div>
