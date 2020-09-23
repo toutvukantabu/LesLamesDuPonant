@@ -8,6 +8,19 @@
   <title>
        {% block title 'AMHE |Lame Du Ponant|escrime médievale'%}</title>
   {% block stylesheets %}
+  <link  rel="preload" href="{{ asset('sass/materialize.css')}}" as="style" />
+  <script rel="preload" src="{{ asset('js/bin/materialize.js') }}" as="script"></script>
+  <link rel="preload" href="{{ asset('fonts/roboto/Roboto-Bold.woff') }}" as="font" crossorigin="anonymous" />
+  <link rel="preload" href="{{ asset('fonts/roboto/Roboto-Bold.woff2') }}" as="font" crossorigin="anonymous" />
+  <link rel="preload" href="{{ asset('fonts/roboto/Roboto-Light.woff') }}" as="font" crossorigin="anonymous" />
+  <link rel="preload" href="{{ asset('fonts/roboto/Roboto-Light.woff2') }}" as="font" crossorigin="anonymous" />
+  <link rel="preload" href="{{ asset('fonts/roboto/Roboto-Medium.woff') }}" as="font" crossorigin="anonymous" />
+  <link rel="preload" href="{{ asset('fonts/roboto/Roboto-Medium.woff2') }}" as="font" crossorigin="anonymous" />
+  <link rel="preload" href="{{ asset('fonts/roboto/Roboto-Regular.woff') }}" as="font" crossorigin="anonymous" />
+  <link rel="preload" href="{{ asset('fonts/roboto/Roboto-Regular.woff2') }}" as="font" crossorigin="anonymous" />
+  <link rel="preload" href="{{ asset('fonts/roboto/Roboto-Thin.woff') }}" as="font" crossorigin="anonymous" />
+  <link rel="preload" href="{{ asset('fonts/roboto/Roboto-Thin.woff2') }}" as="font" crossorigin="anonymous" />
+
   <!--Import Google Icon Font-->
   <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;446;500;600;700;800;900&display=swap"
     rel="stylesheet">
@@ -20,11 +33,10 @@
   {# FAVICO #}
   <link rel="shortcut icon" type="image/png" href="{{ asset('uploads/favico_ldp.png')}}" />
   <!--Import materialize.css-->
-  <link type="text/css" rel="stylesheet" href="{{ asset('sass/materialize.css') }}" media="screen" />
+  <link type="text/css" rel="stylesheet" href="{{ asset('sass/materialize.css')}}" media="screen" />
   {# Captcha #}
   <script src="https://www.google.com/recaptcha/api.js?render=6Lcohs4ZAAAAAGuKgpzN5kF9_oSZ1BLir6O2vKYV"></script>
   {% endblock %}
-  {% block Cookies %}
   <script src="{{ asset('js/bin//tarteaucitron.js/tarteaucitron.js')}}"></script>
   <script>
     tarteaucitron.init({
@@ -58,7 +70,8 @@
       "readmoreLink": "/cookiespolicy" /* Lien vers la page "Lire plus" */
     });
   </script>
-  {% endblock %}
+
+
 </head>
 
 <body>
@@ -67,6 +80,7 @@
   {% block admin %}{% endblock %}
   {% block body %}{% endblock %}
   {% block footer %}{% endblock %}
+
   {% block javascripts %}
   {# RECAPTCHA #}
   <script>
@@ -81,19 +95,18 @@
       });
     }
   </script>
-  {# Tarte au citron #}
-  <script>
-    tarteaucitron.user.gajsUa = 'UA-XXXXXXXX-X';
-    tarteaucitron.user.gajsMore = function () {
-      /* add here your optionnal _ga.push() */ };
-    (tarteaucitron.job = tarteaucitron.job || []).push('gajs');
-  </script>
   <!--Import jQuery before materialize.js-->
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js">
 	</script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
 	<script type="text/javascript" src="{{ asset('js/bin/materialize.js') }}"></script>
+  {# Tarte au citron #}
+      <script type="text/javascript">
+        tarteaucitron.user.gtagUa = 'UA-178750848-1';
+        tarteaucitron.user.gtagMore = function () { /* add here your optionnal gtag() */ };
+        (tarteaucitron.job = tarteaucitron.job || []).push('gtag');
+        </script>
   {% endblock %}
 </body>
 
