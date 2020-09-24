@@ -10017,7 +10017,7 @@ p {
   -webkit-box-shadow: inset 0px 0px 50px 12px #b0a7b0f0;
   box-shadow: inset 0px 0px 50px 12px #0e0d0ef0;
   min-height: 700px;
-  background-image: url(../uploads/Background/sectionHome.png);
+  background-image: url(../uploads/sectionHome.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -10027,7 +10027,7 @@ p {
   min-height: 490px;
   -webkit-box-shadow: inset 0px 0px 50px 12px #b0a7b0f0;
   box-shadow: inset 0px 0px 50px 12px #0e0d0ef0;
-  background-image: url(../uploads/Background/sectionHome.png);
+  background-image: url(../uploads/sectionHome.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -10047,7 +10047,7 @@ p {
 }
 
 .disciplineHomeTitle {
-  margin-top: -145px;
+  margin-top: -108px;
   width: 300px;
   margin-left: -50px;
   margin-bottom: -15px;
@@ -10540,17 +10540,17 @@ table {
   h2, h1 {
     font-size: 2.5rem;
   }
-  h4 {
+  h4, h3 {
     font-size: 1.8rem;
   }
-  h6 {
+  h5 {
     font-size: 1.6rem;
   }
   .userAvatarHeader {
     display: none;
   }
   .disciplineHomeTitle {
-    margin-top: -170px;
+    margin-top: -121px;
   }
   .page-footer .footerLameDuPonantCenter {
     border-left: none;
