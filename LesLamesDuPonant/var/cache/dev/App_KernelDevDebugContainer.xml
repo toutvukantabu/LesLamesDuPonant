@@ -255,7 +255,6 @@
     <parameter key="security.access.always_authenticate_before_granting">false</parameter>
     <parameter key="security.authentication.hide_user_not_found">true</parameter>
     <parameter key="security.firewalls" type="collection">
-      <parameter>dev</parameter>
       <parameter>main</parameter>
     </parameter>
     <parameter key="web_profiler.debug_toolbar.intercept_redirects">false</parameter>
@@ -3104,15 +3103,6 @@
         <argument type="service" id="routing.loader.container"/>
       </call>
       <call method="addLoader">
-        <argument type="service" id="sensio_framework_extra.routing.loader.annot_class"/>
-      </call>
-      <call method="addLoader">
-        <argument type="service" id="sensio_framework_extra.routing.loader.annot_dir"/>
-      </call>
-      <call method="addLoader">
-        <argument type="service" id="sensio_framework_extra.routing.loader.annot_file"/>
-      </call>
-      <call method="addLoader">
         <argument type="service" id="routing.loader.annotation"/>
       </call>
       <call method="addLoader">
@@ -3783,23 +3773,6 @@
       <tag name="kernel.event_subscriber"/>
       <tag name="container.hot_path"/>
       <argument type="service" id="annotations.cached_reader"/>
-    </service>
-    <service id="sensio_framework_extra.routing.loader.annot_class" class="Sensio\Bundle\FrameworkExtraBundle\Routing\AnnotatedRouteControllerLoader">
-      <tag name="routing.loader"/>
-      <argument type="service" id="annotations.cached_reader"/>
-      <deprecated package="" version="">The "%service_id%" service is deprecated since version 5.2</deprecated>
-    </service>
-    <service id="sensio_framework_extra.routing.loader.annot_dir" class="Symfony\Component\Routing\Loader\AnnotationDirectoryLoader">
-      <tag name="routing.loader"/>
-      <argument type="service" id="file_locator"/>
-      <argument type="service" id="sensio_framework_extra.routing.loader.annot_class"/>
-      <deprecated package="" version="">The "%service_id%" service is deprecated since version 5.2</deprecated>
-    </service>
-    <service id="sensio_framework_extra.routing.loader.annot_file" class="Symfony\Component\Routing\Loader\AnnotationFileLoader">
-      <tag name="routing.loader"/>
-      <argument type="service" id="file_locator"/>
-      <argument type="service" id="sensio_framework_extra.routing.loader.annot_class"/>
-      <deprecated package="" version="">The "%service_id%" service is deprecated since version 5.2</deprecated>
     </service>
     <service id="sensio_framework_extra.converter.listener" class="Sensio\Bundle\FrameworkExtraBundle\EventListener\ParamConverterListener">
       <tag name="kernel.event_subscriber"/>
@@ -4472,9 +4445,8 @@
       <argument type="service" id="security.role_hierarchy" on-invalid="null"/>
     </service>
     <service id="security.firewall.map" class="Symfony\Bundle\SecurityBundle\Security\FirewallMap" public="false">
-      <argument type="service" id=".service_locator.8hCvsSq"/>
+      <argument type="service" id=".service_locator.cdP9SqH"/>
       <argument type="iterator">
-        <argument key="security.firewall.map.context.dev" type="service" id=".security.request_matcher.Iy.T22O"/>
         <argument key="security.firewall.map.context.main">null</argument>
       </argument>
     </service>
@@ -4873,29 +4845,6 @@
       <argument>email</argument>
       <argument>null</argument>
     </service>
-    <service id="security.firewall.map.config.dev" class="Symfony\Bundle\SecurityBundle\Security\FirewallConfig" public="false">
-      <argument>dev</argument>
-      <argument>security.user_checker</argument>
-      <argument>.security.request_matcher.Iy.T22O</argument>
-      <argument>false</argument>
-      <argument>false</argument>
-      <argument></argument>
-      <argument></argument>
-      <argument></argument>
-      <argument></argument>
-      <argument></argument>
-      <argument type="collection"/>
-      <argument>null</argument>
-    </service>
-    <service id=".security.request_matcher.Iy.T22O" class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
-      <argument>^/(_(profiler|wdt)|css|images|js)/</argument>
-    </service>
-    <service id="security.firewall.map.context.dev" class="Symfony\Bundle\SecurityBundle\Security\FirewallContext" public="false">
-      <argument type="iterator"/>
-      <argument>null</argument>
-      <argument>null</argument>
-      <argument type="service" id="security.firewall.map.config.dev"/>
-    </service>
     <service id="security.firewall.map.config.main" class="Symfony\Bundle\SecurityBundle\Security\FirewallConfig" public="false">
       <argument>main</argument>
       <argument>security.user_checker</argument>
@@ -5023,10 +4972,9 @@
       <argument type="service" id="security.firewall.map.config.main"/>
       <argument type="service" id="security.untracked_token_storage"/>
     </service>
-    <service id=".service_locator.8hCvsSq" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.cdP9SqH" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="security.firewall.map.context.dev" type="service" id="security.firewall.map.context.dev"/>
         <argument key="security.firewall.map.context.main" type="service" id="security.firewall.map.context.main"/>
       </argument>
     </service>

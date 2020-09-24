@@ -40,10 +40,11 @@
 {# NABAR
 ======================== #}
 <ul class="side-nav z-depth-4" id="mobile-demo">
-	<li>
+	<li>			{% if is_granted('IS_AUTHENTICATED_FULLY') and app.user.photoAvatarUser  != NULL %}
 		<div class="user-view">
-			{% if is_granted('IS_AUTHENTICATED_FULLY') and app.user.photoAvatarUser  != NULL %}
-			<img class="circle" src="{{ asset('uploads/avatar/' ~ app.user.photoAvatarUser )}}"
+
+			<img class="circle" src="{{ asset('uploads/avatar/' ~ app.user.photoAvatarUser )}}">
+			<div class="user-view">
 				alt="avatar lame du Ponant amhe membre escrime médiévale">
 			{% else %}
 			<img class="circle" src="{{asset('uploads/avatar.jpg')}}" alt="avatar lame du Ponant amhe">
@@ -54,8 +55,7 @@
 			{% elseif is_granted('IS_AUTHENTICATED_FULLY') and app.user.pseudoUser == NULL%}
 			<span class=" name"> "Illustre inconnu n°{{app.user.id}}"
 				{% else %}
-				<span class=" name">"Illustre inconnu "
-				</span>
+				<span class=" name">"Illustre inconnu "</span>
 				{% endif %}
 		</div>
 	</li>
@@ -264,7 +264,8 @@
 			alt="parallax lame Du Ponant escrime mediévale amhe image background three"></div>
 	{% endfor %}
 </div>
-
+{# timestamp	
+================== #}
 <div class="section white homeSectionCalendar">
 	<div class="container">
 		<div class="row ">
@@ -292,23 +293,25 @@
 					</ul>
 				</div>
 			</div>
+{# Infos pratiques	
+================== #}
 			<div class="col xl8 l7 s12">
 				<h4 class="HomeInfoTitle center-align">
 					Informations pratiques</h4>
 				<div class="row">
 					<div class="col xl6 l7 m7 s12 informationFooterLeft">
-						<h6>Horaires:</h6>
+						<h5>Horaires:</h5>
 						<p>lundi: 20h30-22h30</p>
 						<p>jeudi: 20h30-22h30</p>
 						<div class="row">
 							<div class="divider"></div>
 							<div class="col xl12 l12 m12 s12">
 
-								<h6>Adresse:</h6>
+								<h5>Adresse:</h5>
 								<p>Rue des Droits de l'Homme</p>
 								<p>44550 Saint-Malo-de-Guersac</p>
 								<div class="divider"></div>
-								<h6>GPS :</h6>
+								<h5>GPS :</h5>
 								<p>
 									47.354104, -2.179935</p>
 							</div>
@@ -325,7 +328,8 @@
 </div>
 {% endif %}
 
-
+{# Footer	
+================== #}
 <footer class="page-footer">
 	<div class="container">
 		<div class="row">
@@ -344,7 +348,7 @@
 						<a href="{{path('contact_message_new')}}">
 							<i class="small material-icons">email</i>
 						</a>
-						<a href="">
+						<a href="{{ path('les_infos') }}">
 							<i class="small material-icons">info</i>
 						</a>
 					</div>
@@ -376,7 +380,7 @@
 				<div class="col xl8 l8 m12 s12 footerOutside "><span>2020 Les Lames Du Ponant. Tous droits
 						réservés.</span></div>
 				<div class="col xl4 l4 m12 s12 footerOutside"><span><a class="grey-text text-lighten-4 right"
-							href="">Crée
+							href="https://github.com/toutvukantabu">Crée
 							par un p'tit Breton</a></span></div>
 			</div>
 		</div>
