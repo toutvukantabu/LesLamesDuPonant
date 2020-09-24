@@ -8,8 +8,8 @@
   <title>
        {% block title 'AMHE |Lame Du Ponant|escrime médievale'%}</title>
   {% block stylesheets %}
+  
   <link  rel="preload" href="{{ asset('sass/materialize.css')}}" as="style" />
-  <script rel="preload" src="{{ asset('js/bin/materialize.js') }}" as="script"></script>
   <link rel="preload" href="{{ asset('fonts/roboto/Roboto-Bold.woff') }}" as="font" crossorigin="anonymous" />
   <link rel="preload" href="{{ asset('fonts/roboto/Roboto-Bold.woff2') }}" as="font" crossorigin="anonymous" />
   <link rel="preload" href="{{ asset('fonts/roboto/Roboto-Light.woff') }}" as="font" crossorigin="anonymous" />
@@ -31,7 +31,7 @@
     integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
     crossorigin="" />
   {# FAVICO #}
-  <link rel="shortcut icon" type="image/png" href="{{ asset('uploads/favico_ldp.png')}}" />
+  <link rel="shortcut icon" type="image/png" href="{{ asset('uploads/favico_ldp.jpg')}}" />
   <!--Import materialize.css-->
   <link type="text/css" rel="stylesheet" href="{{ asset('sass/materialize.css')}}" media="screen" />
   {# Captcha #}
@@ -96,7 +96,7 @@
     }
   </script>
   <!--Import jQuery before materialize.js-->
-	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 	<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js">
 	</script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>

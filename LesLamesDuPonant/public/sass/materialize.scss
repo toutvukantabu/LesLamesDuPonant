@@ -800,7 +800,7 @@ color:#46454cf0;
 .homeSectionActivity {
   @include webkit-shadow();
   min-height: 700px;
-  background-image: url(../uploads/Background/sectionHome.png);
+  background-image: url(../uploads/sectionHome.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -810,7 +810,7 @@ color:#46454cf0;
 .homeSectionCalendar {
   min-height: 490px;
   @include webkit-shadow();
-  background-image: url(../uploads/Background/sectionHome.png);
+  background-image: url(../uploads/sectionHome.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -831,7 +831,7 @@ color:#46454cf0;
 }
 
 .disciplineHomeTitle {
-  margin-top: -145px;
+  margin-top: -108px;
   width: 300px;
   margin-left: -50px;
   margin-bottom: -15px;
@@ -1428,10 +1428,10 @@ li ul {
   h2,h1{
     font-size: 2.5rem;
   }
-  h4{
+  h4,h3{
     font-size:1.8rem ;
   }
-  h6{
+  h5{
     font-size:1.6rem ;
   }
   //Display Avatar .collection-header
@@ -1440,7 +1440,7 @@ li ul {
   }
 //CarouselHome
 .disciplineHomeTitle {
-  margin-top: -170px;
+  margin-top: -121px;
 }
   //footer
   .page-footer {

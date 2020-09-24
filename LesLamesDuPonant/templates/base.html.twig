@@ -5,32 +5,34 @@
 {% block logo %}
 <header>
 	{% if is_granted('IS_AUTHENTICATED_FULLY') and app.user.photoAvatarUser  != NULL %}
-	<div class="userAvatarHeader z-depth-2">	
-			<img class="circle" src="{{ asset('uploads/avatar/' ~ app.user.photoAvatarUser )}}"
-				alt="avatar lame du Ponant amhe membre escrime médiévale">
-			{% elseif  is_granted('IS_AUTHENTICATED_FULLY')%}
-			<div class="userAvatarHeader z-depth-2">
+	<div class="userAvatarHeader z-depth-2">
+		<img class="circle" src="{{ asset('uploads/avatar/' ~ app.user.photoAvatarUser )}}"
+			alt="avatar lame du Ponant amhe membre escrime médiévale">
+		{% elseif  is_granted('IS_AUTHENTICATED_FULLY')%}
+		<div class="userAvatarHeader z-depth-2">
 			<img class="circle responsive-img" src="{{asset('uploads/avatar.jpg')}}" alt="avatar lame du Ponant amhe">
 			{% else %}
 
 			{% endif %}
 			{% if is_granted('IS_AUTHENTICATED_FULLY') and app.user.pseudoUser != NULL %}
 			<p class="name">
-				{{app.user.pseudoUser}}</p>		</div>
-			{% elseif is_granted('IS_AUTHENTICATED_FULLY') and app.user.pseudoUser == NULL%}
-			<p class=" name">"Illustre inconnu n°{{app.user.id}}"</p></div>
-			{% else %}
-			
-					{% endif %}
-				
+				{{app.user.pseudoUser}}</p>
+		</div>
+		{% elseif is_granted('IS_AUTHENTICATED_FULLY') and app.user.pseudoUser == NULL%}
+		<p class=" name">"Illustre inconnu n°{{app.user.id}}"</p>
+	</div>
+	{% else %}
+
+	{% endif %}
+
 	<div class="container " id="HomeTitle">
-	
+
 		<div class="row">
 			<div class="  col m12 s12 l12 xl12"> <a href="{{path('home')}}">
 					{{ render(controller(
         'App\\Controller\\HomePicturesController::displayLogo',)) }}
 				</a></div>
-			
+
 		</div>
 	</div>
 </header>
@@ -40,25 +42,28 @@
 {# NABAR
 ======================== #}
 <ul class="side-nav z-depth-4" id="mobile-demo">
+	{% if is_granted('IS_AUTHENTICATED_FULLY') and app.user.photoAvatarUser  != NULL %}
 	<li>
 		<div class="user-view">
-			{% if is_granted('IS_AUTHENTICATED_FULLY') and app.user.photoAvatarUser  != NULL %}
 			<img class="circle" src="{{ asset('uploads/avatar/' ~ app.user.photoAvatarUser )}}"
 				alt="avatar lame du Ponant amhe membre escrime médiévale">
 			{% else %}
-			<img class="circle" src="{{asset('uploads/avatar.jpg')}}" alt="avatar lame du Ponant amhe">
-			{% endif %}
-			{% if is_granted('IS_AUTHENTICATED_FULLY') and app.user.pseudoUser != NULL %}
-			<span class="name">
-				"{{app.user.pseudoUser}}"</span>
-			{% elseif is_granted('IS_AUTHENTICATED_FULLY') and app.user.pseudoUser == NULL%}
-			<span class=" name"> "Illustre inconnu n°{{app.user.id}}"
-				{% else %}
-				<span class=" name">"Illustre inconnu "
-				</span>
+			<div class="user-view">
+				<img class="circle" src="{{asset('uploads/avatar.jpg')}}" alt="avatar lame du Ponant amhe">
 				{% endif %}
-		</div>
+				{% if is_granted('IS_AUTHENTICATED_FULLY') and app.user.pseudoUser != NULL %}
+				<span class="name">
+					"{{app.user.pseudoUser}}"</span>
+				{% elseif is_granted('IS_AUTHENTICATED_FULLY') and app.user.pseudoUser == NULL%}
+				<span class=" name"> "Illustre inconnu n°{{app.user.id}}"
+					{% else %}
+					<span class=" name">"Illustre inconnu "
+					</span>
+			</div>
 	</li>
+{% endif %}
+
+
 	<li>
 		<h5 class="black-text center-align">Les Lames du Ponant</h5>
 	</li>
@@ -73,7 +78,7 @@
 			<span>Messagerie</span>
 		</a>
 	</li>
-				<li><a href="{{ path('time_stamp_index') }}">Ajouter évènement</a></li>
+	<li><a href="{{ path('time_stamp_index') }}">Ajouter évènement</a></li>
 	{% endif %}
 	<li>
 		<a class="waves-light waves-effect" href="{{path('user_edit',{'id': app.user.id })}}">
@@ -99,7 +104,7 @@
 			AMHE</a>
 	</li>
 	<li>
-	<a class="waves-light waves-effect" href="{{path('app_logout')}}">Déconnexion</a>
+		<a class="waves-light waves-effect" href="{{path('app_logout')}}">Déconnexion</a>
 	</li>
 	{% else %}
 	<li>
@@ -151,7 +156,7 @@
 				<li>
 					<a href="{{path('admin')}}">Administration</a>
 				</li>
-	
+
 				{% endif %}
 			</ul>
 			<ul class="right hide-on-med-and-down">
@@ -216,7 +221,7 @@
 			</p>
 			{% endfor %}
 			<div class="btnHome" align="center"><a class="hrefHome" href="{{path('les_amhe')}}#les-lames-du-ponant"
-			 rel="nofollow"><span>En savoir plus</span></a>
+					rel="nofollow"><span>En savoir plus</span></a>
 			</div>
 		</div>
 	</div>
@@ -238,21 +243,26 @@
 ================ #}
 
 <div class="section white homeSectionActivity">
-	<h4 class="header center-align">Les disciplines</h4>
+	<h2 class="header center-align">Les disciplines</h2>
 	<div class="col s12 carousel center carouselHome " style="height: 600px;">
 
 		{% for home_discipline in home_disciplines %}
+		{% if home_discipline.active == 1 %}
+
 		<div class="carousel-item">
 			<h5 class="center-align disciplineHomeTitle">{{ home_discipline.nameDiscipline }}</h5>
 			{% if home_discipline.imageHomeDiscipline != NULL %}
-			<a  href="{{ path('les_disciplines')}}#{{home_discipline.id}}"><img class="card-rounded "
-					src="{{ asset('uploads/discipline/') ~ home_discipline.imageHomeDiscipline }}" alt="les Lames Du Ponant discipline {{ home_discipline.nameDiscipline }} Saint-Malo-De-Guersac 44176 44600 escrime mediévale"></a>
+			<a href="{{ path('les_disciplines')}}#{{home_discipline.id}}"><img class="card-rounded "
+					src="{{ asset('uploads/discipline/') ~ home_discipline.imageHomeDiscipline }}"
+					alt="les Lames Du Ponant discipline {{ home_discipline.nameDiscipline }} Saint-Malo-De-Guersac 44176 44600 escrime mediévale"></a>
 			{% else %}
 			<a href="/"><img class="card-rounded" src="{{asset('uploads/avatar.jpg')}}"></a>
 			{% endif %}
 			<p class="disciplineHomeDescription ">
 				{{home_discipline.descriptionDiscipline}}</p>
 		</div>
+
+		{% endif %}
 		{% endfor %}
 	</div>
 </div>
@@ -297,14 +307,14 @@
 					Informations pratiques</h4>
 				<div class="row">
 					<div class="col xl6 l7 m7 s12 informationFooterLeft">
-						<h6>Horaires:</h6>
+						<h5>Horaires:</h5>
 						<p>lundi: 20h30-22h30</p>
 						<p>jeudi: 20h30-22h30</p>
 						<div class="row">
 							<div class="divider"></div>
 							<div class="col xl12 l12 m12 s12">
 
-								<h6>Adresse:</h6>
+								<h5>Adresse:</h5>
 								<p>Rue des Droits de l'Homme</p>
 								<p>44550 Saint-Malo-de-Guersac</p>
 								<div class="divider"></div>
@@ -344,7 +354,7 @@
 						<a href="{{path('contact_message_new')}}">
 							<i class="small material-icons">email</i>
 						</a>
-						<a href="">
+						<a href="{{path('les_infos')}}">
 							<i class="small material-icons">info</i>
 						</a>
 					</div>
@@ -352,7 +362,7 @@
 			</div>
 			<div class="col  xl4 l4  s12  footerLameDuPonantCenter">
 				<h5>La Féderation Française des AMHE</h5>
-				<a href="https://www.ffamhe.fr"><img class="rounded" src="{{ asset('uploads/logo_FFAMHE.png')}}"
+				<a href="https://www.ffamhe.fr"><img class="rounded" src="{{ asset('uploads/logo_FFAMHE.jpg')}}"
 						alt="Logo Amhe féderation Française lame Du Ponant"></a>
 
 			</div>
@@ -376,11 +386,10 @@
 				<div class="col xl8 l8 m12 s12 footerOutside "><span>2020 Les Lames Du Ponant. Tous droits
 						réservés.</span></div>
 				<div class="col xl4 l4 m12 s12 footerOutside"><span><a class="grey-text text-lighten-4 right"
-							href="">Crée
-							par un p'tit Breton</a></span></div>
+							href="https://github.com/toutvukantabu">Crée
+							par un p'tit Breton tout mignon</a></span></div>
 			</div>
 		</div>
 	</div>
 </footer>
 {% endblock %}
-

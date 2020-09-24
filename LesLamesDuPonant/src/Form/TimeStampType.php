@@ -42,6 +42,7 @@ class TimeStampType extends AbstractType
                     'class'=> 'timepicker',
                 ]
             ])
+            ->add ('active', CheckboxType::class,['label'=> 'activer','required'=>false])
         ;
     }
 
