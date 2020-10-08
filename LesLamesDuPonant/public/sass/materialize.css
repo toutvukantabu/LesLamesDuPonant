@@ -9513,7 +9513,8 @@ p {
   width: 2px;
 }
 
-.more-bt:after, .more-bt:before {
+.more-bt:after,
+.more-bt:before {
   content: " ";
   display: block;
   background: #030393;
@@ -9530,7 +9531,8 @@ p {
   height: 2px;
 }
 
-.more-bt:after, .more-bt:before {
+.more-bt:after,
+.more-bt:before {
   content: " ";
   display: block;
   background: #030393;
@@ -9559,17 +9561,19 @@ p {
   width: 2px;
 }
 
-.more-bt:after, .more-bt:before {
+.more-bt:after,
+.more-bt:before {
   content: " ";
-  display: block;
   background: #030393;
+  display: block;
   position: absolute;
   -webkit-transition: .5s;
   transition: .5s;
   z-index: 10;
 }
 
-.more-bt .fl, .more-bt .sfl {
+.more-bt .fl,
+.more-bt .sfl {
   position: absolute;
   right: 0;
   height: 100%;
@@ -9583,7 +9587,8 @@ p {
   transition-delay: .1s;
 }
 
-.more-bt .fl, .more-bt .sfl {
+.more-bt .fl,
+.more-bt .sfl {
   position: absolute;
   right: 0;
   height: 100%;
@@ -9626,7 +9631,8 @@ p {
   transform: translateX(50px) scaleX(0);
 }
 
-.more-bt .cross:before, .more-bt .cross:after {
+.more-bt .cross:before,
+.more-bt .cross:after {
   content: " ";
   background: #fff;
   display: block;
@@ -9651,7 +9657,8 @@ p {
   transition-duration: .4s;
 }
 
-.more-bt .cross:before, .more-bt .cross:after {
+.more-bt .cross:before,
+.more-bt .cross:after {
   content: " ";
   background: #fff;
   display: block;
@@ -9680,7 +9687,8 @@ p {
   transform: rotate(90deg);
 }
 
-.more-bt i:after, .more-bt i:before {
+.more-bt i:after,
+.more-bt i:before {
   content: " ";
   display: block;
   width: 2px;
@@ -9738,7 +9746,8 @@ p {
   line-height: initial;
 }
 
-.more-bt:hover:before, .more-bt:before {
+.more-bt:hover:before,
+.more-bt:before {
   height: 100%;
 }
 
@@ -9749,18 +9758,23 @@ p {
   width: 2px;
 }
 
-.more-bt:hover .fl, .more-bt .fl {
+.more-bt:hover .fl,
+.more-bt .fl {
   -webkit-transition: .7s;
   transition: .7s;
 }
 
-.more-bt:hover .fl, .more-bt:hover .sfl, .more-bt .fl, .more-bt .sfl {
+.more-bt:hover .fl,
+.more-bt:hover .sfl,
+.more-bt .fl,
+.more-bt .sfl {
   -webkit-transition-delay: 0s;
   transition-delay: 0s;
   width: 100%;
 }
 
-.more-bt .fl, .more-bt .sfl {
+.more-bt .fl,
+.more-bt .sfl {
   position: absolute;
   right: 0;
   height: 100%;
@@ -9774,12 +9788,16 @@ p {
   transition-delay: .1s;
 }
 
-.more-bt:hover .sfl, .more-bt .sfl {
+.more-bt:hover .sfl,
+.more-bt .sfl {
   -webkit-transition: .5s;
   transition: .5s;
 }
 
-.more-bt:hover .fl, .more-bt:hover .sfl, .more-bt.hvd .fl, .more-bt.hvd .sfl {
+.more-bt:hover .fl,
+.more-bt:hover .sfl,
+.more-bt.hvd .fl,
+.more-bt.hvd .sfl {
   -webkit-transition-delay: 0s;
   transition-delay: 0s;
   width: 100%;
@@ -9801,12 +9819,16 @@ p {
   left: calc(50% - 8px);
 }
 
-.more-bt:hover .cross:before, .more-bt .cross:before {
+.more-bt:hover .cross:before,
+.more-bt .cross:before {
   -webkit-transition-duration: .5s;
   transition-duration: .5s;
 }
 
-.more-bt:hover .cross:after, .more-bt:hover .cross:before, .more-bt .cross:after, .more-bt .cross:before {
+.more-bt:hover .cross:after,
+.more-bt:hover .cross:before,
+.more-bt .cross:after,
+.more-bt .cross:before {
   -webkit-transform: none;
   transform: none;
   opacity: 1;
@@ -9825,7 +9847,8 @@ p {
   transition-duration: .4s;
 }
 
-.more-bt .cross:before, .more-bt .cross:after {
+.more-bt .cross:before,
+.more-bt .cross:after {
   content: " ";
   background: #fff;
   display: block;
@@ -9839,7 +9862,10 @@ p {
   transition-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
 }
 
-.more-bt:hover .cross:after, .more-bt:hover .cross:before, .more-bt.hvd .cross:after, .more-bt.hvd .cross:before {
+.more-bt:hover .cross:after,
+.more-bt:hover .cross:before,
+.more-bt.hvd .cross:after,
+.more-bt.hvd .cross:before {
   -webkit-transform: none;
   transform: none;
   opacity: 1;
@@ -9847,7 +9873,8 @@ p {
   transition-delay: .2s;
 }
 
-.more-bt:hover .cross:after, .more-bt.hvd .cross:after {
+.more-bt:hover .cross:after,
+.more-bt.hvd .cross:after {
   -webkit-transition-duration: .6s;
   transition-duration: .6s;
 }
@@ -9949,7 +9976,8 @@ p {
   color: #030393;
 }
 
-.dropdown-content li > a:hover, .dropdown-content li > span:hover {
+.dropdown-content li > a:hover,
+.dropdown-content li > span:hover {
   color: #fff;
 }
 
@@ -10047,7 +10075,7 @@ p {
 }
 
 .disciplineHomeTitle {
-  margin-top: -108px;
+  margin-top: -183px;
   width: 300px;
   margin-left: -50px;
   margin-bottom: -15px;
@@ -10379,7 +10407,8 @@ table {
   width: 100%;
 }
 
-#tableForum td, #tableForum th {
+#tableForum td,
+#tableForum th {
   padding: 20px 20px;
 }
 
@@ -10399,53 +10428,6 @@ table {
 .imgTableAdmin {
   height: 50px;
   width: 50px;
-}
-
-.TitleMessageNew {
-  margin-top: 100px;
-}
-
-@media only screen and (max-width: 600px) {
-  h6 {
-    font-size: 1.4rem;
-  }
-  p {
-    font-size: 1.4rem;
-  }
-  .page-footer .footerLameDuPonantCenter {
-    border-left: none;
-    max-height: none;
-    border-right: none;
-    border-bottom: 2px solid #ffffff;
-    border-top: 2px solid #ffffff;
-    margin-top: 20px;
-  }
-  .page-footer .footerLameDuPonantCenter h5,
-  .page-footer .footerLameDuPonantLeft h5,
-  .page-footer .footerLameDuPonantRight h5 {
-    margin-top: 35px;
-  }
-  .page-footer .footerLameDuPonantRight span {
-    text-align: center;
-    margin-left: 0px;
-  }
-  .flex-forum {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: reverse;
-        -ms-flex-direction: column-reverse;
-            flex-direction: column-reverse;
-  }
-  .flex-title-forum {
-    -webkit-box-ordinal-group: 2;
-        -ms-flex-order: 1;
-            order: 1;
-  }
-  .disciplineRow {
-    padding: 5px;
-  }
 }
 
 #top {
@@ -10495,7 +10477,7 @@ table {
 
 #site-map-full a:link,
 #site-map-full a:visited {
-  color: #0180AF;
+  color: #0112af;
   text-decoration: underline;
 }
 
@@ -10536,11 +10518,66 @@ table {
   border: none;
 }
 
+.TitleMessageNew {
+  margin-top: 100px;
+}
+
+@media only screen and (max-width: 600px) {
+  h6 {
+    font-size: 1.4rem;
+  }
+  p {
+    font-size: 1.4rem;
+  }
+  .page-footer .socialIconFooter {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    margin: 10px 25px;
+  }
+  .page-footer .socialIconFooter i {
+    margin: 10px 25px;
+  }
+  .footerLameDuPonantLeft p {
+    display: none;
+  }
+  .footerLameDuPonantCenter {
+    border-left: none;
+    max-height: none;
+    border-right: none;
+    border-bottom: 2px solid #ffffff;
+    border-top: 2px solid #ffffff;
+    margin-top: 20px;
+  }
+  .footerLameDuPonantCenter h5,
+  .footerLameDuPonantLeft h5,
+  .footerLameDuPonantRight h5 {
+    margin-top: 35px;
+  }
+  .footerLameDuPonantRight span {
+    text-align: center;
+    margin-left: 0px;
+  }
+}
+
+.disciplineRow {
+  padding: 5px;
+}
+
 @media only screen and (max-width: 992px) {
-  h2, h1 {
+  h2,
+  h1 {
     font-size: 2.5rem;
   }
-  h4, h3 {
+  h4,
+  h3 {
     font-size: 1.8rem;
   }
   h5 {
@@ -10550,7 +10587,7 @@ table {
     display: none;
   }
   .disciplineHomeTitle {
-    margin-top: -121px;
+    margin-top: -170px;
   }
   .page-footer .footerLameDuPonantCenter {
     border-left: none;
@@ -10594,7 +10631,8 @@ table {
         -ms-flex-direction: column-reverse;
             flex-direction: column-reverse;
   }
-  #tableForum td, #tableForum th {
+  #tableForum td,
+  #tableForum th {
     padding: 0px;
   }
   .userForumBackground h5 {

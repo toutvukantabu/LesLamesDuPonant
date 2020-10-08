@@ -28,6 +28,9 @@ line-height: $line;
 color:$color-stamp;
 
 }
+@mixin backcolorGeneral( ){
+ background:#030393 ;
+}
 
 @mixin general (){
 
