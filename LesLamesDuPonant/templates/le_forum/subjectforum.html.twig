@@ -4,144 +4,147 @@
 
 {% block body %}
 <main class="backgroundForum">
-<div class="container">
-    <div class="col xl12 l12 m12 s12">
-        {# PAGINATION du forum#}
-        <ul class="pagination">
-            <li class="active blue"><a href="{{path('le_forum')}}">Page d'accueil</a></li>
+    <div class="container">
+        <div class="col xl12 l12 m12 s12">
+            {# PAGINATION du forum#}
+            <ul class="pagination">
+                <li class="active blue"><a href="{{path('le_forum')}}">Page d'accueil</a></li>
 
-            <li class="active blue"><a
-                    href="{{path('le_forum_category' ,{'slug': subject_forum.categorySubjectForum.slug })}}">{{subject_forum.categorySubjectForum.titleCategory}}</a>
-            </li>
-            <li class="active blue"><a
-                    href="{{path('le_forum_subject' ,{'slug': subject_forum.slug })}}">{{subject_forum.titleSubjectForum}}</a>
-        </ul>
-        {# affichage des sujets dans les catégories du forum#}
-        <div class="row ">
-            <div class="col xl12 l12 m12 s12">
-                <h1 class="center-align titleForum">{{subject_forum.titleSubjectForum}}</h1>
-            </div>
-            <div class="col xl8 l8 m12 s12">
-
-                <table class="highlight z-depth-2 " id="tableForum">
-                    <thead>
-                        <tr>
-                            <th class="userForumBackground">
-                                <div class="chip">
-                                    {% if  subject_forum.user.photoAvatarUser  == NULL %}
-                                    <img class="circle" src="{{asset('uploads/avatar.jpg')}}">
-                                    {% else %}
-                                    <img class="circle" src="{{ asset('uploads/avatar/' ~  subject_forum.user.photoAvatarUser )}}">
-                                    {% endif %}
-                                    {% if  subject_forum.user.pseudoUser != NULL %}
-                                    <span class="name ">
-                                        {{subject_forum.user.pseudoUser}}</span>
-                                    {% else %}
-                                    <span class=" name"> "Illustre inconnu n°{{subject_forum.user.id}}"
-                                    </span>
-                                    {% endif %}
-                                </div>
-                            </th>
-                        </tr>
-                    </thead>
-                    <thead>
-                        <tr>
-                            <td class="messageForum">{{subject_forum.contentSubjectForum|raw}}</td>
-                        </tr>
-                        <tr>
-                            <td><small class="dateSmallForum">date de publication
-                                    {{subject_forum.dateSubjectForum|format_datetime(locale='fr')}}</small></td>
-                        </tr>
-                    </thead>
-                </table>
-                <div class="divider"></div>
-                {% for message  in subject_forum.messageSubjectForum %}
-                <table class="highlight  z-depth-2 " id="tableForum">
-
-                    {# affichage des messages#}
-                    <thead>
-                        <tr>
-                            <th class="userForumBackground">
-                                <div class="chip">
-                                    {% if  message.user.photoAvatarUser  != NULL %}
-                                    <img class="circle"
-                                        src="{{ asset('uploads/avatar/' ~ message.user.photoAvatarUser )}}">
-                                    {% else %}
-                                    <img class="circle" src="{{asset('uploads/avatar.jpg')}}">
-                                    {% endif %}
-                                    {% if  message.user.pseudoUser != NULL %}
-                                    <span class="name">
-                                        {{message.user.pseudoUser}}</span>
-                                    {% else %}
-                                    <span class=" name"> "Illustre inconnu n°{{subject_forum.user.id}}"
-                                    </span>
-                                </div>
-                            </th>
-                        </tr>
-                        {% endif %}
-                    </thead>
-                    <thead>
-                        <tr>
-                            <td class="messageForum">
-                                {{message.contentMessageForum|raw}}
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><small class="dateSmallForum">date de publication
-                                    {{message.datePublicationMessageForum|format_datetime(locale='fr')}}</small></td>
-                        </tr>
-                    </thead>
-                </table>
-                {% endfor %}
-                <table class="z-depth-2">
-                    <thead>
-                        <tr>
-                            <th>
-                                <div class="btnForum"><a class=" btn-large bt more-bt modal-trigger" href="#modal-forum"
-                                        data-target="modal-create">
-                                        <span class="fl"></span><span class="sfl"></span><span class="cross"></span>
-                                        <p class="btnForumMessage">Répondre</p><i></i>
-                                    </a></div>
-                            </th>
-                        </tr>
-                    </thead>
-                </table>
-            </div>
-            {# Modal pour affichage du ckeditor#}
-            <div id="modal-forum" class="formRegister z-depth-5 modal">
-                {{ form_start(form)}}
-                <div style="display:none">{{ form_row(form.SubjectMessageForum) }}</div>
-                {{ form_row(form.ContentMessageForum) }}
-                {{ form_row(form.submit)}}
-                {{ form_end(form) }}
-                {# liste des catégories et des sujet du forum#}
-            </div>
-            <div class="col xl3 offset-xl1 l3 offset-l1 m12 s12 z-depth-5 liste-forum">
-                <h4 class="center-align">Liste</h4>
-
-                {% for home_section_forum in home_section_forums%}
-                {% if home_section_forum.active == 1 %}
-                <div class="collection with-header ">
-                    <div class="collection-header">
-                        <h6>{{home_section_forum.SectionTitleForum}}</h6>
-                    </div>
-                    {% endif %}
-
-                    {% for category_section_forum in home_section_forum.categoryHomeSectionforum %}
-                    {% if category_section_forum.active == 1 %}
-                    <a class="collection-item "
-                        href="{{path('le_forum_category', {'slug': category_section_forum.slug })}}">
-                        {{category_section_forum.titlecategory}}</a>
-
-                    {% endif %}
-
-                    {% endfor %}
+                <li class="active blue"><a
+                        href="{{path('le_forum_category' ,{'slug': subject_forum.categorySubjectForum.slug })}}">{{subject_forum.categorySubjectForum.titleCategory}}</a>
+                </li>
+                <li class="active blue"><a
+                        href="{{path('le_forum_subject' ,{'slug': subject_forum.slug })}}">{{subject_forum.titleSubjectForum}}</a>
+            </ul>
+            {# affichage des sujets dans les catégories du forum#}
+            <div class="row ">
+                <div class="col xl12 l12 m12 s12">
+                    <h1 class="center-align titleForum">{{subject_forum.titleSubjectForum}}</h1>
                 </div>
-                {% endfor %}
+                <div class="col xl8 l8 m12 s12">
+                    <table class="highlight z-depth-2 " id="tableForum">
+                        <thead>
+                            <tr>
+                                <th class="userForumBackground">
+                                    <div class="chip">
+                                        {% if  subject_forum.user.photoAvatarUser  == NULL %}
+                                        <img class="circle" src="{{asset('uploads/avatar.jpg')}}">
+                                        {% else %}
+                                        <img class="circle"
+                                            src="{{ asset('uploads/avatar/' ~  subject_forum.user.photoAvatarUser )}}">
+                                        {% endif %}
+                                        {% if  subject_forum.user.pseudoUser != NULL %}
+                                        <span class="name ">
+                                            {{subject_forum.user.pseudoUser}}</span>
+                                        {% else %}
+                                        <span class=" name"> "Illustre inconnu n°{{subject_forum.user.id}}"
+                                        </span>
+                                        {% endif %}
+                                    </div>
+                                </th>
+                            </tr>
+                        </thead>
+                        <thead>
+                            <tr>
+                                <td class="messageForum">{{subject_forum.contentSubjectForum|raw}}</td>
+                            </tr>
+                            <tr>
+                                <td><small class="dateSmallForum">date de publication
+                                        {{subject_forum.dateSubjectForum|format_datetime(locale='fr')}}</small></td>
+                            </tr>
+                        </thead>
+                    </table>
+                    <div class="divider"></div>
+                    {% for message  in subject_forum.messageSubjectForum %}
+                    <table class="highlight  z-depth-2 " id="tableForum">
 
+                        {# affichage des messages#}
+                        <thead>
+                            <tr>
+                                <th class="userForumBackground">
+                                    <div class="chip">
+                                        {% if  message.user.photoAvatarUser  != NULL %}
+                                        <img class="circle"
+                                            src="{{ asset('uploads/avatar/' ~ message.user.photoAvatarUser )}}">
+                                        {% else %}
+                                        <img class="circle" src="{{asset('uploads/avatar.jpg')}}">
+                                        {% endif %}
+                                        {% if  message.user.pseudoUser != NULL %}
+                                        <span class="name">
+                                            {{message.user.pseudoUser}}</span>
+                                        {% else %}
+                                        <span class=" name"> "Illustre inconnu n°{{subject_forum.user.id}}"
+                                        </span>
+                                    </div>
+                                </th>
+                            </tr>
+                            {% endif %}
+                        </thead>
+                        <thead>
+                            <tr>
+                                <td class="messageForum">
+                                    {{message.contentMessageForum|raw}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><small class="dateSmallForum">date de publication
+                                        {{message.datePublicationMessageForum|format_datetime(locale='fr')}}</small>
+                                </td>
+                            </tr>
+                        </thead>
+                    </table>
+                    {% endfor %}
+                    <table class="z-depth-2">
+                        <thead>
+                            <tr>
+                                <th>
+                                    <div class="btnForum"><a class=" btn-large bt more-bt modal-trigger"
+                                            href="#modal-forum" data-target="modal-create">
+                                            <span class="fl"></span><span class="sfl"></span><span class="cross"></span>
+                                            <p class="btnForumMessage">Répondre</p><i></i>
+                                        </a></div>
+                                </th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+                {# Modal pour affichage du ckeditor#}
+                {% if is_granted('ROLE_USER')%}
+                <div id="modal-forum" class="formRegister z-depth-5 modal">
+                    {{ form_start(form)}}
+                    <div style="display:none">{{ form_row(form.SubjectMessageForum) }}</div>
+                    {{ form_row(form.ContentMessageForum) }}
+                    {{ form_row(form.submit)}}
+                    {{ form_end(form) }}
+                    {# liste des catégories et des sujet du forum#}
+                </div>
+                {% endif %}
+                <div class="col xl3 offset-xl1 l3 offset-l1 m12 s12 z-depth-5 liste-forum">
+                    <h4 class="center-align">Liste</h4>
+
+                    {% for home_section_forum in home_section_forums%}
+                    {% if home_section_forum.active == 1 %}
+                    <div class="collection with-header ">
+                        <div class="collection-header">
+                            <h6>{{home_section_forum.SectionTitleForum}}</h6>
+                        </div>
+                        {% endif %}
+
+                        {% for category_section_forum in home_section_forum.categoryHomeSectionforum %}
+                        {% if category_section_forum.active == 1 %}
+                        <a class="collection-item "
+                            href="{{path('le_forum_category', {'slug': category_section_forum.slug })}}">
+                            {{category_section_forum.titlecategory}}</a>
+
+                        {% endif %}
+
+                        {% endfor %}
+                    </div>
+                    {% endfor %}
+
+                </div>
             </div>
         </div>
     </div>
-</div>
 </main>
 {% endblock %}
