@@ -242,6 +242,7 @@
 	<div class="col s12 carousel center carouselHome " style="height: 600px;">
 
 		{% for home_discipline in home_disciplines %}
+		{% if home_discipline.active == 1 %}
 		<div class="carousel-item">
 			<h5 class="center-align disciplineHomeTitle">{{ home_discipline.nameDiscipline }}</h5>
 			{% if home_discipline.imageHomeDiscipline != NULL %}
@@ -253,6 +254,7 @@
 			<p class="disciplineHomeDescription ">
 				{{home_discipline.descriptionDiscipline}}</p>
 		</div>
+		{% endif %} 
 		{% endfor %}
 	</div>
 </div>
