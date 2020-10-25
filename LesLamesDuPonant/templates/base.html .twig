@@ -238,10 +238,11 @@
 ================ #}
 
 <div class="section white homeSectionActivity">
-	<h4 class="header center-align">Les disciplines</h4>
+	<h1 class="header center-align">Les disciplines</h1>
 	<div class="col s12 carousel center carouselHome " style="height: 600px;">
 
 		{% for home_discipline in home_disciplines %}
+		{% if home_disciplineactive = 1 %}
 		<div class="carousel-item">
 			<h5 class="center-align disciplineHomeTitle">{{ home_discipline.nameDiscipline }}</h5>
 			{% if home_discipline.imageHomeDiscipline != NULL %}
@@ -253,6 +254,7 @@
 			<p class="disciplineHomeDescription ">
 				{{home_discipline.descriptionDiscipline}}</p>
 		</div>
+		{% endif %} 
 		{% endfor %}
 	</div>
 </div>
@@ -332,19 +334,19 @@
 			<div class="col  xl4 l4  s12  footerLameDuPonantLeft">
 				<h5>A propos des Lames Du Ponant</h5>
 				<div class="row">
-					<div class="col xl6 l6 m6 s6">
+					<div class="col xl6 l6 m6 s12">
 						<p>nous suivre</p>
 						<p>Nous contacter</p>
 						<p>info</p>
 					</div>
-					<div class="col xl6 l6 m6 s6">
+					<div class="col xl6 l6 m6 s12 socialIconFooter">
 						<a href="https://www.facebook.com/leslamesduponant/">
 							<i class="small material-icons">facebook</i>
 						</a>
 						<a href="{{path('contact_message_new')}}">
 							<i class="small material-icons">email</i>
 						</a>
-						<a href="">
+						<a href="{{ path('les_infos') }}">
 							<i class="small material-icons">info</i>
 						</a>
 					</div>
@@ -376,7 +378,7 @@
 				<div class="col xl8 l8 m12 s12 footerOutside "><span>2020 Les Lames Du Ponant. Tous droits
 						réservés.</span></div>
 				<div class="col xl4 l4 m12 s12 footerOutside"><span><a class="grey-text text-lighten-4 right"
-							href="">Crée
+							href="https://github.com/toutvukantabu">Crée
 							par un p'tit Breton</a></span></div>
 			</div>
 		</div>

@@ -101,6 +101,7 @@
                     </div>
                 </div>
 <!-- Modal Structure -->
+	{% if is_granted('IS_AUTHENTICATED_FULLY')%}
                 <div id="modal-forum" class="formRegister z-depth-5 modal">
                     {{ form_start(form) }}
                     <div style="display:none">{{ form_row(form.categorySubjectForum)}}</div>
@@ -109,6 +110,7 @@
                     {{ form_row(form.submit)}}
                     {{ form_end(form) }}
                 </div>
+                {% endif %}
                  {# Affichage de la liset des catégories et des sections #}
                 <div class="col xl3 offset-xl1 l3 offset-l1 m12 s12  z-depth-5 liste-forum">
                     <h4 class="center-align">Liste</h4>
