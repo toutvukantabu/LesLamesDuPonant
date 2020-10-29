@@ -1,7 +1,3 @@
-
-///Open Street Map
-
-//Initialisation de la carte//
 var mymap = L.map('mapid').setView([47.273905, -2.213766], 14);
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -12,9 +8,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 }).addTo(mymap);
 
-//Pour faire des marqueurs plus classiques
 var marker = L.marker([47.354449, -2.179194]).addTo(mymap);
-
 //Création de pop up
 marker.bindPopup("<b>Salle d'entrainement Lames Du Ponant</b>").openPopup();
 
@@ -29,12 +23,3 @@ function onMapClick(e) {
 }
 
 mymap.on('click', onMapClick);
-
-
-
-
-
-
-
-
-
