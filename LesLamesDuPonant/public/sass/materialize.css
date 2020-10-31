@@ -9411,6 +9411,10 @@ p {
   line-height: 35px;
 }
 
+span {
+  font-family: 'Roboto';
+}
+
 .btn, .btn-large {
   background-color: #05053b;
 }
@@ -9513,7 +9517,8 @@ p {
   width: 2px;
 }
 
-.more-bt:after, .more-bt:before {
+.more-bt:after,
+.more-bt:before {
   content: " ";
   display: block;
   background: #030393;
@@ -9530,7 +9535,8 @@ p {
   height: 2px;
 }
 
-.more-bt:after, .more-bt:before {
+.more-bt:after,
+.more-bt:before {
   content: " ";
   display: block;
   background: #030393;
@@ -9559,7 +9565,8 @@ p {
   width: 2px;
 }
 
-.more-bt:after, .more-bt:before {
+.more-bt:after,
+.more-bt:before {
   content: " ";
   display: block;
   background: #030393;
@@ -9569,7 +9576,8 @@ p {
   z-index: 10;
 }
 
-.more-bt .fl, .more-bt .sfl {
+.more-bt .fl,
+.more-bt .sfl {
   position: absolute;
   right: 0;
   height: 100%;
@@ -9583,7 +9591,8 @@ p {
   transition-delay: .1s;
 }
 
-.more-bt .fl, .more-bt .sfl {
+.more-bt .fl,
+.more-bt .sfl {
   position: absolute;
   right: 0;
   height: 100%;
@@ -9626,7 +9635,8 @@ p {
   transform: translateX(50px) scaleX(0);
 }
 
-.more-bt .cross:before, .more-bt .cross:after {
+.more-bt .cross:before,
+.more-bt .cross:after {
   content: " ";
   background: #fff;
   display: block;
@@ -9651,7 +9661,8 @@ p {
   transition-duration: .4s;
 }
 
-.more-bt .cross:before, .more-bt .cross:after {
+.more-bt .cross:before,
+.more-bt .cross:after {
   content: " ";
   background: #fff;
   display: block;
@@ -9680,7 +9691,8 @@ p {
   transform: rotate(90deg);
 }
 
-.more-bt i:after, .more-bt i:before {
+.more-bt i:after,
+.more-bt i:before {
   content: " ";
   display: block;
   width: 2px;
@@ -9738,7 +9750,8 @@ p {
   line-height: initial;
 }
 
-.more-bt:hover:before, .more-bt:before {
+.more-bt:hover:before,
+.more-bt:before {
   height: 100%;
 }
 
@@ -9749,18 +9762,23 @@ p {
   width: 2px;
 }
 
-.more-bt:hover .fl, .more-bt .fl {
+.more-bt:hover .fl,
+.more-bt .fl {
   -webkit-transition: .7s;
   transition: .7s;
 }
 
-.more-bt:hover .fl, .more-bt:hover .sfl, .more-bt .fl, .more-bt .sfl {
+.more-bt:hover .fl,
+.more-bt:hover .sfl,
+.more-bt .fl,
+.more-bt .sfl {
   -webkit-transition-delay: 0s;
   transition-delay: 0s;
   width: 100%;
 }
 
-.more-bt .fl, .more-bt .sfl {
+.more-bt .fl,
+.more-bt .sfl {
   position: absolute;
   right: 0;
   height: 100%;
@@ -9774,12 +9792,16 @@ p {
   transition-delay: .1s;
 }
 
-.more-bt:hover .sfl, .more-bt .sfl {
+.more-bt:hover .sfl,
+.more-bt .sfl {
   -webkit-transition: .5s;
   transition: .5s;
 }
 
-.more-bt:hover .fl, .more-bt:hover .sfl, .more-bt.hvd .fl, .more-bt.hvd .sfl {
+.more-bt:hover .fl,
+.more-bt:hover .sfl,
+.more-bt.hvd .fl,
+.more-bt.hvd .sfl {
   -webkit-transition-delay: 0s;
   transition-delay: 0s;
   width: 100%;
@@ -9801,12 +9823,16 @@ p {
   left: calc(50% - 8px);
 }
 
-.more-bt:hover .cross:before, .more-bt .cross:before {
+.more-bt:hover .cross:before,
+.more-bt .cross:before {
   -webkit-transition-duration: .5s;
   transition-duration: .5s;
 }
 
-.more-bt:hover .cross:after, .more-bt:hover .cross:before, .more-bt .cross:after, .more-bt .cross:before {
+.more-bt:hover .cross:after,
+.more-bt:hover .cross:before,
+.more-bt .cross:after,
+.more-bt .cross:before {
   -webkit-transform: none;
   transform: none;
   opacity: 1;
@@ -9825,7 +9851,8 @@ p {
   transition-duration: .4s;
 }
 
-.more-bt .cross:before, .more-bt .cross:after {
+.more-bt .cross:before,
+.more-bt .cross:after {
   content: " ";
   background: #fff;
   display: block;
@@ -9839,7 +9866,10 @@ p {
   transition-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
 }
 
-.more-bt:hover .cross:after, .more-bt:hover .cross:before, .more-bt.hvd .cross:after, .more-bt.hvd .cross:before {
+.more-bt:hover .cross:after,
+.more-bt:hover .cross:before,
+.more-bt.hvd .cross:after,
+.more-bt.hvd .cross:before {
   -webkit-transform: none;
   transform: none;
   opacity: 1;
@@ -9847,7 +9877,8 @@ p {
   transition-delay: .2s;
 }
 
-.more-bt:hover .cross:after, .more-bt.hvd .cross:after {
+.more-bt:hover .cross:after,
+.more-bt.hvd .cross:after {
   -webkit-transition-duration: .6s;
   transition-duration: .6s;
 }
@@ -9949,7 +9980,8 @@ p {
   color: #030393;
 }
 
-.dropdown-content li > a:hover, .dropdown-content li > span:hover {
+.dropdown-content li > a:hover,
+.dropdown-content li > span:hover {
   color: #fff;
 }
 
@@ -10047,7 +10079,7 @@ p {
 }
 
 .disciplineHomeTitle {
-  margin-top: -108px;
+  margin-top: -188px;
   width: 300px;
   margin-left: -50px;
   margin-bottom: -15px;
@@ -10261,12 +10293,16 @@ ul.tl li .timestamp {
 }
 
 .amheFull {
-  padding: 20px 40px;
+  padding: 40px 40px;
 }
 
 .amheFull img {
   border-radius: 10px;
   margin: 25px 0 25px 0;
+}
+
+.disciplineDescription p {
+  margin-top: 4%;
 }
 
 .disciplineTitle {
@@ -10298,6 +10334,10 @@ ul.tl li .timestamp {
 .disciplineInstructor img {
   margin-top: 20px;
   margin-bottom: 30px;
+}
+
+.titleInfo {
+  padding: 40px 40px;
 }
 
 .mapInfo a {
@@ -10333,10 +10373,6 @@ a.middle-indicator-text {
 
 .indicators {
   visibility: hidden;
-}
-
-.img-discipline {
-  height: 20vh;
 }
 
 .backgroundForum {
@@ -10379,7 +10415,8 @@ table {
   width: 100%;
 }
 
-#tableForum td, #tableForum th {
+#tableForum td,
+#tableForum th {
   padding: 20px 20px;
 }
 
@@ -10537,14 +10574,29 @@ table {
 }
 
 @media only screen and (max-width: 992px) {
-  h2, h1 {
+  h2,
+  h1 {
     font-size: 2.5rem;
   }
-  h4, h3 {
+  h4,
+  h3 {
     font-size: 1.8rem;
   }
   h5 {
     font-size: 1.6rem;
+  }
+  .img-discipline {
+    display: block;
+    margin: auto;
+  }
+  .disciplineTitle,
+  .disciplineFull {
+    padding: 0 1px;
+    margin-top: 10%;
+    margin-bottom: 0%;
+  }
+  .disciplineFull {
+    padding: 0 1px;
   }
   .userAvatarHeader {
     display: none;
@@ -10560,10 +10612,23 @@ table {
     border-top: 2px solid #ffffff;
     margin-top: 20px;
   }
+  .page-footer .footerLameDuPonantLeft i {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 18px;
+    color: #a9a9a9;
+  }
   .page-footer .footerLameDuPonantCenter h5,
   .page-footer .footerLameDuPonantLeft h5,
   .page-footer .footerLameDuPonantRight h5 {
     margin-top: 35px;
+  }
+  .page-footer .footerLameDuPonantLeft p {
+    display: none;
+  }
+  .page-footer .page-footer .footerLameDuPonantLeft i {
+    display: inline-block;
+    margin-left: 20%;
   }
   .page-footer .footerLameDuPonantRight span {
     text-align: center;
@@ -10594,7 +10659,8 @@ table {
         -ms-flex-direction: column-reverse;
             flex-direction: column-reverse;
   }
-  #tableForum td, #tableForum th {
+  #tableForum td,
+  #tableForum th {
     padding: 0px;
   }
   .userForumBackground h5 {

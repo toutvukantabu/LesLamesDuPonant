@@ -120,13 +120,14 @@ class Flex implements PluginInterface, EventSubscriberInterface
         $this->config = $composer->getConfig();
         $this->options = $this->initOptions();
 
+        $symfonyRequire = preg_replace('/\.x$/', '.x-dev', getenv('SYMFONY_REQUIRE') ?: ($composer->getPackage()->getExtra()['symfony']['require'] ?? null));
+
         if ($composer2 = version_compare('2.0.0', PluginInterface::PLUGIN_API_VERSION, '<=')) {
             $rfs = Factory::createHttpDownloader($this->io, $this->config);
 
             $this->downloader = $downloader = new Downloader($composer, $io, $rfs);
             $this->downloader->setFlexId($this->getFlexId());
 
-            $symfonyRequire = getenv('SYMFONY_REQUIRE') ?: ($composer->getPackage()->getExtra()['symfony']['require'] ?? null);
             if ($symfonyRequire) {
                 $this->filter = new PackageFilter($io, $symfonyRequire, $this->downloader);
             }
@@ -136,7 +137,6 @@ class Flex implements PluginInterface, EventSubscriberInterface
             $rfs = Factory::createRemoteFilesystem($this->io, $this->config);
             $this->rfs = $rfs = new ParallelDownloader($this->io, $this->config, $rfs->getOptions(), $rfs->isTlsDisabled());
 
-            $symfonyRequire = getenv('SYMFONY_REQUIRE') ?: ($composer->getPackage()->getExtra()['symfony']['require'] ?? null);
             $this->downloader = $downloader = new Downloader($composer, $io, $this->rfs);
             $this->downloader->setFlexId($this->getFlexId());
 
@@ -334,6 +334,9 @@ class Flex implements PluginInterface, EventSubscriberInterface
 
         // new projects are most of the time proprietary
         $manipulator->addMainKey('license', 'proprietary');
+
+        // extra.branch-alias doesn't apply to the project
+        $manipulator->removeSubNode('extra', 'branch-alias');
 
         // replace unbounded constraints for symfony/* packages by extra.symfony.require
         $config = json_decode($contents, true);

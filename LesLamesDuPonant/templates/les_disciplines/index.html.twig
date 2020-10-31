@@ -41,11 +41,11 @@
             {{ discipline.disciplinetitle}}</h1>
         <div class="row z-depth-5 disciplineFull disciplineRow ">
             {# description discipline#}
-            <div class="col l8 disciplineDescription ">
+            <div class="col xl8 l8 m12 s12  disciplineDescription">
                 <p> {{ discipline.disciplineDescription|raw}}</p>
             </div>
             {# Instructeur discipline#}
-            <div class="col l4 disciplineInstructor ">
+            <div class="col xl4 l4 m12 s12 disciplineInstructor ">
                 <h5 class="center-align">Votre instructeur:</h5>
                 <img class="responsive-img z-depth-5 img-discipline"
                     src="{{asset('/uploads/discipline/') ~ discipline.photoInstructor }}"
@@ -91,7 +91,7 @@
             {{ discipline.disciplinetitle}}</h1>
         <div class="row z-depth-5 disciplineFull disciplineRow">
             {# Instructeur discipline#}
-            <div class="col xl4 disciplineInstructor">
+            <div class="col xl4 l4 m12 s12 disciplineInstructor ">
                 <h5 class="center-align">Votre instructeur:</h5>
                 <img class="responsive-img z-depth-5 img-discipline"
                     src="{{asset('/uploads/discipline/') ~ discipline.photoInstructor }}"
@@ -99,7 +99,7 @@
                 <h5 class="center-align">{{ discipline.nameInstructor}}</h5>
             </div>
             {# description discipline#}
-            <div class="col xl8 disciplineDescription">
+            <div class="col xl8 l8 m12 s12  disciplineDescription">
                 <p>{{ discipline.disciplineDescription|raw}}</p>
             </div>
         </div>
