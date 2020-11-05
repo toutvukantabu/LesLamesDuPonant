@@ -26,11 +26,12 @@ Vous pouvez retirer votre consentement à tout moment directement depuis la gest
      
      <div class="col col xl6 l6 m6 s6">
      
-     <button class="btn">{{ button_label|default('envoyer') }}<i class="material-icons right">send</i></button>
+     <button class="btn" type="submit">{{ button_label|default('envoyer') }}<i class="material-icons right">send</i></button>
     </div>
      <div class="col col xl6 l6 m6 s6">
     
    {{form_row(form.ValiderRgpd)}}
+   	{{ form_row(form._token) }}
      </div>
 
    

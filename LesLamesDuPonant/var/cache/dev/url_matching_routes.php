@@ -210,19 +210,20 @@ return [
                         .'|activer/([^/]++)(*:1662)'
                     .')'
                 .')'
+                .'|/contact/message/([^/]++)(*:1698)'
                 .'|/forum/categories/(?'
-                    .'|([^/]++)(*:1702)'
-                    .'|sujet/([^/]++)(*:1725)'
+                    .'|([^/]++)(*:1736)'
+                    .'|sujet/([^/]++)(*:1759)'
                 .')'
-                .'|/reset\\-password/reset(?:/([^/]++))?(*:1771)'
+                .'|/reset\\-password/reset(?:/([^/]++))?(*:1805)'
                 .'|/user/(?'
                     .'|([^/]++)(?'
-                        .'|(*:1800)'
-                        .'|/edit(*:1814)'
-                        .'|(*:1823)'
+                        .'|(*:1834)'
+                        .'|/edit(*:1848)'
+                        .'|(*:1857)'
                     .')'
-                    .'|supprimer/([^/]++)(*:1851)'
-                    .'|activer/([^/]++)(*:1876)'
+                    .'|supprimer/([^/]++)(*:1885)'
+                    .'|activer/([^/]++)(*:1910)'
                 .')'
             .')/?$}sDu',
     ],
@@ -302,14 +303,15 @@ return [
         1609 => [[['_route' => 'time_stamp_delete', '_controller' => 'App\\Controller\\TimeStampController::delete'], ['id'], ['DELETE' => 0], null, false, true, null]],
         1637 => [[['_route' => 'supprimer_time_stamp', '_controller' => 'App\\Controller\\TimeStampController::supprimer'], ['id'], null, null, false, true, null]],
         1662 => [[['_route' => 'activer_time_stamp', '_controller' => 'App\\Controller\\TimeStampController::activer'], ['id'], null, null, false, true, null]],
-        1702 => [[['_route' => 'le_forum_category', '_controller' => 'App\\Controller\\LeForumController::showCategory'], ['slug'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
-        1725 => [[['_route' => 'le_forum_subject', '_controller' => 'App\\Controller\\LeForumController::showMessage'], ['slug'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
-        1771 => [[['_route' => 'app_reset_password', 'token' => null, '_controller' => 'App\\Controller\\ResetPasswordController::reset'], ['token'], null, null, false, true, null]],
-        1800 => [[['_route' => 'user_show', '_controller' => 'App\\Controller\\UserController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        1814 => [[['_route' => 'user_edit', '_controller' => 'App\\Controller\\UserController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        1823 => [[['_route' => 'user_delete', '_controller' => 'App\\Controller\\UserController::delete'], ['id'], ['DELETE' => 0], null, false, true, null]],
-        1851 => [[['_route' => 'supprimer_user', '_controller' => 'App\\Controller\\UserController::supprimer'], ['id'], null, null, false, true, null]],
-        1876 => [
+        1698 => [[['_route' => 'contact_message_show', '_controller' => 'App\\Controller\\ContactMessageController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        1736 => [[['_route' => 'le_forum_category', '_controller' => 'App\\Controller\\LeForumController::showCategory'], ['slug'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
+        1759 => [[['_route' => 'le_forum_subject', '_controller' => 'App\\Controller\\LeForumController::showMessage'], ['slug'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
+        1805 => [[['_route' => 'app_reset_password', 'token' => null, '_controller' => 'App\\Controller\\ResetPasswordController::reset'], ['token'], null, null, false, true, null]],
+        1834 => [[['_route' => 'user_show', '_controller' => 'App\\Controller\\UserController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        1848 => [[['_route' => 'user_edit', '_controller' => 'App\\Controller\\UserController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        1857 => [[['_route' => 'user_delete', '_controller' => 'App\\Controller\\UserController::delete'], ['id'], ['DELETE' => 0], null, false, true, null]],
+        1885 => [[['_route' => 'supprimer_user', '_controller' => 'App\\Controller\\UserController::supprimer'], ['id'], null, null, false, true, null]],
+        1910 => [
             [['_route' => 'activer_user', '_controller' => 'App\\Controller\\UserController::activerAMHE'], ['id'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],

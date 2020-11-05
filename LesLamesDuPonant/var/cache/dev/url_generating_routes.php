@@ -32,6 +32,7 @@ return [
     'activer_category_forum' => [['id'], ['_controller' => 'App\\Controller\\CategoryForumController::activerAMHE'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/admin/category/forum/activer']], [], []],
     'contact_message_index' => [[], ['_controller' => 'App\\Controller\\ContactMessageController::index'], [], [['text', '/contact/message/']], [], []],
     'contact_message_new' => [[], ['_controller' => 'App\\Controller\\ContactMessageController::new'], [], [['text', '/contact/message/new']], [], []],
+    'contact_message_show' => [['id'], ['_controller' => 'App\\Controller\\ContactMessageController::show'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/contact/message']], [], []],
     'discipline_index' => [[], ['_controller' => 'App\\Controller\\DisciplineController::index'], [], [['text', '/admin/discipline/']], [], []],
     'discipline_new' => [[], ['_controller' => 'App\\Controller\\DisciplineController::new'], [], [['text', '/admin/discipline/new']], [], []],
     'discipline_show' => [['id'], ['_controller' => 'App\\Controller\\DisciplineController::show'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/admin/discipline']], [], []],

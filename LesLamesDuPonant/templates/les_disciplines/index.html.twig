@@ -3,6 +3,7 @@
 {% block title 'Les disciplines' %}
 
 {% block body %}
+<main class="backgroundForum"> 
 <h1 class="center-align disciplineTitle">Les disciplines des Lames Du Ponant</h1>
     {% for discipline in disciplines %}
     {% if discipline.active == 1  and   discipline.orderDiscipline is divisible by(2)  %}
@@ -109,4 +110,5 @@
     Il n'y a rien <à afficher comme disciplines
     {% endif %}
     {% endfor %}
+    </main>
     {% endblock %}

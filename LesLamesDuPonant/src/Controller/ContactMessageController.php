@@ -52,7 +52,7 @@ class ContactMessageController extends AbstractController
         ]);
     }
 
-    /**@IsGranted("ROLE_ADMIN")
+    /**
      * @Route("/{id}", name="contact_message_show", methods={"GET"})
      */
     public function show(ContactMessage $contactMessage): Response

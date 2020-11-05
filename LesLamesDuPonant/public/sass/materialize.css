@@ -2768,6 +2768,7 @@ video.responsive-video {
   position: relative;
   overflow: hidden;
   height: 500px;
+  z-index: 2;
 }
 
 .parallax-container .parallax {
@@ -9381,12 +9382,17 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  opacity: 0.93;
 }
 
 main {
   -webkit-box-flex: 1;
       -ms-flex: 1 0 auto;
           flex: 1 0 auto;
+}
+
+.z-depth-2, .z-depth-5 {
+  background-color: #fffffffa;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -9406,6 +9412,10 @@ h4:after {
   margin-top: 10px;
 }
 
+h6 {
+  font-size: 1.4rem;
+}
+
 p {
   font-size: 1.1rem;
   line-height: 35px;
@@ -9421,6 +9431,10 @@ span {
 
 .btn:hover, .btn-large:hover {
   background-color: #030393;
+}
+
+.btnEdit {
+  text-align: center;
 }
 
 .hrefHome {
@@ -10029,6 +10043,10 @@ span {
   margin-bottom: 50px;
 }
 
+.homeSectionPresentation .row {
+  margin-top: 9vh;
+}
+
 .homsectionPresentationText {
   border-radius: 10px;
   padding: 20px;
@@ -10063,6 +10081,10 @@ span {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+.homeSectionCalendar .row {
+  margin-top: 4vh;
 }
 
 /* Home Dicipline/Activity
@@ -10158,7 +10180,7 @@ span {
   margin: auto;
   margin-left: 111px;
   min-height: 50px;
-  max-height: 140px;
+  max-height: 174px;
   border-left: 1px dashed #142dbb;
   padding: 0 0 50px 30px;
   position: relative;
@@ -10221,7 +10243,9 @@ ul.tl li .timestamp {
 }
 
 .informationFooterRight img {
+  display: block;
   border-radius: 10px;
+  margin: 11% auto;
   -webkit-box-shadow: inset 0px 0px 50px 12px #b0a7b0f0;
   box-shadow: inset 0px 0px 50px 12px #b0a7b0f0;
 }
@@ -10301,13 +10325,17 @@ ul.tl li .timestamp {
   margin: 25px 0 25px 0;
 }
 
+.AmhePrez {
+  margin-bottom: 100px;
+}
+
 .disciplineDescription p {
   margin-top: 4%;
 }
 
 .disciplineTitle {
   margin-top: 80px;
-  margin-bottom: 20px;
+  margin-bottom: 70px;
   padding: 0 50px;
 }
 
@@ -10321,10 +10349,6 @@ ul.tl li .timestamp {
   padding-top: 8px;
   padding-right: 10px;
   padding-left: 10px;
-}
-
-.disciplinecarousel {
-  margin-top: 80px;
 }
 
 .disciplineRow {
@@ -10345,9 +10369,23 @@ ul.tl li .timestamp {
   text-align: center;
 }
 
+#infosFull h4 {
+  margin: 40px 0;
+}
+
+#infosFull .row {
+  padding: 12px;
+  text-align: center;
+}
+
+.CostDescription {
+  padding: 40px 40px;
+  margin-bottom: 5%;
+}
+
 #mapid {
-  height: 300px;
-  width: 500px;
+  height: 304px;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -10442,49 +10480,6 @@ table {
   margin-top: 100px;
 }
 
-@media only screen and (max-width: 600px) {
-  h6 {
-    font-size: 1.4rem;
-  }
-  p {
-    font-size: 1.4rem;
-  }
-  .page-footer .footerLameDuPonantCenter {
-    border-left: none;
-    max-height: none;
-    border-right: none;
-    border-bottom: 2px solid #ffffff;
-    border-top: 2px solid #ffffff;
-    margin-top: 20px;
-  }
-  .page-footer .footerLameDuPonantCenter h5,
-  .page-footer .footerLameDuPonantLeft h5,
-  .page-footer .footerLameDuPonantRight h5 {
-    margin-top: 35px;
-  }
-  .page-footer .footerLameDuPonantRight span {
-    text-align: center;
-    margin-left: 0px;
-  }
-  .flex-forum {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: reverse;
-        -ms-flex-direction: column-reverse;
-            flex-direction: column-reverse;
-  }
-  .flex-title-forum {
-    -webkit-box-ordinal-group: 2;
-        -ms-flex-order: 1;
-            order: 1;
-  }
-  .disciplineRow {
-    padding: 5px;
-  }
-}
-
 #top {
   background-color: #b1d1e8;
   font-size: 16px;
@@ -10573,36 +10568,22 @@ table {
   border: none;
 }
 
-@media only screen and (max-width: 992px) {
-  h2,
-  h1 {
-    font-size: 2.5rem;
+@media only screen and (max-width: 600px) {
+  h6 {
+    font-size: 1.4rem;
   }
-  h4,
-  h3 {
-    font-size: 1.8rem;
+  p {
+    font-size: 1.4rem;
   }
-  h5 {
-    font-size: 1.6rem;
+  .disciplineFull p {
+    padding-top: 8px;
+    padding-right: initial;
+    padding-left: initial;
   }
-  .img-discipline {
-    display: block;
-    margin: auto;
-  }
-  .disciplineTitle,
-  .disciplineFull {
-    padding: 0 1px;
-    margin-top: 10%;
-    margin-bottom: 0%;
-  }
-  .disciplineFull {
-    padding: 0 1px;
-  }
-  .userAvatarHeader {
-    display: none;
-  }
-  .disciplineHomeTitle {
-    margin-top: -121px;
+  .page-footer .footerLameDuPonantLeft i {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
   }
   .page-footer .footerLameDuPonantCenter {
     border-left: none;
@@ -10612,11 +10593,86 @@ table {
     border-top: 2px solid #ffffff;
     margin-top: 20px;
   }
-  .page-footer .footerLameDuPonantLeft i {
-    display: inline-block;
-    margin-top: 25px;
-    padding: 18px;
-    color: #a9a9a9;
+  .page-footer .footerLameDuPonantCenter h5,
+  .page-footer .footerLameDuPonantLeft h5,
+  .page-footer .footerLameDuPonantRight h5 {
+    margin-top: 35px;
+  }
+  .page-footer .footerLameDuPonantRight span {
+    text-align: center;
+    margin-left: 0px;
+  }
+  .flex-forum {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+  .flex-title-forum {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+  .amheFull {
+    padding: 5px 5px;
+  }
+  .amheFull p {
+    margin-left: initial;
+  }
+  .amheTitle {
+    margin: 20px;
+  }
+  .amheTitle h1 {
+    font-size: 2rem;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  h2,
+  h1 {
+    font-size: 2.5rem;
+  }
+  h5, h6 {
+    font-size: 1.8rem;
+  }
+  .AmhePrez {
+    margin-bottom: 0;
+  }
+  .img-discipline {
+    display: block;
+    margin: auto;
+  }
+  .disciplineTitle {
+    margin-top: 80px;
+    margin-bottom: 20px;
+    padding: 0 50px;
+  }
+  .disciplineFull p {
+    padding-top: 8px;
+    padding-right: initial;
+    padding-left: initial;
+  }
+  .userAvatarHeader {
+    display: none;
+  }
+  .disciplineHomeTitle {
+    margin-top: -178px;
+  }
+  .linkFooter {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+  .page-footer .footerLameDuPonantCenter {
+    border-left: none;
+    max-height: none;
+    border-right: none;
+    border-bottom: 2px solid #ffffff;
+    border-top: 2px solid #ffffff;
+    margin-top: 20px;
   }
   .page-footer .footerLameDuPonantCenter h5,
   .page-footer .footerLameDuPonantLeft h5,
@@ -10626,9 +10682,13 @@ table {
   .page-footer .footerLameDuPonantLeft p {
     display: none;
   }
-  .page-footer .page-footer .footerLameDuPonantLeft i {
+  .page-footer .footerLameDuPonantLeft i {
+    margin-top: 25px;
+    padding: 18px;
+    color: #a9a9a9;
     display: inline-block;
-    margin-left: 20%;
+    margin-right: auto;
+    margin-left: auto;
   }
   .page-footer .footerLameDuPonantRight span {
     text-align: center;
@@ -10643,9 +10703,6 @@ table {
   }
   .footerOutside .right {
     float: none !important;
-  }
-  .disciplineRow {
-    padding: 5px;
   }
   .liste-forum {
     margin-top: 20px;
@@ -10669,18 +10726,22 @@ table {
   .titleForum {
     font-size: 2.2rem;
   }
+  .titleForum .userEditFull img {
+    height: 150px;
+    width: 130px;
+    margin: 0 auto;
+    display: block;
+  }
 }
 
-.userEditFull img {
-  height: 150px;
-  width: 130px;
-  margin: 0 auto;
-  display: block;
-}
-
-@media only screen and (min-width: 601px) {
-  .disciplineRow {
-    padding: 5px;
+@media only screen and (max-width: 320px) {
+  .page-footer .footerLameDuPonantLeft i {
+    display: inline-block;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .AmhePrez {
+    margin-bottom: 0;
   }
 }
 /*# sourceMappingURL=materialize.css.map */

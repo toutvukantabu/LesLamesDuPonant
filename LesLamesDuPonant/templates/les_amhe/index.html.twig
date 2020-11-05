@@ -3,6 +3,7 @@
 {% block title ' Les AMHE | Les Lames Du Ponant |Escrime médiévale'%}
 
 {% block body %}
+<main class="backgroundForum"> 
 {% for amhe in amhes %}
 {% if amhe.active == 1 %}
 <div class="carousel carousel-slider center amheCarousel">
@@ -23,7 +24,7 @@
 {# AMHE
 ================ #}
 <h1 class="center-align amheTitle">{{ amhe.titleAMHE }}</h1>
-<div class="container white ">
+<div class="container  ">
 	<div class="row  z-depth-5 amheFull">
 		<div class="col xl12 l12 m12 s12">
 
@@ -39,7 +40,7 @@
 </div>
 {# MEDIEVAL FAMILY
 ========================= #}
-<div class="container white">
+<div class="container ">
 	{% for medieval_family in medieval_families %}
 	{% if medieval_family.active == 1 %}
 	<h1 class="center-align amheTitle"> {{ medieval_family.titleMedievalFamily }}</h1>
@@ -49,14 +50,14 @@
 	</div>
 	{% endif %}
 	{% endfor %}
-</div>
+</div >
 {# LES LAMES DU PONANT
 ======================================= #}
 {% for les_lames_du_ponant in les_lames_du_ponants %}
 {% if les_lames_du_ponant.active == 1 %}
-<h1 class="center-align amheTitle">{{ les_lames_du_ponant.titleLLDP }}</h1>
-<div class="container white">
-	<div class="row   z-depth-5 amheFull">
+<h1 id="les-lames-du-ponant" class="center-align amheTitle">{{ les_lames_du_ponant.titleLLDP }}</h1>
+<div class="container ">
+	<div class="row   z-depth-5 amheFull AmhePrez">
 		<img class="responsive-img" src="{{asset('/uploads/lldp/') ~ les_lames_du_ponant.pictureLesLamesDuponant  }} "
 			alt="Association escrime médiévale saint-Malo de Guersac 44176 44600 Saint-Nazaire Saint-Malo-de-Guersac ">
 		<p>{{ les_lames_du_ponant.desciptionLLDP|raw}}</p>
@@ -65,6 +66,6 @@
 </div>
 {% endif %}
 {% endfor %}
-
+</main>
 
 {% endblock %}

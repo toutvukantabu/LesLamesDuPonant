@@ -138,12 +138,16 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+  opacity: 0.93;
 }
 
 main {
   flex: 1 0 auto;
 }
 
+.z-depth-2, .z-depth-5 {
+  background-color: #fffffffa;
+}
 //FONT
 //=============
 
@@ -163,6 +167,9 @@ h4 {
   &:after {
     @include after-title($width:150px);
   }
+}
+h6{
+  font-size: 1.4rem;
 }
 
 p {
@@ -184,6 +191,11 @@ span {
   &:hover {
     background-color: #030393;
   }
+}
+
+//BTN USER
+.btnEdit{
+  text-align: center;
 }
 
 //BTN .Home
@@ -825,6 +837,9 @@ span {
     margin-bottom: 50px;
   }
 }
+.homeSectionPresentation .row{
+  margin-top: 9vh;
+}
 
 .homsectionPresentationText {
 
@@ -861,6 +876,10 @@ span {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  .row{
+
+    margin-top: 4vh;
+  }
 
 }
 
@@ -956,7 +975,7 @@ span {
   margin: auto;
   margin-left: 111px;
   min-height: 50px;
-  max-height: 140px;
+  max-height: 174px;
   border-left: 1px dashed #142dbb;
   padding: 0 0 50px 30px;
   position: relative;
@@ -1021,7 +1040,9 @@ ul.tl li .timestamp {
   text-align: center;
 
   img {
+    display: block;
     border-radius: 10px;
+    margin: 11% auto;
     @include webkit-shadow($shadow:#b0a7b0f0);
   }
 }
@@ -1116,16 +1137,22 @@ ul.tl li .timestamp {
   }
 }
 
+.AmhePrez{
+
+  margin-bottom: 100px;
+}
+
 //DISCIPLINES
 //===============
 
 .disciplineDescription p {
   margin-top: 4%;
+  
 }
 
 .disciplineTitle {
   margin-top: 80px;
-  margin-bottom: 20px;
+  margin-bottom: 70px;
   padding: 0 50px;
 }
 
@@ -1142,10 +1169,7 @@ ul.tl li .timestamp {
   }
 }
 
-.disciplinecarousel {
 
-  margin-top: 80px;
-}
 
 .disciplineRow {
   padding: 50px
@@ -1172,13 +1196,25 @@ ul.tl li .timestamp {
     text-align: center;
   }
 }
+#infosFull h4{
+  margin: 40px 0;
+  
+}
+#infosFull .row{
+  padding: 12px;
+  text-align: center;
+}
 
+.CostDescription{
+  padding:40px 40px;
+  margin-bottom: 5%;
+}
 
 //open street map
 //***************
 #mapid {
-  height: 300px;
-  width: 500px;
+  height: 304px;
+  width:100%;
   margin: 0 auto;
 }
 
@@ -1317,80 +1353,6 @@ table {
 .TitleMessageNew {
   margin-top: 100px;
 }
-
-
-
-//Responsive
-//================================
-// Small screens are defined as having a max-width of 600px
-// Medium screens are defined as having a max-width of 992px
-// Large screen are defined as having a min-width of 993px
-// Extra Large screen are defined as having a min-width of 1200px
-
-
-
-//SMALL AN DOWN
-//*********************************************************************
-
-@media #{$small-and-down} {
-  h6 {
-    font-size: 1.4rem;
-
-  }
-
-  p {
-    font-size: 1.4rem;
-
-  }
-
-  //footer
-
-  .page-footer {
-
-
-
-    .footerLameDuPonantCenter {
-      @include border-white($border:none, $height:none);
-      border-bottom: 2px solid #ffffff;
-      border-top: 2px solid #ffffff;
-      margin-top: 20px;
-    }
-
-    .footerLameDuPonantCenter,
-    .footerLameDuPonantLeft,
-    .footerLameDuPonantRight {
-      h5 {
-        margin-top: 35px;
-      }
-
-
-    }
-
-    .footerLameDuPonantRight {
-      span {
-        text-align: center;
-        margin-left: 0px;
-
-      }
-    }
-
-  }
-
-  //forum flexbox
-  .flex-forum {
-    display: flex;
-    flex-direction: column-reverse;
-  }
-
-  .flex-title-forum {
-    order: 1;
-  }
-
-  .disciplineRow {
-    padding: 5px
-  }
-}
-
 //table forum
 //=============
 
@@ -1499,12 +1461,105 @@ table {
 }
 
 
+
 //Responsive
 //================================
 // Small screens are defined as having a max-width of 600px
 // Medium screens are defined as having a max-width of 992px
 // Large screen are defined as having a min-width of 993px
 // Extra Large screen are defined as having a min-width of 1200px
+
+
+
+//SMALL AN DOWN
+//*********************************************************************
+
+@media #{$small-and-down} {
+  h6 {
+    font-size: 1.4rem;
+
+  }
+
+  p {
+    font-size: 1.4rem;
+
+  }
+
+  //DISCIPLINE
+
+  .disciplineFull p {
+    padding-top: 8px;
+    padding-right: initial;
+    padding-left: initial;
+}
+
+  //footer
+
+  .page-footer {
+
+    .footerLameDuPonantLeft i {
+      display: inline-block;
+     margin-left: auto;
+     margin-right: auto;
+  }
+
+    .footerLameDuPonantCenter {
+      @include border-white($border:none, $height:none);
+      border-bottom: 2px solid #ffffff;
+      border-top: 2px solid #ffffff;
+      margin-top: 20px;
+    }
+
+    .footerLameDuPonantCenter,
+    .footerLameDuPonantLeft,
+    .footerLameDuPonantRight {
+      h5 {
+        margin-top: 35px;
+      }
+
+
+    }
+
+    .footerLameDuPonantRight {
+      span {
+        text-align: center;
+        margin-left: 0px;
+
+      }
+    }
+
+  }
+
+  //forum flexbox
+  .flex-forum {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .flex-title-forum {
+    order: 1;
+  }
+  // .AmhePrez
+
+  .amheFull  {
+    padding: 5px 5px;
+    p{
+      margin-left: initial;
+    }
+
+
+   }
+   .amheTitle{
+  margin: 20px; 
+  h1{
+    font-size: 2rem;
+  }
+
+  }
+
+
+
+}
 
 
 //MEDIUM AND DOWN
@@ -1519,32 +1574,33 @@ table {
     font-size: 2.5rem;
   }
 
-  h4,
-  h3 {
+  // h4,
+  // h3 {
+  //   font-size: 1.8rem;
+  // }
+
+  h5,h6{
     font-size: 1.8rem;
   }
 
-  h5 {
-    font-size: 1.6rem;
-  }
-
   //Discipline
+  .AmhePrez{
+    margin-bottom: 0;
+  }
   .img-discipline{
     display: block;
     margin: auto;
   }
-  .disciplineTitle,
-  .disciplineFull {
-
-    padding: 0 1px;
-    margin-top: 10%;
-    margin-bottom: 0%;
+  .disciplineTitle {
+    margin-top: 80px;
+    margin-bottom: 20px;
+    padding: 0 50px;
   }
-
-  .disciplineFull {
-
-    padding: 0 1px;
-  }
+  .disciplineFull p {
+    padding-top: 8px;
+    padding-right: initial;
+    padding-left: initial;
+}
 
   //Display Avatar .collection-header
   .userAvatarHeader {
@@ -1553,10 +1609,16 @@ table {
 
   //CarouselHome
   .disciplineHomeTitle {
-    margin-top: -121px;
+    margin-top: -178px;
   }
 
   //footer
+  .linkFooter{
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+
+  }
   .page-footer {
     .footerLameDuPonantCenter {
       @include border-white($border:none, $height:none);
@@ -1565,12 +1627,6 @@ table {
       margin-top: 20px;
 
     }
- .footerLameDuPonantLeft i {
-      display: inline-block;
-      margin-top: 25px;
-      padding: 18px;
-      color: #a9a9a9;
-  }
 
     .footerLameDuPonantCenter,
     .footerLameDuPonantLeft,
@@ -1584,9 +1640,15 @@ table {
     .footerLameDuPonantLeft p {
       display: none;
     }
-    .page-footer .footerLameDuPonantLeft i {
+ .footerLameDuPonantLeft i {
+
+  margin-top: 25px;
+  padding: 18px;
+  color: #a9a9a9;
       display: inline-block;
-      margin-left: 20%;
+    
+      margin-right: auto;
+      margin-left: auto;
     }
 
     .footerLameDuPonantRight {
@@ -1613,10 +1675,7 @@ table {
 
   }
 
-  // Discipline Page
-  .disciplineRow {
-    padding: 5px
-  }
+
 
   //Forum
   .liste-forum {
@@ -1643,17 +1702,17 @@ table {
 
   .titleForum {
     font-size: 2.2rem;
-  }
-}
-
-//USer .userEditFull
-.userEditFull {
-
-  img {
-    height: 150px;
-    width: 130px;
-    margin: 0 auto;
-    display: block;
+    
+    //USer .userEditFull
+    .userEditFull {
+    
+      img {
+        height: 150px;
+        width: 130px;
+        margin: 0 auto;
+        display: block;
+      }
+    }
   }
 }
 
@@ -1662,12 +1721,7 @@ table {
 
 @media #{$medium-and-up} {
 
-  //Page Discipline
-  .disciplineRow {
-    padding: 5px
-  }
 
-  //Forum
 
 }
 
@@ -1681,4 +1735,23 @@ table {
 //***********************************************************************
 @media #{$extra-large-and-up} {
   // styles for extra large screens and up
+}
+
+
+//Iphone 5 small
+//***************************************************************************
+
+@media only screen and (max-width:320px){
+  .page-footer .footerLameDuPonantLeft i {
+    display: inline-block;
+
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .AmhePrez{
+    margin-bottom: 0;
+  }
+
+ 
+
 }

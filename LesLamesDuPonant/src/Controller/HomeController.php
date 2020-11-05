@@ -26,7 +26,8 @@ class HomeController extends AbstractController
             'controller_name' => 'HomeController',
             'users' => $userRepository->findAll(),
             'how_we_ares' => $howWeAreRepository->findAll(),
-            'time_stamp' => $timeStampRepository->findall(),
+            'time_stamp' => $timeStampRepository->findby([],['id'=>'DESC']
+            ),
             'home_disciplines' => $homeDisciplineRepository->findAll(),
             'home_pictures' => $homePicturesRepository->findAll(),
         ]);
