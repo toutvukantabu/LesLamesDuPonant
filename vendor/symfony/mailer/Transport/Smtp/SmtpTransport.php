@@ -11,6 +11,7 @@
 
 namespace Symfony\Component\Mailer\Transport\Smtp;
 
+use Psr\EventDispatcher\EventDispatcherInterface;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\Mailer\Envelope;
 use Symfony\Component\Mailer\Exception\LogicException;
@@ -21,7 +22,6 @@ use Symfony\Component\Mailer\Transport\AbstractTransport;
 use Symfony\Component\Mailer\Transport\Smtp\Stream\AbstractStream;
 use Symfony\Component\Mailer\Transport\Smtp\Stream\SocketStream;
 use Symfony\Component\Mime\RawMessage;
-use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
 
 /**
  * Sends emails over SMTP.
@@ -44,7 +44,7 @@ class SmtpTransport extends AbstractTransport
     {
         parent::__construct($dispatcher, $logger);
 
-        $this->stream = $stream ?: new SocketStream();
+        $this->stream = $stream ?? new SocketStream();
     }
 
     public function getStream(): AbstractStream
@@ -59,6 +59,8 @@ class SmtpTransport extends AbstractTransport
      *
      * @param int $threshold The maximum number of messages (0 to disable)
      * @param int $sleep     The number of seconds to sleep between stopping and re-starting the transport
+     *
+     * @return $this
      */
     public function setRestartThreshold(int $threshold, int $sleep = 0): self
     {
@@ -99,6 +101,8 @@ class SmtpTransport extends AbstractTransport
      * If your server does not have a domain name, use the IP address. This will
      * automatically be wrapped in square brackets as described in RFC 5321,
      * section 4.1.3.
+     *
+     * @return $this
      */
     public function setLocalDomain(string $domain): self
     {
@@ -159,15 +163,13 @@ class SmtpTransport extends AbstractTransport
             return $name;
         }
 
-        return sprintf('smtp://sendmail');
+        return 'smtp://sendmail';
     }
 
     /**
      * Runs a command against the stream, expecting the given response codes.
      *
      * @param int[] $codes
-     *
-     * @return string The server response
      *
      * @throws TransportException when an invalid response if received
      *
@@ -194,16 +196,25 @@ class SmtpTransport extends AbstractTransport
 
         try {
             $envelope = $message->getEnvelope();
-            $this->doMailFromCommand($envelope->getSender()->getAddress());
+            $this->doMailFromCommand($envelope->getSender()->getEncodedAddress());
             foreach ($envelope->getRecipients() as $recipient) {
-                $this->doRcptToCommand($recipient->getAddress());
+                $this->doRcptToCommand($recipient->getEncodedAddress());
             }
 
             $this->executeCommand("DATA\r\n", [354]);
-            foreach (AbstractStream::replace("\r\n.", "\r\n..", $message->toIterable()) as $chunk) {
-                $this->stream->write($chunk, false);
+            try {
+                foreach (AbstractStream::replace("\r\n.", "\r\n..", $message->toIterable()) as $chunk) {
+                    $this->stream->write($chunk, false);
+                }
+                $this->stream->flush();
+            } catch (TransportExceptionInterface $e) {
+                throw $e;
+            } catch (\Exception $e) {
+                $this->stream->terminate();
+                $this->started = false;
+                $this->getLogger()->debug(sprintf('Email transport "%s" stopped', __CLASS__));
+                throw $e;
             }
-            $this->stream->flush();
             $this->executeCommand("\r\n.\r\n", [250]);
             $message->appendDebug($this->stream->getDebug());
             $this->lastMessageTime = microtime(true);
@@ -290,7 +301,7 @@ class SmtpTransport extends AbstractTransport
             throw new TransportException(sprintf('Expected response code "%s" but got an empty response.', implode('/', $codes)));
         }
 
-        list($code) = sscanf($response, '%3d');
+        [$code] = sscanf($response, '%3d');
         $valid = \in_array($code, $codes);
 
         if (!$valid) {
@@ -329,6 +340,19 @@ class SmtpTransport extends AbstractTransport
         }
         $this->start();
         $this->restartCounter = 0;
+    }
+
+    /**
+     * @return array
+     */
+    public function __sleep()
+    {
+        throw new \BadMethodCallException('Cannot serialize '.__CLASS__);
+    }
+
+    public function __wakeup()
+    {
+        throw new \BadMethodCallException('Cannot unserialize '.__CLASS__);
     }
 
     public function __destruct()

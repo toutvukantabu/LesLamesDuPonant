@@ -23,11 +23,8 @@ class TimeStampRepository extends ServiceEntityRepository
 
 
 
-    // /**
-    //  * @return TimeStamp[] Returns an array of TimeStamp objects
-    //  */
-    /*
-    public function findByExampleField($value)
+
+    public function findthreeLastTimesstamp ($value)
     {
         return $this->createQueryBuilder('t')
             
@@ -37,7 +34,7 @@ class TimeStampRepository extends ServiceEntityRepository
             ->getResult()
         ;
     }
-    */
+    
 
     /*
     public function findOneBySomeField($value): ?TimeStamp
