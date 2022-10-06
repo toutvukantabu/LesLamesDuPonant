@@ -1,0 +1,13 @@
+{% extends 'admin.html.twig' %}
+
+{% block title 'édition des messages'%}
+
+{% block body %}
+    <h1 class="center-align">édition des messages</h1>
+
+    {{ include('contact_message/_form.html.twig', {'button_label': 'maj'}) }}
+
+    <a href="{{ path('admin') }}#message">retour à la liste</a>
+    {{ include('contact_message/_delete_form.html.twig') }}
+    
+{% endblock %}

@@ -1,0 +1,68 @@
+//font Mixin
+  @mixin after-title($color:#2b2bc4c5, $width:50px){
+    
+        display: block;
+        height: 2px;
+        width: $width;
+        background-color: $color;
+        content: " ";
+        margin: 0 auto;
+        margin-top: 10px;
+      
+}
+
+//Paragraph
+
+@mixin line-height($line:35px){
+line-height: $line;
+}
+
+// Color wave effect menu mobile + img rounded carousel home + timestamp
+
+@mixin color-waves($color-waves:rgba(5, 5, 59, 0.129)){
+
+  background-color: $color-waves
+}
+
+@mixin time-stamp($color-stamp:#05053b){
+color:$color-stamp;
+
+}
+
+@mixin general (){
+
+  background-color:#05053bc5;
+}
+
+//webkitShadow
+
+@mixin webkit-shadow ($webkit:#b0a7b0f0,$box:#b0a7b0f0,$shadow:#0e0d0ef0, $inset:inset ){
+-webkit-box-shadow: $inset 0px 0px 50px 12px $webkit;
+-moz-box-shadow: $inset 0px 0px 50px 12px $box;
+ box-shadow: $inset 0px 0px 50px 12px $shadow ;
+}
+
+@mixin webkit-shadow2 ($webkit:#b0a7b0f0,$box:#b0a7b0f0,$shadow:#0e0d0ef0 ){
+  -webkit-box-shadow:  0px 0px 50px 12px $webkit;
+  -moz-box-shadow:  0px 0px 50px 12px $box;
+   box-shadow:  0px 0px 50px 12px $shadow ;
+  }
+
+  //border white footer
+
+  @mixin border-white($border:2px solid #fff,$height:250px){
+    border-left:$border ;
+    max-height:$height;
+    border-right: $border;
+    
+  
+
+  }
+  @mixin border-white-responsive($border:2px solid #fff,$height:150px){
+
+    border-width: unset;
+    border-bottom:$border;
+    border-top:$border;
+    max-height:$height;
+  }
+

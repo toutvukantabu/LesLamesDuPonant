@@ -114,7 +114,7 @@ abstract class AbstractStream
                 continue;
             }
 
-            if (str_contains($chunk, $from)) {
+            if (false !== strpos($chunk, $from)) {
                 $chunk = explode($from, $chunk);
                 $carry = array_pop($chunk);
 

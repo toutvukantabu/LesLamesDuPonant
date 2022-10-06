@@ -1,0 +1,16 @@
+{% extends 'admin.html.twig' %}
+
+{% block title %}Édition Qui sommes-nous?{% endblock %}
+
+{% block body %}
+<h1 class="center-align">Qui sommes nous?</h1>
+
+
+{{ include('how_we_are/_form.html.twig', {'button_label': 'Maj'}) }}
+
+<a href="{{ path('how_we_are_index') }}"><button class="btn orange"> liste</button></a>
+</div>
+{{ form_end(form) }}
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,14 @@
+<div class="container">
+    <h4 class="center-align">Bonjour et bienvenue sur le site des Lames du Ponant AMHE de Saint-Nazaire</h4>
+    <img src=" {{asset('/uploads/LogoLDP2020.png')}}">
+    <div class="row">
+        <p>
+            S'il vous plait, veuillez confirmer votre email sur le lien ci-dessous <br><br>
+            <a href="{{ signedUrl|raw }}">Confirmer mon email</a>.
+            Ce lien expirera dans {{ expiresAt|date('g') }} heures.
+        </p>
+        <p>
+            Merci!
+        </p>
+    </div>
+</div>

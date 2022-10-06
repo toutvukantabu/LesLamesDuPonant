@@ -1,0 +1,6 @@
+
+{% block body%}
+        {% for home_picture in logo %}
+                <img src="{{ asset('uploads/parallax/' ~  home_picture.homeLogoPicture )}}" alt="logo amhe saint-Nazaire Saint-Malo-de-Guersac escrime médiévale les Lames du Ponant">
+        {% endfor %}
+{% endblock %}

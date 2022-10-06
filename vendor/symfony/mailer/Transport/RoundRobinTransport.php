@@ -24,9 +24,6 @@ use Symfony\Component\Mime\RawMessage;
  */
 class RoundRobinTransport implements TransportInterface
 {
-    /**
-     * @var \SplObjectStorage<TransportInterface, float>
-     */
     private $deadTransports;
     private $transports = [];
     private $retryPeriod;

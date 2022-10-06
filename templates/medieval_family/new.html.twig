@@ -1,0 +1,12 @@
+{% extends 'default.html.twig' %}
+
+{% block title %}New MedievalFamily{% endblock %}
+
+{% block body %}
+    <h1 class="center-align">nouvelle famille medievale</h1>
+
+    {{ include('medieval_family/_form.html.twig') }}
+
+    <a href="{{ path('admin')}}#medievalFamily"><button class="btn green btnForm">retour à la liste</button></a>
+    {{ form_end(form) }}
+{% endblock %}

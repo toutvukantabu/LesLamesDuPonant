@@ -1,0 +1,108 @@
+{% extends 'admin.html.twig' %}
+
+{% block title 'Edition infos' %}
+
+{% block body %}
+  {% for message in app.flashes('how we are') %}
+<div class="flash-notice">
+    {{ message }}
+</div>
+{% endfor %}
+<h1 class="center-align">Info </h1>
+<div class="container">
+    <a href="{{ path('home_info_new') }}" class="btn-floating btn-large waves-effect waves-light blue"><i
+            class="material-icons">add</i></a>
+    <table class="striped centered responsive-table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Titre info</th>
+                <th>Description</th>
+                <th>Titre coût</th>
+                <th>Description</th>
+                <th>Titre FAQ</th>
+                <th>Description</th>
+                <th>Image 1</th>
+                <th>Image 2</th>
+                <th>Image3</th>
+                <th>activer</th>
+                <th>Modifier</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for home_info in home_infos %}
+            <tr>
+                <td>{{ home_info.id }}</td>
+                <td>{{ home_info.titleInfo|striptags|u.truncate(20)|raw }}</td>
+                <td>{{ home_info.descriptionInfo|striptags|u.truncate(20)|raw }}</td>
+                <td>{{ home_info.titleCost|striptags|u.truncate(20)|raw }}</td>
+                <td>{{ home_info.descriptionCost|striptags|u.truncate(20)|raw }}</td>
+                <td>{{ home_info.titleFaqInfo|striptags|u.truncate(20)|raw }}</td>
+                <td>{{ home_info.descriptionFaqInfo|striptags|u.truncate(20)|raw }}</td>
+                 <td><img src="{{asset('/uploads/info/') ~ home_info.imageOneInfo }}" alt="photo une info"
+                        class="responsive-image imgTableAdmin"></td>
+                         <td><img src="{{asset('/uploads/info/') ~ home_info.imageTwoInfo }}" alt="photo 2 info"
+                        class="responsive-image imgTableAdmin"></td>
+                         <td><img src="{{asset('/uploads/info/') ~ home_info.ImageThreeInfo }}" alt="photo 3 info"
+                        class="responsive-image imgTableAdmin"></td>
+                    <td>
+                    <div class="switch">
+                        <label>
+                            desactiver
+                            <input type="checkbox" {{(home_info.active) ? 'checked' : ''}} data-id="{{home_info.id}}">
+                            <span class="lever"></span>
+                            activer
+                        </label>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <a href="{{ path('home_info_edit', {'id': home_info.id}) }}" class="btn-floating green"><i
+                                class="material-icons">create</i></a>
+                        <a class=" btn-floating modal-trigger red" href="#modal-delete" data-id="{{home_info.id}}"
+                            data-titre ="{{home_info.titleInfo }}" data-target="modal-delete"><i
+                                class="material-icons">delete</i></a>
+                    </div>
+                </td>
+            </tr>
+            {% else %}
+            <tr>
+                <td colspan="5">pas d'entrée trouvée</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+<!-- Modal Structure -->
+<div id="modal-delete" class="modal">
+    <div>
+        <h4 class="center-align">Suppression </h4>
+        <p class="modal-content center-align">êtes vous sûre de vouloir supprimer</p>
+    </div>
+    <div class="modal-footer">
+        <a href="#!" class="modal-action modal-close waves-effect waves-green btn green">valider</a>
+        <a href="#!" class="modal-action modal-close waves-effect waves-green btn red">anuler</a>
+    </div>
+</div>
+<script>
+    window.onload = () => {
+        let activer_ho_we_are = document.querySelectorAll("[type=checkbox]")
+        for (let bouton of activer_ho_we_are) {
+            bouton.addEventListener("click", function () {
+                let xmlhttp = new XMLHttpRequest;
+                xmlhttp.open("get", `/admin/home/info/activer/${this.dataset.id}`)
+                xmlhttp.send()
+
+            })
+        }
+        let supprimer = document.querySelectorAll(".modal-trigger")
+			for(let bouton of supprimer){
+				bouton.addEventListener("click", function () {
+					document.querySelector(".modal-footer a").href = `/admin/home/info/supprimer/${this.dataset.id}`
+					document.querySelector(".modal-content").innerText = `Êtes-vous sûr(e) de vouloir supprimer  "${this.dataset.titre}"`
+
+            })
+        }
+    }
+</script>
+{% endblock %}

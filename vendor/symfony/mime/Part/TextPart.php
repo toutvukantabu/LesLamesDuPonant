@@ -23,17 +23,11 @@ use Symfony\Component\Mime\Header\Headers;
  */
 class TextPart extends AbstractPart
 {
-    /** @internal */
-    protected $_headers;
-
     private static $encoders = [];
 
     private $body;
     private $charset;
     private $subtype;
-    /**
-     * @var ?string
-     */
     private $disposition;
     private $name;
     private $encoding;
@@ -44,8 +38,6 @@ class TextPart extends AbstractPart
      */
     public function __construct($body, ?string $charset = 'utf-8', string $subtype = 'plain', string $encoding = null)
     {
-        unset($this->_headers);
-
         parent::__construct();
 
         if (!\is_string($body) && !\is_resource($body)) {
@@ -94,7 +86,7 @@ class TextPart extends AbstractPart
      *
      * @return $this
      */
-    public function setName(string $name)
+    public function setName($name)
     {
         $this->name = $name;
 

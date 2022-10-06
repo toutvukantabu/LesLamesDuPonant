@@ -1,0 +1,35 @@
+
+        <table class="striped centered responsive-table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nom du contact</th>
+                    <th>Prénom du contact</th>
+                    <th>contenu du message</th>
+                    <th>e-mail</th>
+                    <th>DateContactMessage</th>
+                    <th>action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{ contact_message.id }}</td>
+                    <td>{{ contact_message.authorNameContactMessage }}</td>
+                    <td>{{ contact_message.authorLastNamecContactMessage }}</td>
+                    <td>{{ contact_message.contentContactMessage|striptags|u.truncate(20)|raw}}</td>
+                    <td>{{ contact_message.emailContactMessage |striptags|u.truncate(20)|raw}}</td>
+                    <td>{{ contact_message.dateContactMessage ? contact_message.dateContactMessage|date('Y-m-d H:i:s') : '' }}
+                    </td>
+                    <td>
+                        <div>
+                            <a href="{{ path('contact_message_show', {'id': contact_message.id}) }}"
+                                class="btn-floating green"><i class="material-icons">visibility</i></a>
+                            <a class=" btn-floating modal-trigger red" href="#modal-delete"
+                                data-id="{{contact_message.id}}" data-titre="{{contact_message.emailContactMessage }}"
+                                data-target="modal-delete"><i class="material-icons">delete</i></a>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+   

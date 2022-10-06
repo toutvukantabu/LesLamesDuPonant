@@ -1,0 +1,91 @@
+{% extends 'admin.html.twig' %}
+
+{% block title %}MedievalFamily index{% endblock %}
+
+{% block body %}
+   {% for message in app.flashes('how we are') %}
+<div class="flash-notice">
+    {{ message }}
+</div>
+{% endfor %}
+<h1 class="center-align">Famille médiévale index</h1>
+<div class="container">
+    <a href="{{ path('medieval_family_new') }}" class="btn-floating btn-large waves-effect waves-light blue"><i
+            class="material-icons">add</i></a>
+    <table class="striped centered responsive-table">
+        <thead>
+            <tr>
+                  <th>Id</th>
+                <th>titre</th>
+                <th>Description</th>
+                <th>Activation</th>
+                <th>Modifier</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for medieval_family in medieval_families %}
+            <tr>
+                <td>{{ medieval_family.id|striptags|u.truncate(20)|raw }}</td>
+                <td>{{ medieval_family.titleMedievalFamily|striptags|u.truncate(20)|raw }}</td>
+                <td>{{ medieval_family.descriptionMedievalFamily|striptags|u.truncate(20)|raw }}</td>
+               <td>
+                    <div class="switch">
+                        <label>
+                            desactiver
+                            <input type="checkbox" {{(medieval_family.active) ? 'checked' : ''}} data-id="{{medieval_family.id}}">
+                            <span class="lever"></span>
+                            activer
+                        </label>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <a href="{{ path('medieval_family_edit', {'id': medieval_family.id}) }}" class="btn-floating green"><i
+                                class="material-icons">create</i></a>
+                        <a class=" btn-floating modal-trigger red" href="#modal-delete" data-id="{{medieval_family.id}}"
+                            data-titre ="{{medieval_family.titleMedievalFamily }}" data-target="modal-delete"><i
+                                class="material-icons">delete</i></a>
+                    </div>
+                </td>
+            </tr>
+            {% else %}
+            <tr>
+                <td colspan="5">pas d'entrée trouvée</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+<!-- Modal Structure -->
+<div id="modal-delete" class="modal">
+    <div>
+        <h4 class="center-align">Suppression </h4>
+        <p class="modal-content center-align">êtes vous sûre de vouloir supprimer</p>
+    </div>
+    <div class="modal-footer">
+        <a href="#!" class="modal-action modal-close waves-effect waves-green btn green">valider</a>
+        <a href="#!" class="modal-action modal-close waves-effect waves-green btn red">anuler</a>
+    </div>
+</div>
+<script>
+    window.onload = () => {
+        let activer_medieval_family = document.querySelectorAll("[type=checkbox]")
+        for (let bouton of activer_medieval_family) {
+            bouton.addEventListener("click", function () {
+                let xmlhttp = new XMLHttpRequest;
+                xmlhttp.open("get", `/admin/famille-medievale/activer/${this.dataset.id}`)
+                xmlhttp.send()
+
+            })
+        }
+        let supprimer = document.querySelectorAll(".modal-trigger")
+			for(let bouton of supprimer){
+				bouton.addEventListener("click", function () {
+					document.querySelector(".modal-footer a").href = `/admin/famille-medievale/supprimer/${this.dataset.id}`
+					document.querySelector(".modal-content").innerText = `Êtes-vous sûr(e) de vouloir supprimer  "${this.dataset.titre}"`
+
+            })
+        }
+    }
+</script>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'admin.html.twig' %}
+
+{% block title 'Nouv Discipline'%}
+
+{% block body %}
+    <h1 class="center-align">Créer nouvelle discipline</h1>
+
+    {{ include('home_discipline/_form.html.twig') }}
+
+   <a href="{{ path('home_discipline_index') }}"><button class="btn orange">liste</button></a>
+{% endblock %}

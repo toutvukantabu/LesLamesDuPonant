@@ -1,0 +1,15 @@
+{% extends 'admin.html.twig' %}
+
+{% block title %}éditer FAQ {% endblock %}
+
+{% block body %}
+<h1 class="center-align">Faq Info</h1>
+
+    {{ include('faq/_form.html.twig', {'button_label': 'Maj'}) }}
+
+    <a href="{{ path('faq_index') }}"><button class="btn orange"> liste</button></a>
+</div>
+{{ form_end(form) }}
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'admin.html.twig' %}
+
+{% block title 'Edition Infos'%}
+
+{% block body %}
+
+<h1 class="center-align">Éditer Les infos</h1>
+    {{ include('home_info/_form.html.twig', {'button_label': 'Maj'}) }}
+
+  <a href="{{ path('home_info_index') }}"><button class="btn orange">liste</button></a>
+</div>
+{{ form_end(form) }}
+</div>
+</div>
+{% endblock %}

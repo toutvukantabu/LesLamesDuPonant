@@ -1,0 +1,11 @@
+{% extends 'admin.html.twig' %}
+
+{% block title %}Nouveau Message Forum{% endblock %}
+
+{% block body %}
+    <h1 class="center-align">Nouveau Message Forum</h1>
+
+    {{ include('message_forum/_form.html.twig') }}
+
+    <a href="{{ path('message_forum_index') }}"><button class="btn orange"> liste</button></a>
+{% endblock %}

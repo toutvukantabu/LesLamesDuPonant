@@ -1,0 +1,105 @@
+{% extends 'admin.html.twig' %}
+
+{% block title %}Index Sujet Forum
+{% endblock %}
+
+{% block body %}
+{% for message in app.flashes('how we are') %}
+<div class="flash-notice">
+	{{ message }}
+</div>
+{% endfor %}
+
+<h4 class="center-align">Sujets Du Forum</h4>
+<div class="container">
+	<div class="row formRegister z-depth-5">
+		<a href="{{ path('subject_forum_new') }}" class="btn-floating btn-large waves-effect waves-light blue"><i
+				class="material-icons">add</i></a>
+		{% for category_forum in category_forums %}
+		<h4 class="center-align">{{ category_forum.titleCategory}}</h4>
+
+		{% for subject_category in category_forum.subjectCategory %}
+
+		<table class="striped centered responsive-table">
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>titre</th>
+					<th>contenu</th>
+					<th>date</th>
+					<th>Activation</th>
+					<th>Modifier</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>{{ subject_category.id }}</td>
+					<td>{{ subject_category.titleSubjectForum|striptags|u.truncate(20)|raw }}</td>
+					<td>{{subject_category.contentSubjectForum|striptags|u.truncate(20)|raw }}</td>
+					<td>{{ subject_category.dateSubjectForum ? subject_category.dateSubjectForum|date('Y-m-d H:i:s') : '' }}
+					</td>
+					<td>
+						<div class="switch">
+							<label>
+								desactiver
+								<input type="checkbox" {{(subject_category.active) ? 'checked' : ''}}
+									data-id="{{subject_category.id}}">
+								<span class="lever"></span>
+								activer
+							</label>
+						</div>
+					</td>
+					<td>
+						<div>
+							<a href="{{ path('subject_forum_edit', {'id': subject_category.id}) }}"
+								class="btn-floating green"><i class="material-icons">create</i></a>
+							<a class=" btn-floating modal-trigger red" href="#modal-delete"
+								data-id="{{subject_category.id}}" data-titre="{{subject_category.titleSubjectForum }}"
+								data-target="modal-delete"><i class="material-icons">delete</i></a>
+						</div>
+					</td>
+				</tr>
+					</tbody>
+		</table>
+		{% endfor %}
+		{% endfor %}
+	</div>
+</div>
+
+<!-- Modal Structure -->
+<div id="modal-delete" class="modal">
+	<div>
+		<h4 class="center-align">Suppression </h4>
+		<p class="modal-content center-align">êtes vous sûre de vouloir supprimer</p>
+	</div>
+	<div class="modal-footer">
+		<a href="#!" class="modal-action modal-close waves-effect waves-green btn green">valider</a>
+		<a href="#!" class="modal-action modal-close waves-effect waves-green btn red">anuler</a>
+	</div>
+</div>
+
+
+<script>
+	window.onload = () => {
+		let activer_subject_forum = document.querySelectorAll("[type=checkbox]")
+		for (let bouton of activer_subject_forum) {
+			bouton.addEventListener("click", function () {
+				let xmlhttp = new XMLHttpRequest;
+				xmlhttp.open("get", `/admin/subject/forum/activer/${this.dataset.id}`)
+				xmlhttp.send()
+
+			})
+		}
+		let supprimer = document.querySelectorAll(".modal-trigger")
+		for (let bouton of supprimer) {
+			bouton.addEventListener("click", function () {
+				document.querySelector(".modal-footer a").href =
+					`/admin/subject/forum/supprimer/${this.dataset.id}`
+				document.querySelector(".modal-content").innerText =
+					`Êtes-vous sûr(e) de vouloir supprimer  "${this.dataset.titre}"`
+
+			})
+		}
+	}
+</script>
+{% endblock %}

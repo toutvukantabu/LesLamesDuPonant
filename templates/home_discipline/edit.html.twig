@@ -1,0 +1,16 @@
+{% extends 'admin.html.twig' %}
+
+{% block title %} accueil Discipline{% endblock %}
+
+{% block body %}
+    <h1 class="center-align">éditer Discipline Accueil</h1>
+
+
+    {{ include('home_discipline/_form.html.twig', {'button_label': 'maj'}) }}
+
+    <a href="{{ path('home_discipline_index') }}"><button class="btn orange"> liste</button></a>
+</div>
+{{ form_end(form) }}
+</div>
+</div>
+{% endblock %}

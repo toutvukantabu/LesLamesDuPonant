@@ -1,0 +1,11 @@
+{% extends 'default.html.twig' %}
+
+{% block title %}Nouvelle Section{% endblock %}
+
+{% block body %}
+    <h1 class="center-align">Créer nouvelle Section</h1>
+
+    {{ include('home_section_forum/_form.html.twig') }}
+
+    <a href="{{ path('home_section_forum_index') }}"><button class="btn orange"> liste</button></a>
+{% endblock %}

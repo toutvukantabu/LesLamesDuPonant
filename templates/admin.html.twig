@@ -1,0 +1,128 @@
+{% extends  "default.html.twig" %}
+{% block admin %}
+
+{# NABAR
+======================== #}
+<ul class="side-nav z-depth-4" id="mobile-demo">
+	<ul class="collapsible" data-collapsible="accordion">
+		<li>
+			<div class="collapsible-header"><i class="material-icons">home</i>Accueil</div>
+			<div class="collapsible-body">
+				<ul>
+					<li><a href="{{path('how_we_are_index')}}">Qui sommes nous?</a></li>
+					<li><a href="{{path('home_discipline_index')}}">Les disciplines</a></li>
+					<li><a href="{{path('home_pictures_index')}}">parallax/logo</a></li>
+					<li><a href="{{path('time_stamp_index')}}">Agenda</a></li>
+				</ul>
+			</div>
+		</li>	
+		<li>
+			<div class="collapsible-header"><i class="material-icons">security</i>AMHE</div>
+			<div class="collapsible-body">
+				<ul>
+					<li><a href="{{path('amhe_index')}}">AMHE</a></li>
+					<li><a href="{{path('medieval_family_index')}}">famille médiévale</a></li>
+					<li><a href=" {{path('les_lames_du_ponant_index')}}">Les Lames Du Ponant</a></li>
+				</ul>
+			</div>
+		</li>
+		<li>
+			<div class="collapsible-header"><i class="material-icons">sports_kabaddi</i>Disciplines</div>
+			<div class="collapsible-body">
+				<ul>
+					<li><a href="{{path('discipline_index')}}">éditer disciplines</a></li>
+				</ul>
+			</div>
+		</li>
+		<li>
+			<div class="collapsible-header"><i class="material-icons">live_help</i>infos</div>
+			<div class="collapsible-body">
+				<ul>
+					<li><a href="{{path('home_info_index')}}">éditer infos</a></li>
+				</ul>
+			</div>
+		</li>
+		<li>
+			<div class="collapsible-header"><i class="material-icons">message</i>forum</div>
+			<div class="collapsible-body">
+				<ul>
+					<li><a href="{{path('home_section_forum_index')}}">section</a></li>
+					<li><a href="{{path('category_forum_index')}}">categorie</a></li>
+					<li><a href="{{path('subject_forum_index')}}">sujet</a></li>
+					<li><a href="{{path('message_forum_index')}}">message</a></li>
+				</ul>
+			</div>
+		</li>
+		<li>
+			<div class="collapsible-header"><i class="material-icons">perm_identity</i>administration</div>
+			<div class="collapsible-body">
+				<ul >
+					<li><a href="{{path('user_index')}}">Membres</a></li>
+					<li><a href="{{path('contact_message_index')}}">Message</a></li>
+				</ul>
+			</div>
+		</li>
+	</ul>
+</ul>
+<div class="menu">
+	<ul id="dropdown1" class="dropdown-content">
+		<li><a href="{{path('how_we_are_index')}}">Qui sommes nous?</a></li>
+		<li><a href="{{path('home_discipline_index')}}">Les disciplines</a></li>
+		<li><a href="{{path('home_pictures_index')}}">parallax/logo</a></li>
+		<li><a href="{{path('time_stamp_index')}}">Agenda</a></li>
+	</ul>
+	<ul id="dropdown2" class="dropdown-content">
+		<li><a href="{{path('amhe_index')}}">AMHE</a></li>
+		<li><a href="{{path('medieval_family_index')}}">famille médiévale</a></li>
+		<li><a href=" {{path('les_lames_du_ponant_index')}}">Les Lames Du Ponant</a></li>
+	</ul>
+	<ul id="dropdown5" class="dropdown-content">
+		<li><a href="{{path('home_section_forum_index')}}">section</a></li>
+		<li><a href="{{path('category_forum_index')}}">categorie</a></li>
+		<li><a href="{{path('subject_forum_index')}}">sujet</a></li>
+		<li><a href="{{path('message_forum_index')}}">message</a></li>
+	</ul>
+	<ul id="dropdown7" class="dropdown-content">
+		<li><a href="{{path('faq_index')}}">FAQ forum</a></li>
+	</ul>
+	<ul id="dropdown8" class="dropdown-content">
+		<li><a href="{{path('user_index')}}">Membres</a></li>
+		<li><a href="{{path('contact_message_index')}}">Message</a></li>
+	</ul>
+	<nav id="navbarHome">
+	{% if app.request.get('_route') == 'admin' %}
+		<div class="nav-wrapper">
+			<a href="{{path('home')}} " class="brand-logo center">Accueil</a>
+			{% else %}
+			<div class="nav-wrapper">
+			<a href="{{path('admin')}} " class="brand-logo center">Accueil Administration</a>
+			{% endif %}
+			<a href="#" data-activates="mobile-demo" class="button-collapse">
+				<i class="material-icons">menu</i>
+			</a>
+			<ul class="left hide-on-med-and-down">
+				<li><a class="dropdown-button" href="#!" data-activates="dropdown1"> Page Accueil<i
+							class="material-icons right"></i></a></li>
+				<li><a class="dropdown-button" href="#!" data-activates="dropdown2">AMHE<i
+							class="material-icons right"></i></a></li>
+				<li><a class="dropdown-button" href="{{path('discipline_index')}}"
+						data-activates="dropdown3">Disciplines<i class="material-icons right"></i></a></li>
+				<li><a class="dropdown-button" href="{{path('home_info_index')}}" data-activates="dropdown4">Infos<i
+							class="material-icons right"></i></a></li>
+			</ul>
+			<ul class="right hide-on-med-and-down">
+				<li><a class="dropdown-button" href="#!" data-activates="dropdown5">Forum<i
+							class="material-icons right"></i></a></li>
+				<li><a class="dropdown-button" href="#!" data-activates="dropdown7">RGPD<i
+							class="material-icons right"></i></a></li>
+				<li><a class="dropdown-button" href="#!" data-activates="dropdown8">Administration<i
+							class="material-icons right"></i></a></li>
+			</ul>
+		</div>
+	</nav>
+</div>
+
+{% endblock %}
+{% block body %}
+{% include "user/widget.html.twig" %}
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'admin.html.twig' %}
+
+{% block title 'Nouvelles images accueil'%}
+
+{% block body %}
+   <h1 class="center-align">Image page d'accueil</h1>
+
+    {{ include('home_pictures/_form.html.twig') }}
+
+    <a href="{{ path('home_pictures_index') }}"><button class="btn orange"> liste</button> </a>
+{% endblock %}

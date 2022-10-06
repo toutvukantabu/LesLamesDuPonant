@@ -1,0 +1,16 @@
+{% extends 'admin.html.twig' %}
+
+{% block title %}Éditer Section Forum{% endblock %}
+
+{% block body %}
+    <h1 class="center-align">éditer HomeSectionForum</h1>
+
+    {{ include('home_section_forum/_form.html.twig', {'button_label': 'maj'}) }}
+
+    <a href="{{ path('home_section_forum_index') }}"><button class="btn orange"> liste</button></a>
+
+</div>
+{{ form_end(form) }}
+</div>
+</div>
+{% endblock %}

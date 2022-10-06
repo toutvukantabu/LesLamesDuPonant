@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title 'Enregistrement d\'un compte'%}
+
+
+{% block body %}
+
+{% for flashError in app.flashes('verify_email_error') %}
+<div class="alert alert-danger" role="alert">{{ flashError }}</div>
+{% endfor %}
+{{ form_start(registrationForm,{'attr':{'class':'validate','id':'formValidate'}}) }}
+<div class="container">
+	<div class="row formRegister z-depth-5">
+		<h5 class="center-align "> Formulaire d'Enregistrement Les Lames du Ponant</h5>
+		<div class="input-field col s12 l12 m12 ">
+			{{ form_row(registrationForm.email) }}
+
+		</div>
+		<div class="input-field col s12 l12 m12">
+			{{ form_row(registrationForm.plainPassword.first)}}
+		</div>
+		<div class="input-field col s12 l12 m12">
+			{{ form_row(registrationForm.plainPassword.second)}}
+
+		</div class="row">
+		<div class="col s6 l6 m6">
+			{{ form_row(registrationForm.agreeTerms) }}
+			<label for="password" data-error="wrong" data-success="right"></label>
+		</div>
+		<div class="col s6 l6 m6">
+			<button type="submit" class="btn btnForm">vous enregistrer</button>
+		</div>
+	</div>
+</div>
+{{ form_end(registrationForm) }}
+
+{% endblock %}

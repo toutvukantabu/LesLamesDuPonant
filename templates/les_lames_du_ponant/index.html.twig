@@ -1,0 +1,95 @@
+{% extends 'admin.html.twig' %}
+
+{% block title %}LesLamesDuPonant index{% endblock %}
+
+{% block body %}
+{% for message in app.flashes('how we are') %}
+<div class="flash-notice">
+    {{ message }}
+</div>
+{% endfor %}
+<h1 class="center-align">Les Lames DuPonant </h1>
+<div class="container">
+    <a href="{{ path('les_lames_du_ponant_new') }}" class="btn-floating btn-large waves-effect waves-light blue"><i
+            class="material-icons">add</i></a>
+    <table class="striped centered responsive-table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>TitleLLDP</th>
+                <th>DesciptionLLDP</th>
+                <th>PictureLesLamesDuponant</th>
+                <th>Activation</th>
+                <th>Modifier</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for les_lames_du_ponant in les_lames_du_ponants %}
+            <tr>
+                <td>{{ les_lames_du_ponant.id|striptags|u.truncate(20)|raw }}</td>
+                <td>{{ les_lames_du_ponant.titleLLDP|striptags|u.truncate(20)|raw }}</td>
+                <td>{{ les_lames_du_ponant.desciptionLLDP|striptags|u.truncate(20)|raw }}</td>
+                <td><img src="{{asset('/uploads/lldp/') ~ les_lames_du_ponant.pictureLesLamesDuponant }}" alt=""
+                        class="responsive-image imgTableAdmin"></td>
+                <td>
+                    <div class="switch">
+                        <label>
+                            desactiver
+                            <input type="checkbox" {{(les_lames_du_ponant.active) ? 'checked' : ''}} data-id="{{les_lames_du_ponant.id}}">
+                            <span class="lever"></span>
+                            activer
+                        </label>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <a href="{{ path('les_lames_du_ponant_edit', {'id': les_lames_du_ponant.id}) }}" class="btn-floating green"><i
+                                class="material-icons">create</i></a>
+                        <a class=" btn-floating modal-trigger red" href="#modal-delete" data-id="{{les_lames_du_ponant.id}}"
+                            data-titre="{{les_lames_du_ponant.titleLLDP }}" data-target="modal-delete"><i
+                                class="material-icons">delete</i></a>
+                    </div>
+                </td>
+            </tr>
+            {% else %}
+            <tr>
+                <td colspan="5">pas d'entrée trouvée</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+<!-- Modal Structure -->
+<div id="modal-delete" class="modal">
+    <div>
+        <h4 class="center-align">Suppression </h4>
+        <p class="modal-content center-align">êtes vous sûre de vouloir supprimer</p>
+    </div>
+    <div class="modal-footer">
+        <a href="#!" class="modal-action modal-close waves-effect waves-green btn green">valider</a>
+        <a href="#!" class="modal-action modal-close waves-effect waves-green btn red">anuler</a>
+    </div>
+</div>
+<script>
+    window.onload = () => {
+        let activer_les_lames_du_ponant = document.querySelectorAll("[type=checkbox]")
+        for (let bouton of activer_les_lames_du_ponant) {
+            bouton.addEventListener("click", function () {
+                let xmlhttp = new XMLHttpRequest;
+                xmlhttp.open("get", `/admin/LLDP/activer/${this.dataset.id}`)
+                xmlhttp.send()
+
+            })
+        }
+        let supprimer = document.querySelectorAll(".modal-trigger")
+        for (let bouton of supprimer) {
+            bouton.addEventListener("click", function () {
+                document.querySelector(".modal-footer a").href = `/admin/LLDP/supprimer/${this.dataset.id}`
+                document.querySelector(".modal-content").innerText =
+                    `Êtes-vous sûr(e) de vouloir supprimer  "${this.dataset.titre}"`
+
+            })
+        }
+    }
+</script>
+{% endblock %}

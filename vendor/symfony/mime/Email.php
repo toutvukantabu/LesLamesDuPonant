@@ -266,7 +266,7 @@ class Email extends Message
      */
     public function getPriority(): int
     {
-        [$priority] = sscanf($this->getHeaders()->getHeaderBody('X-Priority') ?? '', '%[1-5]');
+        [$priority] = sscanf($this->getHeaders()->getHeaderBody('X-Priority'), '%[1-5]');
 
         return $priority ?? 3;
     }
@@ -378,7 +378,7 @@ class Email extends Message
     }
 
     /**
-     * @return array|DataPart[]
+     * @return DataPart[]
      */
     public function getAttachments(): array
     {
@@ -485,7 +485,6 @@ class Email extends Message
                 $attachment['inline'] = true;
                 $inlineParts[$name] = $part = $this->createDataPart($attachment);
                 $html = str_replace('cid:'.$name, 'cid:'.$part->getContentId(), $html);
-                $part->setName($part->getContentId());
                 continue 2;
             }
             $attachmentParts[] = $this->createDataPart($attachment);
@@ -535,9 +534,6 @@ class Email extends Message
         return $this;
     }
 
-    /**
-     * @return $this
-     */
     private function setListAddressHeaderBody(string $name, array $addresses)
     {
         $addresses = Address::createArray($addresses);
