@@ -9,8 +9,8 @@ RUN echo "en_US.UTF-8 UTF-8" > /etc/locale.gen && \
     locale-gen
 
 RUN curl -sSk https://getcomposer.org/installer | php -- --disable-tls && \
-   mv composer.phar /usr/local/bin/composer
-
+    mv composer.phar /usr/local/bin/composer
+RUN composer self-update --1
 #RUN curl -sS https://get.symfony.com/cli/installer | bash
 #RUN mv /usr/.symfony/bin/symfony /usr/local/bin/symfony
 
