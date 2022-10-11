@@ -7,19 +7,14 @@ use App\Entity\SubjectForum;
 use App\Entity\CategoryForum;
 use App\Form\MessageForumType;
 use App\Form\SubjectForumType;
-use phpDocumentor\Reflection\Types\This;
-use App\Repository\MessageForumRepository;
-use App\Repository\SubjectForumRepository;
+
 use App\Repository\CategoryForumRepository;
 use Symfony\Component\HttpFoundation\Request;
 use App\Repository\HomeSectionForumRepository;
-use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
+
 
 /**
  * @Route("forum" )

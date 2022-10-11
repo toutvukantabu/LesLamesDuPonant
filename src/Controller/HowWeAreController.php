@@ -9,7 +9,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
 /**
@@ -23,7 +22,7 @@ class HowWeAreController extends AbstractController
     public function index(HowWeAreRepository $howWeAreRepository): Response
     {
         return $this->render('how_we_are/index.html.twig', [
-            'how_we_ares' => $howWeAreRepository->findAll(),
+            'how_we_are' => $howWeAreRepository->findAll(),
         ]);
     }
 
@@ -51,16 +50,16 @@ class HowWeAreController extends AbstractController
         ]);
     }
 
-    /**
-     * @IsGranted("ROLE_ADMIN")
-     * @Route("/{id}", name="how_we_are_show", methods={"GET"})
-     */
-    public function show(HowWeAre $howWeAre): Response
-    {
-        return $this->render('how_we_are/show.html.twig', [
-            'how_we_are' => $howWeAre,
-        ]);
-    }
+    // /**
+    //  * 
+    //  * @Route("/{id}", name="how_we_are_show", methods={"GET"})
+    //  */
+    // public function show(HowWeAre $howWeAre): Response
+    // {
+    //     return $this->render('how_we_are/show.html.twig', [
+    //         'how_we_are' => $howWeAre,
+    //     ]);
+    // }
 
     /**
      * @IsGranted("ROLE_ADMIN")

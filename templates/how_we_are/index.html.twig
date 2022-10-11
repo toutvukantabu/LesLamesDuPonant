@@ -23,7 +23,7 @@
             </tr>
         </thead>
         <tbody>
-            {% for how_we_are in how_we_ares %}
+            {% for how_we_are in how_we_are %}
             <tr>
                 <td>{{ how_we_are.id }}</td>
                 <td>{{ how_we_are.titleHowWeAre|striptags|u.truncate(20)|raw}}</td>

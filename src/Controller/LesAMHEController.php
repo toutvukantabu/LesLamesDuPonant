@@ -6,8 +6,8 @@ use App\Repository\MedievalFamilyRepository;
 use App\Repository\LesLamesDuPonantRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
+
+
 class LesAMHEController extends AbstractController
 {
     /**

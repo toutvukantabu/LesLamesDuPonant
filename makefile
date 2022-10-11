@@ -131,6 +131,8 @@ migration: ## make migration (before using this command, connect on your contain
 migrate: ## doctrine migration migrate (before using this command, connect on your container with make:bash)
 	@docker exec -it -w /var/www/ $(PROJECT) $(PHP) doctrine:migration:migrate --no-interaction
 
+migrate-blank: ## doctrine migration migrate (before using this command, connect on your container with make:bash)
+	@docker exec -it -w /var/www/ $(PROJECT) $(PHP) doctrine:migration:generate --no-interaction
 migrate-force: ## doctrine migration migrate (before using this command, connect on your container with make:bash)
 	@docker exec -it -w /var/www/ $(PROJECT) $(PHP) doctrine:schema:update --force
 
