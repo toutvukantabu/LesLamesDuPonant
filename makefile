@@ -157,7 +157,7 @@ framework : ## see framework config
 ##——————————————————————————————————————————————————————————————————————————————
 
 
-build: docker-build up install ## Build project, Install vendors according to the current composer.lock file, create  environnement
+build: docker-build up  install update## Build project, Install vendors according to the current composer.lock file, create  environnement
 
 stop:  down   ## , delete-environnement, stop docker
 
@@ -169,17 +169,18 @@ autoload: ## dump-autoload all containers
 clear-cache : ## clear cache comoser 
 	@docker exec -it -w /var/www/ $(PROJECT) $(COMPOSER) clearcache
 
-update-flex: 
+clear-vendor: 
+	$(DOCKER) exec -it  -w /var/www/  $(PROJECT) rm -R /vendor
+
+update: 
 	@docker exec -it -w /var/www/ $(PROJECT) $(COMPOSER) update symfony/flex --no-plugins --no-scripts
 	
 install: ## dump-autoload all containers
-	@docker exec -it -w /var/www/ $(PROJECT) $(COMPOSER) install --no-plugins --no-scripts
+	@docker exec -it -w /var/www/ $(PROJECT) $(COMPOSER) install  --no-plugins --no-scripts
 
 ## —— Project 🐝 ———————————————————————————————————————————————————————————————
 
 start: load-fixtures  ##load-fixtures  serve ## build project,Start docker, load fixtures and start the webserver
-
-reload: unserve restart load-fixtures serve ## Load fixtures 
 
 stop: down  ## Stop docker and the Symfony binary server
 

@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInite034e3f9a74aff3f14bd867420a09367
+class ComposerStaticInit0e492904aa6eacd860cbe54045faaaae
 {
     public static $files = array (
         'a4a119a56e50fbb293281d9a48007e0e' => __DIR__ . '/..' . '/symfony/polyfill-php80/bootstrap.php',
@@ -1855,20 +1855,52 @@ class ComposerStaticInite034e3f9a74aff3f14bd867420a09367
         'Egulias\\EmailValidator\\EmailLexer' => __DIR__ . '/..' . '/egulias/email-validator/src/EmailLexer.php',
         'Egulias\\EmailValidator\\EmailParser' => __DIR__ . '/..' . '/egulias/email-validator/src/EmailParser.php',
         'Egulias\\EmailValidator\\EmailValidator' => __DIR__ . '/..' . '/egulias/email-validator/src/EmailValidator.php',
+        'Egulias\\EmailValidator\\Exception\\AtextAfterCFWS' => __DIR__ . '/..' . '/egulias/email-validator/src/Exception/AtextAfterCFWS.php',
+        'Egulias\\EmailValidator\\Exception\\CRLFAtTheEnd' => __DIR__ . '/..' . '/egulias/email-validator/src/Exception/CRLFAtTheEnd.php',
+        'Egulias\\EmailValidator\\Exception\\CRLFX2' => __DIR__ . '/..' . '/egulias/email-validator/src/Exception/CRLFX2.php',
+        'Egulias\\EmailValidator\\Exception\\CRNoLF' => __DIR__ . '/..' . '/egulias/email-validator/src/Exception/CRNoLF.php',
+        'Egulias\\EmailValidator\\Exception\\CharNotAllowed' => __DIR__ . '/..' . '/egulias/email-validator/src/Exception/CharNotAllowed.php',
+        'Egulias\\EmailValidator\\Exception\\CommaInDomain' => __DIR__ . '/..' . '/egulias/email-validator/src/Exception/CommaInDomain.php',
+        'Egulias\\EmailValidator\\Exception\\ConsecutiveAt' => __DIR__ . '/..' . '/egulias/email-validator/src/Exception/ConsecutiveAt.php',
+        'Egulias\\EmailValidator\\Exception\\ConsecutiveDot' => __DIR__ . '/..' . '/egulias/email-validator/src/Exception/ConsecutiveDot.php',
+        'Egulias\\EmailValidator\\Exception\\DomainAcceptsNoMail' => __DIR__ . '/..' . '/egulias/email-validator/src/Exception/DomainAcceptsNoMail.php',
+        'Egulias\\EmailValidator\\Exception\\DomainHyphened' => __DIR__ . '/..' . '/egulias/email-validator/src/Exception/DomainHyphened.php',
+        'Egulias\\EmailValidator\\Exception\\DotAtEnd' => __DIR__ . '/..' . '/egulias/email-validator/src/Exception/DotAtEnd.php',
+        'Egulias\\EmailValidator\\Exception\\DotAtStart' => __DIR__ . '/..' . '/egulias/email-validator/src/Exception/DotAtStart.php',
+        'Egulias\\EmailValidator\\Exception\\ExpectingAT' => __DIR__ . '/..' . '/egulias/email-validator/src/Exception/ExpectingAT.php',
+        'Egulias\\EmailValidator\\Exception\\ExpectingATEXT' => __DIR__ . '/..' . '/egulias/email-validator/src/Exception/ExpectingATEXT.php',
+        'Egulias\\EmailValidator\\Exception\\ExpectingCTEXT' => __DIR__ . '/..' . '/egulias/email-validator/src/Exception/ExpectingCTEXT.php',
+        'Egulias\\EmailValidator\\Exception\\ExpectingDTEXT' => __DIR__ . '/..' . '/egulias/email-validator/src/Exception/ExpectingDTEXT.php',
+        'Egulias\\EmailValidator\\Exception\\ExpectingDomainLiteralClose' => __DIR__ . '/..' . '/egulias/email-validator/src/Exception/ExpectingDomainLiteralClose.php',
+        'Egulias\\EmailValidator\\Exception\\ExpectingQPair' => __DIR__ . '/..' . '/egulias/email-validator/src/Exception/ExpectingQPair.php',
+        'Egulias\\EmailValidator\\Exception\\InvalidEmail' => __DIR__ . '/..' . '/egulias/email-validator/src/Exception/InvalidEmail.php',
+        'Egulias\\EmailValidator\\Exception\\LocalOrReservedDomain' => __DIR__ . '/..' . '/egulias/email-validator/src/Exception/LocalOrReservedDomain.php',
+        'Egulias\\EmailValidator\\Exception\\NoDNSRecord' => __DIR__ . '/..' . '/egulias/email-validator/src/Exception/NoDNSRecord.php',
+        'Egulias\\EmailValidator\\Exception\\NoDomainPart' => __DIR__ . '/..' . '/egulias/email-validator/src/Exception/NoDomainPart.php',
+        'Egulias\\EmailValidator\\Exception\\NoLocalPart' => __DIR__ . '/..' . '/egulias/email-validator/src/Exception/NoLocalPart.php',
+        'Egulias\\EmailValidator\\Exception\\UnclosedComment' => __DIR__ . '/..' . '/egulias/email-validator/src/Exception/UnclosedComment.php',
+        'Egulias\\EmailValidator\\Exception\\UnclosedQuotedString' => __DIR__ . '/..' . '/egulias/email-validator/src/Exception/UnclosedQuotedString.php',
+        'Egulias\\EmailValidator\\Exception\\UnopenedComment' => __DIR__ . '/..' . '/egulias/email-validator/src/Exception/UnopenedComment.php',
         'Egulias\\EmailValidator\\Parser\\DomainPart' => __DIR__ . '/..' . '/egulias/email-validator/src/Parser/DomainPart.php',
         'Egulias\\EmailValidator\\Parser\\LocalPart' => __DIR__ . '/..' . '/egulias/email-validator/src/Parser/LocalPart.php',
+        'Egulias\\EmailValidator\\Parser\\Parser' => __DIR__ . '/..' . '/egulias/email-validator/src/Parser/Parser.php',
         'Egulias\\EmailValidator\\Validation\\DNSCheckValidation' => __DIR__ . '/..' . '/egulias/email-validator/src/Validation/DNSCheckValidation.php',
         'Egulias\\EmailValidator\\Validation\\EmailValidation' => __DIR__ . '/..' . '/egulias/email-validator/src/Validation/EmailValidation.php',
+        'Egulias\\EmailValidator\\Validation\\Error\\RFCWarnings' => __DIR__ . '/..' . '/egulias/email-validator/src/Validation/Error/RFCWarnings.php',
+        'Egulias\\EmailValidator\\Validation\\Error\\SpoofEmail' => __DIR__ . '/..' . '/egulias/email-validator/src/Validation/Error/SpoofEmail.php',
         'Egulias\\EmailValidator\\Validation\\Exception\\EmptyValidationList' => __DIR__ . '/..' . '/egulias/email-validator/src/Validation/Exception/EmptyValidationList.php',
+        'Egulias\\EmailValidator\\Validation\\MultipleErrors' => __DIR__ . '/..' . '/egulias/email-validator/src/Validation/MultipleErrors.php',
         'Egulias\\EmailValidator\\Validation\\MultipleValidationWithAnd' => __DIR__ . '/..' . '/egulias/email-validator/src/Validation/MultipleValidationWithAnd.php',
         'Egulias\\EmailValidator\\Validation\\NoRFCWarningsValidation' => __DIR__ . '/..' . '/egulias/email-validator/src/Validation/NoRFCWarningsValidation.php',
         'Egulias\\EmailValidator\\Validation\\RFCValidation' => __DIR__ . '/..' . '/egulias/email-validator/src/Validation/RFCValidation.php',
+        'Egulias\\EmailValidator\\Validation\\SpoofCheckValidation' => __DIR__ . '/..' . '/egulias/email-validator/src/Validation/SpoofCheckValidation.php',
         'Egulias\\EmailValidator\\Warning\\AddressLiteral' => __DIR__ . '/..' . '/egulias/email-validator/src/Warning/AddressLiteral.php',
         'Egulias\\EmailValidator\\Warning\\CFWSNearAt' => __DIR__ . '/..' . '/egulias/email-validator/src/Warning/CFWSNearAt.php',
         'Egulias\\EmailValidator\\Warning\\CFWSWithFWS' => __DIR__ . '/..' . '/egulias/email-validator/src/Warning/CFWSWithFWS.php',
         'Egulias\\EmailValidator\\Warning\\Comment' => __DIR__ . '/..' . '/egulias/email-validator/src/Warning/Comment.php',
         'Egulias\\EmailValidator\\Warning\\DeprecatedComment' => __DIR__ . '/..' . '/egulias/email-validator/src/Warning/DeprecatedComment.php',
         'Egulias\\EmailValidator\\Warning\\DomainLiteral' => __DIR__ . '/..' . '/egulias/email-validator/src/Warning/DomainLiteral.php',
+        'Egulias\\EmailValidator\\Warning\\DomainTooLong' => __DIR__ . '/..' . '/egulias/email-validator/src/Warning/DomainTooLong.php',
         'Egulias\\EmailValidator\\Warning\\EmailTooLong' => __DIR__ . '/..' . '/egulias/email-validator/src/Warning/EmailTooLong.php',
         'Egulias\\EmailValidator\\Warning\\IPV6BadChar' => __DIR__ . '/..' . '/egulias/email-validator/src/Warning/IPV6BadChar.php',
         'Egulias\\EmailValidator\\Warning\\IPV6ColonEnd' => __DIR__ . '/..' . '/egulias/email-validator/src/Warning/IPV6ColonEnd.php',
@@ -1877,6 +1909,7 @@ class ComposerStaticInite034e3f9a74aff3f14bd867420a09367
         'Egulias\\EmailValidator\\Warning\\IPV6DoubleColon' => __DIR__ . '/..' . '/egulias/email-validator/src/Warning/IPV6DoubleColon.php',
         'Egulias\\EmailValidator\\Warning\\IPV6GroupCount' => __DIR__ . '/..' . '/egulias/email-validator/src/Warning/IPV6GroupCount.php',
         'Egulias\\EmailValidator\\Warning\\IPV6MaxGroups' => __DIR__ . '/..' . '/egulias/email-validator/src/Warning/IPV6MaxGroups.php',
+        'Egulias\\EmailValidator\\Warning\\LabelTooLong' => __DIR__ . '/..' . '/egulias/email-validator/src/Warning/LabelTooLong.php',
         'Egulias\\EmailValidator\\Warning\\LocalTooLong' => __DIR__ . '/..' . '/egulias/email-validator/src/Warning/LocalTooLong.php',
         'Egulias\\EmailValidator\\Warning\\NoDNSMXRecord' => __DIR__ . '/..' . '/egulias/email-validator/src/Warning/NoDNSMXRecord.php',
         'Egulias\\EmailValidator\\Warning\\ObsoleteDTEXT' => __DIR__ . '/..' . '/egulias/email-validator/src/Warning/ObsoleteDTEXT.php',
@@ -2645,6 +2678,7 @@ class ComposerStaticInite034e3f9a74aff3f14bd867420a09367
         'PhpParser\\Parser\\Tokens' => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser/Parser/Tokens.php',
         'PhpParser\\PrettyPrinterAbstract' => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser/PrettyPrinterAbstract.php',
         'PhpParser\\PrettyPrinter\\Standard' => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser/PrettyPrinter/Standard.php',
+        'PhpToken' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/PhpToken.php',
         'ProxyManager\\Autoloader\\Autoloader' => __DIR__ . '/..' . '/friendsofphp/proxy-manager-lts/src/ProxyManager/Autoloader/Autoloader.php',
         'ProxyManager\\Autoloader\\AutoloaderInterface' => __DIR__ . '/..' . '/friendsofphp/proxy-manager-lts/src/ProxyManager/Autoloader/AutoloaderInterface.php',
         'ProxyManager\\Configuration' => __DIR__ . '/..' . '/friendsofphp/proxy-manager-lts/src/ProxyManager/Configuration.php',
@@ -3940,6 +3974,7 @@ class ComposerStaticInite034e3f9a74aff3f14bd867420a09367
         'Symfony\\Component\\ErrorHandler\\Exception\\SilencedErrorContext' => __DIR__ . '/..' . '/symfony/error-handler/Exception/SilencedErrorContext.php',
         'Symfony\\Component\\ErrorHandler\\Internal\\TentativeTypes' => __DIR__ . '/..' . '/symfony/error-handler/Internal/TentativeTypes.php',
         'Symfony\\Component\\ErrorHandler\\ThrowableUtils' => __DIR__ . '/..' . '/symfony/error-handler/ThrowableUtils.php',
+        'Symfony\\Component\\EventDispatcher\\Attribute\\AsEventListener' => __DIR__ . '/..' . '/symfony/event-dispatcher/Attribute/AsEventListener.php',
         'Symfony\\Component\\EventDispatcher\\Debug\\TraceableEventDispatcher' => __DIR__ . '/..' . '/symfony/event-dispatcher/Debug/TraceableEventDispatcher.php',
         'Symfony\\Component\\EventDispatcher\\Debug\\WrappedListener' => __DIR__ . '/..' . '/symfony/event-dispatcher/Debug/WrappedListener.php',
         'Symfony\\Component\\EventDispatcher\\DependencyInjection\\AddEventAliasesPass' => __DIR__ . '/..' . '/symfony/event-dispatcher/DependencyInjection/AddEventAliasesPass.php',
@@ -5588,6 +5623,7 @@ class ComposerStaticInite034e3f9a74aff3f14bd867420a09367
         'Symfony\\Contracts\\HttpClient\\Test\\HttpClientTestCase' => __DIR__ . '/..' . '/symfony/http-client-contracts/Test/HttpClientTestCase.php',
         'Symfony\\Contracts\\HttpClient\\Test\\TestHttpServer' => __DIR__ . '/..' . '/symfony/http-client-contracts/Test/TestHttpServer.php',
         'Symfony\\Contracts\\Service\\Attribute\\Required' => __DIR__ . '/..' . '/symfony/service-contracts/Attribute/Required.php',
+        'Symfony\\Contracts\\Service\\Attribute\\SubscribedService' => __DIR__ . '/..' . '/symfony/service-contracts/Attribute/SubscribedService.php',
         'Symfony\\Contracts\\Service\\ResetInterface' => __DIR__ . '/..' . '/symfony/service-contracts/ResetInterface.php',
         'Symfony\\Contracts\\Service\\ServiceLocatorTrait' => __DIR__ . '/..' . '/symfony/service-contracts/ServiceLocatorTrait.php',
         'Symfony\\Contracts\\Service\\ServiceProviderInterface' => __DIR__ . '/..' . '/symfony/service-contracts/ServiceProviderInterface.php',
@@ -5675,6 +5711,7 @@ class ComposerStaticInite034e3f9a74aff3f14bd867420a09367
         'Symfony\\Polyfill\\Mbstring\\Mbstring' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/Mbstring.php',
         'Symfony\\Polyfill\\Php73\\Php73' => __DIR__ . '/..' . '/symfony/polyfill-php73/Php73.php',
         'Symfony\\Polyfill\\Php80\\Php80' => __DIR__ . '/..' . '/symfony/polyfill-php80/Php80.php',
+        'Symfony\\Polyfill\\Php80\\PhpToken' => __DIR__ . '/..' . '/symfony/polyfill-php80/PhpToken.php',
         'Symfony\\Polyfill\\Php81\\Php81' => __DIR__ . '/..' . '/symfony/polyfill-php81/Php81.php',
         'Twig\\Cache\\CacheInterface' => __DIR__ . '/..' . '/twig/twig/src/Cache/CacheInterface.php',
         'Twig\\Cache\\FilesystemCache' => __DIR__ . '/..' . '/twig/twig/src/Cache/FilesystemCache.php',
@@ -5965,9 +6002,9 @@ class ComposerStaticInite034e3f9a74aff3f14bd867420a09367
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInite034e3f9a74aff3f14bd867420a09367::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInite034e3f9a74aff3f14bd867420a09367::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInite034e3f9a74aff3f14bd867420a09367::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit0e492904aa6eacd860cbe54045faaaae::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit0e492904aa6eacd860cbe54045faaaae::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit0e492904aa6eacd860cbe54045faaaae::$classMap;
 
         }, null, ClassLoader::class);
     }

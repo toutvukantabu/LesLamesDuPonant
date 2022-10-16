@@ -1,4 +1,4 @@
-FROM php:7.2.5-apache
+FROM php:7.4.0-apache
 RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
 
 RUN apt-get update \
